@@ -18,7 +18,17 @@ export default function Home() {
             <span className="italic">Considered.</span>
           </h1>
 
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mt-12">
+          <div className="mt-10 mb-10 w-full overflow-hidden">
+            <Image
+              src="/images/main.jpg"
+              alt="Elec Reid — premium smart home hardware"
+              width={1800}
+              height={1200}
+              className="w-full h-[50vh] lg:h-[60vh] object-cover object-center"
+              priority
+            />
+          </div>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
             <p className="text-[#1A1A1A]/60 text-lg max-w-md leading-relaxed">
               Melbourne&apos;s only electrical company built around Apple HomeKit.
               Design, install, program, handover — one team, one outcome.
@@ -50,6 +60,15 @@ export default function Home() {
               <h2 className="font-austin text-4xl lg:text-5xl xl:text-6xl leading-tight text-[#1A1A1A]">
                 A smart home is not a product.
               </h2>
+              <div className="mt-8 overflow-hidden">
+                <Image
+                  src="/images/main-2.png"
+                  alt="Basalte brass dimmer detail"
+                  width={900}
+                  height={900}
+                  className="w-full aspect-square object-cover"
+                />
+              </div>
             </div>
             <div className="lg:pt-12">
               <p className="text-[#1A1A1A]/70 text-lg leading-relaxed mb-6">
@@ -76,10 +95,11 @@ export default function Home() {
       {/* ── SWITCH SHOWCASE ──────────────────────────────────────── */}
       <section className="bg-[#F7F4F0] px-6 lg:px-10 py-10">
         <div className="max-w-7xl mx-auto">
+          <p className="text-[10px] tracking-[0.25em] text-[#1A1A1A]/40 uppercase mb-6">Switches & Keypads</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { src: '/images/basalte-fibonacci.jpg', label: 'Basalte Fibonacci' },
-              { src: '/images/control4-lux.jpg', label: 'Control4 Lux' },
+              { src: '/images/main-3.png', label: 'Keypad Finishes' },
               { src: '/images/ekinex-proxima.jpg', label: 'Ekinex Proxima' },
               { src: '/images/ekinex-20venti.jpg', label: 'Ekinex 20Venti' },
             ].map((item) => (
