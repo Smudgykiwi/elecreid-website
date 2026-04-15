@@ -1,22 +1,36 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+// Note: replace placeholder images with real Elec Reid job photos as they become available
+
 export default function Home() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section className="min-h-screen bg-[#F7F4F0] flex flex-col justify-center px-6 lg:px-10 pt-24">
-        <div className="max-w-7xl mx-auto w-full py-24 lg:py-36">
+      <section className="min-h-screen bg-[#F7F4F0] flex flex-col justify-center px-6 lg:px-10 pt-20">
+        <div className="max-w-7xl mx-auto w-full py-16 lg:py-24">
           <p className="text-[10px] tracking-[0.25em] text-[#0134E7] uppercase mb-10">
             Melbourne · Residential · Smart Home
           </p>
 
-          <h1 className="font-austin text-[#1A1A1A] text-6xl sm:text-7xl lg:text-[96px] xl:text-[120px] leading-[0.92] tracking-tight max-w-5xl mb-8">
+          <h1 className="font-austin font-bold text-[#1A1A1A] text-6xl sm:text-7xl lg:text-[96px] xl:text-[120px] leading-[0.92] tracking-tight max-w-5xl mb-8">
             Control,<br />
             <span className="italic">Considered.</span>
           </h1>
 
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mt-12">
+          {/* Hero image — replace with real job photo */}
+          <div className="mt-10 mb-10 w-full aspect-[21/9] overflow-hidden bg-[#E8E4DF]">
+            <Image
+              src="/images/photo-job.jpg"
+              alt="Elec Reid project"
+              width={1800}
+              height={771}
+              className="w-full h-full object-cover"
+              priority
+            />
+          </div>
+
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
             <p className="text-[#1A1A1A]/60 text-lg max-w-md leading-relaxed">
               Melbourne&apos;s only electrical company built around Apple HomeKit.
               Design, install, program, handover — one team, one outcome.
@@ -40,16 +54,16 @@ export default function Home() {
       </section>
 
       {/* ── PHILOSOPHY ───────────────────────────────────────────── */}
-      <section className="bg-white px-6 lg:px-10 py-24 lg:py-36">
+      <section className="bg-white px-6 lg:px-10 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div>
-              <p className="text-[10px] tracking-[0.25em] text-[#1A1A1A]/40 uppercase mb-8">Our Philosophy</p>
+              <p className="text-[10px] tracking-[0.25em] text-[#1A1A1A]/40 uppercase mb-6">Our Philosophy</p>
               <h2 className="font-austin text-4xl lg:text-5xl xl:text-6xl leading-tight text-[#1A1A1A]">
                 A smart home is not a product.
               </h2>
             </div>
-            <div className="lg:pt-16">
+            <div className="lg:pt-12">
               <p className="text-[#1A1A1A]/70 text-lg leading-relaxed mb-6">
                 It is a relationship between architecture, automation and the people who live there. Elec Reid specifies, installs and commissions residential systems where every decision is deliberate: from the switch that meets your hand each morning to the control platform that ties it all together.
               </p>
@@ -62,7 +76,7 @@ export default function Home() {
       </section>
 
       {/* ── PULL QUOTE ───────────────────────────────────────────── */}
-      <section className="bg-[#0134E7] px-6 lg:px-10 py-20">
+      <section className="bg-[#0134E7] px-6 lg:px-10 py-14">
         <div className="max-w-7xl mx-auto">
           <p className="font-austin italic text-white text-3xl lg:text-4xl xl:text-5xl leading-relaxed max-w-4xl">
             &ldquo;Good taste, implied confidence, and a pure nerdy love for tech.&rdquo;
@@ -71,11 +85,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── WHAT SETS US APART ───────────────────────────────────── */}
-      <section className="bg-[#F7F4F0] px-6 lg:px-10 py-24 lg:py-36">
+      {/* ── SWITCH SHOWCASE ──────────────────────────────────────── */}
+      <section className="bg-[#F7F4F0] px-6 lg:px-10 py-10">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[10px] tracking-[0.25em] text-[#1A1A1A]/40 uppercase mb-16">What sets us apart</p>
-          <div className="grid lg:grid-cols-3 gap-12 lg:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { src: '/images/basalte-fibonacci.jpg', label: 'Basalte Fibonacci' },
+              { src: '/images/control4-lux.jpg', label: 'Control4 Lux' },
+              { src: '/images/ekinex-proxima.jpg', label: 'Ekinex Proxima' },
+              { src: '/images/ekinex-20venti.jpg', label: 'Ekinex 20Venti' },
+            ].map((item) => (
+              <div key={item.label} className="group overflow-hidden">
+                <div className="aspect-square overflow-hidden bg-[#E8E4DF]">
+                  <Image src={item.src} alt={item.label} width={600} height={600} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <p className="text-[10px] tracking-[0.15em] text-[#1A1A1A]/40 uppercase mt-3">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHAT SETS US APART ───────────────────────────────────── */}
+      <section className="bg-[#F7F4F0] px-6 lg:px-10 py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-[10px] tracking-[0.25em] text-[#1A1A1A]/40 uppercase mb-10">What sets us apart</p>
+          <div className="grid lg:grid-cols-3 gap-10 lg:gap-8">
             {[
               {
                 num: '01',
@@ -104,9 +139,9 @@ export default function Home() {
       </section>
 
       {/* ── RECENT PROJECTS ──────────────────────────────────────── */}
-      <section className="bg-white px-6 lg:px-10 py-24 lg:py-36">
+      <section className="bg-white px-6 lg:px-10 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-end justify-between mb-16">
+          <div className="flex items-end justify-between mb-10">
             <div>
               <p className="text-[10px] tracking-[0.25em] text-[#1A1A1A]/40 uppercase mb-4">Recent Work</p>
               <h2 className="font-austin text-4xl lg:text-5xl text-[#1A1A1A]">Melbourne projects.</h2>
@@ -122,10 +157,10 @@ export default function Home() {
               { title: 'South Yarra Apartment', desc: 'Automation & lighting design', tags: ['Home Assistant', 'KNX', 'Basalte'] },
             ].map((project) => (
               <div key={project.title} className="group cursor-pointer">
-                <div className="aspect-[4/3] bg-[#E8E4DF] mb-6 overflow-hidden flex items-end p-8">
-                  <div>
-                    <p className="font-austin text-2xl text-[#1A1A1A] mb-1">{project.title}</p>
-                    <p className="text-[#1A1A1A]/50 text-sm">{project.desc}</p>
+                <div className="aspect-[4/3] bg-[#E8E4DF] mb-6 overflow-hidden relative">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/50 to-transparent">
+                    <p className="font-austin text-2xl text-white mb-1">{project.title}</p>
+                    <p className="text-white/70 text-sm">{project.desc}</p>
                   </div>
                 </div>
                 <div className="flex gap-3 flex-wrap">
@@ -142,11 +177,11 @@ export default function Home() {
       </section>
 
       {/* ── SERVICES ─────────────────────────────────────────────── */}
-      <section className="bg-[#F7F4F0] px-6 lg:px-10 py-24 lg:py-36">
+      <section className="bg-[#F7F4F0] px-6 lg:px-10 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto">
           <div className="mb-4">
             <p className="text-[10px] tracking-[0.25em] text-[#1A1A1A]/40 uppercase mb-6">What We Offer</p>
-            <h2 className="font-austin text-[#0134E7] text-6xl lg:text-8xl xl:text-9xl leading-none mb-16">Services</h2>
+            <h2 className="font-austin text-[#0134E7] text-6xl lg:text-8xl xl:text-9xl leading-none mb-10">Services</h2>
           </div>
 
           <div className="space-y-0">
@@ -172,11 +207,11 @@ export default function Home() {
       </section>
 
       {/* ── WHAT WE DO (TWO THINGS) ───────────────────────────────── */}
-      <section className="bg-white px-6 lg:px-10 py-24 lg:py-36">
+      <section className="bg-white px-6 lg:px-10 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             <div>
-              <p className="text-[10px] tracking-[0.25em] text-[#1A1A1A]/40 uppercase mb-8">The Partnership</p>
+              <p className="text-[10px] tracking-[0.25em] text-[#1A1A1A]/40 uppercase mb-6">The Partnership</p>
               <h2 className="font-austin text-4xl lg:text-5xl text-[#1A1A1A] leading-tight">
                 Two things make a smart home work.
               </h2>
@@ -196,9 +231,9 @@ export default function Home() {
       </section>
 
       {/* ── REVIEWS ──────────────────────────────────────────────── */}
-      <section className="bg-[#F7F4F0] px-6 lg:px-10 py-24">
+      <section className="bg-[#F7F4F0] px-6 lg:px-10 py-16">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[10px] tracking-[0.25em] text-[#1A1A1A]/40 uppercase mb-16">What clients say</p>
+          <p className="text-[10px] tracking-[0.25em] text-[#1A1A1A]/40 uppercase mb-10">What clients say</p>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { name: 'Su Mei Koh', suburb: 'Toorak', stars: 5, text: 'Joe and his team came highly recommended, and I\'m so grateful for their hard work. The smart home system works flawlessly and the finish is impeccable.' },
@@ -223,7 +258,7 @@ export default function Home() {
       </section>
 
       {/* ── BEGIN YOUR PROJECT ───────────────────────────────────── */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-10 py-24 lg:py-36">
+      <section className="bg-[#1A1A1A] px-6 lg:px-10 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
