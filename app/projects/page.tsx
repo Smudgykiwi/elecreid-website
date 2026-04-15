@@ -3,31 +3,52 @@ import Image from 'next/image'
 
 const projects = [
   {
-    slug: 'mckimm-brighton',
     title: 'McKimm',
     location: 'Brighton, VIC',
-    desc: 'Full residential smart home integration. Apple HomeKit, Unifi networking, Lutron lighting control, Sonos multi-room audio, and outdoor automation.',
-    tags: ['Apple HomeKit', 'Unifi', 'Lutron', 'Sonos', 'Outdoor AV'],
-    images: ['/images/mckimm-5.jpg', '/images/mckimm-3.jpg', '/images/mckimm-1.jpg', '/images/mckimm-2.jpg'],
+    desc: 'Full residential smart home integration across a luxury new build. Apple HomeKit automation, Unifi networking, Lutron lighting control, Sonos multi-room audio, outdoor AV, and pool automation.',
+    tags: ['Apple HomeKit', 'Unifi', 'Lutron', 'Sonos', 'Pool Automation'],
     hero: '/images/mckimm-5.jpg',
+    gallery: ['/images/mckimm-3.jpg', '/images/mckimm-1.jpg', '/images/mckimm-2.jpg'],
   },
   {
-    slug: 'haven-court-torquay',
     title: 'Haven Court',
     location: 'Torquay, VIC',
-    desc: 'Architecturally integrated smart home in a stunning custom build. Climate control, automated louvres, whole-home AV, and structured networking throughout.',
-    tags: ['Smart Home', 'Climate Control', 'AV', 'Networking', 'Lighting'],
-    images: ['/images/haven-1.jpg', '/images/haven-6.jpg', '/images/haven-5.jpg', '/images/haven-7.jpg'],
+    desc: 'Architecturally integrated smart home in a striking custom build. Whole-home climate control, automated louvre screens, structured networking, multi-room AV, and comprehensive lighting design.',
+    tags: ['Smart Home', 'Climate Control', 'Automated Louvres', 'AV', 'Networking'],
     hero: '/images/haven-1.jpg',
+    gallery: ['/images/haven-6.jpg', '/images/haven-5.jpg', '/images/haven-7.jpg'],
   },
   {
-    slug: 'malvern-cinema',
-    title: 'Parslow Street',
+    title: 'Fitzroy Street',
+    location: 'St Kilda, VIC',
+    desc: 'Rooftop entertainment space with integrated lighting, outdoor audio, and smart control. Festoon lighting automation, speaker installation, and full outdoor AV integration.',
+    tags: ['Outdoor AV', 'Lighting Automation', 'Smart Control', 'Speakers'],
+    hero: '/images/stkilda-1.jpg',
+    gallery: ['/images/stkilda-2.jpg', '/images/stkilda-3.jpg', '/images/stkilda-4.jpg'],
+  },
+  {
+    title: 'Travancore Home Theatre',
+    location: 'Travancore, VIC',
+    desc: 'Dedicated home cinema room with projector, large-format screen, acoustic wall treatment, and integrated AV control. Velvet sectional seating, premium surround sound, and full room automation.',
+    tags: ['Home Cinema', 'Projector', 'Acoustic Treatment', 'Surround Sound', 'AV Control'],
+    hero: '/images/travancore-1.jpg',
+    gallery: ['/images/travancore-3.jpg', '/images/travancore-2.jpg', '/images/travancore-4.jpg'],
+  },
+  {
+    title: 'Brighton AV Fitout',
+    location: 'Brighton, VIC',
+    desc: 'Whole-home AV infrastructure including central equipment rack, multi-zone audio distribution, and integrated control. Clean installation with structured cabling throughout.',
+    tags: ['AV Distribution', 'Multi-zone Audio', 'Equipment Rack', 'Structured Cabling'],
+    hero: '/images/brighton-av-2.jpg',
+    gallery: ['/images/brighton-av-3.jpg', '/images/brighton-av-4.jpg'],
+  },
+  {
+    title: 'Parslow Street Cinema',
     location: 'Malvern, VIC',
-    desc: 'Dedicated home cinema installation with freestanding tower speakers, surround sound, and integrated AV control.',
-    tags: ['Home Cinema', 'AV', 'Acoustic Treatment'],
-    images: ['/images/malvern-cinema-1.jpg'],
+    desc: 'Dedicated home cinema installation with premium tower and surround speakers, AV rack, and integrated control system.',
+    tags: ['Home Cinema', 'Premium Speakers', 'AV Integration'],
     hero: '/images/malvern-cinema-1.jpg',
+    gallery: ['/images/malvern-2.jpg', '/images/malvern-4.jpg'],
   },
 ]
 
@@ -35,7 +56,7 @@ export default function Projects() {
   return (
     <>
       {/* Header */}
-      <section className="bg-[#F7F4F0] px-6 lg:px-10 pt-36 pb-16">
+      <section className="bg-[#F7F4F0] px-6 lg:px-10 pt-36 pb-12">
         <div className="max-w-7xl mx-auto">
           <p className="text-[10px] tracking-[0.25em] text-[#1A1A1A]/40 uppercase mb-6">Our Work</p>
           <h1 className="font-austin text-[#0134E7] text-6xl lg:text-8xl xl:text-[120px] leading-none">
@@ -45,34 +66,36 @@ export default function Projects() {
       </section>
 
       {/* Project list */}
-      <section className="bg-white px-6 lg:px-10 py-16">
-        <div className="max-w-7xl mx-auto space-y-24">
+      <section className="bg-white px-6 lg:px-10 py-12">
+        <div className="max-w-7xl mx-auto divide-y divide-[#1A1A1A]/10">
           {projects.map((project, i) => (
-            <div key={project.slug} className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-start ${i % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-              {/* Image */}
-              <div className={`overflow-hidden ${i % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <Image
-                  src={project.hero}
-                  alt={project.title}
-                  width={1200}
-                  height={800}
-                  className="w-full aspect-[4/3] object-cover"
-                />
-                {project.images.length > 1 && (
-                  <div className="grid grid-cols-3 gap-2 mt-2">
-                    {project.images.slice(1, 4).map((img, j) => (
+            <div key={project.title} className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-start py-16 first:pt-0`}>
+              {/* Image block */}
+              <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
+                <div className="overflow-hidden mb-2">
+                  <Image
+                    src={project.hero}
+                    alt={project.title}
+                    width={1200}
+                    height={800}
+                    className="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                {project.gallery.length > 0 && (
+                  <div className={`grid gap-2 ${project.gallery.length >= 3 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+                    {project.gallery.map((img, j) => (
                       <Image key={j} src={img} alt={`${project.title} ${j + 2}`} width={400} height={300} className="w-full aspect-square object-cover" />
                     ))}
                   </div>
                 )}
               </div>
 
-              {/* Details */}
-              <div className={`lg:pt-6 ${i % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+              {/* Text block */}
+              <div className={`${i % 2 === 1 ? 'lg:order-1' : ''} lg:pt-4`}>
                 <p className="text-[10px] tracking-[0.25em] text-[#1A1A1A]/40 uppercase mb-4">{project.location}</p>
                 <h2 className="font-austin text-4xl lg:text-5xl text-[#1A1A1A] mb-6">{project.title}</h2>
                 <p className="text-[#1A1A1A]/60 leading-relaxed mb-8 text-lg">{project.desc}</p>
-                <div className="flex gap-3 flex-wrap">
+                <div className="flex gap-2 flex-wrap">
                   {project.tags.map((tag) => (
                     <span key={tag} className="text-[10px] tracking-[0.15em] border border-[#1A1A1A]/20 px-3 py-1.5 text-[#1A1A1A]/50">
                       {tag}
