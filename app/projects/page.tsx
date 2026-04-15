@@ -19,36 +19,12 @@ const projects = [
     gallery: ['/images/mckimm-1.jpg', '/images/mckimm-4.jpg'],
   },
   {
-    title: 'Fitzroy Street',
+    title: 'Fitzroy Street Rooftop',
     location: 'St Kilda, VIC',
-    desc: 'Rooftop entertainment space with integrated lighting, outdoor audio, and smart control. Festoon lighting automation, speaker installation, and full outdoor AV integration.',
+    desc: 'Rooftop entertainment space with integrated lighting automation, outdoor audio, and smart control. Festoon lighting scenes, multi-zone speakers, and seamless indoor-outdoor integration.',
     tags: ['Outdoor AV', 'Lighting Automation', 'Smart Control', 'Speakers'],
     hero: '/images/stkilda-1.jpg',
     gallery: ['/images/stkilda-2.jpg', '/images/stkilda-3.jpg', '/images/stkilda-4.jpg'],
-  },
-  {
-    title: 'Travancore Home Theatre',
-    location: 'Travancore, VIC',
-    desc: 'Dedicated home cinema room with projector, large-format screen, acoustic wall treatment, and integrated AV control. Velvet sectional seating, premium surround sound, and full room automation.',
-    tags: ['Home Cinema', 'Projector', 'Acoustic Treatment', 'Surround Sound', 'AV Control'],
-    hero: '/images/travancore-1.jpg',
-    gallery: ['/images/travancore-3.jpg', '/images/travancore-2.jpg', '/images/travancore-4.jpg'],
-  },
-  {
-    title: 'Brighton AV Fitout',
-    location: 'Brighton, VIC',
-    desc: 'Whole-home AV infrastructure including central equipment rack, multi-zone audio distribution, and integrated control. Clean installation with structured cabling throughout.',
-    tags: ['AV Distribution', 'Multi-zone Audio', 'Equipment Rack', 'Structured Cabling'],
-    hero: '/images/brighton-av-2.jpg',
-    gallery: ['/images/brighton-av-3.jpg', '/images/brighton-av-4.jpg'],
-  },
-  {
-    title: 'Parslow Street Cinema',
-    location: 'Malvern, VIC',
-    desc: 'Dedicated home cinema installation with premium tower and surround speakers, AV rack, and integrated control system.',
-    tags: ['Home Cinema', 'Premium Speakers', 'AV Integration'],
-    hero: '/images/malvern-cinema-1.jpg',
-    gallery: ['/images/malvern-2.jpg', '/images/malvern-4.jpg'],
   },
 ]
 
