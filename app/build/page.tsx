@@ -203,7 +203,7 @@ export default function BuildPage() {
           <h1 className="font-austin text-white text-5xl lg:text-7xl mb-6">Design your smart home.</h1>
           <p className="text-white/60 text-lg leading-relaxed mb-4">A few questions to help us understand your project. Takes about 5 minutes.</p>
           <p className="text-white/40 text-sm mb-10">Best experienced on a computer, but your phone works too.</p>
-          <button onClick={next} className="bg-[#0134E7] hover:bg-[#012ab8] text-white text-[11px] tracking-[0.15em] px-10 py-4 transition-colors">
+          <button onClick={next} className="bg-[#0134E7] hover:bg-[#012ab8] text-white text-[11px] tracking-[0.15em] px-10 py-4 rounded-full transition-colors">
             GET STARTED →
           </button>
         </div>
@@ -257,7 +257,7 @@ export default function BuildPage() {
         <div className="text-center max-w-xl">
           <h1 className="font-austin text-white text-5xl lg:text-6xl mb-6">Great.</h1>
           <p className="text-white/60 text-lg mb-10">Now the fun part. Let&apos;s build your system.</p>
-          <button onClick={next} className="bg-[#0134E7] hover:bg-[#012ab8] text-white text-[11px] tracking-[0.15em] px-10 py-4 transition-colors">
+          <button onClick={next} className="bg-[#0134E7] hover:bg-[#012ab8] text-white text-[11px] tracking-[0.15em] px-10 py-4 rounded-full transition-colors">
             CONTINUE →
           </button>
         </div>
@@ -267,7 +267,7 @@ export default function BuildPage() {
         <div className="max-w-2xl text-center">
           <p className="text-white/60 text-lg leading-relaxed mb-6">Your home is full of systems — lighting, blinds, climate, security, audio, access control — and when they don&apos;t talk to each other, nothing works the way it should.</p>
           <p className="text-white/60 text-lg leading-relaxed mb-10">We design and install smart homes that actually work. One app. One system. Everything integrated, reliable, and built to last.</p>
-          <button onClick={next} className="border border-white/40 hover:border-white text-white text-[11px] tracking-[0.15em] px-10 py-4 transition-colors">
+          <button onClick={next} className="border border-white/40 hover:border-white text-white text-[11px] tracking-[0.15em] px-10 py-4 rounded-full transition-colors">
             CONTINUE →
           </button>
         </div>
@@ -278,7 +278,7 @@ export default function BuildPage() {
           <p className="text-[10px] tracking-[0.25em] text-white/40 uppercase mb-4">Apple Home</p>
           <h2 className="font-austin text-white text-4xl lg:text-5xl mb-6">Apple Home</h2>
           <p className="text-white/60 leading-relaxed mb-8">Our #1 recommendation for most homes. If you&apos;re in the Apple ecosystem — iPhones, iPads, Apple Watch, HomePods — this is the natural fit. Beautiful, reliable, no subscription fees.</p>
-          <button onClick={next} className="border border-white/40 hover:border-white text-white text-[11px] tracking-[0.15em] px-10 py-4 transition-colors">
+          <button onClick={next} className="border border-white/40 hover:border-white text-white text-[11px] tracking-[0.15em] px-10 py-4 rounded-full transition-colors">
             CONTINUE →
           </button>
         </div>
@@ -289,7 +289,7 @@ export default function BuildPage() {
           <p className="text-[10px] tracking-[0.25em] text-white/40 uppercase mb-4">Home Assistant</p>
           <h2 className="font-austin text-white text-4xl lg:text-5xl mb-6">Home Assistant</h2>
           <p className="text-white/60 leading-relaxed mb-8">Open source. Local control. 2,000+ integrations. For clients who want total flexibility and zero vendor lock-in. Runs locally — no cloud, no subscription, no limits.</p>
-          <button onClick={next} className="border border-white/40 hover:border-white text-white text-[11px] tracking-[0.15em] px-10 py-4 transition-colors">
+          <button onClick={next} className="border border-white/40 hover:border-white text-white text-[11px] tracking-[0.15em] px-10 py-4 rounded-full transition-colors">
             CONTINUE →
           </button>
         </div>
@@ -300,7 +300,7 @@ export default function BuildPage() {
           <p className="text-[10px] tracking-[0.25em] text-white/40 uppercase mb-4">Control4</p>
           <h2 className="font-austin text-white text-4xl lg:text-5xl mb-6">Control4</h2>
           <p className="text-white/60 leading-relaxed mb-8">Professional-grade automation for larger homes. Dealer-installed, dedicated touchscreens and keypads, built for scale. We install it for clients who specifically request it.</p>
-          <button onClick={next} className="border border-white/40 hover:border-white text-white text-[11px] tracking-[0.15em] px-10 py-4 transition-colors">
+          <button onClick={next} className="border border-white/40 hover:border-white text-white text-[11px] tracking-[0.15em] px-10 py-4 rounded-full transition-colors">
             CONTINUE →
           </button>
         </div>
@@ -347,7 +347,7 @@ export default function BuildPage() {
             <p className="text-[10px] tracking-[0.25em] text-white/40 uppercase mb-4">Switches & Keypads</p>
             <h2 className="font-austin text-white text-4xl lg:text-5xl mb-6">{s.label}</h2>
             <p className="text-white/60 leading-relaxed mb-10">{s.body}</p>
-            <button onClick={next} className="border border-white/40 hover:border-white text-white text-[11px] tracking-[0.15em] px-10 py-4 transition-colors">
+            <button onClick={next} className="border border-white/40 hover:border-white text-white text-[11px] tracking-[0.15em] px-10 py-4 rounded-full transition-colors">
               CONTINUE →
             </button>
           </div>
@@ -386,7 +386,7 @@ export default function BuildPage() {
         <div className="text-center max-w-xl">
           <h1 className="font-austin text-white text-5xl lg:text-6xl mb-6">Nice.</h1>
           <p className="text-white/60 text-lg mb-10">Now let&apos;s run through what you want integrated. Just yes or no — we&apos;ll handle the rest.</p>
-          <button onClick={next} className="bg-[#0134E7] hover:bg-[#012ab8] text-white text-[11px] tracking-[0.15em] px-10 py-4 transition-colors">
+          <button onClick={next} className="bg-[#0134E7] hover:bg-[#012ab8] text-white text-[11px] tracking-[0.15em] px-10 py-4 rounded-full transition-colors">
             CONTINUE →
           </button>
         </div>
@@ -476,7 +476,7 @@ export default function BuildPage() {
           <input type="text" value={formData.finalNotes} onChange={e => update('finalNotes', e.target.value)} placeholder="Any final questions? (optional)"
             className="block w-full max-w-sm mx-auto bg-transparent border-b border-white/30 text-white placeholder:text-white/40 py-3 text-lg outline-none mb-10 focus:border-white transition-colors" />
           {error && <p className="text-red-400 text-sm mb-4">{error}</p>}
-          <button onClick={handleSubmit} className="bg-[#0134E7] hover:bg-[#012ab8] text-white text-[11px] tracking-[0.15em] px-12 py-4 transition-colors">
+          <button onClick={handleSubmit} className="bg-[#0134E7] hover:bg-[#012ab8] text-white text-[11px] tracking-[0.15em] px-12 py-4 rounded-full transition-colors">
             SUBMIT →
           </button>
           <p className="text-white/30 text-xs tracking-wider mt-4">Cmd ⌘ + Enter ↵</p>

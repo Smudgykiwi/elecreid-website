@@ -43,7 +43,7 @@ export default function Nav() {
           ))}
           <Link
             href="/build"
-            className="text-[10px] tracking-[0.2em] uppercase bg-[#0134E7] hover:bg-[#012ab8] text-white px-6 py-2.5 transition-colors"
+            className="text-[10px] tracking-[0.2em] uppercase bg-[#0134E7] hover:bg-[#012ab8] text-white px-6 py-2.5 rounded-full transition-colors"
           >
             Build Your Home
           </Link>
@@ -75,7 +75,7 @@ export default function Nav() {
           <Link
             href="/build"
             onClick={() => setMenuOpen(false)}
-            className="text-[10px] tracking-[0.2em] uppercase bg-[#0134E7] text-white px-5 py-3 text-center mt-2"
+            className="text-[10px] tracking-[0.2em] uppercase bg-[#0134E7] text-white px-5 py-3 rounded-full text-center mt-2"
           >
             Build Your Home
           </Link>

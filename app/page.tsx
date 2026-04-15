@@ -25,11 +25,11 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
               <Link href="/build"
-                className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-8 py-4 transition-colors whitespace-nowrap">
+                className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-8 py-4 rounded-full transition-colors whitespace-nowrap">
                 Build Your Home →
               </Link>
               <Link href="/projects"
-                className="inline-flex items-center justify-center border border-[#1A1A1A]/20 hover:border-[#1A1A1A]/60 text-[#1A1A1A]/60 hover:text-[#1A1A1A] text-[9px] tracking-[0.25em] uppercase px-8 py-4 transition-colors whitespace-nowrap">
+                className="inline-flex items-center justify-center border border-[#1A1A1A]/20 hover:border-[#1A1A1A]/60 text-[#1A1A1A]/60 hover:text-[#1A1A1A] text-[9px] tracking-[0.25em] uppercase px-8 py-4 rounded-full transition-colors whitespace-nowrap">
                 See Our Work
               </Link>
             </div>
@@ -271,11 +271,11 @@ export default function Home() {
             </p>
             <div className="flex flex-col gap-3">
               <Link href="/build"
-                className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 transition-colors">
+                className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors">
                 Build Your Home →
               </Link>
               <a href="tel:+61450342075"
-                className="inline-flex items-center justify-center border border-white/15 hover:border-white/40 text-white/40 hover:text-white/80 text-[9px] tracking-[0.25em] uppercase px-10 py-5 transition-colors">
+                className="inline-flex items-center justify-center border border-white/15 hover:border-white/40 text-white/40 hover:text-white/80 text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors">
                 +61 450 342 075
               </a>
             </div>

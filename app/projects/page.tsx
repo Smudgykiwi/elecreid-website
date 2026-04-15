@@ -90,7 +90,7 @@ export default function Projects() {
           <h2 className="font-austin text-white text-4xl lg:text-5xl">Your project could be next.</h2>
           <Link
             href="/build"
-            className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[11px] tracking-[0.15em] px-10 py-4 transition-colors whitespace-nowrap"
+            className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[11px] tracking-[0.15em] px-10 py-4 rounded-full transition-colors whitespace-nowrap"
           >
             BUILD YOUR HOME →
           </Link>
