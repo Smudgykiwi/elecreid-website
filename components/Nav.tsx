@@ -15,25 +15,49 @@ const residentialBrands = [
   { label: 'Core Smart Home', href: '/brands/core-smart-home' },
   { label: 'Unifi', href: '/brands/unifi' },
   { label: 'Sonos', href: '/brands/sonos' },
-  { label: 'Audio', href: '/brands/audio' },
 ]
 
-const commercialBrands = [
-  { label: 'Logitech', href: '/brands/logitech' },
-  { label: 'Q-SYS by QSC', href: '/brands/qsc' },
-  { label: 'Samsung', href: '/brands/samsung' },
-  { label: 'Audio', href: '/brands/audio' },
-  { label: 'Quest', href: '/brands/quest' },
-  { label: 'd&b audiotechnik', href: '/brands/db-audiotechnik' },
-  { label: 'L-Acoustics', href: '/brands/l-acoustics' },
-  { label: 'Video Walls', href: '/brands/video-wall' },
+const commercialCategories = [
+  {
+    label: 'Meeting Rooms',
+    href: '/brands/logitech',
+    brands: [
+      { label: 'Logitech', href: '/brands/logitech' },
+    ],
+  },
+  {
+    label: 'Screens & Visuals',
+    href: '/brands/samsung',
+    brands: [
+      { label: 'Samsung', href: '/brands/samsung' },
+      { label: 'Video Walls', href: '/brands/video-wall' },
+    ],
+  },
+  {
+    label: 'Audio',
+    href: '/brands/audio',
+    brands: [
+      { label: 'Quest', href: '/brands/quest' },
+      { label: 'd&b audiotechnik', href: '/brands/db-audiotechnik' },
+      { label: 'L-Acoustics', href: '/brands/l-acoustics' },
+    ],
+  },
+  {
+    label: 'Building Management',
+    href: '/brands/qsc',
+    brands: [
+      { label: 'KNX', href: '/brands/knx' },
+      { label: 'Philips Dynalite', href: '/brands/dynalite' },
+      { label: 'Q-SYS by QSC', href: '/brands/qsc' },
+    ],
+  },
 ]
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [brandsOpen, setBrandsOpen] = useState(false)
-  const [mobileBrandsOpen, setMobileBrandsOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState<string | null>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -57,7 +81,7 @@ export default function Nav() {
             Services
           </Link>
 
-          {/* Brands dropdown */}
+          {/* Brands mega-dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setBrandsOpen(true)}
@@ -69,34 +93,55 @@ export default function Nav() {
             </button>
 
             {brandsOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white border border-[#1A1A1A]/8 shadow-xl min-w-[520px] p-6 z-50">
-                <div className="grid grid-cols-2 gap-8">
+              <div className="absolute top-full right-0 mt-2 bg-white border border-[#1A1A1A]/8 shadow-2xl w-[680px] p-8 z-50">
+                <div className="grid grid-cols-2 gap-10">
+
+                  {/* Residential */}
                   <div>
-                    <p className="text-[8px] tracking-[0.3em] text-[#1A1A1A]/30 uppercase mb-4">Residential</p>
+                    <p className="text-[8px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-5 pb-2 border-b border-[#1A1A1A]/8">
+                      Residential
+                    </p>
                     <div className="space-y-2">
                       {residentialBrands.map((b) => (
                         <Link key={b.href} href={b.href}
-                          className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/70 hover:text-[#0134E7] transition-colors py-0.5">
+                          className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/65 hover:text-[#0134E7] transition-colors py-0.5">
                           {b.label}
                         </Link>
                       ))}
                     </div>
                   </div>
+
+                  {/* Commercial */}
                   <div>
-                    <p className="text-[8px] tracking-[0.3em] text-[#1A1A1A]/30 uppercase mb-4">Commercial</p>
-                    <div className="space-y-2">
-                      {commercialBrands.map((b) => (
-                        <Link key={b.href} href={b.href}
-                          className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/70 hover:text-[#0134E7] transition-colors py-0.5">
-                          {b.label}
-                        </Link>
+                    <p className="text-[8px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-5 pb-2 border-b border-[#1A1A1A]/8">
+                      Commercial
+                    </p>
+                    <div className="space-y-5">
+                      {commercialCategories.map((cat) => (
+                        <div key={cat.label}>
+                          <Link href={cat.href} className="block text-[10px] tracking-[0.15em] text-[#1A1A1A] font-medium uppercase hover:text-[#0134E7] transition-colors mb-1.5">
+                            {cat.label}
+                          </Link>
+                          <div className="pl-3 space-y-1 border-l border-[#1A1A1A]/10">
+                            {cat.brands.map((b) => (
+                              <Link key={b.href} href={b.href}
+                                className="block text-[9px] tracking-[0.1em] text-[#1A1A1A]/45 hover:text-[#0134E7] transition-colors py-0.5">
+                                {b.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
                       ))}
                     </div>
                   </div>
+
                 </div>
-                <div className="border-t border-[#1A1A1A]/8 mt-6 pt-4">
+                <div className="border-t border-[#1A1A1A]/8 mt-6 pt-4 flex justify-between items-center">
                   <Link href="/brands" className="text-[9px] tracking-[0.2em] text-[#0134E7] uppercase hover:underline">
                     All brands →
+                  </Link>
+                  <Link href="/build" className="text-[9px] tracking-[0.2em] text-white bg-[#0134E7] uppercase px-4 py-2 rounded-full hover:bg-[#012ab8] transition-colors">
+                    Build Your Home →
                   </Link>
                 </div>
               </div>
@@ -132,34 +177,40 @@ export default function Nav() {
             </Link>
           ))}
 
-          {/* Mobile Brands */}
-          <button
-            onClick={() => setMobileBrandsOpen(!mobileBrandsOpen)}
-            className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60 text-left flex items-center justify-between"
-          >
-            Brands <span className={`transition-transform ${mobileBrandsOpen ? 'rotate-180' : ''}`}>▾</span>
+          {/* Residential */}
+          <button onClick={() => setMobileOpen(mobileOpen === 'residential' ? null : 'residential')}
+            className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60 text-left flex items-center justify-between">
+            Residential Brands <span className={`transition-transform ${mobileOpen === 'residential' ? 'rotate-180' : ''}`}>▾</span>
           </button>
+          {mobileOpen === 'residential' && (
+            <div className="pl-4 space-y-2">
+              {residentialBrands.map((b) => (
+                <Link key={b.href} href={b.href} onClick={() => setMenuOpen(false)}
+                  className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/55 py-1">
+                  {b.label}
+                </Link>
+              ))}
+            </div>
+          )}
 
-          {mobileBrandsOpen && (
+          {/* Commercial categories */}
+          <button onClick={() => setMobileOpen(mobileOpen === 'commercial' ? null : 'commercial')}
+            className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60 text-left flex items-center justify-between">
+            Commercial Brands <span className={`transition-transform ${mobileOpen === 'commercial' ? 'rotate-180' : ''}`}>▾</span>
+          </button>
+          {mobileOpen === 'commercial' && (
             <div className="pl-4 space-y-4">
-              <div>
-                <p className="text-[8px] tracking-[0.3em] text-[#1A1A1A]/30 uppercase mb-2">Residential</p>
-                {residentialBrands.map((b) => (
-                  <Link key={b.href} href={b.href} onClick={() => setMenuOpen(false)}
-                    className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/60 py-1">
-                    {b.label}
-                  </Link>
-                ))}
-              </div>
-              <div>
-                <p className="text-[8px] tracking-[0.3em] text-[#1A1A1A]/30 uppercase mb-2">Commercial</p>
-                {commercialBrands.map((b) => (
-                  <Link key={b.href} href={b.href} onClick={() => setMenuOpen(false)}
-                    className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/60 py-1">
-                    {b.label}
-                  </Link>
-                ))}
-              </div>
+              {commercialCategories.map((cat) => (
+                <div key={cat.label}>
+                  <p className="text-[9px] tracking-[0.2em] text-[#1A1A1A]/40 uppercase mb-1">{cat.label}</p>
+                  {cat.brands.map((b) => (
+                    <Link key={b.href} href={b.href} onClick={() => setMenuOpen(false)}
+                      className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/60 py-1 pl-2">
+                      {b.label}
+                    </Link>
+                  ))}
+                </div>
+              ))}
             </div>
           )}
 
