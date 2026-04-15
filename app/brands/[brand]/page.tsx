@@ -119,8 +119,8 @@ const brandData: Record<string, BrandData> = {
       },
       {
         heading: 'Audio',
-        subheading: 'Adante in-wall amplifier.',
-        body: "The Adante is Basalte's premium in-wall amplifier. Streams music from Spotify, Tidal, and AirPlay. Built-in DAC. Controlled from the same Basalte keypads as your lighting — so adjusting the volume is the same gesture as adjusting the lights. No visible equipment. No separate app. Just music.",
+        subheading: 'Asano multiroom amplifier.',
+        body: "The Asano is Basalte's premium multiroom amplifier. Available in M4 and P4 configurations — four zones of audio, all controlled from the same Basalte keypads as your lighting. Streams from Spotify, Tidal, and AirPlay. Crystal-clear audio. No visible equipment. No separate app. Just music, everywhere.",
         image: '/images/basalte-fibonacci.jpg',
         imageAlt: 'Basalte audio system in a Melbourne residence',
       },
@@ -400,8 +400,8 @@ const brandData: Record<string, BrandData> = {
       },
       {
         heading: 'UniFi Access',
-        subheading: 'Smart locks. NFC. Video intercom.',
-        body: "Smart door locks and access control with NFC, PIN, and mobile app entry. Manage who enters, when, and from where — with a full access log. The Intercom G4 delivers full HD video intercom with two-way audio and remote unlock. All managed from the same dashboard as your network and cameras. One platform for the entire property.",
+        subheading: 'Doorbells. Intercoms. Access control.',
+        body: "The UniFi doorbell and intercom range covers every residential scenario. The Doorbell Lite is the entry-level PoE doorbell. The G4 Pro Doorbell adds a wide-angle lens and two-way audio. The G6 Entry and G6 Pro Entry are the next generation — the G6 Pro combines a 12MP sensor, AI engine, FaceID, NFC, and a customisable touchscreen, bridging Protect and Access in one device. Smart door locks with NFC and PIN entry complete the access system. Everything managed from the same UniFi dashboard as your network and cameras.",
         image: '/images/haven-7.jpg',
         imageAlt: 'UniFi Access control and intercom in a Melbourne property',
       },
