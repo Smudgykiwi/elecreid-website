@@ -3,20 +3,20 @@ import Image from 'next/image'
 
 const projects = [
   {
-    title: 'McKimm',
-    location: 'Brighton, VIC',
-    desc: 'Full residential smart home integration across a luxury new build. Apple HomeKit automation, Unifi networking, Lutron lighting control, Sonos multi-room audio, outdoor AV, and pool automation.',
-    tags: ['Apple HomeKit', 'Unifi', 'Lutron', 'Sonos', 'Pool Automation'],
-    hero: '/images/mckimm-5.jpg',
-    gallery: ['/images/mckimm-3.jpg', '/images/mckimm-1.jpg', '/images/mckimm-2.jpg'],
-  },
-  {
     title: 'Haven Court',
     location: 'Torquay, VIC',
     desc: 'Architecturally integrated smart home in a striking custom build. Whole-home climate control, automated louvre screens, structured networking, multi-room AV, and comprehensive lighting design.',
     tags: ['Smart Home', 'Climate Control', 'Automated Louvres', 'AV', 'Networking'],
     hero: '/images/haven-1.jpg',
     gallery: ['/images/haven-6.jpg', '/images/haven-5.jpg', '/images/haven-7.jpg'],
+  },
+  {
+    title: 'McKimm',
+    location: 'Brighton, VIC',
+    desc: 'Full residential smart home integration across a luxury new build. Apple HomeKit automation, Unifi networking, Lutron lighting control, Sonos multi-room audio, outdoor AV, and pool automation.',
+    tags: ['Apple HomeKit', 'Unifi', 'Lutron', 'Sonos', 'Pool Automation'],
+    hero: '/images/mckimm-3.jpg',
+    gallery: ['/images/mckimm-1.jpg', '/images/mckimm-4.jpg'],
   },
   {
     title: 'Fitzroy Street',

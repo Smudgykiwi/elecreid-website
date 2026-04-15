@@ -62,8 +62,8 @@ export default function Home() {
               </h2>
               <div className="mt-8 overflow-hidden">
                 <Image
-                  src="/images/main-2.png"
-                  alt="Basalte brass dimmer detail"
+                  src="/images/haven-5.jpg"
+                  alt="Haven Court, Torquay — smart home control"
                   width={900}
                   height={900}
                   className="w-full aspect-square object-cover"
@@ -161,8 +161,8 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-2 gap-6">
             {[
-              { title: 'McKimm, Brighton', desc: 'Full smart home integration', tags: ['Apple HomeKit', 'Unifi', 'Lutron'], img: '/images/mckimm-5.jpg' },
               { title: 'Haven Court, Torquay', desc: 'Architecture & automation', tags: ['Smart Home', 'Lighting', 'AV'], img: '/images/haven-6.jpg' },
+              { title: 'McKimm, Brighton', desc: 'Full smart home integration', tags: ['Apple HomeKit', 'Unifi', 'Lutron'], img: '/images/mckimm-3.jpg' },
             ].map((project) => (
               <div key={project.desc} className="group cursor-pointer">
                 <div className="aspect-[4/3] bg-[#E8E4DF] mb-6 overflow-hidden relative">
