@@ -20,8 +20,8 @@ export default function Home() {
 
           <div className="mt-10 mb-10 w-full overflow-hidden">
             <Image
-              src="/images/haven-1.jpg"
-              alt="Haven Court, Torquay — Elec Reid smart home installation"
+              src="/images/mckimm-5.jpg"
+              alt="McKimm Brighton — Elec Reid smart home installation"
               width={2000}
               height={1333}
               className="w-full h-[50vh] lg:h-[65vh] object-cover object-center"
