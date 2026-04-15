@@ -20,11 +20,11 @@ export default function Home() {
 
           <div className="mt-10 mb-10 w-full overflow-hidden">
             <Image
-              src="/images/main.jpg"
-              alt="Elec Reid — premium smart home hardware"
-              width={1800}
-              height={1200}
-              className="w-full h-[50vh] lg:h-[60vh] object-cover object-center"
+              src="/images/haven-1.jpg"
+              alt="Haven Court, Torquay — Elec Reid smart home installation"
+              width={2000}
+              height={1333}
+              className="w-full h-[50vh] lg:h-[65vh] object-cover object-center"
               priority
             />
           </div>
@@ -161,8 +161,8 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-2 gap-6">
             {[
-              { title: 'McKimm, Brighton', desc: 'Full smart home integration', tags: ['Apple HomeKit', 'Unifi', 'Lutron'], img: '/images/mckimm-3.jpg' },
-              { title: 'McKimm, Brighton', desc: 'Outdoor automation & AV', tags: ['Lighting', 'Pool Control', 'Security'], img: '/images/mckimm-1.jpg' },
+              { title: 'McKimm, Brighton', desc: 'Full smart home integration', tags: ['Apple HomeKit', 'Unifi', 'Lutron'], img: '/images/mckimm-5.jpg' },
+              { title: 'Haven Court, Torquay', desc: 'Architecture & automation', tags: ['Smart Home', 'Lighting', 'AV'], img: '/images/haven-6.jpg' },
             ].map((project) => (
               <div key={project.desc} className="group cursor-pointer">
                 <div className="aspect-[4/3] bg-[#E8E4DF] mb-6 overflow-hidden relative">
