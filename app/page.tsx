@@ -18,19 +18,7 @@ export default function Home() {
             <span className="italic">Considered.</span>
           </h1>
 
-          {/* Hero image — replace with real job photo */}
-          <div className="mt-10 mb-10 w-full aspect-[21/9] overflow-hidden bg-[#E8E4DF]">
-            <Image
-              src="/images/photo-job.jpg"
-              alt="Elec Reid project"
-              width={1800}
-              height={771}
-              className="w-full h-full object-cover"
-              priority
-            />
-          </div>
-
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mt-12">
             <p className="text-[#1A1A1A]/60 text-lg max-w-md leading-relaxed">
               Melbourne&apos;s only electrical company built around Apple HomeKit.
               Design, install, program, handover — one team, one outcome.
@@ -157,10 +145,10 @@ export default function Home() {
               { title: 'South Yarra Apartment', desc: 'Automation & lighting design', tags: ['Home Assistant', 'KNX', 'Basalte'] },
             ].map((project) => (
               <div key={project.title} className="group cursor-pointer">
-                <div className="aspect-[4/3] bg-[#E8E4DF] mb-6 overflow-hidden relative">
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/50 to-transparent">
-                    <p className="font-austin text-2xl text-white mb-1">{project.title}</p>
-                    <p className="text-white/70 text-sm">{project.desc}</p>
+                <div className="aspect-[4/3] bg-[#E8E4DF] mb-6 overflow-hidden flex items-end p-8">
+                  <div>
+                    <p className="font-austin text-2xl text-[#1A1A1A] mb-1">{project.title}</p>
+                    <p className="text-[#1A1A1A]/50 text-sm">{project.desc}</p>
                   </div>
                 </div>
                 <div className="flex gap-3 flex-wrap">
