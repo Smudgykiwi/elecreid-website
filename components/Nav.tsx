@@ -22,7 +22,9 @@ const commercialBrands = [
   { label: 'Logitech', href: '/brands/logitech' },
   { label: 'Q-SYS by QSC', href: '/brands/qsc' },
   { label: 'Samsung', href: '/brands/samsung' },
-  { label: 'Audio & Live Sound', href: '/brands/audio' },
+  { label: 'Audio', href: '/brands/audio' },
+  { label: 'Quest', href: '/brands/quest' },
+  { label: 'd&b audiotechnik', href: '/brands/db-audiotechnik' },
   { label: 'L-Acoustics', href: '/brands/l-acoustics' },
   { label: 'Video Walls', href: '/brands/video-wall' },
 ]
