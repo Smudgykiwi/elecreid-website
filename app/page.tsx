@@ -1,8 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
+    <>
+    <Nav />
     <div className="bg-[#F5F2EE]">
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
@@ -284,5 +288,7 @@ export default function Home() {
       </section>
 
     </div>
+    <Footer />
+    </>
   )
 }

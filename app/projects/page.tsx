@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 
 const projects = [
   {
@@ -31,6 +33,7 @@ const projects = [
 export default function Projects() {
   return (
     <>
+      <Nav />
       {/* Header */}
       <section className="bg-[#F7F4F0] px-6 lg:px-10 pt-36 pb-12">
         <div className="max-w-7xl mx-auto">
@@ -96,6 +99,7 @@ export default function Projects() {
           </Link>
         </div>
       </section>
+      <Footer />
     </>
   )
 }

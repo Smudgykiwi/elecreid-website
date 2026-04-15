@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
+
 
 export const metadata: Metadata = {
   title: 'Contact — Elec Reid',
@@ -9,6 +12,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <Nav />
       {/* Hero */}
       <section className="bg-[#16253F] px-6 lg:px-10 pt-36 pb-24 lg:pb-32">
         <div className="max-w-7xl mx-auto">
@@ -178,6 +182,7 @@ export default function ContactPage() {
           </Link>
         </div>
       </section>
+      <Footer />
     </>
   )
 }
