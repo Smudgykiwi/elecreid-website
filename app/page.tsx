@@ -161,14 +161,15 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-2 gap-6">
             {[
-              { title: 'Toorak Residence', desc: 'Full smart home integration', tags: ['Apple HomeKit', 'Unifi', 'Lutron', 'Sonos'] },
-              { title: 'South Yarra Apartment', desc: 'Automation & lighting design', tags: ['Home Assistant', 'KNX', 'Basalte'] },
+              { title: 'McKimm, Brighton', desc: 'Full smart home integration', tags: ['Apple HomeKit', 'Unifi', 'Lutron'], img: '/images/mckimm-3.jpg' },
+              { title: 'McKimm, Brighton', desc: 'Outdoor automation & AV', tags: ['Lighting', 'Pool Control', 'Security'], img: '/images/mckimm-1.jpg' },
             ].map((project) => (
-              <div key={project.title} className="group cursor-pointer">
-                <div className="aspect-[4/3] bg-[#E8E4DF] mb-6 overflow-hidden flex items-end p-8">
-                  <div>
-                    <p className="font-austin text-2xl text-[#1A1A1A] mb-1">{project.title}</p>
-                    <p className="text-[#1A1A1A]/50 text-sm">{project.desc}</p>
+              <div key={project.desc} className="group cursor-pointer">
+                <div className="aspect-[4/3] bg-[#E8E4DF] mb-6 overflow-hidden relative">
+                  <Image src={project.img} alt={project.title} width={800} height={600} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
+                    <p className="font-austin text-2xl text-white mb-1">{project.title}</p>
+                    <p className="text-white/70 text-sm">{project.desc}</p>
                   </div>
                 </div>
                 <div className="flex gap-3 flex-wrap">
