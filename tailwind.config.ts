@@ -8,20 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        austin: ['Austin', 'Georgia', 'serif'],
+        'austin-hairline': ['AustinHairline', 'Georgia', 'serif'],
+        sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
+      },
       colors: {
         navy: '#16253F',
-        'navy-light': '#1e3357',
         blue: '#0134E7',
-        'blue-dark': '#012ab8',
-        grey: '#F5F5F3',
+        cream: '#F7F4F0',
         dark: '#1A1A1A',
-      },
-      fontFamily: {
-        grotesk: ['var(--font-space-grotesk)', 'sans-serif'],
-        heebo: ['var(--font-heebo)', 'sans-serif'],
-      },
-      letterSpacing: {
-        widest: '0.2em',
       },
     },
   },

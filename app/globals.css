@@ -2,11 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --navy: #16253F;
-  --blue: #0134E7;
-  --grey: #F5F5F3;
-  --dark: #1A1A1A;
+@font-face {
+  font-family: 'Austin';
+  src: url('/fonts/Austin-Roman.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Austin';
+  src: url('/fonts/Austin-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Austin';
+  src: url('/fonts/Austin-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AustinHairline';
+  src: url('/fonts/AustinHairline.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 html {
@@ -14,38 +39,16 @@ html {
 }
 
 body {
-  @apply font-heebo text-dark antialiased;
-  background-color: #ffffff;
+  background-color: #F7F4F0;
+  color: #1A1A1A;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #16253F;
-}
-::-webkit-scrollbar-thumb {
-  background: #0134E7;
-  border-radius: 3px;
+.font-austin {
+  font-family: 'Austin', Georgia, serif;
 }
 
-/* Selection */
-::selection {
-  background: #0134E7;
-  color: white;
-}
-
-/* Utilities */
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-/* Transition base */
-* {
-  transition-property: color, background-color, border-color, opacity, transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms;
+.font-austin-hairline {
+  font-family: 'AustinHairline', Georgia, serif;
 }
