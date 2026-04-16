@@ -4,8 +4,8 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Smart Home Brands Melbourne | Apple Home, Basalte, Unifi & More | Elec Reid',
-  description: 'Elec Reid installs and integrates the world\'s best smart home and commercial AV brands in Melbourne. Apple Home, Basalte, Home Assistant, Control4, KNX, C-Bus, Unifi, Sonos, Logitech, QSC, Samsung.',
+  title: 'Smart Home & AV Solutions Melbourne | Residential & Commercial | Elec Reid',
+  description: 'Elec Reid installs and integrates the best smart home and commercial AV solutions in Melbourne. Apple Home, Basalte, UniFi, WiiM, Inner Range, Sonos, Logitech, QSC, Samsung and more.',
 }
 
 const residentialBrands = [
@@ -86,6 +86,27 @@ const residentialBrands = [
     tagColor: 'bg-[#1A1A1A]/10 text-[#1A1A1A]',
     description: 'From in-ceiling speakers to commercial PA. D&B, AL Acoustics, Sonos. System design from source to speaker.',
   },
+  {
+    name: 'WiiM',
+    href: '/brands/wiim',
+    tag: 'Audio Streaming',
+    tagColor: 'bg-[#1A1A1A]/10 text-[#1A1A1A]',
+    description: 'Hi-res streaming amplifiers. AirPlay 2 native, Spotify Connect, multiroom. No subscription. Integrates with Apple Home.',
+  },
+  {
+    name: 'Cameras',
+    href: '/brands/cameras',
+    tag: 'UniFi Protect',
+    tagColor: 'bg-[#1A1A1A]/10 text-[#1A1A1A]',
+    description: 'Local recording, no subscription, AI-powered detection. UniFi Protect — your footage stays in your home.',
+  },
+  {
+    name: 'Security',
+    href: '/brands/security',
+    tag: 'Inner Range',
+    tagColor: 'bg-[#1A1A1A]/10 text-[#1A1A1A]',
+    description: 'Inner Range Inception and Integriti. Australian-designed security systems, programmed and integrated by us.',
+  },
 ]
 
 const commercialBrands = [
@@ -151,7 +172,7 @@ export default function BrandsPage() {
           {/* Residential Section */}
           <div className="mb-20">
             <h2 className="font-austin text-3xl md:text-4xl text-[#1A1A1A] mb-10 leading-tight">
-              Residential
+              Residential Solutions
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#1A1A1A]/10">
               {residentialBrands.map((brand) => (
@@ -183,7 +204,7 @@ export default function BrandsPage() {
           {/* Commercial Section */}
           <div className="mb-20">
             <h2 className="font-austin text-3xl md:text-4xl text-[#1A1A1A] mb-10 leading-tight">
-              Commercial
+              Commercial Solutions
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#1A1A1A]/10">
               {commercialBrands.map((brand) => (

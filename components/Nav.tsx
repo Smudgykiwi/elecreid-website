@@ -4,17 +4,58 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const residentialBrands = [
-  { label: 'Apple Home', href: '/brands/apple-home' },
-  { label: 'Basalte', href: '/brands/basalte' },
-  { label: 'Home Assistant', href: '/brands/home-assistant' },
-  { label: 'Control4', href: '/brands/control4' },
-  { label: 'KNX', href: '/brands/knx' },
-  { label: 'Ekinex', href: '/brands/ekinex' },
-  { label: 'C-Bus', href: '/brands/cbus' },
-  { label: 'Core Smart Home', href: '/brands/core-smart-home' },
-  { label: 'Unifi', href: '/brands/unifi' },
-  { label: 'Sonos', href: '/brands/sonos' },
+const residentialCategories = [
+  {
+    label: 'Smart Home Systems',
+    href: '/brands/apple-home',
+    brands: [
+      { label: 'Apple Home', href: '/brands/apple-home' },
+      { label: 'Home Assistant', href: '/brands/home-assistant' },
+      { label: 'Control4', href: '/brands/control4' },
+      { label: 'C-Bus', href: '/brands/cbus' },
+      { label: 'Basalte Home', href: '/brands/basalte' },
+    ],
+  },
+  {
+    label: 'Touchscreens & Keypads',
+    href: '/brands/basalte',
+    brands: [
+      { label: 'Basalte (Ellie, Lisa, Sentido, Fibonacci, Adelante)', href: '/brands/basalte' },
+      { label: 'Core Smart Home (Eclipse)', href: '/brands/core-smart-home' },
+      { label: 'Ekinex (20Venti, Proxima)', href: '/brands/ekinex' },
+      { label: 'Control4 (T5, Lux, DS3)', href: '/brands/control4' },
+    ],
+  },
+  {
+    label: 'Networking',
+    href: '/brands/unifi',
+    brands: [
+      { label: 'Unifi', href: '/brands/unifi' },
+      { label: 'TP-Link', href: '/brands/cameras' },
+    ],
+  },
+  {
+    label: 'Audio',
+    href: '/brands/sonos',
+    brands: [
+      { label: 'Sonos', href: '/brands/sonos' },
+      { label: 'WiiM', href: '/brands/wiim' },
+    ],
+  },
+  {
+    label: 'Cameras',
+    href: '/brands/cameras',
+    brands: [
+      { label: 'Camera Systems', href: '/brands/cameras' },
+    ],
+  },
+  {
+    label: 'Security',
+    href: '/brands/security',
+    brands: [
+      { label: 'Security Systems', href: '/brands/security' },
+    ],
+  },
 ]
 
 const commercialCategories = [
@@ -48,7 +89,7 @@ const commercialCategories = [
     brands: [
       { label: 'KNX', href: '/brands/knx' },
       { label: 'Philips Dynalite', href: '/brands/dynalite' },
-      { label: 'Q-SYS by QSC', href: '/brands/qsc' },
+      { label: 'Q-SYS', href: '/brands/qsc' },
     ],
   },
 ]
@@ -81,40 +122,49 @@ export default function Nav() {
             Services
           </Link>
 
-          {/* Brands mega-dropdown */}
+          {/* Solutions mega-dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setBrandsOpen(true)}
             onMouseLeave={() => setBrandsOpen(false)}
           >
             <button className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors flex items-center gap-1">
-              Brands
+              Solutions
               <span className={`text-[8px] transition-transform duration-200 ${brandsOpen ? 'rotate-180' : ''}`}>▾</span>
             </button>
 
             {brandsOpen && (
-              <div className="absolute top-full right-0 mt-2 bg-white border border-[#1A1A1A]/8 shadow-2xl w-[680px] p-8 z-50">
+              <div className="absolute top-full right-0 mt-2 bg-white border border-[#1A1A1A]/8 shadow-2xl w-[780px] p-8 z-50">
                 <div className="grid grid-cols-2 gap-10">
 
-                  {/* Residential */}
+                  {/* Residential Solutions */}
                   <div>
                     <p className="text-[8px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-5 pb-2 border-b border-[#1A1A1A]/8">
-                      Residential
+                      Residential Solutions
                     </p>
-                    <div className="space-y-2">
-                      {residentialBrands.map((b) => (
-                        <Link key={b.href} href={b.href}
-                          className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/65 hover:text-[#0134E7] transition-colors py-0.5">
-                          {b.label}
-                        </Link>
+                    <div className="space-y-5">
+                      {residentialCategories.map((cat) => (
+                        <div key={cat.label}>
+                          <Link href={cat.href} className="block text-[10px] tracking-[0.15em] text-[#1A1A1A] font-medium uppercase hover:text-[#0134E7] transition-colors mb-1.5">
+                            {cat.label}
+                          </Link>
+                          <div className="pl-3 space-y-1 border-l border-[#1A1A1A]/10">
+                            {cat.brands.map((b) => (
+                              <Link key={b.href + b.label} href={b.href}
+                                className="block text-[9px] tracking-[0.1em] text-[#1A1A1A]/45 hover:text-[#0134E7] transition-colors py-0.5">
+                                {b.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
                       ))}
                     </div>
                   </div>
 
-                  {/* Commercial */}
+                  {/* Commercial Solutions */}
                   <div>
                     <p className="text-[8px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-5 pb-2 border-b border-[#1A1A1A]/8">
-                      Commercial
+                      Commercial Solutions
                     </p>
                     <div className="space-y-5">
                       {commercialCategories.map((cat) => (
@@ -124,7 +174,7 @@ export default function Nav() {
                           </Link>
                           <div className="pl-3 space-y-1 border-l border-[#1A1A1A]/10">
                             {cat.brands.map((b) => (
-                              <Link key={b.href} href={b.href}
+                              <Link key={b.href + b.label} href={b.href}
                                 className="block text-[9px] tracking-[0.1em] text-[#1A1A1A]/45 hover:text-[#0134E7] transition-colors py-0.5">
                                 {b.label}
                               </Link>
@@ -177,34 +227,45 @@ export default function Nav() {
             </Link>
           ))}
 
-          {/* Residential */}
+          {/* Residential Solutions */}
           <button onClick={() => setMobileOpen(mobileOpen === 'residential' ? null : 'residential')}
             className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60 text-left flex items-center justify-between">
-            Residential Brands <span className={`transition-transform ${mobileOpen === 'residential' ? 'rotate-180' : ''}`}>▾</span>
+            Residential Solutions <span className={`transition-transform ${mobileOpen === 'residential' ? 'rotate-180' : ''}`}>▾</span>
           </button>
           {mobileOpen === 'residential' && (
-            <div className="pl-4 space-y-2">
-              {residentialBrands.map((b) => (
-                <Link key={b.href} href={b.href} onClick={() => setMenuOpen(false)}
-                  className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/55 py-1">
-                  {b.label}
-                </Link>
+            <div className="pl-4 space-y-4">
+              {residentialCategories.map((cat) => (
+                <div key={cat.label}>
+                  <Link href={cat.href} onClick={() => setMenuOpen(false)}
+                    className="block text-[9px] tracking-[0.2em] text-[#1A1A1A]/40 uppercase mb-1">
+                    {cat.label}
+                  </Link>
+                  {cat.brands.map((b) => (
+                    <Link key={b.href + b.label} href={b.href} onClick={() => setMenuOpen(false)}
+                      className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/60 py-1 pl-2">
+                      {b.label}
+                    </Link>
+                  ))}
+                </div>
               ))}
             </div>
           )}
 
-          {/* Commercial categories */}
+          {/* Commercial Solutions */}
           <button onClick={() => setMobileOpen(mobileOpen === 'commercial' ? null : 'commercial')}
             className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60 text-left flex items-center justify-between">
-            Commercial Brands <span className={`transition-transform ${mobileOpen === 'commercial' ? 'rotate-180' : ''}`}>▾</span>
+            Commercial Solutions <span className={`transition-transform ${mobileOpen === 'commercial' ? 'rotate-180' : ''}`}>▾</span>
           </button>
           {mobileOpen === 'commercial' && (
             <div className="pl-4 space-y-4">
               {commercialCategories.map((cat) => (
                 <div key={cat.label}>
-                  <p className="text-[9px] tracking-[0.2em] text-[#1A1A1A]/40 uppercase mb-1">{cat.label}</p>
+                  <Link href={cat.href} onClick={() => setMenuOpen(false)}
+                    className="block text-[9px] tracking-[0.2em] text-[#1A1A1A]/40 uppercase mb-1">
+                    {cat.label}
+                  </Link>
                   {cat.brands.map((b) => (
-                    <Link key={b.href} href={b.href} onClick={() => setMenuOpen(false)}
+                    <Link key={b.href + b.label} href={b.href} onClick={() => setMenuOpen(false)}
                       className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/60 py-1 pl-2">
                       {b.label}
                     </Link>
