@@ -41,10 +41,13 @@ export default function AboutPage() {
           </div>
           <div className="lg:col-span-7 lg:col-start-6 lg:pt-4">
             <p className="font-austin text-[#1A1A1A] text-3xl lg:text-4xl leading-tight mb-8">
-              Joe Reid came to Australia from New Zealand with a love for music and a decade in the live sound industry behind him.
+              Joe Reid grew up playing drums in bands across New Zealand. Music was never a hobby — it was the thing.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Concerts. Touring shows. Events. For years, the work was building temporary experiences that had to be perfect — because you only had one chance. Three hours. One show. Everything had to work.
+              Touring. Recording. Living the rhythm of a band that takes its craft seriously. That background built an instinct for what great audio actually sounds like — and an intolerance for anything less.
+            </p>
+            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
+              Moving to Australia, that love for music led naturally into the live industry. Concerts. Touring productions. Major events. For years, the work was building temporary experiences that had to be perfect — because you only had one chance. Three hours. One show. Thousands of people. Everything had to work.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
               When Covid brought the live industry to a halt, Joe made a decision. He qualified as an A-grade electrician and turned his attention to a different kind of installation — not temporary, but permanent. Not a single night, but a lifetime. The same craft, applied to the spaces people actually live in.
