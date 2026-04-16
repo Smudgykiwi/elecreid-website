@@ -31,14 +31,17 @@ export default function AboutPage() {
 
             {/* Photo */}
             <div className="lg:col-span-4">
-              <div className="aspect-[3/4] bg-[#E8E4DF] overflow-hidden relative">
-                {/* Joe's photo goes here — send a photo and we'll replace this placeholder */}
-                <div className="absolute inset-0 flex items-end p-8">
-                  <div>
-                    <p className="font-austin text-[#1A1A1A] text-2xl">Joe Reid</p>
-                    <p className="text-[9px] tracking-[0.2em] text-[#1A1A1A]/40 uppercase mt-1">Founder & Director</p>
-                  </div>
-                </div>
+              <div className="aspect-[3/4] overflow-hidden relative">
+                <Image
+                  src="/images/joe-reid-1.jpg"
+                  alt="Joe Reid — Founder, Elec Reid"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+              <div className="mt-4">
+                <p className="font-austin text-[#1A1A1A] text-xl">Joe Reid</p>
+                <p className="text-[9px] tracking-[0.2em] text-[#1A1A1A]/40 uppercase mt-1">Founder & Director · Elec Reid</p>
               </div>
             </div>
 
@@ -48,7 +51,13 @@ export default function AboutPage() {
 
               <blockquote className="space-y-5 text-[#1A1A1A]/70 text-lg leading-relaxed">
                 <p>
-                  I started my career as a sound engineer, working on live performances and touring shows. That environment taught me how sound, lighting, visuals, and technology behave in real spaces — not in theory, but under pressure, with no room for failure. It is where I developed a deep appreciation for precision, planning, and systems that have to work every time.
+                  I grew up in New Zealand, playing drums from a young age in church and in bands. Music was never just a hobby. It was the way I understood spaces, how people experience them, and what makes them come alive.
+                </p>
+                <p>
+                  That foundation led me into the live sound industry. Coming to Australia, I became part of concerts, touring shows, and large-scale events. That environment taught me how sound, lighting, visuals, and technology behave in real spaces — not in theory, but under pressure, with no room for failure. It is where I developed a deep appreciation for precision, planning, and systems that have to work every time.
+                </p>
+                <p>
+                  The church connection has stayed with me. We have helped congregations across Melbourne create spaces where the technology serves the worship — where the audio and visuals are clear, reliable, and invisible to the experience. That work matters to us beyond the brief.
                 </p>
                 <p>
                   Over time, that work led me into designing audio systems, home cinemas, and smart technologies for friends, family, and clients. As those projects grew more complex, I became increasingly focused on the electrical infrastructure behind the technology. I wanted to understand not just how systems looked and sounded, but how they were powered, protected, and built to perform reliably long-term. That is what led me to train as an electrician.
