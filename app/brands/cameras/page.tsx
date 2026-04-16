@@ -68,7 +68,7 @@ export default function CamerasPage() {
       <section className="relative bg-[#1A1A1A] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/haven-7.jpg"
+            src="/images/haven-dsc05741.jpg"
             alt="UniFi camera system rack installation Melbourne"
             fill
             className="object-cover opacity-20"

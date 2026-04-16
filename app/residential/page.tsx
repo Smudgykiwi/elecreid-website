@@ -47,7 +47,7 @@ export default function Home() {
         <div className="max-w-screen-xl mx-auto">
           <div className="overflow-hidden">
             <Image
-              src="/images/haven-dsc05589.jpg"
+              src="/images/haven-dsc05570.jpg"
               alt="McKimm Brighton Elec Reid"
               width={2000}
               height={1200}
@@ -88,7 +88,7 @@ export default function Home() {
                 className="w-full aspect-[4/3] object-cover hover:scale-[1.03] transition-transform duration-700" />
             </div>
             <div className="overflow-hidden">
-              <Image src="/images/haven-6.jpg" alt="Haven Court exterior" width={900} height={675}
+              <Image src="/images/haven-dsc05771.jpg" alt="Haven Court exterior with smart doorbell" width={900} height={675}
                 className="w-full aspect-[4/3] object-cover hover:scale-[1.03] transition-transform duration-700" />
             </div>
           </div>
@@ -192,7 +192,7 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-2 gap-4">
             {[
-              { title: 'Haven Court', location: 'Torquay, VIC', img: '/images/haven-6.jpg' },
+              { title: 'Haven Court', location: 'Torquay, VIC', img: '/images/haven-dsc05570.jpg' },
               { title: 'McKimm', location: 'Brighton, VIC', img: '/images/mckimm-3.jpg' },
             ].map((project) => (
               <Link key={project.title} href="/projects" className="group block">
