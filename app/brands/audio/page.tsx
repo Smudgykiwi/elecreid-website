@@ -37,10 +37,10 @@ export default function AudioPage() {
           </div>
           <div className="lg:pt-6">
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Before Elec Reid, this was the work. Concerts. Touring productions. Major events. A decade running professional audio at scale — sourcing gear, designing systems, making shows happen. That background is not decorative. It is the reason our commercial audio installations are built to a different standard.
+              Before Elec Reid, this was the work. Concerts. Touring productions. Major events. A decade running professional audio at scale sourcing gear, designing systems, making shows happen. That background is not decorative. It is the reason our commercial audio installations are built to a different standard.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Today, the work is creating the spaces that run those events. Event rooms. Bars and venues. Restaurants. Office spaces. Function facilities. We design and install permanent audio systems that perform night after night — not just for one show.
+              Today, the work is creating the spaces that run those events. Event rooms. Bars and venues. Restaurants. Office spaces. Function facilities. We design and install permanent audio systems that perform night after night not just for one show.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
               Whether the brief is background music for a restaurant or a full sound system for a venue that hosts live acts three nights a week, we have done it at scale and we know exactly what is required.
@@ -125,10 +125,10 @@ export default function AudioPage() {
           <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-12">The spaces we work in.</h2>
           <div className="grid lg:grid-cols-2 gap-10">
             {[
-              { title: 'Event rooms & function facilities.', body: 'A permanent system that handles background music, presentations, speeches, and live performers — in the same room, without a compromise.' },
+              { title: 'Event rooms & function facilities.', body: 'A permanent system that handles background music, presentations, speeches, and live performers in the same room, without a compromise.' },
               { title: 'Bars, venues & nightclubs.', body: 'Professional audio that runs every night of the week. Not a hire system brought in for the occasion. A permanent installation that performs like one.' },
               { title: 'Restaurants & hospitality.', body: 'Background music that sets the atmosphere and disappears. Consistent across the room. Adjustable by zone. Scheduled to the service period.' },
-              { title: 'Corporate & office spaces.', body: 'Board rooms, town halls, training rooms, lobbies. Audio that supports how the space is used — whether that is a presentation, a hybrid meeting, or ambient music.' },
+              { title: 'Corporate & office spaces.', body: 'Board rooms, town halls, training rooms, lobbies. Audio that supports how the space is used whether that is a presentation, a hybrid meeting, or ambient music.' },
             ].map((item) => (
               <div key={item.title} className="border-t border-[#1A1A1A]/10 pt-8">
                 <h3 className="font-austin text-[#1A1A1A] text-xl mb-3">{item.title}</h3>

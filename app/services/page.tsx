@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 
 export const metadata: Metadata = {
-  title: 'Services — Elec Reid',
+  title: 'Services Elec Reid',
   description:
     'Smart home, networking, AV, security, electrical, lighting. Full residential integration by Elec Reid, Melbourne.',
 }
@@ -15,7 +15,7 @@ const platforms = [
     name: 'Apple Home',
     tag: 'Our #1 Recommendation',
     tagColor: 'bg-[#0134E7] text-white',
-    desc: 'Our #1 recommendation for most residential smart homes. No subscription fees, end-to-end encryption, powerful automations. Your iPhone, iPad, Apple Watch, or Siri — one beautiful control point for your entire house.',
+    desc: 'Our #1 recommendation for most residential smart homes. No subscription fees, end-to-end encryption, powerful automations. Your iPhone, iPad, Apple Watch, or Siri one beautiful control point for your entire house.',
     ideal: 'Apple ecosystem households, new builds, renovations',
   },
   {
@@ -29,7 +29,7 @@ const platforms = [
     name: 'Basalte Home',
     tag: 'Premium',
     tagColor: 'bg-[#F5F5F3] text-[#16253F]',
-    desc: 'The premium choice. Belgian-engineered. When you want beautiful Basalte touchscreens integrated seamlessly — designed by the same hands that made your switches.',
+    desc: 'The premium choice. Belgian-engineered. When you want beautiful Basalte touchscreens integrated seamlessly designed by the same hands that made your switches.',
     ideal: 'High-end renovations, design-led projects',
   },
   {
@@ -45,37 +45,37 @@ const services = [
   {
     num: '01',
     title: 'Smart Home Automation',
-    body: 'Apple HomeKit, Home Assistant, Basalte, Control4. We help you choose the platform that fits how you actually live — then design, install, and program it to disappear into your home.',
+    body: 'Apple HomeKit, Home Assistant, Basalte, Control4. We help you choose the platform that fits how you actually live then design, install, and program it to disappear into your home.',
     items: ['Platform selection & design', 'Full programming & scenes', 'Voice control integration', 'Ongoing support'],
   },
   {
     num: '02',
     title: 'Networking',
-    body: 'Ubiquiti backbone, enterprise Wi-Fi, PoE. Infrastructure built to perform — invisibly. Rock-solid foundations that every smart device in your home depends on.',
+    body: 'Ubiquiti backbone, enterprise Wi-Fi, PoE. Infrastructure built to perform invisibly. Rock-solid foundations that every smart device in your home depends on.',
     items: ['Ubiquiti UniFi architecture', 'Whole-home Wi-Fi coverage', 'PoE switching & structured cabling', 'VLAN segmentation & security'],
   },
   {
     num: '03',
     title: 'Lighting',
-    body: 'Dimming, scenes, circadian scheduling. Light that responds to how you live. From the morning fade-up to the evening wind-down — designed with the interior in mind.',
+    body: 'Dimming, scenes, circadian scheduling. Light that responds to how you live. From the morning fade-up to the evening wind-down designed with the interior in mind.',
     items: ['Lutron, Dynalite, KNX integration', 'Scene programming', 'Circadian rhythm automation', 'Keypad & touchscreen control'],
   },
   {
     num: '04',
     title: 'Motorised Blinds',
-    body: 'Somfy, Lutron, motorised automation. Privacy, temperature control, and light management — all automated and integrated with your wider home system.',
+    body: 'Somfy, Lutron, motorised automation. Privacy, temperature control, and light management all automated and integrated with your wider home system.',
     items: ['Somfy & Lutron systems', 'Smart home integration', 'Scene-based automation', 'App & voice control'],
   },
   {
     num: '05',
     title: 'Security',
-    body: 'Alarm systems, CCTV, access control, intercom, keyless entry. A complete security layer that integrates with your smart home — not a bolted-on afterthought.',
+    body: 'Alarm systems, CCTV, access control, intercom, keyless entry. A complete security layer that integrates with your smart home not a bolted-on afterthought.',
     items: ['IP CCTV & recording', 'Alarm systems & monitoring', 'Video intercom & access control', 'Smart locks & keyless entry'],
   },
   {
     num: '06',
     title: 'AV & Home Cinema',
-    body: 'Cinema rooms, hidden AV, multi-room audio, outdoor zones. Sound and vision done properly — cables hidden, sources centralised, control simplified.',
+    body: 'Cinema rooms, hidden AV, multi-room audio, outdoor zones. Sound and vision done properly cables hidden, sources centralised, control simplified.',
     items: ['Dedicated cinema rooms', 'Multi-room audio distribution', 'Hidden AV equipment racks', 'Outdoor speaker systems'],
   },
   {

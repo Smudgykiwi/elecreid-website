@@ -54,7 +54,7 @@ const products = [
 const reasons = [
   { title: 'Local recording', body: 'No cloud. No subscription. Your footage lives in your home, accessible only to you.' },
   { title: 'Unified with network', body: 'Cameras run on the same UniFi infrastructure as Wi-Fi and access control. One dashboard, one system.' },
-  { title: 'AI detection', body: 'Real alerts, not constant motion notifications. Person, vehicle, animal, package — each tagged and searchable.' },
+  { title: 'AI detection', body: 'Real alerts, not constant motion notifications. Person, vehicle, animal, package each tagged and searchable.' },
   { title: 'Professional installation', body: 'Correct placement, clean cable routing, PoE switching design. Every camera covers what it should.' },
 ]
 
@@ -100,7 +100,7 @@ export default function CamerasPage() {
               Security cameras are only as good as the system behind them. Most cameras send footage to a cloud server you don&apos;t control, run on a subscription you pay forever, and deliver footage you can&apos;t actually access when you need it.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Elec Reid installs UniFi Protect — local recording, no subscription, AI-powered detection, and full integration with your smart home network. Your footage stays in your home.
+              Elec Reid installs UniFi Protect local recording, no subscription, AI-powered detection, and full integration with your smart home network. Your footage stays in your home.
             </p>
             <div className="border-l-2 border-[#0134E7] pl-6 mt-8">
               <p className="text-[9px] tracking-[0.2em] text-[#0134E7] uppercase mb-2">Primary Platform</p>
@@ -131,7 +131,7 @@ export default function CamerasPage() {
             <p className="text-[9px] tracking-[0.2em] text-white/30 uppercase mb-3">Budget alternative</p>
             <h3 className="font-austin text-white text-2xl mb-4">TP-Link Vigi</h3>
             <p className="text-white/40 leading-relaxed max-w-2xl">
-              For projects where budget is the primary driver. Similar product categories — dome, turret, PTZ — with local recording via TP-Link NVR. Reliable, well-supported, no cloud subscription required.
+              For projects where budget is the primary driver. Similar product categories dome, turret, PTZ with local recording via TP-Link NVR. Reliable, well-supported, no cloud subscription required.
             </p>
           </div>
         </div>

@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Philips Dynalite Installation Melbourne | Commercial Lighting Control | Elec Reid',
-  description: 'Elec Reid installs Philips Dynalite lighting control systems for commercial buildings across Melbourne — offices, hotels, retail, and multi-tenancy developments.',
+  description: 'Elec Reid installs Philips Dynalite lighting control systems for commercial buildings across Melbourne offices, hotels, retail, and multi-tenancy developments.',
 }
 
 const schema = {
@@ -50,10 +50,10 @@ export default function DynalitePage() {
           </div>
           <div className="lg:pt-6">
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Philips Dynalite — now part of Signify, the world&apos;s largest lighting company — is the enterprise-grade lighting control platform for commercial buildings. Hotels. Office towers. Retail centres. Universities. Government facilities. Any space where lighting control needs to operate at scale, integrate with a BMS, and keep running for decades.
+              Philips Dynalite now part of Signify, the world&apos;s largest lighting company is the enterprise-grade lighting control platform for commercial buildings. Hotels. Office towers. Retail centres. Universities. Government facilities. Any space where lighting control needs to operate at scale, integrate with a BMS, and keep running for decades.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Dynalite gives building operators full scene management, energy monitoring, occupancy-based control, and daylight harvesting — all from a single platform that integrates with BACnet, DALI, and KNX. Elec Reid programs and installs Dynalite systems for commercial clients across Melbourne.
+              Dynalite gives building operators full scene management, energy monitoring, occupancy-based control, and daylight harvesting all from a single platform that integrates with BACnet, DALI, and KNX. Elec Reid programs and installs Dynalite systems for commercial clients across Melbourne.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
               It is not a consumer product. It is not a small-scale residential system. It is what commercial buildings use when lighting control needs to be right.

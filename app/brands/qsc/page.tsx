@@ -50,13 +50,13 @@ export default function QSCPage() {
           </div>
           <div className="lg:pt-6">
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Q-SYS is QSC&apos;s integrated audio, video, and control platform for commercial and enterprise environments. It handles signal routing, DSP processing, room control, and system management from a single software environment — Q-SYS Designer.
+              Q-SYS is QSC&apos;s integrated audio, video, and control platform for commercial and enterprise environments. It handles signal routing, DSP processing, room control, and system management from a single software environment Q-SYS Designer.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
               We program, install, and commission Q-SYS systems for commercial clients who need their AV to simply work. Boardrooms. Lecture theatres. Hospitality venues. Government facilities. Live event spaces.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
-              If the space has audio, video, and control requirements that need to talk to each other — Q-SYS is the answer.
+              If the space has audio, video, and control requirements that need to talk to each other Q-SYS is the answer.
             </p>
           </div>
         </div>
@@ -68,10 +68,10 @@ export default function QSCPage() {
           <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-16">What Q-SYS does.</h2>
           <div className="grid lg:grid-cols-2 gap-10">
             {[
-              { title: 'Audio DSP', body: 'Processing for microphones, speakers, and audio distribution across every zone. Noise cancellation, echo reduction, gain management — all configured in software, not hardware.' },
+              { title: 'Audio DSP', body: 'Processing for microphones, speakers, and audio distribution across every zone. Noise cancellation, echo reduction, gain management all configured in software, not hardware.' },
               { title: 'Video Routing', body: 'Matrix switching for displays, cameras, and video conferencing endpoints. Route any source to any screen. Scale to any number of rooms.' },
               { title: 'Room Control', body: 'Custom touch panel interfaces for any display or QSC touchscreen. One tap to join a call. One tap to present. One tap to leave. Designed for the people using the room, not the people who built it.' },
-              { title: 'System Management', body: 'Reflect — QSC\'s cloud monitoring platform — provides real-time health monitoring for every device on the network. Know before anyone tells you.' },
+              { title: 'System Management', body: 'Reflect QSC\'s cloud monitoring platform provides real-time health monitoring for every device on the network. Know before anyone tells you.' },
             ].map((item) => (
               <div key={item.title} className="border-t border-[#1A1A1A]/10 pt-8">
                 <h3 className="font-austin text-[#1A1A1A] text-2xl mb-4">{item.title}</h3>
@@ -89,7 +89,7 @@ export default function QSCPage() {
           <div className="divide-y divide-[#1A1A1A]/10">
             {[
               { name: 'Core Processors', desc: 'The brain of the system. Scales from a single meeting room to a campus-wide deployment. Every signal routes through here.' },
-              { name: 'I/O Frames', desc: 'Flexible input/output infrastructure for any signal type — analogue, digital, Dante, AES67. Connect anything.' },
+              { name: 'I/O Frames', desc: 'Flexible input/output infrastructure for any signal type analogue, digital, Dante, AES67. Connect anything.' },
               { name: 'TSC Touchscreens', desc: 'Custom-programmed room control panels. Any interface you can design in Q-SYS Designer appears here.' },
               { name: 'Network Amplifiers', desc: 'Q-SYS native amplification for distributed audio. Power your speakers directly from the Q-SYS network.' },
             ].map((item) => (
@@ -113,7 +113,7 @@ export default function QSCPage() {
               Q-SYS Designer is the programming environment where the system logic lives. Drag-and-drop signal flow, Lua scripting for advanced automations, and direct integration with Zoom Rooms, Microsoft Teams, and Dante audio networking.
             </p>
             <p className="text-white/60 text-lg leading-relaxed">
-              We program Q-SYS systems from the ground up — custom UCIs, scripted automations, and full Dante network design. The result is a system that behaves exactly as the space requires.
+              We program Q-SYS systems from the ground up custom UCIs, scripted automations, and full Dante network design. The result is a system that behaves exactly as the space requires.
             </p>
           </div>
           <div className="bg-[#2a2a2a] aspect-[4/3] flex items-center justify-center">
@@ -128,7 +128,7 @@ export default function QSCPage() {
           <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-12">Why Elec Reid.</h2>
           <div className="grid lg:grid-cols-3 gap-10">
             {[
-              { title: 'Certified programming.', body: 'We program Q-SYS systems, not just install them. Custom UCIs, scripted automations, Dante integration — done properly.' },
+              { title: 'Certified programming.', body: 'We program Q-SYS systems, not just install them. Custom UCIs, scripted automations, Dante integration done properly.' },
               { title: 'Commercial scale.', body: 'From a single boardroom to a multi-building campus. Q-SYS scales and so do we.' },
               { title: 'Full ecosystem integration.', body: 'Q-SYS integrates with Logitech, D&B Audiotechnik, Samsung, and more. We connect it all.' },
             ].map((item) => (

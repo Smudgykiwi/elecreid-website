@@ -50,10 +50,10 @@ export default function TPLinkPage() {
           </div>
           <div className="lg:pt-6">
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              TP-Link is our second network infrastructure choice — specified when the brief calls for a reliable, well-supported system at a more accessible price point. The Omada business networking range and Vigi camera system deliver genuine enterprise features without the enterprise price tag.
+              TP-Link is our second network infrastructure choice specified when the brief calls for a reliable, well-supported system at a more accessible price point. The Omada business networking range and Vigi camera system deliver genuine enterprise features without the enterprise price tag.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              We install TP-Link Omada for Wi-Fi and switching, and TP-Link Vigi for local CCTV recording. Both systems are cloud-managed or locally managed — no ongoing subscription required.
+              We install TP-Link Omada for Wi-Fi and switching, and TP-Link Vigi for local CCTV recording. Both systems are cloud-managed or locally managed no ongoing subscription required.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
               Our primary network recommendation is UniFi. But TP-Link is a legitimate, capable alternative for projects where the UniFi price point is not the right fit.
@@ -73,17 +73,17 @@ export default function TPLinkPage() {
               {
                 title: 'Omada Access Points',
                 sub: 'Wi-Fi 6 · Ceiling mount · PoE',
-                body: 'EAP670, EAP660 HD, and the full Omada Wi-Fi 6 range deliver fast, reliable wireless coverage across residential and commercial spaces. PoE-powered, ceiling-mounted, centrally managed. The same principle as UniFi — proper infrastructure, not consumer routers.',
+                body: 'EAP670, EAP660 HD, and the full Omada Wi-Fi 6 range deliver fast, reliable wireless coverage across residential and commercial spaces. PoE-powered, ceiling-mounted, centrally managed. The same principle as UniFi proper infrastructure, not consumer routers.',
               },
               {
                 title: 'Omada Routers & Switches',
                 sub: 'Managed · PoE · VLAN',
-                body: 'TP-Link Omada managed switches with PoE ports power access points, cameras, and intercoms across the network. VLAN segmentation, guest networks, and traffic monitoring. Full management from the Omada Controller — cloud or self-hosted.',
+                body: 'TP-Link Omada managed switches with PoE ports power access points, cameras, and intercoms across the network. VLAN segmentation, guest networks, and traffic monitoring. Full management from the Omada Controller cloud or self-hosted.',
               },
               {
                 title: 'Omada Controller',
                 sub: 'Cloud or local management',
-                body: 'Omada Software Controller manages the entire network from one dashboard. Self-hosted on a local device or cloud-managed via TP-Link\'s cloud portal. Remote access, firmware updates, real-time monitoring, and network statistics — all without a subscription.',
+                body: 'Omada Software Controller manages the entire network from one dashboard. Self-hosted on a local device or cloud-managed via TP-Link\'s cloud portal. Remote access, firmware updates, real-time monitoring, and network statistics all without a subscription.',
               },
             ].map((item) => (
               <div key={item.title} className="border-t-2 border-[#1A1A1A]/10 pt-8">
@@ -102,7 +102,7 @@ export default function TPLinkPage() {
           <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-4">Security Cameras</p>
           <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-6">TP-Link Vigi</h2>
           <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-16 max-w-3xl">
-            The TP-Link Vigi range delivers local CCTV recording without cloud subscriptions. PoE-powered IP cameras across dome, turret, bullet, and PTZ form factors — managed via the Vigi NVR or the VIGI Security Manager software. All footage stored locally. No monthly fees.
+            The TP-Link Vigi range delivers local CCTV recording without cloud subscriptions. PoE-powered IP cameras across dome, turret, bullet, and PTZ form factors managed via the Vigi NVR or the VIGI Security Manager software. All footage stored locally. No monthly fees.
           </p>
 
           <div className="grid lg:grid-cols-2 gap-10">
@@ -121,7 +121,7 @@ export default function TPLinkPage() {
               },
               {
                 title: 'VIGI Security Manager',
-                body: 'TP-Link\'s camera management software runs on a local PC or server. Manage all cameras, review footage, configure alerts, and export clips — from one interface, on your network.',
+                body: 'TP-Link\'s camera management software runs on a local PC or server. Manage all cameras, review footage, configure alerts, and export clips from one interface, on your network.',
               },
             ].map((item) => (
               <div key={item.title} className="border-t border-[#1A1A1A]/10 pt-8">
@@ -139,8 +139,8 @@ export default function TPLinkPage() {
           <h2 className="font-austin text-white text-4xl lg:text-5xl mb-12">Why Elec Reid.</h2>
           <div className="grid lg:grid-cols-3 gap-10">
             {[
-              { title: 'Right tool for the brief.', body: 'UniFi is our first choice. TP-Link is our second. We specify based on what the project needs — not what\'s on the truck.' },
-              { title: 'No cloud subscriptions.', body: 'Omada and Vigi both run locally. Your network and your cameras are yours — not dependent on a vendor\'s cloud service staying live.' },
+              { title: 'Right tool for the brief.', body: 'UniFi is our first choice. TP-Link is our second. We specify based on what the project needs not what\'s on the truck.' },
+              { title: 'No cloud subscriptions.', body: 'Omada and Vigi both run locally. Your network and your cameras are yours not dependent on a vendor\'s cloud service staying live.' },
               { title: 'Full installation.', body: 'Cable routing, PoE switching design, controller setup, camera placement, and NVR commissioning. Done properly from day one.' },
             ].map((item) => (
               <div key={item.title} className="border-t border-white/10 pt-8">

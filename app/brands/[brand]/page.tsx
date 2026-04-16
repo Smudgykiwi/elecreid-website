@@ -48,7 +48,7 @@ const brandData: Record<string, BrandData> = {
     heroImageAlt: 'Apple HomeKit smart home controls in a Melbourne residence',
     introHeading: 'The platform built for people who already live in the Apple ecosystem.',
     introParagraphs: [
-      "Apple Home is Elec Reid's number one recommendation for residential smart homes. It's the platform most Melbourne homeowners already understand — because they already live in it.",
+      "Apple Home is Elec Reid's number one recommendation for residential smart homes. It's the platform most Melbourne homeowners already understand because they already live in it.",
       "iPhone, iPad, Apple Watch, HomePods, Siri. When everything speaks the same language, nothing needs explaining. No login screen for a new app. No onboarding process. Just your home, responding to you.",
       "We design Apple Home systems from the ground up. Every light. Every blind. Every lock. Every scene. Engineered before the first cable is pulled.",
     ],
@@ -56,14 +56,14 @@ const brandData: Record<string, BrandData> = {
       {
         heading: 'The platform you already know',
         subheading: 'No new habits. No new interfaces.',
-        body: "Apple Home integrates with over 1,000 certified accessories. Every major lighting brand. Every major blind manufacturer. Every smart lock that matters. If it carries the Works with Apple Home badge, we can wire it, mount it, configure it, and hand it to you ready to use. Your home works the way your phone does. That's not an accident — it's a design decision.",
+        body: "Apple Home integrates with over 1,000 certified accessories. Every major lighting brand. Every major blind manufacturer. Every smart lock that matters. If it carries the Works with Apple Home badge, we can wire it, mount it, configure it, and hand it to you ready to use. Your home works the way your phone does. That's not an accident it's a design decision.",
         image: '/images/haven-5.jpg',
         imageAlt: 'Smart home controls in a modern Melbourne home',
       },
       {
         heading: 'Privacy without compromise',
         subheading: 'End-to-end encryption. No subscription.',
-        body: "End-to-end encryption. No subscription fees. No cloud server holding your data. Apple Home keeps your home's activity on your devices — not on a server farm in another country. Your automations run locally. Your locks open instantly. Your lights respond immediately. When the internet goes down, your home still works.",
+        body: "End-to-end encryption. No subscription fees. No cloud server holding your data. Apple Home keeps your home's activity on your devices not on a server farm in another country. Your automations run locally. Your locks open instantly. Your lights respond immediately. When the internet goes down, your home still works.",
         image: '/images/mckimm-5.jpg',
         imageAlt: 'Smart home kitchen with Apple HomeKit integration in a Melbourne residence',
       },
@@ -75,7 +75,7 @@ const brandData: Record<string, BrandData> = {
       },
       {
         heading: "Our systems work without us.",
-        body: "Walk us out the door and your home keeps running. Full documentation at handover — every device, every automation, every scene, written up for you.",
+        body: "Walk us out the door and your home keeps running. Full documentation at handover every device, every automation, every scene, written up for you.",
       },
       {
         heading: "One call if anything goes wrong.",
@@ -99,35 +99,35 @@ const brandData: Record<string, BrandData> = {
     heroImageAlt: 'Basalte Fibonacci push-button switch in brushed brass',
     introHeading: 'The finest switches in the world.',
     introParagraphs: [
-      "Basalte makes the finest switches and touchscreens in the world. The Sentido, the Fibonacci, the Chopin. The Ellie, the Lisa, the Lena. Each one is a considered object — designed in Belgium, specified by architects, installed in homes where every surface is a decision.",
+      "Basalte makes the finest switches and touchscreens in the world. The Sentido, the Fibonacci, the Chopin. The Ellie, the Lisa, the Lena. Each one is a considered object designed in Belgium, specified by architects, installed in homes where every surface is a decision.",
       "Elec Reid is an authorised Basalte dealer. We specify, supply and install the complete range.",
     ],
     features: [
       {
         heading: 'Switches & Keypads',
         subheading: 'Sentido. Fibonacci. Chopin.',
-        body: "The Sentido covers the entire surface with capacitive touch — no buttons, no moving parts. Single press, long press, multitouch dimming. Available in 2 and 4-button configurations across aluminium, classic, and fer forgé collections. Twelve finishes including brushed brass. The Fibonacci draws from the golden ratio — backlit laser-engraved labels that illuminate as you approach, with custom text and icons on every button, across 2 and 4-button plates. Also twelve finishes. The Chopin is the entry point to Basalte: a refined push-button switch that fits standard wall boxes, works with most smart home systems, clean and minimal.",
+        body: "The Sentido covers the entire surface with capacitive touch no buttons, no moving parts. Single press, long press, multitouch dimming. Available in 2 and 4-button configurations across aluminium, classic, and fer forgé collections. Twelve finishes including brushed brass. The Fibonacci draws from the golden ratio backlit laser-engraved labels that illuminate as you approach, with custom text and icons on every button, across 2 and 4-button plates. Also twelve finishes. The Chopin is the entry point to Basalte: a refined push-button switch that fits standard wall boxes, works with most smart home systems, clean and minimal.",
         image: '/images/basalte-fibonacci.jpg',
         imageAlt: 'Basalte Fibonacci switches in a Melbourne architectural home',
       },
       {
         heading: 'Touchscreens',
         subheading: 'Ellie. Lisa. Lena. Matisse.',
-        body: "The Ellie is a 7-inch capacitive touchscreen that sits flush on the wall. Brushed brass, matte black, or white. Controls lighting, blinds, climate, audio, and security from one surface. The Lisa brings the same flush-mount precision in a 4.3-inch compact format. The Lena is the slim panel — a 10-inch widescreen touchscreen for full home control. The Matisse is Basalte's newest: a 10.1-inch display with enhanced processing and updated UI.",
+        body: "The Ellie is a 7-inch capacitive touchscreen that sits flush on the wall. Brushed brass, matte black, or white. Controls lighting, blinds, climate, audio, and security from one surface. The Lisa brings the same flush-mount precision in a 4.3-inch compact format. The Lena is the slim panel a 10-inch widescreen touchscreen for full home control. The Matisse is Basalte's newest: a 10.1-inch display with enhanced processing and updated UI.",
         image: '/images/basalte-ellie.jpg',
         imageAlt: 'Basalte Ellie touchscreen controller in a Melbourne home',
       },
       {
         heading: 'Audio',
         subheading: 'Asano multiroom amplifier.',
-        body: "The Asano is Basalte's premium multiroom amplifier. Available in M4 and P4 configurations — four zones of audio, all controlled from the same Basalte keypads as your lighting. Streams from Spotify, Tidal, and AirPlay. Crystal-clear audio. No visible equipment. No separate app. Just music, everywhere.",
+        body: "The Asano is Basalte's premium multiroom amplifier. Available in M4 and P4 configurations four zones of audio, all controlled from the same Basalte keypads as your lighting. Streams from Spotify, Tidal, and AirPlay. Crystal-clear audio. No visible equipment. No separate app. Just music, everywhere.",
         image: '/images/basalte-fibonacci.jpg',
         imageAlt: 'Basalte audio system in a Melbourne residence',
       },
       {
         heading: 'Basalte Home Platform',
         subheading: 'KNX native. One app.',
-        body: "Basalte Home is the native Basalte automation platform. KNX-based. Controls lighting, climate, blinds, and audio from one app. When you choose Basalte hardware with Basalte Home software, every interaction — from the keypad to the app — is designed by the same team, for the same purpose.",
+        body: "Basalte Home is the native Basalte automation platform. KNX-based. Controls lighting, climate, blinds, and audio from one app. When you choose Basalte hardware with Basalte Home software, every interaction from the keypad to the app is designed by the same team, for the same purpose.",
         image: '/images/basalte-ellie.jpg',
         imageAlt: 'Basalte Home platform in a Melbourne smart home',
       },
@@ -135,7 +135,7 @@ const brandData: Record<string, BrandData> = {
     whyPoints: [
       {
         heading: "KNX native & IP native.",
-        body: "Basalte hardware works on both the KNX bus and IP network natively — no bridge, no workaround, no middleware.",
+        body: "Basalte hardware works on both the KNX bus and IP network natively no bridge, no workaround, no middleware.",
       },
       {
         heading: "Twelve+ finishes.",
@@ -147,15 +147,15 @@ const brandData: Record<string, BrandData> = {
       },
       {
         heading: "Full system design.",
-        body: "We don't just supply switches. We design the complete system — lighting scenes, automation logic, integration with blinds, climate, audio, and security.",
+        body: "We don't just supply switches. We design the complete system lighting scenes, automation logic, integration with blinds, climate, audio, and security.",
       },
       {
         heading: "Belgian-engineered.",
-        body: "Designed in Ghent. Built for permanence. Basalte is not a consumer product with a two-year lifecycle — it is hardware specified for decades.",
+        body: "Designed in Ghent. Built for permanence. Basalte is not a consumer product with a two-year lifecycle it is hardware specified for decades.",
       },
       {
         heading: "Programmed and tested before we leave.",
-        body: "Scenes, automations, integrations — all verified on site. You walk in and it works. No manual. No phone number. Just your home.",
+        body: "Scenes, automations, integrations all verified on site. You walk in and it works. No manual. No phone number. Just your home.",
       },
     ],
     relatedBrands: [
@@ -168,29 +168,29 @@ const brandData: Record<string, BrandData> = {
 
   'home-assistant': {
     title: 'Home Assistant Installation Melbourne | Local Smart Home Automation | Elec Reid',
-    metaDescription: "Home Assistant installation Melbourne. Elec Reid deploys local smart home automation — open source, zero cloud, zero subscription. The most powerful platform on the planet, properly installed.",
+    metaDescription: "Home Assistant installation Melbourne. Elec Reid deploys local smart home automation open source, zero cloud, zero subscription. The most powerful platform on the planet, properly installed.",
     h1: 'Home Assistant',
     tagline: 'Open. Local. Limitless.',
     heroImage: '/images/haven-7.jpg',
     heroImageAlt: 'Home Assistant server rack in a Melbourne smart home installation',
     introHeading: 'The only platform with zero vendor lock-in and zero cloud dependency.',
     introParagraphs: [
-      "Home Assistant is for the technical user who wants total control. Not control within the boundaries someone else drew — actual control. Custom user interfaces built from scratch. Automations that react to energy usage, presence, weather, time of day, and occupancy all simultaneously.",
+      "Home Assistant is for the technical user who wants total control. Not control within the boundaries someone else drew actual control. Custom user interfaces built from scratch. Automations that react to energy usage, presence, weather, time of day, and occupancy all simultaneously.",
       "The only platform with zero vendor lock-in and zero cloud dependency. Run it on your own hardware. Own your data. Forever.",
-      "Every device. Every protocol. Every automation you can imagine. If a smart home device exists, Home Assistant can probably control it. We deploy it on dedicated hardware — spec'd correctly, rack-mounted, backed up, and configured before we hand you the keys.",
+      "Every device. Every protocol. Every automation you can imagine. If a smart home device exists, Home Assistant can probably control it. We deploy it on dedicated hardware spec'd correctly, rack-mounted, backed up, and configured before we hand you the keys.",
     ],
     features: [
       {
         heading: 'Local first. Always.',
         subheading: 'No cloud dependency. No outage risk.',
-        body: "Home Assistant runs on hardware in your home. When your internet goes down, your home keeps working. When a vendor discontinues their cloud API — which happens more than you'd think — your system is not affected. Automations that fire based on energy usage, solar production, presence, weather forecast, time of day, and occupancy sensors — all running locally, all simultaneously, without a single cloud call.",
+        body: "Home Assistant runs on hardware in your home. When your internet goes down, your home keeps working. When a vendor discontinues their cloud API which happens more than you'd think your system is not affected. Automations that fire based on energy usage, solar production, presence, weather forecast, time of day, and occupancy sensors all running locally, all simultaneously, without a single cloud call.",
         image: '/images/haven-7.jpg',
         imageAlt: 'Network rack with Home Assistant hardware in a Melbourne residence',
       },
       {
         heading: 'Custom interfaces. Total control.',
         subheading: '2,000+ integrations. Built from scratch.',
-        body: "Z-Wave, Zigbee, Matter, Thread, Modbus, KNX, DALI — Home Assistant speaks every protocol. But the real power is the custom interface. We build dashboards from scratch — specific to your home, your habits, your family. Not a generic template. A purpose-built control panel designed for how you actually live. Then we document every entity, every automation, every integration so you understand what you own.",
+        body: "Z-Wave, Zigbee, Matter, Thread, Modbus, KNX, DALI Home Assistant speaks every protocol. But the real power is the custom interface. We build dashboards from scratch specific to your home, your habits, your family. Not a generic template. A purpose-built control panel designed for how you actually live. Then we document every entity, every automation, every integration so you understand what you own.",
         image: '/images/wiring-clean.jpg',
         imageAlt: 'Structured cabling and smart home wiring in a Melbourne home',
       },
@@ -202,7 +202,7 @@ const brandData: Record<string, BrandData> = {
       },
       {
         heading: "We document every automation.",
-        body: "A Home Assistant installation is only as good as its documentation. We write it up — every entity, every automation, every integration — so you understand what you own.",
+        body: "A Home Assistant installation is only as good as its documentation. We write it up every entity, every automation, every integration so you understand what you own.",
       },
       {
         heading: "We train you to use it.",
@@ -219,7 +219,7 @@ const brandData: Record<string, BrandData> = {
 
   'control4': {
     title: 'Control4 Installation Melbourne | Authorised Control4 Dealer | Elec Reid',
-    metaDescription: "Authorised Control4 dealer in Melbourne. Elec Reid installs and programs Control4 smart home systems — T5 touchscreens, DS3 intercoms, Lux keypads. Twenty years of proven reliability.",
+    metaDescription: "Authorised Control4 dealer in Melbourne. Elec Reid installs and programs Control4 smart home systems T5 touchscreens, DS3 intercoms, Lux keypads. Twenty years of proven reliability.",
     h1: 'Control4',
     tagline: 'Twenty years of certainty.',
     heroImage: '/images/control4-x4.jpg',
@@ -227,14 +227,14 @@ const brandData: Record<string, BrandData> = {
     introHeading: 'A proven platform with more track record than most of its competitors have age.',
     introParagraphs: [
       "Control4 has been in homes longer than most of its competitors have existed. A mature, dealer-installed platform with dedicated touchscreens, keypads, and a large ecosystem of certified devices.",
-      "For clients who want a system with track record. Who want to know that the platform they are buying into will be supported in ten years. Who want dedicated hardware — a touchscreen that does one thing brilliantly.",
+      "For clients who want a system with track record. Who want to know that the platform they are buying into will be supported in ten years. Who want dedicated hardware a touchscreen that does one thing brilliantly.",
       "Control4 is not for everyone. It requires a certified dealer. It requires annual software subscription. It requires professional programming. But when it is right, it is very right.",
     ],
     features: [
       {
         heading: 'Core 5 & CA-10 controllers',
         subheading: 'Right-sized for every project.',
-        body: "The CA-10 Hub runs a small apartment. The Core 5 Controller runs an estate. The X4 Controller Software handles complex multi-zone programming at scale. All dealer-configured, warranty-backed, and remotely accessible by us for support. Control4 controllers are not smart home hubs you configure through an app — they are engineered automation engines that run your home reliably, day after day.",
+        body: "The CA-10 Hub runs a small apartment. The Core 5 Controller runs an estate. The X4 Controller Software handles complex multi-zone programming at scale. All dealer-configured, warranty-backed, and remotely accessible by us for support. Control4 controllers are not smart home hubs you configure through an app they are engineered automation engines that run your home reliably, day after day.",
         image: '/images/control4-x4.jpg',
         imageAlt: 'Control4 controller and touchscreen in a Melbourne smart home',
       },
@@ -257,7 +257,7 @@ const brandData: Record<string, BrandData> = {
       },
       {
         heading: "Remote support included.",
-        body: "We can access your Control4 system remotely for most fixes. Firmware updates, driver updates, scene adjustments — handled without a site visit.",
+        body: "We can access your Control4 system remotely for most fixes. Firmware updates, driver updates, scene adjustments handled without a site visit.",
       },
     ],
     relatedBrands: [
@@ -277,22 +277,22 @@ const brandData: Record<string, BrandData> = {
     heroImageAlt: 'Ekinex KNX keypad in a prestige Melbourne residence',
     introHeading: 'The open standard for building automation.',
     introParagraphs: [
-      "KNX is not a brand. It is a language. The open standard for building automation — not owned by any single manufacturer, not controlled by any single company. Created by the KNX Association, headquartered in Brussels.",
-      "500+ manufacturers worldwide produce KNX-certified products. When a device carries the KNX logo, it speaks the same language as every other KNX device on the planet — regardless of who made it, when it was made, or where it was installed.",
+      "KNX is not a brand. It is a language. The open standard for building automation not owned by any single manufacturer, not controlled by any single company. Created by the KNX Association, headquartered in Brussels.",
+      "500+ manufacturers worldwide produce KNX-certified products. When a device carries the KNX logo, it speaks the same language as every other KNX device on the planet regardless of who made it, when it was made, or where it was installed.",
       "Decentralised by design. No single controller. No single point of failure. Intelligence lives in each device on the bus. If one fails, the rest keep working. This is the reason architects specify KNX in buildings they expect to stand for fifty years.",
     ],
     features: [
       {
         heading: 'Why KNX endures',
         subheading: 'Reliability. Longevity. Manufacturer choice.',
-        body: "Used in residential, commercial, and industrial projects worldwide. KNX is the infrastructure choice for buildings with a thirty-year horizon — because the protocol has already proven it can last that long. Elec Reid uses KNX for its reliability, its longevity, its manufacturer choice, and its proven performance in prestige architecture. When you build in KNX, you are not betting on a startup's cloud server. You are using a protocol that has been proven in buildings on five continents.",
+        body: "Used in residential, commercial, and industrial projects worldwide. KNX is the infrastructure choice for buildings with a thirty-year horizon because the protocol has already proven it can last that long. Elec Reid uses KNX for its reliability, its longevity, its manufacturer choice, and its proven performance in prestige architecture. When you build in KNX, you are not betting on a startup's cloud server. You are using a protocol that has been proven in buildings on five continents.",
         image: '/images/ekinex-proxima.jpg',
         imageAlt: 'Ekinex Proxima KNX keypad in a Melbourne architectural home',
       },
       {
         heading: 'KNX-compatible brands we install',
         subheading: 'Ekinex. Basalte. ABB. Schneider. Siemens.',
-        body: "The KNX-compatible brands Elec Reid installs span the finest interfaces in the world. Ekinex for Italian-designed precision keypads. Basalte for Belgian-engineered touchscreens and switches. ABB, Schneider, and Siemens for robust infrastructure products used in commercial and industrial applications. KNX's manufacturer independence means we specify the right hardware for each project — not whatever one vendor happens to make.",
+        body: "The KNX-compatible brands Elec Reid installs span the finest interfaces in the world. Ekinex for Italian-designed precision keypads. Basalte for Belgian-engineered touchscreens and switches. ABB, Schneider, and Siemens for robust infrastructure products used in commercial and industrial applications. KNX's manufacturer independence means we specify the right hardware for each project not whatever one vendor happens to make.",
         image: '/images/ekinex-20venti.jpg',
         imageAlt: 'Ekinex 20Venti KNX keypad in a Melbourne prestige home',
       },
@@ -304,11 +304,11 @@ const brandData: Record<string, BrandData> = {
       },
       {
         heading: "We specify hardware that fits the architecture.",
-        body: "KNX is manufacturer-independent — which means you can put any interface on the wall. We help you choose the right one. Ekinex, Basalte, ABB, Schneider — specified to match your interior.",
+        body: "KNX is manufacturer-independent which means you can put any interface on the wall. We help you choose the right one. Ekinex, Basalte, ABB, Schneider specified to match your interior.",
       },
       {
         heading: "Your system runs without us.",
-        body: "KNX is decentralised. When we leave site, your home works. No central controller to fail. No cloud to go down. No dependency on anyone — including us.",
+        body: "KNX is decentralised. When we leave site, your home works. No central controller to fail. No cloud to go down. No dependency on anyone including us.",
       },
     ],
     relatedBrands: [
@@ -329,21 +329,21 @@ const brandData: Record<string, BrandData> = {
     introHeading: "Thirty years of reliability. Still the right answer for many projects.",
     introParagraphs: [
       "Clipsal C-Bus has been the lighting control standard in Australian residential and commercial buildings for over thirty years. Robust, reliable, and deeply understood by electricians across the country.",
-      "When a project requires proven technology with a local support network — national supplier, available parts, electricians trained on it — C-Bus delivers. The failure modes are known. The solutions are documented. The parts are in stock.",
-      "We install and program C-Bus across Melbourne — from residential renovations adding scene control, to commercial fitouts requiring full DALI dimming integration.",
+      "When a project requires proven technology with a local support network national supplier, available parts, electricians trained on it C-Bus delivers. The failure modes are known. The solutions are documented. The parts are in stock.",
+      "We install and program C-Bus across Melbourne from residential renovations adding scene control, to commercial fitouts requiring full DALI dimming integration.",
     ],
     features: [
       {
-        heading: '5500 series — the standard',
+        heading: '5500 series the standard',
         subheading: 'DIN rail modules. Scene control. Scheduling.',
-        body: "The C-Bus 5500 series DIN rail modules are the backbone of every installation. Lighting outputs, input units, logic controllers — all mounted in a switchboard and connected via the C-Bus two-wire protocol. Scenes recalled from a keypad. Schedules triggered by time of day. Automations triggered by occupancy. It is not complicated. It works.",
+        body: "The C-Bus 5500 series DIN rail modules are the backbone of every installation. Lighting outputs, input units, logic controllers all mounted in a switchboard and connected via the C-Bus two-wire protocol. Scenes recalled from a keypad. Schedules triggered by time of day. Automations triggered by occupancy. It is not complicated. It works.",
         image: '/images/haven-1.jpg',
         imageAlt: 'Architectural Melbourne home with C-Bus controlled lighting scenes',
       },
       {
         heading: 'Saturn Zen keypads and DALI',
         subheading: 'The interface your client actually uses.',
-        body: "Saturn Zen and eDLT keypads give users a physical, wall-mounted interface that does not require a phone. Press a button. Scene changes. Press another. Lights dim to 10%. DALI integration extends C-Bus control to every low-voltage driver in the building — colour temperature, dimming level, individual zone control from a single keypad.",
+        body: "Saturn Zen and eDLT keypads give users a physical, wall-mounted interface that does not require a phone. Press a button. Scene changes. Press another. Lights dim to 10%. DALI integration extends C-Bus control to every low-voltage driver in the building colour temperature, dimming level, individual zone control from a single keypad.",
         image: '/images/wiring-clean.jpg',
         imageAlt: 'C-Bus wiring and DIN rail installation in a Melbourne switchboard',
       },
@@ -387,28 +387,28 @@ const brandData: Record<string, BrandData> = {
       {
         heading: 'UniFi Network',
         subheading: 'Dream Machine Pro. Switches. Access Points.',
-        body: "The UniFi Dream Machine Pro is the core: router, firewall, and network controller in one, handling hundreds of devices without breaking a sweat. UniFi Switches provide managed PoE switching that powers everything from access points to IP cameras to intercoms — all over ethernet, no separate power supplies. UniFi Access Points (U6 Pro, U6 LR, U6 Mesh) bring Wi-Fi 6 and multi-gigabit performance. Ceiling-mounted, PoE-powered, centrally managed. Zero dead zones. Designed to blanket a large home or commercial space with reliable, fast wireless.",
+        body: "The UniFi Dream Machine Pro is the core: router, firewall, and network controller in one, handling hundreds of devices without breaking a sweat. UniFi Switches provide managed PoE switching that powers everything from access points to IP cameras to intercoms all over ethernet, no separate power supplies. UniFi Access Points (U6 Pro, U6 LR, U6 Mesh) bring Wi-Fi 6 and multi-gigabit performance. Ceiling-mounted, PoE-powered, centrally managed. Zero dead zones. Designed to blanket a large home or commercial space with reliable, fast wireless.",
         image: '/images/haven-7.jpg',
         imageAlt: 'Unifi network rack and access points in a Melbourne smart home',
       },
       {
         heading: 'UniFi Protect',
         subheading: 'AI cameras. Local recording. No subscription.',
-        body: "AI-powered cameras from 2MP to 8MP with smart detection — person, vehicle, animal. All recording locally to a Network Video Recorder in your rack. No cloud subscription. No footage leaving your home. Your data stays yours. The UniFi Doorbell Camera adds video intercom with two-way audio, remote unlock, and integration with smart home platforms.",
+        body: "AI-powered cameras from 2MP to 8MP with smart detection person, vehicle, animal. All recording locally to a Network Video Recorder in your rack. No cloud subscription. No footage leaving your home. Your data stays yours. The UniFi Doorbell Camera adds video intercom with two-way audio, remote unlock, and integration with smart home platforms.",
         image: '/images/haven-7.jpg',
         imageAlt: 'UniFi Protect cameras installed in a Melbourne home',
       },
       {
         heading: 'UniFi Access',
         subheading: 'Doorbells. Intercoms. Access control.',
-        body: "The UniFi doorbell and intercom range covers every residential scenario. The Doorbell Lite is the entry-level PoE doorbell. The G4 Pro Doorbell adds a wide-angle lens and two-way audio. The G6 Entry and G6 Pro Entry are the next generation — the G6 Pro combines a 12MP sensor, AI engine, FaceID, NFC, and a customisable touchscreen, bridging Protect and Access in one device. Smart door locks with NFC and PIN entry complete the access system. Everything managed from the same UniFi dashboard as your network and cameras.",
+        body: "The UniFi doorbell and intercom range covers every residential scenario. The Doorbell Lite is the entry-level PoE doorbell. The G4 Pro Doorbell adds a wide-angle lens and two-way audio. The G6 Entry and G6 Pro Entry are the next generation the G6 Pro combines a 12MP sensor, AI engine, FaceID, NFC, and a customisable touchscreen, bridging Protect and Access in one device. Smart door locks with NFC and PIN entry complete the access system. Everything managed from the same UniFi dashboard as your network and cameras.",
         image: '/images/haven-7.jpg',
         imageAlt: 'UniFi Access control and intercom in a Melbourne property',
       },
       {
         heading: 'Residential & Commercial',
         subheading: 'From one home to a multi-floor building.',
-        body: "Every Elec Reid home gets Unifi. Clean coverage, zero monthly fees, one app to manage it all. For commercial: Unifi scales from a single meeting room to a multi-floor building. VLAN segmentation, guest networks, traffic monitoring, multiple sites under one dashboard. We design, install, and configure — then hand you the login.",
+        body: "Every Elec Reid home gets Unifi. Clean coverage, zero monthly fees, one app to manage it all. For commercial: Unifi scales from a single meeting room to a multi-floor building. VLAN segmentation, guest networks, traffic monitoring, multiple sites under one dashboard. We design, install, and configure then hand you the login.",
         image: '/images/haven-7.jpg',
         imageAlt: 'Unifi commercial network installation in a Melbourne building',
       },
@@ -416,7 +416,7 @@ const brandData: Record<string, BrandData> = {
     whyPoints: [
       {
         heading: "We design before we pull cable.",
-        body: "Coverage maps, VLAN architecture, PoE budgets — all done before a single cable is pulled. We do not run cable and hope for the best.",
+        body: "Coverage maps, VLAN architecture, PoE budgets all done before a single cable is pulled. We do not run cable and hope for the best.",
       },
       {
         heading: "Unifi is what we use. Not just what we sell.",
@@ -424,7 +424,7 @@ const brandData: Record<string, BrandData> = {
       },
       {
         heading: "One dashboard. Everything managed.",
-        body: "Network, cameras, access control, intercom — all in UniFi's dashboard. We set it up. We document it. We hand you the login.",
+        body: "Network, cameras, access control, intercom all in UniFi's dashboard. We set it up. We document it. We hand you the login.",
       },
     ],
     relatedBrands: [
@@ -437,29 +437,29 @@ const brandData: Record<string, BrandData> = {
 
   'sonos': {
     title: 'Sonos Installation Melbourne | Multi-Room Audio Melbourne | Elec Reid',
-    metaDescription: "Sonos installation Melbourne. Elec Reid installs multi-room Sonos audio systems — in-ceiling speakers, Arc Ultra, Era 300. Wired properly from the ceiling down.",
+    metaDescription: "Sonos installation Melbourne. Elec Reid installs multi-room Sonos audio systems in-ceiling speakers, Arc Ultra, Era 300. Wired properly from the ceiling down.",
     h1: 'Sonos',
     tagline: 'Music, everywhere. Without trying.',
     heroImage: '/images/stkilda-1.jpg',
     heroImageAlt: 'Multi-room audio installation in a Melbourne rooftop residence',
     introHeading: "The audio platform that disappears into your home.",
     introParagraphs: [
-      "Sonos is the audio platform that disappears into your home. Every room. One app. Your streaming services, your music, your podcast — wherever you are.",
-      "We install Sonos as part of a complete smart home system, wiring it properly from the ceiling down. Not Bluetooth. Not portable speakers placed on shelves. Structured cabling to ceiling speakers driven by a Sonos Amp — so it sounds as good as it should.",
+      "Sonos is the audio platform that disappears into your home. Every room. One app. Your streaming services, your music, your podcast wherever you are.",
+      "We install Sonos as part of a complete smart home system, wiring it properly from the ceiling down. Not Bluetooth. Not portable speakers placed on shelves. Structured cabling to ceiling speakers driven by a Sonos Amp so it sounds as good as it should.",
       "Sonos integrates with Apple Home, Control4, and Home Assistant. Volume follows room. Music pauses when you leave. Audio is part of the system, not separate from it.",
     ],
     features: [
       {
         heading: 'In-ceiling. Done right.',
         subheading: 'Wired from the rack. Not portable.',
-        body: "In-ceiling speakers wired to a Sonos Amp in your rack. Passive drivers — the kind that need power and signal from an amplifier — so you are not compromising on driver quality. We specify speaker placement before the ceiling is closed. Correct depth, correct positioning for listening zone coverage. You should not know the speakers are there. You should only hear them.",
+        body: "In-ceiling speakers wired to a Sonos Amp in your rack. Passive drivers the kind that need power and signal from an amplifier so you are not compromising on driver quality. We specify speaker placement before the ceiling is closed. Correct depth, correct positioning for listening zone coverage. You should not know the speakers are there. You should only hear them.",
         image: '/images/stkilda-1.jpg',
         imageAlt: 'In-ceiling audio installation in a Melbourne home with Sonos',
       },
       {
         heading: 'Arc Ultra. Era 300.',
         subheading: 'The living room, done properly.',
-        body: "The Sonos Arc Ultra is the best soundbar we have heard. Dolby Atmos, spatial audio, designed to disappear under your screen. The Era 300 is the best wireless speaker for a room — spatial audio in a single unit. Both integrate with Apple Home. Both work as part of your multi-room Sonos system. Both sound significantly better than their price suggests.",
+        body: "The Sonos Arc Ultra is the best soundbar we have heard. Dolby Atmos, spatial audio, designed to disappear under your screen. The Era 300 is the best wireless speaker for a room spatial audio in a single unit. Both integrate with Apple Home. Both work as part of your multi-room Sonos system. Both sound significantly better than their price suggests.",
         image: '/images/brighton-av-1.jpg',
         imageAlt: 'Sonos Arc Ultra AV setup in a Melbourne living room',
       },
@@ -475,7 +475,7 @@ const brandData: Record<string, BrandData> = {
       },
       {
         heading: "We configure and test before handover.",
-        body: "Every zone, every grouping, every streaming service — configured and tested. Playlists loaded. Apple Home integration working. You walk in and it plays.",
+        body: "Every zone, every grouping, every streaming service configured and tested. Playlists loaded. Apple Home integration working. You walk in and it plays.",
       },
     ],
     relatedBrands: [

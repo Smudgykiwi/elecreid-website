@@ -53,7 +53,7 @@ export default function SamsungPage() {
               Samsung makes the displays that define a space. From a single boardroom screen to a full video wall that covers an entire facade, Samsung&apos;s commercial display range delivers the brightness, resolution, and reliability that consumer televisions cannot.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Elec Reid supplies and installs Samsung commercial displays across Melbourne — specification, mounting, cabling, and calibration. We also configure Samsung VXT for remote content management and device monitoring.
+              Elec Reid supplies and installs Samsung commercial displays across Melbourne specification, mounting, cabling, and calibration. We also configure Samsung VXT for remote content management and device monitoring.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
               One screen or fifty. A lobby feature or a video wall. We design the system around the brief.
@@ -90,7 +90,7 @@ export default function SamsungPage() {
               </div>
               <div className="lg:order-1">
                 <p className="text-[9px] tracking-[0.25em] text-[#0134E7] uppercase mb-3">Outdoor · Semi-outdoor</p>
-                <h3 className="font-austin text-[#1A1A1A] text-3xl lg:text-4xl mb-4">QH Series — High Brightness</h3>
+                <h3 className="font-austin text-[#1A1A1A] text-3xl lg:text-4xl mb-4">QH Series High Brightness</h3>
                 <p className="text-[#1A1A1A]/60 leading-relaxed text-lg">
                   Designed for outdoor and semi-outdoor environments. 2,500 nits brightness for direct sunlight readability. IP56 rated. For signage that operates in conditions a standard display cannot.
                 </p>
@@ -103,7 +103,7 @@ export default function SamsungPage() {
               </div>
               <div>
                 <p className="text-[9px] tracking-[0.25em] text-[#0134E7] uppercase mb-3">Lobbies · Venues · Premium environments</p>
-                <h3 className="font-austin text-[#1A1A1A] text-3xl lg:text-4xl mb-4">The Wall — Micro LED</h3>
+                <h3 className="font-austin text-[#1A1A1A] text-3xl lg:text-4xl mb-4">The Wall Micro LED</h3>
                 <p className="text-[#1A1A1A]/60 leading-relaxed text-lg mb-4">
                   Samsung&apos;s Micro LED modular video wall system. Any size. Any aspect ratio. 8K capable. Zero bezels. The architectural display choice for immersive lobby installations and premium commercial environments.
                 </p>
@@ -123,10 +123,10 @@ export default function SamsungPage() {
           <div>
             <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-6">Samsung VXT</h2>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Samsung&apos;s cloud platform for managing all deployed commercial displays. Push content, monitor device health, and schedule playlists across every screen from one dashboard — regardless of how many sites you operate.
+              Samsung&apos;s cloud platform for managing all deployed commercial displays. Push content, monitor device health, and schedule playlists across every screen from one dashboard regardless of how many sites you operate.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
-              We configure VXT as part of every Samsung commercial installation. Content management, device monitoring, and remote troubleshooting — from day one.
+              We configure VXT as part of every Samsung commercial installation. Content management, device monitoring, and remote troubleshooting from day one.
             </p>
           </div>
           <div className="bg-[#E8E4DF] aspect-[4/3] flex items-center justify-center">
@@ -141,7 +141,7 @@ export default function SamsungPage() {
           <h2 className="font-austin text-white text-4xl lg:text-5xl mb-12">Why Elec Reid.</h2>
           <div className="grid lg:grid-cols-3 gap-10">
             {[
-              { title: 'Commercial specialists.', body: 'We specify Samsung\'s commercial range — not consumer televisions. The right product for the environment it operates in.' },
+              { title: 'Commercial specialists.', body: 'We specify Samsung\'s commercial range not consumer televisions. The right product for the environment it operates in.' },
               { title: 'Full installation.', body: 'Structural mounting, structured cabling, and calibration. Every display installed to last.' },
               { title: 'Multi-site deployment.', body: 'Samsung VXT configured across every screen. Content and device management from one place.' },
             ].map((item) => (

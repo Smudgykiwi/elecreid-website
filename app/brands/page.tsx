@@ -14,7 +14,7 @@ const residentialBrands = [
     href: '/brands/apple-home',
     tag: '#1 Recommendation',
     tagColor: 'bg-[#0134E7] text-white',
-    description: 'The platform most Melbourne homeowners already understand. iPhone, iPad, Siri — one language for your entire home.',
+    description: 'The platform most Melbourne homeowners already understand. iPhone, iPad, Siri one language for your entire home.',
   },
   {
     name: 'Basalte',
@@ -70,14 +70,14 @@ const residentialBrands = [
     href: '/brands/unifi',
     tag: 'Networking',
     tagColor: 'bg-[#1A1A1A]/10 text-[#1A1A1A]',
-    description: 'Enterprise-grade networking for every serious smart home. Access points, switches, cameras, intercom — one dashboard.',
+    description: 'Enterprise-grade networking for every serious smart home. Access points, switches, cameras, intercom one dashboard.',
   },
   {
     name: 'Sonos',
     href: '/brands/sonos',
     tag: 'Audio',
     tagColor: 'bg-[#1A1A1A]/10 text-[#1A1A1A]',
-    description: 'Music in every room. Installed properly — wired from the ceiling down, so it sounds as good as it should.',
+    description: 'Music in every room. Installed properly wired from the ceiling down, so it sounds as good as it should.',
   },
   {
     name: 'Audio',
@@ -98,7 +98,7 @@ const residentialBrands = [
     href: '/brands/cameras',
     tag: 'UniFi Protect',
     tagColor: 'bg-[#1A1A1A]/10 text-[#1A1A1A]',
-    description: 'Local recording, no subscription, AI-powered detection. UniFi Protect — your footage stays in your home.',
+    description: 'Local recording, no subscription, AI-powered detection. UniFi Protect your footage stays in your home.',
   },
   {
     name: 'Security',
@@ -165,7 +165,7 @@ export default function BrandsPage() {
               <em className="italic">we trust</em>
             </h1>
             <p className="text-[#1A1A1A]/60 text-lg max-w-2xl leading-relaxed">
-              We don&apos;t install everything. We install what works. Each platform is selected because it is the best at what it does — and because we can stand behind it.
+              We don&apos;t install everything. We install what works. Each platform is selected because it is the best at what it does and because we can stand behind it.
             </p>
           </div>
 

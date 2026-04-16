@@ -1,4 +1,4 @@
-// Build page gets its own layout — no Nav or Footer
+// Build page gets its own layout no Nav or Footer
 export default function BuildLayout({
   children,
 }: {

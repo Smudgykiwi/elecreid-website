@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 
 export const metadata: Metadata = {
-  title: 'Contact — Elec Reid',
+  title: 'Contact Elec Reid',
   description: 'Get in touch with Elec Reid. Melbourne residential electrical and smart home integration.',
 }
 

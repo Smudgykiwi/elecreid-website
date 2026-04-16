@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Quest Commercial Audio Melbourne | Background Music Installation | Elec Reid',
-  description: 'Elec Reid installs Quest Commercial audio systems for restaurants, cafes, bars, offices and retail across Melbourne. Background music done properly — consistent coverage, great sound, invisible.',
+  description: 'Elec Reid installs Quest Commercial audio systems for restaurants, cafes, bars, offices and retail across Melbourne. Background music done properly consistent coverage, great sound, invisible.',
 }
 
 const schema = {
@@ -53,10 +53,10 @@ export default function QuestPage() {
               Background music in a hospitality environment is invisible when it works. Consistent level across the room. No dead spots. No hot spots. Nobody leaning across the table to be heard. The right volume for the time of day, adjusted automatically.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Quest Commercial makes loudspeakers and electronics specifically designed for this purpose — built for AV integrators who care about performance and aesthetics equally. Design-conscious. Performance-driven. The kind of gear that looks right on the ceiling and sounds right in the room.
+              Quest Commercial makes loudspeakers and electronics specifically designed for this purpose built for AV integrators who care about performance and aesthetics equally. Design-conscious. Performance-driven. The kind of gear that looks right on the ceiling and sounds right in the room.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
-              We pair Quest speakers with QSC amplification and Q-SYS DSP processing. The result is a system that gives operators per-zone control, scheduled volume levels, paging, and full integration with building management — all managed from one interface.
+              We pair Quest speakers with QSC amplification and Q-SYS DSP processing. The result is a system that gives operators per-zone control, scheduled volume levels, paging, and full integration with building management all managed from one interface.
             </p>
           </div>
         </div>
@@ -70,7 +70,7 @@ export default function QuestPage() {
             {[
               {
                 title: 'Restaurants & cafes',
-                body: 'Ceiling-mounted or surface-mount speakers with consistent coverage across dining zones. Volume transitions automatically from quiet daytime service to evening ambience — without anyone touching a dial.',
+                body: 'Ceiling-mounted or surface-mount speakers with consistent coverage across dining zones. Volume transitions automatically from quiet daytime service to evening ambience without anyone touching a dial.',
               },
               {
                 title: 'Bars & licensed venues',
@@ -90,7 +90,7 @@ export default function QuestPage() {
               },
               {
                 title: 'Hotels & hospitality',
-                body: 'Consistent audio identity across lobbies, restaurants, bars, pool areas, and function rooms — all managed centrally. Guest-facing and back-of-house on the same system, with different permissions for each.',
+                body: 'Consistent audio identity across lobbies, restaurants, bars, pool areas, and function rooms all managed centrally. Guest-facing and back-of-house on the same system, with different permissions for each.',
               },
             ].map((item, i) => (
               <div key={item.title} className={`py-10 ${i % 2 === 0 ? 'lg:pr-12' : 'lg:pl-12'}`}>
@@ -121,7 +121,7 @@ export default function QuestPage() {
               {
                 brand: 'Q-SYS',
                 role: 'Control & DSP',
-                body: 'Zone control, scheduling, paging, and live adjustment — all from the Q-SYS platform. Operators control their system from a wall panel or a tablet. We manage it remotely.',
+                body: 'Zone control, scheduling, paging, and live adjustment all from the Q-SYS platform. Operators control their system from a wall panel or a tablet. We manage it remotely.',
               },
             ].map((item) => (
               <div key={item.brand} className="border-t-2 border-[#1A1A1A]/10 pt-8">
@@ -140,7 +140,7 @@ export default function QuestPage() {
           <h2 className="font-austin text-white text-4xl lg:text-5xl mb-12">Why Elec Reid.</h2>
           <div className="grid lg:grid-cols-3 gap-10">
             {[
-              { title: 'We design before we install.', body: 'Speaker placement, coverage modelling, and zone mapping — done on paper before anything goes in the ceiling. No guesswork. No revisits.' },
+              { title: 'We design before we install.', body: 'Speaker placement, coverage modelling, and zone mapping done on paper before anything goes in the ceiling. No guesswork. No revisits.' },
               { title: 'The operator stays in control.', body: 'We configure Q-SYS so your staff can adjust volume, switch inputs, or page a zone without calling us. Simple interface. Full control.' },
               { title: 'We commission to standard.', body: 'Every installation is tuned in the space after installation. Not set-and-forget. Set, verify, adjust, and sign off. That\'s how it stays sounding right.' },
             ].map((item) => (

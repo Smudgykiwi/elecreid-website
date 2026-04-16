@@ -13,7 +13,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Elec Reid',
-  description: 'Melbourne security system installation specialists — Inner Range Inception and Integriti',
+  description: 'Melbourne security system installation specialists Inner Range Inception and Integriti',
   url: 'https://elecreid.com',
   telephone: '+61450342075',
   email: 'enquiries@elecreid.com',
@@ -26,7 +26,7 @@ const products = [
   {
     name: 'Inception',
     label: 'Residential & small commercial',
-    body: 'The residential and small commercial security controller. Web-browser based commissioning — no proprietary software required. Connects via IP or 4G (SkyTunnel) for cloud-based remote management and alarm monitoring. Supports intruder detection, access control, and door control from a single panel. Designed to be set up correctly without specialist Inner Range experience — which means faster commissioning and lower ongoing cost. Our standard specification for residential projects.',
+    body: 'The residential and small commercial security controller. Web-browser based commissioning no proprietary software required. Connects via IP or 4G (SkyTunnel) for cloud-based remote management and alarm monitoring. Supports intruder detection, access control, and door control from a single panel. Designed to be set up correctly without specialist Inner Range experience which means faster commissioning and lower ongoing cost. Our standard specification for residential projects.',
     tag: 'Our standard residential spec',
   },
   {
@@ -47,9 +47,9 @@ const sharedFeatures = [
 
 const reasons = [
   { title: 'Australian-designed', body: 'Inner Range is designed and manufactured in Melbourne. Locally supported. Parts available. Engineers who know the product.' },
-  { title: 'We program both platforms', body: 'Inception and Integriti. Correct configuration, not just a working panel — a system that does what you actually need it to do.' },
-  { title: 'Smart home integration', body: 'Arm via Apple Home. Receive alerts on your phone. Your security system talks to your wider home system — not in isolation.' },
-  { title: 'Documented at handover', body: 'Full system documentation at handover. Zone maps, user codes, monitoring details, and programming guides. You own the system — you have everything you need.' },
+  { title: 'We program both platforms', body: 'Inception and Integriti. Correct configuration, not just a working panel a system that does what you actually need it to do.' },
+  { title: 'Smart home integration', body: 'Arm via Apple Home. Receive alerts on your phone. Your security system talks to your wider home system not in isolation.' },
+  { title: 'Documented at handover', body: 'Full system documentation at handover. Zone maps, user codes, monitoring details, and programming guides. You own the system you have everything you need.' },
 ]
 
 export default function SecurityPage() {
@@ -81,7 +81,7 @@ export default function SecurityPage() {
           </div>
           <div className="lg:pt-6">
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Most home alarms are superficially installed — sensors in obvious places, panels that are easy to bypass, monitoring that generates false alarms and gets ignored.
+              Most home alarms are superficially installed sensors in obvious places, panels that are easy to bypass, monitoring that generates false alarms and gets ignored.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-8">
               Elec Reid installs Inner Range security systems. Australian-designed, engineered for reliability, and programmed by installers who understand the technology.

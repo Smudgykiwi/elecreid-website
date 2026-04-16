@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'L-Acoustics Installation Melbourne | K2 Line Array | Elec Reid',
-  description: 'Elec Reid installs L-Acoustics line array systems in Melbourne — K2, KARA, KS28 subwoofer. Premium live sound and permanent installation for venues, events, and touring productions.',
+  description: 'Elec Reid installs L-Acoustics line array systems in Melbourne K2, KARA, KS28 subwoofer. Premium live sound and permanent installation for venues, events, and touring productions.',
 }
 
 const schema = {
@@ -53,10 +53,10 @@ export default function LAcousticsPage() {
               L-Acoustics is the world&apos;s leading professional loudspeaker manufacturer. Founded in France in 1984, they invented the modern line array concept and have defined the standard for concert and venue sound ever since. When a production specifies L-Acoustics, the expectation is simple: it should be the best audio experience in the room.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Elec Reid installs L-Acoustics systems for venues, events, and permanent installations across Melbourne. We supply, install, rig, and commission — using L-Acoustics&apos; Soundvision software for accurate system design before a single cabinet goes up.
+              Elec Reid installs L-Acoustics systems for venues, events, and permanent installations across Melbourne. We supply, install, rig, and commission using L-Acoustics&apos; Soundvision software for accurate system design before a single cabinet goes up.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
-              From a boutique music venue needing a permanent system to a touring production coming through Melbourne for one night — we have the experience and the gear.
+              From a boutique music venue needing a permanent system to a touring production coming through Melbourne for one night we have the experience and the gear.
             </p>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function LAcousticsPage() {
                 <p className="text-[9px] tracking-[0.25em] text-[#0134E7] uppercase mb-3">Mid-size venues · Permanent install · Corporate</p>
                 <h3 className="font-austin text-[#1A1A1A] text-3xl lg:text-4xl mb-4">KARA II</h3>
                 <p className="text-[#1A1A1A]/60 leading-relaxed text-lg mb-4">
-                  The KARA II is L-Acoustics&apos; compact workhorse — a wide-format line source element that delivers the same L-Acoustics quality in a smaller, lighter package suited for mid-size venues, corporate events, and permanent installation.
+                  The KARA II is L-Acoustics&apos; compact workhorse a wide-format line source element that delivers the same L-Acoustics quality in a smaller, lighter package suited for mid-size venues, corporate events, and permanent installation.
                 </p>
                 <p className="text-[#1A1A1A]/60 leading-relaxed">
                   Covers audiences from 500 to 5,000 people. Available in fixed and variable curvature configurations. Pairs with SB18 subwoofers for an extended bass response. The choice for Melbourne music venues and theatre installations.
@@ -115,7 +115,7 @@ export default function LAcousticsPage() {
                 <p className="text-[9px] tracking-[0.25em] text-[#0134E7] uppercase mb-3">Subwoofer · Cardioid capable</p>
                 <h3 className="font-austin text-[#1A1A1A] text-3xl lg:text-4xl mb-4">KS28</h3>
                 <p className="text-[#1A1A1A]/60 leading-relaxed text-lg mb-4">
-                  Dual 18&rdquo; reference subwoofer. 143 dB SPL. 25 Hz to 60 Hz bandwidth. 2,500 W AES power handling. The KS28 is cardioid-capable using L-Acoustics&apos; L-VENTS technology — which means tight, directional low-frequency control without rearward energy blasting into the stage.
+                  Dual 18&rdquo; reference subwoofer. 143 dB SPL. 25 Hz to 60 Hz bandwidth. 2,500 W AES power handling. The KS28 is cardioid-capable using L-Acoustics&apos; L-VENTS technology which means tight, directional low-frequency control without rearward energy blasting into the stage.
                 </p>
                 <p className="text-[#1A1A1A]/60 leading-relaxed">
                   The reason the front row feels the kick drum, not the back of the stage. Used in pairs and stacks for K2 and KARA systems. The sub that makes the difference between a good system and a great one.
@@ -133,7 +133,7 @@ export default function LAcousticsPage() {
           <h2 className="font-austin text-white text-4xl lg:text-5xl mb-12">Why Elec Reid.</h2>
           <div className="grid lg:grid-cols-3 gap-10">
             {[
-              { title: 'Soundvision system design.', body: 'We design every L-Acoustics system in Soundvision before installation. Accurate SPL mapping, delay time optimisation, and coverage verification — before a single cabinet is rigged.' },
+              { title: 'Soundvision system design.', body: 'We design every L-Acoustics system in Soundvision before installation. Accurate SPL mapping, delay time optimisation, and coverage verification before a single cabinet is rigged.' },
               { title: 'Ten years in live production.', body: 'We have worked with L-Acoustics systems in live environments for a decade. We know how to rig, aim, and tune a K2 system to sound like it should.' },
               { title: 'Touring and permanent.', body: 'A one-night touring production or a permanent venue installation. We have the rigging experience, the amplification knowledge, and the commissioning process for both.' },
             ].map((item) => (

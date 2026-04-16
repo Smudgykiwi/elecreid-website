@@ -99,7 +99,7 @@ export default function EkinexPage() {
                 20Venti
               </h2>
               <p className="text-[#1A1A1A]/60 text-base leading-relaxed">
-                The 20Venti is Ekinex's flagship switch range. Touch switches, rockers, thermostats and room controllers across a vast palette of finishes — brushed aluminium, painted RAL colours, bronze, brass, satin stainless. Modular. KNX native. Used in prestige residential and commercial projects across Europe and Australia.
+                The 20Venti is Ekinex's flagship switch range. Touch switches, rockers, thermostats and room controllers across a vast palette of finishes brushed aluminium, painted RAL colours, bronze, brass, satin stainless. Modular. KNX native. Used in prestige residential and commercial projects across Europe and Australia.
               </p>
             </div>
           </div>
@@ -142,12 +142,12 @@ export default function EkinexPage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             {[
-              { heading: 'Native KNX.', body: 'Ekinex hardware runs on the KNX bus natively — no bridge, no middleware. Specified alongside any KNX-compatible platform.' },
+              { heading: 'Native KNX.', body: 'Ekinex hardware runs on the KNX bus natively no bridge, no middleware. Specified alongside any KNX-compatible platform.' },
               { heading: 'Works with Basalte Home.', body: 'Ekinex and Basalte are complementary. We specify them together when a project calls for Italian hardware with Belgian software.' },
               { heading: 'Italian-engineered.', body: 'Designed and manufactured in Italy to a standard that makes it the first choice for architects on prestige projects across Europe.' },
-              { heading: '13+ finishes.', body: 'A palette no other manufacturer matches. From brushed aluminium to antique brass — specified to match the interior, not work around it.' },
+              { heading: '13+ finishes.', body: 'A palette no other manufacturer matches. From brushed aluminium to antique brass specified to match the interior, not work around it.' },
               { heading: 'Residential and commercial.', body: 'We install Ekinex in Melbourne homes and commercial projects. The 20Venti scales from a single room to a whole building.' },
-              { heading: 'Full system design.', body: 'We do not just supply switches. We design the complete system — every button, every function, every scene — before a single cable is pulled.' },
+              { heading: 'Full system design.', body: 'We do not just supply switches. We design the complete system every button, every function, every scene before a single cable is pulled.' },
             ].map((point, i) => (
               <div key={i} className="flex flex-col gap-3">
                 <div className="w-8 h-px bg-[#0134E7]" />

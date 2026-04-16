@@ -48,7 +48,7 @@ export default function Home() {
           <div className="overflow-hidden">
             <Image
               src="/images/mckimm-5.jpg"
-              alt="McKimm Brighton — Elec Reid"
+              alt="McKimm Brighton Elec Reid"
               width={2000}
               height={1200}
               className="w-full object-cover object-center"
@@ -74,10 +74,10 @@ export default function Home() {
             </div>
             <div className="lg:pt-24">
               <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-                It is a relationship between architecture, automation and the people who live there. Elec Reid specifies, installs and commissions residential systems where every decision is deliberate — from the switch that meets your hand each morning to the control platform that ties it all together.
+                It is a relationship between architecture, automation and the people who live there. Elec Reid specifies, installs and commissions residential systems where every decision is deliberate from the switch that meets your hand each morning to the control platform that ties it all together.
               </p>
               <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
-                We partner with the best hardware in the world — Basalte, Core Smart Home, Zetr, Control4, Ekinex — and pair them with platforms we trust.
+                We partner with the best hardware in the world Basalte, Core Smart Home, Zetr, Control4, Ekinex and pair them with platforms we trust.
               </p>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function Home() {
             &ldquo;Good taste, implied confidence,<br className="hidden lg:block" /> and a pure nerdy love for tech.&rdquo;
           </p>
           <p className="text-white/35 text-[9px] tracking-[0.3em] uppercase mt-8">
-            — How a friend described our team
+            How a friend described our team
           </p>
         </div>
       </section>
@@ -128,7 +128,7 @@ export default function Home() {
               {
                 num: '03',
                 title: 'One accountable team.',
-                body: 'Electrical, networking, automation, AV — designed together, installed together, programmed together. No passing the buck. No three contractors blaming each other. One team. Everything works.',
+                body: 'Electrical, networking, automation, AV designed together, installed together, programmed together. No passing the buck. No three contractors blaming each other. One team. Everything works.',
               },
             ].map((item, i) => (
               <div key={item.num} className={`py-10 ${i > 0 ? 'lg:pl-12' : ''} ${i < 2 ? 'lg:pr-12' : ''}`}>
@@ -161,7 +161,7 @@ export default function Home() {
               { num: '02', title: 'Residential Electrical', desc: 'A-grade licensed electricians. The infrastructure that makes everything else possible.' },
               { num: '03', title: 'Networking', desc: 'Ubiquiti/Unifi built for performance. Enterprise Wi-Fi, structured cabling, PoE.' },
               { num: '04', title: 'Audio Visual & Home Cinema', desc: 'Multi-room audio, home cinema, outdoor zones. Sonos, premium speakers, hidden AV.' },
-              { num: '05', title: 'Security Systems', desc: 'CCTV, intercom, access control and alarm systems — all integrated.' },
+              { num: '05', title: 'Security Systems', desc: 'CCTV, intercom, access control and alarm systems all integrated.' },
               { num: '06', title: 'Lighting Design', desc: 'Dimming, scenes, circadian scheduling. Light that responds to how you live.' },
             ].map((service) => (
               <div key={service.num} className="grid grid-cols-[44px_1fr_28px] gap-6 items-center py-6 group">
@@ -242,7 +242,7 @@ export default function Home() {
             {[
               { name: 'Su Mei Koh', suburb: 'Toorak', text: 'Joe and his team came highly recommended, and I\'m so grateful. The smart home system works flawlessly and the finish is impeccable.' },
               { name: 'Robbie Smarrelli', suburb: 'South Yarra', text: 'Excellent service with expert workmanship. Reliable, professional, and the attention to detail was outstanding.' },
-              { name: 'Andy Fisher', suburb: 'Brighton', text: 'Joe\'s an absolute legend — not just a top electrician but a great bloke too. A genius when it comes to smart home tech.' },
+              { name: 'Andy Fisher', suburb: 'Brighton', text: 'Joe\'s an absolute legend not just a top electrician but a great bloke too. A genius when it comes to smart home tech.' },
             ].map((review) => (
               <div key={review.name} className="border-t border-[#1A1A1A]/10 pt-8">
                 <div className="flex gap-0.5 mb-6">

@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Logitech Video Conferencing Melbourne | Rally Bar Installation | Elec Reid',
-  description: 'Elec Reid installs Logitech video conferencing systems across Melbourne. Rally Bar, Rally Bar Mini, MeetUp — certified Teams and Zoom Rooms installation for every room size.',
+  description: 'Elec Reid installs Logitech video conferencing systems across Melbourne. Rally Bar, Rally Bar Mini, MeetUp certified Teams and Zoom Rooms installation for every room size.',
 }
 
 const schema = {
@@ -25,7 +25,7 @@ const products = [
   {
     name: 'MeetUp',
     size: 'Huddle · 1–6 people',
-    desc: 'One device. Ultra-wide 120° lens. Beamforming audio. Plug into a laptop or run natively with Microsoft Teams or Zoom Rooms. The complete solution for a small space — fits on any shelf or screen.',
+    desc: 'One device. Ultra-wide 120° lens. Beamforming audio. Plug into a laptop or run natively with Microsoft Teams or Zoom Rooms. The complete solution for a small space fits on any shelf or screen.',
   },
   {
     name: 'Rally Bar Huddle',
@@ -81,7 +81,7 @@ export default function LogitechPage() {
               No fumbling with cables. No one saying &ldquo;can you hear me?&rdquo; The camera finds the speaker. The microphone cuts the noise. The system joins the call in one tap. That is what a properly installed Logitech room feels like.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Logitech makes the hardware that makes this happen. Elec Reid installs it properly — from wall plates and ceiling mounts to Logitech Sync configuration and multi-room deployment. Microsoft Teams and Zoom Rooms certified for every product in the range.
+              Logitech makes the hardware that makes this happen. Elec Reid installs it properly from wall plates and ceiling mounts to Logitech Sync configuration and multi-room deployment. Microsoft Teams and Zoom Rooms certified for every product in the range.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
               We size the system to the room. Not the other way around.
@@ -116,7 +116,7 @@ export default function LogitechPage() {
           <div>
             <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-6">Logitech Sync</h2>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
-              Cloud management for every deployed device. Monitor health, push firmware updates, and troubleshoot any meeting room from a single dashboard — without being in the building. Essential for any multi-room commercial deployment. We configure Logitech Sync as part of every installation.
+              Cloud management for every deployed device. Monitor health, push firmware updates, and troubleshoot any meeting room from a single dashboard without being in the building. Essential for any multi-room commercial deployment. We configure Logitech Sync as part of every installation.
             </p>
           </div>
           <div className="bg-[#E8E4DF] aspect-[4/3] flex items-center justify-center">
@@ -131,7 +131,7 @@ export default function LogitechPage() {
           <h2 className="font-austin text-white text-4xl lg:text-5xl mb-12">Why Elec Reid.</h2>
           <div className="grid lg:grid-cols-3 gap-10">
             {[
-              { title: 'Right room, right system.', body: 'We specify the correct Logitech product for each room size — not the same solution everywhere. MeetUp for huddle spaces. Rally Bar for boardrooms.' },
+              { title: 'Right room, right system.', body: 'We specify the correct Logitech product for each room size not the same solution everywhere. MeetUp for huddle spaces. Rally Bar for boardrooms.' },
               { title: 'Certified installation.', body: 'Wall and ceiling mounting, structured cabling, PoE switching, and Teams/Zoom certification. Done properly from the start.' },
               { title: 'Multi-room deployment.', body: 'Logitech Sync configured across every device. One dashboard for your whole fleet. Add rooms without adding complexity.' },
             ].map((item) => (

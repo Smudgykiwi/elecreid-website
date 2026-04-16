@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Core Smart Home Keypads Melbourne | Eclipse Switches | Elec Reid',
-  description: 'Core Smart Home Eclipse switches Melbourne. Elec Reid installs the Eclipse switch and thermostat range — Australian-designed, integrated sensors, 13 finishes. For contemporary residential projects.',
+  description: 'Core Smart Home Eclipse switches Melbourne. Elec Reid installs the Eclipse switch and thermostat range Australian-designed, integrated sensors, 13 finishes. For contemporary residential projects.',
 }
 
 const schema = {
@@ -37,7 +37,7 @@ export default function CoreSmartHomePage() {
 
       {/* ── Hero ── */}
       <section className="relative h-[70vh] min-h-[520px] flex items-end bg-[#1A1A1A] overflow-hidden">
-        {/* Colour block placeholder — no image available */}
+        {/* Colour block placeholder no image available */}
         <div className="absolute inset-0 bg-[#E8E4DF] opacity-20" />
         <div className="relative z-10 max-w-screen-xl mx-auto px-6 lg:px-16 pb-16 w-full">
           <p className="text-[10px] tracking-[0.25em] uppercase text-white/40 mb-4">
@@ -112,7 +112,7 @@ export default function CoreSmartHomePage() {
                 Eclipse Thermostat
               </h2>
               <p className="text-[#1A1A1A]/60 text-base leading-relaxed">
-                Adds super-knob control to the Eclipse platform. Custom backlit buttons, air quality measurement, and precise temperature management. The complete room control solution — one surface for lighting, climate, and environment.
+                Adds super-knob control to the Eclipse platform. Custom backlit buttons, air quality measurement, and precise temperature management. The complete room control solution one surface for lighting, climate, and environment.
               </p>
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function CoreSmartHomePage() {
                 Thirteen finishes
               </h2>
               <p className="text-[#1A1A1A]/60 text-base leading-relaxed">
-                Thirteen finishes across brushed and silky-matte surfaces — bronze through brass. Each switch is precisely machined and finished to sit flush against the wall with zero gap. Specified to match the interior, not work around it.
+                Thirteen finishes across brushed and silky-matte surfaces bronze through brass. Each switch is precisely machined and finished to sit flush against the wall with zero gap. Specified to match the interior, not work around it.
               </p>
             </div>
           </div>
@@ -151,12 +151,12 @@ export default function CoreSmartHomePage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             {[
-              { heading: 'Australian-designed.', body: 'Built for the Australian market by Australians. Standards, wall boxes, and electrical conditions — all designed for from the ground up.' },
+              { heading: 'Australian-designed.', body: 'Built for the Australian market by Australians. Standards, wall boxes, and electrical conditions all designed for from the ground up.' },
               { heading: 'Integrated sensors.', body: 'Ambient light, temperature, and presence detection built into the switch. No separate sensor hardware required.' },
-              { heading: '13 finishes.', body: 'A palette that rivals European competitors. Brushed gold, satin bronze, matte white — specified to match your interior.' },
+              { heading: '13 finishes.', body: 'A palette that rivals European competitors. Brushed gold, satin bronze, matte white specified to match your interior.' },
               { heading: 'Works with Apple Home, Home Assistant, and KNX.', body: 'Platform-agnostic hardware. Specify Core Smart Home regardless of which automation platform you choose.' },
               { heading: 'Residential specialists.', body: 'We specify Core Smart Home in contemporary Melbourne homes where Australian design sensibility matters.' },
-              { heading: 'Full system design.', body: 'We specify every button, every function, every scene — before a single cable is pulled.' },
+              { heading: 'Full system design.', body: 'We specify every button, every function, every scene before a single cable is pulled.' },
             ].map((point, i) => (
               <div key={i} className="flex flex-col gap-3">
                 <div className="w-8 h-px bg-[#0134E7]" />

@@ -265,7 +265,7 @@ export default function BuildPage() {
 
       case 5: return (
         <div className="max-w-2xl text-center">
-          <p className="text-white/60 text-lg leading-relaxed mb-6">Your home is full of systems — lighting, blinds, climate, security, audio, access control — and when they don&apos;t talk to each other, nothing works the way it should.</p>
+          <p className="text-white/60 text-lg leading-relaxed mb-6">Your home is full of systems lighting, blinds, climate, security, audio, access control and when they don&apos;t talk to each other, nothing works the way it should.</p>
           <p className="text-white/60 text-lg leading-relaxed mb-10">We design and install smart homes that actually work. One app. One system. Everything integrated, reliable, and built to last.</p>
           <button onClick={next} className="border border-white/40 hover:border-white text-white text-[11px] tracking-[0.15em] px-10 py-4 rounded-full transition-colors">
             CONTINUE →
@@ -277,7 +277,7 @@ export default function BuildPage() {
         <div className="max-w-xl text-center">
           <p className="text-[10px] tracking-[0.25em] text-white/40 uppercase mb-4">Apple Home</p>
           <h2 className="font-austin text-white text-4xl lg:text-5xl mb-6">Apple Home</h2>
-          <p className="text-white/60 leading-relaxed mb-8">Our #1 recommendation for most homes. If you&apos;re in the Apple ecosystem — iPhones, iPads, Apple Watch, HomePods — this is the natural fit. Beautiful, reliable, no subscription fees.</p>
+          <p className="text-white/60 leading-relaxed mb-8">Our #1 recommendation for most homes. If you&apos;re in the Apple ecosystem iPhones, iPads, Apple Watch, HomePods this is the natural fit. Beautiful, reliable, no subscription fees.</p>
           <button onClick={next} className="border border-white/40 hover:border-white text-white text-[11px] tracking-[0.15em] px-10 py-4 rounded-full transition-colors">
             CONTINUE →
           </button>
@@ -288,7 +288,7 @@ export default function BuildPage() {
         <div className="max-w-xl text-center">
           <p className="text-[10px] tracking-[0.25em] text-white/40 uppercase mb-4">Home Assistant</p>
           <h2 className="font-austin text-white text-4xl lg:text-5xl mb-6">Home Assistant</h2>
-          <p className="text-white/60 leading-relaxed mb-8">Open source. Local control. 2,000+ integrations. For clients who want total flexibility and zero vendor lock-in. Runs locally — no cloud, no subscription, no limits.</p>
+          <p className="text-white/60 leading-relaxed mb-8">Open source. Local control. 2,000+ integrations. For clients who want total flexibility and zero vendor lock-in. Runs locally no cloud, no subscription, no limits.</p>
           <button onClick={next} className="border border-white/40 hover:border-white text-white text-[11px] tracking-[0.15em] px-10 py-4 rounded-full transition-colors">
             CONTINUE →
           </button>
@@ -309,7 +309,7 @@ export default function BuildPage() {
       case 9: return (
         <div className="max-w-2xl w-full">
           <h1 className="font-austin text-white text-4xl lg:text-5xl mb-4">Which control system?</h1>
-          <p className="text-white/50 mb-8">Not sure? No stress — we&apos;ll walk you through it.</p>
+          <p className="text-white/50 mb-8">Not sure? No stress we&apos;ll walk you through it.</p>
           <div className="grid grid-cols-2 gap-4">
             {[
               { val: 'apple-home', label: 'Apple Home', img: '/images/haven-5.jpg' },
@@ -338,8 +338,8 @@ export default function BuildPage() {
           { label: 'Basalte Chopin', body: 'Refined push-button minimalism. Fits standard wall boxes, works with most systems.' },
           { label: 'Core Eclipse', body: 'Australian-designed, ultra-flush. Almost invisible against the wall. Multiple configurations.' },
           { label: 'Control4 Lux', body: 'Purpose-built for Control4. Custom-engraved scene labels. Sleek premium dimmer face.' },
-          { label: 'Zetr', body: 'Completely trimless — no plate, no frame. Designed to disappear into the architecture.' },
-          { label: 'Ekinex', body: 'Italian precision. Vast range of finishes — metals, colours, textures. Every detail crafted.' },
+          { label: 'Zetr', body: 'Completely trimless no plate, no frame. Designed to disappear into the architecture.' },
+          { label: 'Ekinex', body: 'Italian precision. Vast range of finishes metals, colours, textures. Every detail crafted.' },
         ]
         const s = switches[step - 10]
         return (
@@ -385,7 +385,7 @@ export default function BuildPage() {
       case 18: return (
         <div className="text-center max-w-xl">
           <h1 className="font-austin text-white text-5xl lg:text-6xl mb-6">Nice.</h1>
-          <p className="text-white/60 text-lg mb-10">Now let&apos;s run through what you want integrated. Just yes or no — we&apos;ll handle the rest.</p>
+          <p className="text-white/60 text-lg mb-10">Now let&apos;s run through what you want integrated. Just yes or no we&apos;ll handle the rest.</p>
           <button onClick={next} className="bg-[#0134E7] hover:bg-[#012ab8] text-white text-[11px] tracking-[0.15em] px-10 py-4 rounded-full transition-colors">
             CONTINUE →
           </button>
@@ -411,10 +411,10 @@ export default function BuildPage() {
       )
 
       // Yes/No questions 20-34
-      case 20: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Network & Wi-Fi</h1><p className={`${textColor}/60 leading-relaxed mb-2`}>Every smart home starts with solid Wi-Fi. Enterprise-grade — no dead zones, no dropouts.</p><YesNo field="network" /></div>)
+      case 20: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Network & Wi-Fi</h1><p className={`${textColor}/60 leading-relaxed mb-2`}>Every smart home starts with solid Wi-Fi. Enterprise-grade no dead zones, no dropouts.</p><YesNo field="network" /></div>)
       case 21: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Smart Lighting Control</h1><p className={`${textColor}/60 leading-relaxed`}>Scenes, schedules, and dimming from your phone or switches. Lights that respond to your routine.</p><YesNo field="lighting" /></div>)
       case 22: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Motorised Blinds & Curtains</h1><p className={`${textColor}/60 leading-relaxed`}>Open with your morning alarm. Close when the sun hits. Integrated with lighting.</p><YesNo field="blinds" /></div>)
-      case 23: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Climate Control</h1><p className={`${textColor}/60 leading-relaxed`}>Heating, cooling, and fans that adjust room by room — automatically.</p><YesNo field="climate" /></div>)
+      case 23: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Climate Control</h1><p className={`${textColor}/60 leading-relaxed`}>Heating, cooling, and fans that adjust room by room automatically.</p><YesNo field="climate" /></div>)
       case 24: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Home Theatre / Media Room</h1><p className={`${textColor}/60 leading-relaxed`}>One tap and the lights dim, the screen drops, and the sound kicks in.</p><YesNo field="theatre" /></div>)
       case 25: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Security Alarm</h1><p className={`${textColor}/60 leading-relaxed`}>Proper protection that doesn&apos;t get in the way. Smart alerts to your phone.</p><YesNo field="alarm" /></div>)
       case 26: return (
@@ -425,7 +425,7 @@ export default function BuildPage() {
           <p className={`${textColor}/30 text-xs tracking-wider mt-4`}>press Enter ↵</p>
         </div>
       )
-      case 27: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Security Cameras</h1><p className={`${textColor}/60 leading-relaxed`}>UniFi cameras — local recording, no subscriptions. See what&apos;s happening from anywhere.</p><YesNo field="cameras" /></div>)
+      case 27: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Security Cameras</h1><p className={`${textColor}/60 leading-relaxed`}>UniFi cameras local recording, no subscriptions. See what&apos;s happening from anywhere.</p><YesNo field="cameras" /></div>)
       case 28: return (
         <div className="max-w-md w-full">
           <h1 className={`font-austin text-4xl ${textColor} mb-4`}>Any notes on cameras?</h1>
@@ -437,7 +437,7 @@ export default function BuildPage() {
       case 29: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Access Control</h1><p className={`${textColor}/60 leading-relaxed`}>Video intercom, smart locks, garage and gate control. See who&apos;s at the door from anywhere.</p><YesNo field="access" /></div>)
       case 30: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Pool, Spa & Irrigation</h1><p className={`${textColor}/60 leading-relaxed`}>Automated schedules for pool heating, filtration, spa jets, and garden watering.</p><YesNo field="poolSpa" /></div>)
       case 31: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>EV Charger</h1><p className={`${textColor}/60 leading-relaxed`}>Smart charger integrated with your energy system. Schedule for off-peak rates automatically.</p><YesNo field="evCharger" /></div>)
-      case 32: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Weather Station</h1><p className={`${textColor}/60 leading-relaxed`}>Live weather data feeding your home — blinds close when it&apos;s hot, lights adjust when overcast.</p><YesNo field="weatherStation" /></div>)
+      case 32: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Weather Station</h1><p className={`${textColor}/60 leading-relaxed`}>Live weather data feeding your home blinds close when it&apos;s hot, lights adjust when overcast.</p><YesNo field="weatherStation" /></div>)
       case 33: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Video Distribution</h1><p className={`${textColor}/60 leading-relaxed`}>One source, every screen. Matrix switching so you can watch anything, anywhere.</p><YesNo field="videoDistribution" /></div>)
       case 34: return (<div className="max-w-xl"><h1 className={`font-austin text-4xl lg:text-5xl ${textColor} mb-4`}>Solar</h1><p className={`${textColor}/60 leading-relaxed`}>Panels, batteries, and smart monitoring. See what you&apos;re generating and automate to keep bills low.</p><YesNo field="solar" /></div>)
 
@@ -454,7 +454,7 @@ export default function BuildPage() {
       case 36: return (
         <div className="max-w-md w-full">
           <h1 className={`font-austin text-4xl ${textColor} mb-4`}>Anything else?</h1>
-          <p className={`${textColor}/60 mb-6`}>Room counts, must-haves, budget range — whatever&apos;s on your mind.</p>
+          <p className={`${textColor}/60 mb-6`}>Room counts, must-haves, budget range whatever&apos;s on your mind.</p>
           <textarea value={formData.additionalNotes} onChange={e => update('additionalNotes', e.target.value)} placeholder="Your thoughts..."
             className={`block w-full bg-transparent border-b py-3 text-lg outline-none resize-none h-32 transition-colors ${inputBorder}`} />
           <p className={`${textColor}/30 text-xs tracking-wider mt-4`}>press Enter ↵</p>

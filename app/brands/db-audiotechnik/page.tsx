@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'd&b audiotechnik Installation Melbourne | Professional Speakers | Elec Reid',
-  description: 'Elec Reid installs d&b audiotechnik professional speaker systems across Melbourne — T Series for permanent install, V Series and Y Series for venues and event spaces.',
+  description: 'Elec Reid installs d&b audiotechnik professional speaker systems across Melbourne T Series for permanent install, V Series and Y Series for venues and event spaces.',
 }
 
 const schema = {
@@ -96,10 +96,10 @@ export default function DbAudiotechnikPage() {
                 <p className="text-[9px] tracking-[0.25em] text-[#0134E7] uppercase mb-3">Live · Medium venues · Event spaces</p>
                 <h3 className="font-austin text-[#1A1A1A] text-3xl lg:text-4xl mb-4">V Series</h3>
                 <p className="text-[#1A1A1A]/60 leading-relaxed text-lg mb-4">
-                  A versatile line array system that scales from intimate private functions to large venue events. The innovative d&amp;b rigging system reduces setup time significantly — critical when a space is running multiple events across a week.
+                  A versatile line array system that scales from intimate private functions to large venue events. The innovative d&amp;b rigging system reduces setup time significantly critical when a space is running multiple events across a week.
                 </p>
                 <p className="text-[#1A1A1A]/60 leading-relaxed">
-                  From a 200-person private dining event to a 2,000-person music venue — the V Series handles both. The same cabinet. The same rigging. Scaled to the brief.
+                  From a 200-person private dining event to a 2,000-person music venue the V Series handles both. The same cabinet. The same rigging. Scaled to the brief.
                 </p>
               </div>
             </div>
@@ -117,7 +117,7 @@ export default function DbAudiotechnikPage() {
                   ArrayProcessed speaker technology that delivers audiophile precision at concert scale. The Y Series has been specified in performing arts centres, live music venues, and major touring productions globally.
                 </p>
                 <p className="text-[#1A1A1A]/60 leading-relaxed">
-                  When the brief demands the absolute best — a venue that will be judged on its audio quality, a performing arts facility, a music venue with a discerning audience — the Y Series is the specification.
+                  When the brief demands the absolute best a venue that will be judged on its audio quality, a performing arts facility, a music venue with a discerning audience the Y Series is the specification.
                 </p>
               </div>
             </div>
@@ -132,7 +132,7 @@ export default function DbAudiotechnikPage() {
           <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-12">Where we install d&amp;b.</h2>
           <div className="grid lg:grid-cols-3 gap-10">
             {[
-              { title: 'Event rooms & function spaces.', body: 'A permanent d&b system that handles background music, a presentation, and a live band — all in the same room. Properly tuned for each use case.' },
+              { title: 'Event rooms & function spaces.', body: 'A permanent d&b system that handles background music, a presentation, and a live band all in the same room. Properly tuned for each use case.' },
               { title: 'Bars, clubs & music venues.', body: 'Permanent installation that sounds like a touring rig every night of the week. Rigged properly. Tuned to the room. Managed from a single interface.' },
               { title: 'Corporate & hospitality.', body: 'Premium lobbies and corporate event rooms where the audio quality needs to match the fit-out. T Series for discreet, consistent, professional performance.' },
             ].map((item) => (
@@ -152,7 +152,7 @@ export default function DbAudiotechnikPage() {
           <div className="grid lg:grid-cols-3 gap-10">
             {[
               { title: 'We know d&b from the inside.', body: 'Ten years running d&b systems on major shows before we started installing them permanently. That experience shows in how we rig, tune, and commission every system.' },
-              { title: 'R1 remote control and ArrayProcessing.', body: 'd&b systems are only as good as their configuration. We use R1 software for system design, delay optimisation, and ArrayProcessing setup — the same workflow as a touring production.' },
+              { title: 'R1 remote control and ArrayProcessing.', body: 'd&b systems are only as good as their configuration. We use R1 software for system design, delay optimisation, and ArrayProcessing setup the same workflow as a touring production.' },
               { title: 'From specification to commissioning.', body: 'System design, supply, installation, rigging, amplification setup, and acoustic commissioning. We own the whole process.' },
             ].map((item) => (
               <div key={item.title} className="border-t border-white/10 pt-8">

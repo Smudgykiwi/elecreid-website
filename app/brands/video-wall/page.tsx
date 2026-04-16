@@ -36,7 +36,7 @@ export default function VideoWallPage() {
           </div>
           <div className="lg:pt-6">
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              It is an architectural decision. When the brief calls for impact — a lobby that stops people, a control room that communicates, a venue that commands attention — a video wall delivers what a single panel cannot.
+              It is an architectural decision. When the brief calls for impact a lobby that stops people, a control room that communicates, a venue that commands attention a video wall delivers what a single panel cannot.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
               Elec Reid designs, supplies, and installs video wall systems for commercial clients across Melbourne. Any size. Any aspect ratio. Any content. We handle the brief from specification through to commissioning.

@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'WiiM Audio Streaming Melbourne | AirPlay Amplifiers | Elec Reid',
-  description: 'Elec Reid installs WiiM streaming amplifiers and streamers in Melbourne. AirPlay 2 native, Spotify Connect, Tidal, multiroom audio — integrated with Apple Home. No subscription.',
+  description: 'Elec Reid installs WiiM streaming amplifiers and streamers in Melbourne. AirPlay 2 native, Spotify Connect, Tidal, multiroom audio integrated with Apple Home. No subscription.',
   keywords: 'WiiM Melbourne, WiiM Amp Melbourne, AirPlay amplifier Melbourne, multi-room audio Melbourne, smart home audio Melbourne',
 }
 
@@ -42,7 +42,7 @@ const products = [
   {
     name: 'WiiM Amp Ultra',
     subtitle: 'The flagship.',
-    body: '100W per channel. ESS ES9039Q2M SABRE DAC. Dual TI TPA3255 Class-D amplifiers. Built-in RoomFit EQ for automatic room correction. HDMI ARC input. Touchscreen. Post-Filter Feedback technology. When the brief demands the absolute best from a streaming amplifier — this is the specification.',
+    body: '100W per channel. ESS ES9039Q2M SABRE DAC. Dual TI TPA3255 Class-D amplifiers. Built-in RoomFit EQ for automatic room correction. HDMI ARC input. Touchscreen. Post-Filter Feedback technology. When the brief demands the absolute best from a streaming amplifier this is the specification.',
   },
 ]
 
@@ -96,7 +96,7 @@ export default function WiiMPage() {
               WiiM makes streaming amplifiers and streamers that sit at the intersection of audiophile performance and smart home integration. AirPlay 2 native. Spotify Connect. Tidal. Multiroom. Every WiiM product integrates with Apple Home and plays nicely with Sonos ecosystems.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mt-6">
-              The reason we specify WiiM is flexibility — tunable, adaptable, and genuinely high-quality at a price point that makes the right system accessible.
+              The reason we specify WiiM is flexibility tunable, adaptable, and genuinely high-quality at a price point that makes the right system accessible.
             </p>
           </div>
         </div>
