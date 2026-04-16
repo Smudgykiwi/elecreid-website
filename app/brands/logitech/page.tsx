@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
@@ -56,8 +57,11 @@ export default function LogitechPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 pt-32 pb-20">
-        <div className="max-w-screen-xl mx-auto">
+      <section className="bg-[#1A1A1A] px-6 lg:px-16 pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/images/eclat-galerie.webp" alt="Commercial AV meeting room" fill className="object-cover opacity-20" />
+        </div>
+        <div className="max-w-screen-xl mx-auto relative z-10">
           <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Commercial · Video Conferencing</p>
           <h1 className="font-austin text-white text-[clamp(64px,10vw,140px)] leading-[0.88] tracking-tight mb-6">
             Logitech
