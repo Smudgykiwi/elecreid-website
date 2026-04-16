@@ -143,6 +143,22 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Theatre/lounge feature image */}
+      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-0">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="relative aspect-[21/9] overflow-hidden">
+            <Image
+              src="/images/haven-dsc05653.jpg"
+              alt="Elec Reid home theatre lounge installation"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-[#1A1A1A]/10" />
+          </div>
+          <p className="text-[8px] tracking-[0.2em] text-[#1A1A1A]/30 uppercase mt-3">Haven Court &middot; Torquay, VIC</p>
+        </div>
+      </section>
+
       {/* Stats / credentials */}
       <section className="bg-[#16253F] px-6 lg:px-16 py-20">
         <div className="max-w-screen-xl mx-auto">
@@ -158,6 +174,27 @@ export default function AboutPage() {
                 <p className="text-white/40 text-sm leading-relaxed">{item.label}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects image strip */}
+      <section className="bg-white px-6 lg:px-16 py-16">
+        <div className="max-w-screen-xl mx-auto">
+          <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-8">Selected Projects</p>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image src="/images/haven-dsc05570.jpg" alt="Haven Court smart home project" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image src="/images/merival-sonos.jpg" alt="Merival Sonos multi-room audio" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image src="/images/stkilda-1.jpg" alt="Fitzroy Street rooftop entertainment" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+            </div>
+          </div>
+          <div className="mt-6 flex justify-end">
+            <a href="/projects" className="text-[9px] tracking-[0.25em] text-[#0134E7] uppercase hover:underline">View all projects &rarr;</a>
           </div>
         </div>
       </section>

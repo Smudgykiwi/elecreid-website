@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -28,8 +29,12 @@ export default function TPLinkPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#16253F] px-6 lg:px-16 pt-32 pb-20">
-        <div className="max-w-screen-xl mx-auto">
+      <section className="relative bg-[#16253F] overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/images/commercial-5.jpg" alt="TP-Link network infrastructure" fill className="object-cover opacity-20" priority />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#16253F]/80 to-[#16253F]/95" />
+        </div>
+        <div className="relative max-w-screen-xl mx-auto px-6 lg:px-16 pt-36 pb-24">
           <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Networking · Cameras</p>
           <h1 className="font-austin text-white text-[clamp(64px,10vw,140px)] leading-[0.88] tracking-tight mb-6">
             TP-Link
@@ -65,8 +70,15 @@ export default function TPLinkPage() {
       {/* Omada Networking */}
       <section className="bg-white px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto">
-          <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-4">Wi-Fi & Networking</p>
-          <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-16">TP-Link Omada</h2>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-4">Wi-Fi &amp; Networking</p>
+              <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl">TP-Link Omada</h2>
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image src="/images/haven-7.jpg" alt="TP-Link Omada network rack" fill className="object-cover" />
+            </div>
+          </div>
 
           <div className="grid lg:grid-cols-3 gap-10">
             {[
@@ -99,8 +111,15 @@ export default function TPLinkPage() {
       {/* Vigi Cameras */}
       <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto">
-          <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-4">Security Cameras</p>
-          <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-6">TP-Link Vigi</h2>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+            <div>
+              <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-4">Security Cameras</p>
+              <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl">TP-Link Vigi</h2>
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image src="/images/haven-dsc05741.jpg" alt="TP-Link Vigi camera on exterior wall" fill className="object-cover" />
+            </div>
+          </div>
           <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-16 max-w-3xl">
             The TP-Link Vigi range delivers local CCTV recording without cloud subscriptions. PoE-powered IP cameras across dome, turret, bullet, and PTZ form factors managed via the Vigi NVR or the VIGI Security Manager software. All footage stored locally. No monthly fees.
           </p>

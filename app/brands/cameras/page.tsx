@@ -137,6 +137,44 @@ export default function CamerasPage() {
         </div>
       </section>
 
+      {/* UniFi G5 Feature */}
+      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20 lg:py-28">
+        <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <div className="relative aspect-[4/3] overflow-hidden">
+            <Image src="/images/unifi-camera-g5.png" alt="UniFi G5 Pro security camera" fill className="object-contain bg-[#E8E4DF] p-8" />
+          </div>
+          <div>
+            <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-4">Featured Camera</p>
+            <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-6">UniFi G5 Pro</h2>
+            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
+              The G5 Pro delivers 4K resolution with wide dynamic range and colour night vision. IP67 weatherproofed for outdoor use, PoE-powered for clean installation. The standard perimeter camera in every Elec Reid residential install.
+            </p>
+            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
+              Footage is stored locally on your UniFi NVR. No cloud. No subscription. AI smart detection included.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* NVR Feature */}
+      <section className="bg-white px-6 lg:px-16 py-20 lg:py-28">
+        <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <div className="lg:order-2">
+            <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-4">Local Storage</p>
+            <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-6">The infrastructure behind every camera.</h2>
+            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
+              Every UniFi camera system is built around a properly designed rack. PoE switching, the UniFi NVR, patch panels, and clean cable management. Built to run 24/7 for years.
+            </p>
+            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
+              Your footage is stored on drives you own, in your home, accessible only to you.
+            </p>
+          </div>
+          <div className="lg:order-1 relative aspect-[4/3] overflow-hidden">
+            <Image src="/images/haven-7.jpg" alt="UniFi NVR rack installation" fill className="object-cover" />
+          </div>
+        </div>
+      </section>
+
       {/* Why Elec Reid */}
       <section className="bg-white px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto">

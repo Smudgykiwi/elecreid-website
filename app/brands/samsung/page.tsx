@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -28,8 +29,12 @@ export default function SamsungPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#16253F] px-6 lg:px-16 pt-32 pb-20">
-        <div className="max-w-screen-xl mx-auto">
+      <section className="relative bg-[#16253F] overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/images/eclat-galerie.webp" alt="Samsung video wall commercial installation" fill className="object-cover opacity-25" priority />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#16253F]/70 to-[#16253F]/95" />
+        </div>
+        <div className="relative max-w-screen-xl mx-auto px-6 lg:px-16 pt-36 pb-24">
           <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Commercial · Displays</p>
           <h1 className="font-austin text-white text-[clamp(64px,10vw,140px)] leading-[0.88] tracking-tight mb-6">
             Samsung
@@ -69,8 +74,8 @@ export default function SamsungPage() {
           <div className="space-y-16">
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="bg-[#E8E4DF] aspect-[16/9] flex items-center justify-center">
-                <p className="font-austin text-[#1A1A1A]/20 text-xl">QM Series</p>
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <Image src="/images/commercial-5.jpg" alt="Samsung QM Series commercial display" fill className="object-cover" />
               </div>
               <div>
                 <p className="text-[9px] tracking-[0.25em] text-[#0134E7] uppercase mb-3">Meeting rooms · Lobbies · Retail</p>
@@ -85,8 +90,8 @@ export default function SamsungPage() {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="lg:order-2 bg-[#E8E4DF] aspect-[16/9] flex items-center justify-center">
-                <p className="font-austin text-[#1A1A1A]/20 text-xl">QH Series</p>
+              <div className="lg:order-2 relative aspect-[16/9] overflow-hidden">
+                <Image src="/images/commercial-3.jpg" alt="Samsung QH Series high brightness display" fill className="object-cover" />
               </div>
               <div className="lg:order-1">
                 <p className="text-[9px] tracking-[0.25em] text-[#0134E7] uppercase mb-3">Outdoor · Semi-outdoor</p>
@@ -98,8 +103,8 @@ export default function SamsungPage() {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="bg-[#16253F] aspect-[16/9] flex items-center justify-center">
-                <p className="font-austin text-white/20 text-xl">The Wall</p>
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <Image src="/images/commercial-1.jpg" alt="Samsung The Wall Micro LED installation" fill className="object-cover" />
               </div>
               <div>
                 <p className="text-[9px] tracking-[0.25em] text-[#0134E7] uppercase mb-3">Lobbies · Venues · Premium environments</p>
@@ -129,8 +134,9 @@ export default function SamsungPage() {
               We configure VXT as part of every Samsung commercial installation. Content management, device monitoring, and remote troubleshooting from day one.
             </p>
           </div>
-          <div className="bg-[#E8E4DF] aspect-[4/3] flex items-center justify-center">
-            <p className="font-austin text-[#1A1A1A]/20 text-2xl">Samsung VXT</p>
+          <div className="relative aspect-[4/3] overflow-hidden">
+            <Image src="/images/commercial-9.jpg" alt="Samsung VXT content management" fill className="object-cover" />
+            <div className="absolute inset-0 bg-[#F5F2EE]/10" />
           </div>
         </div>
       </section>

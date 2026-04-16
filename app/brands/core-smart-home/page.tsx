@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -37,8 +38,10 @@ export default function CoreSmartHomePage() {
 
       {/* ── Hero ── */}
       <section className="relative h-[70vh] min-h-[520px] flex items-end bg-[#16253F] overflow-hidden">
-        {/* Colour block placeholder no image available */}
-        <div className="absolute inset-0 bg-[#E8E4DF] opacity-20" />
+        <div className="absolute inset-0">
+          <Image src="/images/haven-dsc05648.jpg" alt="Core Smart Home Eclipse keypad in luxury Melbourne home" fill className="object-cover opacity-40" priority />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#16253F] via-[#16253F]/60 to-transparent" />
+        </div>
         <div className="relative z-10 max-w-screen-xl mx-auto px-6 lg:px-16 pb-16 w-full">
           <p className="text-[10px] tracking-[0.25em] uppercase text-white/40 mb-4">
             Brands
@@ -77,9 +80,8 @@ export default function CoreSmartHomePage() {
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            {/* Colour block placeholder */}
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-[#E8E4DF] flex items-center justify-center">
-              <p className="text-[#1A1A1A]/30 text-xs tracking-widest uppercase">Eclipse Switch</p>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+              <Image src="/images/haven-dsc05611.jpg" alt="Core Smart Home Eclipse switch on wall" fill className="object-cover" />
             </div>
             <div className="flex flex-col gap-5">
               <p className="text-[10px] tracking-[0.2em] uppercase text-[#0134E7]">
@@ -100,9 +102,8 @@ export default function CoreSmartHomePage() {
       <section className="py-20 md:py-28 bg-[#F5F2EE]">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center md:[&>*:first-child]:order-2">
-            {/* Colour block placeholder */}
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-[#E8E4DF] flex items-center justify-center">
-              <p className="text-[#1A1A1A]/30 text-xs tracking-widest uppercase">Eclipse Thermostat</p>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+              <Image src="/images/haven-dsc05648.jpg" alt="Core Smart Home Eclipse thermostat" fill className="object-cover" />
             </div>
             <div className="flex flex-col gap-5">
               <p className="text-[10px] tracking-[0.2em] uppercase text-[#0134E7]">
@@ -123,9 +124,8 @@ export default function CoreSmartHomePage() {
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            {/* Colour block placeholder */}
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-[#E8E4DF] flex items-center justify-center">
-              <p className="text-[#1A1A1A]/30 text-xs tracking-widest uppercase">13 Finishes</p>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+              <Image src="/images/haven-dsc05648b.jpg" alt="Core Smart Home Eclipse 13 finishes" fill className="object-cover" />
             </div>
             <div className="flex flex-col gap-5">
               <p className="text-[10px] tracking-[0.2em] uppercase text-[#0134E7]">

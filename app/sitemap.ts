@@ -11,6 +11,45 @@ const brandSlugs = [
   'cbus',
   'unifi',
   'sonos',
+  'ekinex',
+  'core-smart-home',
+  'wiim',
+  'cameras',
+  'security',
+  'tp-link',
+  'audio',
+  'quest',
+  'db-audiotechnik',
+  'l-acoustics',
+  'logitech',
+  'qsc',
+  'samsung',
+  'dynalite',
+  'video-wall',
+]
+
+const locationSlugs = [
+  'torquay',
+  'brighton',
+  'st-kilda',
+  'malvern-east',
+  'hawthorn',
+  'camberwell',
+  'toorak',
+  'south-yarra',
+  'kew',
+  'armadale',
+  'richmond',
+  'prahran',
+  'fitzroy',
+  'carlton',
+  'glen-waverley',
+  'doncaster',
+  'eltham',
+  'balwyn',
+  'canterbury',
+  'mont-albert',
+  'box-hill',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -26,6 +65,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/residential`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/commercial`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/industrial`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/projects`,
@@ -57,14 +114,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/locations`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
   ]
 
   const brandPages: MetadataRoute.Sitemap = brandSlugs.map((slug) => ({
     url: `${baseUrl}/brands/${slug}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly',
+    changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
 
-  return [...staticPages, ...brandPages]
+  const locationPages: MetadataRoute.Sitemap = locationSlugs.map((slug) => ({
+    url: `${baseUrl}/locations/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
+
+  return [...staticPages, ...brandPages, ...locationPages]
 }

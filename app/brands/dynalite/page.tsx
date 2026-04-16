@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -28,8 +29,12 @@ export default function DynalitePage() {
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#16253F] px-6 lg:px-16 pt-32 pb-20">
-        <div className="max-w-screen-xl mx-auto">
+      <section className="relative bg-[#16253F] overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/images/commercial-9.jpg" alt="Commercial building lighting control" fill className="object-cover opacity-20" priority />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#16253F]/75 to-[#16253F]/95" />
+        </div>
+        <div className="relative max-w-screen-xl mx-auto px-6 lg:px-16 pt-36 pb-24">
           <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Commercial · Building Management</p>
           <h1 className="font-austin text-white text-[clamp(48px,8vw,120px)] leading-[0.88] tracking-tight mb-6">
             Philips Dynalite
@@ -80,6 +85,18 @@ export default function DynalitePage() {
                 <p className="text-[#1A1A1A]/55 leading-relaxed">{item.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Feature image strip */}
+      <section className="bg-white px-6 lg:px-16 py-12">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-2 gap-4">
+          <div className="relative aspect-[16/9] overflow-hidden">
+            <Image src="/images/commercial-8.jpg" alt="Dynalite commercial lighting control" fill className="object-cover" />
+          </div>
+          <div className="relative aspect-[16/9] overflow-hidden">
+            <Image src="/images/commercial-5.jpg" alt="Dynalite commercial building installation" fill className="object-cover" />
           </div>
         </div>
       </section>

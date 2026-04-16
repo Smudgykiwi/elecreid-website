@@ -28,6 +28,30 @@ const projects = [
     hero: '/images/stkilda-1.jpg',
     gallery: ['/images/stkilda-2.jpg', '/images/stkilda-3.jpg', '/images/stkilda-4.jpg'],
   },
+  {
+    title: 'Merival',
+    location: 'Melbourne, VIC',
+    desc: 'Multi-room AV integration across a contemporary Melbourne residence. Control4 automation, Sonos distributed audio, and Samsung display throughout. One touch command of every room.',
+    tags: ['Multi-room AV', 'Control4', 'Sonos', 'Samsung'],
+    hero: '/images/merival-sonos.jpg',
+    gallery: ['/images/merival-samsung.jpg', '/images/merival-c4screen.jpg'],
+  },
+  {
+    title: 'Fitzroy Street Rooftop',
+    location: 'St Kilda, VIC',
+    desc: 'Outdoor rooftop entertainment automation for a premium St Kilda venue. Weatherproof audio, automated lighting scenes, and seamless integration with the indoor system.',
+    tags: ['Outdoor Entertainment', 'Automation', 'Lighting Scenes'],
+    hero: '/images/stkilda-2.jpg',
+    gallery: ['/images/stkilda-1.jpg'],
+  },
+  {
+    title: 'Malvern East',
+    location: 'Malvern East, VIC',
+    desc: 'Purpose-built home cinema installation in a Malvern East residence. Acoustic treatment, 4K projection, Dolby Atmos surround sound, and automated lighting and blinds controlled from a single panel.',
+    tags: ['Home Cinema', 'Dolby Atmos', 'Projection', 'Acoustic Treatment'],
+    hero: '/images/malvern-cinema-1.jpg',
+    gallery: ['/images/malvern-2.jpg'],
+  },
 ]
 
 export default function Projects() {

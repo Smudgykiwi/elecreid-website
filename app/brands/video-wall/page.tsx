@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -14,8 +15,12 @@ export default function VideoWallPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#16253F] px-6 lg:px-16 pt-32 pb-20">
-        <div className="max-w-screen-xl mx-auto">
+      <section className="relative bg-[#16253F] overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/images/commercial-3.jpg" alt="Commercial video wall installation Melbourne" fill className="object-cover opacity-25" priority />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#16253F]/70 to-[#16253F]/95" />
+        </div>
+        <div className="relative max-w-screen-xl mx-auto px-6 lg:px-16 pt-36 pb-24">
           <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Commercial · Display</p>
           <h1 className="font-austin text-white text-[clamp(64px,10vw,140px)] leading-[0.88] tracking-tight mb-6">
             Video Walls
@@ -63,6 +68,16 @@ export default function VideoWallPage() {
                 <p className="text-[#1A1A1A]/50 leading-relaxed">{item.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Feature image */}
+      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-12">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="relative aspect-[21/9] overflow-hidden">
+            <Image src="/images/commercial-9.jpg" alt="Video wall commercial installation" fill className="object-cover" />
+            <div className="absolute inset-0 bg-[#16253F]/20" />
           </div>
         </div>
       </section>

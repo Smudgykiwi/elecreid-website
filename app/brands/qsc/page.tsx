@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -28,8 +29,12 @@ export default function QSCPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#16253F] px-6 lg:px-16 pt-32 pb-20">
-        <div className="max-w-screen-xl mx-auto">
+      <section className="relative bg-[#16253F] overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/images/haven-7.jpg" alt="Commercial AV rack infrastructure" fill className="object-cover opacity-15" priority />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#16253F]/80 to-[#16253F]/95" />
+        </div>
+        <div className="relative max-w-screen-xl mx-auto px-6 lg:px-16 pt-36 pb-24">
           <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Commercial · AV Control</p>
           <h1 className="font-austin text-white text-[clamp(56px,9vw,130px)] leading-[0.88] tracking-tight mb-6">
             Q-SYS by QSC
@@ -116,8 +121,9 @@ export default function QSCPage() {
               We program Q-SYS systems from the ground up custom UCIs, scripted automations, and full Dante network design. The result is a system that behaves exactly as the space requires.
             </p>
           </div>
-          <div className="bg-[#2a2a2a] aspect-[4/3] flex items-center justify-center">
-            <p className="font-austin text-white/20 text-2xl">Q-SYS Designer</p>
+          <div className="relative aspect-[4/3] overflow-hidden">
+            <Image src="/images/merival-c4screen.jpg" alt="Q-SYS Designer touchscreen control panel" fill className="object-cover opacity-80" />
+            <div className="absolute inset-0 bg-[#16253F]/30" />
           </div>
         </div>
       </section>
