@@ -59,6 +59,16 @@ const residentialCategories = [
   },
 ]
 
+const industrialLinks = [
+  { label: 'Electrical Compliance', href: '/industrial' },
+  { label: 'Switchboard Upgrades', href: '/industrial' },
+  { label: 'Access Control', href: '/industrial' },
+  { label: 'Security Systems', href: '/industrial' },
+  { label: 'Structured Cabling', href: '/industrial' },
+  { label: 'Maintenance Contracts', href: '/industrial' },
+  { label: 'Commercial AV', href: '/commercial' },
+]
+
 const commercialCategories = [
   {
     label: 'Meeting Rooms',
@@ -135,8 +145,8 @@ export default function Nav() {
             </button>
 
             {brandsOpen && (
-              <div className="absolute top-full right-0 mt-2 bg-white border border-[#1A1A1A]/8 shadow-2xl w-[780px] p-8 z-50">
-                <div className="grid grid-cols-2 gap-10">
+              <div className="absolute top-full right-0 mt-2 bg-white border border-[#1A1A1A]/8 shadow-2xl w-[960px] p-8 z-50">
+                <div className="grid grid-cols-3 gap-8">
 
                   {/* Residential Solutions */}
                   <div>
@@ -183,6 +193,24 @@ export default function Nav() {
                           </div>
                         </div>
                       ))}
+                    </div>
+                  </div>
+
+                  {/* Industrial Solutions */}
+                  <div>
+                    <p className="text-[8px] tracking-[0.35em] text-[#0134E7] uppercase mb-5 pb-2 border-b border-[#0134E7]/30">
+                      Industrial Solutions
+                    </p>
+                    <div className="space-y-1.5">
+                      {industrialLinks.map((b) => (
+                        <Link key={b.label} href={b.href}
+                          className="block text-[9px] tracking-[0.1em] text-[#1A1A1A]/55 hover:text-[#0134E7] transition-colors py-0.5">
+                          {b.label}
+                        </Link>
+                      ))}
+                      <Link href="/industrial" className="block text-[9px] tracking-[0.15em] text-[#0134E7] uppercase hover:underline mt-3 pt-2 border-t border-[#0134E7]/20">
+                        All Industrial Services →
+                      </Link>
                     </div>
                   </div>
 
@@ -272,6 +300,22 @@ export default function Nav() {
                     </Link>
                   ))}
                 </div>
+              ))}
+            </div>
+          )}
+
+          {/* Industrial mobile */}
+          <button onClick={() => setMobileOpen(mobileOpen === 'industrial' ? null : 'industrial')}
+            className="text-[10px] tracking-[0.2em] uppercase text-[#0134E7] text-left flex items-center justify-between">
+            Industrial Solutions <span className={`transition-transform ${mobileOpen === 'industrial' ? 'rotate-180' : ''}`}>▾</span>
+          </button>
+          {mobileOpen === 'industrial' && (
+            <div className="pl-4 space-y-2">
+              {industrialLinks.map((b) => (
+                <Link key={b.label} href={b.href} onClick={() => setMenuOpen(false)}
+                  className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/60 py-1">
+                  {b.label}
+                </Link>
               ))}
             </div>
           )}
