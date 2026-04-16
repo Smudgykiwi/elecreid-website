@@ -5,8 +5,8 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'About | Elec Reid Melbourne Smart Home Electricians',
-  description: 'Joe Reid founded Elec Reid after a decade in professional live sound and AV. The same standards that make a show work reliability, precision, design now applied to the homes and spaces we live in.',
+  title: 'About Joe Reid | Elec Reid Melbourne',
+  description: 'Joe Reid founded Elec Reid after a career in live sound and electrical. A-grade electrician. Smart home specialist. Melbourne.',
 }
 
 export default function AboutPage() {
@@ -17,200 +17,149 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="bg-[#F5F2EE] px-6 lg:px-16 pt-36 pb-20">
         <div className="max-w-screen-xl mx-auto">
-          <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-10">About</p>
-          <h1 className="font-austin text-[#1A1A1A] text-[clamp(56px,9vw,130px)] leading-[0.88] tracking-tight max-w-5xl">
-            Built on the belief that technology should disappear.
+          <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-10">About</p>
+          <h1 className="font-austin text-[#1A1A1A] text-[clamp(56px,9vw,120px)] leading-[0.88] tracking-tight max-w-4xl">
+            Built on experience. Delivered with precision.
           </h1>
         </div>
       </section>
 
-      {/* Origin story */}
-      <section className="bg-white px-6 lg:px-16 py-24 lg:py-36">
-        <div className="max-w-screen-xl mx-auto grid lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-4">
-            <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-6">The Story</p>
-            <div className="aspect-[3/4] bg-[#E8E4DF] overflow-hidden">
-              <Image
-                src="/images/haven-1.jpg"
-                alt="Joe Reid Elec Reid founder"
-                width={600}
-                height={800}
-                className="w-full h-full object-cover"
-              />
+      {/* Joe's story */}
+      <section className="bg-white px-6 lg:px-16 py-20 lg:py-28">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="grid lg:grid-cols-12 gap-16 lg:gap-20">
+
+            {/* Photo */}
+            <div className="lg:col-span-4">
+              <div className="aspect-[3/4] bg-[#E8E4DF] overflow-hidden relative">
+                {/* Joe's photo goes here — send a photo and we'll replace this placeholder */}
+                <div className="absolute inset-0 flex items-end p-8">
+                  <div>
+                    <p className="font-austin text-[#1A1A1A] text-2xl">Joe Reid</p>
+                    <p className="text-[9px] tracking-[0.2em] text-[#1A1A1A]/40 uppercase mt-1">Founder & Director</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="lg:col-span-7 lg:col-start-6 lg:pt-4">
-            <p className="font-austin text-[#1A1A1A] text-3xl lg:text-4xl leading-tight mb-8">
-              Joe Reid grew up in church, playing drums from a young age. Music was never a hobby it was the thing.
-            </p>
-            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              That foundation music as community, as worship, as something that brings people together shaped everything that followed. Touring bands across New Zealand. A career in the live industry. And a genuine care for the spaces where people gather and experience something together.
-            </p>
-            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Churches remain close to our work. We have helped congregations across Melbourne create spaces where the technology serves the worship where the audio and visuals are clear, reliable, and completely invisible to the experience. That work matters to us in a way that goes beyond the brief.
-            </p>
-            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Moving to Australia, that love for music led naturally into the live industry. Concerts. Touring productions. Major events. For years, the work was building temporary experiences that had to be perfect because you only had one chance. Three hours. One show. Thousands of people. Everything had to work.
-            </p>
-            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              When Covid brought the live industry to a halt, Joe made a decision. He qualified as an A-grade electrician and turned his attention to a different kind of installation not temporary, but permanent. Not a single night, but a lifetime. The same craft, applied to the spaces people actually live in.
-            </p>
-            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
-              Elec Reid was founded on a simple idea: that the experiences people have at live shows the quality of the sound, the precision of the lighting, the way a space makes you feel could be brought home. Not as a novelty, but as a standard.
-            </p>
+
+            {/* Bio */}
+            <div className="lg:col-span-7 lg:col-start-6">
+              <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-8">Joe Reid — Founder</p>
+
+              <blockquote className="space-y-5 text-[#1A1A1A]/70 text-lg leading-relaxed">
+                <p>
+                  I started my career as a sound engineer, working on live performances and touring shows. That environment taught me how sound, lighting, visuals, and technology behave in real spaces — not in theory, but under pressure, with no room for failure. It is where I developed a deep appreciation for precision, planning, and systems that have to work every time.
+                </p>
+                <p>
+                  Over time, that work led me into designing audio systems, home cinemas, and smart technologies for friends, family, and clients. As those projects grew more complex, I became increasingly focused on the electrical infrastructure behind the technology. I wanted to understand not just how systems looked and sounded, but how they were powered, protected, and built to perform reliably long-term. That is what led me to train as an electrician.
+                </p>
+                <p>
+                  After completing my apprenticeship and working across a range of high quality Melbourne projects, I started Elec Reid to bring together strong electrical fundamentals with a practical understanding of how people actually use spaces. That approach applies whether I am working in a home, a commercial facility, or an industrial environment where safety, compliance, scalability and reliability are critical.
+                </p>
+                <p>
+                  My background means I naturally think about how systems interact, how installation decisions affect performance and maintenance, and how to solve complex problems without overcomplicating the solution. I focus on doing the basics properly — clean installs, clear layouts, and disciplined execution — because that is what allows more advanced systems to work exactly as intended.
+                </p>
+                <p>
+                  Elec Reid is built on that mix of technical trade expertise and thoughtful problem solving. I take pride in being meticulous, maintaining a clean site, and delivering work that stands up in practice, long after handover.
+                </p>
+              </blockquote>
+
+              <div className="mt-10 pt-10 border-t border-[#1A1A1A]/10">
+                <div className="grid grid-cols-3 gap-8">
+                  {[
+                    { stat: 'A-Grade', label: 'Electrical licence' },
+                    { stat: '10+', label: 'Years in the industry' },
+                    { stat: 'Melbourne', label: 'Based and operated' },
+                  ].map((item) => (
+                    <div key={item.stat}>
+                      <p className="font-austin text-[#0134E7] text-3xl lg:text-4xl">{item.stat}</p>
+                      <p className="text-[#1A1A1A]/40 text-sm mt-1">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Pull quote */}
-      <section className="bg-[#0134E7] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#0134E7] px-6 lg:px-16 py-20">
         <div className="max-w-screen-xl mx-auto">
-          <p className="font-austin italic text-white text-4xl lg:text-5xl xl:text-6xl leading-tight max-w-5xl">
-            &ldquo;I love being part of experiences for people. Creating spaces where they get to experience the joys of music, of movies, of spending time with each other and creating memories through it.&rdquo;
+          <p className="font-austin italic text-white text-3xl lg:text-5xl leading-tight max-w-4xl">
+            &ldquo;Good taste, implied confidence, and a pure nerdy love for tech.&rdquo;
           </p>
-          <p className="text-white/40 text-[9px] tracking-[0.3em] uppercase mt-8">— Joe Reid, Founder</p>
+          <p className="text-white/40 text-[9px] tracking-[0.3em] uppercase mt-6">How a client described our team</p>
         </div>
       </section>
 
       {/* Two pillars */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-24 lg:py-36">
+      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto">
           <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-16">What drives us</p>
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
-
+          <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-8 leading-tight">
-                01 · Reliability first.
-              </h2>
-              <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-                In live sound, you cannot have a system fail. A three-hour window. One show. Thousands of people. There is no fallback, no second chance, no &ldquo;we&apos;ll fix it tomorrow.&rdquo; That pressure shapes how you think about every cable, every connection, every piece of equipment you choose to put in the rack.
-              </p>
-              <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-                We bring that standard to residential and commercial installations. We will not cut corners for the sake of a budget. We will push back if a specification compromises reliability. The homeowner deserves the same certainty as the concert venue their system works, every day, without exception.
+              <div className="w-8 h-[3px] bg-[#0134E7] mb-8" />
+              <h2 className="font-austin text-[#1A1A1A] text-4xl mb-6">01 · Reliability first.</h2>
+              <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-5">
+                Live sound taught a simple lesson: you get one chance. The show starts whether the system is ready or not. That pressure shaped how we approach every installation.
               </p>
               <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
-                That is not a marketing promise. It is the way we were trained.
+                We will not cut corners for the sake of a budget. We will push back if a specification compromises reliability. The homeowner, business, or facility deserves the same certainty as the concert venue.
               </p>
             </div>
-
             <div>
-              <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-8 leading-tight">
-                02 · Design without compromise.
-              </h2>
-              <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-                The best technology is unseen. It does not announce itself. It adjusts the space according to what you are doing in it the time of day, where you are, what is happening outside. It works behind you, not in front of you.
-              </p>
-              <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-                When technology must be visible a keypad, a touchscreen, a switch it should be worth looking at. Basalte. Ekinex. Core Smart Home. Hardware specified because it deserves to be on the wall, not because it was available.
+              <div className="w-8 h-[3px] bg-[#0134E7] mb-8" />
+              <h2 className="font-austin text-[#1A1A1A] text-4xl mb-6">02 · Design without compromise.</h2>
+              <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-5">
+                The best technology is unseen. It adjusts the space according to what you are doing in it. It works behind you, not in front of you.
               </p>
               <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
-                We are as particular about the joinery line a switch sits on as we are about the cable behind it. Both matter. Both reflect the standard of the work.
+                When technology must be visible, it should be worth looking at. Hardware specified because it deserves to be on the wall. We are as particular about the joinery line a switch sits on as we are about the cable behind it.
               </p>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* The evolution */}
-      <section className="bg-white px-6 lg:px-16 py-20 lg:py-28">
-        <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <div className="overflow-hidden">
-            <Image
-              src="/images/haven-6.jpg"
-              alt="Elec Reid installation Haven Court Torquay"
-              width={900}
-              height={675}
-              className="w-full aspect-[4/3] object-cover"
-            />
-            <p className="text-[8px] tracking-[0.2em] text-[#1A1A1A]/30 uppercase mt-3">Haven Court · Torquay, VIC</p>
-          </div>
-          <div>
-            <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-6">Today</p>
-            <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-6 leading-tight">
-              From shows to spaces.
-            </h2>
-            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Elec Reid has grown from a one-man operation to a team of A-grade electricians and systems specialists all working to the same standard. Residential smart homes, commercial AV, event spaces, and venue installations across Melbourne.
-            </p>
-            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              We have become deeply passionate about design in a way the live industry never required. The temporary show does not care what the speaker looks like. The permanent installation does. That shift has made us better.
-            </p>
-            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
-              The goal has always been the same: build the space well enough that the technology disappears and what remains is the experience.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Theatre/lounge feature image */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-0">
+      {/* Project images */}
+      <section className="bg-white px-6 lg:px-16 py-16">
         <div className="max-w-screen-xl mx-auto">
-          <div className="relative aspect-[21/9] overflow-hidden">
-            <Image
-              src="/images/haven-dsc05653.jpg"
-              alt="Elec Reid home theatre lounge installation"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-[#1A1A1A]/10" />
-          </div>
-          <p className="text-[8px] tracking-[0.2em] text-[#1A1A1A]/30 uppercase mt-3">Haven Court &middot; Torquay, VIC</p>
-        </div>
-      </section>
-
-      {/* Stats / credentials */}
-      <section className="bg-[#16253F] px-6 lg:px-16 py-20">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+          <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-8">Recent work</p>
+          <div className="grid grid-cols-3 gap-3">
             {[
-              { stat: '10+', label: 'Years in the industry' },
-              { stat: 'A-Grade', label: 'Licensed electricians' },
-              { stat: 'Melbourne', label: 'Based & operated' },
-              { stat: '100%', label: 'Accountable to the outcome' },
+              { src: '/images/haven-dsc05570.jpg', label: 'Haven Court, Torquay' },
+              { src: '/images/merival-sonos.jpg', label: 'Merival, Melbourne' },
+              { src: '/images/stkilda-1.jpg', label: 'Fitzroy St, St Kilda' },
             ].map((item) => (
-              <div key={item.stat} className="border-t border-white/10 pt-8">
-                <p className="font-austin text-[#0134E7] text-4xl lg:text-5xl mb-2">{item.stat}</p>
-                <p className="text-white/40 text-sm leading-relaxed">{item.label}</p>
-              </div>
+              <Link key={item.label} href="/projects" className="group block">
+                <div className="aspect-square overflow-hidden">
+                  <Image src={item.src} alt={item.label} width={600} height={600} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+                <p className="text-[8px] tracking-[0.2em] text-[#1A1A1A]/30 uppercase mt-3">{item.label}</p>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Projects image strip */}
-      <section className="bg-white px-6 lg:px-16 py-16">
-        <div className="max-w-screen-xl mx-auto">
-          <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-8">Selected Projects</p>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <Image src="/images/haven-dsc05570.jpg" alt="Haven Court smart home project" fill className="object-cover hover:scale-105 transition-transform duration-700" />
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <Image src="/images/merival-sonos.jpg" alt="Merival Sonos multi-room audio" fill className="object-cover hover:scale-105 transition-transform duration-700" />
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <Image src="/images/stkilda-1.jpg" alt="Fitzroy Street rooftop entertainment" fill className="object-cover hover:scale-105 transition-transform duration-700" />
-            </div>
-          </div>
-          <div className="mt-6 flex justify-end">
-            <a href="/projects" className="text-[9px] tracking-[0.25em] text-[#0134E7] uppercase hover:underline">View all projects &rarr;</a>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <div>
-            <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl leading-tight mb-3">
-              Let&apos;s build something worth experiencing.
+            <h2 className="font-austin text-white text-4xl lg:text-5xl leading-tight mb-3">
+              Let us build something worth experiencing.
             </h2>
-            <p className="text-[#1A1A1A]/50 max-w-lg">Tell us about your project. We&apos;ll design the right system for your space.</p>
+            <p className="text-white/40 max-w-lg">Tell us about your project.</p>
           </div>
-          <Link href="/build" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">
-            Build Your Home →
-          </Link>
+          <div className="flex flex-col gap-3">
+            <Link href="/build" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">
+              Design &amp; Plan →
+            </Link>
+            <Link href="/contact" className="inline-flex items-center justify-center border border-white/20 hover:border-white/50 text-white/50 hover:text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">
+              Contact Us
+            </Link>
+          </div>
         </div>
       </section>
 

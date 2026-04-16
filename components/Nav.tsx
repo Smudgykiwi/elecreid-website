@@ -20,10 +20,10 @@ const residentialCategories = [
     label: 'Touchscreens & Keypads',
     href: '/brands/basalte',
     brands: [
-      { label: 'Basalte (Ellie, Lisa, Sentido, Fibonacci, Adelante)', href: '/brands/basalte' },
-      { label: 'Core Smart Home (Eclipse)', href: '/brands/core-smart-home' },
-      { label: 'Ekinex (20Venti, Proxima)', href: '/brands/ekinex' },
-      { label: 'Control4 (T5, Lux, DS3)', href: '/brands/control4' },
+      { label: 'Basalte', href: '/brands/basalte' },
+      { label: 'Core Smart Home', href: '/brands/core-smart-home' },
+      { label: 'Ekinex', href: '/brands/ekinex' },
+      { label: 'Control4', href: '/brands/control4' },
     ],
   },
   {
@@ -59,23 +59,11 @@ const residentialCategories = [
   },
 ]
 
-const industrialLinks = [
-  { label: 'Electrical Compliance', href: '/industrial' },
-  { label: 'Switchboard Upgrades', href: '/industrial' },
-  { label: 'Access Control', href: '/industrial' },
-  { label: 'Security Systems', href: '/industrial' },
-  { label: 'Structured Cabling', href: '/industrial' },
-  { label: 'Maintenance Contracts', href: '/industrial' },
-  { label: 'Commercial AV', href: '/commercial' },
-]
-
 const commercialCategories = [
   {
     label: 'Meeting Rooms',
     href: '/brands/logitech',
-    brands: [
-      { label: 'Logitech', href: '/brands/logitech' },
-    ],
+    brands: [{ label: 'Logitech', href: '/brands/logitech' }],
   },
   {
     label: 'Screens & Visuals',
@@ -105,9 +93,27 @@ const commercialCategories = [
   },
 ]
 
+const industrialLinks = [
+  { label: 'Electrical Compliance', href: '/industrial' },
+  { label: 'Switchboard Upgrades', href: '/industrial' },
+  { label: 'Access Control', href: '/industrial' },
+  { label: 'Security Systems', href: '/industrial' },
+  { label: 'Structured Cabling', href: '/industrial' },
+  { label: 'Maintenance Contracts', href: '/industrial' },
+]
+
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Our Projects', href: '/projects' },
+  { label: 'Locations', href: '/locations' },
+  { label: 'Contact', href: '/contact' },
+]
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [solutionsOpen, setSolutionsOpen] = useState(false)
   const [brandsOpen, setBrandsOpen] = useState(false)
   const [mobileOpen, setMobileOpen] = useState<string | null>(null)
 
@@ -117,43 +123,51 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const linkClass = `text-[10px] tracking-[0.2em] uppercase transition-colors ${
+    scrolled ? 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]' : 'text-white/70 hover:text-white'
+  }`
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       scrolled ? 'bg-white/95 backdrop-blur-sm border-b border-[#1A1A1A]/8' : 'bg-[#16253F]/60 backdrop-blur-sm'
     }`}>
       <div className="max-w-screen-xl mx-auto px-6 lg:px-16 flex items-center justify-between h-16 lg:h-20">
 
+        {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <Image src={scrolled ? "/logos/logo-text-color3.svg" : "/logos/logo-text-color4.svg"} alt="Elec Reid" width={110} height={26} className="h-6 w-auto" priority />
+          <Image
+            src={scrolled ? '/logos/logo-text-color3.svg' : '/logos/logo-text-color4.svg'}
+            alt="Elec Reid"
+            width={110}
+            height={26}
+            className="h-6 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8 lg:gap-10">
-          <Link href="/locations" className={`text-[10px] tracking-[0.2em] uppercase transition-colors ${scrolled ? 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]' : 'text-white/70 hover:text-white'}`}>
-            Locations
-          </Link>
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
 
-          {/* Solutions mega-dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setBrandsOpen(true)}
-            onMouseLeave={() => setBrandsOpen(false)}
-          >
-            <button className={`text-[10px] tracking-[0.2em] uppercase transition-colors flex items-center gap-1 ${scrolled ? 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]' : 'text-white/70 hover:text-white'}`}>
+          {/* Home */}
+          <Link href="/" className={linkClass}>Home</Link>
+
+          {/* Solutions dropdown */}
+          <div className="relative" onMouseEnter={() => setSolutionsOpen(true)} onMouseLeave={() => setSolutionsOpen(false)}>
+            <button className={`${linkClass} flex items-center gap-1`}>
               Solutions
-              <span className={`text-[8px] transition-transform duration-200 ${brandsOpen ? 'rotate-180' : ''}`}>▾</span>
+              <span className={`text-[8px] transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`}>▾</span>
             </button>
 
-            {brandsOpen && (
-              <div className="absolute top-full right-0 mt-2 bg-white border border-[#1A1A1A]/8 shadow-2xl w-[960px] p-8 z-50">
+            {solutionsOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white border border-[#1A1A1A]/8 shadow-2xl w-[960px] p-8 z-50">
                 <div className="grid grid-cols-3 gap-8">
 
-                  {/* Residential Solutions */}
+                  {/* Residential */}
                   <div>
                     <p className="text-[8px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-5 pb-2 border-b border-[#1A1A1A]/8">
-                      Residential Solutions
+                      Residential
                     </p>
-                    <div className="space-y-5">
+                    <div className="space-y-4">
                       {residentialCategories.map((cat) => (
                         <div key={cat.label}>
                           <Link href={cat.href} className="block text-[10px] tracking-[0.15em] text-[#1A1A1A] font-medium uppercase hover:text-[#0134E7] transition-colors mb-1.5">
@@ -161,8 +175,7 @@ export default function Nav() {
                           </Link>
                           <div className="pl-3 space-y-1 border-l border-[#1A1A1A]/10">
                             {cat.brands.map((b) => (
-                              <Link key={b.href + b.label} href={b.href}
-                                className="block text-[9px] tracking-[0.1em] text-[#1A1A1A]/45 hover:text-[#0134E7] transition-colors py-0.5">
+                              <Link key={b.href + b.label} href={b.href} className="block text-[9px] tracking-[0.1em] text-[#1A1A1A]/45 hover:text-[#0134E7] transition-colors py-0.5">
                                 {b.label}
                               </Link>
                             ))}
@@ -172,12 +185,12 @@ export default function Nav() {
                     </div>
                   </div>
 
-                  {/* Commercial Solutions */}
+                  {/* Commercial */}
                   <div>
                     <p className="text-[8px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-5 pb-2 border-b border-[#1A1A1A]/8">
-                      Commercial Solutions
+                      Commercial
                     </p>
-                    <div className="space-y-5">
+                    <div className="space-y-4">
                       {commercialCategories.map((cat) => (
                         <div key={cat.label}>
                           <Link href={cat.href} className="block text-[10px] tracking-[0.15em] text-[#1A1A1A] font-medium uppercase hover:text-[#0134E7] transition-colors mb-1.5">
@@ -185,8 +198,7 @@ export default function Nav() {
                           </Link>
                           <div className="pl-3 space-y-1 border-l border-[#1A1A1A]/10">
                             {cat.brands.map((b) => (
-                              <Link key={b.href + b.label} href={b.href}
-                                className="block text-[9px] tracking-[0.1em] text-[#1A1A1A]/45 hover:text-[#0134E7] transition-colors py-0.5">
+                              <Link key={b.href + b.label} href={b.href} className="block text-[9px] tracking-[0.1em] text-[#1A1A1A]/45 hover:text-[#0134E7] transition-colors py-0.5">
                                 {b.label}
                               </Link>
                             ))}
@@ -196,15 +208,14 @@ export default function Nav() {
                     </div>
                   </div>
 
-                  {/* Industrial Solutions */}
+                  {/* Industrial */}
                   <div>
                     <p className="text-[8px] tracking-[0.35em] text-[#0134E7] uppercase mb-5 pb-2 border-b border-[#0134E7]/30">
-                      Industrial Solutions
+                      Industrial
                     </p>
                     <div className="space-y-1.5">
                       {industrialLinks.map((b) => (
-                        <Link key={b.label} href={b.href}
-                          className="block text-[9px] tracking-[0.1em] text-[#1A1A1A]/55 hover:text-[#0134E7] transition-colors py-0.5">
+                        <Link key={b.label} href={b.href} className="block text-[9px] tracking-[0.1em] text-[#1A1A1A]/55 hover:text-[#0134E7] transition-colors py-0.5">
                           {b.label}
                         </Link>
                       ))}
@@ -220,109 +231,89 @@ export default function Nav() {
                     All brands →
                   </Link>
                   <Link href="/build" className="text-[9px] tracking-[0.2em] text-white bg-[#0134E7] uppercase px-4 py-2 rounded-full hover:bg-[#012ab8] transition-colors">
-                    Build Your Home →
+                    Design & Plan →
                   </Link>
                 </div>
               </div>
             )}
           </div>
 
-          <Link href="/projects" className={`text-[10px] tracking-[0.2em] uppercase transition-colors ${scrolled ? 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]' : 'text-white/70 hover:text-white'}`}>
-            Projects
-          </Link>
-          <Link href="/about" className={`text-[10px] tracking-[0.2em] uppercase transition-colors ${scrolled ? 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]' : 'text-white/70 hover:text-white'}`}>
-            About
-          </Link>
-          <Link href="/build" className="text-[10px] tracking-[0.2em] uppercase bg-[#0134E7] hover:bg-[#012ab8] text-white px-6 py-2.5 rounded-full transition-colors">
-            Build Your Home
+          <Link href="/about" className={linkClass}>About Us</Link>
+          <Link href="/projects" className={linkClass}>Our Projects</Link>
+
+          {/* Brands dropdown */}
+          <div className="relative" onMouseEnter={() => setBrandsOpen(true)} onMouseLeave={() => setBrandsOpen(false)}>
+            <button className={`${linkClass} flex items-center gap-1`}>
+              Brands
+              <span className={`text-[8px] transition-transform duration-200 ${brandsOpen ? 'rotate-180' : ''}`}>▾</span>
+            </button>
+            {brandsOpen && (
+              <div className="absolute top-full right-0 mt-2 bg-white border border-[#1A1A1A]/8 shadow-xl w-56 py-4 z-50">
+                {[
+                  { label: 'All Brands', href: '/brands' },
+                  { label: 'Apple Home', href: '/brands/apple-home' },
+                  { label: 'Basalte', href: '/brands/basalte' },
+                  { label: 'Unifi', href: '/brands/unifi' },
+                  { label: 'Sonos', href: '/brands/sonos' },
+                  { label: 'Control4', href: '/brands/control4' },
+                  { label: 'KNX', href: '/brands/knx' },
+                ].map((b) => (
+                  <Link key={b.href} href={b.href} className="block px-6 py-2 text-[10px] tracking-[0.1em] text-[#1A1A1A]/60 hover:text-[#0134E7] hover:bg-[#F5F2EE] transition-colors">
+                    {b.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <Link href="/contact" className={linkClass}>Contact</Link>
+
+          <Link href="/build" className="text-[10px] tracking-[0.2em] uppercase bg-[#0134E7] hover:bg-[#012ab8] text-white px-5 py-2.5 rounded-full transition-colors whitespace-nowrap">
+            Design &amp; Plan
           </Link>
         </nav>
 
         {/* Mobile hamburger */}
-        <button className="md:hidden flex flex-col gap-[5px] p-1" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-          <span className={`block w-5 h-px bg-[#1A1A1A] transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[6px]' : ''}`} />
-          <span className={`block w-5 h-px bg-[#1A1A1A] transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-px bg-[#1A1A1A] transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`} />
+        <button className="lg:hidden flex flex-col gap-[5px] p-1" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+          <span className={`block w-5 h-px transition-all duration-300 ${scrolled ? 'bg-[#1A1A1A]' : 'bg-white'} ${menuOpen ? 'rotate-45 translate-y-[6px]' : ''}`} />
+          <span className={`block w-5 h-px transition-all duration-300 ${scrolled ? 'bg-[#1A1A1A]' : 'bg-white'} ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-5 h-px transition-all duration-300 ${scrolled ? 'bg-[#1A1A1A]' : 'bg-white'} ${menuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`} />
         </button>
       </div>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-[#1A1A1A]/10 px-6 pt-6 pb-8 flex flex-col gap-4 max-h-[80vh] overflow-y-auto">
-          {['Locations', 'Projects', 'About'].map((label) => (
-            <Link key={label} href={`/${label.toLowerCase()}`} onClick={() => setMenuOpen(false)}
-              className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60">
-              {label}
+        <div className="lg:hidden bg-white border-t border-[#1A1A1A]/10 px-6 pt-6 pb-8 flex flex-col gap-4 max-h-[80vh] overflow-y-auto">
+          {navLinks.map((item) => (
+            <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60">
+              {item.label}
             </Link>
           ))}
 
-          {/* Residential Solutions */}
-          <button onClick={() => setMobileOpen(mobileOpen === 'residential' ? null : 'residential')}
+          <button onClick={() => setMobileOpen(mobileOpen === 'solutions' ? null : 'solutions')}
             className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60 text-left flex items-center justify-between">
-            Residential Solutions <span className={`transition-transform ${mobileOpen === 'residential' ? 'rotate-180' : ''}`}>▾</span>
+            Solutions <span className={`transition-transform ${mobileOpen === 'solutions' ? 'rotate-180' : ''}`}>▾</span>
           </button>
-          {mobileOpen === 'residential' && (
+          {mobileOpen === 'solutions' && (
             <div className="pl-4 space-y-4">
+              <p className="text-[8px] tracking-[0.3em] text-[#1A1A1A]/30 uppercase">Residential</p>
               {residentialCategories.map((cat) => (
-                <div key={cat.label}>
-                  <Link href={cat.href} onClick={() => setMenuOpen(false)}
-                    className="block text-[9px] tracking-[0.2em] text-[#1A1A1A]/40 uppercase mb-1">
-                    {cat.label}
-                  </Link>
-                  {cat.brands.map((b) => (
-                    <Link key={b.href + b.label} href={b.href} onClick={() => setMenuOpen(false)}
-                      className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/60 py-1 pl-2">
-                      {b.label}
-                    </Link>
-                  ))}
-                </div>
+                <Link key={cat.label} href={cat.href} onClick={() => setMenuOpen(false)} className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/60 py-0.5">{cat.label}</Link>
               ))}
-            </div>
-          )}
-
-          {/* Commercial Solutions */}
-          <button onClick={() => setMobileOpen(mobileOpen === 'commercial' ? null : 'commercial')}
-            className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60 text-left flex items-center justify-between">
-            Commercial Solutions <span className={`transition-transform ${mobileOpen === 'commercial' ? 'rotate-180' : ''}`}>▾</span>
-          </button>
-          {mobileOpen === 'commercial' && (
-            <div className="pl-4 space-y-4">
+              <p className="text-[8px] tracking-[0.3em] text-[#1A1A1A]/30 uppercase mt-2">Commercial</p>
               {commercialCategories.map((cat) => (
-                <div key={cat.label}>
-                  <Link href={cat.href} onClick={() => setMenuOpen(false)}
-                    className="block text-[9px] tracking-[0.2em] text-[#1A1A1A]/40 uppercase mb-1">
-                    {cat.label}
-                  </Link>
-                  {cat.brands.map((b) => (
-                    <Link key={b.href + b.label} href={b.href} onClick={() => setMenuOpen(false)}
-                      className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/60 py-1 pl-2">
-                      {b.label}
-                    </Link>
-                  ))}
-                </div>
+                <Link key={cat.label} href={cat.href} onClick={() => setMenuOpen(false)} className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/60 py-0.5">{cat.label}</Link>
               ))}
+              <p className="text-[8px] tracking-[0.3em] text-[#0134E7] uppercase mt-2">Industrial</p>
+              <Link href="/industrial" onClick={() => setMenuOpen(false)} className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/60 py-0.5">Industrial Services</Link>
             </div>
           )}
 
-          {/* Industrial mobile */}
-          <button onClick={() => setMobileOpen(mobileOpen === 'industrial' ? null : 'industrial')}
-            className="text-[10px] tracking-[0.2em] uppercase text-[#0134E7] text-left flex items-center justify-between">
-            Industrial Solutions <span className={`transition-transform ${mobileOpen === 'industrial' ? 'rotate-180' : ''}`}>▾</span>
-          </button>
-          {mobileOpen === 'industrial' && (
-            <div className="pl-4 space-y-2">
-              {industrialLinks.map((b) => (
-                <Link key={b.label} href={b.href} onClick={() => setMenuOpen(false)}
-                  className="block text-[10px] tracking-[0.1em] text-[#1A1A1A]/60 py-1">
-                  {b.label}
-                </Link>
-              ))}
-            </div>
-          )}
+          <Link href="/brands" onClick={() => setMenuOpen(false)} className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60">Brands</Link>
 
           <Link href="/build" onClick={() => setMenuOpen(false)}
             className="text-[10px] tracking-[0.2em] uppercase bg-[#0134E7] text-white px-5 py-3 rounded-full text-center mt-2">
-            Build Your Home
+            Design &amp; Plan
           </Link>
         </div>
       )}
