@@ -82,9 +82,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 mt-16">
+          <div className="grid grid-cols-3 gap-3 mt-16">
             <div className="overflow-hidden">
               <Image src="/images/haven-dsc05599.jpg" alt="Haven Court spiral staircase" width={900} height={675}
+                className="w-full aspect-[4/3] object-cover hover:scale-[1.03] transition-transform duration-700" />
+            </div>
+            <div className="overflow-hidden">
+              <Image src="/images/haven-dsc05656.jpg" alt="Haven Court home bar with LED lighting" width={900} height={675}
                 className="w-full aspect-[4/3] object-cover hover:scale-[1.03] transition-transform duration-700" />
             </div>
             <div className="overflow-hidden">
@@ -142,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* ── SERVICES ─────────────────────────────────────────────── */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-24 lg:py-36">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-24 lg:py-36">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex items-baseline justify-between mb-2">
             <p className="text-[9px] tracking-[0.35em] text-white/30 uppercase">What We Offer</p>
@@ -190,11 +194,12 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             {[
-              { title: 'Haven Court', location: 'Torquay, VIC', img: '/images/haven-dsc05570.jpg' },
-              { title: 'McKimm', location: 'Brighton, VIC', img: '/images/mckimm-3.jpg' },
-              { title: 'Merival', location: 'Christchurch, NZ', img: '/images/merival-sonos.jpg' },
+              { title: 'Haven Court', location: 'Torquay, VIC', img: '/images/haven-dsc05653.jpg' },
+              { title: 'McKimm', location: 'Brighton, VIC', img: '/images/mckimm-5.jpg' },
+              { title: 'Haven Court', location: 'Torquay, VIC', img: '/images/haven-dsc05648.jpg' },
+              { title: 'Merival', location: 'Melbourne', img: '/images/merival-sonos.jpg' },
             ].map((project) => (
               <Link key={project.title} href="/projects" className="group block">
                 <div className="relative overflow-hidden">
@@ -261,7 +266,7 @@ export default function Home() {
       </section>
 
       {/* ── BEGIN YOUR PROJECT ───────────────────────────────────── */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-24 lg:py-36">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-24 lg:py-36">
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div>
             <p className="text-[9px] tracking-[0.35em] text-white/25 uppercase mb-10">Next Steps</p>

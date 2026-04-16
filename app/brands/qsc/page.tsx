@@ -28,7 +28,7 @@ export default function QSCPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 pt-32 pb-20">
+      <section className="bg-[#16253F] px-6 lg:px-16 pt-32 pb-20">
         <div className="max-w-screen-xl mx-auto">
           <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Commercial · AV Control</p>
           <h1 className="font-austin text-white text-[clamp(56px,9vw,130px)] leading-[0.88] tracking-tight mb-6">
@@ -105,7 +105,7 @@ export default function QSCPage() {
       </section>
 
       {/* Designer */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-20">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20">
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="font-austin text-white text-4xl lg:text-5xl mb-6">Q-SYS Designer.</h2>
@@ -156,7 +156,7 @@ export default function QSCPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <h2 className="font-austin text-white text-4xl lg:text-5xl leading-tight">Design your commercial AV system.</h2>
           <Link href="/build" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">

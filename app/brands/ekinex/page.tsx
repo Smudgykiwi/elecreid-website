@@ -37,7 +37,7 @@ export default function EkinexPage() {
       <Nav />
 
       {/* ── Hero ── */}
-      <section className="relative h-[70vh] min-h-[520px] flex items-end bg-[#1A1A1A] overflow-hidden">
+      <section className="relative h-[70vh] min-h-[520px] flex items-end bg-[#16253F] overflow-hidden">
         <Image
           src="/images/ekinex-proxima.jpg"
           alt="Ekinex Proxima keypad in a prestige Melbourne residence"
@@ -83,7 +83,7 @@ export default function EkinexPage() {
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-[#1A1A1A]/5">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-[#16253F]/5">
               <Image
                 src="/images/ekinex-20venti.jpg"
                 alt="Ekinex 20Venti switch range in a Melbourne prestige home"
@@ -110,7 +110,7 @@ export default function EkinexPage() {
       <section className="py-20 md:py-28 bg-[#F5F2EE]">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center md:[&>*:first-child]:order-2">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-[#1A1A1A]/5">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-[#16253F]/5">
               <Image
                 src="/images/ekinex-proxima.jpg"
                 alt="Ekinex Proxima keypad in brushed brass"
@@ -134,7 +134,7 @@ export default function EkinexPage() {
       </section>
 
       {/* ── Why Elec Reid ── */}
-      <section className="bg-[#1A1A1A] py-20 md:py-28">
+      <section className="bg-[#16253F] py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
           <h2 className="font-austin text-4xl md:text-5xl text-white mb-14 leading-tight">
             Why Elec Reid<br />
@@ -190,7 +190,7 @@ export default function EkinexPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-[#1A1A1A] py-20 md:py-28">
+      <section className="bg-[#16253F] py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16 text-center">
           <h2 className="font-austin text-4xl md:text-6xl text-white mb-4 leading-tight">
             Build your system<br />

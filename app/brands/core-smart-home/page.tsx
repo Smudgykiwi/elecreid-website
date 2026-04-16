@@ -36,7 +36,7 @@ export default function CoreSmartHomePage() {
       <Nav />
 
       {/* ── Hero ── */}
-      <section className="relative h-[70vh] min-h-[520px] flex items-end bg-[#1A1A1A] overflow-hidden">
+      <section className="relative h-[70vh] min-h-[520px] flex items-end bg-[#16253F] overflow-hidden">
         {/* Colour block placeholder no image available */}
         <div className="absolute inset-0 bg-[#E8E4DF] opacity-20" />
         <div className="relative z-10 max-w-screen-xl mx-auto px-6 lg:px-16 pb-16 w-full">
@@ -143,7 +143,7 @@ export default function CoreSmartHomePage() {
       </section>
 
       {/* ── Why Elec Reid ── */}
-      <section className="bg-[#1A1A1A] py-20 md:py-28">
+      <section className="bg-[#16253F] py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
           <h2 className="font-austin text-4xl md:text-5xl text-white mb-14 leading-tight">
             Why Elec Reid<br />
@@ -199,7 +199,7 @@ export default function CoreSmartHomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-[#1A1A1A] py-20 md:py-28">
+      <section className="bg-[#16253F] py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16 text-center">
           <h2 className="font-austin text-4xl md:text-6xl text-white mb-4 leading-tight">
             Add Core Smart Home<br />

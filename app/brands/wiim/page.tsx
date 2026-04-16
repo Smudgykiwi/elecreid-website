@@ -61,7 +61,7 @@ export default function WiiMPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="relative bg-[#1A1A1A] overflow-hidden">
+      <section className="relative bg-[#16253F] overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/stkilda-1.jpg"
@@ -103,12 +103,12 @@ export default function WiiMPage() {
       </section>
 
       {/* Products */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="font-austin text-white text-4xl lg:text-5xl mb-16">The range.</h2>
           <div className="grid lg:grid-cols-2 gap-px bg-white/5">
             {products.map((product) => (
-              <div key={product.name} className="bg-[#1A1A1A] p-10 lg:p-14 border border-white/5">
+              <div key={product.name} className="bg-[#16253F] p-10 lg:p-14 border border-white/5">
                 <p className="text-[9px] tracking-[0.2em] text-[#0134E7] uppercase mb-3">{product.subtitle}</p>
                 <h3 className="font-austin text-white text-3xl lg:text-4xl mb-6">{product.name}</h3>
                 <p className="text-white/50 leading-relaxed">{product.body}</p>
@@ -156,7 +156,7 @@ export default function WiiMPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <h2 className="font-austin text-white text-4xl lg:text-5xl leading-tight">
             Design your audio system.

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Gateway() {
   return (
-    <div className="min-h-screen bg-[#1A1A1A] flex flex-col">
+    <div className="min-h-screen bg-[#16253F] flex flex-col">
 
       {/* Logo */}
       <div className="px-8 lg:px-16 pt-10 lg:pt-12">

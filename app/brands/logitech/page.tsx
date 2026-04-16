@@ -57,7 +57,7 @@ export default function LogitechPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 pt-32 pb-20 relative overflow-hidden">
+      <section className="bg-[#16253F] px-6 lg:px-16 pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <Image src="/images/eclat-galerie.webp" alt="Commercial AV meeting room" fill className="object-cover opacity-20" />
         </div>
@@ -130,7 +130,7 @@ export default function LogitechPage() {
       </section>
 
       {/* Why Elec Reid */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-20">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="font-austin text-white text-4xl lg:text-5xl mb-12">Why Elec Reid.</h2>
           <div className="grid lg:grid-cols-3 gap-10">
@@ -163,7 +163,7 @@ export default function LogitechPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <h2 className="font-austin text-white text-4xl lg:text-5xl lg:text-6xl leading-tight">Fit out your meeting rooms.</h2>
           <Link href="/build" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">

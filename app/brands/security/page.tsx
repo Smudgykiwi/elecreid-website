@@ -60,7 +60,7 @@ export default function SecurityPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 pt-36 pb-24 relative overflow-hidden">
+      <section className="bg-[#16253F] px-6 lg:px-16 pt-36 pb-24 relative overflow-hidden">
         <div className="absolute inset-0">
           <Image src="/images/haven-dsc05771.jpg" alt="Security system installation Melbourne" fill className="object-cover opacity-25" />
         </div>
@@ -100,12 +100,12 @@ export default function SecurityPage() {
       </section>
 
       {/* Products */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="font-austin text-white text-4xl lg:text-5xl mb-16">The platforms.</h2>
           <div className="grid lg:grid-cols-2 gap-px bg-white/5">
             {products.map((product) => (
-              <div key={product.name} className="bg-[#1A1A1A] border border-white/5 p-10 lg:p-14 flex flex-col gap-6">
+              <div key={product.name} className="bg-[#16253F] border border-white/5 p-10 lg:p-14 flex flex-col gap-6">
                 <div>
                   <p className="text-[9px] tracking-[0.2em] text-[#0134E7] uppercase mb-3">{product.label}</p>
                   <h3 className="font-austin text-white text-3xl lg:text-4xl mb-2">{product.name}</h3>
@@ -171,7 +171,7 @@ export default function SecurityPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <h2 className="font-austin text-white text-4xl lg:text-5xl leading-tight">
             Secure your home or business.

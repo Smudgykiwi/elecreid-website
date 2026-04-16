@@ -15,7 +15,7 @@ export default function CommercialPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 pt-36 pb-20 min-h-[60vh] flex flex-col justify-end">
+      <section className="bg-[#16253F] px-6 lg:px-16 pt-36 pb-20 min-h-[60vh] flex flex-col justify-end">
         <div className="max-w-screen-xl mx-auto w-full">
           <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Elec Reid · Commercial</p>
           <h1 className="font-austin text-white text-[clamp(56px,9vw,130px)] leading-[0.88] tracking-tight mb-6 max-w-5xl">
@@ -78,7 +78,7 @@ export default function CommercialPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <div>
             <h2 className="font-austin text-white text-4xl lg:text-5xl leading-tight mb-3">Ready to talk about your space?</h2>

@@ -291,7 +291,7 @@ export default async function SuburbPage({ params }: { params: Promise<{ suburb:
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 pt-36 pb-20 relative overflow-hidden">
+      <section className="bg-[#16253F] px-6 lg:px-16 pt-36 pb-20 relative overflow-hidden">
         {data.project && (
           <div className="absolute inset-0">
             <Image src={data.project.hero} alt={data.name} fill className="object-cover opacity-20" priority />
@@ -375,7 +375,7 @@ export default async function SuburbPage({ params }: { params: Promise<{ suburb:
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <div>
             <h2 className="font-austin text-white text-4xl lg:text-5xl leading-tight mb-3">

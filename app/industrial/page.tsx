@@ -31,7 +31,7 @@ export default function IndustrialPage() {
       </section>
 
       {/* Stats bar */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-8">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-8">
         <div className="max-w-screen-xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             { stat: 'A-Grade', label: 'Licensed electricians' },
@@ -108,7 +108,7 @@ export default function IndustrialPage() {
       </section>
 
       {/* Commercial buildings imagery */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-16">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-16">
         <div className="max-w-screen-xl mx-auto">
           <div className="grid grid-cols-3 gap-3">
             <div className="relative overflow-hidden aspect-[3/4]">

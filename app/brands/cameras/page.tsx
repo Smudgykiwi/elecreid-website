@@ -65,7 +65,7 @@ export default function CamerasPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="relative bg-[#1A1A1A] overflow-hidden">
+      <section className="relative bg-[#16253F] overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/haven-dsc05741.jpg"
@@ -111,12 +111,12 @@ export default function CamerasPage() {
       </section>
 
       {/* Products */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="font-austin text-white text-4xl lg:text-5xl mb-16">The hardware.</h2>
           <div className="space-y-px">
             {products.map((product) => (
-              <div key={product.name} className="bg-[#1A1A1A] border border-white/5 p-8 lg:p-10 flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-16">
+              <div key={product.name} className="bg-[#16253F] border border-white/5 p-8 lg:p-10 flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-16">
                 <div className="lg:w-64 flex-shrink-0">
                   <p className="text-[9px] tracking-[0.2em] text-[#0134E7] uppercase mb-2">{product.label}</p>
                   <h3 className="font-austin text-white text-2xl lg:text-3xl">{product.name}</h3>
@@ -175,7 +175,7 @@ export default function CamerasPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <h2 className="font-austin text-white text-4xl lg:text-5xl leading-tight">
             Design your camera system.

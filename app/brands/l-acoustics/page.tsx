@@ -28,7 +28,7 @@ export default function LAcousticsPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 pt-32 pb-20">
+      <section className="bg-[#16253F] px-6 lg:px-16 pt-32 pb-20">
         <div className="max-w-screen-xl mx-auto">
           <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Commercial · Live Sound</p>
           <h1 className="font-austin text-white text-[clamp(56px,9vw,130px)] leading-[0.88] tracking-tight mb-6">
@@ -71,7 +71,7 @@ export default function LAcousticsPage() {
 
             {/* K2 */}
             <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="bg-[#1A1A1A] aspect-[4/3] flex flex-col items-center justify-center p-10">
+              <div className="bg-[#16253F] aspect-[4/3] flex flex-col items-center justify-center p-10">
                 <p className="font-austin text-white text-5xl lg:text-7xl mb-2">K2</p>
                 <p className="text-white/30 text-[10px] tracking-[0.25em] uppercase">Line Array System</p>
               </div>
@@ -128,7 +128,7 @@ export default function LAcousticsPage() {
       </section>
 
       {/* Why */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-20">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="font-austin text-white text-4xl lg:text-5xl mb-12">Why Elec Reid.</h2>
           <div className="grid lg:grid-cols-3 gap-10">
@@ -161,7 +161,7 @@ export default function LAcousticsPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <h2 className="font-austin text-white text-4xl lg:text-5xl leading-tight">Bring your event to life.</h2>
           <Link href="/build" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">

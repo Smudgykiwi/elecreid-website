@@ -88,7 +88,7 @@ export default function Projects() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-10 py-16 lg:py-24">
+      <section className="bg-[#16253F] px-6 lg:px-10 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <h2 className="font-austin text-white text-4xl lg:text-5xl">Your project could be next.</h2>
           <Link

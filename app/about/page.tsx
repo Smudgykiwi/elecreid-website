@@ -144,7 +144,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats / credentials */}
-      <section className="bg-[#1A1A1A] px-6 lg:px-16 py-20">
+      <section className="bg-[#16253F] px-6 lg:px-16 py-20">
         <div className="max-w-screen-xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
             {[
