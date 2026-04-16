@@ -30,7 +30,7 @@ export default function LAcousticsPage() {
       {/* Hero */}
       <section className="bg-[#16253F] px-6 lg:px-16 pt-32 pb-20">
         <div className="max-w-screen-xl mx-auto">
-          <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Commercial · Live Sound</p>
+          <p className="text-[9px] tracking-[0.35em] text-white/50 uppercase mb-6">Commercial · Live Sound</p>
           <h1 className="font-austin text-white text-[clamp(56px,9vw,130px)] leading-[0.88] tracking-tight mb-6">
             L-Acoustics
           </h1>

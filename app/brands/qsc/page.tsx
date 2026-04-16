@@ -35,7 +35,7 @@ export default function QSCPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#16253F]/80 to-[#16253F]/95" />
         </div>
         <div className="relative max-w-screen-xl mx-auto px-6 lg:px-16 pt-36 pb-24">
-          <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Commercial · AV Control</p>
+          <p className="text-[9px] tracking-[0.35em] text-white/50 uppercase mb-6">Commercial · AV Control</p>
           <h1 className="font-austin text-white text-[clamp(56px,9vw,130px)] leading-[0.88] tracking-tight mb-6">
             Q-SYS by QSC
           </h1>

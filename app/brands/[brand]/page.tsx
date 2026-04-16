@@ -604,7 +604,7 @@ export default async function BrandPage({
               {/* Text */}
               <div className="flex flex-col gap-5">
                 {feature.subheading && (
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#0134E7]">
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-white/50">
                     {feature.subheading}
                   </p>
                 )}

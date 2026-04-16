@@ -65,7 +65,7 @@ export default function SecurityPage() {
           <Image src="/images/haven-dsc05771.jpg" alt="Security system installation Melbourne" fill className="object-cover opacity-25" />
         </div>
         <div className="max-w-screen-xl mx-auto relative z-10">
-          <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Residential & Commercial · Security</p>
+          <p className="text-[9px] tracking-[0.35em] text-white/50 uppercase mb-6">Residential & Commercial · Security</p>
           <h1 className="font-austin text-white text-[clamp(64px,10vw,140px)] leading-[0.88] tracking-tight mb-6">
             Security
           </h1>

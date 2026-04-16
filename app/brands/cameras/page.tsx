@@ -77,7 +77,7 @@ export default function CamerasPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/70 to-[#1A1A1A]/95" />
         </div>
         <div className="relative max-w-screen-xl mx-auto px-6 lg:px-16 pt-36 pb-24">
-          <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Residential · Security</p>
+          <p className="text-[9px] tracking-[0.35em] text-white/50 uppercase mb-6">Residential · Security</p>
           <h1 className="font-austin text-white text-[clamp(64px,10vw,140px)] leading-[0.88] tracking-tight mb-6">
             Cameras
           </h1>
@@ -144,7 +144,7 @@ export default function CamerasPage() {
             <Image src="/images/unifi-camera-g5.png" alt="UniFi G5 Pro security camera" fill className="object-contain bg-[#E8E4DF] p-8" />
           </div>
           <div>
-            <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-4">Featured Camera</p>
+            <p className="text-[9px] tracking-[0.35em] text-white/50 uppercase mb-4">Featured Camera</p>
             <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-6">UniFi G5 Pro</h2>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
               The G5 Pro delivers 4K resolution with wide dynamic range and colour night vision. IP67 weatherproofed for outdoor use, PoE-powered for clean installation. The standard perimeter camera in every Elec Reid residential install.
@@ -160,7 +160,7 @@ export default function CamerasPage() {
       <section className="bg-white px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="lg:order-2">
-            <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-4">Local Storage</p>
+            <p className="text-[9px] tracking-[0.35em] text-white/50 uppercase mb-4">Local Storage</p>
             <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-6">The infrastructure behind every camera.</h2>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
               Every UniFi camera system is built around a properly designed rack. PoE switching, the UniFi NVR, patch panels, and clean cable management. Built to run 24/7 for years.

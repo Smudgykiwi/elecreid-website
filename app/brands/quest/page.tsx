@@ -30,7 +30,7 @@ export default function QuestPage() {
       {/* Hero */}
       <section className="bg-[#16253F] px-6 lg:px-16 pt-32 pb-20">
         <div className="max-w-screen-xl mx-auto">
-          <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Commercial · Background Music</p>
+          <p className="text-[9px] tracking-[0.35em] text-white/50 uppercase mb-6">Commercial · Background Music</p>
           <h1 className="font-austin text-white text-[clamp(64px,10vw,140px)] leading-[0.88] tracking-tight mb-6">
             Quest
           </h1>

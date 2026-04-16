@@ -21,7 +21,7 @@ export default function VideoWallPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#16253F]/70 to-[#16253F]/95" />
         </div>
         <div className="relative max-w-screen-xl mx-auto px-6 lg:px-16 pt-36 pb-24">
-          <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Commercial · Display</p>
+          <p className="text-[9px] tracking-[0.35em] text-white/50 uppercase mb-6">Commercial · Display</p>
           <h1 className="font-austin text-white text-[clamp(64px,10vw,140px)] leading-[0.88] tracking-tight mb-6">
             Video Walls
           </h1>

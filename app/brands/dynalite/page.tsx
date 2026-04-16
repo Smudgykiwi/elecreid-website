@@ -35,7 +35,7 @@ export default function DynalitePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#16253F]/75 to-[#16253F]/95" />
         </div>
         <div className="relative max-w-screen-xl mx-auto px-6 lg:px-16 pt-36 pb-24">
-          <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Commercial · Building Management</p>
+          <p className="text-[9px] tracking-[0.35em] text-white/50 uppercase mb-6">Commercial · Building Management</p>
           <h1 className="font-austin text-white text-[clamp(48px,8vw,120px)] leading-[0.88] tracking-tight mb-6">
             Philips Dynalite
           </h1>

@@ -73,7 +73,7 @@ export default function WiiMPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1A]/60 to-[#1A1A1A]/90" />
         </div>
         <div className="relative max-w-screen-xl mx-auto px-6 lg:px-16 pt-36 pb-24">
-          <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Residential · Audio</p>
+          <p className="text-[9px] tracking-[0.35em] text-white/50 uppercase mb-6">Residential · Audio</p>
           <h1 className="font-austin text-white text-[clamp(64px,10vw,140px)] leading-[0.88] tracking-tight mb-6">
             WiiM
           </h1>

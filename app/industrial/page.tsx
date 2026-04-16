@@ -5,8 +5,8 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Industrial & Commercial Electrical Melbourne | Elec Reid',
-  description: 'Elec Reid delivers industrial and commercial electrical services across Melbourne. Switchboard upgrades, compliance, access control, security, and maintenance.',
+  title: 'Industrial Electrical Melbourne | Factories & Facilities | Elec Reid',
+  description: 'Elec Reid delivers industrial electrical for factories, warehouses, and manufacturing facilities across Melbourne. Switchboard upgrades, compliance, high voltage, and maintenance.',
 }
 
 export default function IndustrialPage() {
@@ -51,7 +51,7 @@ export default function IndustrialPage() {
       <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div>
-            <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">The standard</p>
+            <p className="text-[9px] tracking-[0.35em] text-white/50 uppercase mb-6">The standard</p>
             <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl leading-tight mb-8">
               Reliability is not optional.
             </h2>
@@ -62,7 +62,7 @@ export default function IndustrialPage() {
               Elec Reid brings the same standard we apply to every project — properly specified, correctly installed, fully documented — to commercial and industrial environments. A-grade electricians. Compliant workmanship. Systems built to run.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
-              We are actively growing our commercial and industrial client base across Melbourne. If your facility needs electrical upgrades, compliance work, or access and security integration, talk to us.
+              We are actively growing our industrial client base across Melbourne. Factories, warehouses, manufacturing facilities, and large-scale sites. If your facility needs electrical work done properly, talk to us.
             </p>
           </div>
           <div className="relative overflow-hidden">
@@ -87,13 +87,12 @@ export default function IndustrialPage() {
           <h2 className="font-austin text-white text-5xl lg:text-7xl leading-none mb-16">Services.</h2>
           <div className="divide-y divide-white/20">
             {[
-              { num: '01', title: 'Electrical Compliance & Safety Upgrades', desc: 'AS/NZS 3000 compliant installations. Safety audits. RCD protection. Emergency lighting to AS/NZS 2293. NCC Section J compliance for commercial builds.' },
-              { num: '02', title: 'Switchboard Design & Installation', desc: 'New switchboard construction and upgrades for commercial and industrial facilities. Metered and sub-metered configurations. Fully documented and certified.' },
-              { num: '03', title: 'Access Control', desc: 'Inner Range Inception and Integriti systems. Card readers, biometric entry, door controllers, and remote management. Integration with CCTV and building management systems.' },
-              { num: '04', title: 'Security Systems', desc: 'Alarm systems, CCTV, and integrated security for commercial buildings. Monitored response. Full integration with access control and smart building platforms.' },
-              { num: '05', title: 'Structured Cabling & Data', desc: 'Cat6A and fibre infrastructure for commercial buildings. Rack design, patch panel installation, and network backbone. Tested and certified.' },
-              { num: '06', title: 'Maintenance Contracts', desc: 'Scheduled inspection, testing, and rapid fault response for commercial facilities. Fixed pricing. Documented maintenance history. One point of contact.' },
-              { num: '07', title: 'Commercial AV & Technology', desc: 'Meeting rooms, display systems, audio, and smart building controls. Full integration between electrical infrastructure and technology systems.' },
+              { num: '01', title: 'Electrical Compliance & Safety Audits', desc: 'AS/NZS 3000 compliant installations. Safety audits for factories, warehouses, and large facilities. RCD protection. Emergency lighting to AS/NZS 2293. NCC Section J compliance.' },
+              { num: '02', title: 'Industrial Switchboard Design & Installation', desc: 'High-capacity switchboard construction and upgrades for factories, manufacturing facilities, and multi-tenancy industrial buildings. Metered, sub-metered, and fully documented.' },
+              { num: '03', title: 'High Voltage & Three-Phase', desc: 'Three-phase power distribution, motor control circuits, and high-capacity electrical infrastructure for industrial plant and equipment.' },
+              { num: '04', title: 'Access Control & Security', desc: 'Inner Range Integriti systems for large facilities. Turnstiles, card readers, biometric entry, CCTV, and perimeter security. Monitored response.' },
+              { num: '05', title: 'Structured Cabling & Data Infrastructure', desc: 'Cat6A and fibre backbone for industrial facilities. Server room builds, rack design, patch panel installation. Tested and certified.' },
+              { num: '06', title: 'Preventative Maintenance Contracts', desc: 'Scheduled inspection, testing, and rapid fault response for industrial facilities. Compliance reporting. Fixed pricing. One point of contact.' },
             ].map((service) => (
               <div key={service.num} className="grid grid-cols-[44px_1fr] gap-6 py-7">
                 <span className="font-austin text-white/30 text-xl">{service.num}</span>
@@ -127,7 +126,7 @@ export default function IndustrialPage() {
       {/* Why */}
       <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20">
         <div className="max-w-screen-xl mx-auto">
-          <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-4">Why Elec Reid</p>
+          <p className="text-[9px] tracking-[0.35em] text-white/50 uppercase mb-4">Why Elec Reid</p>
           <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-12">One accountable team.</h2>
           <div className="grid lg:grid-cols-3 gap-0 divide-y lg:divide-y-0 lg:divide-x divide-[#0134E7]/20">
             {[
@@ -150,7 +149,7 @@ export default function IndustrialPage() {
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <div>
             <h2 className="font-austin text-white text-4xl lg:text-6xl leading-tight mb-3">Tell us about your facility.</h2>
-            <p className="text-white/60 max-w-lg text-lg">We are growing our industrial and commercial electrical work across Melbourne. Let us know what you need.</p>
+            <p className="text-white/60 max-w-lg text-lg">We work on factories, warehouses, manufacturing facilities, and large-scale industrial sites across Melbourne. Let us know what your facility needs.</p>
           </div>
           <div className="flex flex-col gap-3">
             <a href="tel:+61450342075"
