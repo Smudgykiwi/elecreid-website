@@ -707,7 +707,7 @@ a:hover { opacity: 0.7; }
   <div class="thank-you-content">
     <h1>Thank You.</h1>
     <p>We've got everything we need. Our team will be in touch with a tailored quote and clear next steps.</p>
-    <p style="margin-top:32px;"><a href="/residential">Back to Elec Reid →</a></p>
+    <p style="margin-top:32px;"><a href="/">Back to Elec Reid →</a></p>
   </div>
 </div>
 

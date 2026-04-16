@@ -40,8 +40,8 @@ export default function HomePage() {
             Residential smart homes. Commercial AV and technology. Industrial electrical. One company. Melbourne.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <Link href="/residential" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-8 py-4 rounded-full transition-colors whitespace-nowrap">
-              Explore Our Work →
+            <Link href="/projects" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-8 py-4 rounded-full transition-colors whitespace-nowrap">
+              See Our Work →
             </Link>
             <Link href="/build" className="inline-flex items-center justify-center border border-white/30 hover:border-white text-white text-[9px] tracking-[0.25em] uppercase px-8 py-4 rounded-full transition-colors whitespace-nowrap">
               Build Your Home

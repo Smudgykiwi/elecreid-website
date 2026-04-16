@@ -129,8 +129,8 @@ export default function Nav() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8 lg:gap-10">
-          <Link href="/services" className={`text-[10px] tracking-[0.2em] uppercase transition-colors ${scrolled ? 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]' : 'text-white/70 hover:text-white'}`}>
-            Services
+          <Link href="/locations" className={`text-[10px] tracking-[0.2em] uppercase transition-colors ${scrolled ? 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]' : 'text-white/70 hover:text-white'}`}>
+            Locations
           </Link>
 
           {/* Solutions mega-dropdown */}
@@ -249,7 +249,7 @@ export default function Nav() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-white border-t border-[#1A1A1A]/10 px-6 pt-6 pb-8 flex flex-col gap-4 max-h-[80vh] overflow-y-auto">
-          {['Services', 'Projects', 'About'].map((label) => (
+          {['Locations', 'Projects', 'About'].map((label) => (
             <Link key={label} href={`/${label.toLowerCase()}`} onClick={() => setMenuOpen(false)}
               className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60">
               {label}

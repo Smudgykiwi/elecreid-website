@@ -159,7 +159,7 @@ export default function Home() {
         <div className="max-w-screen-xl mx-auto">
           <div className="flex items-baseline justify-between mb-2">
             <p className="text-[9px] tracking-[0.35em] text-white/30 uppercase">What We Offer</p>
-            <Link href="/services" className="text-[9px] tracking-[0.2em] text-white/30 hover:text-white uppercase transition-colors hidden sm:block">
+            <Link href="/brands" className="text-[9px] tracking-[0.2em] text-white/30 hover:text-white uppercase transition-colors hidden sm:block">
               All →
             </Link>
           </div>
@@ -183,7 +183,7 @@ export default function Home() {
                   <h3 className="font-austin text-white text-xl lg:text-2xl">{service.title}</h3>
                   <p className="text-white/35 text-sm max-w-sm">{service.desc}</p>
                 </div>
-                <Link href="/services" className="text-white/20 group-hover:text-[#0134E7] transition-colors">→</Link>
+                <Link href="/brands" className="text-white/20 group-hover:text-[#0134E7] transition-colors">→</Link>
               </div>
             ))}
           </div>
