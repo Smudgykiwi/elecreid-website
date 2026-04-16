@@ -41,10 +41,13 @@ export default function AboutPage() {
           </div>
           <div className="lg:col-span-7 lg:col-start-6 lg:pt-4">
             <p className="font-austin text-[#1A1A1A] text-3xl lg:text-4xl leading-tight mb-8">
-              Joe Reid grew up playing drums in bands across New Zealand. Music was never a hobby — it was the thing.
+              Joe Reid grew up in church, playing drums from a young age. Music was never a hobby — it was the thing.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-              Touring. Recording. Living the rhythm of a band that takes its craft seriously. That background built an instinct for what great audio actually sounds like — and an intolerance for anything less.
+              That foundation — music as community, as worship, as something that brings people together — shaped everything that followed. Touring bands across New Zealand. A career in the live industry. And a genuine care for the spaces where people gather and experience something together.
+            </p>
+            <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
+              Churches remain close to our work. We have helped congregations across Melbourne create spaces where the technology serves the worship — where the audio and visuals are clear, reliable, and completely invisible to the experience. That work matters to us in a way that goes beyond the brief.
             </p>
             <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
               Moving to Australia, that love for music led naturally into the live industry. Concerts. Touring productions. Major events. For years, the work was building temporary experiences that had to be perfect — because you only had one chance. Three hours. One show. Thousands of people. Everything had to work.
