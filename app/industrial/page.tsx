@@ -17,7 +17,7 @@ export default function IndustrialPage() {
       {/* Hero */}
       <section className="relative bg-[#0134E7] px-6 lg:px-16 pt-36 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/commercial-9.jpg" alt="Commercial electrical Melbourne" fill className="object-cover opacity-15 mix-blend-overlay" />
+          <Image src="/images/commercial-9.jpg" alt="Commercial electrical Melbourne" fill className="object-cover opacity-30" />
         </div>
         <div className="max-w-screen-xl mx-auto relative z-10">
           <p className="text-[9px] tracking-[0.35em] text-white/60 uppercase mb-6">Elec Reid · Industrial &amp; Commercial</p>
@@ -112,13 +112,13 @@ export default function IndustrialPage() {
         <div className="max-w-screen-xl mx-auto">
           <div className="grid grid-cols-3 gap-3">
             <div className="relative overflow-hidden aspect-[3/4]">
-              <Image src="/images/commercial-1.jpg" alt="Commercial building Melbourne" fill className="object-cover opacity-70" />
+              <Image src="/images/commercial-1.jpg" alt="Commercial building Melbourne" fill className="object-cover" />
             </div>
             <div className="relative overflow-hidden aspect-[3/4] mt-8">
-              <Image src="/images/commercial-3.jpg" alt="Commercial electrical Melbourne" fill className="object-cover opacity-70" />
+              <Image src="/images/commercial-3.jpg" alt="Commercial electrical Melbourne" fill className="object-cover" />
             </div>
             <div className="relative overflow-hidden aspect-[3/4]">
-              <Image src="/images/commercial-5.jpg" alt="Industrial electrical Melbourne" fill className="object-cover opacity-70" />
+              <Image src="/images/commercial-5.jpg" alt="Industrial electrical Melbourne" fill className="object-cover" />
             </div>
           </div>
         </div>

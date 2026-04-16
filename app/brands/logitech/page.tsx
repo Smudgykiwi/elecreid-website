@@ -119,8 +119,8 @@ export default function LogitechPage() {
               Cloud management for every deployed device. Monitor health, push firmware updates, and troubleshoot any meeting room from a single dashboard without being in the building. Essential for any multi-room commercial deployment. We configure Logitech Sync as part of every installation.
             </p>
           </div>
-          <div className="bg-[#E8E4DF] aspect-[4/3] flex items-center justify-center">
-            <p className="font-austin text-[#1A1A1A]/20 text-2xl">Logitech Sync</p>
+          <div className="overflow-hidden aspect-[4/3]">
+            <Image src="/images/eclat-parlor.webp" alt="Commercial boardroom AV installation" width={900} height={675} className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
