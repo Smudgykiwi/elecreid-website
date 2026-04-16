@@ -145,6 +145,15 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── FULL WIDTH IMAGE ─────────────────────────────────────── */}
+      <section className="relative h-[50vh] lg:h-[60vh] overflow-hidden">
+        <Image src="/images/haven-dsc05653.jpg" alt="Haven Court home theatre and bar" fill className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#16253F]/70 via-transparent to-transparent" />
+        <div className="absolute bottom-8 left-6 lg:left-16">
+          <p className="text-[8px] tracking-[0.25em] text-white/50 uppercase">Haven Court · Torquay, VIC</p>
+        </div>
+      </section>
+
       {/* ── SERVICES ─────────────────────────────────────────────── */}
       <section className="bg-[#16253F] px-6 lg:px-16 py-24 lg:py-36">
         <div className="max-w-screen-xl mx-auto">

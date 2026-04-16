@@ -15,8 +15,12 @@ export default function CommercialPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#16253F] px-6 lg:px-16 pt-36 pb-20 min-h-[60vh] flex flex-col justify-end">
-        <div className="max-w-screen-xl mx-auto w-full">
+      <section className="bg-[#16253F] px-6 lg:px-16 pt-36 pb-20 min-h-[60vh] flex flex-col justify-end relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/images/eclat-bureau.webp" alt="Commercial AV space Melbourne" fill className="object-cover opacity-35" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#16253F] via-[#16253F]/60 to-transparent" />
+        </div>
+        <div className="max-w-screen-xl mx-auto w-full relative z-10">
           <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Elec Reid · Commercial</p>
           <h1 className="font-austin text-white text-[clamp(56px,9vw,130px)] leading-[0.88] tracking-tight mb-6 max-w-5xl">
             Technology that serves your business.
