@@ -119,17 +119,17 @@ export default function Nav() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled ? 'bg-white/95 backdrop-blur-sm border-b border-[#1A1A1A]/8' : 'bg-transparent'
+      scrolled ? 'bg-white/95 backdrop-blur-sm border-b border-[#1A1A1A]/8' : 'bg-[#16253F]/60 backdrop-blur-sm'
     }`}>
       <div className="max-w-screen-xl mx-auto px-6 lg:px-16 flex items-center justify-between h-16 lg:h-20">
 
         <Link href="/" className="flex-shrink-0">
-          <Image src="/logos/logo-text-color3.svg" alt="Elec Reid" width={110} height={26} className="h-6 w-auto" priority />
+          <Image src={scrolled ? "/logos/logo-text-color3.svg" : "/logos/logo-text-color4.svg"} alt="Elec Reid" width={110} height={26} className="h-6 w-auto" priority />
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8 lg:gap-10">
-          <Link href="/services" className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors">
+          <Link href="/services" className={`text-[10px] tracking-[0.2em] uppercase transition-colors ${scrolled ? 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]' : 'text-white/70 hover:text-white'}`}>
             Services
           </Link>
 
@@ -139,7 +139,7 @@ export default function Nav() {
             onMouseEnter={() => setBrandsOpen(true)}
             onMouseLeave={() => setBrandsOpen(false)}
           >
-            <button className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors flex items-center gap-1">
+            <button className={`text-[10px] tracking-[0.2em] uppercase transition-colors flex items-center gap-1 ${scrolled ? 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]' : 'text-white/70 hover:text-white'}`}>
               Solutions
               <span className={`text-[8px] transition-transform duration-200 ${brandsOpen ? 'rotate-180' : ''}`}>▾</span>
             </button>
@@ -227,10 +227,10 @@ export default function Nav() {
             )}
           </div>
 
-          <Link href="/projects" className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors">
+          <Link href="/projects" className={`text-[10px] tracking-[0.2em] uppercase transition-colors ${scrolled ? 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]' : 'text-white/70 hover:text-white'}`}>
             Projects
           </Link>
-          <Link href="/about" className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors">
+          <Link href="/about" className={`text-[10px] tracking-[0.2em] uppercase transition-colors ${scrolled ? 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]' : 'text-white/70 hover:text-white'}`}>
             About
           </Link>
           <Link href="/build" className="text-[10px] tracking-[0.2em] uppercase bg-[#0134E7] hover:bg-[#012ab8] text-white px-6 py-2.5 rounded-full transition-colors">
