@@ -31,7 +31,7 @@ const residentialCategories = [
     href: '/brands/unifi',
     brands: [
       { label: 'Unifi', href: '/brands/unifi' },
-      { label: 'TP-Link', href: '/brands/cameras' },
+      { label: 'TP-Link', href: '/brands/tp-link' },
     ],
   },
   {
@@ -46,7 +46,8 @@ const residentialCategories = [
     label: 'Cameras',
     href: '/brands/cameras',
     brands: [
-      { label: 'Camera Systems', href: '/brands/cameras' },
+      { label: 'UniFi Protect', href: '/brands/cameras' },
+      { label: 'TP-Link Vigi', href: '/brands/tp-link' },
     ],
   },
   {
