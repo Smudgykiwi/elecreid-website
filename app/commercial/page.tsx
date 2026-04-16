@@ -44,10 +44,10 @@ export default function CommercialPage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="overflow-hidden aspect-square">
-                <Image src="/images/stkilda-1.jpg" alt="Commercial audio installation Melbourne" width={600} height={600} className="w-full h-full object-cover" />
+                <Image src="/images/eclat-galerie.webp" alt="Commercial AV installation Melbourne" width={600} height={600} className="w-full h-full object-cover" />
               </div>
               <div className="overflow-hidden aspect-square">
-                <Image src="/images/haven-7.jpg" alt="Commercial network installation Melbourne" width={600} height={600} className="w-full h-full object-cover" />
+                <Image src="/images/eclat-parlor.webp" alt="Commercial meeting room AV Melbourne" width={600} height={600} className="w-full h-full object-cover" />
               </div>
             </div>
           </div>

@@ -47,7 +47,7 @@ export default function Home() {
         <div className="max-w-screen-xl mx-auto">
           <div className="overflow-hidden">
             <Image
-              src="/images/mckimm-5.jpg"
+              src="/images/haven-dsc05589.jpg"
               alt="McKimm Brighton Elec Reid"
               width={2000}
               height={1200}
@@ -84,7 +84,7 @@ export default function Home() {
 
           <div className="grid grid-cols-2 gap-3 mt-16">
             <div className="overflow-hidden">
-              <Image src="/images/haven-1.jpg" alt="Haven Court spiral staircase" width={900} height={675}
+              <Image src="/images/haven-dsc05599.jpg" alt="Haven Court spiral staircase" width={900} height={675}
                 className="w-full aspect-[4/3] object-cover hover:scale-[1.03] transition-transform duration-700" />
             </div>
             <div className="overflow-hidden">

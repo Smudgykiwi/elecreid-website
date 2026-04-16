@@ -65,7 +65,7 @@ export default function Gateway() {
         <Link href="/commercial" className="group relative overflow-hidden border-r border-white/10 last:border-r-0">
           <div className="absolute inset-0">
             <Image
-              src="/images/stkilda-1.jpg"
+              src="/images/eclat-bureau.webp"
               alt="Elec Reid Commercial"
               fill
               className="object-cover opacity-20 group-hover:opacity-35 transition-opacity duration-700"
@@ -89,7 +89,7 @@ export default function Gateway() {
         <Link href="/industrial" className="group relative overflow-hidden border-r border-white/10 last:border-r-0">
           <div className="absolute inset-0">
             <Image
-              src="/images/haven-7.jpg"
+              src="/images/haven-dsc05741.jpg"
               alt="Elec Reid Industrial"
               fill
               className="object-cover opacity-20 group-hover:opacity-35 transition-opacity duration-700"
