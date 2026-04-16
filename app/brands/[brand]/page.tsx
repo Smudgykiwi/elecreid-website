@@ -222,7 +222,7 @@ const brandData: Record<string, BrandData> = {
     metaDescription: "Authorised Control4 dealer in Melbourne. Elec Reid installs and programs Control4 smart home systems T5 touchscreens, DS3 intercoms, Lux keypads. Twenty years of proven reliability.",
     h1: 'Control4',
     tagline: 'Twenty years of certainty.',
-    heroImage: '/images/control4-x4.jpg',
+    heroImage: '/images/merival-c4screen.jpg',
     heroImageAlt: 'Control4 smart home system in a Melbourne residence',
     introHeading: 'A proven platform with more track record than most of its competitors have age.',
     introParagraphs: [
@@ -440,8 +440,8 @@ const brandData: Record<string, BrandData> = {
     metaDescription: "Sonos installation Melbourne. Elec Reid installs multi-room Sonos audio systems in-ceiling speakers, Arc Ultra, Era 300. Wired properly from the ceiling down.",
     h1: 'Sonos',
     tagline: 'Music, everywhere. Without trying.',
-    heroImage: '/images/stkilda-1.jpg',
-    heroImageAlt: 'Multi-room audio installation in a Melbourne rooftop residence',
+    heroImage: '/images/merival-sonos.jpg',
+    heroImageAlt: 'Sonos integrated entertainment system in a Melbourne residence',
     introHeading: "The audio platform that disappears into your home.",
     introParagraphs: [
       "Sonos is the audio platform that disappears into your home. Every room. One app. Your streaming services, your music, your podcast wherever you are.",

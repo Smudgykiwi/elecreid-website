@@ -194,6 +194,7 @@ export default function Home() {
             {[
               { title: 'Haven Court', location: 'Torquay, VIC', img: '/images/haven-dsc05570.jpg' },
               { title: 'McKimm', location: 'Brighton, VIC', img: '/images/mckimm-3.jpg' },
+              { title: 'Merival', location: 'Christchurch, NZ', img: '/images/merival-sonos.jpg' },
             ].map((project) => (
               <Link key={project.title} href="/projects" className="group block">
                 <div className="relative overflow-hidden">

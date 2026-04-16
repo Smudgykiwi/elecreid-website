@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta charset="UTF-8" />
+	<title>404</title>
+	<link rel="preload" as="font" href="https://www.basalte.be/assets/front/fonts/gilroy/webfonts/3A0445_4_0.woff2" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" as="font" href="https://www.basalte.be/assets/front/fonts/gilroy/webfonts/3A0445_0_0.woff2" type="font/woff2" crossorigin="anonymous">
+	<meta name="description" content="Blijkbaar ben je wat verdwaald op onze website... Geen probleem! Klik gewoon hier om terug naar de homepage te gaan!" />
+	<meta property="og:title" content="404" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Blijkbaar ben je wat verdwaald op onze website... Geen probleem! Klik gewoon hier om terug naar de homepage te gaan!" />
+	<meta property="og:url" content="https://www.basalte.be/images/products/sentido/sentido-aluminium-brushed.jpg" />
+	<meta property="og:site_name" content="Basalte bv" />
+	<meta property="og:image" content="https://www.basalte.be/assets/front/images/og.jpg">
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="404" />
+	<meta name="twitter:description" content="Blijkbaar ben je wat verdwaald op onze website... Geen probleem! Klik gewoon hier om terug naar de homepage te gaan!" />
+	<meta name="twitter:image" content="https://www.basalte.be/assets/front/images/og.jpg" />
+	<meta itemprop="name" content="404" />
+	<meta itemprop="description" content="Blijkbaar ben je wat verdwaald op onze website... Geen probleem! Klik gewoon hier om terug naar de homepage te gaan!" />
+	<meta name="robots" content="index,follow,noodp,noydir" />
+	<meta http-equiv="Content-Language" content="nl" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Expires" content="never" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+	<meta name="csrf-token" content="" />
+	<meta name="csrf-param" content="_token" />
+	<link rel="stylesheet" href="https://www.basalte.be/assets/front/css/app-6b319b0580.css" type="text/css" media="all" />
+	<link rel="apple-touch-icon" sizes="180x180" href="https://www.basalte.be/assets/front/images/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://www.basalte.be/assets/front/images/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://www.basalte.be/assets/front/images/favicons/favicon-16x16.png">
+	<link rel="manifest" href="https://www.basalte.be/assets/front/images/favicons/manifest.json">
+	<link rel="mask-icon" href="https://www.basalte.be/assets/front/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="https://www.basalte.be/assets/front/images/favicons/favicon.ico">
+	<meta name="apple-mobile-web-app-title" content="404">
+	<meta name="application-name" content="404">
+	<meta name="msapplication-config" content="https://www.basalte.be/assets/front/images/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#121212">
+	<meta name="google-site-verification" content="WuF0UZgzjKyfDRMt7mn5MSeTrEB6UsloGGZ2ciZsmLo" />
+	<script src="https://www.basalte.be/assets/front/js/plyr.polyfilled.js"></script>
+			<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){ dataLayer.push(arguments); }
+			gtag('set', 'url_passthrough', true);
+			gtag('consent', 'default', {
+				'ad_storage': 'denied',
+				'ad_user_data': 'denied',
+				'ad_personalization': 'denied',
+				'analytics_storage': 'denied'
+			});
+			gtag('js', new Date());
+			gtag('config', 'G-FSWT474G6G');
+		</script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSWT474G6G"></script>
+		<script type="text/javascript"> _linkedin_partner_id = "2991106"; window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []; window._linkedin_data_partner_ids.push(_linkedin_partner_id); </script><script type="text/javascript"> (function(l) { if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])}; window.lintrk.q=[]} var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(window.lintrk); </script> <noscript> <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2991106&fmt=gif" /> </noscript>
+		<script>
+			!function(f,b,e,v,n,t,s)
+			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+				n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+				if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+				n.queue=[];t=b.createElement(e);t.async=!0;
+				t.src=v;s=b.getElementsByTagName(e)[0];
+				s.parentNode.insertBefore(t,s)}(window, document,'script',
+				'https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', '1502322866973903');
+			fbq('track', 'PageView');
+		</script>
+		<script async defer src="https://www.google.com/recaptcha/api.js?hl=nl"></script>
+</head>
+<body class="relative theme-dark bg--black">
+	<div x-data="{ nav : false }" x-title="Navigation">
+	<div class="pos--rel  nav-space ">
+		<header id="header" class="header nav--new-transparent " data-scrollmenu="line--hide">
+			<div class="flex flex-align-center flex-space-between" id="nav" data-scrollmenu="bg--black-hide-line">
+				<div class="flex-row ai--center">
+					<a href="https://www.basalte.be" title="Terug naar startscherm" class="resetlink logo  fill--white ">
+						<svg height="25px" width="85px">
+							<use xlink:href="https://www.basalte.be/assets/front/images/svgstore-502ed9cabd.svg#logo"></use>
+						</svg>
+					</a>
+									</div>
+				<nav itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="flex-row">
+											<ul class="nav no-list-style flex flex-end flex-align-center">
+																														<li class="nav__item">
+									<a href="https://www.basalte.be/basalte-home" class="resetlink block p-ends-0.5x p-sides-0.75x fs--15 hover-color--lightbrown color--white" title="Basalte Home" itemprop="url">
+										<span itemprop="name">
+											
+											Basalte Home
+											
+										</span>
+									</a>
+								</li>
+																							<li class="nav__item">
+									<a href="https://www.basalte.be/producten" class="resetlink block p-ends-0.5x p-sides-0.75x fs--15 hover-color--lightbrown color--white" title="producten" itemprop="url">
+										<span itemprop="name">
+											
+											producten
+											
+										</span>
+									</a>
+								</li>
+																							<li class="nav__item">
+									<a href="https://www.basalte.be/projecten" class="resetlink block p-ends-0.5x p-sides-0.75x fs--15 hover-color--lightbrown color--white" title="projecten" itemprop="url">
+										<span itemprop="name">
+											
+											projecten
+											
+										</span>
+									</a>
+								</li>
+																							<li class="nav__item">
+									<a href="https://www.basalte.be/over-ons" class="resetlink block p-ends-0.5x p-sides-0.75x fs--15 hover-color--lightbrown color--white" title="ons verhaal" itemprop="url">
+										<span itemprop="name">
+											
+											ons verhaal
+											
+										</span>
+									</a>
+								</li>
+																							<li class="nav__item">
+									<a href="https://www.basalte.be/jobs" class="resetlink block p-ends-0.5x p-sides-0.75x fs--15 hover-color--lightbrown color--white" title="jobs" itemprop="url">
+										<span itemprop="name">
+											
+											jobs
+											
+										</span>
+									</a>
+								</li>
+																							<li class="nav__item">
+									<a href="https://www.basalte.be/showrooms" class="resetlink block p-ends-0.5x p-sides-0.75x fs--15 hover-color--lightbrown color--white" title="showrooms" itemprop="url">
+										<span itemprop="name">
+											
+											showrooms
+											
+										</span>
+									</a>
+								</li>
+													</ul>
+										<div x-on:click="nav = ! nav" class=" color--white  hover-color--lightbrown flex-row ai--center cursor-pointer m-sides-1x">
+						<span class="sass-burger" x-bind:class="(nav) ? 'sass-cross' : ''"></span>
+					</div>
+				</nav>
+			</div>
+		</header>
+	</div>
+	<div x-cloak x-show="nav">
+		<div class="nav--new">
+			<div class="flex-column jc--center ai--center h--1/1">
+				<div class="cg-container m-ends-4x relative">
+					<div class="cg-row flex-justify-center">
+						<div class="cg-col-10 cg-col-12@3">
+							<div class="bg--black p-b-6x || tablet-p:p-b-4x tablet-p:p-sides-1x" x-on:click.outside="nav = false">
+								<div class="w--1/1 flex-row flex-end p-t-2x p-r-2x p-b-1x">
+									<div x-on:click="nav = ! nav" class="cursor-pointer color--white hover-color--lightbrown">
+										<span class="sass-burger" x-bind:class="(nav) ? 'sass-cross' : ''"></span>
+									</div>
+								</div>
+								<div class="cg-row">
+									<div class="cg-col-5 cg-col-12@2 flex-column flex-space-between || tablet-p:flex--order-2">
+										<div class="ta--left p-l-2x || tablet-p:flex-row tablet-p:p-l-0x tablet-p:p-t-2x">
+																																				<div class="tablet-p:m-r-0.5x">
+														<a class="resetlink inline-block center p-ends-0.5x tt--uc fs--16 color--gray hover-color--lightbrown" href="https://www.basalte.be/de/images/products/sentido/sentido-aluminium-brushed.jpg">
+															de
+														</a>
+													</div>
+																																																<div class="tablet-p:m-r-0.5x">
+														<a class="resetlink inline-block center p-ends-0.5x tt--uc fs--16 color--gray hover-color--lightbrown" href="https://www.basalte.be/en/images/products/sentido/sentido-aluminium-brushed.jpg">
+															en
+														</a>
+													</div>
+																																																<div class="tablet-p:m-r-0.5x">
+														<a class="resetlink inline-block center p-ends-0.5x tt--uc fs--16 color--gray hover-color--lightbrown" href="https://www.basalte.be/es/images/products/sentido/sentido-aluminium-brushed.jpg">
+															es
+														</a>
+													</div>
+																																																<div class="tablet-p:m-r-0.5x">
+														<a class="resetlink inline-block center p-ends-0.5x tt--uc fs--16 color--gray hover-color--lightbrown" href="https://www.basalte.be/fr/images/products/sentido/sentido-aluminium-brushed.jpg">
+															fr
+														</a>
+													</div>
+																																																<div class="tablet-p:m-r-0.5x">
+														<a class="resetlink inline-block center p-ends-0.5x tt--uc fs--16 color--white hover-color--lightbrown" href="https://www.basalte.be/nl/images/products/sentido/sentido-aluminium-brushed.jpg">
+															nl
+														</a>
+													</div>
+																																																								</div>
+									</div>
+									<div class="cg-col-1 cg-hide@2"></div>
+									<div class="cg-col-6 cg-col-12@2 || tablet-p:flex--order-1">
+										<div>
+																							<div class="nav--item">
+													<a href="https://www.basalte.be/basalte-home" class="resetlink inline-block bold  hover-color--lightbrown " title="Basalte Home" itemprop="url">
+														<div itemprop="name">
+															Basalte Home
+														</div>
+													</a>
+												</div>
+																							<div class="nav--item">
+													<a href="https://www.basalte.be/producten" class="resetlink inline-block bold  hover-color--lightbrown " title="producten" itemprop="url">
+														<div itemprop="name">
+															producten
+														</div>
+													</a>
+												</div>
+																							<div class="nav--item">
+													<a href="https://www.basalte.be/projecten" class="resetlink inline-block bold  hover-color--lightbrown " title="projecten" itemprop="url">
+														<div itemprop="name">
+															projecten
+														</div>
+													</a>
+												</div>
+																							<div class="nav--item">
+													<a href="https://www.basalte.be/over-ons" class="resetlink inline-block bold  hover-color--lightbrown " title="ons verhaal" itemprop="url">
+														<div itemprop="name">
+															ons verhaal
+														</div>
+													</a>
+												</div>
+																							<div class="nav--item">
+													<a href="https://www.basalte.be/jobs" class="resetlink inline-block bold  hover-color--lightbrown " title="jobs" itemprop="url">
+														<div itemprop="name">
+															jobs
+														</div>
+													</a>
+												</div>
+																							<div class="nav--item">
+													<a href="https://www.basalte.be/showrooms" class="resetlink inline-block bold  hover-color--lightbrown " title="showrooms" itemprop="url">
+														<div itemprop="name">
+															showrooms
+														</div>
+													</a>
+												</div>
+																																		<div class="nav--item-sub">
+													<a href="https://www.basalte.be/blog" class="resetlink inline-block regular  hover-color--lightbrown " title="blog" itemprop="url">
+														<div itemprop="name">
+															blog
+														</div>
+													</a>
+												</div>
+																							<div class="nav--item-sub">
+													<a href="https://www.basalte.be/contact" class="resetlink inline-block regular  hover-color--lightbrown " title="contact" itemprop="url">
+														<div itemprop="name">
+															contact
+														</div>
+													</a>
+												</div>
+																							<div class="flex-row flex-align-start m-t-1x m-b-0.5x || tablet-p:flex-start">
+																											<a href="https://www.instagram.com/basalte.be/?hl=en" title="Instagram: basalte.be" class="resetlink block fs--18 new-color hover-color--lightbrown ">
+															<i class="fab fa-instagram"></i>
+														</a>
+																											<a href="https://www.linkedin.com/company/basalte/" title="LinkedIn: basalte" class="resetlink block fs--18 new-color hover-color--lightbrown  p-l-1x ">
+															<i class="fab fa-linkedin-in"></i>
+														</a>
+																											<a href="https://www.facebook.com/basalte.be/" title="Facebook: basalte.be" class="resetlink block fs--18 new-color hover-color--lightbrown  p-l-1x ">
+															<i class="fab fa-facebook-f"></i>
+														</a>
+																											<a href="https://vimeo.com/basalte" title="Vimeo" class="resetlink block fs--18 new-color hover-color--lightbrown  p-l-1x ">
+															<i class="fab fa-vimeo"></i>
+														</a>
+																											<a href="https://www.youtube.com/channel/UC8mV8KsXfigMPXjold8JUUg" title="YouTube" class="resetlink block fs--18 new-color hover-color--lightbrown  p-l-1x ">
+															<i class="fab fa-youtube"></i>
+														</a>
+																											<a href="https://www.pinterest.com/basalte/?invite_code=c51859bfb1d34e9a9b47fdca36895174&amp;sender=410038878481701479" title="Pinterest" class="resetlink block fs--18 new-color hover-color--lightbrown  p-l-1x ">
+															<i class="fab fa-pinterest-p"></i>
+														</a>
+																											<a href="https://www.basalte.be/contact?#newsletter" title="Newsletter" class="resetlink block fs--18 new-color hover-color--lightbrown  p-l-1x ">
+															<i class="fas fa-envelope"></i>
+														</a>
+																									</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+<main class="error">
+	<section class="error-main flex flex-column flex-justify-center">
+		<div class="cg-container">
+			<div class="cg-row">
+				<div class="cg-col-12 ta--center">
+					<h1 class="fs--120 color--white bold lnh-100">
+						404
+					</h1>
+					<span class="block fs--70 color--blue tt--lc m-b-4x medium">
+						Pagina niet gevonden
+					</span>
+					<p class="block fs--20 color--white lnh-150">
+						Blijkbaar ben je wat verdwaald op onze website... <br/>Geen probleem! <br/>Klik gewoon <a href="https://www.basalte.be" title="Go back to homepage!" class="resetlink td--underline color--white hover-color--blue">hier</a> om terug naar de homepage te gaan!
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+
+
+	<footer class="scrollto-section footer relative flex mobile:ta--center" itemscope itemtype="http://schema.org/Organization">
+	<div id="gsd" class="footer__main">
+		<meta itemprop="name" content="Basalte" />
+		<meta itemprop="legalName" content="Basalte" />
+		<meta itemprop="url" content="https://www.basalte.be" />
+		<meta itemprop="image" content="https://www.basalte.be/assets/front/images/og.jpg" />
+		<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+			<meta itemprop="url" content="https://www.basalte.be/assets/front/images/logo.png" />
+			<meta itemprop="height" content="100">
+			<meta itemprop="width" content="438">
+		</span>
+		<a href="https://www.basalte.be" title="Terug naar startscherm" class="resetlink inline-block logo m-b-1x">
+			<svg height="35" width="150">
+				<use xlink:href="https://www.basalte.be/assets/front/images/svgstore-502ed9cabd.svg#logo"></use>
+			</svg>
+		</a>
+        <div class="cg-row">
+            <div class="cg-col-3 cg-col-6@3 cg-col-12@2 || tablet-ls:m-b-1x">
+                <div>
+                    <div class="m-b-1x">
+                        <address class="address tt--lc" itemscope itemprop="address" itemtype="http://schema.org/PostalAddress">
+						<span itemprop="streetAddress" class="fs--16 color--grayalt block lnh-150">
+							Fraterstraat 37b
+						</span>
+                            <span class="fs--16 color--grayalt block lnh-150">
+							<span itemprop="postalCode">9820</span> <span itemprop="addressLocality">Merelbeke-Melle</span>, België
+						</span>
+                            <meta itemprop="addressCountry" content="BE"/>
+                        </address>
+                    </div>
+                    <div>
+                        <a href="tel:+3293857838" title="+32 9 385 78 38" class="resetlink block fs--16 lnh-150 color--grayalt hover-color--white" itemprop="telephone">
+                            +32 9 385 78 38
+                        </a>
+                        <a href="mailto:info@basalte.be" title="info@basalte.be" class="resetlink block fs--16 lnh-150 color--grayalt hover-color--white" itemprop="email">
+                            info@basalte.be
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="cg-col-3 cg-col-6@3 cg-col-12@2 || tablet-ls:m-b-1x">
+                <div class="fs--16 lh--24 color--grayalt">
+                    <div class="bold m-b-0.25x color--brown">
+                        producten
+                    </div>
+                                            <div>
+	                        <a href="/nl/producten/bedieningen" title="bedieningen" class="d--inline-block resetlink fs--16 lnh-150 color--currentColor hover-color--white block mobile:ta--left">
+		                        bedieningen
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a href="/nl/product/adelante" title="deurcommunicatie" class="d--inline-block resetlink fs--16 lnh-150 color--currentColor hover-color--white block mobile:ta--left">
+		                        deurcommunicatie
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a href="/nl/producten/muziek" title="muziek" class="d--inline-block resetlink fs--16 lnh-150 color--currentColor hover-color--white block mobile:ta--left">
+		                        muziek
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a href="/nl/producten/ipad-houders" title="iPad-houders" class="d--inline-block resetlink fs--16 lnh-150 color--currentColor hover-color--white block mobile:ta--left">
+		                        iPad-houders
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a href="/nl/producten/outlets-lights" title="stopcontacten &amp; verlichting" class="d--inline-block resetlink fs--16 lnh-150 color--currentColor hover-color--white block mobile:ta--left">
+		                        stopcontacten & verlichting
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a href="/nl/product/auro" title="bewegingsmelders" class="d--inline-block resetlink fs--16 lnh-150 color--currentColor hover-color--white block mobile:ta--left">
+		                        bewegingsmelders
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a href="/nl/product/core-servers" title="Core servers" class="d--inline-block resetlink fs--16 lnh-150 color--currentColor hover-color--white block mobile:ta--left">
+		                        Core servers
+	                        </a>
+                        </div>
+                                    </div>
+            </div>
+            <div class="cg-col-3 cg-col-6@3 cg-col-12@2 || tablet-ls:m-b-1x">
+                <div class="fs--16 lh--24 color--grayalt">
+                    <div class="bold m-b-0.25x color--brown">
+                        Basalte Home
+                    </div>
+                                            <div>
+	                        <a href="/nl/functies/verlichting-zonwering" title="verlichting &amp; zonwering" class="d--inline-block resetlink tt--lc fs--16 lnh-150 color--currentColor hover-color--white block mobile:ta--left">
+		                        verlichting & zonwering
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a href="/nl/functies/klimaatregeling" title="klimaat" class="d--inline-block resetlink tt--lc fs--16 lnh-150 color--currentColor hover-color--white block mobile:ta--left">
+		                        klimaat
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a href="/nl/functies/muziek" title="muziek" class="d--inline-block resetlink tt--lc fs--16 lnh-150 color--currentColor hover-color--white block mobile:ta--left">
+		                        muziek
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a href="/nl/functies/veiligheid" title="veiligheid" class="d--inline-block resetlink tt--lc fs--16 lnh-150 color--currentColor hover-color--white block mobile:ta--left">
+		                        veiligheid
+	                        </a>
+                        </div>
+                                    </div>
+            </div>
+            <div class="cg-col-3 cg-col-6@3 cg-col-12@2 || tablet-ls:m-b-1x">
+                <div>
+                                            <div>
+	                        <a  href="https://www.basalte.be/functies" title="Basalte Home" class="d--inline-block resetlink tt--lc fs--16 lnh-150 color--grayalt hover-color--white block mobile:ta--left">
+		                        Basalte Home
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a  href="https://www.basalte.be/producten" title="Producten" class="d--inline-block resetlink tt--lc fs--16 lnh-150 color--grayalt hover-color--white block mobile:ta--left">
+		                        Producten
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a  href="https://www.basalte.be/blog" title="Blog" class="d--inline-block resetlink tt--lc fs--16 lnh-150 color--grayalt hover-color--white block mobile:ta--left">
+		                        Blog
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a  href="https://www.basalte.be/over-ons" title="Ons verhaal" class="d--inline-block resetlink tt--lc fs--16 lnh-150 color--grayalt hover-color--white block mobile:ta--left">
+		                        Ons verhaal
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a  href="https://www.basalte.be/jobs" title="jobs" class="d--inline-block resetlink tt--lc fs--16 lnh-150 color--grayalt hover-color--white block mobile:ta--left">
+		                        jobs
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a  href="https://www.basalte.be/projecten" title="Projecten" class="d--inline-block resetlink tt--lc fs--16 lnh-150 color--grayalt hover-color--white block mobile:ta--left">
+		                        Projecten
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a  href="https://www.basalte.be/contact" title="Contact" class="d--inline-block resetlink tt--lc fs--16 lnh-150 color--grayalt hover-color--white block mobile:ta--left">
+		                        Contact
+	                        </a>
+                        </div>
+                                            <div>
+	                        <a target=&quot;_blank&quot; href="https://www.basalte.be/support" title="Support" class="d--inline-block resetlink tt--lc fs--16 lnh-150 color--grayalt hover-color--white block mobile:ta--left">
+		                        Support
+	                        </a>
+                        </div>
+                                                                <div>
+	                        <a href="https://www.basalte.world" class="d--inline-block resetlink tt--lc fs--16 lnh-150 color--grayalt hover-color--white block mobile:ta--left">
+		                        <strong>basalte</strong> | world
+	                        </a>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+
+		<div class="footer-nav-mobile flex flex-align-center flex-justify-center m-t-2x">
+							<a href="https://www.instagram.com/basalte.be/?hl=en" title="Instagram: basalte.be" class="resetlink ta--center block fs--16 m-b-1x color--white hover-color--blue p-sides-0.75x">
+					<i class="fab fab fa-instagram"></i>
+				</a>
+							<a href="https://www.linkedin.com/company/basalte/" title="LinkedIn: basalte" class="resetlink ta--center block fs--16 m-b-1x color--white hover-color--blue p-sides-0.75x">
+					<i class="fab fab fa-linkedin-in"></i>
+				</a>
+							<a href="https://www.facebook.com/basalte.be/" title="Facebook: basalte.be" class="resetlink ta--center block fs--16 m-b-1x color--white hover-color--blue p-sides-0.75x">
+					<i class="fab fab fa-facebook-f"></i>
+				</a>
+							<a href="https://vimeo.com/basalte" title="Vimeo" class="resetlink ta--center block fs--16 m-b-1x color--white hover-color--blue p-sides-0.75x">
+					<i class="fab fab fa-vimeo"></i>
+				</a>
+							<a href="https://www.youtube.com/channel/UC8mV8KsXfigMPXjold8JUUg" title="YouTube" class="resetlink ta--center block fs--16 m-b-1x color--white hover-color--blue p-sides-0.75x">
+					<i class="fab fab fa-youtube"></i>
+				</a>
+							<a href="https://www.pinterest.com/basalte/?invite_code=c51859bfb1d34e9a9b47fdca36895174&amp;sender=410038878481701479" title="Pinterest" class="resetlink ta--center block fs--16 m-b-1x color--white hover-color--blue p-sides-0.75x">
+					<i class="fab fab fa-pinterest-p"></i>
+				</a>
+							<a href="https://www.basalte.be/contact?#newsletter" title="Newsletter" class="resetlink ta--center block fs--16 m-b-1x color--white hover-color--blue p-sides-0.75x">
+					<i class="fab fas fa-envelope"></i>
+				</a>
+					</div>
+		<div class="footer-border">
+			<div class="fs--14 light color--white lnh-150 w--1/1">
+				handmade with <i class="fa-light fa-heart"></i> in Belgium
+			</div>
+		</div>
+		<div class="flex flex-space-between tablet-p:block p-b-2x tablet-p:ta--center">
+			<span class="fs--14 color--gray lnh-150">
+				&copy;2026 Basalte bv - BE 0896.833.789 - <a target="_blank" href="https://www.basalte.be/assets/front/gdpr/privacyverklaring_nl.pdf" class="resetlink td--underline color--gray hover-color--white tt--lc" title="privacybeleid">privacybeleid</a> - <a href="javascript:window.cookiePreferences.toggleCookieDialog();" class="resetlink td--underline color--gray hover-color--white tt--lc" title="cookies">cookies</a> - <a target="_blank" href="https://www.basalte.be/assets/front/gdpr/basalte_general_terms_and_conditions_nl.pdf" class="resetlink td--underline color--gray hover-color--white tt--lc" title="Algemene voorwaarden">Algemene voorwaarden</a>
+			</span>
+			<a target="_blank" href="https://www.celcius.be" title="Celcius - Wij ontwerpen &amp; ontwikkelen websites en meer sinds 2001!" class="resetlink block color--gray fs--14 hover-color--white ta--right tablet-p:ta--center mobile:m-t-1x lnh-150">
+				website door <span class="td--underline">celcius.be</span>
+			</a>
+		</div>
+	</div>
+	<div class="footer__socials hide-mobile">
+					<a target="_blank" href="https://www.instagram.com/basalte.be/?hl=en" title="Instagram: basalte.be" class="resetlink ta--center block fs--16 m-b-1x color--white hover-color--lightbrown">
+				<i class="fab fa-instagram"></i>
+			</a>
+					<a target="_blank" href="https://www.linkedin.com/company/basalte/" title="LinkedIn: basalte" class="resetlink ta--center block fs--16 m-b-1x color--white hover-color--lightbrown">
+				<i class="fab fa-linkedin-in"></i>
+			</a>
+					<a target="_blank" href="https://www.facebook.com/basalte.be/" title="Facebook: basalte.be" class="resetlink ta--center block fs--16 m-b-1x color--white hover-color--lightbrown">
+				<i class="fab fa-facebook-f"></i>
+			</a>
+					<a target="_blank" href="https://vimeo.com/basalte" title="Vimeo" class="resetlink ta--center block fs--16 m-b-1x color--white hover-color--lightbrown">
+				<i class="fab fa-vimeo"></i>
+			</a>
+					<a target="_blank" href="https://www.youtube.com/channel/UC8mV8KsXfigMPXjold8JUUg" title="YouTube" class="resetlink ta--center block fs--16 m-b-1x color--white hover-color--lightbrown">
+				<i class="fab fa-youtube"></i>
+			</a>
+					<a target="_blank" href="https://www.pinterest.com/basalte/?invite_code=c51859bfb1d34e9a9b47fdca36895174&amp;sender=410038878481701479" title="Pinterest" class="resetlink ta--center block fs--16 m-b-1x color--white hover-color--lightbrown">
+				<i class="fab fa-pinterest-p"></i>
+			</a>
+					<a target="_blank" href="https://www.basalte.be/contact?#newsletter" title="Newsletter" class="resetlink ta--center block fs--16 m-b-1x color--white hover-color--lightbrown">
+				<i class="fas fa-envelope"></i>
+			</a>
+			</div>
+</footer>
+
+	
+	<script type="text/javascript" src="https://www.basalte.be/assets/front/js/app-659bba6d15.bundle.js"></script>
+
+	</body>
+</html>
