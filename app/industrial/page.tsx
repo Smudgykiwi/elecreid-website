@@ -17,7 +17,7 @@ export default function IndustrialPage() {
       {/* Hero */}
       <section className="relative bg-[#0134E7] px-6 lg:px-16 pt-36 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/commercial-9.jpg" alt="Commercial electrical Melbourne" fill className="object-cover opacity-30" />
+          <Image src="/images/industrial-warehouse.jpg" alt="Industrial electrical Melbourne" fill className="object-cover opacity-40" />
         </div>
         <div className="max-w-screen-xl mx-auto relative z-10">
           <p className="text-[9px] tracking-[0.35em] text-white/60 uppercase mb-6">Elec Reid · Industrial &amp; Commercial</p>
