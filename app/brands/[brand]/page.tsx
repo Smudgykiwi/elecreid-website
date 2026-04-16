@@ -44,8 +44,8 @@ const brandData: Record<string, BrandData> = {
     metaDescription: "Melbourne's leading Apple HomeKit installer. Elec Reid designs and installs Apple Home systems for Melbourne residences. No subscription, full encryption, total control.",
     h1: 'Apple Home',
     tagline: 'Your home, speaking your language.',
-    heroImage: '/images/haven-5.jpg',
-    heroImageAlt: 'Apple HomeKit smart home controls in a Melbourne residence',
+    heroImage: '/images/apple-home.png',
+    heroImageAlt: 'Apple HomeKit — iPhone, iPad, Apple Watch and Mac running Apple Home',
     introHeading: 'The platform built for people who already live in the Apple ecosystem.',
     introParagraphs: [
       "Apple Home is Elec Reid's number one recommendation for residential smart homes. It's the platform most Melbourne homeowners already understand because they already live in it.",
@@ -57,7 +57,7 @@ const brandData: Record<string, BrandData> = {
         heading: 'The platform you already know',
         subheading: 'No new habits. No new interfaces.',
         body: "Apple Home integrates with over 1,000 certified accessories. Every major lighting brand. Every major blind manufacturer. Every smart lock that matters. If it carries the Works with Apple Home badge, we can wire it, mount it, configure it, and hand it to you ready to use. Your home works the way your phone does. That's not an accident it's a design decision.",
-        image: '/images/haven-5.jpg',
+        image: '/images/mckimm-5.jpg',
         imageAlt: 'Smart home controls in a modern Melbourne home',
       },
       {
