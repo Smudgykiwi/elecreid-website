@@ -146,9 +146,9 @@ export default function AudioPage() {
             <h2 className="font-austin text-white text-4xl lg:text-5xl leading-tight mb-3">Design your audio space.</h2>
             <p className="text-white/40 max-w-lg">Tell us what you&apos;re building. We&apos;ll tell you what it needs.</p>
           </div>
-          <Link href="/build" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">
+          <a href="/build" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">
             Start the Conversation →
-          </Link>
+          </a>
         </div>
       </section>
 

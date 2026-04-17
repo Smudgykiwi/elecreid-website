@@ -43,9 +43,9 @@ export default function HomePage() {
             <Link href="/projects" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-8 py-4 rounded-full transition-colors whitespace-nowrap">
               See Our Work →
             </Link>
-            <Link href="/build" className="inline-flex items-center justify-center border border-white/30 hover:border-white text-white text-[9px] tracking-[0.25em] uppercase px-8 py-4 rounded-full transition-colors whitespace-nowrap">
+            <a href="/build" className="inline-flex items-center justify-center border border-white/30 hover:border-white text-white text-[9px] tracking-[0.25em] uppercase px-8 py-4 rounded-full transition-colors whitespace-nowrap">
               Design &amp; Plan
-            </Link>
+            </a>
           </div>
           <a href="tel:+61450342075" className="text-white/50 hover:text-white text-sm transition-colors">
             Call us: +61 450 342 075
@@ -267,9 +267,9 @@ export default function HomePage() {
             </p>
           </div>
           <div className="flex flex-col gap-3 flex-shrink-0">
-            <Link href="/build" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">
+            <a href="/build" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">
               Build Your Home →
-            </Link>
+            </a>
             <a href="tel:+61450342075" className="inline-flex items-center justify-center border border-white/20 hover:border-white/50 text-white/50 hover:text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">
               +61 450 342 075
             </a>

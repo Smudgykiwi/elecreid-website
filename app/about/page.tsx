@@ -162,9 +162,9 @@ export default function AboutPage() {
             <p className="text-white/40 max-w-lg">Tell us about your project.</p>
           </div>
           <div className="flex flex-col gap-3">
-            <Link href="/build" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">
+            <a href="/build" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">
               Design &amp; Plan →
-            </Link>
+            </a>
             <Link href="/contact" className="inline-flex items-center justify-center border border-white/20 hover:border-white/50 text-white/50 hover:text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">
               Contact Us
             </Link>

@@ -156,10 +156,10 @@ export default function IndustrialPage() {
               className="inline-flex items-center justify-center bg-white hover:bg-white/90 text-[#0134E7] text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap font-medium">
               Call +61 450 342 075
             </a>
-            <Link href="/build"
+            <a href="/build"
               className="inline-flex items-center justify-center border border-white/40 hover:border-white text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">
               Start a Conversation →
-            </Link>
+            </a>
           </div>
         </div>
       </section>

@@ -158,8 +158,10 @@ export default function Nav() {
               <span className={`text-[8px] transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`}>▾</span>
             </button>
 
+            {/* Invisible bridge to prevent gap closing dropdown */}
+            <div className="absolute top-full left-0 right-0 h-2" />
             {solutionsOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white border border-[#1A1A1A]/8 shadow-2xl w-[960px] p-8 z-50">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 bg-white border border-[#1A1A1A]/8 shadow-2xl w-[960px] p-8 z-50">
                 <div className="grid grid-cols-3 gap-8">
 
                   {/* Residential */}
@@ -230,9 +232,9 @@ export default function Nav() {
                   <Link href="/brands" className="text-[9px] tracking-[0.2em] text-[#0134E7] uppercase hover:underline">
                     All brands →
                   </Link>
-                  <Link href="/build" className="text-[9px] tracking-[0.2em] text-white bg-[#0134E7] uppercase px-4 py-2 rounded-full hover:bg-[#012ab8] transition-colors">
+                  <a href="/build" className="text-[9px] tracking-[0.2em] text-white bg-[#0134E7] uppercase px-4 py-2 rounded-full hover:bg-[#012ab8] transition-colors">
                     Design & Plan →
-                  </Link>
+                  </a>
                 </div>
               </div>
             )}
@@ -247,8 +249,9 @@ export default function Nav() {
               Brands
               <span className={`text-[8px] transition-transform duration-200 ${brandsOpen ? 'rotate-180' : ''}`}>▾</span>
             </button>
+            <div className="absolute top-full left-0 right-0 h-2" />
             {brandsOpen && (
-              <div className="absolute top-full right-0 mt-2 bg-white border border-[#1A1A1A]/8 shadow-xl w-56 py-4 z-50">
+              <div className="absolute top-full right-0 bg-white border border-[#1A1A1A]/8 shadow-xl w-56 py-4 z-50">
                 {[
                   { label: 'All Brands', href: '/brands' },
                   { label: 'Apple Home', href: '/brands/apple-home' },
@@ -268,9 +271,9 @@ export default function Nav() {
 
           <Link href="/contact" className={linkClass}>Contact</Link>
 
-          <Link href="/build" className="text-[10px] tracking-[0.2em] uppercase bg-[#0134E7] hover:bg-[#012ab8] text-white px-5 py-2.5 rounded-full transition-colors whitespace-nowrap">
+          <a href="/build" className="text-[10px] tracking-[0.2em] uppercase bg-[#0134E7] hover:bg-[#012ab8] text-white px-5 py-2.5 rounded-full transition-colors whitespace-nowrap">
             Design &amp; Plan
-          </Link>
+          </a>
         </nav>
 
         {/* Mobile hamburger */}
@@ -311,10 +314,10 @@ export default function Nav() {
 
           <Link href="/brands" onClick={() => setMenuOpen(false)} className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/60">Brands</Link>
 
-          <Link href="/build" onClick={() => setMenuOpen(false)}
-            className="text-[10px] tracking-[0.2em] uppercase bg-[#0134E7] text-white px-5 py-3 rounded-full text-center mt-2">
+          <a href="/build"
+            className="text-[10px] tracking-[0.2em] uppercase bg-[#0134E7] text-white px-5 py-3 rounded-full text-center mt-2 block">
             Design &amp; Plan
-          </Link>
+          </a>
         </div>
       )}
     </header>

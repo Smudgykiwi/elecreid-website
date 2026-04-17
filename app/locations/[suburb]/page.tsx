@@ -383,9 +383,9 @@ export default async function SuburbPage({ params }: { params: Promise<{ suburb:
             </h2>
             <p className="text-white/40 max-w-lg">Tell us about your home. We will design the right system for it.</p>
           </div>
-          <Link href="/build" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">
+          <a href="/build" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-10 py-5 rounded-full transition-colors whitespace-nowrap">
             Start the Conversation →
-          </Link>
+          </a>
         </div>
       </section>
 
