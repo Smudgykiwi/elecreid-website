@@ -107,8 +107,8 @@ const brandData: Record<string, BrandData> = {
         heading: 'Switches & Keypads',
         subheading: 'Sentido. Fibonacci. Chopin.',
         body: "The Sentido covers the entire surface with capacitive touch no buttons, no moving parts. Single press, long press, multitouch dimming. Available in 2 and 4-button configurations across aluminium, classic, and fer forgé collections. Twelve finishes including brushed brass. The Fibonacci draws from the golden ratio backlit laser-engraved labels that illuminate as you approach, with custom text and icons on every button, across 2 and 4-button plates. Also twelve finishes. The Chopin is the entry point to Basalte: a refined push-button switch that fits standard wall boxes, works with most smart home systems, clean and minimal.",
-        image: '/images/basalte-sentido-room.jpg',
-        imageAlt: 'Basalte Sentido switch in a Melbourne home interior',
+        image: '/images/basalte-wide-room.jpg',
+        imageAlt: 'Basalte Sentido switch integrated in a contemporary interior',
       },
       {
         heading: 'Touchscreens',
