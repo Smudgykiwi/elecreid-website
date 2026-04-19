@@ -34,7 +34,7 @@ const suburbs: Record<string, SuburbData> = {
       name: 'Haven Court',
       description: 'Full smart home integration across a striking architectural new build. KNX lighting, Unifi networking, multi-room audio, climate control, and automated louvres.',
       hero: '/images/haven-1.jpg',
-      images: ['/images/haven-6.jpg', '/images/haven-5.jpg'],
+      images: ['/images/haven-6.jpg', '/images/haven-dsc05589.jpg'],
       tags: ['KNX', 'Unifi', 'Multi-room Audio', 'Climate Control', 'Automated Louvres']
     }
   },

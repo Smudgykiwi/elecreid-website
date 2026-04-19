@@ -10,7 +10,7 @@ const projects = [
     desc: 'Architecturally integrated smart home in a striking custom build. Whole-home climate control, automated louvre screens, structured networking, multi-room AV, and comprehensive lighting design.',
     tags: ['Smart Home', 'Climate Control', 'Automated Louvres', 'AV', 'Networking'],
     hero: '/images/haven-1.jpg',
-    gallery: ['/images/haven-6.jpg', '/images/haven-5.jpg', '/images/haven-7.jpg'],
+    gallery: ['/images/haven-6.jpg', '/images/haven-dsc05589.jpg', '/images/haven-7.jpg'],
   },
   {
     title: 'McKimm',
