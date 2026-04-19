@@ -75,7 +75,7 @@ export default function IndustrialPage() {
               className="w-full aspect-[4/3] object-cover"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-[#0134E7] px-6 py-3">
-              <p className="text-white text-[9px] tracking-[0.2em] uppercase">Dale Street — Commercial Switchboard Upgrade</p>
+              <p className="text-white text-[9px] tracking-[0.2em] uppercase">Automation Switchboard Install</p>
             </div>
           </div>
         </div>
