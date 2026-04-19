@@ -134,7 +134,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div className="overflow-hidden aspect-square">
-              <Image src="/images/haven-dsc05599.jpg" alt="Haven Court spiral staircase" width={600} height={600} className="w-full h-full object-cover" />
+              <Image src="/images/haven-dsc05653.jpg" alt="Haven Court home theatre and bar" width={600} height={600} className="w-full h-full object-cover" />
             </div>
             <div className="overflow-hidden aspect-square mt-8">
               <Image src="/images/haven-dsc05656.jpg" alt="Haven Court home bar" width={600} height={600} className="w-full h-full object-cover" />
@@ -143,7 +143,7 @@ export default function HomePage() {
               <Image src="/images/merival-sonos.jpg" alt="Merival AV installation" width={600} height={600} className="w-full h-full object-cover" />
             </div>
             <div className="overflow-hidden aspect-square mt-8">
-              <Image src="/images/haven-dsc05771.jpg" alt="Haven Court exterior" width={600} height={600} className="w-full h-full object-cover" />
+              <Image src="/images/haven-dsc05643.jpg" alt="Haven Court private spa" width={600} height={600} className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
