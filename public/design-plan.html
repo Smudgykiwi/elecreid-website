@@ -458,8 +458,9 @@ a:hover { opacity: 0.7; }
   <div class="step-content">
     <h2>Multi-Room Audio</h2>
     <p>Music in every room, controlled from one place.</p>
-    <p>Three audio levels: Level 1 is background. Level 2 is proper listening quality. Level 3 is full-range, high-fidelity.</p>
-    <p>Speakers can be visible or invisible — invisible speakers are built into the ceiling and plastered over. They completely disappear.</p>
+    <p>There are three audio levels to choose from for each area of your home. <strong>Level 1</strong> is background music — enough to fill the room without dominating it. <strong>Level 2</strong> is good and clear — proper listening quality for everyday enjoyment. <strong>Level 3</strong> is pumping — full-range, high-fidelity sound for when you want to feel it.</p>
+    <p>You also have the choice of your speakers being visible or invisible in each area. Invisible speakers are built into the ceiling or wall and plastered over — they completely disappear. They're priced higher but the result is stunning.</p>
+    <p>Please select an audio level for each area you'd like included. Leave rows blank to exclude areas. If any areas aren't listed, you can add them on the next slide.</p>
     <div class="button-row left"><button class="btn-primary" onclick="nextStep()">Continue</button></div>
   </div>
 </div>
@@ -750,9 +751,10 @@ const formData = {
 const viewedAutomation = new Set();
 const viewedSwitches = new Set();
 const audioRooms = [
-  'Main Living','Family Room','Kitchen','Dining','Master Bedroom','Bedroom 2','Bedroom 3',
-  'Bedroom 4','Ensuite','Bathroom','Study/Office','Media Room','Gym','Garage',
-  'Alfresco/Patio','Backyard','Pool Area'
+  'Main Living', 'Family Room', 'Sitting Room', 'Rumpus', 'Kitchen', 'Dining',
+  'Master Bedroom', 'Bedroom 2', 'Bedroom 3', 'Bedroom 4', 'Ensuite', 'Bathroom',
+  'Powder Room', 'Laundry', 'Study/Office', 'Library', 'Media Room', 'Gym',
+  'Garage', 'Alfresco/Patio', 'Backyard', 'Pool Area'
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
