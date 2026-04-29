@@ -16,7 +16,7 @@ const config: Config = {
       colors: {
         navy: '#16253F',
         blue: '#0134E7',
-        cream: '#F7F4F0',
+        cream: '#F8F4F1',
         dark: '#1A1A1A',
       },
     },

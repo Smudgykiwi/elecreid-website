@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Commercial | Elec Reid Melbourne',
-  description: 'Elec Reid Commercial — hospitality, offices, event spaces, meeting rooms, audio systems and AV technology across Melbourne.',
+  description: 'Elec Reid Commercial: hospitality, offices, event spaces, meeting rooms, audio systems and AV technology across Melbourne.',
 }
 
 export default function CommercialPage() {
@@ -32,7 +32,7 @@ export default function CommercialPage() {
       </section>
 
       {/* What we do */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
             <div>
@@ -40,7 +40,7 @@ export default function CommercialPage() {
                 Built for the people who use it every day.
               </h2>
               <p className="text-[#1A1A1A]/60 text-lg leading-relaxed mb-6">
-                Commercial technology is not residential technology with a bigger budget. It operates harder. It needs to work without being managed. It has to perform for staff and clients who have no interest in how it works — only that it does.
+                Commercial technology is not residential technology with a bigger budget. It operates harder. It needs to work without being managed. It has to perform for staff and clients who have no interest in how it works, only that it does.
               </p>
               <p className="text-[#1A1A1A]/60 text-lg leading-relaxed">
                 Elec Reid designs and installs commercial technology systems for Melbourne businesses. Meeting rooms that actually work. Sound systems that set the atmosphere. Screens that command attention. Networks that never fail.

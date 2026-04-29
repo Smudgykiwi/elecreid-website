@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
     <Nav />
-    <div className="bg-[#F5F2EE]">
+    <div className="bg-[#F8F4F1]">
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
       <section className="px-6 lg:px-16 pt-36 lg:pt-44 pb-12">
@@ -238,7 +238,7 @@ export default function Home() {
               { src: '/images/ekinex-20venti.jpg', label: 'Ekinex 20Venti' },
             ].map((item) => (
               <div key={item.label}>
-                <div className="aspect-square overflow-hidden bg-[#F5F2EE]">
+                <div className="aspect-square overflow-hidden bg-[#F8F4F1]">
                   <Image src={item.src} alt={item.label} width={600} height={600}
                     className="w-full h-full object-cover hover:scale-[1.05] transition-transform duration-700" />
                 </div>

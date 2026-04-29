@@ -45,7 +45,7 @@ const brandData: Record<string, BrandData> = {
     h1: 'Apple Home',
     tagline: 'Your home, speaking your language.',
     heroImage: '/images/apple-home.png',
-    heroImageAlt: 'Apple HomeKit — iPhone, iPad, Apple Watch and Mac running Apple Home',
+    heroImageAlt: 'Apple HomeKit: iPhone, iPad, Apple Watch and Mac running Apple Home',
     introHeading: 'The platform built for people who already live in the Apple ecosystem.',
     introParagraphs: [
       "Apple Home is Elec Reid's number one recommendation for residential smart homes. It's the platform most Melbourne homeowners already understand because they already live in it.",
@@ -122,7 +122,7 @@ const brandData: Record<string, BrandData> = {
         subheading: 'Asano multiroom amplifier.',
         body: "The Asano is Basalte's premium multiroom amplifier. Available in M4 and P4 configurations four zones of audio, all controlled from the same Basalte keypads as your lighting. Streams from Spotify, Tidal, and AirPlay. Crystal-clear audio. No visible equipment. No separate app. Just music, everywhere.",
         image: '/images/basalte-fibonacci.jpg',
-        imageAlt: 'Basalte Fibonacci switch — audio and lighting control',
+        imageAlt: 'Basalte Fibonacci switch, audio and lighting control',
       },
       {
         heading: 'Basalte Home Platform',
@@ -563,7 +563,7 @@ export default async function BrandPage({
       </section>
 
       {/* ── Intro ── */}
-      <section className="bg-[#F5F2EE] py-20 md:py-28">
+      <section className="bg-[#F8F4F1] py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
             <div>
@@ -586,7 +586,7 @@ export default async function BrandPage({
       {data.features.map((feature, i) => (
         <section
           key={i}
-          className={`py-20 md:py-28 ${i % 2 === 0 ? 'bg-white' : 'bg-[#F5F2EE]'}`}
+          className={`py-20 md:py-28 ${i % 2 === 0 ? 'bg-white' : 'bg-[#F8F4F1]'}`}
         >
           <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
             <div className={`grid md:grid-cols-2 gap-12 md:gap-16 items-center ${
@@ -644,7 +644,7 @@ export default async function BrandPage({
       </section>
 
       {/* ── Related Brands ── */}
-      <section className="bg-[#F5F2EE] py-16 md:py-20 border-t border-[#1A1A1A]/10">
+      <section className="bg-[#F8F4F1] py-16 md:py-20 border-t border-[#1A1A1A]/10">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
           <p className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/40 mb-8">
             Related brands

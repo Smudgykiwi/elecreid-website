@@ -49,7 +49,7 @@ export default function IndustrialPage() {
       </section>
 
       {/* Intro */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div>
             <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-6">The standard</p>
@@ -115,14 +115,14 @@ export default function IndustrialPage() {
             <div className="flex items-center gap-4">
               <div className="w-8 h-[3px] bg-[#0134E7] flex-shrink-0" />
               <p className="text-[#1A1A1A]/60 leading-relaxed">
-                We are currently working with Ark Industrial on new construction projects. Industrial facility enquiries welcome — we are actively building our industrial client base across Melbourne.
+                We are currently working with Ark Industrial on new construction projects. Industrial facility enquiries welcome. We are actively building our industrial client base across Melbourne.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Core service — Maintenance */}
+      {/* Core service: Maintenance */}
       <section className="bg-[#0134E7] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -134,10 +134,10 @@ export default function IndustrialPage() {
               Every industrial and commercial facility has mandatory testing obligations under Australian standards. RCD testing. Emergency lighting testing. Test and tag. Thermal imaging of switchboards. Most facilities are not up to date.
             </p>
             <p className="text-white/70 text-lg leading-relaxed mb-6">
-              We build annual maintenance programs tailored to your facility — scheduled visits, documented results, compliance certificates, and a clear record for your safety management system.
+              We build annual maintenance programs tailored to your facility: scheduled visits, documented results, compliance certificates, and a clear record for your safety management system.
             </p>
             <p className="text-white/70 text-lg leading-relaxed">
-              It keeps you compliant. It keeps your people safe. And it means we are on site regularly — so when something needs upgrading, you call the people who already know the building.
+              It keeps you compliant. It keeps your people safe. And it means we are on site regularly. When something needs upgrading, you call the people who already know the building.
             </p>
           </div>
           <div className="space-y-4">
@@ -162,7 +162,7 @@ export default function IndustrialPage() {
       </section>
 
       {/* Services */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto">
           <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-4">What we do</p>
           <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-16">Industrial services.</h2>
@@ -232,7 +232,7 @@ export default function IndustrialPage() {
               Tell us about your facility.
             </h2>
             <p className="text-white/60 max-w-lg text-lg">
-              Whether you need a compliance audit, a maintenance program, or a full electrical upgrade — we want to hear about it.
+              Whether you need a compliance audit, a maintenance program, or a full electrical upgrade, we want to hear about it.
             </p>
           </div>
           <div className="flex flex-col gap-3 flex-shrink-0">

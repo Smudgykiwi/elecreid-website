@@ -46,7 +46,7 @@ export default function QSCPage() {
       </section>
 
       {/* Intro */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-24 lg:py-36">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-24 lg:py-36">
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-32">
           <div>
             <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl xl:text-6xl leading-tight">
@@ -88,7 +88,7 @@ export default function QSCPage() {
       </section>
 
       {/* Hardware */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-24">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-24">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-16">The hardware.</h2>
           <div className="divide-y divide-[#1A1A1A]/10">
@@ -129,7 +129,7 @@ export default function QSCPage() {
       </section>
 
       {/* Why Elec Reid */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-12">Why Elec Reid.</h2>
           <div className="grid lg:grid-cols-3 gap-10">

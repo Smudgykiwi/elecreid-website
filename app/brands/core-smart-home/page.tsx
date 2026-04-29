@@ -56,7 +56,7 @@ export default function CoreSmartHomePage() {
       </section>
 
       {/* ── Intro ── */}
-      <section className="bg-[#F5F2EE] py-20 md:py-28">
+      <section className="bg-[#F8F4F1] py-20 md:py-28">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
             <div>
@@ -99,7 +99,7 @@ export default function CoreSmartHomePage() {
       </section>
 
       {/* ── Eclipse Thermostat ── */}
-      <section className="py-20 md:py-28 bg-[#F5F2EE]">
+      <section className="py-20 md:py-28 bg-[#F8F4F1]">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center md:[&>*:first-child]:order-2">
             <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
@@ -169,7 +169,7 @@ export default function CoreSmartHomePage() {
       </section>
 
       {/* ── Related Brands ── */}
-      <section className="bg-[#F5F2EE] py-16 md:py-20 border-t border-[#1A1A1A]/10">
+      <section className="bg-[#F8F4F1] py-16 md:py-20 border-t border-[#1A1A1A]/10">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
           <p className="text-[10px] tracking-[0.2em] uppercase text-[#1A1A1A]/40 mb-8">
             Related brands

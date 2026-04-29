@@ -46,7 +46,7 @@ export default function DynalitePage() {
       </section>
 
       {/* Intro */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-24 lg:py-36">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-24 lg:py-36">
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-32">
           <div>
             <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl xl:text-6xl leading-tight">
@@ -102,7 +102,7 @@ export default function DynalitePage() {
       </section>
 
       {/* Where */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-12">Where we install it.</h2>
           <div className="grid lg:grid-cols-3 gap-10">
@@ -140,7 +140,7 @@ export default function DynalitePage() {
       </section>
 
       {/* Related */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-12">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-12">
         <div className="max-w-screen-xl mx-auto">
           <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-6">Related brands</p>
           <div className="flex flex-wrap gap-3">

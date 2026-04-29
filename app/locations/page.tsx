@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 }
 
 const withProjects = [
-  { slug: 'torquay', name: 'Torquay', desc: 'Haven Court — full smart home, KNX, Unifi' },
-  { slug: 'brighton', name: 'Brighton', desc: 'McKimm Residence — Apple HomeKit, Sonos, pool automation' },
-  { slug: 'st-kilda', name: 'St Kilda', desc: 'Fitzroy Street — rooftop AV and lighting automation' },
-  { slug: 'malvern-east', name: 'Malvern East', desc: 'Manning Road — home cinema and AV integration' },
+  { slug: 'torquay', name: 'Torquay', desc: 'Haven Court: full smart home, KNX, Unifi' },
+  { slug: 'brighton', name: 'Brighton', desc: 'McKimm Residence: Apple HomeKit, Sonos, pool automation' },
+  { slug: 'st-kilda', name: 'St Kilda', desc: 'Fitzroy Street: rooftop AV and lighting automation' },
+  { slug: 'malvern-east', name: 'Malvern East', desc: 'Manning Road: home cinema and AV integration' },
 ]
 
 const serviceAreas = [
@@ -41,7 +41,7 @@ export default function LocationsPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 pt-36 pb-16">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 pt-36 pb-16">
         <div className="max-w-screen-xl mx-auto">
           <p className="text-[9px] tracking-[0.35em] text-[#0134E7] uppercase mb-6">Where we work</p>
           <h1 className="font-austin text-[#1A1A1A] text-[clamp(64px,10vw,140px)] leading-[0.88] tracking-tight mb-6">
@@ -71,7 +71,7 @@ export default function LocationsPage() {
       </section>
 
       {/* Service areas */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-16 lg:py-20">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-16 lg:py-20">
         <div className="max-w-screen-xl mx-auto">
           <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-10">Service Areas</p>
           <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-3">

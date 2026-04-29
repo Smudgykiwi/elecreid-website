@@ -19,7 +19,7 @@ export default function HomePage() {
         <div className="absolute inset-0">
           <Image
             src="/images/haven-dsc05570.jpg"
-            alt="Elec Reid — Melbourne smart home and electrical"
+            alt="Elec Reid, Melbourne smart home and electrical"
             fill
             className="object-cover object-center opacity-40"
             priority
@@ -54,7 +54,7 @@ export default function HomePage() {
       </section>
 
       {/* WHAT WE DO */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto">
           <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-6">What we do</p>
           <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-6xl leading-tight max-w-4xl mb-16">
@@ -160,7 +160,7 @@ export default function HomePage() {
       </section>
 
       {/* RECENT PROJECTS */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex items-baseline justify-between mb-12">
             <div>
@@ -228,7 +228,7 @@ export default function HomePage() {
       </section>
 
       {/* BRANDS WE USE */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-16">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-16">
         <div className="max-w-screen-xl mx-auto">
           <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-10">Brands we install</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">

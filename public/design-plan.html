@@ -3,20 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design Your Smart Home — Elec Reid</title>
+<title>Design Your Smart Home, Elec Reid</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Heebo:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+@font-face { font-family: 'Austin'; src: url('/fonts/Austin-Roman.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Austin'; src: url('/fonts/Austin-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Austin'; src: url('/fonts/Austin-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { height: 100%; width: 100%; font-family: 'Heebo', sans-serif; color: #1A1A1A; background-color: #FFFFFF; }
+html, body { height: 100%; width: 100%; font-family: 'Inter', sans-serif; color: #16253F; background-color: #F8F4F1; }
 #progressBar { position: fixed; top: 0; left: 0; height: 4px; background-color: #0134E7; width: 0%; z-index: 1000; transition: width 0.3s ease; }
 .step { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; opacity: 0; transition: opacity 0.5s ease; overflow-y: auto; display: flex; flex-direction: column; padding: 60px 40px 100px 40px; pointer-events: none; }
 .step.active { opacity: 1; pointer-events: auto; z-index: 100; }
 .step-content { max-width: 900px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; justify-content: center; min-height: 100%; }
 .step-centred .step-content { text-align: center; align-items: center; }
-.step-dark { background-color: #16253F; color: #FFFFFF; }
-.step-white { background-color: #FFFFFF; color: #1A1A1A; }
+.step-dark { background-color: #16253F; color: #E2E2E2; }
+.step-white { background-color: #F8F4F1; color: #16253F; }
 .step-split { background: #16253F; color: white; padding: 0; }
 .step-split .step-content { display: flex; flex-direction: row; padding: 0; max-width: 100%; width: 100%; height: 100%; align-items: stretch; }
 .step-split .split-text { flex: 0 0 45%; padding: 8vh 50px 60px; display: flex; flex-direction: column; justify-content: center; background: #16253F; overflow-y: auto; }
@@ -30,18 +33,20 @@ html, body { height: 100%; width: 100%; font-family: 'Heebo', sans-serif; color:
   .step-split .split-text { flex: 1; padding: 40px 24px 100px; }
   .step-split .split-image { flex: 0 0 35vh; min-height: 35vh; }
 }
-h1 { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; margin-bottom: 20px; line-height: 1.1; }
-h2 { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 700; margin-bottom: 24px; }
-.section-label { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; opacity: 0.7; margin-bottom: 16px; }
+h1 { font-family: 'Austin', 'Playfair Display', Georgia, serif; font-size: 56px; font-weight: 700; margin-bottom: 20px; line-height: 1.05; letter-spacing: -0.01em; }
+h2 { font-family: 'Austin', 'Playfair Display', Georgia, serif; font-size: 40px; font-weight: 700; margin-bottom: 24px; line-height: 1.1; letter-spacing: -0.005em; }
+.section-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #0134E7; margin-bottom: 24px; }
+.step-dark .section-label { color: #E2E2E2; opacity: 0.85; }
+em, .italic-warmth { font-family: 'Austin', 'Playfair Display', Georgia, serif; font-style: italic; }
 p { font-size: 18px; line-height: 1.6; margin-bottom: 16px; }
 p.subtitle { font-size: 20px; font-weight: 500; opacity: 0.9; }
 p.italic { font-style: italic; font-size: 16px; opacity: 0.8; }
-input[type="text"], input[type="email"], input[type="tel"], textarea { width: 100%; max-width: 500px; border: none; border-bottom: 2px solid #1A1A1A; background-color: transparent; padding: 10px 0; font-family: 'Heebo', sans-serif; font-size: 16px; color: inherit; margin: 20px 0; transition: border-color 0.3s ease; }
+input[type="text"], input[type="email"], input[type="tel"], textarea { width: 100%; max-width: 500px; border: none; border-bottom: 2px solid #16253F; background-color: transparent; padding: 10px 0; font-family: 'Inter', sans-serif; font-size: 16px; color: inherit; margin: 20px 0; transition: border-color 0.3s ease; }
 .step-dark input[type="text"], .step-dark input[type="email"], .step-dark input[type="tel"], .step-dark textarea { border-bottom-color: #FFFFFF; color: #FFFFFF; }
 .step-dark input::placeholder, .step-dark textarea::placeholder { color: rgba(255,255,255,0.6); }
 input::placeholder, textarea::placeholder { color: rgba(26,26,26,0.5); }
 textarea { resize: vertical; min-height: 100px; padding: 10px 0; }
-button { border: none; cursor: pointer; font-family: 'Heebo', sans-serif; transition: all 0.3s ease; font-size: 16px; font-weight: 500; }
+button { border: none; cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.3s ease; font-size: 15px; font-weight: 500; letter-spacing: 0.02em; }
 .btn-primary { background-color: #0134E7; color: #FFFFFF; padding: 12px 32px; border-radius: 24px; min-width: 120px; }
 .btn-primary:hover { background-color: #0029b3; }
 .btn-secondary { background-color: transparent; color: #0134E7; border: 2px solid #0134E7; padding: 10px 24px; border-radius: 24px; font-size: 14px; }
@@ -131,17 +136,18 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-dark step-centred step-0 active">
   <div class="step-content">
-    <h1>Design Your Smart Home</h1>
-    <p class="subtitle">To get started with your smart home, we need to ask you some questions.</p>
-    <p>This form will help us understand your project and build your dream smart home system. We can then provide you with an accurate quote.</p>
-    <p class="italic">For the best user experience, we recommend using a computer. But your phone will work well too.</p>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">Design Your Smart Home</button></div>
+    <div class="section-label">Elec Reid · Design Studio</div>
+    <h1>Design your smart home.</h1>
+    <p class="subtitle">A guided plan, not a quote form.</p>
+    <p>The pages that follow walk through the rooms, the systems, and the moments that matter. Take your time. The more we know, the better the plan.</p>
+    <p class="italic">Best on a computer. Works on your phone too.</p>
+    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">Begin</button></div>
   </div>
 </div>
 
 <div class="step step-white step-1">
   <div class="step-content">
-    <h1>First up, we need some details.</h1>
+    <h1>First, a few details.</h1>
     <input type="text" id="firstName" placeholder="First name*">
     <div class="error-message" id="firstNameError"></div>
     <input type="text" id="lastName" placeholder="Last name">
@@ -155,7 +161,7 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-white step-2">
   <div class="step-content">
-    <h1>Next, where is the project located?</h1>
+    <h1>Where is the project?</h1>
     <p>We are located in Melbourne, VIC. Send us an email at <a href="mailto:enquiries@elecreid.com">enquiries@elecreid.com</a> if you'd like our recommendation of a technician near you.</p>
     <input type="text" id="projectLocation" placeholder="Suburb or postcode">
     <div class="hint">press Enter ↵</div>
@@ -165,7 +171,7 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-white step-3">
   <div class="step-content">
-    <h1>And when is the planned timeframe?</h1>
+    <h1>When are you looking to start?</h1>
     <input type="text" id="projectTimeframe" placeholder="e.g. Q3 2025, ASAP, Planning stage">
     <div class="hint">press Enter ↵</div>
     <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -174,8 +180,8 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-dark step-centred step-4">
   <div class="step-content">
-    <h1>Great!</h1>
-    <p class="subtitle">Thanks for that. Now the fun can begin.</p>
+    <h1>Good.</h1>
+    <p class="subtitle">Now the considered work begins.</p>
     <div class="button-row left"><button class="btn-primary" onclick="nextStep()">Get Started</button></div>
   </div>
 </div>
@@ -183,17 +189,18 @@ a:hover { opacity: 0.7; }
 <div class="step step-dark step-centred step-5" style="background-image: url('/images/haven-dsc05570.jpg'); background-size: cover; background-position: center;">
   <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(22,37,63,0.75);z-index:0;"></div>
   <div class="step-content" style="position:relative;z-index:1;">
-    <p>Your home is full of systems — lighting, blinds, climate, security, audio, access control — and when they don't talk to each other, nothing works the way it should.</p>
-    <p>We design and install smart homes that actually work. One app. One system. Everything integrated, reliable, and built to last.</p>
-    <p>Tell us what matters to you and we'll put together a system that fits your lifestyle.</p>
+    <p>Your home runs on systems. Lighting, blinds, climate, security, audio, access. When they do not speak to each other, nothing works the way it should.</p>
+    <p>We design and install smart homes that work. One app. One system. Architect grade. Reliable. Built to last.</p>
+    <p>Tell us what matters to you. We will design a plan that fits.</p>
     <div class="button-row left"><button class="btn-primary" onclick="nextStep()">Continue</button></div>
   </div>
 </div>
 
 <div class="step step-dark step-6">
   <div class="step-content">
-    <h2>Control Systems</h2>
-    <p>The brain of your smart home. Explore each platform or skip ahead if you already know what you want.</p>
+    <div class="section-label">01 · Control Systems</div>
+    <h2>The brain of the home.</h2>
+    <p>Hardware is finish. Platform is feel. Both matter. Explore each, or skip to selection if you already know.</p>
     <div class="card-grid two-col">
       <div class="card" style="background-image: url('/images/haven-5.jpg');" onclick="goToStep(7)">
         <div class="card-badge">✓</div>
@@ -218,13 +225,13 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-dark step-7" style="background-image: url('/images/haven-5.jpg'); background-size: cover; background-position: center;">
   <div class="step-content">
-    <div class="section-label">Apple Home.</div>
-    <h2>Apple Home</h2>
+    <div class="section-label">Apple Home</div>
+    <h2><em>Apple Home.</em></h2>
     <div class="two-col-layout">
       <div>
-        <p>Our go-to platform for most residential smart homes. If you're in the Apple ecosystem — iPhones, iPads, Apple Watch, HomePods — this is the natural fit.</p>
-        <p>Lights, blinds, climate, cameras, locks, speakers — all from your phone, watch, or Siri. End-to-end encrypted. No cloud. No subscription.</p>
-        <p>If you want a smart home that just works without thinking about it, Apple Home is where we start.</p>
+        <p>Our default for most residential smart homes. If your family lives in the Apple ecosystem, this is the natural fit. iPhone, iPad, Apple Watch, HomePod.</p>
+        <p>Lights, blinds, climate, cameras, locks, speakers. All from your phone, watch, or Siri. End to end encrypted. No cloud. No subscription.</p>
+        <p>Effortless by design.</p>
         <a href="/brands/apple-home" target="_blank">EXPLORE APPLE HOME →</a>
       </div>
       <div class="video-embed"><iframe src="https://www.youtube.com/embed/YAhEi7NQlPg" allowfullscreen loading="lazy"></iframe></div>
@@ -238,12 +245,12 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-dark step-8" style="background-image: url('/images/haven-7.jpg'); background-size: cover; background-position: center;">
   <div class="step-content">
-    <div class="section-label">Home Assistant.</div>
-    <h2>Home Assistant</h2>
+    <div class="section-label">Home Assistant</div>
+    <h2><em>Home Assistant.</em></h2>
     <div class="two-col-layout">
       <div>
-        <p>Open-source, community-driven, endlessly customisable. Over 2,000 integrations. Runs locally on your own hardware — no cloud, no subscription, zero vendor lock-in.</p>
-        <p>Custom dashboards. Complex automations. Energy monitoring. For tech-savvy homeowners who want full control.</p>
+        <p>Open source. Community driven. Endlessly customisable. Over two thousand integrations. Runs locally on your own hardware. No cloud, no subscription, no vendor lock in.</p>
+        <p>Custom dashboards. Considered automations. Energy monitoring. For homeowners who want total control.</p>
         <a href="/brands/home-assistant" target="_blank">EXPLORE HOME ASSISTANT →</a>
       </div>
       <div style="display:flex;align-items:center;justify-content:center;"><img src="/images/haven-7.jpg" style="width:100%;border-radius:8px;" alt="Home Assistant"></div>
@@ -257,12 +264,12 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-dark step-9" style="background-image: url('/images/control4-x4.jpg'); background-size: cover; background-position: center;">
   <div class="step-content">
-    <div class="section-label">Control4.</div>
-    <h2>Control4</h2>
+    <div class="section-label">Control4</div>
+    <h2><em>Control4.</em></h2>
     <div class="two-col-layout">
       <div>
-        <p>Professional-grade automation for larger homes. Dealer-installed and configured — every device, every scene, every automation set up by us to work exactly as you need it.</p>
-        <p>T5 touchscreens, DS3 intercoms, Lux keypads. Backed by Snap One. Built for scale.</p>
+        <p>Professional grade automation for larger homes. Dealer installed and commissioned. Every device, every scene, every automation set up by us to work exactly as you need.</p>
+        <p>T5 touchscreens. DS3 intercoms. Lux keypads. Backed by Snap One. Built for scale.</p>
         <a href="/brands/control4" target="_blank">EXPLORE CONTROL4 →</a>
       </div>
       <div class="video-embed"><iframe src="https://www.youtube.com/embed/Vy1JnBjqKj0" allowfullscreen loading="lazy"></iframe></div>
@@ -276,12 +283,12 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-dark step-10" style="background-image: url('/images/basalte-ellie.jpg'); background-size: cover; background-position: center;">
   <div class="step-content">
-    <div class="section-label">Basalte Home.</div>
-    <h2>Basalte Home</h2>
+    <div class="section-label">Basalte Home</div>
+    <h2><em>Basalte Home.</em></h2>
     <div class="two-col-layout">
       <div>
-        <p>The automation platform from the same Belgian company that makes the world's finest switches. Hardware and software designed together from the ground up.</p>
-        <p>Ellie, Lisa, and Lena touchscreens. Sentido and Fibonacci keypads. One app. One ecosystem. We are an authorised Basalte dealer.</p>
+        <p>The automation platform from the Belgian company that makes the finest switches in the trade. Hardware and software designed together from the ground up.</p>
+        <p><em>Ellie</em>, <em>Lisa</em> and <em>Lena</em> touchscreens. <em>Sentido</em> and <em>Fibonacci</em> keypads. One app. One ecosystem. We are an authorised Basalte dealer.</p>
         <a href="/brands/basalte" target="_blank">EXPLORE BASALTE →</a>
       </div>
       <div class="video-embed"><iframe src="https://www.youtube.com/embed/ScWK8D0ISuw" allowfullscreen loading="lazy"></iframe></div>
@@ -295,8 +302,8 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-dark step-11">
   <div class="step-content">
-    <h2>Please select your preferred control system.</h2>
-    <p>Not sure yet? No problem — we'll walk you through it during your consultation.</p>
+    <h2>Choose your preferred platform.</h2>
+    <p>Not sure yet. No problem. We will walk you through it on your discovery call.</p>
     <div class="card-grid two-col">
       <div class="card selectable" style="background-image: url('/images/haven-5.jpg');" onclick="selectAutomation(this, 'Apple Home')">
         <div class="card-radio"></div><div class="card-content"><div class="card-title">Apple Home</div></div>
@@ -331,8 +338,9 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-dark step-13">
   <div class="step-content">
-    <h2>Now for the switches.</h2>
-    <p>The one thing you'll see and touch every single day. Explore the ones that interest you, or skip ahead.</p>
+    <div class="section-label">02 · Switches and Keypads</div>
+    <h2>Light first. Tech second.</h2>
+    <p>The switch is the single most touched object in your home. It lives on your wall for thirty years. It meets your hand in the dark. Explore the ones that catch your eye.</p>
     <div class="card-grid">
       <div class="card" style="background-image: url('/images/basalte-fibonacci.jpg');" onclick="goToStep(14)">
         <div class="card-badge">✓</div>
@@ -361,12 +369,12 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-dark step-14" style="background-image: url('/images/basalte-fibonacci.jpg'); background-size: cover; background-position: center;">
   <div class="step-content">
-    <div class="section-label">Basalte Switches.</div>
-    <h2>Basalte — Sentido, Fibonacci & Chopin</h2>
-    <p>Belgian design. Premium finishes — brushed brass, black, nickel, bronze, and more.</p>
-    <p><strong>Sentido</strong> — capacitive touch, no moving parts, completely flush. Swipe to dim.</p>
-    <p><strong>Fibonacci</strong> — tactile push buttons, LED feedback, same premium finishes.</p>
-    <p><strong>Chopin</strong> — the entry point. Refined push-button, fits standard wall boxes.</p>
+    <div class="section-label">01 · Basalte</div>
+    <h2><em>Basalte.</em> Belgian engineered.</h2>
+    <p style="max-width:700px;">Basalte is the gold standard. Touch sensitive surfaces, machined housings, twelve finishes.</p>
+    <p style="max-width:700px;"><em>Sentido.</em> The light switch reinvented. The entire surface is touch sensitive. Single press, long press, multitouch dimming into scenes. RGB feedback, integrated night light, temperature sensor.</p>
+    <p style="max-width:700px;"><em>Fibonacci.</em> Inspired by the golden ratio. Backlit, laser engraved labels that light up as you approach, so you find it in the dark. Custom text and icons on every button.</p>
+    <p style="max-width:700px;"><em>Chopin.</em> The architect grade entry to the Basalte family. Refined push button. Fits standard wall boxes.</p>
     <div class="button-row space-between" style="margin-top: 48px;">
       <button class="btn-secondary" onclick="goToStep(13)">← Back to Switches</button>
       <button class="btn-primary" onclick="goToStep(15)">Continue →</button>
@@ -376,10 +384,11 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-dark step-15">
   <div class="step-content">
-    <div class="section-label">Core Eclipse.</div>
-    <h2>Core Eclipse</h2>
-    <p>Australian-designed. Ultra-flush — no visible plate or frame. The switch disappears so your architecture can speak for itself.</p>
-    <p>Dimmers, switches, and scene controllers. Compatible with most automation platforms.</p>
+    <div class="section-label">02 · Core Smart Home</div>
+    <h2><em>Eclipse.</em> Australian designed.</h2>
+    <p style="max-width:700px;">Core Smart Home's <em>Eclipse</em> range is the new benchmark for Australian designed keypads and thermostats. Switch and thermostat sit in the same family. Built for Australian homes by people who live in them.</p>
+    <p style="max-width:700px;"><em>Eclipse Thermostat.</em> Super knob control, custom backlit display, air quality measurement. The thermostat that does not need to hide.</p>
+    <p style="max-width:700px;"><em>Eclipse Switch.</em> One, two and four fold configurations with integrated sensors. Thirteen finishes. Brushed and silky matte, bronze through brass.</p>
     <div class="button-row space-between" style="margin-top: 48px;">
       <button class="btn-secondary" onclick="goToStep(13)">← Back to Switches</button>
       <button class="btn-primary" onclick="goToStep(16)">Continue →</button>
@@ -389,10 +398,11 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-dark step-16" style="background-image: url('/images/control4-lux.jpg'); background-size: cover; background-position: center;">
   <div class="step-content">
-    <div class="section-label">Control4 Switches.</div>
-    <h2>Control4 — Contemporary & Lux</h2>
-    <p>Purpose-built for the Control4 ecosystem. The tightest possible integration — scenes, device control, and feedback all handled natively.</p>
-    <p><strong>Contemporary</strong> — customisable, backlit buttons. <strong>Lux</strong> — premium dimmer, clean modern faceplate.</p>
+    <div class="section-label">03 · Control4</div>
+    <h2><em>Contemporary</em> and <em>Lux.</em></h2>
+    <p style="max-width:700px;">Purpose built for the Control4 ecosystem. The tightest possible integration. Scenes, device control and feedback handled natively.</p>
+    <p style="max-width:700px;"><em>Contemporary.</em> Customisable, backlit buttons.</p>
+    <p style="max-width:700px;"><em>Lux.</em> Considered dimmer, clean modern faceplate.</p>
     <div class="button-row space-between" style="margin-top: 48px;">
       <button class="btn-secondary" onclick="goToStep(13)">← Back to Switches</button>
       <button class="btn-primary" onclick="goToStep(17)">Continue →</button>
@@ -402,10 +412,10 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-dark step-17">
   <div class="step-content">
-    <div class="section-label">Zetr.</div>
-    <h2>Zetr</h2>
-    <p>Trimless architecture at its purest. No plate, no frame, no visible edge. The switch disappears into the wall.</p>
-    <p>Recessed into plasterboard during construction. Requires early coordination — the result is worth it.</p>
+    <div class="section-label">04 · Zetr</div>
+    <h2><em>Zetr.</em> Trimless architecture.</h2>
+    <p style="max-width:700px;">No plate. No frame. No visible edge. The switch disappears into the wall.</p>
+    <p style="max-width:700px;">Recessed into plasterboard during construction. Requires early coordination. The result is worth it.</p>
     <div class="button-row space-between" style="margin-top: 48px;">
       <button class="btn-secondary" onclick="goToStep(13)">← Back to Switches</button>
       <button class="btn-primary" onclick="goToStep(18)">Continue →</button>
@@ -415,10 +425,11 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-dark step-18" style="background-image: url('/images/ekinex-proxima.jpg'); background-size: cover; background-position: center;">
   <div class="step-content">
-    <div class="section-label">Ekinex.</div>
-    <h2>Ekinex — 20 Venti & Proxima</h2>
-    <p>Italian design meets smart technology. The broadest selection of finishes available in any switch — metals, painted surfaces, custom RAL colours.</p>
-    <p><strong>20 Venti</strong> — capacitive and mechanical options, integrated sensors. <strong>Proxima</strong> — sharper bevels, deeper-brushed finishes, machined edge profile.</p>
+    <div class="section-label">05 · Ekinex</div>
+    <h2><em>Ekinex.</em> Italian precision.</h2>
+    <p style="max-width:700px;">Three Ekinex ranges sit on our spec sheet. <em>20Venti</em> for the modular essentials. <em>FF Series</em> for the heavier brass framed look. <em>Proxima</em> as the flagship. KNX native across all three.</p>
+    <p style="max-width:700px;"><em>20Venti.</em> Touch switches, rockers, thermostats and room controllers in a vast palette of brushed metals, painted surfaces and special textures. The right choice for projects that want a modular, future proof, beautifully machined European standard.</p>
+    <p style="max-width:700px;"><em>Proxima.</em> Sharper bevels, deeper brushed finishes, a machined edge profile that catches light in a way no other keypad manages. Thirteen finishes including antique brass, satin bronze, rose gold and matte stainless.</p>
     <div class="button-row space-between" style="margin-top: 48px;">
       <button class="btn-secondary" onclick="goToStep(13)">← Back to Switches</button>
       <button class="btn-primary" onclick="goToStep(19)">Continue →</button>
@@ -429,7 +440,7 @@ a:hover { opacity: 0.7; }
 <div class="step step-dark step-19">
   <div class="step-content">
     <h2>Choose as many as you like.</h2>
-    <p>Select any switches that catch your eye. We can mix and match throughout your home.</p>
+    <p>Mix and match throughout the home. Most projects use two or three families across different rooms.</p>
     <div class="card-grid">
       <div class="card selectable" style="background-image: url('/images/basalte-fibonacci.jpg');" onclick="toggleSwitch(this, 'Basalte Sentido')"><div class="card-checkbox"></div><div class="card-content"><div class="card-title">Basalte Sentido</div></div></div>
       <div class="card selectable" style="background-image: url('/images/basalte-fibonacci.jpg');" onclick="toggleSwitch(this, 'Basalte Fibonacci')"><div class="card-checkbox"></div><div class="card-content"><div class="card-title">Basalte Fibonacci</div></div></div>
@@ -449,18 +460,21 @@ a:hover { opacity: 0.7; }
 <div class="step step-dark step-centred step-20">
   <div class="step-content">
     <h1>Nice.</h1>
-    <p class="subtitle">Now let's run through what you want integrated. Just yes or no — we'll handle the rest.</p>
+    <p class="subtitle">Now run through what you want integrated. Yes or no. We handle the rest.</p>
     <div class="button-row left"><button class="btn-primary" onclick="nextStep()">Continue</button></div>
   </div>
 </div>
 
 <div class="step step-dark step-21" style="background-image: url('/images/stkilda-1.jpg'); background-size: cover; background-position: center;">
   <div class="step-content">
-    <h2>Multi-Room Audio</h2>
-    <p>Music in every room, controlled from one place.</p>
-    <p>There are three audio levels to choose from for each area of your home. <strong>Level 1</strong> is background music — enough to fill the room without dominating it. <strong>Level 2</strong> is good and clear — proper listening quality for everyday enjoyment. <strong>Level 3</strong> is pumping — full-range, high-fidelity sound for when you want to feel it.</p>
-    <p>You also have the choice of your speakers being visible or invisible in each area. Invisible speakers are built into the ceiling or wall and plastered over — they completely disappear. They're priced higher but the result is stunning.</p>
-    <p>Please select an audio level for each area you'd like included. Leave rows blank to exclude areas. If any areas aren't listed, you can add them on the next slide.</p>
+    <div class="section-label">03 · Multi-Room Audio</div>
+    <h2>Music in every room.</h2>
+    <p>Three audio levels for each area of the home.</p>
+    <p><em>Level 1.</em> Background music. Enough to fill the room without dominating it.</p>
+    <p><em>Level 2.</em> Good and clear. Proper listening quality for everyday enjoyment.</p>
+    <p><em>Level 3.</em> Pumping. Full range, high fidelity sound for when you want to feel it.</p>
+    <p>Speakers visible or invisible. Invisible speakers are built into the ceiling or wall and plastered over. They disappear. Priced higher. The result is stunning.</p>
+    <p>Select a level for each area on the next slide. Leave rows blank to exclude.</p>
     <div class="button-row left"><button class="btn-primary" onclick="nextStep()">Continue</button></div>
   </div>
 </div>
@@ -482,8 +496,8 @@ a:hover { opacity: 0.7; }
 <div class="step step-split step-23">
   <div class="step-content">
     <div class="split-text">
-      <h2>Network & Wi-Fi</h2>
-      <p>Enterprise-grade UniFi networks — no dead zones, no dropouts, no excuses. Hardwired backbone, wireless access points in every zone.</p>
+      <h2>Network and Wi-Fi.</h2>
+      <p>Architect grade <em>UniFi</em> networks. No dead zones. No dropouts. Hardwired backbone, wireless access points in every zone.</p>
       <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'network','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'network','No')">No</button></div>
       <div class="hint">press Enter ↵</div>
       <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -495,8 +509,8 @@ a:hover { opacity: 0.7; }
 <div class="step step-split step-24">
   <div class="step-content">
     <div class="split-text">
-      <h2>Smart Lighting Control</h2>
-      <p>Scenes, schedules, and dimming from your phone or switches. Come home to a house already set up the way you like it.</p>
+      <h2>Smart lighting control.</h2>
+      <p>Scenes, schedules, dimming from your phone or switches. Come home to a house already set up the way you like it.</p>
       <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'lighting','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'lighting','No')">No</button></div>
       <div class="hint">press Enter ↵</div>
       <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -508,7 +522,7 @@ a:hover { opacity: 0.7; }
 <div class="step step-split step-25">
   <div class="step-content">
     <div class="split-text">
-      <h2>Motorised Blinds & Curtains</h2>
+      <h2>Motorised blinds and curtains.</h2>
       <p>Blinds that open with your morning alarm and close when the sun hits. Integrated with lighting so the whole room works together.</p>
       <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'blinds','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'blinds','No')">No</button></div>
       <div class="hint">press Enter ↵</div>
@@ -521,8 +535,8 @@ a:hover { opacity: 0.7; }
 <div class="step step-split step-26">
   <div class="step-content">
     <div class="split-text">
-      <h2>Climate Control</h2>
-      <p>Heating, cooling, and fans that adjust room by room. Your home stays comfortable without you having to think about it.</p>
+      <h2>Climate control.</h2>
+      <p>Heating, cooling and fans that adjust room by room. The house stays comfortable without you thinking about it.</p>
       <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'climate','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'climate','No')">No</button></div>
       <div class="hint">press Enter ↵</div>
       <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -534,8 +548,8 @@ a:hover { opacity: 0.7; }
 <div class="step step-split step-27">
   <div class="step-content">
     <div class="split-text">
-      <h2>Home Theatre / Media Room</h2>
-      <p>One tap and the lights dim, the screen drops, and the sound kicks in. We build cinema rooms that actually deliver.</p>
+      <h2>Home theatre.</h2>
+      <p>One tap. The lights dim, the screen drops, the sound kicks in. We build cinema rooms that deliver.</p>
       <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'theatre','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'theatre','No')">No</button></div>
       <div class="hint">press Enter ↵</div>
       <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -546,8 +560,8 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-dark step-28">
   <div class="step-content">
-    <h2>Security Alarm System</h2>
-    <p>Proper protection that doesn't get in the way of living in your home. Smart alerts to your phone. Arm and disarm remotely.</p>
+    <h2>Security alarm system.</h2>
+    <p>Considered protection that does not get in the way of living in your home. Smart alerts to your phone. Arm and disarm remotely.</p>
     <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'alarm','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'alarm','No')">No</button></div>
     <div class="hint">press Enter ↵</div>
     <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -566,8 +580,8 @@ a:hover { opacity: 0.7; }
 <div class="step step-split step-30">
   <div class="step-content">
     <div class="split-text">
-      <h2>Security Cameras</h2>
-      <p>UniFi Protect cameras — locally recorded to your own NVR. No subscriptions, no cloud, no third-party access to your footage.</p>
+      <h2>Security cameras.</h2>
+      <p><em>UniFi Protect</em> cameras. Locally recorded to your own NVR. No subscriptions, no cloud, no third party access to your footage.</p>
       <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'cameras','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'cameras','No')">No</button></div>
       <div class="hint">press Enter ↵</div>
       <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -588,8 +602,8 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-dark step-32">
   <div class="step-content">
-    <h2>Access Control</h2>
-    <p>Smart locks, video intercom, garage and gate control. See who's at the door and let them in from your phone, wherever you are.</p>
+    <h2>Access control.</h2>
+    <p>Smart locks, video intercom, garage and gate control. See who is at the door and let them in from your phone, wherever you are.</p>
     <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'access','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'access','No')">No</button></div>
     <div class="hint">press Enter ↵</div>
     <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -599,8 +613,8 @@ a:hover { opacity: 0.7; }
 <div class="step step-split step-33">
   <div class="step-content">
     <div class="split-text">
-      <h2>Pool, Spa & Irrigation</h2>
-      <p>Pool heating, filtration, spa jets, garden watering — automated schedules, controllable from your phone.</p>
+      <h2>Pool, spa and irrigation.</h2>
+      <p>Pool heating, filtration, spa jets, garden watering. Automated schedules, controllable from your phone.</p>
       <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'poolSpa','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'poolSpa','No')">No</button></div>
       <div class="hint">press Enter ↵</div>
       <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -611,8 +625,8 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-white step-34">
   <div class="step-content">
-    <h2>EV Charger</h2>
-    <p>Smart charger integrated with your energy system. Schedule for off-peak rates. Tie into solar if you have panels.</p>
+    <h2>EV charger.</h2>
+    <p>Smart charger integrated with your energy system. Schedule for off peak rates. Tie into solar if you have panels.</p>
     <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'evCharger','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'evCharger','No')">No</button></div>
     <div class="hint">press Enter ↵</div>
     <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -621,8 +635,8 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-white step-35">
   <div class="step-content">
-    <h2>Weather Station</h2>
-    <p>Live weather data feeds into your home — blinds close when it's hot, lights adjust when it's overcast. Your home reacts to what's actually happening outside.</p>
+    <h2>Weather station.</h2>
+    <p>Live weather data feeds into your home. Blinds close when it is hot. Lights adjust when it is overcast. The house reacts to what is happening outside.</p>
     <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'weatherStation','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'weatherStation','No')">No</button></div>
     <div class="hint">press Enter ↵</div>
     <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -631,8 +645,8 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-white step-36">
   <div class="step-content">
-    <h2>Video Distribution</h2>
-    <p>One source, every screen. Watch whatever you want, wherever you want — no extra boxes in each room.</p>
+    <h2>Video distribution.</h2>
+    <p>One source, every screen. Watch whatever you want, wherever you want. No extra boxes in each room.</p>
     <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'videoDistribution','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'videoDistribution','No')">No</button></div>
     <div class="hint">press Enter ↵</div>
     <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -641,8 +655,8 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-white step-37">
   <div class="step-content">
-    <h2>Solar</h2>
-    <p>Panels, batteries, and smart monitoring tied into your home system. See what you're generating, storing, and using.</p>
+    <h2>Solar.</h2>
+    <p>Panels, batteries, smart monitoring tied into your home system. See what you are generating, storing, using.</p>
     <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'solar','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'solar','No')">No</button></div>
     <div class="hint">press Enter ↵</div>
     <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -651,8 +665,8 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-white step-38">
   <div class="step-content">
-    <h2>Floor Plans</h2>
-    <p>If you've got floor plans, they're a huge help. Flick them to <a href="mailto:enquiries@elecreid.com">enquiries@elecreid.com</a> or note it here.</p>
+    <h2>Floor plans.</h2>
+    <p>If you have floor plans, they help us enormously. Send them to <a href="mailto:enquiries@elecreid.com">enquiries@elecreid.com</a> or note here that they are coming.</p>
     <input type="text" id="floorPlans" placeholder="Optional notes...">
     <div class="hint">press Enter ↵</div>
     <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -661,8 +675,8 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-white step-39">
   <div class="step-content">
-    <h2>Almost done! Anything else we should know?</h2>
-    <p>Room counts, must-haves, budget range — whatever's on your mind.</p>
+    <h2>Almost done. Anything else?</h2>
+    <p>Room counts, must haves, budget range. Whatever is on your mind.</p>
     <textarea id="additionalNotes" placeholder="Optional notes..."></textarea>
     <div class="hint">press Enter ↵</div>
     <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -671,8 +685,8 @@ a:hover { opacity: 0.7; }
 
 <div class="step step-white step-40">
   <div class="step-content">
-    <h2>Would you like a free consultation?</h2>
-    <p>A call or site visit — no pressure, no sales pitch. Just a straight conversation about what'll work for your home.</p>
+    <h2>Would you like a discovery call?</h2>
+    <p>A call or site visit. No pressure. A direct conversation about what will work for your home.</p>
     <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'consultation','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'consultation','No')">No</button></div>
     <div class="hint">press Enter ↵</div>
     <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
@@ -683,7 +697,7 @@ a:hover { opacity: 0.7; }
   <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(22,37,63,0.8);z-index:0;"></div>
   <div class="step-content" style="position:relative;z-index:1;">
     <h2>That's everything.</h2>
-    <p>Hit submit and we'll get to work on your quote.</p>
+    <p>Hit submit and we will get to work on your plan.</p>
     <input type="text" id="finalNotes" placeholder="Any final questions? (optional)">
     <div class="hint">press Cmd + Enter ↵</div>
     <div class="button-row left"><button class="btn-primary" onclick="submitForm()">Submit</button></div>
@@ -692,43 +706,14 @@ a:hover { opacity: 0.7; }
 
 <div id="thankYouOverlay">
   <div class="thank-you-content">
-    <h1>Thank You.</h1>
-    <p>We've got everything we need. Our team will be in touch with a tailored quote and clear next steps.</p>
+    <h1>Thank you.</h1>
+    <p>We have everything we need. We will be in touch with a tailored proposal and clear next steps.</p>
+    <p style="margin-top:16px;font-style:italic;font-family:'Austin','Playfair Display',Georgia,serif;color:#0134E7;">Designed for you. Done right. Always.</p>
     <p style="margin-top:32px;"><a href="/">Back to Elec Reid →</a></p>
   </div>
 </div>
 
-<form id="hiddenForm" action="https://formspree.io/f/maqlejve" method="POST" style="display:none;">
-  <input type="hidden" name="firstName" id="hFirstName">
-  <input type="hidden" name="lastName" id="hLastName">
-  <input type="hidden" name="phone" id="hPhone">
-  <input type="hidden" name="email" id="hEmail">
-  <input type="hidden" name="projectLocation" id="hProjectLocation">
-  <input type="hidden" name="projectTimeframe" id="hProjectTimeframe">
-  <input type="hidden" name="automationSystem" id="hAutomationSystem">
-  <input type="hidden" name="interactiveScreens" id="hInteractiveScreens">
-  <input type="hidden" name="switches" id="hSwitches">
-  <input type="hidden" name="audioRooms" id="hAudioRooms">
-  <input type="hidden" name="network" id="hNetwork">
-  <input type="hidden" name="lighting" id="hLighting">
-  <input type="hidden" name="blinds" id="hBlinds">
-  <input type="hidden" name="climate" id="hClimate">
-  <input type="hidden" name="theatre" id="hTheatre">
-  <input type="hidden" name="alarm" id="hAlarm">
-  <input type="hidden" name="alarmNotes" id="hAlarmNotes">
-  <input type="hidden" name="cameras" id="hCameras">
-  <input type="hidden" name="camerasNotes" id="hCamerasNotes">
-  <input type="hidden" name="access" id="hAccess">
-  <input type="hidden" name="poolSpa" id="hPoolSpa">
-  <input type="hidden" name="evCharger" id="hEvCharger">
-  <input type="hidden" name="weatherStation" id="hWeatherStation">
-  <input type="hidden" name="videoDistribution" id="hVideoDistribution">
-  <input type="hidden" name="solar" id="hSolar">
-  <input type="hidden" name="floorPlans" id="hFloorPlans">
-  <input type="hidden" name="additionalNotes" id="hAdditionalNotes">
-  <input type="hidden" name="consultation" id="hConsultation">
-  <input type="hidden" name="finalNotes" id="hFinalNotes">
-</form>
+<!-- Submission handled via /api/submit (Vercel API route). No third-party dependency. -->
 
 <div class="nav-bar">
   <div class="step-counter"><span id="stepNum">1</span> / <span id="totalSteps">42</span></div>
@@ -856,18 +841,18 @@ function updateScreenOptions() {
   let html = '<div class="card-grid">';
   const screens = {
     'Apple Home': [
-      {title:'Apple iPad — Surface Mounted', desc:'Wall-mounted in a sleek enclosure. The iPad running Apple Home.'},
-      {title:'Apple iPad — Recessed Mounted', desc:'Flush into the wall. The iPad running Apple Home.'}
+      {title:'Apple iPad, surface mounted', desc:'Wall mounted in a considered enclosure. iPad running Apple Home.'},
+      {title:'Apple iPad, recessed mounted', desc:'Flush into the wall. iPad running Apple Home.'}
     ],
     'Home Assistant': [
-      {title:'Samsung Tablet — Surface Mounted', desc:'Wall-mounted Android tablet running Home Assistant dashboard.'},
-      {title:'Samsung Tablet — Recessed Mounted', desc:'Flush into the wall. Android tablet running Home Assistant.'},
-      {title:'Apple iPad — Surface Mounted', desc:'iPads work beautifully with Home Assistant companion app.'},
-      {title:'Apple iPad — Recessed Mounted', desc:'Flush mounted iPad for Home Assistant.'}
+      {title:'Samsung Tablet, surface mounted', desc:'Wall mounted Android tablet running Home Assistant dashboard.'},
+      {title:'Samsung Tablet, recessed mounted', desc:'Flush into the wall. Android tablet running Home Assistant.'},
+      {title:'Apple iPad, surface mounted', desc:'iPads work beautifully with the Home Assistant companion app.'},
+      {title:'Apple iPad, recessed mounted', desc:'Flush mounted iPad for Home Assistant.'}
     ],
     'Control4': [
-      {title:'Control4 T5 — Surface Mounted', desc:'Purpose-built for Control4 with responsive interface.'},
-      {title:'Control4 T5 — Recessed Mounted', desc:'Flush into the wall. Purpose-built for Control4.'}
+      {title:'Control4 T5, surface mounted', desc:'Purpose built for Control4 with a responsive interface.'},
+      {title:'Control4 T5, recessed mounted', desc:'Flush into the wall. Purpose built for Control4.'}
     ],
     'Basalte Home': [
       {title:'Basalte Ellie', desc:'A 7" capacitive touchscreen. Brushed brass, matte black, or white.'},
@@ -926,7 +911,7 @@ function selectYesNo(button, field, value) {
   formData[field] = value;
 }
 
-function submitForm() {
+async function submitForm() {
   formData.firstName = document.getElementById('firstName').value;
   formData.lastName = document.getElementById('lastName').value;
   formData.phone = document.getElementById('phone').value;
@@ -946,38 +931,36 @@ function submitForm() {
     return;
   }
 
-  document.getElementById('hFirstName').value = formData.firstName;
-  document.getElementById('hLastName').value = formData.lastName;
-  document.getElementById('hPhone').value = formData.phone;
-  document.getElementById('hEmail').value = formData.email;
-  document.getElementById('hProjectLocation').value = formData.projectLocation;
-  document.getElementById('hProjectTimeframe').value = formData.projectTimeframe;
-  document.getElementById('hAutomationSystem').value = formData.automationSystem;
-  document.getElementById('hInteractiveScreens').value = formData.interactiveScreens.join(', ');
-  document.getElementById('hSwitches').value = formData.switches.join(', ');
-  document.getElementById('hAudioRooms').value = formData.audioRooms.filter(r=>r.level||r.visibility).map(r=>r.room+': Level '+(r.level||'N/A')+', '+(r.visibility||'N/A')).join(' | ');
-  document.getElementById('hNetwork').value = formData.network;
-  document.getElementById('hLighting').value = formData.lighting;
-  document.getElementById('hBlinds').value = formData.blinds;
-  document.getElementById('hClimate').value = formData.climate;
-  document.getElementById('hTheatre').value = formData.theatre;
-  document.getElementById('hAlarm').value = formData.alarm;
-  document.getElementById('hAlarmNotes').value = formData.alarmNotes;
-  document.getElementById('hCameras').value = formData.cameras;
-  document.getElementById('hCamerasNotes').value = formData.camerasNotes;
-  document.getElementById('hAccess').value = formData.access;
-  document.getElementById('hPoolSpa').value = formData.poolSpa;
-  document.getElementById('hEvCharger').value = formData.evCharger;
-  document.getElementById('hWeatherStation').value = formData.weatherStation;
-  document.getElementById('hVideoDistribution').value = formData.videoDistribution;
-  document.getElementById('hSolar').value = formData.solar;
-  document.getElementById('hFloorPlans').value = formData.floorPlans;
-  document.getElementById('hAdditionalNotes').value = formData.additionalNotes;
-  document.getElementById('hConsultation').value = formData.consultation;
-  document.getElementById('hFinalNotes').value = formData.finalNotes;
+  // Flatten arrays into strings for backend storage
+  const payload = Object.assign({}, formData, {
+    interactiveScreens: (formData.interactiveScreens || []).join(', '),
+    switches: (formData.switches || []).join(', '),
+    audioRooms: (formData.audioRooms || []).filter(r=>r.level||r.visibility).map(r=>r.room+': Level '+(r.level||'N/A')+', '+(r.visibility||'N/A')).join(' | ')
+  });
 
-  document.getElementById('hiddenForm').submit();
-  document.getElementById('thankYouOverlay').classList.add('show');
+  // Show submitting state by disabling the submit button (in case of network delay)
+  const submitBtn = document.querySelector('.step-41 .btn-primary');
+  if (submitBtn) { submitBtn.textContent = 'Sending...'; submitBtn.disabled = true; }
+
+  try {
+    const res = await fetch('/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (!res.ok) {
+      const err = await res.text();
+      console.error('Submission failed:', res.status, err);
+      alert('There was a problem sending your enquiry. Please email enquiries@elecreid.com directly, or call 0450 342 075. Sorry about that.');
+      if (submitBtn) { submitBtn.textContent = 'Submit'; submitBtn.disabled = false; }
+      return;
+    }
+    document.getElementById('thankYouOverlay').classList.add('show');
+  } catch (e) {
+    console.error('Network error:', e);
+    alert('Network error. Please email enquiries@elecreid.com or call 0450 342 075.');
+    if (submitBtn) { submitBtn.textContent = 'Submit'; submitBtn.disabled = false; }
+  }
 }
 </script>
 </body>

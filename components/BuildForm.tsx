@@ -46,18 +46,18 @@ const priorityOptions = [
 
 const budgets = [
   'Under $20k',
-  '$20k – $50k',
-  '$50k – $100k',
-  '$100k – $250k',
+  '$20k - $50k',
+  '$50k - $100k',
+  '$100k - $250k',
   '$250k+',
   'Not sure yet',
 ]
 
 const timelines = [
   'ASAP (already started)',
-  '1 – 3 months',
-  '3 – 6 months',
-  '6 – 12 months',
+  '1 - 3 months',
+  '3 - 6 months',
+  '6 - 12 months',
   '12+ months',
   'Just exploring',
 ]
@@ -130,7 +130,7 @@ export default function BuildForm() {
             </span>
           </div>
 
-          {/* Step 1 — Project type */}
+          {/* Step 1: Project type */}
           {step === 1 && (
             <div>
               <h1 className="font-grotesk font-bold text-white text-4xl lg:text-5xl leading-tight tracking-tight mb-3">
@@ -163,7 +163,7 @@ export default function BuildForm() {
             </div>
           )}
 
-          {/* Step 2 — Priorities */}
+          {/* Step 2: Priorities */}
           {step === 2 && (
             <div>
               <h1 className="font-grotesk font-bold text-white text-4xl lg:text-5xl leading-tight tracking-tight mb-3">
@@ -221,7 +221,7 @@ export default function BuildForm() {
             </div>
           )}
 
-          {/* Step 3 — Details */}
+          {/* Step 3: Details */}
           {step === 3 && (
             <div>
               <h1 className="font-grotesk font-bold text-white text-4xl lg:text-5xl leading-tight tracking-tight mb-3">
@@ -312,7 +312,7 @@ export default function BuildForm() {
             </div>
           )}
 
-          {/* Step 4 — Contact */}
+          {/* Step 4: Contact */}
           {step === 4 && (
             <form onSubmit={handleSubmit}>
               <h1 className="font-grotesk font-bold text-white text-4xl lg:text-5xl leading-tight tracking-tight mb-3">
@@ -375,20 +375,20 @@ export default function BuildForm() {
                   <div>
                     <div className="font-grotesk text-white/40 text-xs mb-1">Project</div>
                     <div className="font-heebo text-white text-sm capitalize">
-                      {data.projectType.replace('-', ' ') || '—'}
+                      {data.projectType.replace('-', ' ') || '-'}
                     </div>
                   </div>
                   <div>
                     <div className="font-grotesk text-white/40 text-xs mb-1">Suburb</div>
-                    <div className="font-heebo text-white text-sm">{data.suburb || '—'}</div>
+                    <div className="font-heebo text-white text-sm">{data.suburb || '-'}</div>
                   </div>
                   <div>
                     <div className="font-grotesk text-white/40 text-xs mb-1">Budget</div>
-                    <div className="font-heebo text-white text-sm">{data.budget || '—'}</div>
+                    <div className="font-heebo text-white text-sm">{data.budget || '-'}</div>
                   </div>
                   <div>
                     <div className="font-grotesk text-white/40 text-xs mb-1">Timeline</div>
-                    <div className="font-heebo text-white text-sm">{data.timeline || '—'}</div>
+                    <div className="font-heebo text-white text-sm">{data.timeline || '-'}</div>
                   </div>
                 </div>
                 {data.priorities.length > 0 && (

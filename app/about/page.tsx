@@ -15,7 +15,7 @@ export default function AboutPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 pt-36 pb-20">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 pt-36 pb-20">
         <div className="max-w-screen-xl mx-auto">
           <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-10">About</p>
           <h1 className="font-austin text-[#1A1A1A] text-[clamp(56px,9vw,120px)] leading-[0.88] tracking-tight max-w-4xl">
@@ -34,7 +34,7 @@ export default function AboutPage() {
               <div className="aspect-[3/4] overflow-hidden relative">
                 <Image
                   src="/images/joe-reid-1.jpg"
-                  alt="Joe Reid — Founder, Elec Reid"
+                  alt="Joe Reid, Founder, Elec Reid"
                   fill
                   className="object-cover object-top"
                 />
@@ -47,17 +47,17 @@ export default function AboutPage() {
 
             {/* Bio */}
             <div className="lg:col-span-7 lg:col-start-6">
-              <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-8">Joe Reid — Founder</p>
+              <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-8">Joe Reid, Founder</p>
 
               <blockquote className="space-y-5 text-[#1A1A1A]/70 text-lg leading-relaxed">
                 <p>
                   I grew up in New Zealand, playing drums from a young age in church and in bands. Music was never just a hobby. It was the way I understood spaces, how people experience them, and what makes them come alive.
                 </p>
                 <p>
-                  That foundation led me into the live sound industry. Coming to Australia, I became part of concerts, touring shows, and large-scale events. That environment taught me how sound, lighting, visuals, and technology behave in real spaces — not in theory, but under pressure, with no room for failure. It is where I developed a deep appreciation for precision, planning, and systems that have to work every time.
+                  That foundation led me into the live sound industry. Coming to Australia, I became part of concerts, touring shows, and large-scale events. That environment taught me how sound, lighting, visuals, and technology behave in real spaces, not in theory, but under pressure, with no room for failure. It is where I developed a deep appreciation for precision, planning, and systems that have to work every time.
                 </p>
                 <p>
-                  The church connection has stayed with me. We have helped congregations across Melbourne create spaces where the technology serves the worship — where the audio and visuals are clear, reliable, and invisible to the experience. That work matters to us beyond the brief.
+                  The church connection has stayed with me. We have helped congregations across Melbourne create spaces where the technology serves the worship, where the audio and visuals are clear, reliable, and invisible to the experience. That work matters to us beyond the brief.
                 </p>
                 <p>
                   Over time, that work led me into designing audio systems, home cinemas, and smart technologies for friends, family, and clients. As those projects grew more complex, I became increasingly focused on the electrical infrastructure behind the technology. I wanted to understand not just how systems looked and sounded, but how they were powered, protected, and built to perform reliably long-term. That is what led me to train as an electrician.
@@ -66,7 +66,7 @@ export default function AboutPage() {
                   After completing my apprenticeship and working across a range of high quality Melbourne projects, I started Elec Reid to bring together strong electrical fundamentals with a practical understanding of how people actually use spaces. That approach applies whether I am working in a home, a commercial facility, or an industrial environment where safety, compliance, scalability and reliability are critical.
                 </p>
                 <p>
-                  My background means I naturally think about how systems interact, how installation decisions affect performance and maintenance, and how to solve complex problems without overcomplicating the solution. I focus on doing the basics properly — clean installs, clear layouts, and disciplined execution — because that is what allows more advanced systems to work exactly as intended.
+                  My background means I naturally think about how systems interact, how installation decisions affect performance and maintenance, and how to solve complex problems without overcomplicating the solution. I focus on doing the basics properly: clean installs, clear layouts, and disciplined execution. That is what allows more advanced systems to work exactly as intended.
                 </p>
                 <p>
                   Elec Reid is built on that mix of technical trade expertise and thoughtful problem solving. I take pride in being meticulous, maintaining a clean site, and delivering work that stands up in practice, long after handover.
@@ -103,7 +103,7 @@ export default function AboutPage() {
       </section>
 
       {/* Two pillars */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto">
           <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-16">What drives us</p>
           <div className="grid lg:grid-cols-2 gap-16">

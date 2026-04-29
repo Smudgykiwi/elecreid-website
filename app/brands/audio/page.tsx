@@ -28,7 +28,7 @@ export default function AudioPage() {
       </section>
 
       {/* Story */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-24 lg:py-36">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-24 lg:py-36">
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-32">
           <div>
             <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl xl:text-6xl leading-tight">
@@ -50,7 +50,7 @@ export default function AudioPage() {
       </section>
 
       {/* Photo */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 pb-16">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 pb-16">
         <div className="max-w-screen-xl mx-auto">
           <div className="grid grid-cols-2 gap-4">
             <div className="relative overflow-hidden aspect-[4/3]">
@@ -76,7 +76,7 @@ export default function AudioPage() {
                 role: 'Background music',
                 desc: 'Restaurants, cafes, bars, retail, offices. Design-conscious loudspeakers built for hospitality environments where sound needs to be consistent, invisible, and right.',
                 href: '/brands/quest',
-                bg: '#F5F2EE',
+                bg: '#F8F4F1',
               },
               {
                 brand: 'd&b audiotechnik',
@@ -120,7 +120,7 @@ export default function AudioPage() {
       </section>
 
       {/* Where we work */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-12">The spaces we work in.</h2>
           <div className="grid lg:grid-cols-2 gap-10">

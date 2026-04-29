@@ -25,22 +25,22 @@ const schema = {
 const products = [
   {
     name: 'MeetUp',
-    size: 'Huddle · 1–6 people',
+    size: 'Huddle · 1-6 people',
     desc: 'One device. Ultra-wide 120° lens. Beamforming audio. Plug into a laptop or run natively with Microsoft Teams or Zoom Rooms. The complete solution for a small space fits on any shelf or screen.',
   },
   {
     name: 'Rally Bar Huddle',
-    size: 'Small · 1–8 people',
+    size: 'Small · 1-8 people',
     desc: 'All-in-one for small rooms. AI-driven framing, intelligent audio, no separate components. Mounts directly to the display. No clutter. No cables on the table.',
   },
   {
     name: 'Rally Bar Mini',
-    size: 'Small–Medium · 1–12 people',
+    size: 'Small-Medium · 1-12 people',
     desc: 'Motorised PTZ camera. AI speaker tracking. Beamforming mics. Microsoft Teams and Zoom certified. The right solution when a small room needs to punch above its weight.',
   },
   {
     name: 'Rally Bar',
-    size: 'Medium–Large · Up to 20 people',
+    size: 'Medium-Large · Up to 20 people',
     desc: '15x optical zoom. 132° field of view. 6 beamforming microphones. Add Rally Mic Pods to extend coverage across the room. The flagship all-in-one for serious meeting spaces.',
   },
   {
@@ -73,7 +73,7 @@ export default function LogitechPage() {
       </section>
 
       {/* Intro */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-24 lg:py-36">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-24 lg:py-36">
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-32">
           <div>
             <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl xl:text-6xl leading-tight">
@@ -115,7 +115,7 @@ export default function LogitechPage() {
       </section>
 
       {/* Logitech Sync */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20">
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-6">Logitech Sync</h2>
@@ -149,7 +149,7 @@ export default function LogitechPage() {
       </section>
 
       {/* Related */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-12">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-12">
         <div className="max-w-screen-xl mx-auto">
           <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-6">Related brands</p>
           <div className="flex flex-wrap gap-3">

@@ -261,7 +261,7 @@ export default function Nav() {
                   { label: 'Control4', href: '/brands/control4' },
                   { label: 'KNX', href: '/brands/knx' },
                 ].map((b) => (
-                  <Link key={b.href} href={b.href} className="block px-6 py-2 text-[10px] tracking-[0.1em] text-[#1A1A1A]/60 hover:text-[#0134E7] hover:bg-[#F5F2EE] transition-colors">
+                  <Link key={b.href} href={b.href} className="block px-6 py-2 text-[10px] tracking-[0.1em] text-[#1A1A1A]/60 hover:text-[#0134E7] hover:bg-[#F8F4F1] transition-colors">
                     {b.label}
                   </Link>
                 ))}

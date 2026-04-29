@@ -59,7 +59,7 @@ export default function Projects() {
     <>
       <Nav />
       {/* Header */}
-      <section className="bg-[#F7F4F0] px-6 lg:px-10 pt-36 pb-12">
+      <section className="bg-[#F8F4F1] px-6 lg:px-10 pt-36 pb-12">
         <div className="max-w-7xl mx-auto">
           <p className="text-[10px] tracking-[0.25em] text-[#1A1A1A]/40 uppercase mb-6">Our Work</p>
           <h1 className="font-austin text-[#0134E7] text-6xl lg:text-8xl xl:text-[120px] leading-none">

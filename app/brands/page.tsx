@@ -152,7 +152,7 @@ export default function BrandsPage() {
     <>
       <Nav />
 
-      <main className="pt-28 pb-24 bg-[#F5F2EE] min-h-screen">
+      <main className="pt-28 pb-24 bg-[#F8F4F1] min-h-screen">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
 
           {/* Header */}
@@ -179,7 +179,7 @@ export default function BrandsPage() {
                 <Link
                   key={brand.href}
                   href={brand.href}
-                  className="group bg-[#F5F2EE] hover:bg-white transition-colors duration-300 p-8 flex flex-col gap-4"
+                  className="group bg-[#F8F4F1] hover:bg-white transition-colors duration-300 p-8 flex flex-col gap-4"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="font-austin text-2xl text-[#1A1A1A]">{brand.name}</h3>
@@ -211,7 +211,7 @@ export default function BrandsPage() {
                 <Link
                   key={brand.href}
                   href={brand.href}
-                  className="group bg-[#F5F2EE] hover:bg-white transition-colors duration-300 p-8 flex flex-col gap-4"
+                  className="group bg-[#F8F4F1] hover:bg-white transition-colors duration-300 p-8 flex flex-col gap-4"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="font-austin text-2xl text-[#1A1A1A]">{brand.name}</h3>

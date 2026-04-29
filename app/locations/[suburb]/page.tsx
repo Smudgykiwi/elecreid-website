@@ -28,7 +28,7 @@ const suburbs: Record<string, SuburbData> = {
     seoDescription: 'Elec Reid installs smart home systems in Torquay. Apple HomeKit, Unifi networking, KNX lighting. Completed projects on the Surf Coast.',
     character: [
       'Torquay is changing. What was a surf town is now a destination for considered residential architecture. New builds on the Surf Coast are being designed with precision, and the technology inside them is following suit.',
-      'Elec Reid has completed full smart home installations in Torquay for clients who understand that the brief does not end with the architect. The network, the lighting, the audio, the automation — all of it matters. All of it needs to work.'
+      'Elec Reid has completed full smart home installations in Torquay for clients who understand that the brief does not end with the architect. The network, the lighting, the audio, the automation. All of it matters. All of it needs to work.'
     ],
     project: {
       name: 'Haven Court',
@@ -43,7 +43,7 @@ const suburbs: Record<string, SuburbData> = {
     seoTitle: 'Smart Home Electrician Brighton | Apple HomeKit Installation | Elec Reid Melbourne',
     seoDescription: 'Elec Reid installs smart home systems in Brighton. Apple HomeKit, Unifi, Sonos. Completed projects in Melbourne\'s premier bayside suburb.',
     character: [
-      'Brighton is one of Melbourne\'s most established and demanding markets. The homes are substantial. The expectations are high. Clients in Brighton are not looking for the cheapest option — they are looking for the right one.',
+      'Brighton is one of Melbourne\'s most established and demanding markets. The homes are substantial. The expectations are high. Clients in Brighton are not looking for the cheapest option. They are looking for the right one.',
       'Elec Reid has completed work in Brighton that covers the full scope: Apple HomeKit automation, enterprise networking, Sonos multi-room audio, pool automation, and outdoor AV. Systems designed to work properly and look like they belong.'
     ],
     project: {
@@ -76,7 +76,7 @@ const suburbs: Record<string, SuburbData> = {
     seoDescription: 'Elec Reid installs smart home and AV systems in Malvern East. Home cinema, Apple HomeKit, Unifi. Completed projects in Melbourne\'s inner east.',
     character: [
       'Malvern East is a suburb of large blocks and generous homes. Significant renovation activity. Homeowners who are investing in long-term upgrades and want systems built to last.',
-      'We have completed cinema and AV installations in Malvern East for clients who want proper performance — calibrated audio, integrated control, and a system that does not require a manual to operate.'
+      'We have completed cinema and AV installations in Malvern East for clients who want proper performance: calibrated audio, integrated control, and a system that does not require a manual to operate.'
     ],
     project: {
       name: 'Manning Road Residence',
@@ -101,7 +101,7 @@ const suburbs: Record<string, SuburbData> = {
     seoDescription: 'Elec Reid installs smart home systems in Camberwell. Apple HomeKit, Unifi, Sonos. Servicing Melbourne\'s most sought-after family suburb.',
     character: [
       'Camberwell is one of Melbourne\'s most sought-after family suburbs. Large blocks, period homes, substantial renovations. Homeowners here are making long-term decisions.',
-      'We install systems in Camberwell that are built to last. Not the platform with the most features right now — the platform that will still be working properly in ten years. Apple HomeKit, Unifi infrastructure, and hardware specified for permanence.'
+      'We install systems in Camberwell that are built to last. Not the platform with the most features right now. The platform that will still be working properly in ten years. Apple HomeKit, Unifi infrastructure, and hardware specified for permanence.'
     ]
   },
   toorak: {
@@ -128,7 +128,7 @@ const suburbs: Record<string, SuburbData> = {
     seoDescription: 'Elec Reid installs smart home systems in Kew. Apple HomeKit, Unifi, Home Assistant. Servicing Melbourne\'s leafy inner east.',
     character: [
       'Kew is a leafy eastern suburb with substantial period homes and long-term owner-occupiers undertaking whole-home renovations. Technology specified to last.',
-      'We work in Kew on projects that treat smart home technology as infrastructure — not a feature to add and remove, but a system to design properly from the start. Wired correctly. Documented. Backed by the team who installed it.'
+      'We work in Kew on projects that treat smart home technology as infrastructure, not a feature to add and remove, but a system to design properly from the start. Wired correctly. Documented. Backed by the team who installed it.'
     ]
   },
   armadale: {
@@ -191,7 +191,7 @@ const suburbs: Record<string, SuburbData> = {
     seoDescription: 'Elec Reid installs smart home systems in Doncaster. Apple HomeKit, Unifi networking. Eastern Melbourne family home smart home installation.',
     character: [
       'Doncaster is an eastern suburb with large blocks and family homes. A significant renovation market. Apple HomeKit and Unifi are the standard specification for the homes we work on here.',
-      'We install systems in Doncaster for families who want a smart home that actually works — not a collection of apps that each do one thing. One platform. One network. Properly installed and documented at handover.'
+      'We install systems in Doncaster for families who want a smart home that actually works, not a collection of apps that each do one thing. One platform. One network. Properly installed and documented at handover.'
     ]
   },
   eltham: {
@@ -217,8 +217,8 @@ const suburbs: Record<string, SuburbData> = {
     seoTitle: 'Smart Home Electrician Canterbury | Apple HomeKit Installation | Elec Reid Melbourne',
     seoDescription: 'Elec Reid installs smart home systems in Canterbury. Apple HomeKit, Basalte, Unifi. Leafy eastern Melbourne prestige smart home installation.',
     character: [
-      'Canterbury is a quiet, leafy eastern suburb with period homes on generous blocks. Technology specified for permanence — not the cheapest option, the right one.',
-      'We work in Canterbury on installations where the brief is built around longevity. Hardware that still looks correct in a decade. Platforms that do not get discontinued. Systems that run without intervention. Canterbury homeowners are not experimenting — they are deciding.'
+      'Canterbury is a quiet, leafy eastern suburb with period homes on generous blocks. Technology specified for permanence. Not the cheapest option, the right one.',
+      'We work in Canterbury on installations where the brief is built around longevity. Hardware that still looks correct in a decade. Platforms that do not get discontinued. Systems that run without intervention. Canterbury homeowners are not experimenting. They are deciding.'
     ]
   },
   'mont-albert': {
@@ -309,7 +309,7 @@ export default async function SuburbPage({ params }: { params: Promise<{ suburb:
       </section>
 
       {/* Intro */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24">
           <div>
             <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl leading-tight">
@@ -359,7 +359,7 @@ export default async function SuburbPage({ params }: { params: Promise<{ suburb:
       )}
 
       {/* Services */}
-      <section className="bg-[#F5F2EE] px-6 lg:px-16 py-20">
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20">
         <div className="max-w-screen-xl mx-auto">
           <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-4">Services in {data.name}</p>
           <h2 className="font-austin text-[#1A1A1A] text-4xl lg:text-5xl mb-12">What we offer.</h2>
