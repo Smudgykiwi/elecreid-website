@@ -246,6 +246,23 @@ html, body {
 .conditional-section { display:none; }
 .conditional-section.show { display:block; }
 
+/* Matrix row delete button */
+.matrix-row-delete { width:24px; height:24px; border-radius:50%; border:1.5px solid var(--navy); background:transparent; color:var(--navy); font-size:14px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; padding:0; line-height:1; transition:border-color 0.15s,color 0.15s; }
+.matrix-row-delete:hover { border-color:#c0392b; color:#c0392b; }
+/* Room name with pencil cue */
+.room-name-wrap { display:flex; align-items:center; gap:5px; }
+.room-pencil-icon { color:var(--navy); opacity:0.4; font-size:12px; pointer-events:none; flex-shrink:0; }
+.room-name-input { border-bottom-style:dotted !important; cursor:text; }
+.room-name-input:focus { border-bottom-color:var(--cobalt) !important; border-bottom-style:solid !important; }
+/* Deep-dive selection cards (network, alarm) */
+.deep-dive-cards { display:grid; grid-template-columns:1fr; gap:16px; margin-bottom:24px; }
+.deep-dive-card { border:1.5px solid var(--grey); padding:24px; cursor:pointer; transition:border-color 0.15s; }
+.deep-dive-card:hover { border-color:var(--cobalt); }
+.deep-dive-card.selected { border-color:var(--cobalt); box-shadow:0 0 0 2px var(--cobalt); }
+.deep-dive-card-title { font-family:'Austin',serif; font-style:italic; font-size:18pt; color:var(--navy); margin-bottom:8px; }
+.deep-dive-card-body { font-size:11pt; line-height:1.5; color:var(--navy); }
+@media (min-width:600px) { .deep-dive-cards { grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); } }
+
 @media (max-width:768px) {
   .cinema-path-grid { grid-template-columns:1fr; }
   .cinema-package-grid { grid-template-columns:1fr; }
@@ -835,7 +852,7 @@ html, body {
     <div class="eyebrow">STAGE SIX A &middot; TV INSTALL</div>
     <div class="stage-numeral">6A</div>
     <h1 class="stage-headline"><em>TV install,</em> properly done.</h1>
-    <p class="stage-lead"><em>We don't supply the TVs. Clients buy what they like, we install and integrate them properly. Wall-mounted, calibrated, cabled cleanly. The TV becomes part of the architecture, not a black rectangle stuck on a wall.</em></p>
+    <p class="stage-lead"><em>Clients buy their own TVs. We install and integrate them properly - wall-mounted, calibrated, cabled cleanly. The TV becomes part of the architecture, not a black rectangle stuck on a wall.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We supply the brackets, run the cabling through the wall to the joinery, mount and align every TV, calibrate the picture, and tie the sound and control into the rest of the home. Buying the TV separately keeps the warranty with the manufacturer where it belongs, and gives you flexibility on brand and model. We just need to know what you're putting on each wall.</p>
 
     <div class="form-group">
@@ -848,6 +865,7 @@ html, body {
             <th>Under 65", swing-out</th>
             <th>65" or bigger, flat</th>
             <th>65" or bigger, swing-out</th>
+            <th></th>
           </tr></thead>
           <tbody id="tvRoomRows"></tbody>
         </table>
@@ -894,12 +912,13 @@ html, body {
             <th>No audio</th>
             <th>Visible</th>
             <th>Invisible</th>
+            <th></th>
           </tr></thead>
           <tbody id="audioRoomRows"></tbody>
         </table>
       </div>
       <button class="add-row-btn" onclick="addAudioRoom()">+ Add room</button>
-      <p class="form-note" style="margin-top:12px;">If any room is set to Level 3, subwoofers are included as part of that room's spec. We don't ship pumping audio without bass.</p>
+      <p class="form-note" style="margin-top:12px;">Level 3 rooms include subwoofers as part of the spec. Full-range audio needs full-range bass.</p>
     </div>
 
     <div class="form-group">
@@ -1181,6 +1200,136 @@ html, body {
   </div>
 </div>
 
+<!-- PAGE 7d: STAGE 06D - Network Deep Dive -->
+<div class="page page-7d">
+  <div class="container">
+    <div class="eyebrow">STAGE SIX D &middot; NETWORK</div>
+    <div class="stage-numeral">6D</div>
+    <h1 class="stage-headline"><em>The network is the foundation.</em></h1>
+    <p class="stage-lead"><em>Every smart device, every TV, every camera, every screen runs through the network. If it's slow, the home feels slow.</em></p>
+    <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We use UniFi. Wired in where it matters, wireless access points placed by coverage map. The network lives in a clean rack and stays documented. No dead zones.</p>
+
+    <div class="form-group">
+      <label class="form-label">Network tier?</label>
+      <div class="deep-dive-cards" id="networkTierCards">
+        <div class="deep-dive-card" onclick="selectNetworkTier('good',this)">
+          <div class="deep-dive-card-title"><em>Good coverage.</em></div>
+          <div class="deep-dive-card-body">Wifi everywhere it needs to be. Streaming, browsing, devices, smart home. The standard.</div>
+        </div>
+        <div class="deep-dive-card" onclick="selectNetworkTier('very-high',this)">
+          <div class="deep-dive-card-title"><em>Very high speed and good coverage.</em></div>
+          <div class="deep-dive-card-body">Multi-gig backbone. Wifi 6E or 7. For homes with serious streaming, gaming, video calls, and lots of users.</div>
+        </div>
+        <div class="deep-dive-card" onclick="selectNetworkTier('ridiculous',this)">
+          <div class="deep-dive-card-title"><em>Ridiculous speeds and good coverage.</em></div>
+          <div class="deep-dive-card-body">10-gigabit fibre backbone. Wifi 7 throughout. The kind of network a tech founder builds in their own home. Future-proof for the next decade.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Internet redundancy / Starlink backup?</label>
+      <div class="deep-dive-cards" id="networkStarlinkCards">
+        <div class="deep-dive-card" onclick="selectNetworkStarlink('yes',this)">
+          <div class="deep-dive-card-title"><em>Yes, add Starlink as backup.</em></div>
+          <div class="deep-dive-card-body">NBN goes down. Storms, cable cuts, exchange faults. Starlink keeps the home online. Failover is automatic.</div>
+        </div>
+        <div class="deep-dive-card" onclick="selectNetworkStarlink('no',this)">
+          <div class="deep-dive-card-title"><em>No, NBN only.</em></div>
+          <div class="deep-dive-card-body"></div>
+        </div>
+        <div class="deep-dive-card" onclick="selectNetworkStarlink('unsure',this)">
+          <div class="deep-dive-card-title"><em>Not sure, advise me.</em></div>
+          <div class="deep-dive-card-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Anything specific?</label>
+      <textarea class="form-textarea" placeholder="Home office with multiple users? Cellular blackspot? Specific gaming or remote work setup?" oninput="formData.networkDetails.notes=this.value"></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 7e: STAGE 06E - Alarm Deep Dive -->
+<div class="page page-7e">
+  <div class="container">
+    <div class="eyebrow">STAGE SIX E &middot; ALARM</div>
+    <div class="stage-numeral">6E</div>
+    <h1 class="stage-headline"><em>Security that does its job quietly.</em></h1>
+    <p class="stage-lead"><em>A proper alarm runs in the background. You only notice it when something goes wrong.</em></p>
+    <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We install Inception alarm systems. Smart alerts to your phone, remote arm and disarm, zoned protection through the home, and integration with the automation platform. You can arm by zone, arm certain areas at bedtime, and get notified when something triggers. For back-to-base monitoring we partner with a 24/7 monitoring service.</p>
+
+    <div class="form-group">
+      <label class="form-label">Coverage scope?</label>
+      <div class="deep-dive-cards" id="alarmScopeCards">
+        <div class="deep-dive-card" onclick="selectAlarmScope('essential',this)">
+          <div class="deep-dive-card-title"><em>Essential.</em></div>
+          <div class="deep-dive-card-body">Motion sensors in living spaces and hallways. Smart alerts.</div>
+        </div>
+        <div class="deep-dive-card" onclick="selectAlarmScope('considered',this)">
+          <div class="deep-dive-card-title"><em>Considered.</em></div>
+          <div class="deep-dive-card-body">Motion in every habitable space (excluding bedrooms). Contacts on every external door. Glass break detection. Smart alerts.</div>
+        </div>
+        <div class="deep-dive-card" onclick="selectAlarmScope('comprehensive',this)">
+          <div class="deep-dive-card-title"><em>Comprehensive.</em></div>
+          <div class="deep-dive-card-body">Full coverage. Every room except bedrooms. Every operable window. Glass break. Perimeter detection.</div>
+        </div>
+        <div class="deep-dive-card" onclick="selectAlarmScope('unsure',this)">
+          <div class="deep-dive-card-title"><em>Not sure, advise me.</em></div>
+          <div class="deep-dive-card-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Zoning preference?</label>
+      <div class="checkbox-group">
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAlarmZoning('upstairs-downstairs',this)"> Upstairs / downstairs split</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAlarmZoning('day-night',this)"> Day / night zones</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAlarmZoning('perimeter-interior',this)"> Perimeter vs interior</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAlarmZoning('garage-poolhouse',this)"> Garage or pool house as separate zone</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAlarmZoning('not-sure',this)"> Not sure, advise me</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Additional protection?</label>
+      <div class="checkbox-group">
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAlarmProtection('driveway-bollard',this)"> Driveway bollard sensors</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAlarmProtection('perimeter-beams',this)"> Perimeter beams</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAlarmProtection('panic-button',this)"> Panic / duress button</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAlarmProtection('vault-contacts',this)"> Vault, safe room, gun safe contacts</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAlarmProtection('smoke-heat',this)"> Smoke / heat detector integration</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Back-to-base monitoring?</label>
+      <div class="deep-dive-cards" id="alarmMonitoringCards">
+        <div class="deep-dive-card" onclick="selectAlarmMonitoring('yes-partner',this)">
+          <div class="deep-dive-card-title"><em>Yes, refer me to your monitoring partner.</em></div>
+          <div class="deep-dive-card-body"></div>
+        </div>
+        <div class="deep-dive-card" onclick="selectAlarmMonitoring('self-monitored',this)">
+          <div class="deep-dive-card-title"><em>Self-monitored only.</em></div>
+          <div class="deep-dive-card-body"></div>
+        </div>
+        <div class="deep-dive-card" onclick="selectAlarmMonitoring('unsure',this)">
+          <div class="deep-dive-card-title"><em>Not sure, advise me.</em></div>
+          <div class="deep-dive-card-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Anything specific?</label>
+      <textarea class="form-textarea" placeholder="Specific risk profile? Large estate boundary? Existing equipment we should integrate with? Special requirements?" oninput="formData.alarmDetails.notes=this.value"></textarea>
+    </div>
+  </div>
+</div>
+
 <!-- PAGE 8: STAGE 07 - Practical -->
 <div class="page page-8">
   <div class="container">
@@ -1325,6 +1474,18 @@ const formData = {
     mediaServer: '',
     acousticTreatment: '',
     lighting: { dimmable: false, blackoutBlinds: false, ledAccent: false, brief: '' }
+  },
+  networkDetails: {
+    tier: '',
+    starlinkBackup: '',
+    notes: ''
+  },
+  alarmDetails: {
+    scope: '',
+    zoning: [],
+    additionalProtection: [],
+    monitoring: '',
+    notes: ''
   }
 };
 
@@ -1338,6 +1499,8 @@ function getNextPage(pageId) {
   const hasTvs = formData.systems.includes('tvs');
   const hasAudio = formData.systems.includes('audio');
   const hasCinema = formData.systems.includes('cinema');
+  const hasNetwork = formData.systems.includes('network');
+  const hasAlarm = formData.systems.includes('alarm');
   if (pageId === 0) return 1;
   if (pageId === 1) return formData.projectType === 'essentials' ? 7 : 2;
   if (pageId === 2) return 3;
@@ -1349,15 +1512,33 @@ function getNextPage(pageId) {
     if (hasTvs) return '7a';
     if (hasAudio) return '7b';
     if (hasCinema) return '7c';
+    if (hasNetwork) return '7d';
+    if (hasAlarm) return '7e';
     return 8;
   }
   if (pageId === '7a') {
     if (hasAudio) return '7b';
     if (hasCinema) return '7c';
+    if (hasNetwork) return '7d';
+    if (hasAlarm) return '7e';
     return 8;
   }
-  if (pageId === '7b') return hasCinema ? '7c' : 8;
-  if (pageId === '7c') return 8;
+  if (pageId === '7b') {
+    if (hasCinema) return '7c';
+    if (hasNetwork) return '7d';
+    if (hasAlarm) return '7e';
+    return 8;
+  }
+  if (pageId === '7c') {
+    if (hasNetwork) return '7d';
+    if (hasAlarm) return '7e';
+    return 8;
+  }
+  if (pageId === '7d') {
+    if (hasAlarm) return '7e';
+    return 8;
+  }
+  if (pageId === '7e') return 8;
   if (pageId === 8) return 9;
   return null; // 9 => submit
 }
@@ -1366,6 +1547,8 @@ function getPrevPage(pageId) {
   const hasTvs = formData.systems.includes('tvs');
   const hasAudio = formData.systems.includes('audio');
   const hasCinema = formData.systems.includes('cinema');
+  const hasNetwork = formData.systems.includes('network');
+  const hasAlarm = formData.systems.includes('alarm');
   if (pageId === 1 || pageId === 0) return null;
   if (pageId === 2) return 1;
   if (pageId === 3) return 2;
@@ -1380,7 +1563,22 @@ function getPrevPage(pageId) {
     if (hasTvs) return '7a';
     return 7;
   }
+  if (pageId === '7d') {
+    if (hasCinema) return '7c';
+    if (hasAudio) return '7b';
+    if (hasTvs) return '7a';
+    return 7;
+  }
+  if (pageId === '7e') {
+    if (hasNetwork) return '7d';
+    if (hasCinema) return '7c';
+    if (hasAudio) return '7b';
+    if (hasTvs) return '7a';
+    return 7;
+  }
   if (pageId === 8) {
+    if (hasAlarm) return '7e';
+    if (hasNetwork) return '7d';
     if (hasCinema) return '7c';
     if (hasAudio) return '7b';
     if (hasTvs) return '7a';
@@ -1394,11 +1592,15 @@ function getPageSequence() {
   const hasTvs = formData.systems.includes('tvs');
   const hasAudio = formData.systems.includes('audio');
   const hasCinema = formData.systems.includes('cinema');
+  const hasNetwork = formData.systems.includes('network');
+  const hasAlarm = formData.systems.includes('alarm');
   if (formData.projectType === 'essentials') return [1, 7, 8, 9];
   const seq = [1, 2, 3, 4, 5, 6, 7];
   if (hasTvs) seq.push('7a');
   if (hasAudio) seq.push('7b');
   if (hasCinema) seq.push('7c');
+  if (hasNetwork) seq.push('7d');
+  if (hasAlarm) seq.push('7e');
   seq.push(8, 9);
   return seq;
 }
@@ -1408,12 +1610,6 @@ const allSystems = [
   { id:'audio', name:'Whole-home audio + speakers', body:'Music in every room. Visible or invisible speakers.', slot:'IMG-48-audio', desc:'In-ceiling speakers, whole home audio', motion:false },
   { id:'tvs', name:'TVs and Apple TV', body:'Apple TV at every screen. Native control with the standard remote. Clean, simple, no extra hardware.', slot:'IMG-49-tvs', desc:'Living room TV, Apple TV setup', motion:false },
   { id:'cinema', name:'Cinema room', body:'The full theatre experience. Projector, screen, surround sound, acoustic treatment. One tap, everything goes.', slot:'IMG-50-cinema', desc:'Home cinema room, projector, acoustic panels', motion:false },
-  { id:'motion', name:'Motion and presence sensors', body:'The quiet intelligence behind every great smart home.', slot:'IMG-51-motion', desc:'Presence sensor, ceiling mount, minimal', motion:true },
-  { id:'lighting', name:'Smart lighting', body:'Scenes, schedules, dimming. Architectural lighting that responds.', slot:'IMG-52-lighting', desc:'Architectural lighting scene, warm tones', motion:false },
-  { id:'blinds', name:'Motorised blinds and curtains', body:'Blinds that open with the morning. Close when the sun hits.', slot:'IMG-53-blinds', desc:'Motorised blinds, natural light control', motion:false },
-  { id:'climate', name:'Climate / AC integration', body:'Heating, cooling, fans. Room by room.', slot:'IMG-54-climate', desc:'Climate control panel, AC integration', motion:false },
-  { id:'underfloor', name:'Underfloor heating control', body:'Hydronic or electric. Zoned, scheduled, integrated.', slot:'IMG-55-underfloor', desc:'Underfloor heating, radiant warmth', motion:false },
-  { id:'geothermal', name:'Geothermal', body:'The most efficient climate system you can install.', slot:'IMG-56-geothermal', desc:'Geothermal installation, ground source', motion:false },
   { id:'alarm', name:'Alarm system', body:'Considered protection. Smart alerts. Arm and disarm remotely.', slot:'IMG-57-alarm', desc:'Security alarm panel, smart home', motion:false },
   { id:'intercom', name:'Intercom', body:'Video intercom integrated with the home.', slot:'IMG-58-intercom', desc:'Video intercom, front door entry', motion:false },
   { id:'cameras', name:'Cameras (UniFi Protect)', body:'Locally recorded. No subscriptions, no cloud, no third-party access.', slot:'IMG-59-cameras', desc:'UniFi camera, exterior mounted', motion:false },
@@ -1500,6 +1696,35 @@ function showPage(n) {
   if (n === 7) buildSystemsGrid();
   if (n === '7a') { buildTvRoomMatrix(); buildTvAudioRows(); }
   if (n === '7b') buildAudioRoomMatrix();
+  if (n === '7d') {
+    // Restore network card selections if user navigates back
+    if (formData.networkDetails.tier) {
+      document.querySelectorAll('#networkTierCards .deep-dive-card').forEach((c,i) => {
+        const tiers = ['good','very-high','ridiculous'];
+        if (tiers[i] === formData.networkDetails.tier) c.classList.add('selected');
+      });
+    }
+    if (formData.networkDetails.starlinkBackup) {
+      document.querySelectorAll('#networkStarlinkCards .deep-dive-card').forEach((c,i) => {
+        const vals = ['yes','no','unsure'];
+        if (vals[i] === formData.networkDetails.starlinkBackup) c.classList.add('selected');
+      });
+    }
+  }
+  if (n === '7e') {
+    if (formData.alarmDetails.scope) {
+      document.querySelectorAll('#alarmScopeCards .deep-dive-card').forEach((c,i) => {
+        const scopes = ['essential','considered','comprehensive','unsure'];
+        if (scopes[i] === formData.alarmDetails.scope) c.classList.add('selected');
+      });
+    }
+    if (formData.alarmDetails.monitoring) {
+      document.querySelectorAll('#alarmMonitoringCards .deep-dive-card').forEach((c,i) => {
+        const vals = ['yes-partner','self-monitored','unsure'];
+        if (vals[i] === formData.alarmDetails.monitoring) c.classList.add('selected');
+      });
+    }
+  }
   if (n === 6) {
     const lead = document.getElementById('scenesLead');
     if (lead) lead.innerHTML = "A scene is one tap that changes the whole house. Lights dim, blinds drop, music starts. The power of automation is in these moments.";
@@ -1553,11 +1778,12 @@ function renderTvRoomRows() {
   if (!tbody) return;
   tbody.innerHTML = formData.tvDetails.rooms.map((r, i) => `
     <tr>
-      <td><input class="room-name-input" value="${r.room}" oninput="formData.tvDetails.rooms[${i}].room=this.value;syncTvAudioRooms()" placeholder="Room name"></td>
-      <td><input type="radio" name="tv-bracket-${i}" value="under65-flat" style="accent-color:var(--cobalt)" onchange="formData.tvDetails.rooms[${i}].bracketChoice=this.value" ${r.bracketChoice==='under65-flat'?'checked':''}></td>
-      <td><input type="radio" name="tv-bracket-${i}" value="under65-swing" style="accent-color:var(--cobalt)" onchange="formData.tvDetails.rooms[${i}].bracketChoice=this.value" ${r.bracketChoice==='under65-swing'?'checked':''}></td>
-      <td><input type="radio" name="tv-bracket-${i}" value="65plus-flat" style="accent-color:var(--cobalt)" onchange="formData.tvDetails.rooms[${i}].bracketChoice=this.value" ${r.bracketChoice==='65plus-flat'?'checked':''}></td>
-      <td><input type="radio" name="tv-bracket-${i}" value="65plus-swing" style="accent-color:var(--cobalt)" onchange="formData.tvDetails.rooms[${i}].bracketChoice=this.value" ${r.bracketChoice==='65plus-swing'?'checked':''}></td>
+      <td><div class="room-name-wrap"><input class="room-name-input" value="${r.room}" oninput="formData.tvDetails.rooms[${i}].room=this.value;syncTvAudioRooms()" placeholder="Click to rename" title="Click to rename this room"><span class="room-pencil-icon">&#9998;</span></div></td>
+      <td><input type="radio" name="tv-bracket-${i}" value="under65-flat" style="accent-color:var(--cobalt)" onclick="handleTvBracketClick(event,${i},'under65-flat')" ${r.bracketChoice==='under65-flat'?'checked':''}></td>
+      <td><input type="radio" name="tv-bracket-${i}" value="under65-swing" style="accent-color:var(--cobalt)" onclick="handleTvBracketClick(event,${i},'under65-swing')" ${r.bracketChoice==='under65-swing'?'checked':''}></td>
+      <td><input type="radio" name="tv-bracket-${i}" value="65plus-flat" style="accent-color:var(--cobalt)" onclick="handleTvBracketClick(event,${i},'65plus-flat')" ${r.bracketChoice==='65plus-flat'?'checked':''}></td>
+      <td><input type="radio" name="tv-bracket-${i}" value="65plus-swing" style="accent-color:var(--cobalt)" onclick="handleTvBracketClick(event,${i},'65plus-swing')" ${r.bracketChoice==='65plus-swing'?'checked':''}></td>
+      <td><button class="matrix-row-delete" onclick="deleteTvRoom(${i})" title="Remove this room">&#xD7;</button></td>
     </tr>
   `).join('');
 }
@@ -1630,13 +1856,14 @@ function renderAudioRoomRows() {
   if (!tbody) return;
   tbody.innerHTML = formData.audioDetails.rooms.map((r, i) => `
     <tr>
-      <td><input class="room-name-input" value="${r.room}" oninput="formData.audioDetails.rooms[${i}].room=this.value" placeholder="Room name"></td>
-      <td><input type="radio" name="audio-level-${i}" value="1" style="accent-color:var(--cobalt)" onchange="formData.audioDetails.rooms[${i}].level='1'" ${r.level==='1'?'checked':''}></td>
-      <td><input type="radio" name="audio-level-${i}" value="2" style="accent-color:var(--cobalt)" onchange="formData.audioDetails.rooms[${i}].level='2'" ${r.level==='2'?'checked':''}></td>
-      <td><input type="radio" name="audio-level-${i}" value="3" style="accent-color:var(--cobalt)" onchange="formData.audioDetails.rooms[${i}].level='3'" ${r.level==='3'?'checked':''}></td>
-      <td><input type="radio" name="audio-level-${i}" value="none" style="accent-color:var(--cobalt)" onchange="formData.audioDetails.rooms[${i}].level='none'" ${r.level==='none'?'checked':''}></td>
-      <td><input type="radio" name="audio-vis-${i}" value="visible" style="accent-color:var(--cobalt)" onchange="formData.audioDetails.rooms[${i}].visibility='visible'" ${r.visibility==='visible'?'checked':''}></td>
-      <td><input type="radio" name="audio-vis-${i}" value="invisible" style="accent-color:var(--cobalt)" onchange="formData.audioDetails.rooms[${i}].visibility='invisible'" ${r.visibility==='invisible'?'checked':''}></td>
+      <td><div class="room-name-wrap"><input class="room-name-input" value="${r.room}" oninput="formData.audioDetails.rooms[${i}].room=this.value" placeholder="Click to rename" title="Click to rename this room"><span class="room-pencil-icon">&#9998;</span></div></td>
+      <td><input type="radio" name="audio-level-${i}" value="1" style="accent-color:var(--cobalt)" onclick="handleAudioLevelClick(event,${i},'1')" ${r.level==='1'?'checked':''}></td>
+      <td><input type="radio" name="audio-level-${i}" value="2" style="accent-color:var(--cobalt)" onclick="handleAudioLevelClick(event,${i},'2')" ${r.level==='2'?'checked':''}></td>
+      <td><input type="radio" name="audio-level-${i}" value="3" style="accent-color:var(--cobalt)" onclick="handleAudioLevelClick(event,${i},'3')" ${r.level==='3'?'checked':''}></td>
+      <td><input type="radio" name="audio-level-${i}" value="none" style="accent-color:var(--cobalt)" onclick="handleAudioLevelClick(event,${i},'none')" ${r.level==='none'?'checked':''}></td>
+      <td><input type="radio" name="audio-vis-${i}" value="visible" style="accent-color:var(--cobalt)" onclick="handleAudioVisClick(event,${i},'visible')" ${r.visibility==='visible'?'checked':''}></td>
+      <td><input type="radio" name="audio-vis-${i}" value="invisible" style="accent-color:var(--cobalt)" onclick="handleAudioVisClick(event,${i},'invisible')" ${r.visibility==='invisible'?'checked':''}></td>
+      <td><button class="matrix-row-delete" onclick="deleteAudioRoom(${i})" title="Remove this room">&#xD7;</button></td>
     </tr>
   `).join('');
 }
@@ -1644,6 +1871,84 @@ function renderAudioRoomRows() {
 function addAudioRoom() {
   formData.audioDetails.rooms.push({ room: '', level: '', visibility: '' });
   renderAudioRoomRows();
+}
+
+// ===== MATRIX UX: DELETE + DESELECT =====
+function deleteTvRoom(i) {
+  formData.tvDetails.rooms.splice(i, 1);
+  formData.tvDetails.audioPerRoom.splice(i, 1);
+  renderTvRoomRows();
+  buildTvAudioRows();
+}
+
+function deleteAudioRoom(i) {
+  formData.audioDetails.rooms.splice(i, 1);
+  renderAudioRoomRows();
+}
+
+function handleTvBracketClick(evt, rowIdx, val) {
+  if (formData.tvDetails.rooms[rowIdx].bracketChoice === val) {
+    formData.tvDetails.rooms[rowIdx].bracketChoice = '';
+    evt.target.checked = false;
+  } else {
+    formData.tvDetails.rooms[rowIdx].bracketChoice = val;
+  }
+}
+
+function handleAudioLevelClick(evt, rowIdx, val) {
+  if (formData.audioDetails.rooms[rowIdx].level === val) {
+    formData.audioDetails.rooms[rowIdx].level = '';
+    evt.target.checked = false;
+  } else {
+    formData.audioDetails.rooms[rowIdx].level = val;
+  }
+}
+
+function handleAudioVisClick(evt, rowIdx, val) {
+  if (formData.audioDetails.rooms[rowIdx].visibility === val) {
+    formData.audioDetails.rooms[rowIdx].visibility = '';
+    evt.target.checked = false;
+  } else {
+    formData.audioDetails.rooms[rowIdx].visibility = val;
+  }
+}
+
+// ===== NETWORK DEEP DIVE =====
+function selectNetworkTier(tier, el) {
+  formData.networkDetails.tier = tier;
+  document.querySelectorAll('#networkTierCards .deep-dive-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function selectNetworkStarlink(val, el) {
+  formData.networkDetails.starlinkBackup = val;
+  document.querySelectorAll('#networkStarlinkCards .deep-dive-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+// ===== ALARM DEEP DIVE =====
+function selectAlarmScope(scope, el) {
+  formData.alarmDetails.scope = scope;
+  document.querySelectorAll('#alarmScopeCards .deep-dive-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function selectAlarmMonitoring(val, el) {
+  formData.alarmDetails.monitoring = val;
+  document.querySelectorAll('#alarmMonitoringCards .deep-dive-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function toggleAlarmZoning(val, el) {
+  const arr = formData.alarmDetails.zoning;
+  if (el.checked) { if (!arr.includes(val)) arr.push(val); }
+  else { const i = arr.indexOf(val); if (i > -1) arr.splice(i, 1); }
+}
+
+function toggleAlarmProtection(val, el) {
+  const arr = formData.alarmDetails.additionalProtection;
+  if (el.checked) { if (!arr.includes(val)) arr.push(val); }
+  else { const i = arr.indexOf(val); if (i > -1) arr.splice(i, 1); }
 }
 
 function selectSpeakerBrand(brand, el) {
@@ -1771,6 +2076,8 @@ async function submitForm() {
     tvDetails: JSON.stringify(formData.tvDetails),
     audioDetails: JSON.stringify(formData.audioDetails),
     cinemaDetails: JSON.stringify(formData.cinemaDetails),
+    networkDetails: JSON.stringify(formData.networkDetails),
+    alarmDetails: JSON.stringify(formData.alarmDetails),
   };
   if (!payload.firstName || !payload.email) {
     alert('Please provide your first name and email on the previous page.');
