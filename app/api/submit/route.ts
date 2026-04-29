@@ -5,15 +5,31 @@ export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
 type FormPayload = {
+  // Contact
   firstName?: string
   lastName?: string
   phone?: string
   email?: string
+  // V2 fields
+  projectType?: string  // 'full' | 'essentials' | 'unsure'
+  moods?: string | string[]  // accept either
+  platform?: string
+  screens?: string | string[]
+  switches?: string | string[]
+  scenesNotes?: string
+  recommendedScenes?: boolean | string
+  systems?: string | string[]
+  motionSensorDetail?: string
+  floorPlans?: string
+  timeframe?: string
+  involved?: string | string[]
+  budget?: string
+  otherNotes?: string
+  // Legacy v1 fields kept for backward compat (in case someone hits the API with old shape)
   projectLocation?: string
   projectTimeframe?: string
   automationSystem?: string
   interactiveScreens?: string
-  switches?: string
   audioRooms?: string
   network?: string
   lighting?: string
@@ -30,21 +46,28 @@ type FormPayload = {
   weatherStation?: string
   videoDistribution?: string
   solar?: string
-  floorPlans?: string
   additionalNotes?: string
   consultation?: string
   finalNotes?: string
 }
 
-const COLUMN_ORDER: (keyof FormPayload | 'timestamp')[] = [
+function joinIfArray(v: unknown): string {
+  if (Array.isArray(v)) return v.filter(Boolean).join(', ')
+  if (v === undefined || v === null) return ''
+  if (typeof v === 'boolean') return v ? 'Yes' : 'No'
+  return String(v)
+}
+
+const V2_COLUMN_ORDER: (keyof FormPayload | 'timestamp')[] = [
   'timestamp',
-  'firstName', 'lastName', 'phone', 'email', 'projectLocation', 'projectTimeframe',
-  'automationSystem', 'interactiveScreens', 'switches', 'audioRooms',
-  'network', 'lighting', 'blinds', 'climate', 'theatre',
-  'alarm', 'alarmNotes', 'cameras', 'camerasNotes', 'access',
-  'poolSpa', 'evCharger', 'weatherStation', 'videoDistribution', 'solar',
-  'floorPlans', 'additionalNotes', 'consultation', 'finalNotes'
+  'firstName', 'lastName', 'phone', 'email',
+  'projectType', 'moods', 'platform', 'screens', 'switches',
+  'scenesNotes', 'recommendedScenes', 'systems', 'motionSensorDetail',
+  'floorPlans', 'timeframe', 'involved', 'budget', 'otherNotes',
 ]
+
+// Keep legacy column order as fallback for v1 submissions
+const COLUMN_ORDER = V2_COLUMN_ORDER
 
 async function getAccessToken(): Promise<string> {
   const clientId = process.env.GOOGLE_CLIENT_ID!
@@ -78,10 +101,10 @@ async function appendToSheet(accessToken: string, payload: FormPayload) {
   const sheetId = process.env.SUBMISSIONS_SHEET_ID!
   const row = COLUMN_ORDER.map((k) => {
     if (k === 'timestamp') return new Date().toISOString().replace('T', ' ').slice(0, 19) + ' UTC'
-    return (payload as Record<string, string | undefined>)[k as string] || ''
+    return joinIfArray((payload as Record<string, unknown>)[k as string])
   })
 
-  const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Submissions!A:AD:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Submissions!A:AZ:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`
   const res = await fetch(url, {
     method: 'POST',
     headers: {
@@ -103,21 +126,32 @@ function formatEmailBody(payload: FormPayload): { html: string; text: string } {
     ['Name', fullName],
     ['Email', payload.email],
     ['Phone', payload.phone],
-    ['Location', payload.projectLocation],
-    ['Timeframe', payload.projectTimeframe],
-    ['Control System', payload.automationSystem],
-    ['Screens', payload.interactiveScreens],
-    ['Switches', payload.switches],
-    ['Audio Rooms', payload.audioRooms],
-    ['Network', payload.network],
-    ['Lighting', payload.lighting],
-    ['Blinds', payload.blinds],
-    ['Climate', payload.climate],
-    ['Home Theatre', payload.theatre],
-    ['Alarm', payload.alarm],
-    ['Alarm Notes', payload.alarmNotes],
-    ['Cameras', payload.cameras],
-    ['Camera Notes', payload.camerasNotes],
+    ['Project Type', payload.projectType],
+    ['Moods', joinIfArray(payload.moods)],
+    ['Platform', payload.platform || payload.automationSystem],
+    ['Screens', joinIfArray(payload.screens) || payload.interactiveScreens],
+    ['Switches', joinIfArray(payload.switches)],
+    ['Scenes Notes', payload.scenesNotes],
+    ['Recommended Scenes Requested', joinIfArray(payload.recommendedScenes)],
+    ['Systems', joinIfArray(payload.systems)],
+    ['Motion Sensor Detail', payload.motionSensorDetail],
+    ['Timeframe', payload.timeframe || payload.projectTimeframe],
+    ['Who Is Involved', joinIfArray(payload.involved)],
+    ['Budget', payload.budget],
+    ['Floor Plans', payload.floorPlans],
+    ['Other Notes', payload.otherNotes || payload.additionalNotes],
+    // Legacy fallbacks (only show if the new fields are empty)
+    ['Location (legacy)', payload.projectLocation],
+    ['Audio Rooms (legacy)', payload.audioRooms],
+    ['Network (legacy)', payload.network],
+    ['Lighting (legacy)', payload.lighting],
+    ['Blinds (legacy)', payload.blinds],
+    ['Climate (legacy)', payload.climate],
+    ['Home Theatre (legacy)', payload.theatre],
+    ['Alarm (legacy)', payload.alarm],
+    ['Alarm Notes (legacy)', payload.alarmNotes],
+    ['Cameras (legacy)', payload.cameras],
+    ['Camera Notes (legacy)', payload.camerasNotes],
     ['Access Control', payload.access],
     ['Pool / Spa / Irrigation', payload.poolSpa],
     ['EV Charger', payload.evCharger],

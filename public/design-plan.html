@@ -3,945 +3,1122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design Your Smart Home, Elec Reid</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Build Your Smart Home, Elec Reid</title>
 <style>
-@font-face { font-family: 'Austin'; src: url('/fonts/Austin-Roman.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Austin'; src: url('/fonts/Austin-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
-@font-face { font-family: 'Austin'; src: url('/fonts/Austin-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { height: 100%; width: 100%; font-family: 'Inter', sans-serif; color: #16253F; background-color: #F8F4F1; }
-#progressBar { position: fixed; top: 0; left: 0; height: 4px; background-color: #0134E7; width: 0%; z-index: 1000; transition: width 0.3s ease; }
-.step { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; opacity: 0; transition: opacity 0.5s ease; overflow-y: auto; display: flex; flex-direction: column; padding: 60px 40px 100px 40px; pointer-events: none; }
-.step.active { opacity: 1; pointer-events: auto; z-index: 100; }
-.step-content { max-width: 900px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; justify-content: center; min-height: 100%; }
-.step-centred .step-content { text-align: center; align-items: center; }
-.step-dark { background-color: #16253F; color: #E2E2E2; }
-.step-white { background-color: #F8F4F1; color: #16253F; }
-.step-split { background: #16253F; color: white; padding: 0; }
-.step-split .step-content { display: flex; flex-direction: row; padding: 0; max-width: 100%; width: 100%; height: 100%; align-items: stretch; }
-.step-split .split-text { flex: 0 0 45%; padding: 8vh 50px 60px; display: flex; flex-direction: column; justify-content: center; background: #16253F; overflow-y: auto; }
-.step-split .split-text .pill { border-color: rgba(255,255,255,0.8); color: #FFFFFF; }
-.step-split .split-text .pill.selected { background-color: #FFFFFF; color: #16253F; }
-.step-split .split-text .pill:hover { background-color: rgba(255,255,255,0.1); }
-.step-split .split-text .hint { color: rgba(255,255,255,0.6); }
-.step-split .split-image { flex: 0 0 55%; background-size: cover; background-position: center; min-height: 100%; }
-@media (max-width: 768px) {
-  .step-split .step-content { flex-direction: column-reverse; }
-  .step-split .split-text { flex: 1; padding: 40px 24px 100px; }
-  .step-split .split-image { flex: 0 0 35vh; min-height: 35vh; }
+@font-face { font-family:'Austin'; src:url('/fonts/Austin-Roman.woff2') format('woff2'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Austin'; src:url('/fonts/Austin-Italic.woff2') format('woff2'); font-weight:400; font-style:italic; }
+@font-face { font-family:'Austin'; src:url('/fonts/Austin-Bold.woff2') format('woff2'); font-weight:700; font-style:normal; }
+@font-face { font-family:'Circular'; src:url('/fonts/CircularXXWeb-Book.woff2') format('woff2'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Circular'; src:url('/fonts/CircularXXWeb-Bold.woff2') format('woff2'); font-weight:700; font-style:normal; }
+@font-face { font-family:'Circular'; src:url('/fonts/CircularXXWeb-LightItalic.woff2') format('woff2'); font-weight:300; font-style:italic; }
+@font-face { font-family:'Circular'; src:url('/fonts/CircularXXWeb-Thin.woff2') format('woff2'); font-weight:200; font-style:normal; }
+
+:root {
+  --cream: #F8F4F1;
+  --navy: #16253F;
+  --cobalt: #0134E7;
+  --grey: #E2E2E2;
+  --grey-mid: #8F8F8F;
+  --espresso: #301D10;
 }
-h1 { font-family: 'Austin', 'Playfair Display', Georgia, serif; font-size: 56px; font-weight: 700; margin-bottom: 20px; line-height: 1.05; letter-spacing: -0.01em; }
-h2 { font-family: 'Austin', 'Playfair Display', Georgia, serif; font-size: 40px; font-weight: 700; margin-bottom: 24px; line-height: 1.1; letter-spacing: -0.005em; }
-.section-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #0134E7; margin-bottom: 24px; }
-.step-dark .section-label { color: #E2E2E2; opacity: 0.85; }
-em, .italic-warmth { font-family: 'Austin', 'Playfair Display', Georgia, serif; font-style: italic; }
-p { font-size: 18px; line-height: 1.6; margin-bottom: 16px; }
-p.subtitle { font-size: 20px; font-weight: 500; opacity: 0.9; }
-p.italic { font-style: italic; font-size: 16px; opacity: 0.8; }
-input[type="text"], input[type="email"], input[type="tel"], textarea { width: 100%; max-width: 500px; border: none; border-bottom: 2px solid #16253F; background-color: transparent; padding: 10px 0; font-family: 'Inter', sans-serif; font-size: 16px; color: inherit; margin: 20px 0; transition: border-color 0.3s ease; }
-.step-dark input[type="text"], .step-dark input[type="email"], .step-dark input[type="tel"], .step-dark textarea { border-bottom-color: #FFFFFF; color: #FFFFFF; }
-.step-dark input::placeholder, .step-dark textarea::placeholder { color: rgba(255,255,255,0.6); }
-input::placeholder, textarea::placeholder { color: rgba(26,26,26,0.5); }
-textarea { resize: vertical; min-height: 100px; padding: 10px 0; }
-button { border: none; cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.3s ease; font-size: 15px; font-weight: 500; letter-spacing: 0.02em; }
-.btn-primary { background-color: #0134E7; color: #FFFFFF; padding: 12px 32px; border-radius: 24px; min-width: 120px; }
-.btn-primary:hover { background-color: #0029b3; }
-.btn-secondary { background-color: transparent; color: #0134E7; border: 2px solid #0134E7; padding: 10px 24px; border-radius: 24px; font-size: 14px; }
-.btn-secondary:hover { background-color: #0134E7; color: #FFFFFF; }
-.step-dark .btn-secondary { color: #FFFFFF; border-color: #FFFFFF; }
-.step-dark .btn-secondary:hover { background-color: #FFFFFF; color: #16253F; }
-.btn-text { background: none; color: inherit; border: none; font-size: 16px; text-decoration: underline; padding: 0; cursor: pointer; }
-.button-row { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
-.button-row.space-between { justify-content: space-between; }
-.button-row.right { justify-content: flex-end; }
-.button-row.left { justify-content: flex-start; }
-.button-row.center { justify-content: center; }
-.hint { font-size: 12px; opacity: 0.6; margin-top: 8px; }
-.step-dark .hint { color: #FFFFFF; }
-.pill-group { display: flex; gap: 16px; margin: 24px 0; flex-wrap: wrap; }
-.pill { padding: 12px 32px; border-radius: 24px; border: 2px solid; background-color: transparent; font-weight: 500; cursor: pointer; transition: all 0.3s ease; }
-.step-dark .pill { border-color: #FFFFFF; color: #FFFFFF; }
-.step-dark .pill:hover { background-color: rgba(255,255,255,0.1); }
-.step-dark .pill.selected { background-color: #FFFFFF; color: #16253F; }
-.step-white .pill { border-color: #1A1A1A; color: #1A1A1A; }
-.step-white .pill:hover { background-color: rgba(26,26,26,0.05); }
-.step-white .pill.selected { background-color: #1A1A1A; color: #FFFFFF; }
-.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 32px 0; }
-.card-grid.two-col { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
-@media (max-width: 768px) { .card-grid { grid-template-columns: 1fr; } }
-.card { border-radius: 12px; background-size: cover; background-position: center; height: 320px; position: relative; overflow: hidden; cursor: pointer; transition: transform 0.3s ease; border: 2px solid transparent; }
-.card:hover { transform: scale(1.02); }
-.card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(22,37,63,0.5); z-index: 1; }
-.card-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; color: #FFFFFF; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
-.card-title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; margin-bottom: 16px; }
-.card-button { background-color: transparent; border: 2px solid #FFFFFF; color: #FFFFFF; padding: 8px 16px; border-radius: 6px; font-size: 12px; width: fit-content; cursor: pointer; transition: all 0.3s ease; }
-.card-button:hover { background-color: #FFFFFF; color: #16253F; }
-.card.selectable { cursor: pointer; }
-.card.selectable.selected { border-color: #0134E7; }
-.card-checkbox { position: absolute; top: 16px; right: 16px; width: 24px; height: 24px; border: 2px solid #FFFFFF; border-radius: 4px; background-color: transparent; z-index: 3; display: flex; align-items: center; justify-content: center; }
-.card.selectable.selected .card-checkbox { background-color: #0134E7; border-color: #0134E7; }
-.card-checkbox::after { content: '✓'; color: #FFFFFF; font-size: 14px; font-weight: bold; display: none; }
-.card.selectable.selected .card-checkbox::after { display: block; }
-.card-badge { position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; background-color: #4CAF50; border-radius: 50%; display: none; align-items: center; justify-content: center; font-weight: bold; color: #FFFFFF; font-size: 18px; z-index: 3; }
-.card.viewed .card-badge { display: flex; }
-.card-radio { position: absolute; top: 16px; left: 16px; width: 24px; height: 24px; border: 2px solid #FFFFFF; border-radius: 50%; background-color: transparent; z-index: 3; display: flex; align-items: center; justify-content: center; }
-.card.selected .card-radio { background-color: #0134E7; border-color: #0134E7; }
-.card.selected .card-radio::after { content: ''; width: 8px; height: 8px; background-color: #FFFFFF; border-radius: 50%; }
-.audio-matrix { margin: 32px 0; overflow-x: auto; }
-.matrix-table { width: 100%; border-collapse: collapse; background-color: rgba(0,0,0,0.2); border-radius: 8px; overflow: hidden; }
-.matrix-table th { background-color: rgba(0,0,0,0.4); padding: 12px; text-align: left; font-weight: 600; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.matrix-table td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-.matrix-table tr:last-child td { border-bottom: none; }
-.radio-group { display: flex; gap: 12px; }
-.radio-circle { width: 24px; height: 24px; border: 2px solid rgba(255,255,255,0.6); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
-.radio-circle:hover { border-color: #FFFFFF; background-color: rgba(255,255,255,0.1); }
-.radio-circle.selected { background-color: #0134E7; border-color: #0134E7; }
-.radio-circle.selected::after { content: ''; width: 6px; height: 6px; background-color: #FFFFFF; border-radius: 50%; }
-.two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin: 32px 0; }
-@media (max-width: 768px) { .two-col-layout { grid-template-columns: 1fr; gap: 24px; } }
-.video-embed { width: 100%; max-width: 560px; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; margin: 24px 0; }
-.video-embed iframe { width: 100%; height: 100%; border: none; }
-a { color: #0134E7; text-decoration: none; cursor: pointer; transition: opacity 0.3s ease; }
-.step-dark a { color: #FFFFFF; text-decoration: underline; }
-a:hover { opacity: 0.7; }
-.nav-bar { position: fixed; bottom: 20px; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; z-index: 50; }
-.step-counter { font-size: 14px; opacity: 0.7; font-weight: 500; color: #FFFFFF; }
-.nav-arrows { display: flex; gap: 12px; }
-.nav-arrow { width: 40px; height: 40px; border-radius: 50%; background-color: rgba(1,52,231,0.2); border: 2px solid #0134E7; color: #0134E7; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; font-size: 18px; }
-.nav-arrow:hover:not(:disabled) { background-color: #0134E7; color: #FFFFFF; }
-.nav-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
-.error-message { color: #d32f2f; font-size: 14px; margin-top: 8px; }
-.step-dark .error-message { color: #ff6b6b; }
-#thankYouOverlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(22,37,63,0.95); display: flex; align-items: center; justify-content: center; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.6s ease; }
-#thankYouOverlay.show { opacity: 1; pointer-events: auto; }
-.thank-you-content { color: #FFFFFF; text-align: center; max-width: 600px; }
-.thank-you-content h1 { font-size: 56px; margin-bottom: 24px; }
-.thank-you-content p { font-size: 18px; line-height: 1.8; }
-.thank-you-content a { color: #FFFFFF; text-decoration: underline; }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: 'Circular', -apple-system, sans-serif;
+  color: var(--navy);
+  background: var(--cream);
+  min-height: 100vh;
+}
+
+.page { display: none; min-height: 100vh; padding-bottom: 100px; }
+.page.active { display: block; }
+
+/* Eyebrow */
+.eyebrow {
+  font-family: 'Circular', sans-serif;
+  font-weight: 700;
+  font-size: 9pt;
+  letter-spacing: 0.22em;
+  color: var(--cobalt);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* Stage numeral */
+.stage-numeral {
+  font-family: 'Austin', serif;
+  font-style: italic;
+  font-size: 72pt;
+  color: var(--cobalt);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+/* Headings */
+.stage-headline {
+  font-family: 'Austin', serif;
+  font-size: 48pt;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.stage-headline em { font-style: italic; }
+.stage-subhead { font-size: 14pt; color: var(--navy); margin-bottom: 32px; line-height: 1.5; }
+.stage-lead { font-family: 'Austin', serif; font-style: italic; font-size: 18pt; color: var(--navy); margin-bottom: 20px; line-height: 1.4; }
+
+/* Container */
+.container { max-width: 1040px; margin: 0 auto; padding: 64px 40px 40px; }
+
+/* Image slots */
+.img-slot {
+  background: var(--cream);
+  border: 1px solid var(--cobalt);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  width: 100%;
+}
+.img-slot-eyebrow {
+  font-family: 'Circular', sans-serif;
+  font-weight: 700;
+  font-size: 9pt;
+  letter-spacing: 0.22em;
+  color: var(--cobalt);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.img-slot-desc {
+  font-family: 'Austin', serif;
+  font-style: italic;
+  font-size: 12pt;
+  color: var(--navy);
+  opacity: 0.6;
+  max-width: 80%;
+}
+
+/* Cards */
+.cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.cards-row.two-col { grid-template-columns: repeat(2, 1fr); }
+.card {
+  border: 1.5px solid var(--grey);
+  background: var(--cream);
+  padding: 24px;
+  cursor: pointer;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+.card:hover { border-color: var(--cobalt); }
+.card.selected { border-color: var(--cobalt); box-shadow: 0 0 0 2px var(--cobalt); }
+.card-title { font-family: 'Austin', serif; font-style: italic; font-size: 22pt; color: var(--navy); margin: 16px 0 6px; }
+.card-subtitle { font-family: 'Circular', sans-serif; font-size: 11pt; color: var(--cobalt); font-style: italic; margin-bottom: 10px; }
+.card-body { font-size: 11pt; color: var(--navy); line-height: 1.5; }
+
+/* Platform sections */
+.platform-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  border: 1.5px solid var(--grey);
+  padding: 32px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: border-color 0.18s;
+}
+.platform-section:hover, .platform-section.selected { border-color: var(--cobalt); }
+.platform-section.selected { box-shadow: 0 0 0 2px var(--cobalt); }
+.platform-name { font-family: 'Austin', serif; font-style: italic; font-size: 30pt; color: var(--navy); margin-bottom: 20px; }
+.platform-field { margin-bottom: 14px; }
+.platform-field-label {
+  font-family: 'Circular', sans-serif;
+  font-weight: 700;
+  font-size: 8pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  margin-bottom: 4px;
+}
+.platform-field-body { font-size: 12pt; line-height: 1.5; }
+.platform-radio { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
+.platform-radio input { width: 18px; height: 18px; accent-color: var(--cobalt); }
+
+/* Screen cards */
+.screen-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.screen-card {
+  border: 1.5px solid var(--grey);
+  padding: 20px;
+  cursor: pointer;
+  transition: border-color 0.18s;
+}
+.screen-card.selected { border-color: var(--cobalt); box-shadow: 0 0 0 2px var(--cobalt); }
+.screen-card-name { font-family: 'Austin', serif; font-style: italic; font-size: 18pt; margin: 12px 0 4px; }
+.screen-card-size { font-size: 10pt; color: var(--grey-mid); margin-bottom: 8px; }
+.screen-card-body { font-size: 11pt; line-height: 1.5; }
+
+/* Brand sections */
+.brand-section { margin-bottom: 40px; }
+.brand-header { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: start; margin-bottom: 16px; }
+.brand-name { font-family: 'Austin', serif; font-style: italic; font-size: 26pt; color: var(--navy); margin-bottom: 4px; }
+.brand-tagline { font-family: 'Austin', serif; font-style: italic; font-size: 13pt; color: var(--grey-mid); }
+.brand-models { display: flex; gap: 16px; flex-wrap: wrap; }
+.model-card {
+  border: 1.5px solid var(--grey);
+  padding: 16px;
+  cursor: pointer;
+  min-width: 140px;
+  transition: border-color 0.18s;
+}
+.model-card.selected { border-color: var(--cobalt); box-shadow: 0 0 0 2px var(--cobalt); }
+.model-name { font-family: 'Austin', serif; font-style: italic; font-size: 14pt; margin: 10px 0 4px; }
+
+/* Scene display cards */
+.scene-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px; }
+.scene-card { padding: 24px; border: 1px solid var(--grey); }
+.scene-name { font-family: 'Austin', serif; font-style: italic; font-size: 18pt; margin: 12px 0 6px; }
+.scene-body { font-size: 11pt; line-height: 1.5; color: var(--grey-mid); }
+
+/* Systems grid */
+.systems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.system-card {
+  border: 1.5px solid var(--grey);
+  padding: 20px;
+  cursor: pointer;
+  transition: border-color 0.18s;
+}
+.system-card.selected { border-color: var(--cobalt); box-shadow: 0 0 0 2px var(--cobalt); }
+.system-name { font-family: 'Austin', serif; font-style: italic; font-size: 16pt; margin: 12px 0 6px; }
+.system-body { font-size: 11pt; line-height: 1.5; font-style: italic; color: var(--grey-mid); }
+.motion-detail { display: none; margin-top: 12px; border-top: 1px solid var(--grey); padding-top: 12px; }
+.system-card.selected .motion-detail { display: block; }
+
+/* Form fields */
+.form-group { margin-bottom: 28px; }
+.form-label { font-family: 'Circular', sans-serif; font-weight: 700; font-size: 10pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); margin-bottom: 10px; display: block; }
+.form-input, .form-textarea {
+  width: 100%;
+  border: 1.5px solid var(--grey);
+  background: var(--cream);
+  color: var(--navy);
+  font-family: 'Circular', sans-serif;
+  font-size: 13pt;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.form-input:focus, .form-textarea:focus { border-color: var(--cobalt); }
+.form-textarea { min-height: 100px; resize: vertical; }
+.radio-group, .checkbox-group { display: flex; flex-direction: column; gap: 10px; }
+.radio-option, .checkbox-option { display: flex; align-items: center; gap: 12px; font-size: 13pt; cursor: pointer; }
+.radio-option input, .checkbox-option input { width: 18px; height: 18px; accent-color: var(--cobalt); flex-shrink: 0; }
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-note { font-size: 11pt; color: var(--grey-mid); margin-top: 8px; }
+
+/* Bottom nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 70px;
+  background: var(--cream);
+  border-top: 1px solid var(--cobalt);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 100;
+}
+.nav-btn {
+  font-family: 'Circular', sans-serif;
+  font-weight: 700;
+  font-size: 11pt;
+  letter-spacing: 0.06em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--navy);
+  transition: color 0.15s;
+}
+.nav-btn:disabled { color: var(--grey); cursor: default; }
+.nav-btn.primary {
+  background: var(--cobalt);
+  color: #fff;
+  padding: 12px 28px;
+}
+.nav-btn.primary:hover { background: var(--espresso); }
+.nav-counter {
+  font-family: 'Circular', sans-serif;
+  font-size: 10pt;
+  letter-spacing: 0.1em;
+  color: var(--grey-mid);
+  text-transform: uppercase;
+}
+
+/* Thank you overlay */
+#thankYouOverlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: var(--navy);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 40px;
+}
+#thankYouOverlay.show { display: flex; flex-direction: column; }
+.ty-headline { font-family: 'Austin', serif; font-style: italic; font-size: 64pt; color: var(--cobalt); line-height: 1; margin-bottom: 28px; }
+.ty-body { font-family: 'Circular', sans-serif; font-size: 16pt; color: var(--cream); max-width: 520px; line-height: 1.6; margin-bottom: 32px; }
+.ty-slogan { font-family: 'Austin', serif; font-style: italic; font-size: 22pt; color: var(--cobalt); }
+
+/* Cover page */
+.cover-page {
+  min-height: 100vh;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  padding: 56px 56px 80px;
+}
+.cover-eyebrow { font-family: 'Circular', sans-serif; font-weight: 700; font-size: 9pt; letter-spacing: 0.22em; color: var(--cobalt); text-transform: uppercase; margin-bottom: 48px; }
+.cover-headline { font-family: 'Austin', serif; font-style: italic; font-size: 80pt; color: var(--navy); line-height: 1.0; margin-bottom: 28px; max-width: 700px; }
+.cover-subline { font-family: 'Austin', serif; font-style: italic; font-size: 22pt; color: var(--navy); margin-bottom: 20px; }
+.cover-body { font-size: 13pt; color: var(--grey-mid); margin-bottom: 40px; }
+.cover-begin-btn {
+  display: inline-block;
+  background: var(--cobalt);
+  color: #fff;
+  font-family: 'Circular', sans-serif;
+  font-weight: 700;
+  font-size: 12pt;
+  letter-spacing: 0.08em;
+  padding: 18px 48px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  align-self: flex-start;
+  margin-bottom: auto;
+}
+.cover-begin-btn:hover { background: var(--espresso); }
+.cover-footer { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 48px; }
+.cover-slogan { font-family: 'Austin', serif; font-style: italic; font-size: 16pt; color: var(--cobalt); }
+.cover-edition { font-family: 'Circular', sans-serif; font-size: 10pt; color: var(--grey-mid); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Discovery page */
+.calendly-placeholder {
+  border: 1px dashed var(--cobalt);
+  padding: 40px;
+  text-align: center;
+  color: var(--cobalt);
+  font-style: italic;
+  font-family: 'Austin', serif;
+  font-size: 14pt;
+  margin: 32px 0;
+}
+
+/* Section divider */
+.section-divider { border: none; border-top: 1px solid var(--grey); margin: 40px 0; }
+
+/* Responsive */
 @media (max-width: 768px) {
-  h1 { font-size: 36px; } h2 { font-size: 28px; } p { font-size: 16px; }
-  .step { padding: 60px 24px 100px 24px; }
-  input[type="text"], input[type="email"], input[type="tel"], textarea { max-width: 100%; }
-  .nav-bar { padding: 0 24px; }
-  .button-row { flex-direction: column; }
-  .button-row button { width: 100%; }
+  .cards-row { grid-template-columns: 1fr; }
+  .platform-section { grid-template-columns: 1fr; }
+  .screen-cards { grid-template-columns: 1fr; }
+  .systems-grid { grid-template-columns: 1fr; }
+  .scene-cards { grid-template-columns: 1fr 1fr; }
+  .form-grid-2 { grid-template-columns: 1fr; }
+  .cover-headline { font-size: 48pt; }
+  .stage-headline { font-size: 32pt; }
+  .cover-page { padding: 40px 28px 80px; }
+  .container { padding: 40px 24px 40px; }
+  .bottom-nav { padding: 0 20px; }
+  .brand-header { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .scene-cards { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
-<div id="progressBar"></div>
 
-<div class="step step-dark step-centred step-0 active">
-  <div class="step-content">
-    <div class="section-label">Elec Reid · Design Studio</div>
-    <h1>Design your smart home.</h1>
-    <p class="subtitle">A guided plan, not a quote form.</p>
-    <p>The pages that follow walk through the rooms, the systems, and the moments that matter. Take your time. The more we know, the better the plan.</p>
-    <p class="italic">Best on a computer. Works on your phone too.</p>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">Begin</button></div>
+<!-- PAGE 0: COVER -->
+<div class="page page-0 active">
+  <div class="cover-page">
+    <div class="cover-eyebrow">ELEC REID · BUILD YOUR SMART HOME</div>
+    <div class="cover-headline">Smarter living, <em>set in stone.</em></div>
+    <div class="cover-subline">A guided plan for the home you're building.</div>
+    <div class="cover-body">Best on a computer. Works on your phone too.</div>
+    <button class="cover-begin-btn" onclick="showPage(1)">Begin</button>
+    <div class="cover-footer">
+      <div class="cover-slogan">Designed for you. Done right. Always.</div>
+      <div class="cover-edition">Edition 2026</div>
+    </div>
   </div>
 </div>
 
-<div class="step step-white step-1">
-  <div class="step-content">
-    <h1>First, a few details.</h1>
-    <input type="text" id="firstName" placeholder="First name*">
-    <div class="error-message" id="firstNameError"></div>
-    <input type="text" id="lastName" placeholder="Last name">
-    <input type="tel" id="phone" placeholder="Phone number">
-    <input type="email" id="email" placeholder="Email*">
-    <div class="error-message" id="emailError"></div>
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-white step-2">
-  <div class="step-content">
-    <h1>Where is the project?</h1>
-    <p>We are located in Melbourne, VIC. Send us an email at <a href="mailto:enquiries@elecreid.com">enquiries@elecreid.com</a> if you'd like our recommendation of a technician near you.</p>
-    <input type="text" id="projectLocation" placeholder="Suburb or postcode">
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-white step-3">
-  <div class="step-content">
-    <h1>When are you looking to start?</h1>
-    <input type="text" id="projectTimeframe" placeholder="e.g. Q3 2025, ASAP, Planning stage">
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-dark step-centred step-4">
-  <div class="step-content">
-    <h1>Good.</h1>
-    <p class="subtitle">Now the considered work begins.</p>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">Get Started</button></div>
-  </div>
-</div>
-
-<div class="step step-dark step-centred step-5" style="background-image: url('/images/haven-dsc05570.jpg'); background-size: cover; background-position: center;">
-  <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(22,37,63,0.75);z-index:0;"></div>
-  <div class="step-content" style="position:relative;z-index:1;">
-    <p>Your home runs on systems. Lighting, blinds, climate, security, audio, access. When they do not speak to each other, nothing works the way it should.</p>
-    <p>We design and install smart homes that work. One app. One system. Architect grade. Reliable. Built to last.</p>
-    <p>Tell us what matters to you. We will design a plan that fits.</p>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">Continue</button></div>
-  </div>
-</div>
-
-<div class="step step-dark step-6">
-  <div class="step-content">
-    <div class="section-label">01 · Control Systems</div>
-    <h2>The brain of the home.</h2>
-    <p>Hardware is finish. Platform is feel. Both matter. Explore each, or skip to selection if you already know.</p>
-    <div class="card-grid two-col">
-      <div class="card" style="background-image: url('/images/haven-5.jpg');" onclick="goToStep(7)">
-        <div class="card-badge">✓</div>
-        <div class="card-content"><div class="card-title">Apple Home</div><button type="button" class="card-button">Learn More</button></div>
+<!-- PAGE 1: STAGE 00 - Project Type -->
+<div class="page page-1">
+  <div class="container">
+    <div class="eyebrow">STAGE ZERO</div>
+    <div class="stage-numeral">00</div>
+    <h1 class="stage-headline">Where do you want to <em>start?</em></h1>
+    <p class="stage-subhead">There's no wrong path. Pick what fits the project.</p>
+    <div class="cards-row">
+      <div class="card" data-type="full" onclick="selectProjectType('full', this)">
+        <div class="img-slot" data-slot-id="IMG-00A-full-smart-home" style="aspect-ratio:4/3;">
+          <div class="img-slot-eyebrow">IMG-00A-FULL-SMART-HOME</div>
+          <div class="img-slot-desc"><em>Architectural full smart home interior, daylight, premium feel</em></div>
+        </div>
+        <div class="card-title"><em>Full Smart Home.</em></div>
+        <div class="card-subtitle">The integrated experience.</div>
+        <div class="card-body">One platform. Lighting, blinds, climate, audio, security. Everything talks. <em>One app. Beautifully done.</em> Best for new builds, full renovations, premium homes wanting the complete picture.</div>
       </div>
-      <div class="card" style="background-image: url('/images/haven-7.jpg');" onclick="goToStep(8)">
-        <div class="card-badge">✓</div>
-        <div class="card-content"><div class="card-title">Home Assistant</div><button type="button" class="card-button">Learn More</button></div>
+      <div class="card" data-type="essentials" onclick="selectProjectType('essentials', this)">
+        <div class="img-slot" data-slot-id="IMG-00B-connected-essentials" style="aspect-ratio:4/3;">
+          <div class="img-slot-eyebrow">IMG-00B-CONNECTED-ESSENTIALS</div>
+          <div class="img-slot-desc"><em>Premium kitchen with subtle networked equipment</em></div>
+        </div>
+        <div class="card-title"><em>Connected Essentials.</em></div>
+        <div class="card-subtitle">The standalone systems.</div>
+        <div class="card-body">Wifi, audio, cameras, intercom, security. Each system best in class. <em>Cleaner scope. Lower complexity.</em> Best for retrofits, partial upgrades, clients who don't want full automation.</div>
       </div>
-      <div class="card" style="background-image: url('/images/basalte-ellie.jpg');" onclick="goToStep(10)">
-        <div class="card-badge">✓</div>
-        <div class="card-content"><div class="card-title">Basalte Home</div><button type="button" class="card-button">Learn More</button></div>
-      </div>
-      <div class="card" style="background-image: url('/images/control4-x4.jpg');" onclick="goToStep(9)">
-        <div class="card-badge">✓</div>
-        <div class="card-content"><div class="card-title">Control4</div><button type="button" class="card-button">Learn More</button></div>
+      <div class="card" data-type="unsure" onclick="selectProjectType('unsure', this)">
+        <div class="img-slot" data-slot-id="IMG-00C-not-sure" style="aspect-ratio:4/3;">
+          <div class="img-slot-eyebrow">IMG-00C-NOT-SURE</div>
+          <div class="img-slot-desc"><em>Architect's drawing or pencil on plans</em></div>
+        </div>
+        <div class="card-title"><em>Not sure yet.</em></div>
+        <div class="card-subtitle">We'll guide you.</div>
+        <div class="card-body">Pick this and we'll tailor the discovery call around your priorities.</div>
       </div>
     </div>
-    <div class="button-row right"><button class="btn-text" onclick="goToStep(11)">Skip to Selection →</button></div>
   </div>
 </div>
 
-<div class="step step-dark step-7" style="background-image: url('/images/haven-5.jpg'); background-size: cover; background-position: center;">
-  <div class="step-content">
-    <div class="section-label">Apple Home</div>
-    <h2><em>Apple Home.</em></h2>
-    <div class="two-col-layout">
+<!-- PAGE 2: STAGE 01 - Mood (full/unsure only) -->
+<div class="page page-2">
+  <div class="container">
+    <div class="eyebrow">STAGE ONE</div>
+    <div class="stage-numeral">01</div>
+    <h1 class="stage-headline">Start with the <em>feeling.</em></h1>
+    <p class="stage-subhead">Pick everything that matters. Most clients pick all six.</p>
+    <div class="cards-row" style="grid-template-columns: repeat(3,1fr);">
+      <div class="card" onclick="toggleMood('effortless', this)">
+        <div class="img-slot" data-slot-id="IMG-01-mood-effortless" style="aspect-ratio:4/3;">
+          <div class="img-slot-eyebrow">IMG-01-MOOD-EFFORTLESS</div>
+          <div class="img-slot-desc"><em>Easy daily home interaction, natural lighting</em></div>
+        </div>
+        <div class="card-title"><em>Effortless.</em></div>
+        <div class="card-body">One tap, anyone can use it.</div>
+      </div>
+      <div class="card" onclick="toggleMood('quiet', this)">
+        <div class="img-slot" data-slot-id="IMG-02-mood-quiet" style="aspect-ratio:4/3;">
+          <div class="img-slot-eyebrow">IMG-02-MOOD-QUIET</div>
+          <div class="img-slot-desc"><em>Minimal interior, hidden technology, calm space</em></div>
+        </div>
+        <div class="card-title"><em>Quiet.</em></div>
+        <div class="card-body">The technology disappears until needed.</div>
+      </div>
+      <div class="card" onclick="toggleMood('connected', this)">
+        <div class="img-slot" data-slot-id="IMG-03-mood-connected" style="aspect-ratio:4/3;">
+          <div class="img-slot-eyebrow">IMG-03-MOOD-CONNECTED</div>
+          <div class="img-slot-desc"><em>Phone controlling home remotely, app interface</em></div>
+        </div>
+        <div class="card-title"><em>Connected.</em></div>
+        <div class="card-body">Control from anywhere, see everything.</div>
+      </div>
+      <div class="card" onclick="toggleMood('considered', this)">
+        <div class="img-slot" data-slot-id="IMG-04-mood-considered" style="aspect-ratio:4/3;">
+          <div class="img-slot-eyebrow">IMG-04-MOOD-CONSIDERED</div>
+          <div class="img-slot-desc"><em>Architectural switch detail, beautiful hardware</em></div>
+        </div>
+        <div class="card-title"><em>Considered.</em></div>
+        <div class="card-body">Beautiful hardware that's part of the architecture.</div>
+      </div>
+      <div class="card" onclick="toggleMood('resilient', this)">
+        <div class="img-slot" data-slot-id="IMG-05-mood-resilient" style="aspect-ratio:4/3;">
+          <div class="img-slot-eyebrow">IMG-05-MOOD-RESILIENT</div>
+          <div class="img-slot-desc"><em>Local server equipment, home network rack</em></div>
+        </div>
+        <div class="card-title"><em>Resilient.</em></div>
+        <div class="card-body">Works during outages. No cloud dependency.</div>
+      </div>
+      <div class="card" onclick="toggleMood('future-proof', this)">
+        <div class="img-slot" data-slot-id="IMG-06-mood-future-proof" style="aspect-ratio:4/3;">
+          <div class="img-slot-eyebrow">IMG-06-MOOD-FUTURE-PROOF</div>
+          <div class="img-slot-desc"><em>Modern wiring, structured cabling, forward-thinking install</em></div>
+        </div>
+        <div class="card-title"><em>Future-proof.</em></div>
+        <div class="card-body">Won't be obsolete in five years.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3: STAGE 02 - Platform (full/unsure only) -->
+<div class="page page-3">
+  <div class="container">
+    <div class="eyebrow">STAGE TWO</div>
+    <div class="stage-numeral">02</div>
+    <h1 class="stage-headline">Choose your <em>path.</em></h1>
+    <p class="stage-lead">All four platforms can deliver the same outcome. The difference is how they get there. Pick the path that suits your house, your habits, and the people who live in it.</p>
+
+    <div class="platform-section" data-platform="apple" onclick="selectPlatform('apple', this)">
+      <div class="img-slot" data-slot-id="IMG-07-apple-home" style="aspect-ratio:4/3;">
+        <div class="img-slot-eyebrow">IMG-07-APPLE-HOME</div>
+        <div class="img-slot-desc"><em>Apple Home app on iPhone, clean interface</em></div>
+      </div>
       <div>
-        <p>Our default for most residential smart homes. If your family lives in the Apple ecosystem, this is the natural fit. iPhone, iPad, Apple Watch, HomePod.</p>
-        <p>Lights, blinds, climate, cameras, locks, speakers. All from your phone, watch, or Siri. End to end encrypted. No cloud. No subscription.</p>
-        <p>Effortless by design.</p>
-        <a href="/brands/apple-home" target="_blank">EXPLORE APPLE HOME →</a>
+        <div class="platform-name"><em>Apple Home</em></div>
+        <div class="platform-field"><div class="platform-field-label">BEST FOR</div><div class="platform-field-body">Families already in the Apple ecosystem.</div></div>
+        <div class="platform-field"><div class="platform-field-label">STRENGTH</div><div class="platform-field-body">End to end encrypted. No cloud. No subscription. Native to every Apple device.</div></div>
+        <div class="platform-field"><div class="platform-field-label">TRADE-OFF</div><div class="platform-field-body">Locked to Apple hardware family. Less depth than dealer platforms.</div></div>
+        <div class="platform-field"><div class="platform-field-label">OUR TAKE</div><div class="platform-field-body">Our default for most residential smart homes. Effortless.</div></div>
+        <div class="platform-radio"><input type="radio" name="platform" value="apple"> <span>Select Apple Home</span></div>
       </div>
-      <div class="video-embed"><iframe src="https://www.youtube.com/embed/YAhEi7NQlPg" allowfullscreen loading="lazy"></iframe></div>
     </div>
-    <div class="button-row space-between" style="margin-top: 48px;">
-      <button class="btn-secondary" onclick="goToStep(6)">← Back to Control Systems</button>
-      <button class="btn-primary" onclick="goToStep(8)">Continue →</button>
-    </div>
-  </div>
-</div>
 
-<div class="step step-dark step-8" style="background-image: url('/images/haven-7.jpg'); background-size: cover; background-position: center;">
-  <div class="step-content">
-    <div class="section-label">Home Assistant</div>
-    <h2><em>Home Assistant.</em></h2>
-    <div class="two-col-layout">
+    <div class="platform-section" data-platform="homeassistant" onclick="selectPlatform('homeassistant', this)">
+      <div class="img-slot" data-slot-id="IMG-08-home-assistant" style="aspect-ratio:4/3;">
+        <div class="img-slot-eyebrow">IMG-08-HOME-ASSISTANT</div>
+        <div class="img-slot-desc"><em>Home Assistant dashboard on screen, open source</em></div>
+      </div>
       <div>
-        <p>Open source. Community driven. Endlessly customisable. Over two thousand integrations. Runs locally on your own hardware. No cloud, no subscription, no vendor lock in.</p>
-        <p>Custom dashboards. Considered automations. Energy monitoring. For homeowners who want total control.</p>
-        <a href="/brands/home-assistant" target="_blank">EXPLORE HOME ASSISTANT →</a>
+        <div class="platform-name"><em>Home Assistant</em></div>
+        <div class="platform-field"><div class="platform-field-label">BEST FOR</div><div class="platform-field-body">Homeowners who want total control and zero vendor lock-in.</div></div>
+        <div class="platform-field"><div class="platform-field-label">STRENGTH</div><div class="platform-field-body">Open source. Two thousand integrations. Runs locally on your hardware.</div></div>
+        <div class="platform-field"><div class="platform-field-label">TRADE-OFF</div><div class="platform-field-body">Steeper learning curve. Not as polished out of the box.</div></div>
+        <div class="platform-field"><div class="platform-field-label">OUR TAKE</div><div class="platform-field-body">For technically-minded clients who want to peek under the hood.</div></div>
+        <div class="platform-radio"><input type="radio" name="platform" value="homeassistant"> <span>Select Home Assistant</span></div>
       </div>
-      <div style="display:flex;align-items:center;justify-content:center;"><img src="/images/haven-7.jpg" style="width:100%;border-radius:8px;" alt="Home Assistant"></div>
     </div>
-    <div class="button-row space-between" style="margin-top: 48px;">
-      <button class="btn-secondary" onclick="goToStep(6)">← Back to Control Systems</button>
-      <button class="btn-primary" onclick="goToStep(9)">Continue →</button>
-    </div>
-  </div>
-</div>
 
-<div class="step step-dark step-9" style="background-image: url('/images/control4-x4.jpg'); background-size: cover; background-position: center;">
-  <div class="step-content">
-    <div class="section-label">Control4</div>
-    <h2><em>Control4.</em></h2>
-    <div class="two-col-layout">
+    <div class="platform-section" data-platform="control4" onclick="selectPlatform('control4', this)">
+      <div class="img-slot" data-slot-id="IMG-09-control4" style="aspect-ratio:4/3;">
+        <div class="img-slot-eyebrow">IMG-09-CONTROL4</div>
+        <div class="img-slot-desc"><em>Control4 touchscreen interface, dealer installation</em></div>
+      </div>
       <div>
-        <p>Professional grade automation for larger homes. Dealer installed and commissioned. Every device, every scene, every automation set up by us to work exactly as you need.</p>
-        <p>T5 touchscreens. DS3 intercoms. Lux keypads. Backed by Snap One. Built for scale.</p>
-        <a href="/brands/control4" target="_blank">EXPLORE CONTROL4 →</a>
+        <div class="platform-name"><em>Control4</em></div>
+        <div class="platform-field"><div class="platform-field-label">BEST FOR</div><div class="platform-field-body">Larger homes wanting professional-grade dealer integration.</div></div>
+        <div class="platform-field"><div class="platform-field-label">STRENGTH</div><div class="platform-field-body">Tight integration. Dealer-only. Backed by Snap One. Built for scale.</div></div>
+        <div class="platform-field"><div class="platform-field-label">TRADE-OFF</div><div class="platform-field-body">Subscription model. Less flexible for changes after handover.</div></div>
+        <div class="platform-field"><div class="platform-field-label">OUR TAKE</div><div class="platform-field-body">For projects that need a dedicated platform with white-glove support.</div></div>
+        <div class="platform-radio"><input type="radio" name="platform" value="control4"> <span>Select Control4</span></div>
       </div>
-      <div class="video-embed"><iframe src="https://www.youtube.com/embed/Vy1JnBjqKj0" allowfullscreen loading="lazy"></iframe></div>
     </div>
-    <div class="button-row space-between" style="margin-top: 48px;">
-      <button class="btn-secondary" onclick="goToStep(6)">← Back to Control Systems</button>
-      <button class="btn-primary" onclick="goToStep(10)">Continue →</button>
-    </div>
-  </div>
-</div>
 
-<div class="step step-dark step-10" style="background-image: url('/images/basalte-ellie.jpg'); background-size: cover; background-position: center;">
-  <div class="step-content">
-    <div class="section-label">Basalte Home</div>
-    <h2><em>Basalte Home.</em></h2>
-    <div class="two-col-layout">
+    <div class="platform-section" data-platform="basalte" onclick="selectPlatform('basalte', this)">
+      <div class="img-slot" data-slot-id="IMG-10-basalte-home" style="aspect-ratio:4/3;">
+        <div class="img-slot-eyebrow">IMG-10-BASALTE-HOME</div>
+        <div class="img-slot-desc"><em>Basalte switch on architectural wall, Belgian design</em></div>
+      </div>
       <div>
-        <p>The automation platform from the Belgian company that makes the finest switches in the trade. Hardware and software designed together from the ground up.</p>
-        <p><em>Ellie</em>, <em>Lisa</em> and <em>Lena</em> touchscreens. <em>Sentido</em> and <em>Fibonacci</em> keypads. One app. One ecosystem. We are an authorised Basalte dealer.</p>
-        <a href="/brands/basalte" target="_blank">EXPLORE BASALTE →</a>
-      </div>
-      <div class="video-embed"><iframe src="https://www.youtube.com/embed/ScWK8D0ISuw" allowfullscreen loading="lazy"></iframe></div>
-    </div>
-    <div class="button-row space-between" style="margin-top: 48px;">
-      <button class="btn-secondary" onclick="goToStep(6)">← Back to Control Systems</button>
-      <button class="btn-primary" onclick="goToStep(11)">Continue →</button>
-    </div>
-  </div>
-</div>
-
-<div class="step step-dark step-11">
-  <div class="step-content">
-    <h2>Choose your preferred platform.</h2>
-    <p>Not sure yet. No problem. We will walk you through it on your discovery call.</p>
-    <div class="card-grid two-col">
-      <div class="card selectable" style="background-image: url('/images/haven-5.jpg');" onclick="selectAutomation(this, 'Apple Home')">
-        <div class="card-radio"></div><div class="card-content"><div class="card-title">Apple Home</div></div>
-      </div>
-      <div class="card selectable" style="background-image: url('/images/haven-7.jpg');" onclick="selectAutomation(this, 'Home Assistant')">
-        <div class="card-radio"></div><div class="card-content"><div class="card-title">Home Assistant</div></div>
-      </div>
-      <div class="card selectable" style="background-image: url('/images/control4-x4.jpg');" onclick="selectAutomation(this, 'Control4')">
-        <div class="card-radio"></div><div class="card-content"><div class="card-title">Control4</div></div>
-      </div>
-      <div class="card selectable" style="background-image: url('/images/basalte-ellie.jpg');" onclick="selectAutomation(this, 'Basalte Home')">
-        <div class="card-radio"></div><div class="card-content"><div class="card-title">Basalte Home</div></div>
-      </div>
-      <div class="card selectable" style="background-color: #1a3a52;" onclick="selectAutomation(this, 'Not sure yet')">
-        <div class="card-radio"></div><div class="card-content"><div class="card-title">Not sure yet</div></div>
+        <div class="platform-name"><em>Basalte Home</em></div>
+        <div class="platform-field"><div class="platform-field-label">BEST FOR</div><div class="platform-field-body">Architecturally-led projects where switches are part of the design.</div></div>
+        <div class="platform-field"><div class="platform-field-label">STRENGTH</div><div class="platform-field-body">Hardware and software designed together. Belgian engineering.</div></div>
+        <div class="platform-field"><div class="platform-field-label">TRADE-OFF</div><div class="platform-field-body">Locked to the Basalte hardware ecosystem. Premium pricing.</div></div>
+        <div class="platform-field"><div class="platform-field-label">OUR TAKE</div><div class="platform-field-body">When the switch IS the architectural statement.</div></div>
+        <div class="platform-radio"><input type="radio" name="platform" value="basalte"> <span>Select Basalte Home</span></div>
       </div>
     </div>
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
   </div>
 </div>
 
-<div class="step step-dark step-12">
-  <div class="step-content">
-    <h2>Interactive Screens</h2>
-    <p>Every control system can be paired with dedicated screens around your home.</p>
-    <div id="screenContent"></div>
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
+<!-- PAGE 4: STAGE 03 - Touchscreens (full/unsure only) -->
+<div class="page page-4">
+  <div class="container">
+    <div class="eyebrow">STAGE THREE</div>
+    <div class="stage-numeral">03</div>
+    <h1 class="stage-headline">Your home, <em>on a screen.</em></h1>
+    <p class="stage-lead">Most homes have one main screen upstairs and one downstairs. These have full access to the house and serve as intercoms.</p>
+    <p style="font-size:13pt; margin-bottom:32px; line-height:1.6;">Smaller screens go in major rooms - bedrooms, living, office, kitchen - for quick local control of lights, blinds, climate, and music in that space.</p>
+    <div id="screenOptions" class="screen-cards"></div>
   </div>
 </div>
 
-<div class="step step-dark step-13">
-  <div class="step-content">
-    <div class="section-label">02 · Switches and Keypads</div>
-    <h2>Light first. Tech second.</h2>
-    <p>The switch is the single most touched object in your home. It lives on your wall for thirty years. It meets your hand in the dark. Explore the ones that catch your eye.</p>
-    <div class="card-grid">
-      <div class="card" style="background-image: url('/images/basalte-fibonacci.jpg');" onclick="goToStep(14)">
-        <div class="card-badge">✓</div>
-        <div class="card-content"><div class="card-title">Basalte</div><div style="font-size:12px;margin-bottom:8px;opacity:0.9;">Sentido · Fibonacci · Chopin</div><button type="button" class="card-button">Learn More</button></div>
+<!-- PAGE 5: STAGE 04 - Switches (full/unsure only) -->
+<div class="page page-5">
+  <div class="container">
+    <div class="eyebrow">STAGE FOUR</div>
+    <div class="stage-numeral">04</div>
+    <h1 class="stage-headline">Light first. <em>Tech second.</em></h1>
+    <p class="stage-lead">The switch is the most-touched object in your home. It lives on your wall for thirty years. It is the architectural statement.</p>
+
+    <!-- Brand 01: Basalte -->
+    <div class="brand-section">
+      <div class="brand-header">
+        <div class="img-slot" data-slot-id="IMG-19-basalte-brand" style="aspect-ratio:1/1;">
+          <div class="img-slot-eyebrow">IMG-19-BASALTE-BRAND</div>
+          <div class="img-slot-desc"><em>Basalte brand shot</em></div>
+        </div>
+        <div>
+          <div class="brand-name">Basalte</div>
+          <div class="brand-tagline"><em>Belgian engineered.</em></div>
+        </div>
       </div>
-      <div class="card" style="background-color: #1a3a52;" onclick="goToStep(15)">
-        <div class="card-badge">✓</div>
-        <div class="card-content"><div class="card-title">Core Eclipse</div><button type="button" class="card-button">Learn More</button></div>
-      </div>
-      <div class="card" style="background-image: url('/images/control4-lux.jpg');" onclick="goToStep(16)">
-        <div class="card-badge">✓</div>
-        <div class="card-content"><div class="card-title">Control4</div><div style="font-size:12px;margin-bottom:8px;opacity:0.9;">Contemporary · Lux</div><button type="button" class="card-button">Learn More</button></div>
-      </div>
-      <div class="card" style="background-color: #1a3a52;" onclick="goToStep(17)">
-        <div class="card-badge">✓</div>
-        <div class="card-content"><div class="card-title">Zetr</div><button type="button" class="card-button">Learn More</button></div>
-      </div>
-      <div class="card" style="background-image: url('/images/ekinex-proxima.jpg');" onclick="goToStep(18)">
-        <div class="card-badge">✓</div>
-        <div class="card-content"><div class="card-title">Ekinex</div><div style="font-size:12px;margin-bottom:8px;opacity:0.9;">20 Venti · Proxima</div><button type="button" class="card-button">Learn More</button></div>
+      <div class="brand-models">
+        <div class="model-card" onclick="toggleSwitch('sentido',this)">
+          <div class="img-slot" data-slot-id="IMG-20-sentido" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-20-SENTIDO</div><div class="img-slot-desc"><em>Sentido switch</em></div></div>
+          <div class="model-name"><em>Sentido</em></div>
+        </div>
+        <div class="model-card" onclick="toggleSwitch('fibonacci',this)">
+          <div class="img-slot" data-slot-id="IMG-21-fibonacci" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-21-FIBONACCI</div><div class="img-slot-desc"><em>Fibonacci switch</em></div></div>
+          <div class="model-name"><em>Fibonacci</em></div>
+        </div>
+        <div class="model-card" onclick="toggleSwitch('chopin',this)">
+          <div class="img-slot" data-slot-id="IMG-22-chopin" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-22-CHOPIN</div><div class="img-slot-desc"><em>Chopin switch</em></div></div>
+          <div class="model-name"><em>Chopin</em></div>
+        </div>
       </div>
     </div>
-    <div class="button-row right"><button class="btn-text" onclick="goToStep(19)">Skip to Selection →</button></div>
-  </div>
-</div>
 
-<div class="step step-dark step-14" style="background-image: url('/images/basalte-fibonacci.jpg'); background-size: cover; background-position: center;">
-  <div class="step-content">
-    <div class="section-label">01 · Basalte</div>
-    <h2><em>Basalte.</em> Belgian engineered.</h2>
-    <p style="max-width:700px;">Basalte is the gold standard. Touch sensitive surfaces, machined housings, twelve finishes.</p>
-    <p style="max-width:700px;"><em>Sentido.</em> The light switch reinvented. The entire surface is touch sensitive. Single press, long press, multitouch dimming into scenes. RGB feedback, integrated night light, temperature sensor.</p>
-    <p style="max-width:700px;"><em>Fibonacci.</em> Inspired by the golden ratio. Backlit, laser engraved labels that light up as you approach, so you find it in the dark. Custom text and icons on every button.</p>
-    <p style="max-width:700px;"><em>Chopin.</em> The architect grade entry to the Basalte family. Refined push button. Fits standard wall boxes.</p>
-    <div class="button-row space-between" style="margin-top: 48px;">
-      <button class="btn-secondary" onclick="goToStep(13)">← Back to Switches</button>
-      <button class="btn-primary" onclick="goToStep(15)">Continue →</button>
+    <!-- Brand 02: Core Smart Home -->
+    <div class="brand-section">
+      <div class="brand-header">
+        <div class="img-slot" data-slot-id="IMG-23-core-brand" style="aspect-ratio:1/1;">
+          <div class="img-slot-eyebrow">IMG-23-CORE-BRAND</div>
+          <div class="img-slot-desc"><em>Core Smart Home brand</em></div>
+        </div>
+        <div>
+          <div class="brand-name">Core Smart Home</div>
+          <div class="brand-tagline"><em>Australian designed.</em></div>
+        </div>
+      </div>
+      <div class="brand-models">
+        <div class="model-card" onclick="toggleSwitch('eclipse-switch',this)">
+          <div class="img-slot" data-slot-id="IMG-24-eclipse-switch" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-24-ECLIPSE-SWITCH</div><div class="img-slot-desc"><em>Eclipse Switch</em></div></div>
+          <div class="model-name"><em>Eclipse Switch</em></div>
+        </div>
+        <div class="model-card" onclick="toggleSwitch('eclipse-thermostat',this)">
+          <div class="img-slot" data-slot-id="IMG-25-eclipse-thermostat" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-25-ECLIPSE-THERMOSTAT</div><div class="img-slot-desc"><em>Eclipse Thermostat</em></div></div>
+          <div class="model-name"><em>Eclipse Thermostat</em></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brand 03: Control4 -->
+    <div class="brand-section">
+      <div class="brand-header">
+        <div class="img-slot" data-slot-id="IMG-26-control4-switches" style="aspect-ratio:1/1;">
+          <div class="img-slot-eyebrow">IMG-26-CONTROL4-SWITCHES</div>
+          <div class="img-slot-desc"><em>Control4 switch line</em></div>
+        </div>
+        <div>
+          <div class="brand-name">Control4</div>
+          <div class="brand-tagline"><em>Native to the platform.</em></div>
+        </div>
+      </div>
+      <div class="brand-models">
+        <div class="model-card" onclick="toggleSwitch('contemporary',this)">
+          <div class="img-slot" data-slot-id="IMG-27-contemporary" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-27-CONTEMPORARY</div><div class="img-slot-desc"><em>Contemporary switch</em></div></div>
+          <div class="model-name"><em>Contemporary</em></div>
+        </div>
+        <div class="model-card" onclick="toggleSwitch('lux',this)">
+          <div class="img-slot" data-slot-id="IMG-28-lux" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-28-LUX</div><div class="img-slot-desc"><em>Lux switch</em></div></div>
+          <div class="model-name"><em>Lux</em></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brand 04: Zetr -->
+    <div class="brand-section">
+      <div class="brand-header">
+        <div class="img-slot" data-slot-id="IMG-29-zetr" style="aspect-ratio:1/1;">
+          <div class="img-slot-eyebrow">IMG-29-ZETR</div>
+          <div class="img-slot-desc"><em>Zetr trimless installation</em></div>
+        </div>
+        <div>
+          <div class="brand-name">Zetr</div>
+          <div class="brand-tagline"><em>Trimless architecture. No plate, no frame.</em></div>
+        </div>
+      </div>
+      <div class="brand-models">
+        <div class="model-card" onclick="toggleSwitch('zetr-push',this)">
+          <div class="img-slot" data-slot-id="IMG-30-zetr-push" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-30-ZETR-PUSH</div><div class="img-slot-desc"><em>Zetr push button</em></div></div>
+          <div class="model-name"><em>Push Button</em></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brand 05: Ekinex -->
+    <div class="brand-section">
+      <div class="brand-header">
+        <div class="img-slot" data-slot-id="IMG-31-ekinex" style="aspect-ratio:1/1;">
+          <div class="img-slot-eyebrow">IMG-31-EKINEX</div>
+          <div class="img-slot-desc"><em>Ekinex Italian precision switches</em></div>
+        </div>
+        <div>
+          <div class="brand-name">Ekinex</div>
+          <div class="brand-tagline"><em>Italian precision. KNX native.</em></div>
+        </div>
+      </div>
+      <div class="brand-models">
+        <div class="model-card" onclick="toggleSwitch('20venti',this)">
+          <div class="img-slot" data-slot-id="IMG-32-20venti" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-32-20VENTI</div><div class="img-slot-desc"><em>20Venti</em></div></div>
+          <div class="model-name"><em>20Venti</em></div>
+        </div>
+        <div class="model-card" onclick="toggleSwitch('ff-series',this)">
+          <div class="img-slot" data-slot-id="IMG-33-ff-series" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-33-FF-SERIES</div><div class="img-slot-desc"><em>FF Series</em></div></div>
+          <div class="model-name"><em>FF Series</em></div>
+        </div>
+        <div class="model-card" onclick="toggleSwitch('proxima',this)">
+          <div class="img-slot" data-slot-id="IMG-34-proxima" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-34-PROXIMA</div><div class="img-slot-desc"><em>Proxima</em></div></div>
+          <div class="model-name"><em>Proxima</em></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brand 06: Standard Switching -->
+    <div class="brand-section">
+      <div class="brand-header">
+        <div class="img-slot" data-slot-id="IMG-35-standard" style="aspect-ratio:1/1;">
+          <div class="img-slot-eyebrow">IMG-35-STANDARD</div>
+          <div class="img-slot-desc"><em>Standard switch range, clean install</em></div>
+        </div>
+        <div>
+          <div class="brand-name">Standard Switching</div>
+          <div class="brand-tagline"><em>Considered essentials.</em></div>
+          <p style="font-size:11pt; margin-top:8px; line-height:1.5;">Standard switching choices that integrate cleanly with automation. Lower price point than the architectural ranges.</p>
+        </div>
+      </div>
+      <div class="brand-models">
+        <div class="model-card" onclick="toggleSwitch('clipsal-iconic',this)">
+          <div class="img-slot" data-slot-id="IMG-36-clipsal-iconic" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-36</div><div class="img-slot-desc"><em>Clipsal Iconic</em></div></div>
+          <div class="model-name"><em>Clipsal Iconic</em></div>
+        </div>
+        <div class="model-card" onclick="toggleSwitch('clipsal-solace',this)">
+          <div class="img-slot" data-slot-id="IMG-37-clipsal-solace" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-37</div><div class="img-slot-desc"><em>Clipsal Solace</em></div></div>
+          <div class="model-name"><em>Clipsal Solace</em></div>
+        </div>
+        <div class="model-card" onclick="toggleSwitch('clipsal-saturn-zen',this)">
+          <div class="img-slot" data-slot-id="IMG-38-clipsal-saturn-zen" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-38</div><div class="img-slot-desc"><em>Clipsal Saturn Zen</em></div></div>
+          <div class="model-name"><em>Clipsal Saturn Zen</em></div>
+        </div>
+        <div class="model-card" onclick="toggleSwitch('hager-silhouette',this)">
+          <div class="img-slot" data-slot-id="IMG-39-hager-silhouette" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-39</div><div class="img-slot-desc"><em>Hager Silhouette</em></div></div>
+          <div class="model-name"><em>Hager Silhouette</em></div>
+        </div>
+        <div class="model-card" onclick="toggleSwitch('hager-finesse',this)">
+          <div class="img-slot" data-slot-id="IMG-40-hager-finesse" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-40</div><div class="img-slot-desc"><em>Hager Finesse</em></div></div>
+          <div class="model-name"><em>Hager Finesse</em></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="step step-dark step-15">
-  <div class="step-content">
-    <div class="section-label">02 · Core Smart Home</div>
-    <h2><em>Eclipse.</em> Australian designed.</h2>
-    <p style="max-width:700px;">Core Smart Home's <em>Eclipse</em> range is the new benchmark for Australian designed keypads and thermostats. Switch and thermostat sit in the same family. Built for Australian homes by people who live in them.</p>
-    <p style="max-width:700px;"><em>Eclipse Thermostat.</em> Super knob control, custom backlit display, air quality measurement. The thermostat that does not need to hide.</p>
-    <p style="max-width:700px;"><em>Eclipse Switch.</em> One, two and four fold configurations with integrated sensors. Thirteen finishes. Brushed and silky matte, bronze through brass.</p>
-    <div class="button-row space-between" style="margin-top: 48px;">
-      <button class="btn-secondary" onclick="goToStep(13)">← Back to Switches</button>
-      <button class="btn-primary" onclick="goToStep(16)">Continue →</button>
+<!-- PAGE 6: STAGE 05 - Scenes (BOTH paths) -->
+<div class="page page-6">
+  <div class="container">
+    <div class="eyebrow">STAGE FIVE</div>
+    <div class="stage-numeral">05</div>
+    <h1 class="stage-headline">The magic is in the <em>moments.</em></h1>
+    <p id="scenesLead" class="stage-lead">A scene is one tap that changes the whole house. Lights dim, blinds drop, music starts. The power of automation is in these moments.</p>
+    <p style="font-size:13pt; margin-bottom:32px; line-height:1.6;">We design these with you, not for you. Below are the scenes we use most.</p>
+    <div class="scene-cards">
+      <div class="scene-card">
+        <div class="img-slot" data-slot-id="IMG-41-scene-welcome" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-41-SCENE-WELCOME</div><div class="img-slot-desc"><em>Home arrival, warm lighting, welcoming entrance</em></div></div>
+        <div class="scene-name"><em>Welcome home.</em></div>
+        <div class="scene-body">The house knows you've arrived.</div>
+      </div>
+      <div class="scene-card">
+        <div class="img-slot" data-slot-id="IMG-42-scene-cinema" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-42-SCENE-CINEMA</div><div class="img-slot-desc"><em>Home cinema, dim lights, screen active</em></div></div>
+        <div class="scene-name"><em>Cinema.</em></div>
+        <div class="scene-body">One tap and the room becomes a theatre.</div>
+      </div>
+      <div class="scene-card">
+        <div class="img-slot" data-slot-id="IMG-43-scene-goodnight" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-43-SCENE-GOODNIGHT</div><div class="img-slot-desc"><em>Bedroom night mode, lights off, secure home</em></div></div>
+        <div class="scene-name"><em>Goodnight.</em></div>
+        <div class="scene-body">Locks check, lights down, alarm armed.</div>
+      </div>
+      <div class="scene-card">
+        <div class="img-slot" data-slot-id="IMG-44-scene-morning" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-44-SCENE-MORNING</div><div class="img-slot-desc"><em>Morning, blinds open, warm sunrise light</em></div></div>
+        <div class="scene-name"><em>Morning.</em></div>
+        <div class="scene-body">Lights warm, blinds open, coffee on.</div>
+      </div>
+      <div class="scene-card">
+        <div class="img-slot" data-slot-id="IMG-45-scene-entertaining" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-45-SCENE-ENTERTAINING</div><div class="img-slot-desc"><em>Entertaining, outdoor lighting, guests, music</em></div></div>
+        <div class="scene-name"><em>Entertaining.</em></div>
+        <div class="scene-body">Whole-home audio, outdoor lighting, theatre standby.</div>
+      </div>
+      <div class="scene-card">
+        <div class="img-slot" data-slot-id="IMG-46-scene-away" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-46-SCENE-AWAY</div><div class="img-slot-desc"><em>Exterior, security cameras active, home away mode</em></div></div>
+        <div class="scene-name"><em>Away.</em></div>
+        <div class="scene-body">Random lights, security armed, alerts to your phone.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">What would matter most for your home?</label>
+      <textarea id="scenesNotes" class="form-textarea" placeholder="Tell us about the moments that would matter most. We'll design around them."></textarea>
+    </div>
+    <div class="checkbox-option" style="margin-top:16px;">
+      <input type="checkbox" id="recommendedScenes">
+      <span style="font-size:14pt;">Just give me your recommended scenes.</span>
     </div>
   </div>
 </div>
 
-<div class="step step-dark step-16" style="background-image: url('/images/control4-lux.jpg'); background-size: cover; background-position: center;">
-  <div class="step-content">
-    <div class="section-label">03 · Control4</div>
-    <h2><em>Contemporary</em> and <em>Lux.</em></h2>
-    <p style="max-width:700px;">Purpose built for the Control4 ecosystem. The tightest possible integration. Scenes, device control and feedback handled natively.</p>
-    <p style="max-width:700px;"><em>Contemporary.</em> Customisable, backlit buttons.</p>
-    <p style="max-width:700px;"><em>Lux.</em> Considered dimmer, clean modern faceplate.</p>
-    <div class="button-row space-between" style="margin-top: 48px;">
-      <button class="btn-secondary" onclick="goToStep(13)">← Back to Switches</button>
-      <button class="btn-primary" onclick="goToStep(17)">Continue →</button>
+<!-- PAGE 7: STAGE 06 - Systems (BOTH paths) -->
+<div class="page page-7">
+  <div class="container">
+    <div class="eyebrow">STAGE SIX</div>
+    <div class="stage-numeral">06</div>
+    <h1 class="stage-headline">Choose your <em>systems.</em></h1>
+    <p class="stage-subhead">Multi-select what you want included. We'll detail the right products for each in your proposal.</p>
+    <div id="systemsGrid" class="systems-grid"></div>
+  </div>
+</div>
+
+<!-- PAGE 8: STAGE 07 - Practical -->
+<div class="page page-8">
+  <div class="container">
+    <div class="eyebrow">STAGE SEVEN</div>
+    <div class="stage-numeral">07</div>
+    <h1 class="stage-headline">The <em>practical bit.</em></h1>
+
+    <div class="form-group">
+      <label class="form-label">Floor Plans</label>
+      <p style="font-size:13pt; margin-bottom:12px; line-height:1.5;">Send floor plans to <a href="mailto:enquiries@elecreid.com" style="color:var(--cobalt);">enquiries@elecreid.com</a> or note here that they're coming.</p>
+      <textarea id="floorPlans" class="form-textarea" placeholder="Floor plans coming via email, or note file locations here..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Project Timeframe</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="timeframe" value="asap" onchange="formData.timeframe='asap'"> ASAP</label>
+        <label class="radio-option"><input type="radio" name="timeframe" value="3months" onchange="formData.timeframe='3months'"> Next 3 months</label>
+        <label class="radio-option"><input type="radio" name="timeframe" value="6months" onchange="formData.timeframe='6months'"> Next 6 months</label>
+        <label class="radio-option"><input type="radio" name="timeframe" value="12months" onchange="formData.timeframe='12months'"> Next 12 months</label>
+        <label class="radio-option"><input type="radio" name="timeframe" value="exploring" onchange="formData.timeframe='exploring'"> Just exploring</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Who's involved?</label>
+      <div class="checkbox-group">
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleInvolved('architect',this)"> Architect</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleInvolved('builder',this)"> Builder</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleInvolved('interior-designer',this)"> Interior designer</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleInvolved('landscape-designer',this)"> Landscape designer</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleInvolved('homeowner-direct',this)"> None / homeowner direct</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Budget Bracket</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="budget" value="under50k" onchange="formData.budget='under50k'"> Under $50k</label>
+        <label class="radio-option"><input type="radio" name="budget" value="50-150k" onchange="formData.budget='50-150k'"> $50k to $150k</label>
+        <label class="radio-option"><input type="radio" name="budget" value="150-300k" onchange="formData.budget='150-300k'"> $150k to $300k</label>
+        <label class="radio-option"><input type="radio" name="budget" value="300-500k" onchange="formData.budget='300-500k'"> $300k to $500k</label>
+        <label class="radio-option"><input type="radio" name="budget" value="500k+" onchange="formData.budget='500k+'"> $500k+</label>
+        <label class="radio-option"><input type="radio" name="budget" value="guidance" onchange="formData.budget='guidance'"> Not sure yet, would like guidance</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Anything else?</label>
+      <textarea id="otherNotes" class="form-textarea" placeholder="Anything else we should know about your project..."></textarea>
+    </div>
+
+    <hr class="section-divider">
+    <p class="eyebrow" style="margin-bottom:24px;">Your details.</p>
+
+    <div class="form-grid-2">
+      <div class="form-group">
+        <label class="form-label">First name <span style="color:var(--cobalt);">*</span></label>
+        <input type="text" id="firstName" class="form-input" placeholder="Joe" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Last name</label>
+        <input type="text" id="lastName" class="form-input" placeholder="Reid">
+      </div>
+    </div>
+    <div class="form-grid-2">
+      <div class="form-group">
+        <label class="form-label">Phone</label>
+        <input type="tel" id="phone" class="form-input" placeholder="0450 342 075">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email <span style="color:var(--cobalt);">*</span></label>
+        <input type="email" id="email" class="form-input" placeholder="joe@example.com" required>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="step step-dark step-17">
-  <div class="step-content">
-    <div class="section-label">04 · Zetr</div>
-    <h2><em>Zetr.</em> Trimless architecture.</h2>
-    <p style="max-width:700px;">No plate. No frame. No visible edge. The switch disappears into the wall.</p>
-    <p style="max-width:700px;">Recessed into plasterboard during construction. Requires early coordination. The result is worth it.</p>
-    <div class="button-row space-between" style="margin-top: 48px;">
-      <button class="btn-secondary" onclick="goToStep(13)">← Back to Switches</button>
-      <button class="btn-primary" onclick="goToStep(18)">Continue →</button>
-    </div>
+<!-- PAGE 9: STAGE 08 - Discovery Call -->
+<div class="page page-9">
+  <div class="container">
+    <div class="eyebrow">STAGE EIGHT</div>
+    <div class="stage-numeral">08</div>
+    <h1 class="stage-headline">Let's <em>talk it through.</em></h1>
+    <p style="font-family:'Austin',serif; font-style:italic; font-size:22pt; line-height:1.4; margin-bottom:24px; max-width:640px;">Every Elec Reid project begins with a thirty-minute discovery call. No pressure, no sales pitch. A direct conversation about what will work for your home, what won't, and what it might cost.</p>
+    <p style="font-size:13pt; line-height:1.6; margin-bottom:32px;">Submit and we'll be in touch to schedule. Most calls happen within three business days.</p>
+    <div id="calendlyPlaceholder" class="calendly-placeholder">Calendly inline widget will go here once Joe provides URL</div>
   </div>
 </div>
 
-<div class="step step-dark step-18" style="background-image: url('/images/ekinex-proxima.jpg'); background-size: cover; background-position: center;">
-  <div class="step-content">
-    <div class="section-label">05 · Ekinex</div>
-    <h2><em>Ekinex.</em> Italian precision.</h2>
-    <p style="max-width:700px;">Three Ekinex ranges sit on our spec sheet. <em>20Venti</em> for the modular essentials. <em>FF Series</em> for the heavier brass framed look. <em>Proxima</em> as the flagship. KNX native across all three.</p>
-    <p style="max-width:700px;"><em>20Venti.</em> Touch switches, rockers, thermostats and room controllers in a vast palette of brushed metals, painted surfaces and special textures. The right choice for projects that want a modular, future proof, beautifully machined European standard.</p>
-    <p style="max-width:700px;"><em>Proxima.</em> Sharper bevels, deeper brushed finishes, a machined edge profile that catches light in a way no other keypad manages. Thirteen finishes including antique brass, satin bronze, rose gold and matte stainless.</p>
-    <div class="button-row space-between" style="margin-top: 48px;">
-      <button class="btn-secondary" onclick="goToStep(13)">← Back to Switches</button>
-      <button class="btn-primary" onclick="goToStep(19)">Continue →</button>
-    </div>
-  </div>
-</div>
-
-<div class="step step-dark step-19">
-  <div class="step-content">
-    <h2>Choose as many as you like.</h2>
-    <p>Mix and match throughout the home. Most projects use two or three families across different rooms.</p>
-    <div class="card-grid">
-      <div class="card selectable" style="background-image: url('/images/basalte-fibonacci.jpg');" onclick="toggleSwitch(this, 'Basalte Sentido')"><div class="card-checkbox"></div><div class="card-content"><div class="card-title">Basalte Sentido</div></div></div>
-      <div class="card selectable" style="background-image: url('/images/basalte-fibonacci.jpg');" onclick="toggleSwitch(this, 'Basalte Fibonacci')"><div class="card-checkbox"></div><div class="card-content"><div class="card-title">Basalte Fibonacci</div></div></div>
-      <div class="card selectable" style="background-color:#1a3a52;" onclick="toggleSwitch(this, 'Basalte Chopin')"><div class="card-checkbox"></div><div class="card-content"><div class="card-title">Basalte Chopin</div></div></div>
-      <div class="card selectable" style="background-color:#1a3a52;" onclick="toggleSwitch(this, 'Core Eclipse')"><div class="card-checkbox"></div><div class="card-content"><div class="card-title">Core Eclipse</div></div></div>
-      <div class="card selectable" style="background-color:#1a3a52;" onclick="toggleSwitch(this, 'Control4 Contemporary')"><div class="card-checkbox"></div><div class="card-content"><div class="card-title">Control4 Contemporary</div></div></div>
-      <div class="card selectable" style="background-image: url('/images/control4-lux.jpg');" onclick="toggleSwitch(this, 'Control4 Lux')"><div class="card-checkbox"></div><div class="card-content"><div class="card-title">Control4 Lux</div></div></div>
-      <div class="card selectable" style="background-color:#1a3a52;" onclick="toggleSwitch(this, 'Zetr')"><div class="card-checkbox"></div><div class="card-content"><div class="card-title">Zetr</div></div></div>
-      <div class="card selectable" style="background-image: url('/images/ekinex-20venti.jpg');" onclick="toggleSwitch(this, 'Ekinex 20 Venti')"><div class="card-checkbox"></div><div class="card-content"><div class="card-title">Ekinex 20 Venti</div></div></div>
-      <div class="card selectable" style="background-image: url('/images/ekinex-proxima.jpg');" onclick="toggleSwitch(this, 'Ekinex Proxima')"><div class="card-checkbox"></div><div class="card-content"><div class="card-title">Ekinex Proxima</div></div></div>
-    </div>
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-dark step-centred step-20">
-  <div class="step-content">
-    <h1>Nice.</h1>
-    <p class="subtitle">Now run through what you want integrated. Yes or no. We handle the rest.</p>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">Continue</button></div>
-  </div>
-</div>
-
-<div class="step step-dark step-21" style="background-image: url('/images/stkilda-1.jpg'); background-size: cover; background-position: center;">
-  <div class="step-content">
-    <div class="section-label">03 · Multi-Room Audio</div>
-    <h2>Music in every room.</h2>
-    <p>Three audio levels for each area of the home.</p>
-    <p><em>Level 1.</em> Background music. Enough to fill the room without dominating it.</p>
-    <p><em>Level 2.</em> Good and clear. Proper listening quality for everyday enjoyment.</p>
-    <p><em>Level 3.</em> Pumping. Full range, high fidelity sound for when you want to feel it.</p>
-    <p>Speakers visible or invisible. Invisible speakers are built into the ceiling or wall and plastered over. They disappear. Priced higher. The result is stunning.</p>
-    <p>Select a level for each area on the next slide. Leave rows blank to exclude.</p>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">Continue</button></div>
-  </div>
-</div>
-
-<div class="step step-dark step-22">
-  <div class="step-content">
-    <h2>Multi-Room Audio</h2>
-    <div class="audio-matrix">
-      <table class="matrix-table" id="audioMatrix">
-        <thead><tr><th style="width:160px;">Room</th><th style="width:80px;">Level 1</th><th style="width:80px;">Level 2</th><th style="width:80px;">Level 3</th><th style="width:120px;">Visible</th><th style="width:120px;">Invisible</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-split step-23">
-  <div class="step-content">
-    <div class="split-text">
-      <h2>Network and Wi-Fi.</h2>
-      <p>Architect grade <em>UniFi</em> networks. No dead zones. No dropouts. Hardwired backbone, wireless access points in every zone.</p>
-      <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'network','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'network','No')">No</button></div>
-      <div class="hint">press Enter ↵</div>
-      <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-    </div>
-    <div class="split-image" style="background-image: url('/images/haven-7.jpg');"></div>
-  </div>
-</div>
-
-<div class="step step-split step-24">
-  <div class="step-content">
-    <div class="split-text">
-      <h2>Smart lighting control.</h2>
-      <p>Scenes, schedules, dimming from your phone or switches. Come home to a house already set up the way you like it.</p>
-      <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'lighting','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'lighting','No')">No</button></div>
-      <div class="hint">press Enter ↵</div>
-      <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-    </div>
-    <div class="split-image" style="background-image: url('/images/haven-dsc05570.jpg');"></div>
-  </div>
-</div>
-
-<div class="step step-split step-25">
-  <div class="step-content">
-    <div class="split-text">
-      <h2>Motorised blinds and curtains.</h2>
-      <p>Blinds that open with your morning alarm and close when the sun hits. Integrated with lighting so the whole room works together.</p>
-      <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'blinds','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'blinds','No')">No</button></div>
-      <div class="hint">press Enter ↵</div>
-      <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-    </div>
-    <div class="split-image" style="background-image: url('/images/mckimm-3.jpg');"></div>
-  </div>
-</div>
-
-<div class="step step-split step-26">
-  <div class="step-content">
-    <div class="split-text">
-      <h2>Climate control.</h2>
-      <p>Heating, cooling and fans that adjust room by room. The house stays comfortable without you thinking about it.</p>
-      <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'climate','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'climate','No')">No</button></div>
-      <div class="hint">press Enter ↵</div>
-      <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-    </div>
-    <div class="split-image" style="background-image: url('/images/haven-6.jpg');"></div>
-  </div>
-</div>
-
-<div class="step step-split step-27">
-  <div class="step-content">
-    <div class="split-text">
-      <h2>Home theatre.</h2>
-      <p>One tap. The lights dim, the screen drops, the sound kicks in. We build cinema rooms that deliver.</p>
-      <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'theatre','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'theatre','No')">No</button></div>
-      <div class="hint">press Enter ↵</div>
-      <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-    </div>
-    <div class="split-image" style="background-image: url('/images/travancore-1.jpg');"></div>
-  </div>
-</div>
-
-<div class="step step-dark step-28">
-  <div class="step-content">
-    <h2>Security alarm system.</h2>
-    <p>Considered protection that does not get in the way of living in your home. Smart alerts to your phone. Arm and disarm remotely.</p>
-    <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'alarm','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'alarm','No')">No</button></div>
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-white step-29">
-  <div class="step-content">
-    <h2>Anything to tell us about security alarms?</h2>
-    <textarea id="alarmNotes" placeholder="Optional notes..."></textarea>
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-split step-30">
-  <div class="step-content">
-    <div class="split-text">
-      <h2>Security cameras.</h2>
-      <p><em>UniFi Protect</em> cameras. Locally recorded to your own NVR. No subscriptions, no cloud, no third party access to your footage.</p>
-      <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'cameras','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'cameras','No')">No</button></div>
-      <div class="hint">press Enter ↵</div>
-      <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-    </div>
-    <div class="split-image" style="background-image: url('/images/haven-7.jpg');"></div>
-  </div>
-</div>
-
-<div class="step step-white step-31">
-  <div class="step-content">
-    <h2>Any details about cameras?</h2>
-    <p>How many? Any specific areas?</p>
-    <textarea id="camerasNotes" placeholder="Optional notes..."></textarea>
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-dark step-32">
-  <div class="step-content">
-    <h2>Access control.</h2>
-    <p>Smart locks, video intercom, garage and gate control. See who is at the door and let them in from your phone, wherever you are.</p>
-    <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'access','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'access','No')">No</button></div>
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-split step-33">
-  <div class="step-content">
-    <div class="split-text">
-      <h2>Pool, spa and irrigation.</h2>
-      <p>Pool heating, filtration, spa jets, garden watering. Automated schedules, controllable from your phone.</p>
-      <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'poolSpa','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'poolSpa','No')">No</button></div>
-      <div class="hint">press Enter ↵</div>
-      <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-    </div>
-    <div class="split-image" style="background-image: url('/images/mckimm-1.jpg');"></div>
-  </div>
-</div>
-
-<div class="step step-white step-34">
-  <div class="step-content">
-    <h2>EV charger.</h2>
-    <p>Smart charger integrated with your energy system. Schedule for off peak rates. Tie into solar if you have panels.</p>
-    <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'evCharger','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'evCharger','No')">No</button></div>
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-white step-35">
-  <div class="step-content">
-    <h2>Weather station.</h2>
-    <p>Live weather data feeds into your home. Blinds close when it is hot. Lights adjust when it is overcast. The house reacts to what is happening outside.</p>
-    <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'weatherStation','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'weatherStation','No')">No</button></div>
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-white step-36">
-  <div class="step-content">
-    <h2>Video distribution.</h2>
-    <p>One source, every screen. Watch whatever you want, wherever you want. No extra boxes in each room.</p>
-    <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'videoDistribution','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'videoDistribution','No')">No</button></div>
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-white step-37">
-  <div class="step-content">
-    <h2>Solar.</h2>
-    <p>Panels, batteries, smart monitoring tied into your home system. See what you are generating, storing, using.</p>
-    <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'solar','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'solar','No')">No</button></div>
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-white step-38">
-  <div class="step-content">
-    <h2>Floor plans.</h2>
-    <p>If you have floor plans, they help us enormously. Send them to <a href="mailto:enquiries@elecreid.com">enquiries@elecreid.com</a> or note here that they are coming.</p>
-    <input type="text" id="floorPlans" placeholder="Optional notes...">
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-white step-39">
-  <div class="step-content">
-    <h2>Almost done. Anything else?</h2>
-    <p>Room counts, must haves, budget range. Whatever is on your mind.</p>
-    <textarea id="additionalNotes" placeholder="Optional notes..."></textarea>
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-white step-40">
-  <div class="step-content">
-    <h2>Would you like a discovery call?</h2>
-    <p>A call or site visit. No pressure. A direct conversation about what will work for your home.</p>
-    <div class="pill-group"><button class="pill" onclick="selectYesNo(this,'consultation','Yes')">Yes</button><button class="pill" onclick="selectYesNo(this,'consultation','No')">No</button></div>
-    <div class="hint">press Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="nextStep()">OK</button></div>
-  </div>
-</div>
-
-<div class="step step-dark step-41" style="background-image: url('/images/haven-1.jpg'); background-size: cover; background-position: center;">
-  <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(22,37,63,0.8);z-index:0;"></div>
-  <div class="step-content" style="position:relative;z-index:1;">
-    <h2>That's everything.</h2>
-    <p>Hit submit and we will get to work on your plan.</p>
-    <input type="text" id="finalNotes" placeholder="Any final questions? (optional)">
-    <div class="hint">press Cmd + Enter ↵</div>
-    <div class="button-row left"><button class="btn-primary" onclick="submitForm()">Submit</button></div>
-  </div>
-</div>
-
+<!-- THANK YOU OVERLAY -->
 <div id="thankYouOverlay">
-  <div class="thank-you-content">
-    <h1>Thank you.</h1>
-    <p>We have everything we need. We will be in touch with a tailored proposal and clear next steps.</p>
-    <p style="margin-top:16px;font-style:italic;font-family:'Austin','Playfair Display',Georgia,serif;color:#0134E7;">Designed for you. Done right. Always.</p>
-    <p style="margin-top:32px;"><a href="/">Back to Elec Reid →</a></p>
-  </div>
+  <div class="ty-headline">Thank <em>you.</em></div>
+  <div class="ty-body">Your plan is in our hands. We'll be in touch within three business days to schedule your discovery call.</div>
+  <div class="ty-slogan">Designed for you. Done right. Always.</div>
 </div>
 
-<!-- Submission handled via /api/submit (Vercel API route). No third-party dependency. -->
-
-<div class="nav-bar">
-  <div class="step-counter"><span id="stepNum">1</span> / <span id="totalSteps">42</span></div>
-  <div class="nav-arrows">
-    <button class="nav-arrow" id="navUp" onclick="prevStep()" title="Previous">↑</button>
-    <button class="nav-arrow" id="navDown" onclick="nextStep()" title="Next">↓</button>
-  </div>
+<!-- BOTTOM NAV -->
+<div class="bottom-nav" id="bottomNav" style="display:none;">
+  <button class="nav-btn" id="navBack" onclick="prevPage()">&#8592; Back</button>
+  <div class="nav-counter" id="navCounter">Stage 1 of 9</div>
+  <button class="nav-btn primary btn-submit" id="navForward" onclick="nextPage()">Continue &#8594;</button>
 </div>
 
 <script>
-let currentStep = 0;
-const totalSteps = 42;
 const formData = {
-  firstName:'',lastName:'',phone:'',email:'',projectLocation:'',projectTimeframe:'',
-  automationSystem:'',interactiveScreens:[],switches:[],audioRooms:[],
-  network:'',lighting:'',blinds:'',climate:'',theatre:'',alarm:'',alarmNotes:'',
-  cameras:'',camerasNotes:'',access:'',poolSpa:'',evCharger:'',weatherStation:'',
-  videoDistribution:'',solar:'',floorPlans:'',additionalNotes:'',consultation:'',finalNotes:''
+  projectType: '',
+  moods: [],
+  platform: '',
+  screens: [],
+  switches: [],
+  systems: [],
+  motionSensorDetail: '',
+  timeframe: '',
+  involved: [],
+  budget: ''
 };
-const viewedAutomation = new Set();
-const viewedSwitches = new Set();
-const audioRooms = [
-  'Main Living', 'Family Room', 'Sitting Room', 'Rumpus', 'Kitchen', 'Dining',
-  'Master Bedroom', 'Bedroom 2', 'Bedroom 3', 'Bedroom 4', 'Ensuite', 'Bathroom',
-  'Powder Room', 'Laundry', 'Study/Office', 'Library', 'Media Room', 'Gym',
-  'Garage', 'Alfresco/Patio', 'Backyard', 'Pool Area'
+
+let currentPage = 0;
+const totalPages = 10;
+
+const allSystems = [
+  { id:'network', name:'Network and Wi-Fi', body:'Architect-grade UniFi networks. No dead zones.', slot:'IMG-47-network', desc:'UniFi network rack, clean install', motion:false },
+  { id:'audio', name:'Whole-home audio + speakers', body:'Music in every room. Visible or invisible speakers.', slot:'IMG-48-audio', desc:'In-ceiling speakers, whole home audio', motion:false },
+  { id:'tvs', name:'TVs (with Apple TV at each)', body:'Each TV gets an Apple TV. Native control. No automation remotes needed.', slot:'IMG-49-tvs', desc:'Living room TV, Apple TV setup', motion:false },
+  { id:'cinema', name:'Cinema room', body:'The one place we use automation remotes. One tap, everything goes.', slot:'IMG-50-cinema', desc:'Home cinema room, projector, acoustic panels', motion:false },
+  { id:'motion', name:'Motion and presence sensors', body:'The quiet intelligence behind every great smart home.', slot:'IMG-51-motion', desc:'Presence sensor, ceiling mount, minimal', motion:true },
+  { id:'lighting', name:'Smart lighting', body:'Scenes, schedules, dimming. Architectural lighting that responds.', slot:'IMG-52-lighting', desc:'Architectural lighting scene, warm tones', motion:false },
+  { id:'blinds', name:'Motorised blinds and curtains', body:'Blinds that open with the morning. Close when the sun hits.', slot:'IMG-53-blinds', desc:'Motorised blinds, natural light control', motion:false },
+  { id:'climate', name:'Climate / AC integration', body:'Heating, cooling, fans. Room by room.', slot:'IMG-54-climate', desc:'Climate control panel, AC integration', motion:false },
+  { id:'underfloor', name:'Underfloor heating control', body:'Hydronic or electric. Zoned, scheduled, integrated.', slot:'IMG-55-underfloor', desc:'Underfloor heating, radiant warmth', motion:false },
+  { id:'geothermal', name:'Geothermal', body:'The most efficient climate system you can install.', slot:'IMG-56-geothermal', desc:'Geothermal installation, ground source', motion:false },
+  { id:'alarm', name:'Alarm system', body:'Considered protection. Smart alerts. Arm and disarm remotely.', slot:'IMG-57-alarm', desc:'Security alarm panel, smart home', motion:false },
+  { id:'intercom', name:'Intercom', body:'Video intercom integrated with the home.', slot:'IMG-58-intercom', desc:'Video intercom, front door entry', motion:false },
+  { id:'cameras', name:'Cameras (UniFi Protect)', body:'Locally recorded. No subscriptions, no cloud, no third-party access.', slot:'IMG-59-cameras', desc:'UniFi camera, exterior mounted', motion:false },
+  { id:'pool', name:'Pool automation', body:'Heating, filtration, lighting. Scheduled or on demand.', slot:'IMG-60-pool', desc:'Automated pool, smart home integration', motion:false },
+  { id:'spa', name:'Spa', body:'Heat the spa from your phone before you get home.', slot:'IMG-61-spa', desc:'Outdoor spa, remote preheat', motion:false },
+  { id:'irrigation', name:'Irrigation', body:'Smart watering tied to the weather station.', slot:'IMG-62-irrigation', desc:'Smart irrigation, garden watering', motion:false },
+  { id:'ev', name:'EV charger', body:'Smart charger integrated with solar and energy systems.', slot:'IMG-63-ev', desc:'EV charger, garage wall mount', motion:false },
+  { id:'solar', name:'Solar and battery', body:'Generation, storage, monitoring. All integrated.', slot:'IMG-64-solar', desc:'Solar panels and battery storage', motion:false },
+  { id:'weather', name:'Weather station', body:'Live data feeds into your home. Blinds and lights respond.', slot:'IMG-65-weather', desc:'Weather station, rooftop mount', motion:false }
 ];
+const essentialsSystemIds = ['network','audio','tvs','cinema','alarm','intercom','cameras','pool','ev','solar'];
 
-document.addEventListener('DOMContentLoaded', function() {
-  showStep(0);
-  initializeAudioMatrix();
-  updateProgressBar();
-  setupKeyboardNavigation();
-});
-
-function initializeAudioMatrix() {
-  const tbody = document.querySelector('#audioMatrix tbody');
-  audioRooms.forEach(room => {
-    const row = document.createElement('tr');
-    row.innerHTML = '<td>' + room + '</td>' +
-      '<td><div class="radio-group"><div class="radio-circle" onclick="selectAudioLevel(this,\'' + room + '\',1)"></div></div></td>' +
-      '<td><div class="radio-group"><div class="radio-circle" onclick="selectAudioLevel(this,\'' + room + '\',2)"></div></div></td>' +
-      '<td><div class="radio-group"><div class="radio-circle" onclick="selectAudioLevel(this,\'' + room + '\',3)"></div></div></td>' +
-      '<td><div class="radio-group"><div class="radio-circle" onclick="selectAudioVisibility(this,\'' + room + '\',\'visible\')"></div></div></td>' +
-      '<td><div class="radio-group"><div class="radio-circle" onclick="selectAudioVisibility(this,\'' + room + '\',\'invisible\')"></div></div></td>';
-    tbody.appendChild(row);
-  });
+function buildSystemsGrid() {
+  const grid = document.getElementById('systemsGrid');
+  const list = formData.projectType === 'essentials'
+    ? allSystems.filter(s => essentialsSystemIds.includes(s.id))
+    : allSystems;
+  grid.innerHTML = list.map(s => `
+    <div class="system-card" id="sys-${s.id}" onclick="toggleSystem('${s.id}',this)">
+      <div class="img-slot" data-slot-id="${s.slot}" style="aspect-ratio:4/3;">
+        <div class="img-slot-eyebrow">${s.slot.toUpperCase()}</div>
+        <div class="img-slot-desc"><em>${s.desc}</em></div>
+      </div>
+      <div class="system-name"><em>${s.name}</em></div>
+      <div class="system-body">${s.body}</div>
+      ${s.motion ? `<div class="motion-detail">
+        <div class="platform-field-label" style="margin-bottom:8px;">HOW THOROUGHLY?</div>
+        <label class="radio-option" style="margin-bottom:6px;"><input type="radio" name="motionDetail" value="essential" onclick="event.stopPropagation();formData.motionSensorDetail='essential'"> Essential</label>
+        <label class="radio-option" style="margin-bottom:6px;"><input type="radio" name="motionDetail" value="considered" onclick="event.stopPropagation();formData.motionSensorDetail='considered'"> Considered</label>
+        <label class="radio-option"><input type="radio" name="motionDetail" value="comprehensive" onclick="event.stopPropagation();formData.motionSensorDetail='comprehensive'"> Comprehensive</label>
+      </div>` : ''}
+    </div>
+  `).join('');
 }
 
-function setupKeyboardNavigation() {
-  document.addEventListener('keydown', function(e) {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-      if (currentStep === 41) { e.preventDefault(); submitForm(); }
-      return;
+function buildScreenOptions() {
+  const container = document.getElementById('screenOptions');
+  const p = formData.platform;
+  let screens = [];
+  if (p === 'apple' || p === 'homeassistant') {
+    screens = [
+      { id:'ipad-large', name:'iPad (12.9")', desc:'Surface or recessed mount.', slot:'IMG-11-ipad-large', imgDesc:'iPad 12.9 inch, wall mount, home control' },
+      { id:'ipad-mini', name:'iPad mini (8.3")', desc:'Smaller for room control.', slot:'IMG-12-ipad-small', imgDesc:'iPad mini, room control panel' }
+    ];
+    if (p === 'homeassistant') {
+      screens.push({ id:'samsung', name:'Samsung tablet', desc:'Android alternative for Home Assistant.', slot:'IMG-13-samsung', imgDesc:'Samsung tablet, home assistant dashboard' });
     }
-    if (e.key === 'Enter') {
-      if (document.activeElement && document.activeElement.tagName === 'TEXTAREA') {
-        if (e.shiftKey) return;
-        e.preventDefault(); nextStep(); return;
-      }
-      e.preventDefault(); nextStep();
-    } else if (e.key === 'ArrowUp') { e.preventDefault(); prevStep(); }
-    else if (e.key === 'ArrowDown') { e.preventDefault(); nextStep(); }
-  });
-}
-
-function showStep(n) {
-  if (n >= totalSteps) n = totalSteps - 1;
-  if (n < 0) n = 0;
-  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.step')[n].classList.add('active');
-  currentStep = n;
-  updateProgressBar();
-  updateStepCounter();
-  window.scrollTo(0,0);
-}
-
-function goToStep(n) {
-  if (n===7) viewedAutomation.add('Apple Home');
-  if (n===8) viewedAutomation.add('Home Assistant');
-  if (n===9) viewedAutomation.add('Control4');
-  if (n===10) viewedAutomation.add('Basalte Home');
-  if (n===14) viewedSwitches.add('Basalte');
-  if (n===15) viewedSwitches.add('Core Eclipse');
-  if (n===16) viewedSwitches.add('Control4');
-  if (n===17) viewedSwitches.add('Zetr');
-  if (n===18) viewedSwitches.add('Ekinex');
-  showStep(n);
-  updateHubBadges();
-}
-
-function updateHubBadges() {
-  const automationCards = document.querySelectorAll('.step-6 .card');
-  const titles6 = ['Apple Home','Home Assistant','Basalte Home','Control4'];
-  automationCards.forEach((card,idx) => {
-    card.classList.toggle('viewed', viewedAutomation.has(titles6[idx]));
-  });
-  const switchCards = document.querySelectorAll('.step-13 .card');
-  const titles13 = ['Basalte','Core Eclipse','Control4','Zetr','Ekinex'];
-  switchCards.forEach((card,idx) => {
-    card.classList.toggle('viewed', viewedSwitches.has(titles13[idx]));
-  });
-}
-
-function nextStep() { showStep(currentStep + 1); }
-function prevStep() { showStep(currentStep - 1); }
-
-function updateProgressBar() {
-  document.getElementById('progressBar').style.width = ((currentStep / (totalSteps-1)) * 100) + '%';
-}
-function updateStepCounter() {
-  document.getElementById('stepNum').textContent = currentStep + 1;
-}
-
-function selectAutomation(card, system) {
-  document.querySelectorAll('.step-11 .card').forEach(c => c.classList.remove('selected'));
-  card.classList.add('selected');
-  formData.automationSystem = system;
-  updateScreenOptions();
-}
-
-function updateScreenOptions() {
-  const system = formData.automationSystem;
-  const el = document.getElementById('screenContent');
-  let html = '<div class="card-grid">';
-  const screens = {
-    'Apple Home': [
-      {title:'Apple iPad, surface mounted', desc:'Wall mounted in a considered enclosure. iPad running Apple Home.'},
-      {title:'Apple iPad, recessed mounted', desc:'Flush into the wall. iPad running Apple Home.'}
-    ],
-    'Home Assistant': [
-      {title:'Samsung Tablet, surface mounted', desc:'Wall mounted Android tablet running Home Assistant dashboard.'},
-      {title:'Samsung Tablet, recessed mounted', desc:'Flush into the wall. Android tablet running Home Assistant.'},
-      {title:'Apple iPad, surface mounted', desc:'iPads work beautifully with the Home Assistant companion app.'},
-      {title:'Apple iPad, recessed mounted', desc:'Flush mounted iPad for Home Assistant.'}
-    ],
-    'Control4': [
-      {title:'Control4 T5, surface mounted', desc:'Purpose built for Control4 with a responsive interface.'},
-      {title:'Control4 T5, recessed mounted', desc:'Flush into the wall. Purpose built for Control4.'}
-    ],
-    'Basalte Home': [
-      {title:'Basalte Ellie', desc:'A 7" capacitive touchscreen. Brushed brass, matte black, or white.'},
-      {title:'Basalte Lisa', desc:'A compact 4.3" touchscreen. Same flush-mount precision.'},
-      {title:'Basalte Lena', desc:'A 10" widescreen touchscreen for full home control.'}
-    ]
-  };
-  const list = screens[system] || [];
-  list.forEach(s => {
-    html += '<div class="card selectable" style="background-color:#1a3a52;" onclick="toggleScreen(this,\'' + s.title + '\')">' +
-      '<div class="card-checkbox"></div>' +
-      '<div class="card-content"><div class="card-title">' + s.title + '</div><p style="font-size:12px;margin:8px 0 0 0;">' + s.desc + '</p></div>' +
-      '</div>';
-  });
-  if (!list.length) html += '<p>Select a control system first and we will show you the available screen options.</p>';
-  el.innerHTML = html + '</div>';
-}
-
-function toggleScreen(card, screen) {
-  card.classList.toggle('selected');
-  if (card.classList.contains('selected')) {
-    if (!formData.interactiveScreens.includes(screen)) formData.interactiveScreens.push(screen);
+  } else if (p === 'control4') {
+    screens = [
+      { id:'t5-large', name:'T5 (10")', desc:'T5 is the Control4 native touchscreen, locked to the Control4 platform.', slot:'IMG-14-t5-large', imgDesc:'Control4 T5 10 inch touchscreen' },
+      { id:'t5-small', name:'T5 (8")', desc:'Smaller T5 for room control.', slot:'IMG-15-t5-small', imgDesc:'Control4 T5 8 inch touchscreen' }
+    ];
+  } else if (p === 'basalte') {
+    screens = [
+      { id:'lena', name:'Lena (10")', desc:'Basalte touchscreens require Basalte Home. The hardware and software are designed together.', slot:'IMG-16-lena', imgDesc:'Basalte Lena 10 inch touchscreen' },
+      { id:'ellie', name:'Ellie (5.7")', desc:'Mid-size for bedroom or hallway.', slot:'IMG-17-ellie', imgDesc:'Basalte Ellie 5.7 inch touchscreen' },
+      { id:'lisa', name:'Lisa (4.3")', desc:'Compact room controller.', slot:'IMG-18-lisa', imgDesc:'Basalte Lisa 4.3 inch touchscreen' }
+    ];
   } else {
-    formData.interactiveScreens = formData.interactiveScreens.filter(s => s !== screen);
+    screens = [
+      { id:'ipad-large', name:'iPad (12.9")', desc:'Surface or recessed mount.', slot:'IMG-11-ipad-large', imgDesc:'iPad 12.9 inch, wall mount, home control' },
+      { id:'ipad-mini', name:'iPad mini (8.3")', desc:'Smaller for room control.', slot:'IMG-12-ipad-small', imgDesc:'iPad mini, room control panel' }
+    ];
+  }
+  container.innerHTML = screens.map(s => `
+    <div class="screen-card ${formData.screens.includes(s.id)?'selected':''}" onclick="toggleScreen('${s.id}',this)">
+      <div class="img-slot" data-slot-id="${s.slot}" style="aspect-ratio:4/3;">
+        <div class="img-slot-eyebrow">${s.slot.toUpperCase()}</div>
+        <div class="img-slot-desc"><em>${s.imgDesc}</em></div>
+      </div>
+      <div class="screen-card-name"><em>${s.name}</em></div>
+      <div class="screen-card-body">${s.desc}</div>
+    </div>
+  `).join('');
+}
+
+function showPage(n) {
+  if (formData.projectType === 'essentials' && n >= 2 && n <= 5) {
+    n = 6;
+  }
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.querySelector('.page-' + n);
+  if (target) target.classList.add('active');
+  currentPage = n;
+
+  if (n === 4) buildScreenOptions();
+  if (n === 7) buildSystemsGrid();
+  if (n === 6) {
+    const lead = document.getElementById('scenesLead');
+    if (formData.projectType === 'essentials') {
+      lead.textContent = "Scenes are simpler at the essentials level, typically just music and lighting groupings. Tell us what you'd want or pick the recommended option.";
+    } else {
+      lead.innerHTML = "A scene is one tap that changes the whole house. Lights dim, blinds drop, music starts. The power of automation is in these moments.";
+    }
+  }
+
+  document.getElementById('bottomNav').style.display = n === 0 ? 'none' : 'flex';
+  updateNavBar();
+  window.scrollTo(0, 0);
+}
+
+function nextPage() {
+  let next = currentPage + 1;
+  if (formData.projectType === 'essentials' && next >= 2 && next <= 5) {
+    next = 6;
+  }
+  if (next < totalPages) showPage(next);
+  else if (currentPage === totalPages - 1) submitForm();
+}
+
+function prevPage() {
+  let prev = currentPage - 1;
+  if (formData.projectType === 'essentials' && prev >= 2 && prev <= 5) {
+    prev = 1;
+  }
+  if (prev >= 0) showPage(prev);
+}
+
+function updateNavBar() {
+  const back = document.getElementById('navBack');
+  const forward = document.getElementById('navForward');
+  const counter = document.getElementById('navCounter');
+  if (back) back.disabled = currentPage <= 1;
+  if (forward) {
+    if (currentPage === totalPages - 1) {
+      forward.textContent = 'Send my plan';
+    } else {
+      forward.textContent = 'Continue \u2192';
+    }
+  }
+  if (counter) {
+    const stage = currentPage > 0 ? currentPage : 1;
+    counter.textContent = 'Stage ' + stage + ' of ' + (totalPages - 1);
   }
 }
 
-function toggleSwitch(card, sw) {
-  card.classList.toggle('selected');
-  if (card.classList.contains('selected')) {
-    if (!formData.switches.includes(sw)) formData.switches.push(sw);
-  } else {
-    formData.switches = formData.switches.filter(s => s !== sw);
-  }
+function selectProjectType(type, el) {
+  formData.projectType = type;
+  document.querySelectorAll('.page-1 .card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  setTimeout(() => showPage(2), 240);
 }
 
-function selectAudioLevel(circle, room, level) {
-  const row = circle.closest('tr');
-  row.querySelectorAll('td:nth-child(2) .radio-circle, td:nth-child(3) .radio-circle, td:nth-child(4) .radio-circle').forEach(c => c.classList.remove('selected'));
-  circle.classList.add('selected');
-  const rd = formData.audioRooms.find(r => r.room === room);
-  if (rd) rd.level = level; else formData.audioRooms.push({room,level,visibility:''});
+function toggleMood(mood, el) {
+  el.classList.toggle('selected');
+  const idx = formData.moods.indexOf(mood);
+  if (idx === -1) formData.moods.push(mood);
+  else formData.moods.splice(idx, 1);
 }
 
-function selectAudioVisibility(circle, room, visibility) {
-  const row = circle.closest('tr');
-  row.querySelectorAll('td:nth-child(5) .radio-circle, td:nth-child(6) .radio-circle').forEach(c => c.classList.remove('selected'));
-  circle.classList.add('selected');
-  const rd = formData.audioRooms.find(r => r.room === room);
-  if (rd) rd.visibility = visibility; else formData.audioRooms.push({room,level:'',visibility});
+function selectPlatform(platform, el) {
+  formData.platform = platform;
+  document.querySelectorAll('.platform-section').forEach(s => s.classList.remove('selected'));
+  el.classList.add('selected');
+  const radio = el.querySelector('input[type=radio]');
+  if (radio) radio.checked = true;
 }
 
-function selectYesNo(button, field, value) {
-  button.parentElement.querySelectorAll('.pill').forEach(p => p.classList.remove('selected'));
-  button.classList.add('selected');
-  formData[field] = value;
+function toggleScreen(id, el) {
+  el.classList.toggle('selected');
+  const idx = formData.screens.indexOf(id);
+  if (idx === -1) formData.screens.push(id);
+  else formData.screens.splice(idx, 1);
+}
+
+function toggleSwitch(id, el) {
+  el.classList.toggle('selected');
+  const idx = formData.switches.indexOf(id);
+  if (idx === -1) formData.switches.push(id);
+  else formData.switches.splice(idx, 1);
+}
+
+function toggleSystem(id, el) {
+  el.classList.toggle('selected');
+  const idx = formData.systems.indexOf(id);
+  if (idx === -1) formData.systems.push(id);
+  else formData.systems.splice(idx, 1);
+}
+
+function toggleInvolved(val, el) {
+  const idx = formData.involved.indexOf(val);
+  if (el.checked && idx === -1) formData.involved.push(val);
+  else if (!el.checked && idx !== -1) formData.involved.splice(idx, 1);
 }
 
 async function submitForm() {
-  formData.firstName = document.getElementById('firstName').value;
-  formData.lastName = document.getElementById('lastName').value;
-  formData.phone = document.getElementById('phone').value;
-  formData.email = document.getElementById('email').value;
-  formData.projectLocation = document.getElementById('projectLocation').value;
-  formData.projectTimeframe = document.getElementById('projectTimeframe').value;
-  formData.alarmNotes = document.getElementById('alarmNotes').value;
-  formData.camerasNotes = document.getElementById('camerasNotes').value;
-  formData.floorPlans = document.getElementById('floorPlans').value;
-  formData.additionalNotes = document.getElementById('additionalNotes').value;
-  formData.finalNotes = document.getElementById('finalNotes').value;
-
-  if (!formData.firstName || !formData.email) {
-    showStep(1);
-    document.getElementById('firstNameError').textContent = formData.firstName ? '' : 'First name is required';
-    document.getElementById('emailError').textContent = formData.email ? '' : 'Email is required';
+  const payload = {
+    projectType: formData.projectType,
+    moods: formData.moods || [],
+    platform: formData.platform || '',
+    screens: formData.screens || [],
+    switches: formData.switches || [],
+    scenesNotes: document.getElementById('scenesNotes')?.value || '',
+    recommendedScenes: document.getElementById('recommendedScenes')?.checked || false,
+    systems: formData.systems || [],
+    motionSensorDetail: formData.motionSensorDetail || '',
+    floorPlans: document.getElementById('floorPlans')?.value || '',
+    timeframe: formData.timeframe || '',
+    involved: formData.involved || [],
+    budget: formData.budget || '',
+    otherNotes: document.getElementById('otherNotes')?.value || '',
+    firstName: document.getElementById('firstName').value,
+    lastName: document.getElementById('lastName').value,
+    phone: document.getElementById('phone').value,
+    email: document.getElementById('email').value,
+  };
+  if (!payload.firstName || !payload.email) {
+    alert('Please provide your first name and email on the previous page.');
     return;
   }
-
-  // Flatten arrays into strings for backend storage
-  const payload = Object.assign({}, formData, {
-    interactiveScreens: (formData.interactiveScreens || []).join(', '),
-    switches: (formData.switches || []).join(', '),
-    audioRooms: (formData.audioRooms || []).filter(r=>r.level||r.visibility).map(r=>r.room+': Level '+(r.level||'N/A')+', '+(r.visibility||'N/A')).join(' | ')
-  });
-
-  // Show submitting state by disabling the submit button (in case of network delay)
-  const submitBtn = document.querySelector('.step-41 .btn-primary');
+  const submitBtn = document.querySelector('.btn-submit');
   if (submitBtn) { submitBtn.textContent = 'Sending...'; submitBtn.disabled = true; }
-
   try {
     const res = await fetch('/api/submit', {
       method: 'POST',
@@ -949,17 +1126,14 @@ async function submitForm() {
       body: JSON.stringify(payload)
     });
     if (!res.ok) {
-      const err = await res.text();
-      console.error('Submission failed:', res.status, err);
-      alert('There was a problem sending your enquiry. Please email enquiries@elecreid.com directly, or call 0450 342 075. Sorry about that.');
-      if (submitBtn) { submitBtn.textContent = 'Submit'; submitBtn.disabled = false; }
+      alert('There was a problem sending your plan. Please email enquiries@elecreid.com directly, or call 0450 342 075.');
+      if (submitBtn) { submitBtn.textContent = 'Send my plan'; submitBtn.disabled = false; }
       return;
     }
     document.getElementById('thankYouOverlay').classList.add('show');
   } catch (e) {
-    console.error('Network error:', e);
     alert('Network error. Please email enquiries@elecreid.com or call 0450 342 075.');
-    if (submitBtn) { submitBtn.textContent = 'Submit'; submitBtn.disabled = false; }
+    if (submitBtn) { submitBtn.textContent = 'Send my plan'; submitBtn.disabled = false; }
   }
 }
 </script>
