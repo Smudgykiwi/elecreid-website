@@ -323,7 +323,7 @@ html, body {
   color: #fff;
   padding: 12px 28px;
 }
-.nav-btn.primary:hover { background: var(--espresso); }
+.nav-btn.primary:hover { background: #001E8A; }
 .nav-counter {
   font-family: 'Circular', sans-serif;
   font-size: 10pt;
@@ -375,7 +375,7 @@ html, body {
   align-self: flex-start;
   margin-bottom: auto;
 }
-.cover-begin-btn:hover { background: var(--espresso); }
+.cover-begin-btn:hover { background: #001E8A; }
 .cover-footer { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 48px; }
 .cover-slogan { font-family: 'Austin', serif; font-style: italic; font-size: 16pt; color: var(--cobalt); }
 .cover-edition { font-family: 'Circular', sans-serif; font-size: 10pt; color: var(--grey-mid); letter-spacing: 0.1em; text-transform: uppercase; }
@@ -2008,7 +2008,10 @@ function selectProjectType(type, el) {
   formData.projectType = type;
   document.querySelectorAll('.page-1 .card').forEach(c => c.classList.remove('selected'));
   el.classList.add('selected');
-  setTimeout(() => showPage(2), 240);
+  // For essentials, skip Stages 01-05 and go straight to Systems (page 7)
+  // For full or unsure, go to Stage 01 (Mood, page 2)
+  const next = type === 'essentials' ? 7 : 2;
+  setTimeout(() => showPage(next), 240);
 }
 
 function toggleMood(mood, el) {
