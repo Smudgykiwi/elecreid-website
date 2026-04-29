@@ -983,10 +983,17 @@ function buildScreenOptions() {
   `).join('');
 }
 
-function showPage(n) {
-  if (formData.projectType === 'essentials' && n >= 2 && n <= 5) {
-    n = 6;
+// For essentials path, skip pages 2-6 (mood, platform, screens, switches, scenes)
+// Scenes are an automation feature, not relevant to standalone systems.
+function skipForEssentials(n) {
+  if (formData.projectType === 'essentials' && n >= 2 && n <= 6) {
+    return 7; // jump straight to systems
   }
+  return n;
+}
+
+function showPage(n) {
+  n = skipForEssentials(n);
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const target = document.querySelector('.page-' + n);
   if (target) target.classList.add('active');
@@ -996,11 +1003,7 @@ function showPage(n) {
   if (n === 7) buildSystemsGrid();
   if (n === 6) {
     const lead = document.getElementById('scenesLead');
-    if (formData.projectType === 'essentials') {
-      lead.textContent = "Scenes are simpler at the essentials level, typically just music and lighting groupings. Tell us what you'd want or pick the recommended option.";
-    } else {
-      lead.innerHTML = "A scene is one tap that changes the whole house. Lights dim, blinds drop, music starts. The power of automation is in these moments.";
-    }
+    if (lead) lead.innerHTML = "A scene is one tap that changes the whole house. Lights dim, blinds drop, music starts. The power of automation is in these moments.";
   }
 
   document.getElementById('bottomNav').style.display = n === 0 ? 'none' : 'flex';
@@ -1010,16 +1013,15 @@ function showPage(n) {
 
 function nextPage() {
   let next = currentPage + 1;
-  if (formData.projectType === 'essentials' && next >= 2 && next <= 5) {
-    next = 6;
-  }
+  next = skipForEssentials(next);
   if (next < totalPages) showPage(next);
   else if (currentPage === totalPages - 1) submitForm();
 }
 
 function prevPage() {
   let prev = currentPage - 1;
-  if (formData.projectType === 'essentials' && prev >= 2 && prev <= 5) {
+  // When going backward in essentials path, jump from systems back to project type
+  if (formData.projectType === 'essentials' && prev >= 2 && prev <= 6) {
     prev = 1;
   }
   if (prev >= 0) showPage(prev);
@@ -1038,8 +1040,15 @@ function updateNavBar() {
     }
   }
   if (counter) {
-    const stage = currentPage > 0 ? currentPage : 1;
-    counter.textContent = 'Stage ' + stage + ' of ' + (totalPages - 1);
+    if (formData.projectType === 'essentials') {
+      // Essentials: cover → 1 (project type) → 7 (systems) → 8 (practical) → 9 (call) = 4 stages
+      const essentialsMap = { 1: 1, 7: 2, 8: 3, 9: 4 };
+      const stage = essentialsMap[currentPage] || 1;
+      counter.textContent = 'Stage ' + stage + ' of 4';
+    } else {
+      const stage = currentPage > 0 ? currentPage : 1;
+      counter.textContent = 'Stage ' + stage + ' of ' + (totalPages - 1);
+    }
   }
 }
 
