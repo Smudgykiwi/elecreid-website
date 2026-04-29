@@ -200,6 +200,60 @@ html, body {
 .motion-detail { display: none; margin-top: 12px; border-top: 1px solid var(--grey); padding-top: 12px; }
 .system-card.selected .motion-detail { display: block; }
 
+/* ===== STAGE 06B DEEP DIVE STYLES ===== */
+.room-matrix { width:100%; border-collapse:collapse; margin-bottom:24px; }
+.room-matrix th { font-family:'Circular',sans-serif; font-weight:700; font-size:8pt; letter-spacing:0.15em; text-transform:uppercase; color:var(--cobalt); padding:10px 12px; text-align:center; border-bottom:2px solid var(--grey); }
+.room-matrix th:first-child { text-align:left; min-width:140px; }
+.room-matrix td { padding:10px 12px; border-bottom:1px solid var(--grey); font-size:12pt; text-align:center; vertical-align:middle; }
+.room-matrix td:first-child { text-align:left; }
+.room-matrix tr:last-child td { border-bottom:none; }
+.room-name-input { border:none; border-bottom:1px solid var(--grey); background:transparent; font-family:'Circular',sans-serif; font-size:12pt; color:var(--navy); width:130px; padding:2px 0; outline:none; }
+.room-name-input:focus { border-bottom-color:var(--cobalt); }
+.add-row-btn { background:none; border:1.5px solid var(--cobalt); color:var(--cobalt); font-family:'Circular',sans-serif; font-weight:700; font-size:10pt; letter-spacing:0.08em; padding:10px 20px; cursor:pointer; margin-top:8px; }
+.add-row-btn:hover { background:var(--cobalt); color:#fff; }
+
+.audio-room-row { border-bottom:1px solid var(--grey); padding:16px 0; }
+.audio-room-row:last-child { border-bottom:none; }
+.audio-room-name { font-family:'Austin',serif; font-style:italic; font-size:15pt; margin-bottom:10px; }
+.audio-row-options { display:flex; flex-wrap:wrap; gap:10px; }
+.audio-opt { display:flex; align-items:flex-start; gap:8px; font-size:11pt; cursor:pointer; border:1.5px solid var(--grey); padding:9px 12px; }
+.audio-opt input { width:16px; height:16px; accent-color:var(--cobalt); margin-top:2px; flex-shrink:0; }
+.audio-opt-subs { display:none; flex-direction:column; gap:6px; margin-top:12px; padding-left:4px; }
+.audio-opt-subs.show { display:flex; }
+
+.pills-row { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:24px; }
+.pill { border:1.5px solid var(--grey); padding:14px 18px; cursor:pointer; font-family:'Circular',sans-serif; font-size:12pt; transition:border-color 0.15s; max-width:280px; }
+.pill:hover { border-color:var(--cobalt); }
+.pill.selected { border-color:var(--cobalt); box-shadow:0 0 0 2px var(--cobalt); }
+.pill-title { font-family:'Austin',serif; font-style:italic; font-size:16pt; color:var(--navy); display:block; margin-bottom:4px; }
+.pill-desc { font-size:10pt; color:var(--grey-mid); display:block; }
+
+.cinema-path-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:40px; }
+.cinema-path-card { border:2px solid var(--grey); padding:32px 28px; cursor:pointer; transition:border-color 0.18s; }
+.cinema-path-card:hover { border-color:var(--cobalt); }
+.cinema-path-card.selected { border-color:var(--cobalt); box-shadow:0 0 0 3px var(--cobalt); }
+.cinema-path-title { font-family:'Austin',serif; font-style:italic; font-size:28pt; color:var(--navy); margin-bottom:12px; }
+.cinema-path-desc { font-size:13pt; line-height:1.5; color:var(--navy); }
+
+.cinema-package-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-bottom:32px; }
+.cinema-package-card { border:1.5px solid var(--grey); padding:24px; cursor:pointer; transition:border-color 0.15s; }
+.cinema-package-card:hover { border-color:var(--cobalt); }
+.cinema-package-card.selected { border-color:var(--cobalt); box-shadow:0 0 0 2px var(--cobalt); }
+.cinema-pkg-name { font-family:'Austin',serif; font-style:italic; font-size:18pt; color:var(--navy); margin-bottom:6px; }
+.cinema-pkg-price { font-size:10pt; color:var(--cobalt); font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px; }
+.cinema-pkg-body { font-size:11pt; line-height:1.5; color:var(--navy); }
+
+.conditional-section { display:none; }
+.conditional-section.show { display:block; }
+
+@media (max-width:768px) {
+  .cinema-path-grid { grid-template-columns:1fr; }
+  .cinema-package-grid { grid-template-columns:1fr; }
+  .room-matrix { font-size:10pt; }
+  .room-matrix th, .room-matrix td { padding:8px 6px; }
+  .audio-row-options { flex-direction:column; }
+}
+
 /* Form fields */
 .form-group { margin-bottom: 28px; }
 .form-label { font-family: 'Circular', sans-serif; font-weight: 700; font-size: 10pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); margin-bottom: 10px; display: block; }
@@ -775,6 +829,358 @@ html, body {
   </div>
 </div>
 
+<!-- PAGE 7a: STAGE 06A - TV Deep Dive -->
+<div class="page page-7a">
+  <div class="container">
+    <div class="eyebrow">STAGE SIX A &middot; TV INSTALL</div>
+    <div class="stage-numeral">6A</div>
+    <h1 class="stage-headline"><em>TV install,</em> properly done.</h1>
+    <p class="stage-lead"><em>We don't supply the TVs. Clients buy what they like, we install and integrate them properly. Wall-mounted, calibrated, cabled cleanly. The TV becomes part of the architecture, not a black rectangle stuck on a wall.</em></p>
+    <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We supply the brackets, run the cabling through the wall to the joinery, mount and align every TV, calibrate the picture, and tie the sound and control into the rest of the home. Buying the TV separately keeps the warranty with the manufacturer where it belongs, and gives you flexibility on brand and model. We just need to know what you're putting on each wall.</p>
+
+    <div class="form-group">
+      <label class="form-label">Which rooms are getting a TV?</label>
+      <div style="overflow-x:auto;">
+        <table class="room-matrix">
+          <thead><tr>
+            <th>Room</th>
+            <th>Under 65", flat</th>
+            <th>Under 65", swing-out</th>
+            <th>65" or bigger, flat</th>
+            <th>65" or bigger, swing-out</th>
+          </tr></thead>
+          <tbody id="tvRoomRows"></tbody>
+        </table>
+      </div>
+      <button class="add-row-btn" onclick="addTvRoom()">+ Add room</button>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">What TVs are you buying or considering?</label>
+      <textarea class="form-textarea" id="tvsBought" placeholder="Brand, model, size - or just tell us what you're thinking." oninput="formData.tvDetails.tvsBeingBought=this.value"></textarea>
+      <p class="form-note">We just need to know if any TV has a One Connect box / external control unit so we plan the cable run correctly.</p>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" style="margin-bottom:20px;">TV audio - what's going with each screen?</label>
+      <div id="tvAudioRows"></div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Anything specific?</label>
+      <textarea class="form-textarea" id="tvNotes" placeholder="Anything else about your TV install we should know..." oninput="formData.tvDetails.notes=this.value"></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 7b: STAGE 06B - Whole-home Audio Deep Dive -->
+<div class="page page-7b">
+  <div class="container">
+    <div class="eyebrow">STAGE SIX B &middot; WHOLE-HOME AUDIO</div>
+    <div class="stage-numeral">6B</div>
+    <h1 class="stage-headline"><em>Music</em> in every room.</h1>
+    <p class="stage-lead"><em>Whole-home audio is the single most-used part of any smart home. Designed properly, it disappears into the architecture and follows you through the house.</em></p>
+    <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">Three audio levels, recommended room by room. Background fills a space without dominating it. Decent is proper everyday listening. Pumping is full-range, high-fidelity sound for when you want to feel it. Speakers can be visible or invisible. Invisible speakers are built into the ceiling or wall and plastered over, completely hidden. They cost more, but the result is stunning. We commission to a single app, with access to Sight &amp; Sound Galleria as our preferred high-end installer for specialty two-channel listening systems.</p>
+
+    <div class="form-group">
+      <label class="form-label">Room-by-room audio level</label>
+      <div style="overflow-x:auto;">
+        <table class="room-matrix">
+          <thead><tr>
+            <th>Room</th>
+            <th>Level 1 - Background</th>
+            <th>Level 2 - Decent</th>
+            <th>Level 3 - Pumping</th>
+            <th>No audio</th>
+            <th>Visible</th>
+            <th>Invisible</th>
+          </tr></thead>
+          <tbody id="audioRoomRows"></tbody>
+        </table>
+      </div>
+      <button class="add-row-btn" onclick="addAudioRoom()">+ Add room</button>
+      <p class="form-note" style="margin-top:12px;">If any room is set to Level 3, subwoofers are included as part of that room's spec. We don't ship pumping audio without bass.</p>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Speaker brand preference?</label>
+      <div class="pills-row" id="speakerBrandPills">
+        <div class="pill" onclick="selectSpeakerBrand('triad',this)"><span class="pill-title"><em>Triad.</em></span><span class="pill-desc">Solid mid-range, well-priced architectural speakers.</span></div>
+        <div class="pill" onclick="selectSpeakerBrand('sonos',this)"><span class="pill-title"><em>Sonos.</em></span><span class="pill-desc">Wireless, every room standalone, controlled from one app.</span></div>
+        <div class="pill" onclick="selectSpeakerBrand('sonance',this)"><span class="pill-title"><em>Sonance.</em></span><span class="pill-desc">The Australian standard for invisible architectural audio.</span></div>
+        <div class="pill" onclick="selectSpeakerBrand('kef',this)"><span class="pill-title"><em>KEF.</em></span><span class="pill-desc">Premium British engineering. Reference-grade clarity.</span></div>
+        <div class="pill" onclick="selectSpeakerBrand('sonus-faber',this)"><span class="pill-title"><em>Sonus Faber.</em></span><span class="pill-desc">Italian craftsmanship. Hi-fi quality from in-ceiling formats.</span></div>
+        <div class="pill" onclick="selectSpeakerBrand('lacoustiques',this)"><span class="pill-title"><em>L'Acoustics.</em></span><span class="pill-desc">Cinema-grade audio in residential format. The flagship.</span></div>
+        <div class="pill" onclick="selectSpeakerBrand('no-preference',this)"><span class="pill-title"><em>No preference.</em></span><span class="pill-desc">Recommend for me.</span></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Outdoor audio?</label>
+      <label class="checkbox-option" style="margin-bottom:16px;">
+        <input type="checkbox" id="outdoorAudioToggle" onchange="toggleOutdoorAudio(this.checked)">
+        <span style="font-size:14pt;">Yes, outdoor audio needed</span>
+      </label>
+      <div class="conditional-section" id="outdoorAudioOptions">
+        <div class="checkbox-group" style="margin-bottom:20px;">
+          <label class="checkbox-option"><input type="checkbox" onchange="toggleAudioOutdoorType('rock-form',this)"> Rock-form / planter (disguised in landscaping)</label>
+          <label class="checkbox-option"><input type="checkbox" onchange="toggleAudioOutdoorType('in-eave',this)"> In-eave / exterior architectural</label>
+          <label class="checkbox-option"><input type="checkbox" onchange="toggleAudioOutdoorType('pool',this)"> Pool area dedicated zone</label>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Backyard size</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="backyardSize" value="small" onchange="formData.audioDetails.outdoor.backyardSize='small'"> Small (under 100m&sup2;)</label>
+            <label class="radio-option"><input type="radio" name="backyardSize" value="medium" onchange="formData.audioDetails.outdoor.backyardSize='medium'"> Medium (100-300m&sup2;)</label>
+            <label class="radio-option"><input type="radio" name="backyardSize" value="large" onchange="formData.audioDetails.outdoor.backyardSize='large'"> Large (300-800m&sup2;)</label>
+            <label class="radio-option"><input type="radio" name="backyardSize" value="estate" onchange="formData.audioDetails.outdoor.backyardSize='estate'"> Estate (800m&sup2;+, custom design)</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Volume capability</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="outdoorLevel" value="1" onchange="formData.audioDetails.outdoor.volumeCapability='1'"> Level 1 - Background</label>
+            <label class="radio-option"><input type="radio" name="outdoorLevel" value="2" onchange="formData.audioDetails.outdoor.volumeCapability='2'"> Level 2 - Decent</label>
+            <label class="radio-option"><input type="radio" name="outdoorLevel" value="3" onchange="formData.audioDetails.outdoor.volumeCapability='3'"> Level 3 - Pumping</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Source / streaming?</label>
+      <div class="checkbox-group">
+        <label class="checkbox-option"><input type="checkbox" checked onchange="toggleAudioSource('apple-music',this)"> Apple Music (default, integrated)</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAudioSource('spotify',this)"> Spotify</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAudioSource('tidal',this)"> Tidal (high-res audio)</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAudioSource('vinyl',this)"> Vinyl / turntable input</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAudioSource('nas',this)"> Local music library / NAS</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAudioSource('airplay2',this)"> AirPlay 2 to any zone</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleAudioSource('bluetooth',this)"> Bluetooth pairing per zone</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">High-end 2-channel listening?</label>
+      <label class="checkbox-option" style="margin-bottom:16px;">
+        <input type="checkbox" id="highEndToggle" onchange="toggleHighEnd(this.checked)">
+        <span style="font-size:14pt;">Yes, via Sight &amp; Sound Galleria</span>
+      </label>
+      <div class="conditional-section" id="highEndSection">
+        <textarea class="form-textarea" placeholder="Tell us about the listening setup..." oninput="formData.audioDetails.highEnd.notes=this.value"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Anything specific?</label>
+      <textarea class="form-textarea" id="audioNotes" placeholder="Anything else about your audio install we should know..." oninput="formData.audioDetails.notes=this.value"></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 7c: STAGE 06C - Cinema Room Deep Dive -->
+<div class="page page-7c">
+  <div class="container">
+    <div class="eyebrow">STAGE SIX C &middot; CINEMA ROOM</div>
+    <div class="stage-numeral">6C</div>
+    <h1 class="stage-headline"><em>The cinema</em> room.</h1>
+    <p class="stage-lead"><em>The room where everything is allowed to be louder, darker, and more dramatic than the rest of the house.</em></p>
+    <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">A proper cinema room is its own discipline. Dedicated projector or large-format screen, surround sound calibrated to the room, acoustic treatment on the walls, blackout blinds, dimmable lighting, and one tap that takes the room from bright lounge to full theatre. We design and commission these end to end. Demo rooms available before you commit. The result is a room your family will actually use, not a showroom.</p>
+
+    <label class="form-label" style="margin-bottom:20px;">Simple or custom?</label>
+    <div class="cinema-path-grid">
+      <div class="cinema-path-card" onclick="selectCinemaPath('simple',this)">
+        <div class="cinema-path-title"><em>Simple setup.</em></div>
+        <div class="cinema-path-desc">Choose from one of our three pre-designed cinema packages. Calibrated, commissioned, ready.</div>
+      </div>
+      <div class="cinema-path-card" onclick="selectCinemaPath('advanced',this)">
+        <div class="cinema-path-title"><em>Advanced setup.</em></div>
+        <div class="cinema-path-desc">Custom-engineered room-up. Specialty kit, bespoke acoustic design, full architectural integration.</div>
+      </div>
+    </div>
+
+    <!-- SIMPLE PATH -->
+    <div class="conditional-section" id="cinemaSimplePath">
+      <label class="form-label" style="margin-bottom:16px;">Pick a package</label>
+      <div class="cinema-package-grid">
+        <div class="cinema-package-card" onclick="selectCinemaPackage('simple-50k',this)">
+          <div class="cinema-pkg-name"><em>Simple cinema.</em></div>
+          <div class="cinema-pkg-price">From $50k</div>
+          <div class="cinema-pkg-body">5.2.2 Atmos. Projector + fixed screen. Apple TV. Best for media rooms and smaller spaces.</div>
+        </div>
+        <div class="cinema-package-card" onclick="selectCinemaPackage('considered-100k',this)">
+          <div class="cinema-pkg-name"><em>Considered cinema.</em></div>
+          <div class="cinema-pkg-price">From $100k</div>
+          <div class="cinema-pkg-body">7.2.4 Atmos. Higher-output projector + fixed screen. Apple TV. Custom dimmable lighting integrated to scenes.</div>
+        </div>
+        <div class="cinema-package-card" onclick="selectCinemaPackage('reference-150k',this)">
+          <div class="cinema-pkg-name"><em>Reference cinema.</em></div>
+          <div class="cinema-pkg-price">From $150k</div>
+          <div class="cinema-pkg-body">7.4.4 Atmos with reference subs. Flagship projector. Star-light ceiling. Custom architectural lighting. Apple TV. Cinema seating coordinated.</div>
+        </div>
+        <div class="cinema-package-card" onclick="selectCinemaPackage('unsure-simple',this)">
+          <div class="cinema-pkg-name"><em>Not sure within simple.</em></div>
+          <div class="cinema-pkg-price">Advise me</div>
+          <div class="cinema-pkg-body">We'll recommend the right package for your space and budget.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Room size</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="cinemaRoomSizeSimple" value="under20" onchange="formData.cinemaDetails.roomSize='under20'"> Under 20m&sup2;</label>
+          <label class="radio-option"><input type="radio" name="cinemaRoomSizeSimple" value="20-35" onchange="formData.cinemaDetails.roomSize='20-35'"> 20-35m&sup2;</label>
+          <label class="radio-option"><input type="radio" name="cinemaRoomSizeSimple" value="35-60" onchange="formData.cinemaDetails.roomSize='35-60'"> 35-60m&sup2;</label>
+          <label class="radio-option"><input type="radio" name="cinemaRoomSizeSimple" value="60plus" onchange="formData.cinemaDetails.roomSize='60plus'"> 60m&sup2;+</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Equipment rack location</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="cinemaRackSimple" value="in-room" onchange="formData.cinemaDetails.rackLocation='in-room'"> In room</label>
+          <label class="radio-option"><input type="radio" name="cinemaRackSimple" value="closet" onchange="formData.cinemaDetails.rackLocation='closet'"> Separate closet</label>
+          <label class="radio-option"><input type="radio" name="cinemaRackSimple" value="not-sure" onchange="formData.cinemaDetails.rackLocation='not-sure'"> Not sure</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Seating</label>
+        <div class="checkbox-group">
+          <label class="checkbox-option"><input type="checkbox" onchange="toggleCinemaSeating('handlingSeparately',this)"> Handling separately</label>
+          <label class="checkbox-option"><input type="checkbox" onchange="toggleCinemaSeating('poweredRecliners',this)"> Powered recliners</label>
+          <label class="checkbox-option"><input type="checkbox" onchange="toggleCinemaSeating('tieredPlatforms',this)"> Tiered platforms</label>
+          <label class="checkbox-option"><input type="checkbox" onchange="toggleCinemaSeating('bassShakers',this)"> Bass shakers in seats</label>
+        </div>
+        <div style="margin-top:16px;">
+          <label class="form-label">Seat count</label>
+          <input type="number" class="form-input" style="max-width:120px;" placeholder="6" min="1" oninput="formData.cinemaDetails.seating.seatCount=this.value">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Anything specific?</label>
+        <textarea class="form-textarea" placeholder="Anything else about your cinema room..." oninput="formData.cinemaDetails.notes=this.value"></textarea>
+      </div>
+    </div>
+
+    <!-- ADVANCED PATH -->
+    <div class="conditional-section" id="cinemaAdvancedPath">
+      <div class="form-group">
+        <label class="form-label">Cinema type</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="cinemaType" value="dedicated" onchange="formData.cinemaDetails.type='dedicated'"> Dedicated cinema room</label>
+          <label class="radio-option"><input type="radio" name="cinemaType" value="multi-purpose" onchange="formData.cinemaDetails.type='multi-purpose'"> Multi-purpose room</label>
+          <label class="radio-option"><input type="radio" name="cinemaType" value="lounge-cinema" onchange="formData.cinemaDetails.type='lounge-cinema'"> Lounge with cinema capability</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Display type</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="cinemaDisplay" value="proj-dropdown" onchange="formData.cinemaDetails.display='proj-dropdown'"> Projector + drop-down screen</label>
+          <label class="radio-option"><input type="radio" name="cinemaDisplay" value="proj-fixed" onchange="formData.cinemaDetails.display='proj-fixed'"> Projector + fixed screen</label>
+          <label class="radio-option"><input type="radio" name="cinemaDisplay" value="large-tv" onchange="formData.cinemaDetails.display='large-tv'"> Large-format TV</label>
+          <label class="radio-option"><input type="radio" name="cinemaDisplay" value="laser-tv" onchange="formData.cinemaDetails.display='laser-tv'"> Laser TV (short throw)</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Room size</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="cinemaRoomSizeAdv" value="under20" onchange="formData.cinemaDetails.roomSize='under20'"> Under 20m&sup2;</label>
+          <label class="radio-option"><input type="radio" name="cinemaRoomSizeAdv" value="20-35" onchange="formData.cinemaDetails.roomSize='20-35'"> 20-35m&sup2;</label>
+          <label class="radio-option"><input type="radio" name="cinemaRoomSizeAdv" value="35-60" onchange="formData.cinemaDetails.roomSize='35-60'"> 35-60m&sup2;</label>
+          <label class="radio-option"><input type="radio" name="cinemaRoomSizeAdv" value="60plus" onchange="formData.cinemaDetails.roomSize='60plus'"> 60m&sup2;+</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Audio configuration</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="cinemaAudio" value="5.1" onchange="formData.cinemaDetails.audioConfig='5.1'"> 5.1</label>
+          <label class="radio-option"><input type="radio" name="cinemaAudio" value="7.1" onchange="formData.cinemaDetails.audioConfig='7.1'"> 7.1</label>
+          <label class="radio-option"><input type="radio" name="cinemaAudio" value="7.1.4" onchange="formData.cinemaDetails.audioConfig='7.1.4'"> 7.1.4 Atmos</label>
+          <label class="radio-option"><input type="radio" name="cinemaAudio" value="7.2.4" onchange="formData.cinemaDetails.audioConfig='7.2.4'"> 7.2.4 Atmos</label>
+          <label class="radio-option"><input type="radio" name="cinemaAudio" value="7.4.4" onchange="formData.cinemaDetails.audioConfig='7.4.4'"> 7.4.4 Atmos</label>
+          <label class="radio-option"><input type="radio" name="cinemaAudio" value="9.2.6" onchange="formData.cinemaDetails.audioConfig='9.2.6'"> 9.2.6 (flagship)</label>
+          <label class="radio-option"><input type="radio" name="cinemaAudio" value="unsure" onchange="formData.cinemaDetails.audioConfig='unsure'"> Not sure, advise me</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Speaker brand</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="cinemaSpeaker" value="triad" onchange="formData.cinemaDetails.speakerBrand='triad'"> Triad</label>
+          <label class="radio-option"><input type="radio" name="cinemaSpeaker" value="kef" onchange="formData.cinemaDetails.speakerBrand='kef'"> KEF</label>
+          <label class="radio-option"><input type="radio" name="cinemaSpeaker" value="sonus-faber" onchange="formData.cinemaDetails.speakerBrand='sonus-faber'"> Sonus Faber</label>
+          <label class="radio-option"><input type="radio" name="cinemaSpeaker" value="lacoustiques" onchange="formData.cinemaDetails.speakerBrand='lacoustiques'"> L'Acoustics</label>
+          <label class="radio-option"><input type="radio" name="cinemaSpeaker" value="mag-theatron" onchange="formData.cinemaDetails.speakerBrand='mag-theatron'"> Mag Theatron</label>
+          <label class="radio-option"><input type="radio" name="cinemaSpeaker" value="no-preference" onchange="formData.cinemaDetails.speakerBrand='no-preference'"> No preference, advise me</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Media server</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="cinemaMedia" value="kaleidescape" onchange="formData.cinemaDetails.mediaServer='kaleidescape'"> Kaleidescape</label>
+          <label class="radio-option"><input type="radio" name="cinemaMedia" value="apple-tv" onchange="formData.cinemaDetails.mediaServer='apple-tv'"> Apple TV only</label>
+          <label class="radio-option"><input type="radio" name="cinemaMedia" value="both" onchange="formData.cinemaDetails.mediaServer='both'"> Both</label>
+          <label class="radio-option"><input type="radio" name="cinemaMedia" value="unsure" onchange="formData.cinemaDetails.mediaServer='unsure'"> Not sure</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Seating</label>
+        <div class="checkbox-group">
+          <label class="checkbox-option"><input type="checkbox" onchange="toggleCinemaSeating('handlingSeparately',this)"> Handling separately</label>
+          <label class="checkbox-option"><input type="checkbox" onchange="toggleCinemaSeating('poweredRecliners',this)"> Powered recliners</label>
+          <label class="checkbox-option"><input type="checkbox" onchange="toggleCinemaSeating('tieredPlatforms',this)"> Tiered platforms</label>
+          <label class="checkbox-option"><input type="checkbox" onchange="toggleCinemaSeating('bassShakers',this)"> Bass shakers in seats</label>
+        </div>
+        <div style="margin-top:16px;">
+          <label class="form-label">Seat count</label>
+          <input type="number" class="form-input" style="max-width:120px;" placeholder="6" min="1" oninput="formData.cinemaDetails.seating.seatCount=this.value">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Acoustic treatment</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="cinemaAcoustic" value="none" onchange="formData.cinemaDetails.acousticTreatment='none'"> None / minimal</label>
+          <label class="radio-option"><input type="radio" name="cinemaAcoustic" value="partial" onchange="formData.cinemaDetails.acousticTreatment='partial'"> Partial - rear wall and ceiling only</label>
+          <label class="radio-option"><input type="radio" name="cinemaAcoustic" value="full" onchange="formData.cinemaDetails.acousticTreatment='full'"> Full room treatment</label>
+          <label class="radio-option"><input type="radio" name="cinemaAcoustic" value="bespoke" onchange="formData.cinemaDetails.acousticTreatment='bespoke'"> Bespoke acoustic design + specialist</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Lighting and blinds</label>
+        <div class="checkbox-group" style="margin-bottom:12px;">
+          <label class="checkbox-option"><input type="checkbox" onchange="toggleCinemaLighting('dimmable',this)"> Dimmable architectural lighting</label>
+          <label class="checkbox-option"><input type="checkbox" onchange="toggleCinemaLighting('blackoutBlinds',this)"> Blackout blinds / motorised</label>
+          <label class="checkbox-option"><input type="checkbox" onchange="toggleCinemaLighting('ledAccent',this)"> LED accent / bias lighting</label>
+        </div>
+        <textarea class="form-textarea" placeholder="Lighting brief - any specifics?" oninput="formData.cinemaDetails.lighting.brief=this.value"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Equipment rack location</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="cinemaRackAdv" value="in-room" onchange="formData.cinemaDetails.rackLocation='in-room'"> In room</label>
+          <label class="radio-option"><input type="radio" name="cinemaRackAdv" value="closet" onchange="formData.cinemaDetails.rackLocation='closet'"> Separate closet</label>
+          <label class="radio-option"><input type="radio" name="cinemaRackAdv" value="not-sure" onchange="formData.cinemaDetails.rackLocation='not-sure'"> Not sure</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Anything specific?</label>
+        <textarea class="form-textarea" placeholder="Anything else about your cinema room..." oninput="formData.cinemaDetails.notes=this.value"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- PAGE 8: STAGE 07 - Practical -->
 <div class="page page-8">
   <div class="container">
@@ -890,11 +1296,112 @@ const formData = {
   motionSensorDetail: '',
   timeframe: '',
   involved: [],
-  budget: ''
+  budget: '',
+  tvDetails: {
+    rooms: [],
+    tvsBeingBought: '',
+    audioPerRoom: [],
+    notes: ''
+  },
+  audioDetails: {
+    rooms: [],
+    brandPreference: '',
+    outdoor: { enabled: false, types: [], backyardSize: '', volumeCapability: '' },
+    sources: ['apple-music'],
+    highEnd: { enabled: false, notes: '' },
+    notes: ''
+  },
+  cinemaDetails: {
+    path: '',
+    package: '',
+    roomSize: '',
+    rackLocation: '',
+    seating: { handlingSeparately: false, poweredRecliners: false, tieredPlatforms: false, bassShakers: false, seatCount: '' },
+    notes: '',
+    type: '',
+    display: '',
+    audioConfig: '',
+    speakerBrand: '',
+    mediaServer: '',
+    acousticTreatment: '',
+    lighting: { dimmable: false, blackoutBlinds: false, ledAccent: false, brief: '' }
+  }
 };
 
 let currentPage = 0;
-const totalPages = 10;
+
+const TV_ROOM_DEFAULTS = ['Main living','Family','Master bedroom','Bedroom 2/3','Media/cinema room','Outdoor/alfresco','Other'];
+const AUDIO_ROOM_DEFAULTS = ['Main living','Family','Sitting','Kitchen','Dining','Master bedroom','Bedroom 2','Bedroom 3','Bedroom 4','Bedroom 5','Bedroom 6','Ensuite','Main bathroom','Powder room','Laundry','Study/office','Library','Media/cinema','Gym','Garage','Alfresco/patio','Backyard','Pool area'];
+
+// ===== NAVIGATION =====
+function getNextPage(pageId) {
+  const hasTvs = formData.systems.includes('tvs');
+  const hasAudio = formData.systems.includes('audio');
+  const hasCinema = formData.systems.includes('cinema');
+  if (pageId === 0) return 1;
+  if (pageId === 1) return formData.projectType === 'essentials' ? 7 : 2;
+  if (pageId === 2) return 3;
+  if (pageId === 3) return 4;
+  if (pageId === 4) return 5;
+  if (pageId === 5) return 6;
+  if (pageId === 6) return 7;
+  if (pageId === 7) {
+    if (hasTvs) return '7a';
+    if (hasAudio) return '7b';
+    if (hasCinema) return '7c';
+    return 8;
+  }
+  if (pageId === '7a') {
+    if (hasAudio) return '7b';
+    if (hasCinema) return '7c';
+    return 8;
+  }
+  if (pageId === '7b') return hasCinema ? '7c' : 8;
+  if (pageId === '7c') return 8;
+  if (pageId === 8) return 9;
+  return null; // 9 => submit
+}
+
+function getPrevPage(pageId) {
+  const hasTvs = formData.systems.includes('tvs');
+  const hasAudio = formData.systems.includes('audio');
+  const hasCinema = formData.systems.includes('cinema');
+  if (pageId === 1 || pageId === 0) return null;
+  if (pageId === 2) return 1;
+  if (pageId === 3) return 2;
+  if (pageId === 4) return 3;
+  if (pageId === 5) return 4;
+  if (pageId === 6) return 5;
+  if (pageId === 7) return formData.projectType === 'essentials' ? 1 : 6;
+  if (pageId === '7a') return 7;
+  if (pageId === '7b') return hasTvs ? '7a' : 7;
+  if (pageId === '7c') {
+    if (hasAudio) return '7b';
+    if (hasTvs) return '7a';
+    return 7;
+  }
+  if (pageId === 8) {
+    if (hasCinema) return '7c';
+    if (hasAudio) return '7b';
+    if (hasTvs) return '7a';
+    return 7;
+  }
+  if (pageId === 9) return 8;
+  return null;
+}
+
+function getPageSequence() {
+  const hasTvs = formData.systems.includes('tvs');
+  const hasAudio = formData.systems.includes('audio');
+  const hasCinema = formData.systems.includes('cinema');
+  if (formData.projectType === 'essentials') return [1, 7, 8, 9];
+  const seq = [1, 2, 3, 4, 5, 6, 7];
+  if (hasTvs) seq.push('7a');
+  if (hasAudio) seq.push('7b');
+  if (hasCinema) seq.push('7c');
+  seq.push(8, 9);
+  return seq;
+}
 
 const allSystems = [
   { id:'network', name:'Network and Wi-Fi', body:'Architect-grade UniFi networks. No dead zones.', slot:'IMG-47-network', desc:'UniFi network rack, clean install', motion:false },
@@ -983,17 +1490,7 @@ function buildScreenOptions() {
   `).join('');
 }
 
-// For essentials path, skip pages 2-6 (mood, platform, screens, switches, scenes)
-// Scenes are an automation feature, not relevant to standalone systems.
-function skipForEssentials(n) {
-  if (formData.projectType === 'essentials' && n >= 2 && n <= 6) {
-    return 7; // jump straight to systems
-  }
-  return n;
-}
-
 function showPage(n) {
-  n = skipForEssentials(n);
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const target = document.querySelector('.page-' + n);
   if (target) target.classList.add('active');
@@ -1001,6 +1498,8 @@ function showPage(n) {
 
   if (n === 4) buildScreenOptions();
   if (n === 7) buildSystemsGrid();
+  if (n === '7a') { buildTvRoomMatrix(); buildTvAudioRows(); }
+  if (n === '7b') buildAudioRoomMatrix();
   if (n === 6) {
     const lead = document.getElementById('scenesLead');
     if (lead) lead.innerHTML = "A scene is one tap that changes the whole house. Lights dim, blinds drop, music starts. The power of automation is in these moments.";
@@ -1012,44 +1511,192 @@ function showPage(n) {
 }
 
 function nextPage() {
-  let next = currentPage + 1;
-  next = skipForEssentials(next);
-  if (next < totalPages) showPage(next);
-  else if (currentPage === totalPages - 1) submitForm();
+  const next = getNextPage(currentPage);
+  if (next === null) submitForm();
+  else showPage(next);
 }
 
 function prevPage() {
-  let prev = currentPage - 1;
-  // When going backward in essentials path, jump from systems back to project type
-  if (formData.projectType === 'essentials' && prev >= 2 && prev <= 6) {
-    prev = 1;
-  }
-  if (prev >= 0) showPage(prev);
+  const prev = getPrevPage(currentPage);
+  if (prev !== null) showPage(prev);
 }
 
 function updateNavBar() {
   const back = document.getElementById('navBack');
   const forward = document.getElementById('navForward');
   const counter = document.getElementById('navCounter');
-  if (back) back.disabled = currentPage <= 1;
+  if (back) back.disabled = (currentPage === 1 || currentPage === 0);
+  const seq = getPageSequence();
+  const pos = seq.indexOf(currentPage);
+  const total = seq.length;
   if (forward) {
-    if (currentPage === totalPages - 1) {
-      forward.textContent = 'Send my plan';
-    } else {
-      forward.textContent = 'Continue \u2192';
-    }
+    forward.textContent = (pos >= 0 && pos === total - 1) ? 'Send my plan' : 'Continue \u2192';
   }
   if (counter) {
-    if (formData.projectType === 'essentials') {
-      // Essentials: cover → 1 (project type) → 7 (systems) → 8 (practical) → 9 (call) = 4 stages
-      const essentialsMap = { 1: 1, 7: 2, 8: 3, 9: 4 };
-      const stage = essentialsMap[currentPage] || 1;
-      counter.textContent = 'Stage ' + stage + ' of 4';
-    } else {
-      const stage = currentPage > 0 ? currentPage : 1;
-      counter.textContent = 'Stage ' + stage + ' of ' + (totalPages - 1);
-    }
+    counter.textContent = 'Stage ' + (pos + 1) + ' of ' + total;
   }
+}
+
+// ===== TV DEEP DIVE =====
+function buildTvRoomMatrix() {
+  if (formData.tvDetails.rooms.length === 0) {
+    formData.tvDetails.rooms = TV_ROOM_DEFAULTS.map(r => ({ room: r, bracketChoice: '' }));
+  }
+  while (formData.tvDetails.audioPerRoom.length < formData.tvDetails.rooms.length) {
+    formData.tvDetails.audioPerRoom.push({ room: '', soundbar: '', addSurround: false, addSub: false });
+  }
+  renderTvRoomRows();
+}
+
+function renderTvRoomRows() {
+  const tbody = document.getElementById('tvRoomRows');
+  if (!tbody) return;
+  tbody.innerHTML = formData.tvDetails.rooms.map((r, i) => `
+    <tr>
+      <td><input class="room-name-input" value="${r.room}" oninput="formData.tvDetails.rooms[${i}].room=this.value;syncTvAudioRooms()" placeholder="Room name"></td>
+      <td><input type="radio" name="tv-bracket-${i}" value="under65-flat" style="accent-color:var(--cobalt)" onchange="formData.tvDetails.rooms[${i}].bracketChoice=this.value" ${r.bracketChoice==='under65-flat'?'checked':''}></td>
+      <td><input type="radio" name="tv-bracket-${i}" value="under65-swing" style="accent-color:var(--cobalt)" onchange="formData.tvDetails.rooms[${i}].bracketChoice=this.value" ${r.bracketChoice==='under65-swing'?'checked':''}></td>
+      <td><input type="radio" name="tv-bracket-${i}" value="65plus-flat" style="accent-color:var(--cobalt)" onchange="formData.tvDetails.rooms[${i}].bracketChoice=this.value" ${r.bracketChoice==='65plus-flat'?'checked':''}></td>
+      <td><input type="radio" name="tv-bracket-${i}" value="65plus-swing" style="accent-color:var(--cobalt)" onchange="formData.tvDetails.rooms[${i}].bracketChoice=this.value" ${r.bracketChoice==='65plus-swing'?'checked':''}></td>
+    </tr>
+  `).join('');
+}
+
+function addTvRoom() {
+  formData.tvDetails.rooms.push({ room: '', bracketChoice: '' });
+  formData.tvDetails.audioPerRoom.push({ room: '', soundbar: '', addSurround: false, addSub: false });
+  renderTvRoomRows();
+  buildTvAudioRows();
+}
+
+function syncTvAudioRooms() {
+  while (formData.tvDetails.audioPerRoom.length < formData.tvDetails.rooms.length) {
+    formData.tvDetails.audioPerRoom.push({ room: '', soundbar: '', addSurround: false, addSub: false });
+  }
+  formData.tvDetails.rooms.forEach((r, i) => {
+    if (formData.tvDetails.audioPerRoom[i]) formData.tvDetails.audioPerRoom[i].room = r.room;
+  });
+}
+
+function buildTvAudioRows() {
+  syncTvAudioRooms();
+  const container = document.getElementById('tvAudioRows');
+  if (!container) return;
+  const opts = [
+    { id:'sonos-beam', label:'Sonos Beam', hasSubs: true },
+    { id:'sonos-arc', label:'Sonos Arc', hasSubs: true },
+    { id:'custom-soundbar', label:'Custom soundbar', hasSubs: true },
+    { id:'custom-theatre', label:'Custom theatre / audio system', hasSubs: false },
+    { id:'tv-speakers', label:'TV speakers only', hasSubs: false }
+  ];
+  container.innerHTML = formData.tvDetails.rooms.map((r, i) => {
+    const roomName = r.room || 'Room ' + (i + 1);
+    const cur = formData.tvDetails.audioPerRoom[i] || {};
+    return `
+    <div class="audio-room-row">
+      <div class="audio-room-name"><em>${roomName}</em></div>
+      <div class="audio-row-options">
+        ${opts.map(opt => `
+          <label class="audio-opt">
+            <input type="radio" name="tv-audio-${i}" value="${opt.id}" style="accent-color:var(--cobalt)" onchange="selectTvAudio(${i},'${opt.id}')" ${cur.soundbar===opt.id?'checked':''}>
+            <span>${opt.label}</span>
+          </label>
+        `).join('')}
+      </div>
+      <div id="tv-audio-subs-${i}" class="audio-opt-subs ${['sonos-beam','sonos-arc','custom-soundbar'].includes(cur.soundbar)?'show':''}">
+        <label class="checkbox-option"><input type="checkbox" style="accent-color:var(--cobalt)" ${cur.addSurround?'checked':''} onchange="formData.tvDetails.audioPerRoom[${i}].addSurround=this.checked"> Add surround speakers</label>
+        <label class="checkbox-option"><input type="checkbox" style="accent-color:var(--cobalt)" ${cur.addSub?'checked':''} onchange="formData.tvDetails.audioPerRoom[${i}].addSub=this.checked"> Add subwoofer</label>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function selectTvAudio(roomIdx, soundbarId) {
+  formData.tvDetails.audioPerRoom[roomIdx].soundbar = soundbarId;
+  const subsEl = document.getElementById('tv-audio-subs-' + roomIdx);
+  if (subsEl) subsEl.classList.toggle('show', ['sonos-beam','sonos-arc','custom-soundbar'].includes(soundbarId));
+}
+
+// ===== AUDIO DEEP DIVE =====
+function buildAudioRoomMatrix() {
+  if (formData.audioDetails.rooms.length === 0) {
+    formData.audioDetails.rooms = AUDIO_ROOM_DEFAULTS.map(r => ({ room: r, level: '', visibility: '' }));
+  }
+  renderAudioRoomRows();
+}
+
+function renderAudioRoomRows() {
+  const tbody = document.getElementById('audioRoomRows');
+  if (!tbody) return;
+  tbody.innerHTML = formData.audioDetails.rooms.map((r, i) => `
+    <tr>
+      <td><input class="room-name-input" value="${r.room}" oninput="formData.audioDetails.rooms[${i}].room=this.value" placeholder="Room name"></td>
+      <td><input type="radio" name="audio-level-${i}" value="1" style="accent-color:var(--cobalt)" onchange="formData.audioDetails.rooms[${i}].level='1'" ${r.level==='1'?'checked':''}></td>
+      <td><input type="radio" name="audio-level-${i}" value="2" style="accent-color:var(--cobalt)" onchange="formData.audioDetails.rooms[${i}].level='2'" ${r.level==='2'?'checked':''}></td>
+      <td><input type="radio" name="audio-level-${i}" value="3" style="accent-color:var(--cobalt)" onchange="formData.audioDetails.rooms[${i}].level='3'" ${r.level==='3'?'checked':''}></td>
+      <td><input type="radio" name="audio-level-${i}" value="none" style="accent-color:var(--cobalt)" onchange="formData.audioDetails.rooms[${i}].level='none'" ${r.level==='none'?'checked':''}></td>
+      <td><input type="radio" name="audio-vis-${i}" value="visible" style="accent-color:var(--cobalt)" onchange="formData.audioDetails.rooms[${i}].visibility='visible'" ${r.visibility==='visible'?'checked':''}></td>
+      <td><input type="radio" name="audio-vis-${i}" value="invisible" style="accent-color:var(--cobalt)" onchange="formData.audioDetails.rooms[${i}].visibility='invisible'" ${r.visibility==='invisible'?'checked':''}></td>
+    </tr>
+  `).join('');
+}
+
+function addAudioRoom() {
+  formData.audioDetails.rooms.push({ room: '', level: '', visibility: '' });
+  renderAudioRoomRows();
+}
+
+function selectSpeakerBrand(brand, el) {
+  formData.audioDetails.brandPreference = brand;
+  document.querySelectorAll('#speakerBrandPills .pill').forEach(p => p.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function toggleOutdoorAudio(enabled) {
+  formData.audioDetails.outdoor.enabled = enabled;
+  const el = document.getElementById('outdoorAudioOptions');
+  if (el) el.classList.toggle('show', enabled);
+}
+
+function toggleAudioOutdoorType(type, el) {
+  const types = formData.audioDetails.outdoor.types;
+  if (el.checked) { if (!types.includes(type)) types.push(type); }
+  else { const i = types.indexOf(type); if (i > -1) types.splice(i, 1); }
+}
+
+function toggleAudioSource(source, el) {
+  const sources = formData.audioDetails.sources;
+  if (el.checked) { if (!sources.includes(source)) sources.push(source); }
+  else { const i = sources.indexOf(source); if (i > -1) sources.splice(i, 1); }
+}
+
+function toggleHighEnd(enabled) {
+  formData.audioDetails.highEnd.enabled = enabled;
+  const el = document.getElementById('highEndSection');
+  if (el) el.classList.toggle('show', enabled);
+}
+
+// ===== CINEMA DEEP DIVE =====
+function selectCinemaPath(path, el) {
+  formData.cinemaDetails.path = path;
+  document.querySelectorAll('.cinema-path-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('cinemaSimplePath').classList.toggle('show', path === 'simple');
+  document.getElementById('cinemaAdvancedPath').classList.toggle('show', path === 'advanced');
+}
+
+function selectCinemaPackage(pkg, el) {
+  formData.cinemaDetails.package = pkg;
+  document.querySelectorAll('.cinema-package-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function toggleCinemaSeating(key, el) {
+  formData.cinemaDetails.seating[key] = el.checked;
+}
+
+function toggleCinemaLighting(key, el) {
+  formData.cinemaDetails.lighting[key] = el.checked;
 }
 
 function selectProjectType(type, el) {
@@ -1121,6 +1768,9 @@ async function submitForm() {
     lastName: document.getElementById('lastName').value,
     phone: document.getElementById('phone').value,
     email: document.getElementById('email').value,
+    tvDetails: JSON.stringify(formData.tvDetails),
+    audioDetails: JSON.stringify(formData.audioDetails),
+    cinemaDetails: JSON.stringify(formData.cinemaDetails),
   };
   if (!payload.firstName || !payload.email) {
     alert('Please provide your first name and email on the previous page.');
