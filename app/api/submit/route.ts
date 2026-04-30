@@ -31,6 +31,10 @@ type FormPayload = {
   cinemaDetails?: string
   networkDetails?: string
   alarmDetails?: string
+  intercomDetails?: string
+  cameraDetails?: string
+  poolDetails?: string
+  wellnessDetails?: string
   // Legacy v1 fields kept for backward compat (in case someone hits the API with old shape)
   projectLocation?: string
   projectTimeframe?: string
@@ -71,6 +75,7 @@ const V2_COLUMN_ORDER: (keyof FormPayload | 'timestamp')[] = [
   'scenesNotes', 'recommendedScenes', 'systems', 'motionSensorDetail',
   'floorPlans', 'timeframe', 'involved', 'budget', 'otherNotes',
   'tvDetails', 'audioDetails', 'cinemaDetails', 'networkDetails', 'alarmDetails',
+  'intercomDetails', 'cameraDetails', 'poolDetails', 'wellnessDetails',
 ]
 
 // Keep legacy column order as fallback for v1 submissions
@@ -152,6 +157,10 @@ function formatEmailBody(payload: FormPayload): { html: string; text: string } {
     ['Cinema Details', payload.cinemaDetails],
     ['Network Details', payload.networkDetails],
     ['Alarm Details', payload.alarmDetails],
+    ['Intercom Details', payload.intercomDetails],
+    ['Camera Details', payload.cameraDetails],
+    ['Pool Details', payload.poolDetails],
+    ['Wellness Details', payload.wellnessDetails],
     // Legacy fallbacks (only show if the new fields are empty)
     ['Location (legacy)', payload.projectLocation],
     ['Audio Rooms (legacy)', payload.audioRooms],

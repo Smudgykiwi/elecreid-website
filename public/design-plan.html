@@ -1330,6 +1330,247 @@ html, body {
   </div>
 </div>
 
+<!-- PAGE 7f: STAGE 06F - Intercom Deep Dive -->
+<div class="page page-7f">
+  <div class="container">
+    <div class="eyebrow">STAGE SIX F &middot; INTERCOM</div>
+    <div class="stage-numeral">6F</div>
+    <h1 class="stage-headline"><em>Who's at the door,</em> and how they get in.</h1>
+    <p class="stage-lead"><em>The first impression of your home, before anyone even gets inside.</em></p>
+    <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We install UniFi access. Locally controlled, no cloud subscription, integrated with the rest of the system. The hardware on the wall depends on what you want it to do, from a simple swipe-card reader to a full video intercom that calls every screen in the house. Calls reach your touchscreens first, then your phones if no one answers.</p>
+
+    <div class="form-group">
+      <label class="form-label">What do you want at each entry?</label>
+      <div style="overflow-x:auto;">
+        <table class="room-matrix">
+          <thead><tr>
+            <th>Entry</th>
+            <th>Swipe only</th>
+            <th>Keypad + swipe</th>
+            <th>Keypad + swipe + video intercom</th>
+            <th>Intercom only</th>
+            <th>No access control</th>
+            <th></th>
+          </tr></thead>
+          <tbody id="intercomEntryRows"></tbody>
+        </table>
+      </div>
+      <button class="add-row-btn" onclick="addIntercomEntry()">+ Add entry</button>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Anything specific?</label>
+      <textarea class="form-textarea" placeholder="Gate motor supplier? Building with existing access hardware? Any specific entry requirements?" oninput="formData.intercomDetails.notes=this.value"></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 7g: STAGE 06G - Cameras Deep Dive -->
+<div class="page page-7g">
+  <div class="container">
+    <div class="eyebrow">STAGE SIX G &middot; CAMERAS</div>
+    <div class="stage-numeral">6G</div>
+    <h1 class="stage-headline"><em>Cameras that watch the property,</em> not your data.</h1>
+    <p class="stage-lead"><em>UniFi Protect. Locally recorded to your own NVR. No subscription, no cloud, no third-party access to your footage.</em></p>
+    <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We design camera coverage around the building, not bolted on after. Every angle planned, every cable run during construction, every lens chosen for the scene it covers. The recorder lives in your equipment rack. You watch the feeds from any screen, your phone, or away from the property. Footage is yours. We spec every system with 30 days of storage. If you need longer retention, tell us in the notes.</p>
+
+    <div class="form-group">
+      <label class="form-label">Coverage scope?</label>
+      <div class="deep-dive-cards" id="cameraScopeCards">
+        <div class="deep-dive-card" onclick="selectCameraScope('essential',this)">
+          <div class="deep-dive-card-title"><em>Essential.</em></div>
+          <div class="deep-dive-card-body">Key entry points, driveway, front door. The basics.</div>
+        </div>
+        <div class="deep-dive-card" onclick="selectCameraScope('considered',this)">
+          <div class="deep-dive-card-title"><em>Considered.</em></div>
+          <div class="deep-dive-card-body">All entry points, perimeter coverage, pool area if present.</div>
+        </div>
+        <div class="deep-dive-card" onclick="selectCameraScope('comprehensive',this)">
+          <div class="deep-dive-card-title"><em>Comprehensive.</em></div>
+          <div class="deep-dive-card-body">Full property coverage. Every angle, every approach, indoor common areas included.</div>
+        </div>
+        <div class="deep-dive-card" onclick="selectCameraScope('custom',this)">
+          <div class="deep-dive-card-title"><em>Custom.</em></div>
+          <div class="deep-dive-card-body">Tell us what you need in the notes.</div>
+        </div>
+        <div class="deep-dive-card" onclick="selectCameraScope('unsure',this)">
+          <div class="deep-dive-card-title"><em>Not sure, advise me.</em></div>
+          <div class="deep-dive-card-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Where do you want cameras?</label>
+      <div class="checkbox-group">
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleCameraZone('front-entry-driveway',this)"> Front entry / driveway</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleCameraZone('vehicle-gate',this)"> Vehicle gate</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleCameraZone('garage-interior',this)"> Garage interior</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleCameraZone('side-accesses',this)"> Side accesses</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleCameraZone('rear-yard',this)"> Rear yard</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleCameraZone('pool-area',this)"> Pool area</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleCameraZone('alfresco',this)"> Alfresco</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleCameraZone('indoor-common',this)"> Indoor common areas</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleCameraZone('other',this)"> Other</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Specialty cameras?</label>
+      <div class="checkbox-group">
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleCameraSpecialty('plate-recognition',this)"> Number-plate recognition - auto-open gate for known cars.</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleCameraSpecialty('ai-ptz',this)"> AI tracking PTZ - mechanically follows movement.</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Anything specific?</label>
+      <textarea class="form-textarea" placeholder="Longer than 30-day retention? Unusual site coverage? Large property boundary? Special requirements?" oninput="formData.cameraDetails.notes=this.value"></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 7h: STAGE 06H - Pool Deep Dive -->
+<div class="page page-7h">
+  <div class="container">
+    <div class="eyebrow">STAGE SIX H &middot; POOL</div>
+    <div class="stage-numeral">6H</div>
+    <h1 class="stage-headline"><em>Pool control,</em> your way.</h1>
+    <p class="stage-lead"><em>Two paths: keep it simple with the pool company's own app, or bring the pool into the rest of the home so it's all one experience.</em></p>
+    <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">Most pool builders prefer to install their own controller and hand you their app. That works, and it's the simpler path. Bringing the pool into the main home automation system gives you one app for everything: pool, lighting, blinds, climate, audio. The catch is real: it costs more, takes longer, and we need the pool builder to genuinely coordinate with us during construction. That means you need to back the brief and push them to play. Some builders welcome it. Others won't budge. We'll know early. The result, when it works, is worth it.</p>
+
+    <div class="form-group">
+      <label class="form-label">Which path?</label>
+      <div class="deep-dive-cards" id="poolPathCards">
+        <div class="deep-dive-card" onclick="selectPoolPath('pool-app',this)">
+          <div class="deep-dive-card-title"><em>Pool company's app.</em></div>
+          <div class="deep-dive-card-body">Pool builder installs their controller. We integrate where possible. Simpler, less coordination, less spend. Each system stays in its own app.</div>
+        </div>
+        <div class="deep-dive-card" onclick="selectPoolPath('knx-integrated',this)">
+          <div class="deep-dive-card-title"><em>Full home integration via KNX.</em></div>
+          <div class="deep-dive-card-body">The pool comes into the main home automation system. One app for everything. Reliable, fast, considered. Costs more, takes longer, and only works if the pool builder coordinates. You need to back us through the build.</div>
+        </div>
+        <div class="deep-dive-card" onclick="selectPoolPath('unsure',this)">
+          <div class="deep-dive-card-title"><em>Not sure yet, advise me.</em></div>
+          <div class="deep-dive-card-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">New pool or existing?</label>
+      <div class="deep-dive-cards" id="poolStatusCards">
+        <div class="deep-dive-card" onclick="selectPoolStatus('new-construction',this)">
+          <div class="deep-dive-card-title"><em>New pool under construction.</em></div>
+          <div class="deep-dive-card-body"></div>
+        </div>
+        <div class="deep-dive-card" onclick="selectPoolStatus('existing-retro',this)">
+          <div class="deep-dive-card-title"><em>Existing pool retrofitting.</em></div>
+          <div class="deep-dive-card-body"></div>
+        </div>
+        <div class="deep-dive-card" onclick="selectPoolStatus('planning',this)">
+          <div class="deep-dive-card-title"><em>Pool not built yet, planning stage.</em></div>
+          <div class="deep-dive-card-body"></div>
+        </div>
+        <div class="deep-dive-card" onclick="selectPoolStatus('pool-and-spa',this)">
+          <div class="deep-dive-card-title"><em>Both pool and spa.</em></div>
+          <div class="deep-dive-card-body"></div>
+        </div>
+        <div class="deep-dive-card" onclick="selectPoolStatus('unsure',this)">
+          <div class="deep-dive-card-title"><em>Not sure.</em></div>
+          <div class="deep-dive-card-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">What do you want automated?</label>
+      <div class="checkbox-group">
+        <label class="checkbox-option"><input type="checkbox" onchange="togglePoolFeature('pump-filtration',this)"> Pump and filtration</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="togglePoolFeature('heating',this)"> Heating control</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="togglePoolFeature('salt-chemistry',this)"> Salt and chemistry</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="togglePoolFeature('pool-lighting',this)"> Pool lighting</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="togglePoolFeature('water-feature',this)"> Water feature / fountain</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="togglePoolFeature('pool-cover',this)"> Pool cover</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="togglePoolFeature('backwash',this)"> Backwash automation</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="togglePoolFeature('solar-heating',this)"> Solar pool heating priority</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Anything specific?</label>
+      <textarea class="form-textarea" placeholder="Pool builder name? Existing controller to integrate? Spa or water feature details?" oninput="formData.poolDetails.notes=this.value"></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 7i: STAGE 06I - Wellness & Gym Deep Dive -->
+<div class="page page-7i">
+  <div class="container">
+    <div class="eyebrow">STAGE SIX I &middot; WELLNESS &amp; GYM</div>
+    <div class="stage-numeral">6I</div>
+    <h1 class="stage-headline"><em>Wellness</em> &amp; Gym.</h1>
+    <p class="stage-lead"><em>The corner of the home that exists for rest, recovery, and getting strong. Spa, sauna, steam, plunge, gym, all integrated.</em></p>
+    <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We don't build the equipment, but we make it work as one. Most wellness gear comes with its own controller and app. That works, and it's the simpler path. Integrating wellness and gym into the main home automation system means one app for everything: scenes that prepare the room before you walk in, lights and music that match the workout, steam and lighting coming up together. The catch is the same as the pool: it costs more, takes longer, and the equipment supplier needs to coordinate with us. The result, when it works, is genuinely special.</p>
+
+    <div class="form-group">
+      <label class="form-label">Which path?</label>
+      <div class="deep-dive-cards" id="wellnessPathCards">
+        <div class="deep-dive-card" onclick="selectWellnessPath('manufacturer-app',this)">
+          <div class="deep-dive-card-title"><em>Equipment manufacturer apps.</em></div>
+          <div class="deep-dive-card-body">Each piece runs on its own app. Simpler, less coordination.</div>
+        </div>
+        <div class="deep-dive-card" onclick="selectWellnessPath('full-integration',this)">
+          <div class="deep-dive-card-title"><em>Full home integration.</em></div>
+          <div class="deep-dive-card-body">All wellness and gym equipment comes into the main home automation system. One app for everything. Costs more, takes longer.</div>
+        </div>
+        <div class="deep-dive-card" onclick="selectWellnessPath('unsure',this)">
+          <div class="deep-dive-card-title"><em>Not sure yet, advise me.</em></div>
+          <div class="deep-dive-card-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">What's in the centre?</label>
+      <div class="checkbox-group">
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessFeature('home-gym',this)"> Home gym</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessFeature('spa',this)"> Spa</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessFeature('traditional-sauna',this)"> Traditional sauna</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessFeature('infrared-sauna',this)"> Infrared sauna</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessFeature('steam-room',this)"> Steam room</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessFeature('cold-plunge',this)"> Cold plunge</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessFeature('aura-sensory',this)"> Aura sensory room</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessFeature('other',this)"> Other</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">What do you want automated?</label>
+      <div class="checkbox-group">
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessAutomation('pre-heating',this)"> Pre-heating on schedule or demand</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessAutomation('mood-lighting',this)"> Mood lighting</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessAutomation('audio',this)"> Audio integration</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessAutomation('gym-av',this)"> Workout playlists and video in gym</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessAutomation('steam-mist',this)"> Steam and mist control</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessAutomation('aromatherapy',this)"> Aromatherapy diffuser</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessAutomation('cold-plunge-temp',this)"> Cold plunge water temperature</label>
+        <label class="checkbox-option"><input type="checkbox" onchange="toggleWellnessAutomation('gym-climate',this)"> AC and climate control in gym</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Who else is involved?</label>
+      <textarea class="form-textarea" placeholder="Spa supplier? Sauna installer? Gym fit-out company? Builder providing any of this? The earlier we know, the better the integration goes." oninput="formData.wellnessDetails.involvedParties=this.value"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Anything specific?</label>
+      <textarea class="form-textarea" placeholder="Equipment brands? Existing wellness gear to integrate? Any specifics on the space?" oninput="formData.wellnessDetails.notes=this.value"></textarea>
+    </div>
+  </div>
+</div>
+
 <!-- PAGE 8: STAGE 07 - Practical -->
 <div class="page page-8">
   <div class="container">
@@ -1486,6 +1727,29 @@ const formData = {
     additionalProtection: [],
     monitoring: '',
     notes: ''
+  },
+  intercomDetails: {
+    entries: [],
+    notes: ''
+  },
+  cameraDetails: {
+    scope: '',
+    zones: [],
+    specialty: [],
+    notes: ''
+  },
+  poolDetails: {
+    controlPath: '',
+    status: '',
+    features: [],
+    notes: ''
+  },
+  wellnessDetails: {
+    controlPath: '',
+    features: [],
+    automation: [],
+    involvedParties: '',
+    notes: ''
   }
 };
 
@@ -1501,6 +1765,32 @@ function getNextPage(pageId) {
   const hasCinema = formData.systems.includes('cinema');
   const hasNetwork = formData.systems.includes('network');
   const hasAlarm = formData.systems.includes('alarm');
+  const hasIntercom = formData.systems.includes('intercom');
+  const hasCameras = formData.systems.includes('cameras');
+  const hasPool = formData.systems.includes('pool');
+  const hasWellness = formData.systems.includes('wellness');
+  function afterAlarm() {
+    if (hasIntercom) return '7f';
+    if (hasCameras) return '7g';
+    if (hasPool) return '7h';
+    if (hasWellness) return '7i';
+    return 8;
+  }
+  function afterIntercom() {
+    if (hasCameras) return '7g';
+    if (hasPool) return '7h';
+    if (hasWellness) return '7i';
+    return 8;
+  }
+  function afterCameras() {
+    if (hasPool) return '7h';
+    if (hasWellness) return '7i';
+    return 8;
+  }
+  function afterPool() {
+    if (hasWellness) return '7i';
+    return 8;
+  }
   if (pageId === 0) return 1;
   if (pageId === 1) return formData.projectType === 'essentials' ? 7 : 2;
   if (pageId === 2) return 3;
@@ -1514,31 +1804,35 @@ function getNextPage(pageId) {
     if (hasCinema) return '7c';
     if (hasNetwork) return '7d';
     if (hasAlarm) return '7e';
-    return 8;
+    return afterAlarm();
   }
   if (pageId === '7a') {
     if (hasAudio) return '7b';
     if (hasCinema) return '7c';
     if (hasNetwork) return '7d';
     if (hasAlarm) return '7e';
-    return 8;
+    return afterAlarm();
   }
   if (pageId === '7b') {
     if (hasCinema) return '7c';
     if (hasNetwork) return '7d';
     if (hasAlarm) return '7e';
-    return 8;
+    return afterAlarm();
   }
   if (pageId === '7c') {
     if (hasNetwork) return '7d';
     if (hasAlarm) return '7e';
-    return 8;
+    return afterAlarm();
   }
   if (pageId === '7d') {
     if (hasAlarm) return '7e';
-    return 8;
+    return afterAlarm();
   }
-  if (pageId === '7e') return 8;
+  if (pageId === '7e') return afterAlarm();
+  if (pageId === '7f') return afterIntercom();
+  if (pageId === '7g') return afterCameras();
+  if (pageId === '7h') return afterPool();
+  if (pageId === '7i') return 8;
   if (pageId === 8) return 9;
   return null; // 9 => submit
 }
@@ -1549,6 +1843,34 @@ function getPrevPage(pageId) {
   const hasCinema = formData.systems.includes('cinema');
   const hasNetwork = formData.systems.includes('network');
   const hasAlarm = formData.systems.includes('alarm');
+  const hasIntercom = formData.systems.includes('intercom');
+  const hasCameras = formData.systems.includes('cameras');
+  const hasPool = formData.systems.includes('pool');
+  const hasWellness = formData.systems.includes('wellness');
+  function beforeIntercom() {
+    if (hasAlarm) return '7e';
+    if (hasNetwork) return '7d';
+    if (hasCinema) return '7c';
+    if (hasAudio) return '7b';
+    if (hasTvs) return '7a';
+    return 7;
+  }
+  function beforeCameras() {
+    if (hasIntercom) return '7f';
+    return beforeIntercom();
+  }
+  function beforePool() {
+    if (hasCameras) return '7g';
+    return beforeCameras();
+  }
+  function beforeWellness() {
+    if (hasPool) return '7h';
+    return beforePool();
+  }
+  function before8() {
+    if (hasWellness) return '7i';
+    return beforeWellness();
+  }
   if (pageId === 1 || pageId === 0) return null;
   if (pageId === 2) return 1;
   if (pageId === 3) return 2;
@@ -1576,14 +1898,11 @@ function getPrevPage(pageId) {
     if (hasTvs) return '7a';
     return 7;
   }
-  if (pageId === 8) {
-    if (hasAlarm) return '7e';
-    if (hasNetwork) return '7d';
-    if (hasCinema) return '7c';
-    if (hasAudio) return '7b';
-    if (hasTvs) return '7a';
-    return 7;
-  }
+  if (pageId === '7f') return beforeIntercom();
+  if (pageId === '7g') return beforeCameras();
+  if (pageId === '7h') return beforePool();
+  if (pageId === '7i') return beforeWellness();
+  if (pageId === 8) return before8();
   if (pageId === 9) return 8;
   return null;
 }
@@ -1594,6 +1913,10 @@ function getPageSequence() {
   const hasCinema = formData.systems.includes('cinema');
   const hasNetwork = formData.systems.includes('network');
   const hasAlarm = formData.systems.includes('alarm');
+  const hasIntercom = formData.systems.includes('intercom');
+  const hasCameras = formData.systems.includes('cameras');
+  const hasPool = formData.systems.includes('pool');
+  const hasWellness = formData.systems.includes('wellness');
   if (formData.projectType === 'essentials') return [1, 7, 8, 9];
   const seq = [1, 2, 3, 4, 5, 6, 7];
   if (hasTvs) seq.push('7a');
@@ -1601,6 +1924,10 @@ function getPageSequence() {
   if (hasCinema) seq.push('7c');
   if (hasNetwork) seq.push('7d');
   if (hasAlarm) seq.push('7e');
+  if (hasIntercom) seq.push('7f');
+  if (hasCameras) seq.push('7g');
+  if (hasPool) seq.push('7h');
+  if (hasWellness) seq.push('7i');
   seq.push(8, 9);
   return seq;
 }
@@ -1614,13 +1941,10 @@ const allSystems = [
   { id:'intercom', name:'Intercom', body:'Video intercom integrated with the home.', slot:'IMG-58-intercom', desc:'Video intercom, front door entry', motion:false },
   { id:'cameras', name:'Cameras (UniFi Protect)', body:'Locally recorded. No subscriptions, no cloud, no third-party access.', slot:'IMG-59-cameras', desc:'UniFi camera, exterior mounted', motion:false },
   { id:'pool', name:'Pool automation', body:'Heating, filtration, lighting. Scheduled or on demand.', slot:'IMG-60-pool', desc:'Automated pool, smart home integration', motion:false },
-  { id:'spa', name:'Spa', body:'Heat the spa from your phone before you get home.', slot:'IMG-61-spa', desc:'Outdoor spa, remote preheat', motion:false },
-  { id:'irrigation', name:'Irrigation', body:'Smart watering tied to the weather station.', slot:'IMG-62-irrigation', desc:'Smart irrigation, garden watering', motion:false },
-  { id:'ev', name:'EV charger', body:'Smart charger integrated with solar and energy systems.', slot:'IMG-63-ev', desc:'EV charger, garage wall mount', motion:false },
-  { id:'solar', name:'Solar and battery', body:'Generation, storage, monitoring. All integrated.', slot:'IMG-64-solar', desc:'Solar panels and battery storage', motion:false },
-  { id:'weather', name:'Weather station', body:'Live data feeds into your home. Blinds and lights respond.', slot:'IMG-65-weather', desc:'Weather station, rooftop mount', motion:false }
+  { id:'wellness', name:'Wellness & Gym', body:'Spa, sauna, steam, plunge, gym, all integrated.', slot:'IMG-wellness', desc:'Home wellness centre, spa, sauna, gym integration', motion:false },
+  { id:'irrigation', name:'Irrigation', body:'Smart watering tied to the weather station.', slot:'IMG-62-irrigation', desc:'Smart irrigation, garden watering', motion:false }
 ];
-const essentialsSystemIds = ['network','audio','tvs','cinema','alarm','intercom','cameras','pool','ev','solar'];
+const essentialsSystemIds = ['network','audio','tvs','cinema','alarm','intercom','cameras','pool'];
 
 function buildSystemsGrid() {
   const grid = document.getElementById('systemsGrid');
@@ -1722,6 +2046,39 @@ function showPage(n) {
       document.querySelectorAll('#alarmMonitoringCards .deep-dive-card').forEach((c,i) => {
         const vals = ['yes-partner','self-monitored','unsure'];
         if (vals[i] === formData.alarmDetails.monitoring) c.classList.add('selected');
+      });
+    }
+  }
+  if (n === '7f') {
+    buildIntercomEntryMatrix();
+  }
+  if (n === '7g') {
+    if (formData.cameraDetails.scope) {
+      document.querySelectorAll('#cameraScopeCards .deep-dive-card').forEach((c,i) => {
+        const scopes = ['essential','considered','comprehensive','custom','unsure'];
+        if (scopes[i] === formData.cameraDetails.scope) c.classList.add('selected');
+      });
+    }
+  }
+  if (n === '7h') {
+    if (formData.poolDetails.controlPath) {
+      document.querySelectorAll('#poolPathCards .deep-dive-card').forEach((c,i) => {
+        const vals = ['pool-app','knx-integrated','unsure'];
+        if (vals[i] === formData.poolDetails.controlPath) c.classList.add('selected');
+      });
+    }
+    if (formData.poolDetails.status) {
+      document.querySelectorAll('#poolStatusCards .deep-dive-card').forEach((c,i) => {
+        const vals = ['new-construction','existing-retro','planning','pool-and-spa','unsure'];
+        if (vals[i] === formData.poolDetails.status) c.classList.add('selected');
+      });
+    }
+  }
+  if (n === '7i') {
+    if (formData.wellnessDetails.controlPath) {
+      document.querySelectorAll('#wellnessPathCards .deep-dive-card').forEach((c,i) => {
+        const vals = ['manufacturer-app','full-integration','unsure'];
+        if (vals[i] === formData.wellnessDetails.controlPath) c.classList.add('selected');
       });
     }
   }
@@ -1951,6 +2308,105 @@ function toggleAlarmProtection(val, el) {
   else { const i = arr.indexOf(val); if (i > -1) arr.splice(i, 1); }
 }
 
+// ===== INTERCOM DEEP DIVE =====
+const INTERCOM_ENTRY_DEFAULTS = ['Front door / main entry','Side gate / pedestrian gate','Vehicle / driveway gate','Pool gate','Granny flat / studio entry'];
+
+function buildIntercomEntryMatrix() {
+  if (formData.intercomDetails.entries.length === 0) {
+    formData.intercomDetails.entries = INTERCOM_ENTRY_DEFAULTS.map(e => ({ entry: e, accessType: '' }));
+  }
+  renderIntercomEntryRows();
+}
+
+function renderIntercomEntryRows() {
+  const tbody = document.getElementById('intercomEntryRows');
+  if (!tbody) return;
+  const cols = ['swipe-only','keypad-swipe','keypad-swipe-video','intercom-only','none'];
+  tbody.innerHTML = formData.intercomDetails.entries.map((r, i) => `
+    <tr>
+      <td><div class="room-name-wrap"><input class="room-name-input" value="${r.entry}" oninput="formData.intercomDetails.entries[${i}].entry=this.value" placeholder="Click to rename" title="Click to rename this entry"><span class="room-pencil-icon">&#9998;</span></div></td>
+      ${cols.map(c => `<td><input type="radio" name="intercom-access-${i}" value="${c}" style="accent-color:var(--cobalt)" onclick="handleIntercomClick(event,${i},'${c}')" ${r.accessType===c?'checked':''}></td>`).join('')}
+      <td><button class="matrix-row-delete" onclick="deleteIntercomEntry(${i})" title="Remove this entry">&#xD7;</button></td>
+    </tr>
+  `).join('');
+}
+
+function addIntercomEntry() {
+  formData.intercomDetails.entries.push({ entry: '', accessType: '' });
+  renderIntercomEntryRows();
+}
+
+function deleteIntercomEntry(i) {
+  formData.intercomDetails.entries.splice(i, 1);
+  renderIntercomEntryRows();
+}
+
+function handleIntercomClick(evt, rowIdx, val) {
+  if (formData.intercomDetails.entries[rowIdx].accessType === val) {
+    formData.intercomDetails.entries[rowIdx].accessType = '';
+    evt.target.checked = false;
+  } else {
+    formData.intercomDetails.entries[rowIdx].accessType = val;
+  }
+}
+
+// ===== CAMERAS DEEP DIVE =====
+function selectCameraScope(scope, el) {
+  formData.cameraDetails.scope = scope;
+  document.querySelectorAll('#cameraScopeCards .deep-dive-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function toggleCameraZone(val, el) {
+  const arr = formData.cameraDetails.zones;
+  if (el.checked) { if (!arr.includes(val)) arr.push(val); }
+  else { const i = arr.indexOf(val); if (i > -1) arr.splice(i, 1); }
+}
+
+function toggleCameraSpecialty(val, el) {
+  const arr = formData.cameraDetails.specialty;
+  if (el.checked) { if (!arr.includes(val)) arr.push(val); }
+  else { const i = arr.indexOf(val); if (i > -1) arr.splice(i, 1); }
+}
+
+// ===== POOL DEEP DIVE =====
+function selectPoolPath(val, el) {
+  formData.poolDetails.controlPath = val;
+  document.querySelectorAll('#poolPathCards .deep-dive-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function selectPoolStatus(val, el) {
+  formData.poolDetails.status = val;
+  document.querySelectorAll('#poolStatusCards .deep-dive-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function togglePoolFeature(val, el) {
+  const arr = formData.poolDetails.features;
+  if (el.checked) { if (!arr.includes(val)) arr.push(val); }
+  else { const i = arr.indexOf(val); if (i > -1) arr.splice(i, 1); }
+}
+
+// ===== WELLNESS & GYM DEEP DIVE =====
+function selectWellnessPath(val, el) {
+  formData.wellnessDetails.controlPath = val;
+  document.querySelectorAll('#wellnessPathCards .deep-dive-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function toggleWellnessFeature(val, el) {
+  const arr = formData.wellnessDetails.features;
+  if (el.checked) { if (!arr.includes(val)) arr.push(val); }
+  else { const i = arr.indexOf(val); if (i > -1) arr.splice(i, 1); }
+}
+
+function toggleWellnessAutomation(val, el) {
+  const arr = formData.wellnessDetails.automation;
+  if (el.checked) { if (!arr.includes(val)) arr.push(val); }
+  else { const i = arr.indexOf(val); if (i > -1) arr.splice(i, 1); }
+}
+
 function selectSpeakerBrand(brand, el) {
   formData.audioDetails.brandPreference = brand;
   document.querySelectorAll('#speakerBrandPills .pill').forEach(p => p.classList.remove('selected'));
@@ -2081,6 +2537,10 @@ async function submitForm() {
     cinemaDetails: JSON.stringify(formData.cinemaDetails),
     networkDetails: JSON.stringify(formData.networkDetails),
     alarmDetails: JSON.stringify(formData.alarmDetails),
+    intercomDetails: JSON.stringify(formData.intercomDetails),
+    cameraDetails: JSON.stringify(formData.cameraDetails),
+    poolDetails: JSON.stringify(formData.poolDetails),
+    wellnessDetails: JSON.stringify(formData.wellnessDetails),
   };
   if (!payload.firstName || !payload.email) {
     alert('Please provide your first name and email on the previous page.');
