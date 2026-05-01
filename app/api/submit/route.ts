@@ -11,6 +11,8 @@ type FormPayload = {
   phone?: string
   email?: string
   // V2 fields
+  rooms?: Array<{ id?: string; name?: string; floor?: string }>
+  layoutFloorPlan?: string
   projectType?: string  // 'full' | 'essentials' | 'unsure'
   platform?: string
   screens?: string | string[]
@@ -77,6 +79,7 @@ function joinIfArray(v: unknown): string {
 const V2_COLUMN_ORDER: (keyof FormPayload | 'timestamp')[] = [
   'timestamp',
   'firstName', 'lastName', 'phone', 'email',
+  'rooms', 'layoutFloorPlan',
   'projectType', 'elecReidPick', 'platform', 'screens', 'switches',
   'scenesNotes', 'recommendedScenes', 'systems', 'motionSensorDetail',
   'floorPlans', 'timeframe', 'involved', 'collaborators', 'budget', 'otherNotes',
@@ -140,10 +143,27 @@ async function appendToSheet(accessToken: string, payload: FormPayload) {
 
 function formatEmailBody(payload: FormPayload): { html: string; text: string } {
   const fullName = [payload.firstName, payload.lastName].filter(Boolean).join(' ') || '(no name)'
+  // Format rooms as grouped floor list
+  let roomsText = ''
+  if (payload.rooms && payload.rooms.length > 0) {
+    const floorMap: Record<string, string[]> = {}
+    payload.rooms.forEach(r => {
+      const floor = r.floor || 'Other'
+      const name = r.name || '(unnamed)'
+      if (!floorMap[floor]) floorMap[floor] = []
+      floorMap[floor].push(name)
+    })
+    roomsText = Object.entries(floorMap)
+      .map(([floor, rooms]) => `${floor}:\n${rooms.map(n => `  - ${n}`).join('\n')}`)
+      .join('\n')
+  }
+
   const fields: Array<[string, string | undefined]> = [
     ['Name', fullName],
     ['Email', payload.email],
     ['Phone', payload.phone],
+    ['Layout', roomsText || undefined],
+    ['Layout notes', payload.layoutFloorPlan],
     ['Project Type', payload.projectType],
     ['Elec Reid Pick Tier', payload.elecReidPick?.tier || ''],
     ['Platform', payload.platform || payload.automationSystem],
