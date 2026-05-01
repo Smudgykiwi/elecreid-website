@@ -1987,20 +1987,21 @@ function getPageSequence() {
   const hasCameras = formData.systems.includes('cameras');
   const hasPool = formData.systems.includes('pool');
   const hasWellness = formData.systems.includes('wellness');
-  if (formData.projectType === 'essentials') return [1, 7, 8, 9];
   if (formData.projectType === 'elec-reid-pick') return [1, '1b', 8, 9];
-  const seq = [1, 2, 3, 4, 5, 6, 7];
-  if (hasTvs) seq.push('7a');
-  if (hasAudio) seq.push('7b');
-  if (hasCinema) seq.push('7c');
-  if (hasNetwork) seq.push('7d');
-  if (hasAlarm) seq.push('7e');
-  if (hasIntercom) seq.push('7f');
-  if (hasCameras) seq.push('7g');
-  if (hasPool) seq.push('7h');
-  if (hasWellness) seq.push('7i');
-  seq.push(8, 9);
-  return seq;
+  // Build the deep-dive segment based on what's selected (shared between essentials and full)
+  const deepDives = [];
+  if (hasTvs) deepDives.push('7a');
+  if (hasAudio) deepDives.push('7b');
+  if (hasCinema) deepDives.push('7c');
+  if (hasNetwork) deepDives.push('7d');
+  if (hasAlarm) deepDives.push('7e');
+  if (hasIntercom) deepDives.push('7f');
+  if (hasCameras) deepDives.push('7g');
+  if (hasPool) deepDives.push('7h');
+  if (hasWellness) deepDives.push('7i');
+  if (formData.projectType === 'essentials') return [1, 7, ...deepDives, 8, 9];
+  // Default: full path
+  return [1, 2, 3, 4, 5, 6, 7, ...deepDives, 8, 9];
 }
 
 const allSystems = [
@@ -2186,7 +2187,15 @@ function updateNavBar() {
     forward.textContent = (pos >= 0 && pos === total - 1) ? 'Send my plan' : 'Continue \u2192';
   }
   if (counter) {
-    counter.textContent = 'Stage ' + (pos + 1) + ' of ' + total;
+    if (currentPage === 0) {
+      // Cover page: hide stage counter (we're not in a stage yet)
+      counter.textContent = '';
+    } else if (pos < 0) {
+      // Defensive: page not in computed sequence, fall back to neutral label
+      counter.textContent = '';
+    } else {
+      counter.textContent = 'Stage ' + (pos + 1) + ' of ' + total;
+    }
   }
 }
 
