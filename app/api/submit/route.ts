@@ -233,7 +233,9 @@ async function sendEmail(accessToken: string, payload: FormPayload) {
     const tierLabels: Record<string, string> = {
       foundation: 'Foundation',
       considered: 'Considered',
-      architectural: 'Architectural',
+      estate: 'Estate',
+      // Legacy: in case any old submissions still come through with the previous label
+      architectural: 'Estate',
       recommend: 'Recommend',
     }
     const tierLabel = tierLabels[payload.elecReidPick?.tier || ''] || payload.elecReidPick?.tier || 'Unknown'
