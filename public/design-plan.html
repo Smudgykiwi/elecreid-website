@@ -49,7 +49,7 @@ html, body {
 .stage-numeral {
   font-family: 'Austin', serif;
   font-style: italic;
-  font-size: 72pt;
+  font-size: 56pt;
   color: var(--cobalt);
   line-height: 1;
   margin-bottom: 16px;
@@ -66,7 +66,12 @@ html, body {
 }
 .stage-headline em { font-style: italic; }
 .stage-subhead { font-size: 14pt; color: var(--navy); margin-bottom: 32px; line-height: 1.5; }
-.stage-lead { font-family: 'Austin', serif; font-style: italic; font-size: 18pt; color: var(--navy); margin-bottom: 20px; line-height: 1.4; }
+.stage-lead { font-family: 'Circular', sans-serif; font-style: normal; font-size: 14pt; font-weight: 400; color: var(--navy); margin-bottom: 20px; line-height: 1.55; max-width: 640px; }
+.section-divider-light { border: none; border-top: 1px solid rgba(143,143,143,0.5); margin: 0 0 16px 0; }
+/* Y/N gate buttons */
+.yn-btn { display:inline-block; padding:3px 10px; font-family:'Circular',sans-serif; font-size:11pt; font-weight:700; border:1px solid var(--grey); background:transparent; color:var(--grey-mid); cursor:pointer; border-radius:3px; margin:0 2px; transition:all 0.15s; }
+.yn-yes-active { border-color:var(--cobalt); background:var(--cobalt); color:#fff; }
+.yn-no-active { border-color:var(--grey); background:var(--grey); color:var(--navy); }
 
 /* Container */
 .container { max-width: 1040px; margin: 0 auto; padding: 64px 40px 40px; }
@@ -959,6 +964,7 @@ html, body {
         <table class="room-matrix">
           <thead><tr>
             <th>Room</th>
+            <th style="width:80px;">TV?</th>
             <th>Under 65", flat</th>
             <th>Under 65", swing-out</th>
             <th>65" or bigger, flat</th>
@@ -1004,6 +1010,7 @@ html, body {
         <table class="room-matrix">
           <thead><tr>
             <th>Room</th>
+            <th style="width:80px;">Audio?</th>
             <th>Level 1 - Background</th>
             <th>Level 2 - Decent</th>
             <th>Level 3 - Pumping</th>
@@ -1676,12 +1683,33 @@ html, body {
     <div class="stage-numeral">07</div>
     <h1 class="stage-headline">The <em>practical bit.</em></h1>
 
-    <!-- COLLABORATORS SECTION -->
-    <div class="eyebrow" style="margin-bottom:16px;">COLLABORATORS</div>
-    <div class="stage-lead" style="margin-bottom:16px;"><em>Working with anyone else?</em></div>
-    <p style="font-size:13pt; line-height:1.6; margin-bottom:32px;">The best smart homes happen when we collaborate from day one. If you've got an architect, interior designer, or builder, give us their details and we'll bring them into the conversation.</p>
+    <!-- SECTION A: PROJECT BASICS -->
+    <div class="eyebrow" style="margin-bottom:12px;">PROJECT BASICS</div>
+    <hr class="section-divider-light">
 
-    <div class="form-group">
+    <div class="form-group" style="margin-bottom:16px;">
+      <label class="form-label">Floor Plans</label>
+      <p style="font-size:13pt; margin-bottom:12px; line-height:1.5;">Send floor plans to <a href="mailto:enquiries@elecreid.com" style="color:var(--cobalt);">enquiries@elecreid.com</a> or note here that they're coming.</p>
+      <textarea id="floorPlans" class="form-textarea" placeholder="Floor plans coming via email, or note file locations here..."></textarea>
+    </div>
+
+    <div class="form-group" style="margin-bottom:16px;">
+      <label class="form-label">Project Timeframe</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="timeframe" value="asap" onchange="formData.timeframe='asap'"> ASAP</label>
+        <label class="radio-option"><input type="radio" name="timeframe" value="3months" onchange="formData.timeframe='3months'"> Next 3 months</label>
+        <label class="radio-option"><input type="radio" name="timeframe" value="6months" onchange="formData.timeframe='6months'"> Next 6 months</label>
+        <label class="radio-option"><input type="radio" name="timeframe" value="12months" onchange="formData.timeframe='12months'"> Next 12 months</label>
+        <label class="radio-option"><input type="radio" name="timeframe" value="exploring" onchange="formData.timeframe='exploring'"> Just exploring</label>
+      </div>
+    </div>
+
+    <!-- SECTION B: COLLABORATORS -->
+    <div class="eyebrow" style="margin-top:32px; margin-bottom:12px;">COLLABORATORS</div>
+    <hr class="section-divider-light">
+    <p style="font-size:13pt; line-height:1.6; margin-bottom:16px;">The best smart homes happen when we collaborate from day one. If you've got an architect, interior designer, or builder, give us their details and we'll bring them into the conversation.</p>
+
+    <div class="form-group" style="margin-bottom:16px;">
       <p class="form-label" style="margin-bottom:12px;">Architect</p>
       <div class="form-grid-2">
         <div>
@@ -1695,7 +1723,7 @@ html, body {
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" style="margin-bottom:16px;">
       <p class="form-label" style="margin-bottom:12px;">Interior designer</p>
       <div class="form-grid-2">
         <div>
@@ -1709,7 +1737,7 @@ html, body {
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" style="margin-bottom:16px;">
       <p class="form-label" style="margin-bottom:12px;">Builder</p>
       <div class="form-grid-2">
         <div>
@@ -1723,33 +1751,17 @@ html, body {
       </div>
     </div>
 
-    <hr class="section-divider" style="margin-bottom:40px;">
-
-    <div class="form-group">
-      <label class="form-label">Floor Plans</label>
-      <p style="font-size:13pt; margin-bottom:12px; line-height:1.5;">Send floor plans to <a href="mailto:enquiries@elecreid.com" style="color:var(--cobalt);">enquiries@elecreid.com</a> or note here that they're coming.</p>
-      <textarea id="floorPlans" class="form-textarea" placeholder="Floor plans coming via email, or note file locations here..."></textarea>
-    </div>
-
-    <div class="form-group">
-      <label class="form-label">Project Timeframe</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="timeframe" value="asap" onchange="formData.timeframe='asap'"> ASAP</label>
-        <label class="radio-option"><input type="radio" name="timeframe" value="3months" onchange="formData.timeframe='3months'"> Next 3 months</label>
-        <label class="radio-option"><input type="radio" name="timeframe" value="6months" onchange="formData.timeframe='6months'"> Next 6 months</label>
-        <label class="radio-option"><input type="radio" name="timeframe" value="12months" onchange="formData.timeframe='12months'"> Next 12 months</label>
-        <label class="radio-option"><input type="radio" name="timeframe" value="exploring" onchange="formData.timeframe='exploring'"> Just exploring</label>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="form-label">Working directly without a team?</label>
+    <div class="form-group" style="margin-bottom:16px;">
       <div class="checkbox-group">
         <label class="checkbox-option"><input type="checkbox" onchange="toggleInvolved('homeowner-direct',this)"> None / homeowner direct</label>
       </div>
     </div>
 
-    <div class="form-group">
+    <!-- SECTION C: INVESTMENT -->
+    <div class="eyebrow" style="margin-top:32px; margin-bottom:12px;">INVESTMENT</div>
+    <hr class="section-divider-light">
+
+    <div class="form-group" style="margin-bottom:16px;">
       <label class="form-label">Budget Bracket</label>
       <div class="radio-group">
         <label class="radio-option"><input type="radio" name="budget" value="under50k" onchange="formData.budget='under50k'"> Under $50k</label>
@@ -1761,15 +1773,11 @@ html, body {
       </div>
     </div>
 
-    <div class="form-group">
-      <label class="form-label">Anything else?</label>
-      <textarea id="otherNotes" class="form-textarea" placeholder="Anything else we should know about your project..."></textarea>
-    </div>
+    <!-- SECTION D: YOUR DETAILS -->
+    <div class="eyebrow" style="margin-top:32px; margin-bottom:12px;">YOUR DETAILS</div>
+    <hr class="section-divider-light">
 
-    <hr class="section-divider">
-    <p class="eyebrow" style="margin-bottom:24px;">Your details.</p>
-
-    <div class="form-grid-2">
+    <div class="form-grid-2" style="margin-bottom:16px;">
       <div class="form-group">
         <label class="form-label">First name <span style="color:var(--cobalt);">*</span></label>
         <input type="text" id="firstName" class="form-input" placeholder="Joe" required>
@@ -1779,7 +1787,7 @@ html, body {
         <input type="text" id="lastName" class="form-input" placeholder="Reid">
       </div>
     </div>
-    <div class="form-grid-2">
+    <div class="form-grid-2" style="margin-bottom:16px;">
       <div class="form-group">
         <label class="form-label">Phone</label>
         <input type="tel" id="phone" class="form-input" placeholder="0450 342 075">
@@ -1788,6 +1796,14 @@ html, body {
         <label class="form-label">Email <span style="color:var(--cobalt);">*</span></label>
         <input type="email" id="email" class="form-input" placeholder="joe@example.com" required>
       </div>
+    </div>
+
+    <!-- SECTION E: ANYTHING ELSE? -->
+    <div class="eyebrow" style="margin-top:32px; margin-bottom:12px;">ANYTHING ELSE?</div>
+    <hr class="section-divider-light">
+
+    <div class="form-group" style="margin-bottom:16px;">
+      <textarea id="otherNotes" class="form-textarea" placeholder="Anything else we should know about your project..."></textarea>
     </div>
   </div>
 </div>
@@ -2437,7 +2453,7 @@ function buildTvRoomMatrix() {
     const seed = formData.rooms.length > 0
       ? formData.rooms.map(r => r.name).filter(Boolean)
       : TV_ROOM_DEFAULTS;
-    formData.tvDetails.rooms = seed.map(r => ({ room: r, bracketChoice: '' }));
+    formData.tvDetails.rooms = seed.map(r => ({ room: r, bracketChoice: '', hasTv: false }));
   }
   while (formData.tvDetails.audioPerRoom.length < formData.tvDetails.rooms.length) {
     formData.tvDetails.audioPerRoom.push({ room: '', soundbar: '', addSurround: false, addSub: false });
@@ -2448,20 +2464,42 @@ function buildTvRoomMatrix() {
 function renderTvRoomRows() {
   const tbody = document.getElementById('tvRoomRows');
   if (!tbody) return;
-  tbody.innerHTML = formData.tvDetails.rooms.map((r, i) => `
-    <tr>
-      <td><div class="room-name-wrap"><input class="room-name-input" value="${r.room}" oninput="formData.tvDetails.rooms[${i}].room=this.value;syncTvAudioRooms()" placeholder="Click to rename" title="Click to rename this room"><span class="room-pencil-icon">&#9998;</span></div></td>
+  tbody.innerHTML = formData.tvDetails.rooms.map((r, i) => {
+    const hasTV = r.hasTv === true;
+    const bracketCells = hasTV ? `
       <td><input type="radio" name="tv-bracket-${i}" value="under65-flat" style="accent-color:var(--cobalt)" onclick="handleTvBracketClick(event,${i},'under65-flat')" ${r.bracketChoice==='under65-flat'?'checked':''}></td>
       <td><input type="radio" name="tv-bracket-${i}" value="under65-swing" style="accent-color:var(--cobalt)" onclick="handleTvBracketClick(event,${i},'under65-swing')" ${r.bracketChoice==='under65-swing'?'checked':''}></td>
       <td><input type="radio" name="tv-bracket-${i}" value="65plus-flat" style="accent-color:var(--cobalt)" onclick="handleTvBracketClick(event,${i},'65plus-flat')" ${r.bracketChoice==='65plus-flat'?'checked':''}></td>
       <td><input type="radio" name="tv-bracket-${i}" value="65plus-swing" style="accent-color:var(--cobalt)" onclick="handleTvBracketClick(event,${i},'65plus-swing')" ${r.bracketChoice==='65plus-swing'?'checked':''}></td>
+    ` : `<td colspan="4" style="color:var(--grey-mid);font-size:11pt;text-align:center;"></td>`;
+    return `<tr>
+      <td><div class="room-name-wrap"><input class="room-name-input" value="${r.room}" oninput="formData.tvDetails.rooms[${i}].room=this.value;syncTvAudioRooms()" placeholder="Click to rename" title="Click to rename this room"><span class="room-pencil-icon">&#9998;</span></div></td>
+      <td style="white-space:nowrap;">
+        <button class="yn-btn ${hasTV?'yn-yes-active':''}" onclick="setTvYN(${i},true)">Yes</button>
+        <button class="yn-btn ${!hasTV?'yn-no-active':''}" onclick="setTvYN(${i},false)">No</button>
+      </td>
+      ${bracketCells}
       <td><button class="matrix-row-delete" onclick="deleteTvRoom(${i})" title="Remove this room">&#xD7;</button></td>
-    </tr>
-  `).join('');
+    </tr>`;
+  }).join('');
+}
+
+function setTvYN(i, hasTV) {
+  formData.tvDetails.rooms[i].hasTv = hasTV;
+  if (!hasTV) {
+    formData.tvDetails.rooms[i].bracketChoice = '';
+    if (formData.tvDetails.audioPerRoom[i]) {
+      formData.tvDetails.audioPerRoom[i].soundbar = '';
+      formData.tvDetails.audioPerRoom[i].addSurround = false;
+      formData.tvDetails.audioPerRoom[i].addSub = false;
+    }
+  }
+  renderTvRoomRows();
+  buildTvAudioRows();
 }
 
 function addTvRoom() {
-  formData.tvDetails.rooms.push({ room: '', bracketChoice: '' });
+  formData.tvDetails.rooms.push({ room: '', bracketChoice: '', hasTv: false });
   formData.tvDetails.audioPerRoom.push({ room: '', soundbar: '', addSurround: false, addSub: false });
   renderTvRoomRows();
   buildTvAudioRows();
@@ -2487,7 +2525,14 @@ function buildTvAudioRows() {
     { id:'custom-theatre', label:'Custom theatre / audio system', hasSubs: false },
     { id:'tv-speakers', label:'TV speakers only', hasSubs: false }
   ];
-  container.innerHTML = formData.tvDetails.rooms.map((r, i) => {
+  const tvRooms = formData.tvDetails.rooms
+    .map((r, i) => ({ r, i }))
+    .filter(({ r }) => r.hasTv === true);
+  if (tvRooms.length === 0) {
+    container.innerHTML = '<p style="color:var(--grey-mid);font-size:13pt;padding:16px 0;">Select Yes for a room above to configure its TV audio.</p>';
+    return;
+  }
+  container.innerHTML = tvRooms.map(({ r, i }) => {
     const roomName = r.room || 'Room ' + (i + 1);
     const cur = formData.tvDetails.audioPerRoom[i] || {};
     return `
@@ -2522,7 +2567,7 @@ function buildAudioRoomMatrix() {
     const seed = formData.rooms.length > 0
       ? formData.rooms.map(r => r.name).filter(Boolean)
       : AUDIO_ROOM_DEFAULTS;
-    formData.audioDetails.rooms = seed.map(r => ({ room: r, level: '', visibility: '' }));
+    formData.audioDetails.rooms = seed.map(r => ({ room: r, level: '', visibility: '', hasAudio: false }));
   }
   renderAudioRoomRows();
 }
@@ -2530,22 +2575,39 @@ function buildAudioRoomMatrix() {
 function renderAudioRoomRows() {
   const tbody = document.getElementById('audioRoomRows');
   if (!tbody) return;
-  tbody.innerHTML = formData.audioDetails.rooms.map((r, i) => `
-    <tr>
-      <td><div class="room-name-wrap"><input class="room-name-input" value="${r.room}" oninput="formData.audioDetails.rooms[${i}].room=this.value" placeholder="Click to rename" title="Click to rename this room"><span class="room-pencil-icon">&#9998;</span></div></td>
+  tbody.innerHTML = formData.audioDetails.rooms.map((r, i) => {
+    const hasAudio = r.hasAudio === true;
+    const levelCells = hasAudio ? `
       <td><input type="radio" name="audio-level-${i}" value="1" style="accent-color:var(--cobalt)" onclick="handleAudioLevelClick(event,${i},'1')" ${r.level==='1'?'checked':''}></td>
       <td><input type="radio" name="audio-level-${i}" value="2" style="accent-color:var(--cobalt)" onclick="handleAudioLevelClick(event,${i},'2')" ${r.level==='2'?'checked':''}></td>
       <td><input type="radio" name="audio-level-${i}" value="3" style="accent-color:var(--cobalt)" onclick="handleAudioLevelClick(event,${i},'3')" ${r.level==='3'?'checked':''}></td>
       <td><input type="radio" name="audio-level-${i}" value="none" style="accent-color:var(--cobalt)" onclick="handleAudioLevelClick(event,${i},'none')" ${r.level==='none'?'checked':''}></td>
       <td><input type="radio" name="audio-vis-${i}" value="visible" style="accent-color:var(--cobalt)" onclick="handleAudioVisClick(event,${i},'visible')" ${r.visibility==='visible'?'checked':''}></td>
       <td><input type="radio" name="audio-vis-${i}" value="invisible" style="accent-color:var(--cobalt)" onclick="handleAudioVisClick(event,${i},'invisible')" ${r.visibility==='invisible'?'checked':''}></td>
+    ` : `<td colspan="6" style="color:var(--grey-mid);font-size:11pt;text-align:center;"></td>`;
+    return `<tr>
+      <td><div class="room-name-wrap"><input class="room-name-input" value="${r.room}" oninput="formData.audioDetails.rooms[${i}].room=this.value" placeholder="Click to rename" title="Click to rename this room"><span class="room-pencil-icon">&#9998;</span></div></td>
+      <td style="white-space:nowrap;">
+        <button class="yn-btn ${hasAudio?'yn-yes-active':''}" onclick="setAudioYN(${i},true)">Yes</button>
+        <button class="yn-btn ${!hasAudio?'yn-no-active':''}" onclick="setAudioYN(${i},false)">No</button>
+      </td>
+      ${levelCells}
       <td><button class="matrix-row-delete" onclick="deleteAudioRoom(${i})" title="Remove this room">&#xD7;</button></td>
-    </tr>
-  `).join('');
+    </tr>`;
+  }).join('');
+}
+
+function setAudioYN(i, hasAudio) {
+  formData.audioDetails.rooms[i].hasAudio = hasAudio;
+  if (!hasAudio) {
+    formData.audioDetails.rooms[i].level = '';
+    formData.audioDetails.rooms[i].visibility = '';
+  }
+  renderAudioRoomRows();
 }
 
 function addAudioRoom() {
-  formData.audioDetails.rooms.push({ room: '', level: '', visibility: '' });
+  formData.audioDetails.rooms.push({ room: '', level: '', visibility: '', hasAudio: false });
   renderAudioRoomRows();
 }
 
