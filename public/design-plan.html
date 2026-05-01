@@ -109,6 +109,7 @@ html, body {
   margin-bottom: 32px;
 }
 .cards-row.two-col { grid-template-columns: repeat(2, 1fr); }
+.cards-row.four-col { grid-template-columns: repeat(4, 1fr); }
 .card {
   border: 1.5px solid var(--grey);
   background: var(--cream);
@@ -398,6 +399,7 @@ html, body {
 /* Responsive */
 @media (max-width: 768px) {
   .cards-row { grid-template-columns: 1fr; }
+  .cards-row.four-col { grid-template-columns: 1fr; }
   .platform-section { grid-template-columns: 1fr; }
   .screen-cards { grid-template-columns: 1fr; }
   .systems-grid { grid-template-columns: 1fr; }
@@ -439,7 +441,7 @@ html, body {
     <div class="stage-numeral">00</div>
     <h1 class="stage-headline">Where do you want to <em>start?</em></h1>
     <p class="stage-subhead">There's no wrong path. Pick what fits the project.</p>
-    <div class="cards-row">
+    <div class="cards-row four-col">
       <div class="card" data-type="full" onclick="selectProjectType('full', this)">
         <div class="img-slot" data-slot-id="IMG-00A-full-smart-home" style="aspect-ratio:4/3;">
           <div class="img-slot-eyebrow">IMG-00A-FULL-SMART-HOME</div>
@@ -466,6 +468,64 @@ html, body {
         <div class="card-title"><em>Not sure yet.</em></div>
         <div class="card-subtitle">We'll guide you.</div>
         <div class="card-body">Pick this and we'll tailor the discovery call around your priorities.</div>
+      </div>
+      <div class="card" data-type="elec-reid-pick" onclick="selectProjectType('elec-reid-pick', this)">
+        <div class="img-slot" data-slot-id="IMG-00D-elec-reid-pick" style="aspect-ratio:4/3;">
+          <div class="img-slot-eyebrow">IMG-00D-ELEC-REID-PICK</div>
+          <div class="img-slot-desc"><em>Editorial portrait of an Elec Reid completed install, hero shot</em></div>
+        </div>
+        <div class="card-title"><em>Elec Reid Pick.</em></div>
+        <div class="card-subtitle">Let us choose for you.</div>
+        <div class="card-body">The system we'd put in our own home. Pre-configured, no decisions to make. Just tell us about the project and we'll send you our recommended specification.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 1B: STAGE 00B - Elec Reid Pick Tier Selection -->
+<div class="page page-1b">
+  <div class="container">
+    <div class="eyebrow">STAGE ZERO · ELEC REID PICK</div>
+    <div class="stage-numeral">00</div>
+    <h1 class="stage-headline"><em>Pick a tier.</em></h1>
+    <p class="stage-lead"><em>Three pre-configured systems based on what we'd specify ourselves. Pick one, or let us recommend.</em></p>
+    <p class="stage-subhead">Each tier is a complete smart home spec, ready to install. The discovery call is where we walk through what's included and tailor it to your project. No design work for you, no decisions to chase down.</p>
+    <div class="cards-row four-col">
+      <div class="card" data-tier="foundation" onclick="selectElecReidTier('foundation', this)">
+        <div class="img-slot" data-slot-id="IMG-pick-foundation" style="aspect-ratio:4/3;">
+          <div class="img-slot-eyebrow">IMG-PICK-FOUNDATION</div>
+          <div class="img-slot-desc"><em>Editorial portrait of an Elec Reid Foundation install</em></div>
+        </div>
+        <div class="card-title"><em>Foundation.</em></div>
+        <div class="card-subtitle">From $80k.</div>
+        <div class="card-body">The smart home that works for most premium projects. Apple Home platform. Considered network. Whole-home audio in the living areas. UniFi cameras at entries. Inception alarm. Lighting integration in main spaces.</div>
+      </div>
+      <div class="card" data-tier="considered" onclick="selectElecReidTier('considered', this)">
+        <div class="img-slot" data-slot-id="IMG-pick-considered" style="aspect-ratio:4/3;">
+          <div class="img-slot-eyebrow">IMG-PICK-CONSIDERED</div>
+          <div class="img-slot-desc"><em>Editorial portrait of an Elec Reid Considered install</em></div>
+        </div>
+        <div class="card-title"><em>Considered.</em></div>
+        <div class="card-subtitle">From $200k.</div>
+        <div class="card-body">Foundation, plus full lighting and blinds, comprehensive coverage. All of Foundation, plus full lighting integration, motorised blinds in living areas, full home audio coverage, intercom at all entries, comprehensive cameras, cinema room (Considered package), Wellness room basics.</div>
+      </div>
+      <div class="card" data-tier="architectural" onclick="selectElecReidTier('architectural', this)">
+        <div class="img-slot" data-slot-id="IMG-pick-architectural" style="aspect-ratio:4/3;">
+          <div class="img-slot-eyebrow">IMG-PICK-ARCHITECTURAL</div>
+          <div class="img-slot-desc"><em>Editorial portrait of an Elec Reid Architectural install</em></div>
+        </div>
+        <div class="card-title"><em>Architectural.</em></div>
+        <div class="card-subtitle">From $400k.</div>
+        <div class="card-body">The full Elec Reid statement. Basalte switches and touchscreens. Full lighting and blinds throughout. Whole-home audio with outdoor zones. Reference cinema. Wellness and gym integration. Pool integration via KNX. Everything talks to everything.</div>
+      </div>
+      <div class="card" data-tier="recommend" onclick="selectElecReidTier('recommend', this)">
+        <div class="img-slot" data-slot-id="IMG-pick-recommend" style="aspect-ratio:4/3;">
+          <div class="img-slot-eyebrow">IMG-PICK-RECOMMEND</div>
+          <div class="img-slot-desc"><em>Elec Reid team consultation, discovery session</em></div>
+        </div>
+        <div class="card-title"><em>Recommend for me.</em></div>
+        <div class="card-subtitle">We'll advise on the call.</div>
+        <div class="card-body">Tell us about the project on the discovery call. We'll bring the right tier.</div>
       </div>
     </div>
   </div>
@@ -1678,6 +1738,7 @@ html, body {
 <script>
 const formData = {
   projectType: '',
+  elecReidPick: { tier: '' },
   moods: [],
   platform: '',
   screens: [],
@@ -1792,7 +1853,12 @@ function getNextPage(pageId) {
     return 8;
   }
   if (pageId === 0) return 1;
-  if (pageId === 1) return formData.projectType === 'essentials' ? 7 : 2;
+  if (pageId === 1) {
+    if (formData.projectType === 'essentials') return 7;
+    if (formData.projectType === 'elec-reid-pick') return '1b';
+    return 2;
+  }
+  if (pageId === '1b') return 8;
   if (pageId === 2) return 3;
   if (pageId === 3) return 4;
   if (pageId === 4) return 5;
@@ -1872,6 +1938,7 @@ function getPrevPage(pageId) {
     return beforeWellness();
   }
   if (pageId === 1 || pageId === 0) return null;
+  if (pageId === '1b') return 1;
   if (pageId === 2) return 1;
   if (pageId === 3) return 2;
   if (pageId === 4) return 3;
@@ -1902,7 +1969,10 @@ function getPrevPage(pageId) {
   if (pageId === '7g') return beforeCameras();
   if (pageId === '7h') return beforePool();
   if (pageId === '7i') return beforeWellness();
-  if (pageId === 8) return before8();
+  if (pageId === 8) {
+    if (formData.projectType === 'elec-reid-pick') return '1b';
+    return before8();
+  }
   if (pageId === 9) return 8;
   return null;
 }
@@ -1918,6 +1988,7 @@ function getPageSequence() {
   const hasPool = formData.systems.includes('pool');
   const hasWellness = formData.systems.includes('wellness');
   if (formData.projectType === 'essentials') return [1, 7, 8, 9];
+  if (formData.projectType === 'elec-reid-pick') return [1, '1b', 8, 9];
   const seq = [1, 2, 3, 4, 5, 6, 7];
   if (hasTvs) seq.push('7a');
   if (hasAudio) seq.push('7b');
@@ -2464,10 +2535,21 @@ function selectProjectType(type, el) {
   formData.projectType = type;
   document.querySelectorAll('.page-1 .card').forEach(c => c.classList.remove('selected'));
   el.classList.add('selected');
-  // For essentials, skip Stages 01-05 and go straight to Systems (page 7)
-  // For full or unsure, go to Stage 01 (Mood, page 2)
-  const next = type === 'essentials' ? 7 : 2;
+  // For essentials: straight to Systems (page 7)
+  // For elec-reid-pick: go to tier selection (page 1b)
+  // For full or unsure: go to Stage 01 Mood (page 2)
+  let next;
+  if (type === 'essentials') next = 7;
+  else if (type === 'elec-reid-pick') next = '1b';
+  else next = 2;
   setTimeout(() => showPage(next), 240);
+}
+
+function selectElecReidTier(tier, el) {
+  formData.elecReidPick.tier = tier;
+  document.querySelectorAll('.page-1b .card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  setTimeout(() => showPage(getNextPage('1b')), 240);
 }
 
 function toggleMood(mood, el) {
@@ -2541,6 +2623,7 @@ async function submitForm() {
     cameraDetails: JSON.stringify(formData.cameraDetails),
     poolDetails: JSON.stringify(formData.poolDetails),
     wellnessDetails: JSON.stringify(formData.wellnessDetails),
+    elecReidPick: formData.elecReidPick,
   };
   if (!payload.firstName || !payload.email) {
     alert('Please provide your first name and email on the previous page.');

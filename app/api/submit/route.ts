@@ -25,6 +25,7 @@ type FormPayload = {
   involved?: string | string[]
   budget?: string
   otherNotes?: string
+  elecReidPick?: { tier?: string }
   // Stage 06b deep-dive fields (JSON-stringified objects)
   tvDetails?: string
   audioDetails?: string
@@ -65,13 +66,14 @@ function joinIfArray(v: unknown): string {
   if (Array.isArray(v)) return v.filter(Boolean).join(', ')
   if (v === undefined || v === null) return ''
   if (typeof v === 'boolean') return v ? 'Yes' : 'No'
+  if (typeof v === 'object') return JSON.stringify(v)
   return String(v)
 }
 
 const V2_COLUMN_ORDER: (keyof FormPayload | 'timestamp')[] = [
   'timestamp',
   'firstName', 'lastName', 'phone', 'email',
-  'projectType', 'moods', 'platform', 'screens', 'switches',
+  'projectType', 'elecReidPick', 'moods', 'platform', 'screens', 'switches',
   'scenesNotes', 'recommendedScenes', 'systems', 'motionSensorDetail',
   'floorPlans', 'timeframe', 'involved', 'budget', 'otherNotes',
   'tvDetails', 'audioDetails', 'cinemaDetails', 'networkDetails', 'alarmDetails',
@@ -139,6 +141,7 @@ function formatEmailBody(payload: FormPayload): { html: string; text: string } {
     ['Email', payload.email],
     ['Phone', payload.phone],
     ['Project Type', payload.projectType],
+    ['Elec Reid Pick Tier', payload.elecReidPick?.tier || ''],
     ['Moods', joinIfArray(payload.moods)],
     ['Platform', payload.platform || payload.automationSystem],
     ['Screens', joinIfArray(payload.screens) || payload.interactiveScreens],
@@ -225,7 +228,19 @@ async function sendEmail(accessToken: string, payload: FormPayload) {
   const replyTo = payload.email || ''
 
   const { html, text } = formatEmailBody(payload)
-  const subject = `Smart Home Enquiry · ${payload.firstName || 'Anonymous'} ${payload.lastName || ''}`.trim()
+  let subject: string
+  if (payload.projectType === 'elec-reid-pick') {
+    const tierLabels: Record<string, string> = {
+      foundation: 'Foundation',
+      considered: 'Considered',
+      architectural: 'Architectural',
+      recommend: 'Recommend',
+    }
+    const tierLabel = tierLabels[payload.elecReidPick?.tier || ''] || payload.elecReidPick?.tier || 'Unknown'
+    subject = `Smart Home Enquiry · Elec Reid Pick (${tierLabel}) · ${payload.firstName || 'Anonymous'} ${payload.lastName || ''}`.trim()
+  } else {
+    subject = `Smart Home Enquiry · ${payload.firstName || 'Anonymous'} ${payload.lastName || ''}`.trim()
+  }
 
   // Build a multipart MIME message
   const boundary = `boundary_${Date.now()}_${Math.random().toString(36).slice(2)}`
