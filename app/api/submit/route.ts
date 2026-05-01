@@ -17,6 +17,7 @@ type FormPayload = {
   platform?: string
   screens?: string | string[]
   switches?: string | string[]
+  switchesNotes?: string
   scenesNotes?: string
   recommendedScenes?: boolean | string
   systems?: string | string[]
@@ -80,7 +81,7 @@ const V2_COLUMN_ORDER: (keyof FormPayload | 'timestamp')[] = [
   'timestamp',
   'firstName', 'lastName', 'phone', 'email',
   'rooms', 'layoutFloorPlan',
-  'projectType', 'elecReidPick', 'platform', 'screens', 'switches',
+  'projectType', 'elecReidPick', 'platform', 'screens', 'switches', 'switchesNotes',
   'scenesNotes', 'recommendedScenes', 'systems', 'motionSensorDetail',
   'floorPlans', 'timeframe', 'involved', 'collaborators', 'budget', 'otherNotes',
   'tvDetails', 'audioDetails', 'cinemaDetails', 'networkDetails', 'alarmDetails',
@@ -169,6 +170,7 @@ function formatEmailBody(payload: FormPayload): { html: string; text: string } {
     ['Platform', payload.platform || payload.automationSystem],
     ['Screens', joinIfArray(payload.screens) || payload.interactiveScreens],
     ['Switches', joinIfArray(payload.switches)],
+    ['Switches notes', payload.switchesNotes],
     ['Scenes Notes', payload.scenesNotes],
     ['Recommended Scenes Requested', joinIfArray(payload.recommendedScenes)],
     ['Systems', joinIfArray(payload.systems)],

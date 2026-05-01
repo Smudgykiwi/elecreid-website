@@ -723,6 +723,7 @@ html, body {
     <div class="stage-numeral">04</div>
     <h1 class="stage-headline">Light first. <em>Tech second.</em></h1>
     <p class="stage-lead">The switch is the most-touched object in your home. It lives on your wall for thirty years. It is the architectural statement.</p>
+    <p style="font-size:13pt; margin-bottom:32px; line-height:1.6; color:var(--navy);">Pick as many as you like. Many homes mix brands across rooms. The kitchen might want a different switch to the master bedroom.</p>
 
     <!-- Brand 01: Basalte -->
     <div class="brand-section">
@@ -883,6 +884,11 @@ html, body {
           <div class="model-name"><em>Finesse</em></div>
         </div>
       </div>
+    </div>
+
+    <div class="form-group" style="margin-top:48px;">
+      <label class="form-label">Anything specific about the switches?</label>
+      <textarea class="form-textarea" placeholder="Specific finish in mind? Mixing brands across rooms? Existing switches you want to retain?" oninput="formData.switchesNotes=this.value"></textarea>
     </div>
   </div>
 </div>
@@ -1846,6 +1852,7 @@ const formData = {
   screensByRoom: [],
   screenNotes: '',
   switches: [],
+  switchesNotes: '',
   systems: [],
   motionSensorDetail: '',
   timeframe: '',
@@ -2936,6 +2943,7 @@ async function submitForm() {
     platform: formData.platform || '',
     screens: formData.screens || [],
     switches: formData.switches || [],
+    switchesNotes: formData.switchesNotes || '',
     scenesNotes: document.getElementById('scenesNotes')?.value || '',
     recommendedScenes: document.getElementById('recommendedScenes')?.checked || false,
     systems: formData.systems || [],
