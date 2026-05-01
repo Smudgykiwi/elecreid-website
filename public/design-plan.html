@@ -187,19 +187,38 @@ html, body {
 .scene-name { font-family: 'Austin', serif; font-style: italic; font-size: 18pt; margin: 12px 0 6px; }
 .scene-body { font-size: 11pt; line-height: 1.5; color: var(--grey-mid); }
 
-/* Systems grid */
-.systems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+/* Systems grid - editorial 2-col layout */
+.systems-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
 .system-card {
   border: 1.5px solid var(--grey);
-  padding: 20px;
+  padding: 0;
   cursor: pointer;
-  transition: border-color 0.18s;
+  transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+  overflow: hidden;
+  position: relative;
 }
+.system-card:hover { border-color: var(--cobalt); transform: translateY(-3px); }
 .system-card.selected { border-color: var(--cobalt); box-shadow: 0 0 0 2px var(--cobalt); }
-.system-name { font-family: 'Austin', serif; font-style: italic; font-size: 16pt; margin: 12px 0 6px; }
-.system-body { font-size: 11pt; line-height: 1.5; font-style: italic; color: var(--grey-mid); }
+.system-card.selected::after {
+  content: '\2713';
+  position: absolute;
+  top: 12px; right: 12px;
+  width: 28px; height: 28px;
+  background: var(--cobalt);
+  color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+}
+.system-card-inner { padding: 20px 24px 28px; }
+.system-name { font-family: 'Austin', serif; font-style: italic; font-size: 24pt; margin: 0 0 8px; color: var(--navy); }
+.system-body { font-size: 12pt; line-height: 1.5; font-style: italic; color: var(--grey-mid); }
 .motion-detail { display: none; margin-top: 12px; border-top: 1px solid var(--grey); padding-top: 12px; }
 .system-card.selected .motion-detail { display: block; }
+@media (max-width: 768px) { .systems-grid { grid-template-columns: 1fr; } }
 
 /* ===== STAGE 06B DEEP DIVE STYLES ===== */
 .room-matrix { width:100%; border-collapse:collapse; margin-bottom:24px; }
@@ -426,11 +445,26 @@ html, body {
     <div class="cover-headline">Smarter living, <em>set in stone.</em></div>
     <div class="cover-subline">A guided plan for the home you're building.</div>
     <div class="cover-body">Best on a computer. Works on your phone too.</div>
-    <button class="cover-begin-btn" onclick="showPage(1)">Begin</button>
+    <button class="cover-begin-btn" onclick="showPage('0b')">Begin</button>
     <div class="cover-footer">
       <div class="cover-slogan">Designed for you. Done right. Always.</div>
       <div class="cover-edition">Edition 2026</div>
     </div>
+  </div>
+</div>
+
+<!-- PAGE 0b: WHY ELEC REID - Opener between Cover and Stage 00 -->
+<div class="page page-0b">
+  <div class="img-slot" data-slot-id="IMG-WHY-HERO" style="width:100%; min-height:320px; aspect-ratio:16/7;">
+    <div class="img-slot-eyebrow">IMG-WHY-HERO</div>
+    <div class="img-slot-desc"><em>Full-bleed architectural smart home hero shot - premium Melbourne install</em></div>
+  </div>
+  <div class="container" style="text-align:center; max-width:760px;">
+    <div class="eyebrow" style="margin-bottom:24px;">WHY ELEC REID</div>
+    <div class="stage-headline" style="font-size:60pt; margin-bottom:28px;"><em>Smarter living, set in stone.</em></div>
+    <p style="font-size:14pt; line-height:1.7; color:var(--navy); margin-bottom:40px; max-width:600px; margin-left:auto; margin-right:auto;">We design and install architectural smart homes in Melbourne. Apple Home at the core. Considered hardware. One team, end to end. From discovery call to handover, you talk to one person.</p>
+    <button class="cover-begin-btn" onclick="showPage(1)">Start your plan</button>
+    <div style="font-family:'Austin',serif; font-style:italic; font-size:16pt; color:var(--grey-mid); margin-top:48px;">Designed for you. Done right. Always.</div>
   </div>
 </div>
 
@@ -531,71 +565,11 @@ html, body {
   </div>
 </div>
 
-<!-- PAGE 2: STAGE 01 - Mood (full/unsure only) -->
-<div class="page page-2">
+<!-- PAGE 3: STAGE 01 - Platform (full/unsure only) -->
+<div class="page page-3">
   <div class="container">
     <div class="eyebrow">STAGE ONE</div>
     <div class="stage-numeral">01</div>
-    <h1 class="stage-headline">Start with the <em>feeling.</em></h1>
-    <p class="stage-subhead">Pick everything that matters. Most clients pick all six.</p>
-    <div class="cards-row" style="grid-template-columns: repeat(3,1fr);">
-      <div class="card" onclick="toggleMood('effortless', this)">
-        <div class="img-slot" data-slot-id="IMG-01-mood-effortless" style="aspect-ratio:4/3;">
-          <div class="img-slot-eyebrow">IMG-01-MOOD-EFFORTLESS</div>
-          <div class="img-slot-desc"><em>Easy daily home interaction, natural lighting</em></div>
-        </div>
-        <div class="card-title"><em>Effortless.</em></div>
-        <div class="card-body">One tap, anyone can use it.</div>
-      </div>
-      <div class="card" onclick="toggleMood('quiet', this)">
-        <div class="img-slot" data-slot-id="IMG-02-mood-quiet" style="aspect-ratio:4/3;">
-          <div class="img-slot-eyebrow">IMG-02-MOOD-QUIET</div>
-          <div class="img-slot-desc"><em>Minimal interior, hidden technology, calm space</em></div>
-        </div>
-        <div class="card-title"><em>Quiet.</em></div>
-        <div class="card-body">The technology disappears until needed.</div>
-      </div>
-      <div class="card" onclick="toggleMood('connected', this)">
-        <div class="img-slot" data-slot-id="IMG-03-mood-connected" style="aspect-ratio:4/3;">
-          <div class="img-slot-eyebrow">IMG-03-MOOD-CONNECTED</div>
-          <div class="img-slot-desc"><em>Phone controlling home remotely, app interface</em></div>
-        </div>
-        <div class="card-title"><em>Connected.</em></div>
-        <div class="card-body">Control from anywhere, see everything.</div>
-      </div>
-      <div class="card" onclick="toggleMood('considered', this)">
-        <div class="img-slot" data-slot-id="IMG-04-mood-considered" style="aspect-ratio:4/3;">
-          <div class="img-slot-eyebrow">IMG-04-MOOD-CONSIDERED</div>
-          <div class="img-slot-desc"><em>Architectural switch detail, beautiful hardware</em></div>
-        </div>
-        <div class="card-title"><em>Considered.</em></div>
-        <div class="card-body">Beautiful hardware that's part of the architecture.</div>
-      </div>
-      <div class="card" onclick="toggleMood('resilient', this)">
-        <div class="img-slot" data-slot-id="IMG-05-mood-resilient" style="aspect-ratio:4/3;">
-          <div class="img-slot-eyebrow">IMG-05-MOOD-RESILIENT</div>
-          <div class="img-slot-desc"><em>Local server equipment, home network rack</em></div>
-        </div>
-        <div class="card-title"><em>Resilient.</em></div>
-        <div class="card-body">Works during outages. No cloud dependency.</div>
-      </div>
-      <div class="card" onclick="toggleMood('future-proof', this)">
-        <div class="img-slot" data-slot-id="IMG-06-mood-future-proof" style="aspect-ratio:4/3;">
-          <div class="img-slot-eyebrow">IMG-06-MOOD-FUTURE-PROOF</div>
-          <div class="img-slot-desc"><em>Modern wiring, structured cabling, forward-thinking install</em></div>
-        </div>
-        <div class="card-title"><em>Future-proof.</em></div>
-        <div class="card-body">Won't be obsolete in five years.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PAGE 3: STAGE 02 - Platform (full/unsure only) -->
-<div class="page page-3">
-  <div class="container">
-    <div class="eyebrow">STAGE TWO</div>
-    <div class="stage-numeral">02</div>
     <h1 class="stage-headline">Choose your <em>path.</em></h1>
     <p class="stage-lead">All four platforms can deliver the same outcome. The difference is how they get there. Pick the path that suits your house, your habits, and the people who live in it.</p>
 
@@ -664,8 +638,8 @@ html, body {
 <!-- PAGE 4: STAGE 03 - Touchscreens (full/unsure only) -->
 <div class="page page-4">
   <div class="container">
-    <div class="eyebrow">STAGE THREE</div>
-    <div class="stage-numeral">03</div>
+    <div class="eyebrow">STAGE TWO</div>
+    <div class="stage-numeral">02</div>
     <h1 class="stage-headline">Your home, <em>on a screen.</em></h1>
     <p class="stage-lead">Most homes have one main screen upstairs and one downstairs. These have full access to the house and serve as intercoms.</p>
     <p style="font-size:13pt; margin-bottom:32px; line-height:1.6;">Smaller screens go in major rooms - bedrooms, living, office, kitchen - for quick local control of lights, blinds, climate, and music in that space.</p>
@@ -676,8 +650,8 @@ html, body {
 <!-- PAGE 5: STAGE 04 - Switches (full/unsure only) -->
 <div class="page page-5">
   <div class="container">
-    <div class="eyebrow">STAGE FOUR</div>
-    <div class="stage-numeral">04</div>
+    <div class="eyebrow">STAGE THREE</div>
+    <div class="stage-numeral">03</div>
     <h1 class="stage-headline">Light first. <em>Tech second.</em></h1>
     <p class="stage-lead">The switch is the most-touched object in your home. It lives on your wall for thirty years. It is the architectural statement.</p>
 
@@ -820,24 +794,24 @@ html, body {
       </div>
       <div class="brand-models">
         <div class="model-card" onclick="toggleSwitch('clipsal-iconic',this)">
-          <div class="img-slot" data-slot-id="IMG-36-clipsal-iconic" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-36</div><div class="img-slot-desc"><em>Clipsal Iconic</em></div></div>
-          <div class="model-name"><em>Clipsal Iconic</em></div>
+          <div class="img-slot" data-slot-id="IMG-36-clipsal-iconic" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-36</div><div class="img-slot-desc"><em>Iconic</em></div></div>
+          <div class="model-name"><em>Iconic</em></div>
         </div>
         <div class="model-card" onclick="toggleSwitch('clipsal-solace',this)">
-          <div class="img-slot" data-slot-id="IMG-37-clipsal-solace" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-37</div><div class="img-slot-desc"><em>Clipsal Solace</em></div></div>
-          <div class="model-name"><em>Clipsal Solace</em></div>
+          <div class="img-slot" data-slot-id="IMG-37-clipsal-solace" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-37</div><div class="img-slot-desc"><em>Solace</em></div></div>
+          <div class="model-name"><em>Solace</em></div>
         </div>
         <div class="model-card" onclick="toggleSwitch('clipsal-saturn-zen',this)">
-          <div class="img-slot" data-slot-id="IMG-38-clipsal-saturn-zen" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-38</div><div class="img-slot-desc"><em>Clipsal Saturn Zen</em></div></div>
-          <div class="model-name"><em>Clipsal Saturn Zen</em></div>
+          <div class="img-slot" data-slot-id="IMG-38-clipsal-saturn-zen" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-38</div><div class="img-slot-desc"><em>Saturn Zen</em></div></div>
+          <div class="model-name"><em>Saturn Zen</em></div>
         </div>
         <div class="model-card" onclick="toggleSwitch('hager-silhouette',this)">
-          <div class="img-slot" data-slot-id="IMG-39-hager-silhouette" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-39</div><div class="img-slot-desc"><em>Hager Silhouette</em></div></div>
-          <div class="model-name"><em>Hager Silhouette</em></div>
+          <div class="img-slot" data-slot-id="IMG-39-hager-silhouette" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-39</div><div class="img-slot-desc"><em>Silhouette</em></div></div>
+          <div class="model-name"><em>Silhouette</em></div>
         </div>
         <div class="model-card" onclick="toggleSwitch('hager-finesse',this)">
-          <div class="img-slot" data-slot-id="IMG-40-hager-finesse" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-40</div><div class="img-slot-desc"><em>Hager Finesse</em></div></div>
-          <div class="model-name"><em>Hager Finesse</em></div>
+          <div class="img-slot" data-slot-id="IMG-40-hager-finesse" style="aspect-ratio:1/1;"><div class="img-slot-eyebrow">IMG-40</div><div class="img-slot-desc"><em>Finesse</em></div></div>
+          <div class="model-name"><em>Finesse</em></div>
         </div>
       </div>
     </div>
@@ -847,8 +821,8 @@ html, body {
 <!-- PAGE 6: STAGE 05 - Scenes (BOTH paths) -->
 <div class="page page-6">
   <div class="container">
-    <div class="eyebrow">STAGE FIVE</div>
-    <div class="stage-numeral">05</div>
+    <div class="eyebrow">STAGE FOUR</div>
+    <div class="stage-numeral">04</div>
     <h1 class="stage-headline">The magic is in the <em>moments.</em></h1>
     <p id="scenesLead" class="stage-lead">A scene is one tap that changes the whole house. Lights dim, blinds drop, music starts. The power of automation is in these moments.</p>
     <p style="font-size:13pt; margin-bottom:32px; line-height:1.6;">We design these with you, not for you. Below are the scenes we use most.</p>
@@ -898,8 +872,8 @@ html, body {
 <!-- PAGE 7: STAGE 06 - Systems (BOTH paths) -->
 <div class="page page-7">
   <div class="container">
-    <div class="eyebrow">STAGE SIX</div>
-    <div class="stage-numeral">06</div>
+    <div class="eyebrow">STAGE FIVE</div>
+    <div class="stage-numeral">05</div>
     <h1 class="stage-headline">Choose your <em>systems.</em></h1>
     <p class="stage-subhead">Multi-select what you want included. We'll detail the right products for each in your proposal.</p>
     <div id="systemsGrid" class="systems-grid"></div>
@@ -909,8 +883,8 @@ html, body {
 <!-- PAGE 7a: STAGE 06A - TV Deep Dive -->
 <div class="page page-7a">
   <div class="container">
-    <div class="eyebrow">STAGE SIX A &middot; TV INSTALL</div>
-    <div class="stage-numeral">6A</div>
+    <div class="eyebrow">STAGE FIVE A &middot; TV INSTALL</div>
+    <div class="stage-numeral">5A</div>
     <h1 class="stage-headline"><em>TV install,</em> properly done.</h1>
     <p class="stage-lead"><em>Clients buy their own TVs. We install and integrate them properly - wall-mounted, calibrated, cabled cleanly. The TV becomes part of the architecture, not a black rectangle stuck on a wall.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We supply the brackets, run the cabling through the wall to the joinery, mount and align every TV, calibrate the picture, and tie the sound and control into the rest of the home. Buying the TV separately keeps the warranty with the manufacturer where it belongs, and gives you flexibility on brand and model. We just need to know what you're putting on each wall.</p>
@@ -954,8 +928,8 @@ html, body {
 <!-- PAGE 7b: STAGE 06B - Whole-home Audio Deep Dive -->
 <div class="page page-7b">
   <div class="container">
-    <div class="eyebrow">STAGE SIX B &middot; WHOLE-HOME AUDIO</div>
-    <div class="stage-numeral">6B</div>
+    <div class="eyebrow">STAGE FIVE B &middot; WHOLE-HOME AUDIO</div>
+    <div class="stage-numeral">5B</div>
     <h1 class="stage-headline"><em>Music</em> in every room.</h1>
     <p class="stage-lead"><em>Whole-home audio is the single most-used part of any smart home. Designed properly, it disappears into the architecture and follows you through the house.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">Three audio levels, recommended room by room. Background fills a space without dominating it. Decent is proper everyday listening. Pumping is full-range, high-fidelity sound for when you want to feel it. Speakers can be visible or invisible. Invisible speakers are built into the ceiling or wall and plastered over, completely hidden. They cost more, but the result is stunning. We commission to a single app, with access to Sight &amp; Sound Galleria as our preferred high-end installer for specialty two-channel listening systems.</p>
@@ -1060,8 +1034,8 @@ html, body {
 <!-- PAGE 7c: STAGE 06C - Cinema Room Deep Dive -->
 <div class="page page-7c">
   <div class="container">
-    <div class="eyebrow">STAGE SIX C &middot; CINEMA ROOM</div>
-    <div class="stage-numeral">6C</div>
+    <div class="eyebrow">STAGE FIVE C &middot; CINEMA ROOM</div>
+    <div class="stage-numeral">5C</div>
     <h1 class="stage-headline"><em>The cinema</em> room.</h1>
     <p class="stage-lead"><em>The room where everything is allowed to be louder, darker, and more dramatic than the rest of the house.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">A proper cinema room is its own discipline. Dedicated projector or large-format screen, surround sound calibrated to the room, acoustic treatment on the walls, blackout blinds, dimmable lighting, and one tap that takes the room from bright lounge to full theatre. We design and commission these end to end. Demo rooms available before you commit. The result is a room your family will actually use, not a showroom.</p>
@@ -1263,8 +1237,8 @@ html, body {
 <!-- PAGE 7d: STAGE 06D - Network Deep Dive -->
 <div class="page page-7d">
   <div class="container">
-    <div class="eyebrow">STAGE SIX D &middot; NETWORK</div>
-    <div class="stage-numeral">6D</div>
+    <div class="eyebrow">STAGE FIVE D &middot; NETWORK</div>
+    <div class="stage-numeral">5D</div>
     <h1 class="stage-headline"><em>The network is the foundation.</em></h1>
     <p class="stage-lead"><em>Every smart device, every TV, every camera, every screen runs through the network. If it's slow, the home feels slow.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We use UniFi. Wired in where it matters, wireless access points placed by coverage map. The network lives in a clean rack and stays documented. No dead zones.</p>
@@ -1315,8 +1289,8 @@ html, body {
 <!-- PAGE 7e: STAGE 06E - Alarm Deep Dive -->
 <div class="page page-7e">
   <div class="container">
-    <div class="eyebrow">STAGE SIX E &middot; ALARM</div>
-    <div class="stage-numeral">6E</div>
+    <div class="eyebrow">STAGE FIVE E &middot; ALARM</div>
+    <div class="stage-numeral">5E</div>
     <h1 class="stage-headline"><em>Security that does its job quietly.</em></h1>
     <p class="stage-lead"><em>A proper alarm runs in the background. You only notice it when something goes wrong.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We install Inception alarm systems. Smart alerts to your phone, remote arm and disarm, zoned protection through the home, and integration with the automation platform. You can arm by zone, arm certain areas at bedtime, and get notified when something triggers. For back-to-base monitoring we partner with a 24/7 monitoring service.</p>
@@ -1393,8 +1367,8 @@ html, body {
 <!-- PAGE 7f: STAGE 06F - Intercom Deep Dive -->
 <div class="page page-7f">
   <div class="container">
-    <div class="eyebrow">STAGE SIX F &middot; INTERCOM</div>
-    <div class="stage-numeral">6F</div>
+    <div class="eyebrow">STAGE FIVE F &middot; INTERCOM</div>
+    <div class="stage-numeral">5F</div>
     <h1 class="stage-headline"><em>Who's at the door,</em> and how they get in.</h1>
     <p class="stage-lead"><em>The first impression of your home, before anyone even gets inside.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We install UniFi access. Locally controlled, no cloud subscription, integrated with the rest of the system. The hardware on the wall depends on what you want it to do, from a simple swipe-card reader to a full video intercom that calls every screen in the house. Calls reach your touchscreens first, then your phones if no one answers.</p>
@@ -1428,8 +1402,8 @@ html, body {
 <!-- PAGE 7g: STAGE 06G - Cameras Deep Dive -->
 <div class="page page-7g">
   <div class="container">
-    <div class="eyebrow">STAGE SIX G &middot; CAMERAS</div>
-    <div class="stage-numeral">6G</div>
+    <div class="eyebrow">STAGE FIVE G &middot; CAMERAS</div>
+    <div class="stage-numeral">5G</div>
     <h1 class="stage-headline"><em>Cameras that watch the property,</em> not your data.</h1>
     <p class="stage-lead"><em>UniFi Protect. Locally recorded to your own NVR. No subscription, no cloud, no third-party access to your footage.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We design camera coverage around the building, not bolted on after. Every angle planned, every cable run during construction, every lens chosen for the scene it covers. The recorder lives in your equipment rack. You watch the feeds from any screen, your phone, or away from the property. Footage is yours. We spec every system with 30 days of storage. If you need longer retention, tell us in the notes.</p>
@@ -1493,8 +1467,8 @@ html, body {
 <!-- PAGE 7h: STAGE 06H - Pool Deep Dive -->
 <div class="page page-7h">
   <div class="container">
-    <div class="eyebrow">STAGE SIX H &middot; POOL</div>
-    <div class="stage-numeral">6H</div>
+    <div class="eyebrow">STAGE FIVE H &middot; POOL</div>
+    <div class="stage-numeral">5H</div>
     <h1 class="stage-headline"><em>Pool control,</em> your way.</h1>
     <p class="stage-lead"><em>Two paths: keep it simple with the pool company's own app, or bring the pool into the rest of the home so it's all one experience.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">Most pool builders prefer to install their own controller and hand you their app. That works, and it's the simpler path. Bringing the pool into the main home automation system gives you one app for everything: pool, lighting, blinds, climate, audio. The catch is real: it costs more, takes longer, and we need the pool builder to genuinely coordinate with us during construction. That means you need to back the brief and push them to play. Some builders welcome it. Others won't budge. We'll know early. The result, when it works, is worth it.</p>
@@ -1567,8 +1541,8 @@ html, body {
 <!-- PAGE 7i: STAGE 06I - Wellness & Gym Deep Dive -->
 <div class="page page-7i">
   <div class="container">
-    <div class="eyebrow">STAGE SIX I &middot; WELLNESS &amp; GYM</div>
-    <div class="stage-numeral">6I</div>
+    <div class="eyebrow">STAGE FIVE I &middot; WELLNESS &amp; GYM</div>
+    <div class="stage-numeral">5I</div>
     <h1 class="stage-headline"><em>Wellness</em> &amp; Gym.</h1>
     <p class="stage-lead"><em>The corner of the home that exists for rest, recovery, and getting strong. Spa, sauna, steam, plunge, gym, all integrated.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We don't build the equipment, but we make it work as one. Most wellness gear comes with its own controller and app. That works, and it's the simpler path. Integrating wellness and gym into the main home automation system means one app for everything: scenes that prepare the room before you walk in, lights and music that match the workout, steam and lighting coming up together. The catch is the same as the pool: it costs more, takes longer, and the equipment supplier needs to coordinate with us. The result, when it works, is genuinely special.</p>
@@ -1634,9 +1608,58 @@ html, body {
 <!-- PAGE 8: STAGE 07 - Practical -->
 <div class="page page-8">
   <div class="container">
-    <div class="eyebrow">STAGE SEVEN</div>
-    <div class="stage-numeral">07</div>
+    <div class="eyebrow">STAGE SIX</div>
+    <div class="stage-numeral">06</div>
     <h1 class="stage-headline">The <em>practical bit.</em></h1>
+
+    <!-- COLLABORATORS SECTION -->
+    <div class="eyebrow" style="margin-bottom:16px;">COLLABORATORS</div>
+    <div class="stage-lead" style="margin-bottom:16px;"><em>Working with anyone else?</em></div>
+    <p style="font-size:13pt; line-height:1.6; margin-bottom:32px;">The best smart homes happen when we collaborate from day one. If you've got an architect, interior designer, or builder, give us their details and we'll bring them into the conversation.</p>
+
+    <div class="form-group">
+      <p class="form-label" style="margin-bottom:12px;">Architect</p>
+      <div class="form-grid-2">
+        <div>
+          <label class="form-label">Name</label>
+          <input type="text" class="form-input" placeholder="Name" oninput="formData.collaborators.architect.name=this.value">
+        </div>
+        <div>
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="email@firm.com.au" oninput="formData.collaborators.architect.email=this.value">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <p class="form-label" style="margin-bottom:12px;">Interior designer</p>
+      <div class="form-grid-2">
+        <div>
+          <label class="form-label">Name</label>
+          <input type="text" class="form-input" placeholder="Name" oninput="formData.collaborators.interiorDesigner.name=this.value">
+        </div>
+        <div>
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="email@firm.com.au" oninput="formData.collaborators.interiorDesigner.email=this.value">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <p class="form-label" style="margin-bottom:12px;">Builder</p>
+      <div class="form-grid-2">
+        <div>
+          <label class="form-label">Name</label>
+          <input type="text" class="form-input" placeholder="Name" oninput="formData.collaborators.builder.name=this.value">
+        </div>
+        <div>
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="email@firm.com.au" oninput="formData.collaborators.builder.email=this.value">
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider" style="margin-bottom:40px;">
 
     <div class="form-group">
       <label class="form-label">Floor Plans</label>
@@ -1656,12 +1679,8 @@ html, body {
     </div>
 
     <div class="form-group">
-      <label class="form-label">Who's involved?</label>
+      <label class="form-label">Working directly without a team?</label>
       <div class="checkbox-group">
-        <label class="checkbox-option"><input type="checkbox" onchange="toggleInvolved('architect',this)"> Architect</label>
-        <label class="checkbox-option"><input type="checkbox" onchange="toggleInvolved('builder',this)"> Builder</label>
-        <label class="checkbox-option"><input type="checkbox" onchange="toggleInvolved('interior-designer',this)"> Interior designer</label>
-        <label class="checkbox-option"><input type="checkbox" onchange="toggleInvolved('landscape-designer',this)"> Landscape designer</label>
         <label class="checkbox-option"><input type="checkbox" onchange="toggleInvolved('homeowner-direct',this)"> None / homeowner direct</label>
       </div>
     </div>
@@ -1712,8 +1731,8 @@ html, body {
 <!-- PAGE 9: STAGE 08 - Discovery Call -->
 <div class="page page-9">
   <div class="container">
-    <div class="eyebrow">STAGE EIGHT</div>
-    <div class="stage-numeral">08</div>
+    <div class="eyebrow">STAGE SEVEN</div>
+    <div class="stage-numeral">07</div>
     <h1 class="stage-headline">Let's <em>talk it through.</em></h1>
     <p style="font-family:'Austin',serif; font-style:italic; font-size:22pt; line-height:1.4; margin-bottom:24px; max-width:640px;">Every Elec Reid project begins with a thirty-minute discovery call. No pressure, no sales pitch. A direct conversation about what will work for your home, what won't, and what it might cost.</p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:32px;">Submit and we'll be in touch to schedule. Most calls happen within three business days.</p>
@@ -1724,7 +1743,8 @@ html, body {
 <!-- THANK YOU OVERLAY -->
 <div id="thankYouOverlay">
   <div class="ty-headline">Thank <em>you.</em></div>
-  <div class="ty-body">Your plan is in our hands. We'll be in touch within three business days to schedule your discovery call.</div>
+  <div id="tyDynamic" class="ty-body" style="font-family:'Austin',serif; font-style:italic; font-size:18pt; line-height:1.5; margin-bottom:16px;"></div>
+  <div class="ty-body">Joe will be in touch within three business days to schedule your discovery call.</div>
   <div class="ty-slogan">Designed for you. Done right. Always.</div>
 </div>
 
@@ -1739,7 +1759,6 @@ html, body {
 const formData = {
   projectType: '',
   elecReidPick: { tier: '' },
-  moods: [],
   platform: '',
   screens: [],
   switches: [],
@@ -1811,6 +1830,11 @@ const formData = {
     automation: [],
     involvedParties: '',
     notes: ''
+  },
+  collaborators: {
+    architect: { name: '', email: '' },
+    interiorDesigner: { name: '', email: '' },
+    builder: { name: '', email: '' }
   }
 };
 
@@ -1852,14 +1876,14 @@ function getNextPage(pageId) {
     if (hasWellness) return '7i';
     return 8;
   }
-  if (pageId === 0) return 1;
+  if (pageId === 0) return '0b';
+  if (pageId === '0b') return 1;
   if (pageId === 1) {
     if (formData.projectType === 'essentials') return 7;
     if (formData.projectType === 'elec-reid-pick') return '1b';
-    return 2;
+    return 3;
   }
   if (pageId === '1b') return 8;
-  if (pageId === 2) return 3;
   if (pageId === 3) return 4;
   if (pageId === 4) return 5;
   if (pageId === 5) return 6;
@@ -1937,10 +1961,9 @@ function getPrevPage(pageId) {
     if (hasWellness) return '7i';
     return beforeWellness();
   }
-  if (pageId === 1 || pageId === 0) return null;
+  if (pageId === 1 || pageId === 0 || pageId === '0b') return null;
   if (pageId === '1b') return 1;
-  if (pageId === 2) return 1;
-  if (pageId === 3) return 2;
+  if (pageId === 3) return 1;
   if (pageId === 4) return 3;
   if (pageId === 5) return 4;
   if (pageId === 6) return 5;
@@ -2000,8 +2023,8 @@ function getPageSequence() {
   if (hasPool) deepDives.push('7h');
   if (hasWellness) deepDives.push('7i');
   if (formData.projectType === 'essentials') return [1, 7, ...deepDives, 8, 9];
-  // Default: full path
-  return [1, 2, 3, 4, 5, 6, 7, ...deepDives, 8, 9];
+  // Default: full path (Stage 01 Mood removed)
+  return [1, 3, 4, 5, 6, 7, ...deepDives, 8, 9];
 }
 
 const allSystems = [
@@ -2025,18 +2048,20 @@ function buildSystemsGrid() {
     : allSystems;
   grid.innerHTML = list.map(s => `
     <div class="system-card" id="sys-${s.id}" onclick="toggleSystem('${s.id}',this)">
-      <div class="img-slot" data-slot-id="${s.slot}" style="aspect-ratio:4/3;">
+      <div class="img-slot" data-slot-id="${s.slot}" style="aspect-ratio:4/3; width:100%; border:none; border-bottom:1px solid var(--cobalt);">
         <div class="img-slot-eyebrow">${s.slot.toUpperCase()}</div>
         <div class="img-slot-desc"><em>${s.desc}</em></div>
       </div>
-      <div class="system-name"><em>${s.name}</em></div>
-      <div class="system-body">${s.body}</div>
-      ${s.motion ? `<div class="motion-detail">
-        <div class="platform-field-label" style="margin-bottom:8px;">HOW THOROUGHLY?</div>
-        <label class="radio-option" style="margin-bottom:6px;"><input type="radio" name="motionDetail" value="essential" onclick="event.stopPropagation();formData.motionSensorDetail='essential'"> Essential</label>
-        <label class="radio-option" style="margin-bottom:6px;"><input type="radio" name="motionDetail" value="considered" onclick="event.stopPropagation();formData.motionSensorDetail='considered'"> Considered</label>
-        <label class="radio-option"><input type="radio" name="motionDetail" value="comprehensive" onclick="event.stopPropagation();formData.motionSensorDetail='comprehensive'"> Comprehensive</label>
-      </div>` : ''}
+      <div class="system-card-inner">
+        <div class="system-name"><em>${s.name}</em></div>
+        <div class="system-body">${s.body}</div>
+        ${s.motion ? `<div class="motion-detail">
+          <div class="platform-field-label" style="margin-bottom:8px;">HOW THOROUGHLY?</div>
+          <label class="radio-option" style="margin-bottom:6px;"><input type="radio" name="motionDetail" value="essential" onclick="event.stopPropagation();formData.motionSensorDetail='essential'"> Essential</label>
+          <label class="radio-option" style="margin-bottom:6px;"><input type="radio" name="motionDetail" value="considered" onclick="event.stopPropagation();formData.motionSensorDetail='considered'"> Considered</label>
+          <label class="radio-option"><input type="radio" name="motionDetail" value="comprehensive" onclick="event.stopPropagation();formData.motionSensorDetail='comprehensive'"> Comprehensive</label>
+        </div>` : ''}
+      </div>
     </div>
   `).join('');
 }
@@ -2159,7 +2184,7 @@ function showPage(n) {
     if (lead) lead.innerHTML = "A scene is one tap that changes the whole house. Lights dim, blinds drop, music starts. The power of automation is in these moments.";
   }
 
-  document.getElementById('bottomNav').style.display = n === 0 ? 'none' : 'flex';
+  document.getElementById('bottomNav').style.display = (n === 0 || n === '0b') ? 'none' : 'flex';
   updateNavBar();
   window.scrollTo(0, 0);
 }
@@ -2187,8 +2212,8 @@ function updateNavBar() {
     forward.textContent = (pos >= 0 && pos === total - 1) ? 'Send my plan' : 'Continue \u2192';
   }
   if (counter) {
-    if (currentPage === 0) {
-      // Cover page: hide stage counter (we're not in a stage yet)
+    if (currentPage === 0 || currentPage === '0b') {
+      // Cover / Why Elec Reid pages: no stage counter
       counter.textContent = '';
     } else if (pos < 0) {
       // Defensive: page not in computed sequence, fall back to neutral label
@@ -2546,11 +2571,11 @@ function selectProjectType(type, el) {
   el.classList.add('selected');
   // For essentials: straight to Systems (page 7)
   // For elec-reid-pick: go to tier selection (page 1b)
-  // For full or unsure: go to Stage 01 Mood (page 2)
+  // For full or unsure: go to Stage 01 Platform (page 3) - Mood removed
   let next;
   if (type === 'essentials') next = 7;
   else if (type === 'elec-reid-pick') next = '1b';
-  else next = 2;
+  else next = 3;
   setTimeout(() => showPage(next), 240);
 }
 
@@ -2559,13 +2584,6 @@ function selectElecReidTier(tier, el) {
   document.querySelectorAll('.page-1b .card').forEach(c => c.classList.remove('selected'));
   el.classList.add('selected');
   setTimeout(() => showPage(getNextPage('1b')), 240);
-}
-
-function toggleMood(mood, el) {
-  el.classList.toggle('selected');
-  const idx = formData.moods.indexOf(mood);
-  if (idx === -1) formData.moods.push(mood);
-  else formData.moods.splice(idx, 1);
 }
 
 function selectPlatform(platform, el) {
@@ -2603,10 +2621,40 @@ function toggleInvolved(val, el) {
   else if (!el.checked && idx !== -1) formData.involved.splice(idx, 1);
 }
 
+function buildThankYouMessage() {
+  const d = formData;
+  const platLabels = { apple: 'Apple Home', homeassistant: 'Home Assistant', control4: 'Control4', basalte: 'Basalte Home' };
+  const platLabel = platLabels[d.platform] || d.platform || '';
+  const sysCount = d.systems.length;
+  const sysNames = d.systems.slice(0, 3).map(id => {
+    const found = allSystems.find(a => a.id === id);
+    return found ? found.name.toLowerCase() : id;
+  });
+  const switchBrand = d.switches.length > 0 ? d.switches[0] : '';
+
+  if (d.projectType === 'elec-reid-pick') {
+    const tier = d.elecReidPick && d.elecReidPick.tier ? d.elecReidPick.tier : '';
+    let tierMsg = 'Tailored recommendations on the discovery call.';
+    if (tier === 'foundation') tierMsg = 'Foundation tier with our standard recommendations.';
+    else if (tier === 'considered') tierMsg = 'Considered tier with full lighting and blind control.';
+    else if (tier === 'estate') tierMsg = 'Estate tier with full architectural integration.';
+    return "We've got your Elec Reid Pick plan. " + tierMsg;
+  }
+  if (d.projectType === 'essentials') {
+    return `We've got your Connected Essentials plan. ${sysCount} system${sysCount !== 1 ? 's' : ''} selected.`;
+  }
+  // full or unsure
+  if (platLabel && sysCount > 0) {
+    let detail = `${platLabel} platform, ${sysCount} system${sysCount !== 1 ? 's' : ''} including ${sysNames.join(', ')}.`;
+    if (switchBrand) detail += ` ${switchBrand.charAt(0).toUpperCase() + switchBrand.slice(1)} switches.`;
+    return `We've got your full smart home plan. ${detail}`;
+  }
+  return "We've got your plan. The details are in our hands.";
+}
+
 async function submitForm() {
   const payload = {
     projectType: formData.projectType,
-    moods: formData.moods || [],
     platform: formData.platform || '',
     screens: formData.screens || [],
     switches: formData.switches || [],
@@ -2633,6 +2681,7 @@ async function submitForm() {
     poolDetails: JSON.stringify(formData.poolDetails),
     wellnessDetails: JSON.stringify(formData.wellnessDetails),
     elecReidPick: formData.elecReidPick,
+    collaborators: formData.collaborators,
   };
   if (!payload.firstName || !payload.email) {
     alert('Please provide your first name and email on the previous page.');
@@ -2651,6 +2700,8 @@ async function submitForm() {
       if (submitBtn) { submitBtn.textContent = 'Send my plan'; submitBtn.disabled = false; }
       return;
     }
+    const tyMsg = document.getElementById('tyDynamic');
+    if (tyMsg) tyMsg.textContent = buildThankYouMessage();
     document.getElementById('thankYouOverlay').classList.add('show');
   } catch (e) {
     alert('Network error. Please email enquiries@elecreid.com or call 0450 342 075.');

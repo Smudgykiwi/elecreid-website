@@ -12,7 +12,6 @@ type FormPayload = {
   email?: string
   // V2 fields
   projectType?: string  // 'full' | 'essentials' | 'unsure'
-  moods?: string | string[]  // accept either
   platform?: string
   screens?: string | string[]
   switches?: string | string[]
@@ -26,6 +25,11 @@ type FormPayload = {
   budget?: string
   otherNotes?: string
   elecReidPick?: { tier?: string }
+  collaborators?: {
+    architect?: { name?: string; email?: string }
+    interiorDesigner?: { name?: string; email?: string }
+    builder?: { name?: string; email?: string }
+  }
   // Stage 06b deep-dive fields (JSON-stringified objects)
   tvDetails?: string
   audioDetails?: string
@@ -73,9 +77,9 @@ function joinIfArray(v: unknown): string {
 const V2_COLUMN_ORDER: (keyof FormPayload | 'timestamp')[] = [
   'timestamp',
   'firstName', 'lastName', 'phone', 'email',
-  'projectType', 'elecReidPick', 'moods', 'platform', 'screens', 'switches',
+  'projectType', 'elecReidPick', 'platform', 'screens', 'switches',
   'scenesNotes', 'recommendedScenes', 'systems', 'motionSensorDetail',
-  'floorPlans', 'timeframe', 'involved', 'budget', 'otherNotes',
+  'floorPlans', 'timeframe', 'involved', 'collaborators', 'budget', 'otherNotes',
   'tvDetails', 'audioDetails', 'cinemaDetails', 'networkDetails', 'alarmDetails',
   'intercomDetails', 'cameraDetails', 'poolDetails', 'wellnessDetails',
 ]
@@ -142,7 +146,6 @@ function formatEmailBody(payload: FormPayload): { html: string; text: string } {
     ['Phone', payload.phone],
     ['Project Type', payload.projectType],
     ['Elec Reid Pick Tier', payload.elecReidPick?.tier || ''],
-    ['Moods', joinIfArray(payload.moods)],
     ['Platform', payload.platform || payload.automationSystem],
     ['Screens', joinIfArray(payload.screens) || payload.interactiveScreens],
     ['Switches', joinIfArray(payload.switches)],
@@ -154,6 +157,9 @@ function formatEmailBody(payload: FormPayload): { html: string; text: string } {
     ['Who Is Involved', joinIfArray(payload.involved)],
     ['Budget', payload.budget],
     ['Floor Plans', payload.floorPlans],
+    ['Collaborators - Architect', payload.collaborators?.architect ? [payload.collaborators.architect.name, payload.collaborators.architect.email].filter(Boolean).join(' · ') : ''],
+    ['Collaborators - Interior Designer', payload.collaborators?.interiorDesigner ? [payload.collaborators.interiorDesigner.name, payload.collaborators.interiorDesigner.email].filter(Boolean).join(' · ') : ''],
+    ['Collaborators - Builder', payload.collaborators?.builder ? [payload.collaborators.builder.name, payload.collaborators.builder.email].filter(Boolean).join(' · ') : ''],
     ['Other Notes', payload.otherNotes || payload.additionalNotes],
     ['TV Details', payload.tvDetails],
     ['Audio Details', payload.audioDetails],
