@@ -130,9 +130,9 @@ html, body {
 }
 .card:hover { border-color: var(--cobalt); }
 .card.selected { border-color: var(--cobalt); box-shadow: 0 0 0 2px var(--cobalt); }
-.card-title { font-family: 'Austin', serif; font-style: italic; font-size: 22pt; color: var(--navy); margin: 16px 0 6px; }
-.card-subtitle { font-family: 'Circular', sans-serif; font-size: 11pt; color: var(--cobalt); font-style: italic; margin-bottom: 10px; }
-.card-body { font-size: 11pt; color: var(--navy); line-height: 1.5; }
+.card-title { font-family: 'Austin', serif; font-style: italic; font-size: 22pt; color: var(--navy); margin: 16px 0 6px; min-height: 64px; line-height: 1.1; display: flex; align-items: flex-end; }
+.card-subtitle { font-family: 'Circular', sans-serif; font-size: 11pt; color: var(--cobalt); font-style: italic; margin-bottom: 10px; min-height: 18px; }
+.card-body { font-size: 11pt; color: var(--navy); line-height: 1.5; min-height: 168px; }
 
 /* Platform sections */
 .platform-section {
