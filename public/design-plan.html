@@ -491,32 +491,16 @@ html, body {
 </head>
 <body>
 
-<!-- PAGE 0: COVER -->
-<div class="page page-0 active">
-  <div class="cover-page">
-    <div class="cover-eyebrow">ELEC REID · BUILD YOUR SMART HOME</div>
-    <div class="cover-headline">Smarter living, <em>set in stone.</em></div>
-    <div class="cover-subline">A guided plan for the home you're building.</div>
-    <div class="cover-body">Best on a computer. Works on your phone too.</div>
-    <button class="cover-begin-btn" onclick="showPage('0b')">Begin</button>
-    <div class="cover-footer">
-      <div class="cover-slogan">Designed for you. Done right. Always.</div>
-      <div class="cover-edition">Edition 2026</div>
-    </div>
-  </div>
-</div>
-
-<!-- PAGE 0b: WHY ELEC REID - Opener between Cover and Stage 00 -->
-<div class="page page-0b">
-  <div class="img-slot has-image" data-slot-id="IMG-WHY" style="width:100%; min-height:320px; aspect-ratio:16/7;">
+<!-- PAGE 0b: OPENER (was Why Elec Reid; cover dropped) -->
+<div class="page page-0b active">
+  <div class="img-slot has-image" data-slot-id="IMG-WHY" style="width:100%; min-height:280px; aspect-ratio:16/7;">
     <img src="/images/IMG-WHY.jpg" alt="Elec Reid smart home install">
   </div>
-  <div class="container" style="text-align:center; max-width:760px;">
-    <div class="eyebrow" style="margin-bottom:24px;">WHY ELEC REID</div>
-    <div class="stage-headline" style="font-size:60pt; margin-bottom:28px;"><em>Smarter living, set in stone.</em></div>
-    <p style="font-size:14pt; line-height:1.7; color:var(--navy); margin-bottom:40px; max-width:600px; margin-left:auto; margin-right:auto;">We design and install architectural smart homes in Melbourne. Apple Home at the core. Architectural hardware. One team, end to end. From discovery call to handover, you talk to one person.</p>
-    <button class="cover-begin-btn" onclick="showPage(1)">Start your plan</button>
-    <div style="font-family:'Austin',serif; font-style:italic; font-size:16pt; color:var(--grey-mid); margin-top:48px;">Designed for you. Done right. Always.</div>
+  <div class="container" style="text-align:center; max-width:720px; padding-top:36px; padding-bottom:24px;">
+    <div class="eyebrow" style="margin-bottom:14px;">ELEC REID</div>
+    <div class="stage-headline" style="font-size:54pt; margin-bottom:18px; line-height:1.05;">Smarter Living, <em>Starts Here.</em></div>
+    <p style="font-size:13pt; line-height:1.6; color:var(--navy); margin-bottom:28px; max-width:560px; margin-left:auto; margin-right:auto;">We design and install architectural smart homes in Melbourne. From discovery call to handover, you talk to one person.</p>
+    <button class="cover-begin-btn" onclick="showPage(1)">Begin</button>
   </div>
 </div>
 
@@ -1975,7 +1959,7 @@ const formData = {
   }
 };
 
-let currentPage = 0;
+let currentPage = '0b';
 
 const TV_ROOM_DEFAULTS = ['Main living','Family','Master bedroom','Bedroom 2/3','Media/cinema room','Outdoor/alfresco','Other'];
 const AUDIO_ROOM_DEFAULTS = ['Main living','Family','Sitting','Kitchen','Dining','Master bedroom','Bedroom 2','Bedroom 3','Bedroom 4','Bedroom 5','Bedroom 6','Ensuite','Main bathroom','Powder room','Laundry','Study/office','Library','Media/cinema','Gym','Garage','Alfresco/patio','Backyard','Pool area'];
@@ -2344,7 +2328,7 @@ function updateNavBar() {
   const back = document.getElementById('navBack');
   const forward = document.getElementById('navForward');
   const counter = document.getElementById('navCounter');
-  if (back) back.disabled = (currentPage === 1 || currentPage === 0);
+  if (back) back.disabled = (currentPage === 1 || currentPage === 0 || currentPage === '0b');
   const seq = getPageSequence();
   const pos = seq.indexOf(currentPage);
   const total = seq.length;
