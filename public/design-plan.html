@@ -87,7 +87,13 @@ html, body {
   text-align: center;
   padding: 24px;
   width: 100%;
+  position: relative;
+  overflow: hidden;
 }
+.img-slot.has-image { padding: 0; border-color: transparent; background: var(--cream); }
+.img-slot.has-image .img-slot-eyebrow,
+.img-slot.has-image .img-slot-desc { display: none; }
+.img-slot.has-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; position: absolute; inset: 0; }
 .img-slot-eyebrow {
   font-family: 'Circular', sans-serif;
   font-weight: 700;
@@ -502,9 +508,8 @@ html, body {
 
 <!-- PAGE 0b: WHY ELEC REID - Opener between Cover and Stage 00 -->
 <div class="page page-0b">
-  <div class="img-slot" data-slot-id="IMG-WHY-HERO" style="width:100%; min-height:320px; aspect-ratio:16/7;">
-    <div class="img-slot-eyebrow">IMG-WHY-HERO</div>
-    <div class="img-slot-desc"><em>Full-bleed architectural smart home hero shot - premium Melbourne install</em></div>
+  <div class="img-slot has-image" data-slot-id="IMG-WHY-HERO" style="width:100%; min-height:320px; aspect-ratio:16/7;">
+    <img src="/images/IMG-WHY-HERO.jpg" alt="Elec Reid smart home install">
   </div>
   <div class="container" style="text-align:center; max-width:760px;">
     <div class="eyebrow" style="margin-bottom:24px;">WHY ELEC REID</div>
@@ -524,7 +529,8 @@ html, body {
     <p class="stage-subhead">There's no wrong path. Pick what fits the project.</p>
     <div class="cards-row four-col">
       <div class="card" data-type="full" onclick="selectProjectType('full', this)">
-        <div class="img-slot" data-slot-id="IMG-00A-full-smart-home" style="aspect-ratio:4/3;">
+        <div class="img-slot has-image" data-slot-id="IMG-00A-full-smart-home" style="aspect-ratio:4/3;">
+          <img src="/images/IMG-00A.jpg" alt="Full Smart Home">
           <div class="img-slot-eyebrow">IMG-00A-FULL-SMART-HOME</div>
           <div class="img-slot-desc"><em>Architectural full smart home interior, daylight, premium feel</em></div>
         </div>
@@ -533,7 +539,8 @@ html, body {
         <div class="card-body">One platform. Lighting, blinds, climate, audio, security. Everything talks. <em>One app. Beautifully done.</em> Best for new builds, full renovations, premium homes wanting the complete picture.</div>
       </div>
       <div class="card" data-type="essentials" onclick="selectProjectType('essentials', this)">
-        <div class="img-slot" data-slot-id="IMG-00B-connected-essentials" style="aspect-ratio:4/3;">
+        <div class="img-slot has-image" data-slot-id="IMG-00B-connected-essentials" style="aspect-ratio:4/3;">
+          <img src="/images/IMG-00B.jpg" alt="Connected Essentials">
           <div class="img-slot-eyebrow">IMG-00B-CONNECTED-ESSENTIALS</div>
           <div class="img-slot-desc"><em>Premium kitchen with subtle networked equipment</em></div>
         </div>
@@ -542,7 +549,8 @@ html, body {
         <div class="card-body">Wifi, audio, cameras, intercom, security. Each system best in class. <em>Cleaner scope. Lower complexity.</em> Best for retrofits, partial upgrades, clients who don't want full automation.</div>
       </div>
       <div class="card" data-type="unsure" onclick="selectProjectType('unsure', this)">
-        <div class="img-slot" data-slot-id="IMG-00C-not-sure" style="aspect-ratio:4/3;">
+        <div class="img-slot has-image" data-slot-id="IMG-00C-not-sure" style="aspect-ratio:4/3;">
+          <img src="/images/IMG-00C.jpg" alt="Not sure yet">
           <div class="img-slot-eyebrow">IMG-00C-NOT-SURE</div>
           <div class="img-slot-desc"><em>Architect's drawing or pencil on plans</em></div>
         </div>
@@ -551,7 +559,8 @@ html, body {
         <div class="card-body">Pick this and we'll tailor the discovery call around your priorities.</div>
       </div>
       <div class="card" data-type="elec-reid-pick" onclick="selectProjectType('elec-reid-pick', this)">
-        <div class="img-slot" data-slot-id="IMG-00D-elec-reid-pick" style="aspect-ratio:4/3;">
+        <div class="img-slot has-image" data-slot-id="IMG-00D-elec-reid-pick" style="aspect-ratio:4/3;">
+          <img src="/images/IMG-00D.jpg" alt="Elec Reid Pick">
           <div class="img-slot-eyebrow">IMG-00D-ELEC-REID-PICK</div>
           <div class="img-slot-desc"><em>Editorial portrait of an Elec Reid completed install, hero shot</em></div>
         </div>
@@ -639,9 +648,8 @@ html, body {
     <p class="stage-lead">This is the platform that runs your smart home. All four deliver the same outcome. The difference is how they get there. Pick the one that suits your house, your habits, and the people who live in it.</p>
 
     <div class="platform-section" data-platform="apple" onclick="selectPlatform('apple', this)">
-      <div class="img-slot" data-slot-id="IMG-07-apple-home" style="aspect-ratio:4/3;">
-        <div class="img-slot-eyebrow">IMG-07-APPLE-HOME</div>
-        <div class="img-slot-desc"><em>Apple Home app on iPhone, clean interface</em></div>
+      <div class="img-slot has-image" data-slot-id="IMG-07-apple-home" style="aspect-ratio:4/3;">
+        <img src="/images/IMG-07-APPLE-HOME.png" alt="Apple Home">
       </div>
       <div>
         <div class="platform-name"><em>Apple Home</em></div>
@@ -654,9 +662,8 @@ html, body {
     </div>
 
     <div class="platform-section" data-platform="homeassistant" onclick="selectPlatform('homeassistant', this)">
-      <div class="img-slot" data-slot-id="IMG-08-home-assistant" style="aspect-ratio:4/3;">
-        <div class="img-slot-eyebrow">IMG-08-HOME-ASSISTANT</div>
-        <div class="img-slot-desc"><em>Home Assistant dashboard on screen, open source</em></div>
+      <div class="img-slot has-image" data-slot-id="IMG-08-home-assistant" style="aspect-ratio:4/3;">
+        <img src="/images/IMG-08-HOME-ASSISTANT.jpg" alt="Home Assistant">
       </div>
       <div>
         <div class="platform-name"><em>Home Assistant</em></div>
@@ -669,9 +676,8 @@ html, body {
     </div>
 
     <div class="platform-section" data-platform="control4" onclick="selectPlatform('control4', this)">
-      <div class="img-slot" data-slot-id="IMG-09-control4" style="aspect-ratio:4/3;">
-        <div class="img-slot-eyebrow">IMG-09-CONTROL4</div>
-        <div class="img-slot-desc"><em>Control4 touchscreen interface, dealer installation</em></div>
+      <div class="img-slot has-image" data-slot-id="IMG-09-control4" style="aspect-ratio:4/3;">
+        <img src="/images/IMG-09-CONTROL4.jpg" alt="Control4">
       </div>
       <div>
         <div class="platform-name"><em>Control4</em></div>
