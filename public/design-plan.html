@@ -492,8 +492,28 @@ html, body {
   gap: 12px;
   padding: 10px 0;
   border-bottom: 1px solid var(--grey);
+  transition: background 0.12s, opacity 0.12s;
 }
 .room-row:last-child { border-bottom: none; }
+.room-row.dragging { opacity: 0.4; background: var(--cream); }
+.room-row.drag-over-top { box-shadow: inset 0 2px 0 0 var(--cobalt); }
+.room-row.drag-over-bottom { box-shadow: inset 0 -2px 0 0 var(--cobalt); }
+.room-drag-handle {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  cursor: grab;
+  color: var(--grey-mid);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  user-select: none;
+  touch-action: none;
+  transition: color 0.15s;
+}
+.room-drag-handle:hover { color: var(--cobalt); }
+.room-drag-handle:active { cursor: grabbing; }
 .floor-plan-upload-row { display: flex; align-items: flex-start; gap: 12px; margin-top: 32px; padding: 20px; border: 1px dashed var(--cobalt); }
 .floor-plan-upload-row input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--cobalt); flex-shrink: 0; margin-top: 2px; }
 .floor-plan-upload-row label { font-size: 12pt; line-height: 1.5; cursor: pointer; }
@@ -2414,7 +2434,13 @@ function renderRoomBuilder() {
 
 function renderRoomRow(r) {
   return `
-    <div class="room-row" id="room-row-${r.id}">
+    <div class="room-row" id="room-row-${r.id}" draggable="true" data-room-id="${r.id}"
+         ondragstart="onRoomDragStart(event,'${r.id}')"
+         ondragover="onRoomDragOver(event,'${r.id}')"
+         ondragleave="onRoomDragLeave(event)"
+         ondrop="onRoomDrop(event,'${r.id}')"
+         ondragend="onRoomDragEnd(event)">
+      <span class="room-drag-handle" title="Drag to reorder" aria-label="Drag to reorder">&#x2630;</span>
       <div class="room-name-wrap" style="flex:1;">
         <input class="room-name-input" value="${r.name}" oninput="updateRoomName('${r.id}',this.value)" placeholder="Click to rename" title="Click to rename">
         <span class="room-pencil-icon">&#9998;</span>
@@ -2422,6 +2448,56 @@ function renderRoomRow(r) {
       <button class="matrix-row-delete" onclick="deleteRoom('${r.id}')" title="Remove room">&#xD7;</button>
     </div>
   `;
+}
+
+// Drag-and-drop reordering for rooms
+let draggedRoomId = null;
+function onRoomDragStart(e, id) {
+  draggedRoomId = id;
+  const row = document.getElementById('room-row-' + id);
+  if (row) row.classList.add('dragging');
+  e.dataTransfer.effectAllowed = 'move';
+  // Required for some browsers (Firefox) to actually start the drag
+  try { e.dataTransfer.setData('text/plain', id); } catch (err) {}
+}
+function onRoomDragOver(e, overId) {
+  if (!draggedRoomId || draggedRoomId === overId) return;
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'move';
+  const row = document.getElementById('room-row-' + overId);
+  if (!row) return;
+  const rect = row.getBoundingClientRect();
+  const isTop = (e.clientY - rect.top) < (rect.height / 2);
+  document.querySelectorAll('.room-row').forEach(r => { r.classList.remove('drag-over-top'); r.classList.remove('drag-over-bottom'); });
+  row.classList.add(isTop ? 'drag-over-top' : 'drag-over-bottom');
+}
+function onRoomDragLeave(e) {
+  // Don't aggressively clear - dragOver on the next row will reset
+}
+function onRoomDrop(e, dropId) {
+  e.preventDefault();
+  if (!draggedRoomId || draggedRoomId === dropId) return;
+  const fromIdx = formData.rooms.findIndex(r => r.id === draggedRoomId);
+  const toIdx = formData.rooms.findIndex(r => r.id === dropId);
+  if (fromIdx < 0 || toIdx < 0) return;
+  const row = document.getElementById('room-row-' + dropId);
+  const rect = row ? row.getBoundingClientRect() : null;
+  const dropAbove = rect ? (e.clientY - rect.top) < (rect.height / 2) : true;
+  const moved = formData.rooms.splice(fromIdx, 1)[0];
+  // Recompute toIdx because removing fromIdx may shift it
+  let insertAt = formData.rooms.findIndex(r => r.id === dropId);
+  if (!dropAbove) insertAt += 1;
+  formData.rooms.splice(insertAt, 0, moved);
+  draggedRoomId = null;
+  renderRoomBuilder();
+}
+function onRoomDragEnd(e) {
+  draggedRoomId = null;
+  document.querySelectorAll('.room-row').forEach(r => {
+    r.classList.remove('dragging');
+    r.classList.remove('drag-over-top');
+    r.classList.remove('drag-over-bottom');
+  });
 }
 
 function updateRoomName(id, name) {
