@@ -79,7 +79,7 @@ const brandData: Record<string, BrandData> = {
       },
       {
         heading: "One call if anything goes wrong.",
-        body: "We don't pass you to Apple support. We own the outcome. If a device drops off the network three months later, we fix it.",
+        body: "We own the outcome. If a device drops off the network three months later, you call us, not Apple. We fix it.",
       },
     ],
     relatedBrands: [
@@ -147,7 +147,7 @@ const brandData: Record<string, BrandData> = {
       },
       {
         heading: "Full system design.",
-        body: "We don't just supply switches. We design the complete system lighting scenes, automation logic, integration with blinds, climate, audio, and security.",
+        body: "Switches are just the surface. We design the complete system: lighting scenes, automation logic, integration with blinds, climate, audio, and security.",
       },
       {
         heading: "Belgian-engineered.",
@@ -416,7 +416,7 @@ const brandData: Record<string, BrandData> = {
     whyPoints: [
       {
         heading: "We design before we pull cable.",
-        body: "Coverage maps, VLAN architecture, PoE budgets all done before a single cable is pulled. We do not run cable and hope for the best.",
+        body: "Coverage maps, VLAN architecture, PoE budgets, all done before a single cable is pulled. The plan is the product. The install just executes it.",
       },
       {
         heading: "Unifi is what we use. Not just what we sell.",

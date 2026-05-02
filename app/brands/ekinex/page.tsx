@@ -147,7 +147,7 @@ export default function EkinexPage() {
               { heading: 'Italian-engineered.', body: 'Designed and manufactured in Italy to a standard that makes it the first choice for architects on prestige projects across Europe.' },
               { heading: '13+ finishes.', body: 'A palette no other manufacturer matches. From brushed aluminium to antique brass specified to match the interior, not work around it.' },
               { heading: 'Residential and commercial.', body: 'We install Ekinex in Melbourne homes and commercial projects. The 20Venti scales from a single room to a whole building.' },
-              { heading: 'Full system design.', body: 'We do not just supply switches. We design the complete system every button, every function, every scene before a single cable is pulled.' },
+              { heading: 'Full system design.', body: 'Switches are just the surface. We design the complete system every button, every function, every scene before a single cable is pulled.' },
             ].map((point, i) => (
               <div key={i} className="flex flex-col gap-3">
                 <div className="w-8 h-px bg-[#0134E7]" />
