@@ -11,7 +11,7 @@ const config: Config = {
       fontFamily: {
         austin: ['Austin', 'Georgia', 'serif'],
         'austin-hairline': ['AustinHairline', 'Georgia', 'serif'],
-        sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
+        sans: ['Circular', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
       colors: {
         navy: '#16253F',
