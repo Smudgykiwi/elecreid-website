@@ -654,8 +654,10 @@ html, body {
   .cover-headline { font-size: 48pt; }
   .stage-headline { font-size: 32pt; }
   .cover-page { padding: 40px 28px 80px; }
-  .container { padding: 40px 24px 40px; }
-  .bottom-nav { padding: 0 20px; }
+  /* Bottom sticky nav is 70px tall on desktop; on mobile keep generous
+     bottom padding so the last card / Continue area never sits behind it. */
+  .container { padding: 40px 24px calc(70px + 24px + env(safe-area-inset-bottom, 0px)); }
+  .bottom-nav { padding: 0 20px; padding-bottom: env(safe-area-inset-bottom, 0px); height: calc(70px + env(safe-area-inset-bottom, 0px)); }
   .brand-header { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
@@ -730,7 +732,7 @@ html, body {
   </div>
   <div class="container" style="text-align:center; max-width:720px; padding-top:36px; padding-bottom:24px;">
     <a href="https://elecreid.com" class="eyebrow" style="margin-bottom:14px; text-decoration:none; color:var(--cobalt); display:inline-block;">ELEC REID</a>
-    <div class="stage-headline" style="font-size:54pt; margin-bottom:18px; line-height:1.05;">Build your <em>dream system.</em></div>
+    <h1 class="stage-headline" style="font-size:54pt; margin-bottom:18px; line-height:1.05;">Build your <em>dream system.</em></h1>
     <p style="font-size:13pt; line-height:1.6; color:var(--navy); margin-bottom:28px; max-width:560px; margin-left:auto; margin-right:auto;">Design your smart home system here, with features like one-tap scenes, integrated lighting, whole-home audio, and architectural switches.</p>
     <button class="cover-begin-btn" onclick="showPage(1)">Begin</button>
   </div>
@@ -741,7 +743,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE ZERO</div>
     <div class="stage-numeral">00</div>
-    <h1 class="stage-headline">Where do you want to <em>start?</em></h1>
+    <h2 class="stage-headline">Where do you want to <em>start?</em></h2>
     <p class="stage-subhead">There's no wrong path. Pick what fits the project.</p>
     <div class="cards-row four-col">
       <div class="card" data-type="full" onclick="selectProjectType('full', this)">
@@ -793,7 +795,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE ZERO · ELEC REID PICK</div>
     <div class="stage-numeral">00</div>
-    <h1 class="stage-headline"><em>Pick a tier.</em></h1>
+    <h2 class="stage-headline"><em>Pick a tier.</em></h2>
     <p class="stage-lead"><em>Three pre-configured systems based on what we'd specify ourselves. Pick one, or let us recommend.</em></p>
     <p class="stage-subhead">Each tier is a complete smart home spec, ready to install. The discovery call is where we walk through what's included and tailor it to your project. No design work for you, no decisions to chase down.</p>
     <div class="cards-row four-col">
@@ -842,7 +844,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE ONE</div>
     <div class="stage-numeral"><em>01</em></div>
-    <h1 class="stage-headline">Build your <em>home.</em></h1>
+    <h2 class="stage-headline">Build your <em>home.</em></h2>
     <p class="stage-lead"><em>Name the rooms in your home. Everything that follows flows from here.</em></p>
     <p style="font-size:13pt; margin-bottom:36px; line-height:1.6;">We've added the standards. Edit, delete, or add to suit your build.</p>
 
@@ -860,7 +862,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE TWO</div>
     <div class="stage-numeral">02</div>
-    <h1 class="stage-headline">Choose your <em>automation system.</em></h1>
+    <h2 class="stage-headline">Choose your <em>automation system.</em></h2>
     <p class="stage-lead">This is the platform that runs your smart home. It pulls every system together. You'll interact with it through wall-mounted touchscreens, the app on your phone, the switches on your wall.</p>
     <p style="font-size:13pt; margin-bottom:32px; line-height:1.6; color:var(--navy);">All four platforms deliver the same outcome. The difference is how they get there. Pick the one that suits your house, your habits, and the people who live in it.</p>
 
@@ -928,7 +930,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE THREE</div>
     <div class="stage-numeral">03</div>
-    <h1 class="stage-headline">Your home, <em>on a screen.</em></h1>
+    <h2 class="stage-headline">Your home, <em>on a screen.</em></h2>
     <p class="stage-lead">Most smart homes have one <em>central touchscreen</em> that controls everything. Across multiple floors, we usually run one per level.</p>
     <p style="font-size:13pt; margin-bottom:32px; line-height:1.6;">For larger homes, or rooms with lots of things to control, a <em>dedicated screen in the zone</em> works well. A master bedroom and its ensuite, for example, with quick local control of lights, blinds, climate, and music in that space.</p>
     <div id="touchscreenMatrix"></div>
@@ -944,9 +946,34 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE FOUR</div>
     <div class="stage-numeral">04</div>
-    <h1 class="stage-headline">Light first. <em>Tech second.</em></h1>
+    <h2 class="stage-headline">Light first. <em>Tech second.</em></h2>
     <p class="stage-lead">The switch is the most-touched object in your home. It lives on your wall for thirty years. It is the architectural statement.</p>
-    <p style="font-size:13pt; margin-bottom:32px; line-height:1.6; color:var(--navy);">Pick as many as you like. Most homes pick one switch throughout. Some run a hero brand in the spaces that matter (kitchen, master, alfresco) and a quieter range elsewhere. Either way works.</p>
+
+    <!-- Primary stage decision: 3-option pattern. Brand cards below are inspiration. -->
+    <div style="margin: 24px 0 16px;">
+      <div class="eyebrow" style="margin-bottom: 12px;">How would you like to choose?</div>
+      <div class="cards-row" style="grid-template-columns: repeat(3, 1fr); gap: 16px;">
+        <div class="card" data-switch-approach="hero" onclick="selectSwitchApproach('hero', this)" style="padding: 20px;">
+          <div class="card-title" style="min-height: auto; margin: 0 0 6px; font-size: 18pt;"><em>Hero brand</em></div>
+          <div class="card-subtitle" style="min-height: auto; margin-bottom: 8px;">For the rooms that matter</div>
+          <div class="card-body" style="min-height: auto; font-size: 11pt;">We&rsquo;ll specify the right one. Kitchen, master, alfresco — the spaces you touch every day.</div>
+        </div>
+        <div class="card" data-switch-approach="standard" onclick="selectSwitchApproach('standard', this)" style="padding: 20px;">
+          <div class="card-title" style="min-height: auto; margin: 0 0 6px; font-size: 18pt;"><em>Standard brand</em></div>
+          <div class="card-subtitle" style="min-height: auto; margin-bottom: 8px;">For everywhere else</div>
+          <div class="card-body" style="min-height: auto; font-size: 11pt;">Quality, no fuss. Quietly architectural across the rest of the home.</div>
+        </div>
+        <div class="card" data-switch-approach="recommend" onclick="selectSwitchApproach('recommend', this)" style="padding: 20px;">
+          <div class="card-title" style="min-height: auto; margin: 0 0 6px; font-size: 18pt;"><em>I&rsquo;d rather Joe recommend</em></div>
+          <div class="card-subtitle" style="min-height: auto; margin-bottom: 8px;">Skip the choice</div>
+          <div class="card-body" style="min-height: auto; font-size: 11pt;">We&rsquo;ll match a switch to your architect, your interiors and your platform. Discussed in your proposal.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider-light" style="margin: 28px 0 20px;">
+    <div class="eyebrow" style="margin-bottom: 8px;">If you have a preference</div>
+    <p style="font-size:12pt; margin-bottom:24px; line-height:1.6; color:var(--navy); opacity:0.7;"><em>Inspiration only</em>. Here&rsquo;s what we install. Pick whatever catches your eye — we&rsquo;ll handle the rest.</p>
 
     <!-- Brand 01: Basalte -->
     <div class="brand-section">
@@ -1160,7 +1187,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE FIVE</div>
     <div class="stage-numeral">05</div>
-    <h1 class="stage-headline">The magic is in the <em>moments.</em></h1>
+    <h2 class="stage-headline">The magic is in the <em>moments.</em></h2>
     <p id="scenesLead" class="stage-lead">A scene is one tap that changes the whole house. Lights dim, blinds drop, music starts. The power of automation is in these moments.</p>
     <p style="font-size:13pt; margin-bottom:32px; line-height:1.6;">We design these with you, not for you. Below are the scenes we use most.</p>
     <div class="scene-cards">
@@ -1211,7 +1238,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE SIX</div>
     <div class="stage-numeral">06</div>
-    <h1 class="stage-headline">Choose your <em>systems.</em></h1>
+    <h2 class="stage-headline">Choose your <em>systems.</em></h2>
     <p class="stage-subhead">Multi-select what you want included. We'll detail the right products for each in your proposal.</p>
     <div id="systemsGrid" class="systems-grid"></div>
   </div>
@@ -1222,7 +1249,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE SIX A &middot; TV INSTALL</div>
     <div class="stage-numeral">6A</div>
-    <h1 class="stage-headline"><em>TV install,</em> properly done.</h1>
+    <h2 class="stage-headline"><em>TV install,</em> properly done.</h2>
     <p class="stage-lead"><em>Clients buy their own TVs. We install and integrate them properly - wall-mounted, calibrated, cabled cleanly. The TV becomes part of the architecture, not a black rectangle stuck on a wall.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We supply the brackets, run the cabling through the wall to the joinery, mount and align every TV, calibrate the picture, and tie the sound and control into the rest of the home. Buying the TV separately keeps the warranty with the manufacturer where it belongs, and gives you flexibility on brand and model. We just need to know what you're putting on each wall.</p>
 
@@ -1268,7 +1295,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE SIX B &middot; WHOLE-HOME AUDIO</div>
     <div class="stage-numeral">6B</div>
-    <h1 class="stage-headline"><em>Music</em> in every room.</h1>
+    <h2 class="stage-headline"><em>Music</em> in every room.</h2>
     <p class="stage-lead"><em>Whole-home audio is the single most-used part of any smart home. Designed properly, it disappears into the architecture and follows you through the house.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">Three audio levels, recommended room by room. Background fills a space without dominating it. Decent is proper everyday listening. Pumping is full-range, high-fidelity sound for when you want to feel it. Speakers can be visible or invisible. Invisible speakers are built into the ceiling or wall and plastered over, completely hidden. They cost more, but the result is stunning. We commission everything to a single app.</p>
 
@@ -1364,7 +1391,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE SIX C &middot; CINEMA ROOM</div>
     <div class="stage-numeral">6C</div>
-    <h1 class="stage-headline"><em>The cinema</em> room.</h1>
+    <h2 class="stage-headline"><em>The cinema</em> room.</h2>
     <p class="stage-lead"><em>The room where everything is allowed to be louder, darker, and more dramatic than the rest of the house.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">A proper cinema room is its own discipline. Dedicated projector or large-format screen, surround sound calibrated to the room, acoustic treatment on the walls, blackout blinds, dimmable lighting, and one tap that takes the room from bright lounge to full theatre. We design and commission these end to end. Demo rooms available before you commit. The result is a room your family will actually use, not a showroom.</p>
 
@@ -1567,7 +1594,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE SIX D &middot; NETWORK</div>
     <div class="stage-numeral">6D</div>
-    <h1 class="stage-headline"><em>The network is the foundation.</em></h1>
+    <h2 class="stage-headline"><em>The network is the foundation.</em></h2>
     <p class="stage-lead"><em>Every smart device, every TV, every camera, every screen runs through the network. If it's slow, the home feels slow.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We use UniFi. Wired in where it matters, wireless access points placed by coverage map. The network lives in a clean rack and stays documented. No dead zones.</p>
 
@@ -1619,7 +1646,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE SIX E &middot; ALARM</div>
     <div class="stage-numeral">6E</div>
-    <h1 class="stage-headline"><em>Security that does its job quietly.</em></h1>
+    <h2 class="stage-headline"><em>Security that does its job quietly.</em></h2>
     <p class="stage-lead"><em>A proper alarm runs in the background. You only notice it when something goes wrong.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We install Inception alarm systems. Smart alerts to your phone, remote arm and disarm, zoned protection through the home, and integration with the automation platform. You can arm by zone, arm certain areas at bedtime, and get notified when something triggers. For back-to-base monitoring we partner with a 24/7 monitoring service.</p>
 
@@ -1697,7 +1724,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE SIX F &middot; INTERCOM</div>
     <div class="stage-numeral">6F</div>
-    <h1 class="stage-headline"><em>Who's at the door,</em> and how they get in.</h1>
+    <h2 class="stage-headline"><em>Who's at the door,</em> and how they get in.</h2>
     <p class="stage-lead"><em>The first impression of your home, before anyone even gets inside.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We install UniFi access. Locally controlled, no cloud subscription, integrated with the rest of the system. The hardware on the wall depends on what you want it to do, from a simple swipe-card reader to a full video intercom that calls every screen in the house. Calls reach your touchscreens first, then your phones if no one answers.</p>
 
@@ -1732,7 +1759,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE SIX G &middot; CAMERAS</div>
     <div class="stage-numeral">6G</div>
-    <h1 class="stage-headline"><em>Cameras that watch the property,</em> not your data.</h1>
+    <h2 class="stage-headline"><em>Cameras that watch the property,</em> not your data.</h2>
     <p class="stage-lead"><em>UniFi Protect. Locally recorded to your own NVR. No subscription, no cloud, no third-party access to your footage.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We design camera coverage around the building, not bolted on after. Every angle planned, every cable run during construction, every lens chosen for the scene it covers. The recorder lives in your equipment rack. You watch the feeds from any screen, your phone, or away from the property. Footage is yours. We spec every system with 30 days of storage. If you need longer retention, tell us in the notes.</p>
 
@@ -1797,7 +1824,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE SIX H &middot; POOL</div>
     <div class="stage-numeral">6H</div>
-    <h1 class="stage-headline"><em>Pool control,</em> your way.</h1>
+    <h2 class="stage-headline"><em>Pool control,</em> your way.</h2>
     <p class="stage-lead"><em>Two paths: keep it simple with the pool company's own app, or bring the pool into the rest of the home so it's all one experience.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">Most pool builders prefer to install their own controller and hand you their app. That works, and it's the simpler path. Bringing the pool into the main home automation system gives you one app for everything: pool, lighting, blinds, climate, audio. The catch is real: it costs more, takes longer, and we need the pool builder to genuinely coordinate with us during construction. That means you need to back the brief and push them to play. Some builders welcome it. Others won't budge. We'll know early. The result, when it works, is worth it.</p>
 
@@ -1871,7 +1898,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE SIX I &middot; WELLNESS &amp; GYM</div>
     <div class="stage-numeral">6I</div>
-    <h1 class="stage-headline"><em>Wellness</em> &amp; Gym.</h1>
+    <h2 class="stage-headline"><em>Wellness</em> &amp; Gym.</h2>
     <p class="stage-lead"><em>The corner of the home that exists for rest, recovery, and getting strong. Spa, sauna, steam, plunge, gym, all integrated.</em></p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:40px;">We don't build the equipment, but we make it work as one. Most wellness gear comes with its own controller and app. That works, and it's the simpler path. Integrating wellness and gym into the main home automation system means one app for everything: scenes that prepare the room before you walk in, lights and music that match the workout, steam and lighting coming up together. The catch is the same as the pool: it costs more, takes longer, and the equipment supplier needs to coordinate with us. The result, when it works, is genuinely special.</p>
 
@@ -1938,7 +1965,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE SEVEN</div>
     <div class="stage-numeral">07</div>
-    <h1 class="stage-headline">The <em>practical bit.</em></h1>
+    <h2 class="stage-headline">The <em>practical bit.</em></h2>
 
     <!-- SECTION A: PROJECT BASICS -->
     <div class="eyebrow" style="margin-bottom:12px;">PROJECT BASICS</div>
@@ -2085,7 +2112,7 @@ html, body {
   <div class="container">
     <div class="eyebrow">STAGE EIGHT</div>
     <div class="stage-numeral">08</div>
-    <h1 class="stage-headline">Let's <em>talk it through.</em></h1>
+    <h2 class="stage-headline">Let's <em>talk it through.</em></h2>
     <p style="font-family:'Austin',serif; font-style:italic; font-size:22pt; line-height:1.4; margin-bottom:24px; max-width:640px;">Every Elec Reid project begins with a thirty-minute discovery call. No pressure, no sales pitch. A direct conversation about what will work for your home, what won't, and what it might cost.</p>
     <p style="font-size:13pt; line-height:1.6; margin-bottom:32px;">Submit and we'll be in touch to schedule. Most calls happen within three business days.</p>
     <div id="calendlyPlaceholder" class="calendly-placeholder">Calendly inline widget will go here once Joe provides URL</div>
@@ -2154,6 +2181,7 @@ const formData = {
   screensByRoom: [],
   screenNotes: '',
   switches: [],
+  switchApproach: '',
   switchesNotes: '',
   systems: [],
   motionSensorDetail: '',
@@ -2776,21 +2804,24 @@ function deleteRoom(id) {
 function addFloor() { addRoom(); }
 
 // ===== TOUCHSCREEN MATRIX (Stage 03 - Your home on a screen) =====
+// Per-row Y/N gate. If Yes, reveal the screen-type dropdown. If No, row
+// collapses with no further input. Matches the per-row Y/N pattern used
+// elsewhere in the form.
 function buildTouchscreenMatrix() {
   const container = document.getElementById('touchscreenMatrix');
   if (!container) return;
   const p = formData.platform;
-  // Screen size options conditional on platform
+  // Screen size options (excluding 'No screen' — the Y/N gate handles that)
   let sizeOptions = [];
   if (p === 'control4') {
-    sizeOptions = ['No screen', 'T5 (10")', 'T5 (8")', 'Not sure']
+    sizeOptions = ['T5 (10")', 'T5 (8")', 'Not sure'];
   } else if (p === 'basalte') {
-    sizeOptions = ['No screen', 'Lena (10")', 'Ellie (5.7")', 'Lisa (4.3")', 'Not sure'];
+    sizeOptions = ['Lena (10")', 'Ellie (5.7")', 'Lisa (4.3")', 'Not sure'];
   } else if (p === 'homeassistant') {
-    sizeOptions = ['No screen', 'iPad (12.9")', 'iPad mini (8.3")', 'Samsung tablet', 'Not sure'];
+    sizeOptions = ['iPad (12.9")', 'iPad mini (8.3")', 'Samsung tablet', 'Not sure'];
   } else {
     // apple or unset
-    sizeOptions = ['No screen', 'iPad (12.9")', 'iPad mini (8.3")', 'Not sure']
+    sizeOptions = ['iPad (12.9")', 'iPad mini (8.3")', 'Not sure'];
   }
   // Use formData.rooms if populated, otherwise fall back to TV_ROOM_DEFAULTS
   const rooms = formData.rooms.length > 0 ? formData.rooms : TV_ROOM_DEFAULTS.map(function(name, i) {
@@ -2798,11 +2829,15 @@ function buildTouchscreenMatrix() {
   });
   // Sync screensByRoom array
   while (formData.screensByRoom.length < rooms.length) {
-    formData.screensByRoom.push({ roomId: '', roomName: '', screen: 'No screen' });
+    formData.screensByRoom.push({ roomId: '', roomName: '', screen: 'No screen', hasScreen: false });
   }
   rooms.forEach(function(r, i) {
-    if (!formData.screensByRoom[i]) formData.screensByRoom[i] = { roomId: r.id, roomName: r.name, screen: 'No screen' };
+    if (!formData.screensByRoom[i]) formData.screensByRoom[i] = { roomId: r.id, roomName: r.name, screen: 'No screen', hasScreen: false };
     else { formData.screensByRoom[i].roomId = r.id; formData.screensByRoom[i].roomName = r.name; }
+    // Backfill hasScreen flag from legacy data
+    if (typeof formData.screensByRoom[i].hasScreen === 'undefined') {
+      formData.screensByRoom[i].hasScreen = !!(formData.screensByRoom[i].screen && formData.screensByRoom[i].screen !== 'No screen');
+    }
   });
   // Group by floor
   const floors = [];
@@ -2812,22 +2847,51 @@ function buildTouchscreenMatrix() {
     return '<div style="margin-bottom:32px;">'
       + '<div class="floor-heading" style="margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--cobalt);">' + floor + '</div>'
       + floorRooms.map(function(r) {
-          const cur = (formData.screensByRoom[r.idx] || {}).screen || 'No screen';
+          const row = formData.screensByRoom[r.idx] || {};
+          const yes = !!row.hasScreen;
+          const cur = row.screen && row.screen !== 'No screen' ? row.screen : '';
+          const ynBlock = '<div style="display:flex;gap:6px;align-items:center;flex-shrink:0;">'
+            + '<button type="button" class="yn-btn ' + (yes ? 'yn-yes-active' : '') + '" onclick="setScreenHas(' + r.idx + ',true)">Yes</button>'
+            + '<button type="button" class="yn-btn ' + (!yes ? 'yn-no-active' : '') + '" onclick="setScreenHas(' + r.idx + ',false)">No</button>'
+            + '</div>';
+          const dropdown = yes
+            ? '<select class="touchscreen-room-select" onchange="updateScreenByRoom(' + r.idx + ',this.value)">'
+              + '<option value=""' + (cur === '' ? ' selected' : '') + '>Pick a screen…</option>'
+              + sizeOptions.map(function(opt) { return '<option value="' + opt + '"' + (cur === opt ? ' selected' : '') + '>' + opt + '</option>'; }).join('')
+              + '</select>'
+            : '';
           return '<div class="touchscreen-room-row">'
             + '<div class="touchscreen-room-name"><em>' + r.name + '</em></div>'
-            + '<select class="touchscreen-room-select" onchange="updateScreenByRoom(' + r.idx + ',this.value)">'
-            + sizeOptions.map(function(opt) { return '<option value="' + opt + '"' + (cur === opt ? ' selected' : '') + '>' + opt + '</option>'; }).join('')
-            + '</select></div>';
+            + ynBlock
+            + dropdown
+            + '</div>';
         }).join('')
       + '</div>';
   }).join('');
 }
 
+function setScreenHas(idx, val) {
+  if (!formData.screensByRoom[idx]) return;
+  formData.screensByRoom[idx].hasScreen = !!val;
+  if (!val) {
+    formData.screensByRoom[idx].screen = 'No screen';
+  } else if (!formData.screensByRoom[idx].screen || formData.screensByRoom[idx].screen === 'No screen') {
+    formData.screensByRoom[idx].screen = '';
+  }
+  // Re-render to show/hide the dropdown
+  buildTouchscreenMatrix();
+  syncLegacyScreens();
+}
+
 function updateScreenByRoom(idx, val) {
   if (formData.screensByRoom[idx]) formData.screensByRoom[idx].screen = val;
-  // Also update legacy formData.screens array for backward compat
+  syncLegacyScreens();
+}
+
+function syncLegacyScreens() {
+  // Keep legacy formData.screens array in sync (only rooms with a screen + a type)
   formData.screens = formData.screensByRoom
-    .filter(function(r) { return r.screen && r.screen !== 'No screen'; })
+    .filter(function(r) { return r.hasScreen && r.screen && r.screen !== 'No screen' && r.screen !== ''; })
     .map(function(r) { return r.screen; });
 }
 
@@ -3269,6 +3333,14 @@ function toggleSwitch(id, el) {
   else formData.switches.splice(idx, 1);
 }
 
+// Stage 04 primary decision: hero / standard / recommend
+function selectSwitchApproach(approach, el) {
+  formData.switchApproach = approach;
+  // Clear selected state on all approach cards, then mark this one
+  document.querySelectorAll('[data-switch-approach]').forEach(function(card) { card.classList.remove('selected'); });
+  if (el) el.classList.add('selected');
+}
+
 function toggleSystem(id, el) {
   el.classList.toggle('selected');
   const idx = formData.systems.indexOf(id);
@@ -3546,6 +3618,7 @@ async function submitForm() {
     platform: formData.platform || '',
     screens: formData.screens || [],
     switches: formData.switches || [],
+    switchApproach: formData.switchApproach || '',
     switchesNotes: formData.switchesNotes || '',
     scenesNotes: document.getElementById('scenesNotes')?.value || '',
     recommendedScenes: document.getElementById('recommendedScenes')?.checked || false,
