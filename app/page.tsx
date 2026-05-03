@@ -90,7 +90,7 @@ export default function HomePage() {
               <div className="relative overflow-hidden aspect-[4/5] mb-6">
                 <ImagePlaceholder
                   id="IMG-H-B"
-                  caption="Residential — premium home interior, switch detail, dusk warm light."
+                  caption="Residential - premium home interior, switch detail, dusk warm light."
                   aspect="4/5"
                   src="/images/haven-dsc05653.jpg"
                   alt="Residential smart home Melbourne"
@@ -111,7 +111,7 @@ export default function HomePage() {
               <div className="relative overflow-hidden aspect-[4/5] mb-6">
                 <ImagePlaceholder
                   id="IMG-H-C"
-                  caption="Commercial — office or hospitality interior, AV in context."
+                  caption="Commercial - office or hospitality interior, AV in context."
                   aspect="4/5"
                   src="/images/eclat-bureau.webp"
                   alt="Commercial AV Melbourne"
@@ -132,7 +132,7 @@ export default function HomePage() {
               <div className="relative overflow-hidden aspect-[4/5] mb-6">
                 <ImagePlaceholder
                   id="IMG-H-D"
-                  caption="Industrial — switchboard or warehouse install, on-the-tools."
+                  caption="Industrial - switchboard or warehouse install, on-the-tools."
                   aspect="4/5"
                   src="/images/industrial-warehouse.jpg"
                   alt="Industrial electrical Melbourne"
@@ -167,7 +167,7 @@ export default function HomePage() {
               From the switch that meets your hand each morning to the control platform that ties it all together. One team. Everything works.
             </p>
 
-            {/* Quiet inline pull-quote — replaces the full-bleed cobalt slab */}
+            {/* Quiet inline pull-quote - replaces the full-bleed cobalt slab */}
             <figure className="border-l-2 border-[#16253F]/15 pl-6 mb-10">
               <blockquote className="font-austin italic text-[#16253F] text-[28px] lg:text-[36px] leading-snug">
                 &ldquo;Good taste, implied confidence, and a pure nerdy love for tech.&rdquo;
@@ -184,7 +184,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 gap-3">
             <ImagePlaceholder
               id="IMG-H-E"
-              caption="Haven Court — home theatre and bar."
+              caption="Haven Court - home theatre and bar."
               aspect="1/1"
               src="/images/haven-dsc05653.jpg"
               alt="Haven Court home theatre and bar"
@@ -192,7 +192,7 @@ export default function HomePage() {
             <div className="mt-8">
               <ImagePlaceholder
                 id="IMG-H-F"
-                caption="Haven Court — home bar detail."
+                caption="Haven Court - home bar detail."
                 aspect="1/1"
                 src="/images/haven-dsc05656.jpg"
                 alt="Haven Court home bar"
@@ -200,7 +200,7 @@ export default function HomePage() {
             </div>
             <ImagePlaceholder
               id="IMG-H-G"
-              caption="Merival — whole-home audio install."
+              caption="Merival - whole-home audio install."
               aspect="1/1"
               src="/images/merival-sonos.jpg"
               alt="Merival AV installation"
@@ -208,7 +208,7 @@ export default function HomePage() {
             <div className="mt-8">
               <ImagePlaceholder
                 id="IMG-H-H"
-                caption="Haven Court — private spa."
+                caption="Haven Court - private spa."
                 aspect="1/1"
                 src="/images/haven-dsc05643.jpg"
                 alt="Haven Court private spa"
@@ -241,7 +241,7 @@ export default function HomePage() {
                 <div className="relative overflow-hidden">
                   <ImagePlaceholder
                     id={p.slot}
-                    caption={`${p.title} — ${p.location} project tile.`}
+                    caption={`${p.title} - ${p.location} project tile.`}
                     aspect="1/1"
                     src={p.img}
                     alt={p.title}
@@ -306,7 +306,7 @@ export default function HomePage() {
               <Link key={item.label} href="/brands" className="group block">
                 <ImagePlaceholder
                   id={item.slot}
-                  caption={`${item.label} — brand product shot or logo.`}
+                  caption={`${item.label} - brand product shot or logo.`}
                   aspect="1/1"
                   src={item.src}
                   alt={item.label}

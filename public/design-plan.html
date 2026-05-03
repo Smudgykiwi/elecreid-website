@@ -956,7 +956,7 @@ html, body {
         <div class="card" data-switch-approach="hero" onclick="selectSwitchApproach('hero', this)" style="padding: 20px;">
           <div class="card-title" style="min-height: auto; margin: 0 0 6px; font-size: 18pt;"><em>Hero brand</em></div>
           <div class="card-subtitle" style="min-height: auto; margin-bottom: 8px;">For the rooms that matter</div>
-          <div class="card-body" style="min-height: auto; font-size: 11pt;">We&rsquo;ll specify the right one. Kitchen, master, alfresco — the spaces you touch every day.</div>
+          <div class="card-body" style="min-height: auto; font-size: 11pt;">We&rsquo;ll specify the right one. Kitchen, master, alfresco. The spaces you touch every day.</div>
         </div>
         <div class="card" data-switch-approach="standard" onclick="selectSwitchApproach('standard', this)" style="padding: 20px;">
           <div class="card-title" style="min-height: auto; margin: 0 0 6px; font-size: 18pt;"><em>Standard brand</em></div>
@@ -973,7 +973,7 @@ html, body {
 
     <hr class="section-divider-light" style="margin: 28px 0 20px;">
     <div class="eyebrow" style="margin-bottom: 8px;">If you have a preference</div>
-    <p style="font-size:12pt; margin-bottom:24px; line-height:1.6; color:var(--navy); opacity:0.7;"><em>Inspiration only</em>. Here&rsquo;s what we install. Pick whatever catches your eye — we&rsquo;ll handle the rest.</p>
+    <p style="font-size:12pt; margin-bottom:24px; line-height:1.6; color:var(--navy); opacity:0.7;"><em>Inspiration only</em>. Here&rsquo;s what we install. Pick whatever catches your eye. We&rsquo;ll handle the rest.</p>
 
     <!-- Brand 01: Basalte -->
     <div class="brand-section">
@@ -2811,7 +2811,7 @@ function buildTouchscreenMatrix() {
   const container = document.getElementById('touchscreenMatrix');
   if (!container) return;
   const p = formData.platform;
-  // Screen size options (excluding 'No screen' — the Y/N gate handles that)
+  // Screen size options (excluding 'No screen'; the Y/N gate handles that)
   let sizeOptions = [];
   if (p === 'control4') {
     sizeOptions = ['T5 (10")', 'T5 (8")', 'Not sure'];
