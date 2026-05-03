@@ -395,6 +395,190 @@ html, body {
 .go-home-link:hover { background: var(--cobalt); color: var(--cream); }
 .go-home-link.show { display: inline-block; }
 
+/* Save & Resume Later button */
+.save-resume-btn {
+  position: fixed;
+  top: 60px;
+  right: 24px;
+  z-index: 100;
+  font-family: 'Circular', sans-serif;
+  font-weight: 700;
+  font-size: 9pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  background: var(--cream);
+  padding: 8px 16px;
+  border: 1px solid var(--cobalt);
+  border-radius: 999px;
+  cursor: pointer;
+  display: none;
+  transition: background 0.15s, color 0.15s;
+}
+.save-resume-btn:hover { background: var(--cobalt); color: var(--cream); }
+.save-resume-btn.show { display: inline-block; }
+
+/* Draft save modal */
+#draftModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(22, 37, 63, 0.72);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+#draftModal.show { display: flex; }
+.draft-modal-inner {
+  background: var(--cream);
+  padding: 48px 40px 40px;
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+}
+.draft-modal-close {
+  position: absolute;
+  top: 14px; right: 18px;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--grey-mid);
+  line-height: 1;
+}
+.draft-modal-close:hover { color: var(--navy); }
+.draft-modal-headline {
+  font-family: 'Austin', serif;
+  font-style: italic;
+  font-size: 32pt;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.draft-modal-body {
+  font-size: 13pt;
+  line-height: 1.6;
+  color: var(--navy);
+  margin-bottom: 28px;
+}
+.draft-modal-input {
+  width: 100%;
+  border: 1.5px solid var(--grey);
+  background: var(--cream);
+  color: var(--navy);
+  font-family: 'Circular', sans-serif;
+  font-size: 13pt;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.15s;
+  margin-bottom: 20px;
+  display: block;
+}
+.draft-modal-input:focus { border-color: var(--cobalt); }
+.draft-modal-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.draft-modal-submit {
+  background: var(--cobalt);
+  color: #fff;
+  font-family: 'Circular', sans-serif;
+  font-weight: 700;
+  font-size: 11pt;
+  letter-spacing: 0.08em;
+  padding: 14px 28px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.draft-modal-submit:hover { background: #001E8A; }
+.draft-modal-submit:disabled { background: var(--grey-mid); cursor: not-allowed; }
+.draft-modal-cancel {
+  font-family: 'Circular', sans-serif;
+  font-size: 11pt;
+  color: var(--grey-mid);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.draft-modal-cancel:hover { color: var(--navy); }
+.draft-modal-status { font-size: 11pt; margin-top: 12px; min-height: 20px; }
+
+/* Restore draft modal */
+#restoreModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(22, 37, 63, 0.72);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+#restoreModal.show { display: flex; }
+.restore-modal-inner {
+  background: var(--cream);
+  padding: 48px 40px 40px;
+  max-width: 440px;
+  width: 100%;
+}
+.restore-modal-headline {
+  font-family: 'Austin', serif;
+  font-style: italic;
+  font-size: 28pt;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.restore-modal-body {
+  font-size: 13pt;
+  line-height: 1.6;
+  color: var(--navy);
+  margin-bottom: 28px;
+}
+.restore-modal-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.restore-modal-yes {
+  background: var(--cobalt);
+  color: #fff;
+  font-family: 'Circular', sans-serif;
+  font-weight: 700;
+  font-size: 11pt;
+  letter-spacing: 0.08em;
+  padding: 14px 28px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.restore-modal-yes:hover { background: #001E8A; }
+.restore-modal-no {
+  font-family: 'Circular', sans-serif;
+  font-size: 11pt;
+  color: var(--grey-mid);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 14px 0;
+}
+.restore-modal-no:hover { color: var(--navy); }
+
+/* Draft toast */
+#draftToast {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy);
+  color: var(--cream);
+  font-family: 'Circular', sans-serif;
+  font-size: 11pt;
+  padding: 12px 24px;
+  border-radius: 4px;
+  z-index: 400;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+#draftToast.show { opacity: 1; }
+
 /* Thank you overlay */
 #thankYouOverlay {
   display: none;
@@ -1919,6 +2103,39 @@ html, body {
 <!-- GO HOME LINK (shows on all stage pages, not opener) -->
 <a href="https://elecreid.com" class="go-home-link" id="goHomeLink">← Elec Reid Home</a>
 
+<!-- SAVE & RESUME LATER BUTTON (Stage 01 onwards) -->
+<button class="save-resume-btn" id="saveResumeBtn" onclick="openSaveModal()">Save &amp; Resume Later</button>
+
+<!-- SAVE DRAFT MODAL -->
+<div id="draftModal">
+  <div class="draft-modal-inner">
+    <button class="draft-modal-close" onclick="closeSaveModal()" aria-label="Close">&times;</button>
+    <div class="draft-modal-headline">Save your <em>progress.</em></div>
+    <p class="draft-modal-body">We'll email you a link to come back to this form whenever you're ready.</p>
+    <input type="email" class="draft-modal-input" id="draftEmailInput" placeholder="Your email address" autocomplete="email">
+    <div class="draft-modal-actions">
+      <button class="draft-modal-submit" id="draftSubmitBtn" onclick="submitSaveDraft()">Send me the link</button>
+      <button class="draft-modal-cancel" onclick="closeSaveModal()">Cancel</button>
+    </div>
+    <div class="draft-modal-status" id="draftStatus"></div>
+  </div>
+</div>
+
+<!-- RESTORE DRAFT MODAL -->
+<div id="restoreModal">
+  <div class="restore-modal-inner">
+    <div class="restore-modal-headline"><em>Welcome back.</em></div>
+    <p class="restore-modal-body" id="restoreModalBody">We saved your previous progress. Pick up where you left off?</p>
+    <div class="restore-modal-actions">
+      <button class="restore-modal-yes" onclick="applyRestoredDraft()">Resume</button>
+      <button class="restore-modal-no" onclick="dismissRestore()">Start fresh</button>
+    </div>
+  </div>
+</div>
+
+<!-- DRAFT TOAST -->
+<div id="draftToast"></div>
+
 <!-- BOTTOM NAV -->
 <div class="bottom-nav" id="bottomNav" style="display:none;">
   <button class="nav-btn" id="navBack" onclick="prevPage()">&#8592; Back</button>
@@ -2373,6 +2590,17 @@ function showPage(n) {
     if (n === 0 || n === '0b') goHome.classList.remove('show');
     else goHome.classList.add('show');
   }
+  // Save & Resume button: show from Stage 01 (page-2) onwards
+  const saveResumeBtn = document.getElementById('saveResumeBtn');
+  if (saveResumeBtn) {
+    const noSavePages = [0, '0b', 1, '1b'];
+    if (noSavePages.includes(n)) saveResumeBtn.classList.remove('show');
+    else saveResumeBtn.classList.add('show');
+  }
+  // Restore any pending DOM field values (e.g. after draft resume)
+  applyPendingDomRestore();
+  // Auto-save state to localStorage on every page navigation
+  autoSave();
   updateNavBar();
   window.scrollTo(0, 0);
 }
@@ -3084,6 +3312,231 @@ function buildThankYouMessage() {
   }
   return "We've got your plan. The details are in our hands.";
 }
+
+// ===== SAVE & RESUME DRAFT =====
+
+const DRAFT_LS_KEY = 'elecreid_form_draft';
+const DRAFT_LS_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
+
+// Pending DOM field restore object (set before page navigation, applied after)
+let _pendingDomRestore = null;
+// Pending server or localStorage draft data waiting user confirmation
+let _pendingRestoredState = null;
+
+// Collect full form state including DOM-bound fields
+function captureFullState() {
+  return {
+    formData: JSON.parse(JSON.stringify(formData)),
+    currentPage: currentPage,
+    _dom: {
+      firstName:   document.getElementById('firstName')?.value   || '',
+      lastName:    document.getElementById('lastName')?.value    || '',
+      phone:       document.getElementById('phone')?.value       || '',
+      email:       document.getElementById('email')?.value       || '',
+      address1:    document.getElementById('address1')?.value    || '',
+      suburb:      document.getElementById('suburb')?.value      || '',
+      postcode:    document.getElementById('postcode')?.value    || '',
+      floorPlans:  document.getElementById('floorPlans')?.value  || '',
+      otherNotes:  document.getElementById('otherNotes')?.value  || '',
+      scenesNotes: document.getElementById('scenesNotes')?.value || '',
+      recommendedScenes: document.getElementById('recommendedScenes')?.checked || false,
+    },
+  };
+}
+
+// Debounced auto-save to localStorage
+let _autoSaveTimer = null;
+function autoSave() {
+  if (currentPage === 0 || currentPage === '0b') return;
+  clearTimeout(_autoSaveTimer);
+  _autoSaveTimer = setTimeout(function() {
+    try {
+      const state = captureFullState();
+      state.savedAt = Date.now();
+      localStorage.setItem(DRAFT_LS_KEY, JSON.stringify(state));
+    } catch(e) { /* storage unavailable */ }
+  }, 800);
+}
+
+// Apply restored formData + schedule DOM restore after next showPage
+function hydrateState(state) {
+  // Restore formData fields
+  const saved = state.formData || {};
+  Object.keys(saved).forEach(function(k) { formData[k] = saved[k]; });
+  // Schedule DOM field restore
+  _pendingDomRestore = state._dom || null;
+}
+
+function applyPendingDomRestore() {
+  if (!_pendingDomRestore) return;
+  const d = _pendingDomRestore;
+  _pendingDomRestore = null;
+  function setVal(id, val) {
+    const el = document.getElementById(id);
+    if (el) el.value = val || '';
+  }
+  function setChecked(id, val) {
+    const el = document.getElementById(id);
+    if (el) el.checked = !!val;
+  }
+  setVal('firstName', d.firstName);
+  setVal('lastName', d.lastName);
+  setVal('phone', d.phone);
+  setVal('email', d.email);
+  setVal('address1', d.address1);
+  setVal('suburb', d.suburb);
+  setVal('postcode', d.postcode);
+  setVal('floorPlans', d.floorPlans);
+  setVal('otherNotes', d.otherNotes);
+  setVal('scenesNotes', d.scenesNotes);
+  setChecked('recommendedScenes', d.recommendedScenes);
+}
+
+// Apply the pending restored state (called when user clicks Resume)
+function applyRestoredDraft() {
+  document.getElementById('restoreModal').classList.remove('show');
+  if (!_pendingRestoredState) return;
+  const state = _pendingRestoredState;
+  _pendingRestoredState = null;
+  hydrateState(state);
+  const target = state.currentPage;
+  showPage(target);
+  showToast('Welcome back. Picking up from stage ' + String(target) + '.');
+  // Clear localStorage after successful restore
+  try { localStorage.removeItem(DRAFT_LS_KEY); } catch(e) {}
+}
+
+function dismissRestore() {
+  document.getElementById('restoreModal').classList.remove('show');
+  _pendingRestoredState = null;
+  try { localStorage.removeItem(DRAFT_LS_KEY); } catch(e) {}
+}
+
+// Check for resume on page load
+async function checkForResume() {
+  const params = new URLSearchParams(window.location.search);
+  const draftId = params.get('resume');
+  if (draftId) {
+    // Server-side resume
+    try {
+      const res = await fetch('/api/save-draft?id=' + encodeURIComponent(draftId));
+      if (res.status === 410) {
+        showToast('That saved link has expired. Starting fresh.');
+        window.history.replaceState({}, '', '/build');
+        return;
+      }
+      if (!res.ok) {
+        showToast('Could not load saved progress. Starting fresh.');
+        window.history.replaceState({}, '', '/build');
+        return;
+      }
+      const data = await res.json();
+      if (data.ok && data.state) {
+        _pendingRestoredState = data.state;
+        const stageLabel = String(data.state.currentPage);
+        document.getElementById('restoreModalBody').textContent =
+          'Your progress is saved. Ready to continue from Stage ' + stageLabel + '?';
+        document.getElementById('restoreModal').classList.add('show');
+      }
+    } catch(e) {
+      showToast('Could not load saved progress. Starting fresh.');
+    }
+    window.history.replaceState({}, '', '/build');
+    return;
+  }
+
+  // localStorage resume
+  try {
+    const raw = localStorage.getItem(DRAFT_LS_KEY);
+    if (!raw) return;
+    const state = JSON.parse(raw);
+    if (!state || !state.savedAt) return;
+    const age = Date.now() - state.savedAt;
+    if (age > DRAFT_LS_MAX_AGE_MS) {
+      localStorage.removeItem(DRAFT_LS_KEY);
+      return;
+    }
+    _pendingRestoredState = state;
+    document.getElementById('restoreModalBody').textContent =
+      'We saved your previous progress. Pick up where you left off?';
+    document.getElementById('restoreModal').classList.add('show');
+  } catch(e) { /* parse error or no storage */ }
+}
+
+// Modal open/close
+function openSaveModal() {
+  // Pre-fill email if we have it
+  const emailEl = document.getElementById('email');
+  const input = document.getElementById('draftEmailInput');
+  if (input && emailEl && emailEl.value) input.value = emailEl.value;
+  document.getElementById('draftStatus').textContent = '';
+  document.getElementById('draftStatus').style.color = '';
+  const btn = document.getElementById('draftSubmitBtn');
+  if (btn) { btn.disabled = false; btn.textContent = 'Send me the link'; }
+  document.getElementById('draftModal').classList.add('show');
+  setTimeout(function() {
+    const inp = document.getElementById('draftEmailInput');
+    if (inp && !inp.value) inp.focus();
+  }, 100);
+}
+
+function closeSaveModal() {
+  document.getElementById('draftModal').classList.remove('show');
+}
+
+async function submitSaveDraft() {
+  const emailInput = document.getElementById('draftEmailInput');
+  const email = emailInput ? emailInput.value.trim() : '';
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    const statusEl = document.getElementById('draftStatus');
+    if (statusEl) { statusEl.textContent = 'Please enter a valid email address.'; statusEl.style.color = '#c0392b'; }
+    return;
+  }
+  const btn = document.getElementById('draftSubmitBtn');
+  const statusEl = document.getElementById('draftStatus');
+  if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+  if (statusEl) { statusEl.textContent = ''; statusEl.style.color = ''; }
+
+  // Capture current state
+  const state = captureFullState();
+
+  try {
+    const res = await fetch('/api/save-draft', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, currentPage: String(currentPage), state }),
+    });
+    const data = await res.json();
+    if (res.ok && data.ok) {
+      if (statusEl) { statusEl.textContent = 'Link sent. Check your email.'; statusEl.style.color = 'var(--cobalt)'; }
+      if (btn) btn.textContent = 'Sent';
+      setTimeout(function() { closeSaveModal(); }, 2200);
+    } else {
+      if (statusEl) { statusEl.textContent = 'Something went wrong. Try again.'; statusEl.style.color = '#c0392b'; }
+      if (btn) { btn.disabled = false; btn.textContent = 'Send me the link'; }
+    }
+  } catch(e) {
+    if (statusEl) { statusEl.textContent = 'Network error. Try again.'; statusEl.style.color = '#c0392b'; }
+    if (btn) { btn.disabled = false; btn.textContent = 'Send me the link'; }
+  }
+}
+
+function showToast(msg) {
+  const el = document.getElementById('draftToast');
+  if (!el) return;
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(function() { el.classList.remove('show'); }, 3500);
+}
+
+// Hook auto-save to all input/change events on the document
+document.addEventListener('input', function() { autoSave(); });
+document.addEventListener('change', function() { autoSave(); });
+
+// Check for resume on load
+document.addEventListener('DOMContentLoaded', function() {
+  checkForResume();
+});
 
 async function submitForm() {
   const payload = {
