@@ -2473,7 +2473,7 @@ function buildSystemsGrid() {
     ? allSystems.filter(s => essentialsSystemIds.includes(s.id))
     : allSystems;
   grid.innerHTML = list.map(s => `
-    <div class="system-card" id="sys-${s.id}" onclick="toggleSystem('${s.id}',this)">
+    <div class="system-card${formData.systems.includes(s.id) ? ' selected' : ''}" id="sys-${s.id}" onclick="toggleSystem('${s.id}',this)">
       <div class="img-slot" data-slot-id="${s.slot}" style="aspect-ratio:4/3; width:100%; border:none; border-bottom:1px solid var(--cobalt);">
         <div class="img-slot-eyebrow">${s.slot.toUpperCase()}</div>
         <div class="img-slot-desc"><em>${s.desc}</em></div>
