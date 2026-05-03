@@ -1761,6 +1761,21 @@ html, body {
     <hr class="section-divider-light">
 
     <div class="form-group" style="margin-bottom:16px;">
+      <label class="form-label">Project Address <span style="color:var(--cobalt);">*</span></label>
+      <input type="text" id="address1" class="form-input" placeholder="64 Learmonth Crescent" oninput="formData.address1=this.value" style="margin-bottom:10px;">
+      <div class="form-grid-2">
+        <div>
+          <label class="form-label">Suburb <span style="color:var(--cobalt);">*</span></label>
+          <input type="text" id="suburb" class="form-input" placeholder="Sunshine West" oninput="formData.suburb=this.value">
+        </div>
+        <div>
+          <label class="form-label">Postcode <span style="color:var(--cobalt);">*</span></label>
+          <input type="number" id="postcode" class="form-input" placeholder="3020" min="1000" max="9999" oninput="formData.postcode=this.value">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" style="margin-bottom:16px;">
       <label class="form-label">Floor Plans</label>
       <p style="font-size:13pt; margin-bottom:12px; line-height:1.5;">Send floor plans to <a href="mailto:enquiries@elecreid.com" style="color:var(--cobalt);">enquiries@elecreid.com</a> or note here that they're coming.</p>
       <textarea id="floorPlans" class="form-textarea" placeholder="Floor plans coming via email, or note file locations here..."></textarea>
@@ -1996,7 +2011,10 @@ const formData = {
     architect: { name: '', email: '' },
     interiorDesigner: { name: '', email: '' },
     builder: { name: '', email: '' }
-  }
+  },
+  address1: '',
+  suburb: '',
+  postcode: ''
 };
 
 let currentPage = '0b';
@@ -3100,6 +3118,9 @@ async function submitForm() {
     wellnessDetails: JSON.stringify(formData.wellnessDetails),
     elecReidPick: formData.elecReidPick,
     collaborators: formData.collaborators,
+    address1: document.getElementById('address1')?.value || formData.address1 || '',
+    suburb: document.getElementById('suburb')?.value || formData.suburb || '',
+    postcode: document.getElementById('postcode')?.value || formData.postcode || '',
   };
   if (!payload.firstName || !payload.email) {
     alert('Please provide your first name and email on the previous page.');
