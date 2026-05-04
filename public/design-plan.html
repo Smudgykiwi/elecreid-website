@@ -839,6 +839,45 @@ html, body {
   </div>
 </div>
 
+<!-- PAGE 1C: INTRO - Contact gate (all paths) -->
+<div class="page page-1c">
+  <div class="container" style="max-width:720px;">
+    <div class="eyebrow">A QUICK INTRO</div>
+    <h2 class="stage-headline">First, let's <em>meet.</em></h2>
+    <p class="stage-lead">Four details. Then we'll dive into your home.</p>
+    <p style="font-size:11pt; color:var(--navy); opacity:0.6; margin-bottom:24px; letter-spacing:0.04em;"><span style="color:var(--cobalt);">*</span> required</p>
+
+    <div class="form-grid-2" style="margin-bottom:16px;">
+      <div class="form-group" style="margin-bottom:0;">
+        <label class="form-label">First name <span style="color:var(--cobalt);">*</span></label>
+        <input type="text" id="gateFirstName" class="form-input" placeholder="Joe" autocomplete="given-name" oninput="onContactGateInput()" required>
+      </div>
+      <div class="form-group" style="margin-bottom:0;">
+        <label class="form-label">Last name <span style="color:var(--cobalt);">*</span></label>
+        <input type="text" id="gateLastName" class="form-input" placeholder="Reid" autocomplete="family-name" oninput="onContactGateInput()" required>
+      </div>
+    </div>
+
+    <div class="form-group" style="margin-bottom:16px;">
+      <label class="form-label">Email <span style="color:var(--cobalt);">*</span></label>
+      <input type="email" id="gateEmail" class="form-input" placeholder="joe@elecreid.com" autocomplete="email" oninput="onContactGateInput()" required>
+    </div>
+
+    <div class="form-grid-2" style="margin-bottom:16px;">
+      <div class="form-group" style="margin-bottom:0;">
+        <label class="form-label">Phone <span style="color:var(--cobalt);">*</span></label>
+        <input type="tel" id="gatePhone" class="form-input" placeholder="0450 342 075" autocomplete="tel" oninput="onContactGateInput()" required>
+      </div>
+      <div class="form-group" style="margin-bottom:0;">
+        <label class="form-label">Postcode <span style="color:var(--cobalt);">*</span></label>
+        <input type="text" id="gatePostcode" class="form-input" placeholder="3000" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" autocomplete="postal-code" oninput="onContactGateInput()" required>
+      </div>
+    </div>
+
+    <p id="gateError" style="font-size:11pt; color:#c0392b; margin-top:12px; min-height:16px;"></p>
+  </div>
+</div>
+
 <!-- PAGE 2: STAGE 01 - Build your home (full/unsure only) -->
 <div class="page page-2">
   <div class="container">
@@ -2072,30 +2111,14 @@ html, body {
       </div>
     </div>
 
-    <!-- SECTION D: YOUR DETAILS -->
+    <!-- SECTION D: YOUR DETAILS (captured at the Intro gate; quiet review here) -->
     <div class="eyebrow" style="margin-top:32px; margin-bottom:12px;">YOUR DETAILS</div>
     <hr class="section-divider-light">
-
-    <div class="form-grid-2" style="margin-bottom:16px;">
-      <div class="form-group">
-        <label class="form-label">First name <span style="color:var(--cobalt);">*</span></label>
-        <input type="text" id="firstName" class="form-input" placeholder="Joe" required>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Last name</label>
-        <input type="text" id="lastName" class="form-input" placeholder="Reid">
-      </div>
-    </div>
-    <div class="form-grid-2" style="margin-bottom:16px;">
-      <div class="form-group">
-        <label class="form-label">Phone</label>
-        <input type="tel" id="phone" class="form-input" placeholder="0450 342 075">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Email <span style="color:var(--cobalt);">*</span></label>
-        <input type="email" id="email" class="form-input" placeholder="joe@example.com" required>
-      </div>
-    </div>
+    <p id="contactReview" style="font-size:13pt; line-height:1.6; margin-bottom:16px; color:var(--navy);">We have your details from the intro. <a href="#" onclick="event.preventDefault(); showPage('1c');" style="color:var(--cobalt); text-decoration:underline;">Edit</a></p>
+    <input type="hidden" id="firstName">
+    <input type="hidden" id="lastName">
+    <input type="hidden" id="phone">
+    <input type="hidden" id="email">
 
     <!-- SECTION E: ANYTHING ELSE? -->
     <div class="eyebrow" style="margin-top:32px; margin-bottom:12px;">ANYTHING ELSE?</div>
@@ -2259,7 +2282,13 @@ const formData = {
   },
   address1: '',
   suburb: '',
-  postcode: ''
+  postcode: '',
+  // Contact gate (Stage INTRO, page-1c). Captured up-front so we can pre-fill
+  // Stage 07 and route nothing through the form anonymously.
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: ''
 };
 
 let currentPage = '0b';
@@ -2303,12 +2332,17 @@ function getNextPage(pageId) {
   if (pageId === 0) return '0b';
   if (pageId === '0b') return 1;
   if (pageId === 1) {
-    if (formData.projectType === 'essentials') return 7;
+    // Tier selection page comes before the contact gate for elec-reid-pick.
     if (formData.projectType === 'elec-reid-pick') return '1b';
+    return '1c';
+  }
+  if (pageId === '1b') return '1c';
+  if (pageId === '1c') {
+    if (formData.projectType === 'essentials') return 7;
+    if (formData.projectType === 'elec-reid-pick') return 8;
     return 2;
   }
   if (pageId === 2) return 3;
-  if (pageId === '1b') return 8;
   if (pageId === 3) return 4;
   if (pageId === 4) return 5;
   if (pageId === 5) return 6;
@@ -2387,13 +2421,16 @@ function getPrevPage(pageId) {
     return beforeWellness();
   }
   if (pageId === 1 || pageId === 0 || pageId === '0b') return null;
-  if (pageId === 2) return 1;
   if (pageId === '1b') return 1;
+  if (pageId === '1c') {
+    return formData.projectType === 'elec-reid-pick' ? '1b' : 1;
+  }
+  if (pageId === 2) return '1c';
   if (pageId === 3) return 2;
   if (pageId === 4) return 3;
   if (pageId === 5) return 4;
   if (pageId === 6) return 5;
-  if (pageId === 7) return formData.projectType === 'essentials' ? 1 : 6;
+  if (pageId === 7) return formData.projectType === 'essentials' ? '1c' : 6;
   if (pageId === '7a') return 7;
   if (pageId === '7b') return hasTvs ? '7a' : 7;
   if (pageId === '7c') {
@@ -2419,7 +2456,7 @@ function getPrevPage(pageId) {
   if (pageId === '7h') return beforePool();
   if (pageId === '7i') return beforeWellness();
   if (pageId === 8) {
-    if (formData.projectType === 'elec-reid-pick') return '1b';
+    if (formData.projectType === 'elec-reid-pick') return '1c';
     return before8();
   }
   if (pageId === 9) return 8;
@@ -2436,7 +2473,7 @@ function getPageSequence() {
   const hasCameras = formData.systems.includes('cameras');
   const hasPool = formData.systems.includes('pool');
   const hasWellness = formData.systems.includes('wellness');
-  if (formData.projectType === 'elec-reid-pick') return [1, '1b', 8, 9];
+  if (formData.projectType === 'elec-reid-pick') return [1, '1b', '1c', 8, 9];
   // Build the deep-dive segment based on what's selected (shared between essentials and full)
   const deepDives = [];
   if (hasTvs) deepDives.push('7a');
@@ -2448,9 +2485,9 @@ function getPageSequence() {
   if (hasCameras) deepDives.push('7g');
   if (hasPool) deepDives.push('7h');
   if (hasWellness) deepDives.push('7i');
-  if (formData.projectType === 'essentials') return [1, 7, ...deepDives, 8, 9];
+  if (formData.projectType === 'essentials') return [1, '1c', 7, ...deepDives, 8, 9];
   // Default: full path
-  return [1, 2, 3, 4, 5, 6, 7, ...deepDives, 8, 9];
+  return [1, '1c', 2, 3, 4, 5, 6, 7, ...deepDives, 8, 9];
 }
 
 const allSystems = [
@@ -2539,6 +2576,30 @@ function showPage(n) {
   if (target) target.classList.add('active');
   currentPage = n;
 
+  if (n === '1c') {
+    // Mirror formData into the gate inputs (handles back-navigation + restored drafts).
+    const set = (id, v) => { const el = document.getElementById(id); if (el) el.value = v || ''; };
+    set('gateFirstName', formData.firstName);
+    set('gateLastName',  formData.lastName);
+    set('gateEmail',     formData.email);
+    set('gatePhone',     formData.phone);
+    set('gatePostcode',  formData.postcode);
+  }
+  if (n === 8) {
+    // Pre-fill the Stage 07 review block + postcode + suburb fields from the gate.
+    const setVal = (id, v) => { const el = document.getElementById(id); if (el && !el.value) el.value = v || ''; };
+    setVal('postcode', formData.postcode);
+    const review = document.getElementById('contactReview');
+    if (review) {
+      const name = ((formData.firstName||'') + ' ' + (formData.lastName||'')).trim() || 'you';
+      const email = formData.email || '';
+      const phone = formData.phone || '';
+      const bits = [name];
+      if (email) bits.push(email);
+      if (phone) bits.push(phone);
+      review.innerHTML = 'We have you as <strong>' + bits.join('</strong> &middot; <strong>') + '</strong>. <a href="#" onclick="event.preventDefault(); showPage(\'1c\');" style="color:var(--cobalt); text-decoration:underline;">Edit</a>';
+    }
+  }
   if (n === 2) initRoomBuilder();
   if (n === 4) buildTouchscreenMatrix();
   if (n === 7) buildSystemsGrid();
@@ -2654,16 +2715,25 @@ function updateNavBar() {
   const total = seq.length;
   if (forward) {
     forward.textContent = (pos >= 0 && pos === total - 1) ? 'Send my plan' : 'Continue \u2192';
+    // Hard contact gate: Continue stays disabled until all 5 fields are valid.
+    forward.disabled = (currentPage === '1c' && !isContactGateValid());
   }
   if (counter) {
     if (currentPage === 0 || currentPage === '0b') {
       // Cover / Why Elec Reid pages: no stage counter
       counter.textContent = '';
+    } else if (currentPage === '1c') {
+      // Contact gate sits between Stage 00 and the rest. Don't number it.
+      counter.textContent = 'Intro';
     } else if (pos < 0) {
       // Defensive: page not in computed sequence, fall back to neutral label
       counter.textContent = '';
     } else {
-      counter.textContent = 'Stage ' + (pos + 1) + ' of ' + total;
+      // Hide the gate from the count so the numbered stages still read 1..N.
+      const gateIdx = seq.indexOf('1c');
+      const adjTotal = gateIdx >= 0 ? total - 1 : total;
+      const adjPos = (gateIdx >= 0 && pos > gateIdx) ? pos - 1 : pos;
+      counter.textContent = 'Stage ' + (adjPos + 1) + ' of ' + adjTotal;
     }
   }
 }
@@ -3294,13 +3364,12 @@ function selectProjectType(type, el) {
   formData.projectType = type;
   document.querySelectorAll('.page-1 .card').forEach(c => c.classList.remove('selected'));
   el.classList.add('selected');
-  // For essentials: straight to Systems (page 7)
-  // For elec-reid-pick: go to tier selection (page 1b)
-  // For full or unsure: go to Stage 01 Build your home (page 2)
+  // All paths now route through the contact gate (page-1c) before branching.
+  // Tier selection (elec-reid-pick) happens before the gate; everything else
+  // is routed by getNextPage('1c') based on projectType.
   let next;
-  if (type === 'essentials') next = 7;
-  else if (type === 'elec-reid-pick') next = '1b';
-  else next = 2;
+  if (type === 'elec-reid-pick') next = '1b';
+  else next = '1c';
   setTimeout(() => showPage(next), 240);
 }
 
@@ -3334,6 +3403,35 @@ function toggleSwitch(id, el) {
 }
 
 // Stage 04 primary decision: hero / standard / recommend
+// Contact gate (page-1c) validation
+function isContactGateValid() {
+  const fn = (formData.firstName || '').trim();
+  const ln = (formData.lastName  || '').trim();
+  const em = (formData.email     || '').trim();
+  const ph = (formData.phone     || '').trim().replace(/\D/g, '');
+  const pc = (formData.postcode  || '').trim();
+  if (!fn || !ln) return false;
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) return false;
+  if (ph.length < 8) return false;
+  if (!/^\d{4}$/.test(pc)) return false;
+  return true;
+}
+
+function onContactGateInput() {
+  const fn = document.getElementById('gateFirstName');
+  const ln = document.getElementById('gateLastName');
+  const em = document.getElementById('gateEmail');
+  const ph = document.getElementById('gatePhone');
+  const pc = document.getElementById('gatePostcode');
+  if (fn) formData.firstName = fn.value;
+  if (ln) formData.lastName  = ln.value;
+  if (em) formData.email     = em.value;
+  if (ph) formData.phone     = ph.value;
+  if (pc) formData.postcode  = pc.value.replace(/\D/g, '').slice(0, 4);
+  if (pc && pc.value !== formData.postcode) pc.value = formData.postcode;
+  updateNavBar();
+}
+
 function selectSwitchApproach(approach, el) {
   formData.switchApproach = approach;
   // Clear selected state on all approach cards, then mark this one
@@ -3401,10 +3499,11 @@ function captureFullState() {
     formData: JSON.parse(JSON.stringify(formData)),
     currentPage: currentPage,
     _dom: {
-      firstName:   document.getElementById('firstName')?.value   || '',
-      lastName:    document.getElementById('lastName')?.value    || '',
-      phone:       document.getElementById('phone')?.value       || '',
-      email:       document.getElementById('email')?.value       || '',
+      // Contact gate fields live on formData; mirror to DOM for compatibility with restore + submit.
+      firstName:   formData.firstName || document.getElementById('gateFirstName')?.value || '',
+      lastName:    formData.lastName  || document.getElementById('gateLastName')?.value  || '',
+      phone:       formData.phone     || document.getElementById('gatePhone')?.value     || '',
+      email:       formData.email     || document.getElementById('gateEmail')?.value     || '',
       address1:    document.getElementById('address1')?.value    || '',
       suburb:      document.getElementById('suburb')?.value      || '',
       postcode:    document.getElementById('postcode')?.value    || '',
@@ -3451,10 +3550,20 @@ function applyPendingDomRestore() {
     const el = document.getElementById(id);
     if (el) el.checked = !!val;
   }
+  // Restore both legacy hidden Stage-07 inputs and the new gate inputs.
   setVal('firstName', d.firstName);
   setVal('lastName', d.lastName);
   setVal('phone', d.phone);
   setVal('email', d.email);
+  setVal('gateFirstName', d.firstName);
+  setVal('gateLastName',  d.lastName);
+  setVal('gatePhone',     d.phone);
+  setVal('gateEmail',     d.email);
+  setVal('gatePostcode',  d.postcode);
+  if (d.firstName) formData.firstName = d.firstName;
+  if (d.lastName)  formData.lastName  = d.lastName;
+  if (d.phone)     formData.phone     = d.phone;
+  if (d.email)     formData.email     = d.email;
   setVal('address1', d.address1);
   setVal('suburb', d.suburb);
   setVal('postcode', d.postcode);
@@ -3629,10 +3738,10 @@ async function submitForm() {
     involved: formData.involved || [],
     budget: formData.budget || '',
     otherNotes: document.getElementById('otherNotes')?.value || '',
-    firstName: document.getElementById('firstName').value,
-    lastName: document.getElementById('lastName').value,
-    phone: document.getElementById('phone').value,
-    email: document.getElementById('email').value,
+    firstName: formData.firstName || document.getElementById('firstName')?.value || '',
+    lastName:  formData.lastName  || document.getElementById('lastName')?.value  || '',
+    phone:     formData.phone     || document.getElementById('phone')?.value     || '',
+    email:     formData.email     || document.getElementById('email')?.value     || '',
     tvDetails: JSON.stringify(formData.tvDetails),
     audioDetails: JSON.stringify(formData.audioDetails),
     cinemaDetails: JSON.stringify(formData.cinemaDetails),
