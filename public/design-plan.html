@@ -986,34 +986,7 @@ html, body {
     <div class="eyebrow">STAGE FOUR</div>
     <div class="stage-numeral">04</div>
     <h2 class="stage-headline">Light first. <em>Tech second.</em></h2>
-    <p class="stage-lead">The switch is the most-touched object in your home. Tell us what you're after, or let us specify.</p>
-
-    <!-- Primary stage decision: binary toggle. -->
-    <div style="margin: 24px 0 16px;">
-      <div class="cards-row" style="grid-template-columns: repeat(2, 1fr); gap: 16px;">
-        <div class="card" data-switch-approach="joe-recommends" onclick="selectSwitchApproach('joe-recommends', this)" style="padding: 24px;">
-          <div class="eyebrow" style="margin-bottom: 12px;">RECOMMENDED</div>
-          <div class="card-title" style="min-height: auto; margin: 0 0 8px; font-size: 20pt;"><em>We specify the switches.</em></div>
-          <div class="card-body" style="min-height: auto; font-size: 12pt;">We'll choose the right brand for your home, your style, and your budget. The switches that suit the architecture.</div>
-        </div>
-        <div class="card" data-switch-approach="has-preferences" onclick="selectSwitchApproach('has-preferences', this)" style="padding: 24px;">
-          <div class="eyebrow" style="margin-bottom: 12px;">I HAVE PREFERENCES</div>
-          <div class="card-title" style="min-height: auto; margin: 0 0 8px; font-size: 20pt;"><em>I want to choose.</em></div>
-          <div class="card-body" style="min-height: auto; font-size: 12pt;">Browse the brands we install. Pick what catches your eye.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Joe-recommends quiet textarea (revealed when 'joe-recommends' is selected) -->
-    <div id="switchJoeNotes" class="form-group" style="display:none; margin-top:16px;">
-      <label class="form-label">Anything specific to flag?</label>
-      <textarea class="form-textarea" placeholder="Optional. Anything you want us to know before we specify." oninput="formData.switchesNotes=this.value"></textarea>
-    </div>
-
-    <!-- Brand inventory: hidden by default, shown when 'has-preferences' is selected -->
-    <div id="switchBrandInventory" style="display:none;">
-    <hr class="section-divider-light" style="margin: 28px 0 20px;">
-    <p style="font-size:12pt; margin-bottom:24px; line-height:1.6; color:var(--navy); opacity:0.7;">Here's what we install. Pick whatever catches your eye. We'll handle the rest.</p>
+    <p class="stage-lead">The switch is the most-touched object in your home. It lives on your wall for thirty years. Pick what catches your eye.</p>
 
     <!-- Brand 01: Basalte -->
     <div class="brand-section">
@@ -1219,7 +1192,6 @@ html, body {
       <label class="form-label">Anything specific about the switches?</label>
       <textarea class="form-textarea" placeholder="Specific finish in mind? Mixing brands across rooms? Existing switches you want to retain?" oninput="formData.switchesNotes=this.value"></textarea>
     </div>
-    </div><!-- /switchBrandInventory -->
   </div>
 </div>
 
@@ -2605,24 +2577,15 @@ function showPage(n) {
   if (n === 2) initRoomBuilder();
   if (n === 4) buildTouchscreenMatrix();
   if (n === 5) {
-    // Restore Stage 04 binary toggle + inventory visibility on back-navigation / draft resume.
-    const inventory = document.getElementById('switchBrandInventory');
-    const joeNotes  = document.getElementById('switchJoeNotes');
-    document.querySelectorAll('[data-switch-approach]').forEach(c => c.classList.remove('selected'));
-    if (formData.switchApproach === 'has-preferences') {
-      const card = document.querySelector('[data-switch-approach="has-preferences"]');
-      if (card) card.classList.add('selected');
-      if (inventory) inventory.style.display = '';
-      if (joeNotes)  joeNotes.style.display  = 'none';
-    } else if (formData.switchApproach === 'joe-recommends') {
-      const card = document.querySelector('[data-switch-approach="joe-recommends"]');
-      if (card) card.classList.add('selected');
-      if (inventory) inventory.style.display = 'none';
-      if (joeNotes)  joeNotes.style.display  = '';
-    } else {
-      if (inventory) inventory.style.display = 'none';
-      if (joeNotes)  joeNotes.style.display  = 'none';
-    }
+    // Stage 04: brand inventory is now visible by default. Restore prior selections from formData.switches.
+    document.querySelectorAll('.page-5 .model-card').forEach(c => {
+      const onclickAttr = c.getAttribute('onclick') || '';
+      const m = onclickAttr.match(/toggleSwitch\(['"]([^'"]+)['"]/);
+      const id = m ? m[1] : null;
+      if (id && Array.isArray(formData.switches) && formData.switches.indexOf(id) !== -1) {
+        c.classList.add('selected');
+      }
+    });
   }
   if (n === 7) buildSystemsGrid();
   if (n === '7a') { buildTvRoomMatrix(); buildTvAudioRows(); }
@@ -2738,10 +2701,9 @@ function updateNavBar() {
   if (forward) {
     forward.textContent = (pos >= 0 && pos === total - 1) ? 'Send my plan' : 'Continue \u2192';
     // Hard contact gate: Continue stays disabled until all 5 fields are valid.
-    // Stage 04 (page-5): Continue stays disabled until a switch approach is chosen.
+    // Stage 04 (page-5): Continue is always enabled (browse and skip allowed).
     forward.disabled = (
-      (currentPage === '1c' && !isContactGateValid()) ||
-      (currentPage === 5   && !formData.switchApproach)
+      (currentPage === '1c' && !isContactGateValid())
     );
   }
   if (counter) {
@@ -3455,27 +3417,6 @@ function onContactGateInput() {
   if (ph) formData.phone     = ph.value;
   if (pc) formData.postcode  = pc.value.replace(/\D/g, '').slice(0, 4);
   if (pc && pc.value !== formData.postcode) pc.value = formData.postcode;
-  updateNavBar();
-}
-
-function selectSwitchApproach(approach, el) {
-  formData.switchApproach = approach;
-  // Clear selected state on all approach cards, then mark this one
-  document.querySelectorAll('[data-switch-approach]').forEach(function(card) { card.classList.remove('selected'); });
-  if (el) el.classList.add('selected');
-  // Reveal the right block underneath the toggle.
-  const inventory = document.getElementById('switchBrandInventory');
-  const joeNotes  = document.getElementById('switchJoeNotes');
-  if (approach === 'has-preferences') {
-    if (inventory) inventory.style.display = '';
-    if (joeNotes)  joeNotes.style.display  = 'none';
-  } else if (approach === 'joe-recommends') {
-    if (inventory) inventory.style.display = 'none';
-    if (joeNotes)  joeNotes.style.display  = '';
-    // Don't pollute the proposal with brand selections from a prior browse.
-    formData.switches = [];
-    document.querySelectorAll('#switchBrandInventory .model-card.selected').forEach(c => c.classList.remove('selected'));
-  }
   updateNavBar();
 }
 
