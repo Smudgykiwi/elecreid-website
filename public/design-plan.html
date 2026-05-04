@@ -197,10 +197,16 @@ html, body {
 .model-name { font-family: 'Austin', serif; font-style: italic; font-size: 14pt; margin: 10px 0 4px; min-height: 1.2em; }
 
 /* Scene display cards */
-.scene-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px; }
-.scene-card { padding: 24px; border: 1px solid var(--grey); }
+.scene-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 0; }
+.scene-card { padding: 20px; border: 1px solid var(--grey); cursor: pointer; transition: border-color 120ms ease, box-shadow 120ms ease, background 120ms ease; background: #fff; }
+.scene-card:hover { border-color: var(--cobalt); }
+.scene-card.selected { border-color: var(--cobalt); box-shadow: 0 0 0 2px var(--cobalt); }
 .scene-name { font-family: 'Austin', serif; font-style: italic; font-size: 18pt; margin: 12px 0 6px; }
-.scene-body { font-size: 11pt; line-height: 1.5; color: var(--grey-mid); }
+.scene-body { font-size: 11pt; line-height: 1.5; color: var(--grey-mid); font-style: italic; }
+.scene-section { margin-top: 48px; }
+.scene-section:first-of-type { margin-top: 8px; }
+.scene-section-eyebrow { font-family: 'Circular', sans-serif; font-weight: 700; font-size: 9pt; letter-spacing: 0.22em; color: var(--cobalt); text-transform: uppercase; margin-bottom: 10px; }
+.scene-section-rule { height: 1px; background: var(--cobalt); width: 100%; margin-bottom: 24px; opacity: 0.85; }
 
 /* Systems grid - editorial 2-col layout */
 .systems-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
@@ -650,6 +656,7 @@ html, body {
   .screen-cards { grid-template-columns: 1fr; }
   .systems-grid { grid-template-columns: 1fr; }
   .scene-cards { grid-template-columns: 1fr 1fr; }
+  .scene-section { margin-top: 40px; }
   .form-grid-2 { grid-template-columns: 1fr; }
   .cover-headline { font-size: 48pt; }
   .stage-headline { font-size: 32pt; }
@@ -1201,47 +1208,97 @@ html, body {
     <div class="eyebrow">STAGE FIVE</div>
     <div class="stage-numeral">05</div>
     <h2 class="stage-headline">The magic is in the <em>moments.</em></h2>
-    <p id="scenesLead" class="stage-lead">A scene is one tap that changes the whole house. Lights dim, blinds drop, music starts. The power of automation is in these moments.</p>
-    <p style="font-size:13pt; margin-bottom:32px; line-height:1.6;">We design these with you, not for you. Below are the scenes we use most.</p>
-    <div class="scene-cards">
-      <div class="scene-card">
-        <div class="img-slot" data-slot-id="IMG-05A" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05A</div><div class="img-slot-desc"><em>Home arrival, warm lighting, welcoming entrance</em></div></div>
-        <div class="scene-name"><em>Welcome home.</em></div>
-        <div class="scene-body">The house knows you've arrived.</div>
-      </div>
-      <div class="scene-card">
-        <div class="img-slot" data-slot-id="IMG-05B" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05B</div><div class="img-slot-desc"><em>Home cinema, dim lights, screen active</em></div></div>
-        <div class="scene-name"><em>Cinema.</em></div>
-        <div class="scene-body">One tap and the room becomes a theatre.</div>
-      </div>
-      <div class="scene-card">
-        <div class="img-slot" data-slot-id="IMG-05C" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05C</div><div class="img-slot-desc"><em>Bedroom night mode, lights off, secure home</em></div></div>
-        <div class="scene-name"><em>Goodnight.</em></div>
-        <div class="scene-body">Locks check, lights down, alarm armed.</div>
-      </div>
-      <div class="scene-card">
-        <div class="img-slot" data-slot-id="IMG-05D" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05D</div><div class="img-slot-desc"><em>Morning, blinds open, warm sunrise light</em></div></div>
-        <div class="scene-name"><em>Morning.</em></div>
-        <div class="scene-body">Lights warm, blinds open, coffee on.</div>
-      </div>
-      <div class="scene-card">
-        <div class="img-slot" data-slot-id="IMG-05E" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05E</div><div class="img-slot-desc"><em>Entertaining, outdoor lighting, guests, music</em></div></div>
-        <div class="scene-name"><em>Entertaining.</em></div>
-        <div class="scene-body">Whole-home audio, outdoor lighting, theatre standby.</div>
-      </div>
-      <div class="scene-card">
-        <div class="img-slot" data-slot-id="IMG-05F" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05F</div><div class="img-slot-desc"><em>Exterior, security cameras active, home away mode</em></div></div>
-        <div class="scene-name"><em>Away.</em></div>
-        <div class="scene-body">Random lights, security armed, alerts to your phone.</div>
+    <p id="scenesLead" class="stage-lead">A scene is one tap that changes the whole house. Lights, blinds, music, climate, security. We design these around how you actually live. Pick the moments that matter to you.</p>
+    <p style="font-size:13pt; margin-bottom:8px; line-height:1.6;">Tap any that resonate. Add your own. We'll build them into your system, and you can change them anytime from your phone.</p>
+
+    <div class="scene-section">
+      <div class="scene-section-eyebrow">DAILY RITUALS</div>
+      <div class="scene-section-rule"></div>
+      <div class="scene-cards">
+        <div class="scene-card" onclick="toggleScene('morning',this)">
+          <div class="img-slot" data-slot-id="IMG-05A" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05A</div><div class="img-slot-desc"><em>Sunrise through the kitchen, blinds opening</em></div></div>
+          <div class="scene-name"><em>Morning.</em></div>
+          <div class="scene-body">Lights warm, blinds open, coffee on. The house wakes with you.</div>
+        </div>
+        <div class="scene-card" onclick="toggleScene('welcome',this)">
+          <div class="img-slot" data-slot-id="IMG-05B" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05B</div><div class="img-slot-desc"><em>Front entry at dusk, warm lights guiding in</em></div></div>
+          <div class="scene-name"><em>Welcome home.</em></div>
+          <div class="scene-body">Entry lights on, climate adjusts, your music picks up where you left it.</div>
+        </div>
+        <div class="scene-card" onclick="toggleScene('wfh',this)">
+          <div class="img-slot" data-slot-id="IMG-05C" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05C</div><div class="img-slot-desc"><em>Home office, soft daylight, screen lit for a call</em></div></div>
+          <div class="scene-name"><em>Working from home.</em></div>
+          <div class="scene-body">Office lit for video calls, hallway music low, doorbell on do-not-disturb.</div>
+        </div>
+        <div class="scene-card" onclick="toggleScene('goodnight',this)">
+          <div class="img-slot" data-slot-id="IMG-05D" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05D</div><div class="img-slot-desc"><em>Bedroom, low lamp glow, house quietening</em></div></div>
+          <div class="scene-name"><em>Goodnight.</em></div>
+          <div class="scene-body">Locks check, lights down, climate cools, alarm armed.</div>
+        </div>
       </div>
     </div>
-    <div class="form-group">
-      <label class="form-label">What would matter most for your home?</label>
-      <textarea id="scenesNotes" class="form-textarea" placeholder="Tell us about the moments that would matter most. We'll design around them."></textarea>
+
+    <div class="scene-section">
+      <div class="scene-section-eyebrow">ENTERTAINING</div>
+      <div class="scene-section-rule"></div>
+      <div class="scene-cards">
+        <div class="scene-card" onclick="toggleScene('date',this)">
+          <div class="img-slot" data-slot-id="IMG-05E" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05E</div><div class="img-slot-desc"><em>Kitchen at dusk, dim lights, two glasses of wine</em></div></div>
+          <div class="scene-name"><em>Date night.</em></div>
+          <div class="scene-body">Dim lights in the kitchen, jazz on, kids' rooms locked down.</div>
+        </div>
+        <div class="scene-card" onclick="toggleScene('cinema',this)">
+          <div class="img-slot" data-slot-id="IMG-05F" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05F</div><div class="img-slot-desc"><em>Home cinema, blinds closing, projector waking</em></div></div>
+          <div class="scene-name"><em>Cinema.</em></div>
+          <div class="scene-body">Lights drop, blinds close, projector wakes, system holds for the movie.</div>
+        </div>
+        <div class="scene-card" onclick="toggleScene('pool',this)">
+          <div class="img-slot" data-slot-id="IMG-05G" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05G</div><div class="img-slot-desc"><em>Backyard with pool lighting, evening guests</em></div></div>
+          <div class="scene-name"><em>Pool party.</em></div>
+          <div class="scene-body">Pool lights cycle, outdoor zones live, gate codes ready for guests.</div>
+        </div>
+        <div class="scene-card" onclick="toggleScene('sunday',this)">
+          <div class="img-slot" data-slot-id="IMG-05H" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05H</div><div class="img-slot-desc"><em>Lounge mid-afternoon, soft light, slow vibe</em></div></div>
+          <div class="scene-name"><em>Sunday rest.</em></div>
+          <div class="scene-body">Blinds half-shut, ambient lighting, phones on quiet, just the right amount of music.</div>
+        </div>
+      </div>
     </div>
-    <div class="checkbox-option" style="margin-top:16px;">
+
+    <div class="scene-section">
+      <div class="scene-section-eyebrow">SECURITY &amp; AWAY</div>
+      <div class="scene-section-rule"></div>
+      <div class="scene-cards">
+        <div class="scene-card" onclick="toggleScene('away',this)">
+          <div class="img-slot" data-slot-id="IMG-05I" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05I</div><div class="img-slot-desc"><em>Exterior at night, cameras armed, lights cycling</em></div></div>
+          <div class="scene-name"><em>Away.</em></div>
+          <div class="scene-body">Random lights at night, alerts to your phone, cameras armed, climate idles.</div>
+        </div>
+        <div class="scene-card" onclick="toggleScene('holiday',this)">
+          <div class="img-slot" data-slot-id="IMG-05J" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05J</div><div class="img-slot-desc"><em>Garden being watered, suitcase by the door</em></div></div>
+          <div class="scene-name"><em>Holiday mode.</em></div>
+          <div class="scene-body">Random lights, plant watering on schedule, mail-pickup access for the housekeeper.</div>
+        </div>
+        <div class="scene-card" onclick="toggleScene('storm',this)">
+          <div class="img-slot" data-slot-id="IMG-05K" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05K</div><div class="img-slot-desc"><em>Rain on glass, blinds closing, house battening down</em></div></div>
+          <div class="scene-name"><em>Storm.</em></div>
+          <div class="scene-body">Auto-close blinds, surge mode active, backup power priorities set.</div>
+        </div>
+        <div class="scene-card" onclick="toggleScene('kids',this)">
+          <div class="img-slot" data-slot-id="IMG-05L" style="aspect-ratio:4/3;"><div class="img-slot-eyebrow">IMG-05L</div><div class="img-slot-desc"><em>Hallway night-light, soft glow</em></div></div>
+          <div class="scene-name"><em>Kids to bed.</em></div>
+          <div class="scene-body">Hall night-lights low, master bedroom warm, bath bright. Hands free for the carry.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="checkbox-option" style="margin-top:40px;">
       <input type="checkbox" id="recommendedScenes">
       <span style="font-size:14pt;">Just give me your recommended scenes.</span>
+    </div>
+    <div class="form-group" style="margin-top:32px;">
+      <label class="form-label">Have a moment in mind we haven't shown?</label>
+      <textarea id="scenesNotes" class="form-textarea" placeholder="Describe it. From 'wind down for an hour after the kids' birthday party' to 'guests over for dinner, dim the kitchen and pipe music outside.'"></textarea>
     </div>
   </div>
 </div>
@@ -2180,6 +2237,7 @@ const formData = {
   switches: [],
   switchApproach: '',
   switchesNotes: '',
+  scenes: [],
   systems: [],
   motionSensorDetail: '',
   timeframe: '',
@@ -2584,6 +2642,19 @@ function showPage(n) {
       const id = m ? m[1] : null;
       if (id && Array.isArray(formData.switches) && formData.switches.indexOf(id) !== -1) {
         c.classList.add('selected');
+      }
+    });
+  }
+  if (n === 6) {
+    // Stage 05: restore selected scene cards from formData.scenes
+    document.querySelectorAll('.page-6 .scene-card').forEach(c => {
+      const onclickAttr = c.getAttribute('onclick') || '';
+      const m = onclickAttr.match(/toggleScene\(['"]([^'"]+)['"]/);
+      const id = m ? m[1] : null;
+      if (id && Array.isArray(formData.scenes) && formData.scenes.indexOf(id) !== -1) {
+        c.classList.add('selected');
+      } else {
+        c.classList.remove('selected');
       }
     });
   }
@@ -3427,6 +3498,14 @@ function toggleSystem(id, el) {
   else formData.systems.splice(idx, 1);
 }
 
+function toggleScene(id, el) {
+  el.classList.toggle('selected');
+  if (!Array.isArray(formData.scenes)) formData.scenes = [];
+  const idx = formData.scenes.indexOf(id);
+  if (idx === -1) formData.scenes.push(id);
+  else formData.scenes.splice(idx, 1);
+}
+
 function toggleInvolved(val, el) {
   const idx = formData.involved.indexOf(val);
   if (el.checked && idx === -1) formData.involved.push(val);
@@ -3710,6 +3789,7 @@ async function submitForm() {
     switches: formData.switches || [],
     switchApproach: formData.switchApproach || '',
     switchesNotes: formData.switchesNotes || '',
+    scenes: formData.scenes || [],
     scenesNotes: document.getElementById('scenesNotes')?.value || '',
     recommendedScenes: document.getElementById('recommendedScenes')?.checked || false,
     systems: formData.systems || [],
