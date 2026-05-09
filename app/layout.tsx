@@ -15,6 +15,84 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://elecreid.com/#organization',
+      name: 'Elec Reid',
+      url: 'https://elecreid.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://elecreid.com/logos/logo-text-color4.svg',
+        width: 222,
+        height: 59,
+      },
+      description:
+        'Melbourne electricians specialising in residential smart homes, commercial AV and technology, and industrial electrical. One company. Three divisions.',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Melbourne',
+        addressRegion: 'VIC',
+        addressCountry: 'AU',
+      },
+      telephone: '+61450342075',
+      areaServed: { '@type': 'City', name: 'Melbourne' },
+      sameAs: [
+        'https://www.instagram.com/elecreid',
+        'https://www.facebook.com/elecreid',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://elecreid.com/#website',
+      name: 'Elec Reid',
+      url: 'https://elecreid.com',
+      publisher: { '@id': 'https://elecreid.com/#organization' },
+    },
+    {
+      '@type': 'ElectricalContractor',
+      '@id': 'https://elecreid.com/#business',
+      name: 'Elec Reid',
+      url: 'https://elecreid.com',
+      telephone: '+61450342075',
+      priceRange: '$$$$',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Melbourne',
+        addressRegion: 'VIC',
+        addressCountry: 'AU',
+      },
+      areaServed: [
+        'Melbourne',
+        'Toorak',
+        'South Yarra',
+        'Brighton',
+        'St Kilda',
+        'Torquay',
+        'Malvern East',
+        'Glen Waverley',
+        'Malvern',
+        'Glen Iris',
+        'Canterbury',
+        'Williamstown',
+        'Yarraville',
+        'Port Melbourne',
+        'Albert Park',
+        'Flinders',
+      ],
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5.0',
+        bestRating: '5',
+        ratingCount: '9',
+        reviewCount: '9',
+      },
+    },
+  ],
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -22,6 +100,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         {children}
       </body>
