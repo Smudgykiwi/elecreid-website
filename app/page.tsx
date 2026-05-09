@@ -282,7 +282,7 @@ export default function HomePage() {
             </div>
           </div>
           <p className="text-[#16253F]/55 text-base leading-relaxed max-w-2xl mb-10">
-            A Melbourne electrical and smart home team trusted by homeowners across Toorak, Brighton, South Yarra, Malvern, Glen Iris, Williamstown, Albert Park and the Mornington Peninsula. Licensed, insured, and recommended.
+            Trusted by homeowners across Toorak, Brighton, South Yarra, Malvern, Glen Iris, Williamstown, Albert Park, and the Mornington Peninsula. Licensed, insured, and recommended.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             {[
