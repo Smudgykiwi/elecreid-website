@@ -12,9 +12,23 @@ hero: "/images/haven-dsc05653.jpg"
 heroAlt: "KNX residential lighting and switch detail in a Melbourne smart home"
 ---
 
-KNX is the wired bus that sits underneath every serious smart home install we deliver in Melbourne. If you are an architect specifying lighting on a $3M residential, a builder working with us on a coastal new build, or a homeowner trying to make sense of why the system you are paying for needs to outlive three iPhone generations, this is the field guide.
+## Who this is for.
 
-It is long, because the topic deserves it. Skim the headings, drop in where you need.
+Melbourne architects specifying lighting on a premium residential project. Builders coordinating the smart home stack on a new build. Homeowners trying to make sense of what KNX is and why their integrator keeps recommending it.
+
+This is a field guide, not a marketing piece. It is long, because the topic deserves it. Skim the headings, drop in where you need.
+
+## The problem.
+
+Lighting and automation decisions on a premium residential project lock in for the life of the home. Cabling lives in the wall. Programming lives in a project file. The platform you choose at design stage decides what the home can do for the next thirty years, who can service it five years on, and how cleanly it bridges to the front-end your family will actually use.
+
+Most residential clients meet KNX for the first time mid-project, after the architect has already drawn the lighting plan. The decision is then squeezed into whatever cabling is left.
+
+This guide is the version we wish landed on the architect’s desk before the lighting plan is drafted.
+
+## The solution.
+
+A KNX wired backbone, specified at design stage, with the architect’s choice of keypad surface on top and the family’s preferred control surface at the front. Below is the full picture: what KNX is, what runs on it, how to specify it cleanly, where it bridges to Apple Home, and where it is not the right tool.
 
 ## 01 — What KNX actually is.
 
