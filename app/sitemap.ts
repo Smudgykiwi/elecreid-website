@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { projects } from './projects/data'
+import { getAllPosts } from './blog/lib'
 
 const baseUrl = 'https://elecreid.com'
 
@@ -121,6 +122,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
   ]
 
   const brandPages: MetadataRoute.Sitemap = brandSlugs.map((slug) => ({
@@ -144,5 +151,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...brandPages, ...locationPages, ...projectPages]
+  const blogPages: MetadataRoute.Sitemap = getAllPosts().map((p) => ({
+    url: `${baseUrl}/blog/${p.slug}`,
+    lastModified: new Date(p.updatedAt || p.publishedAt),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  return [...staticPages, ...brandPages, ...locationPages, ...projectPages, ...blogPages]
 }

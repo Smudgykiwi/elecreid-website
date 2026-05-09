@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ImagePlaceholder from '@/components/ImagePlaceholder'
+import { getAllPosts, formatDate } from './blog/lib'
 
 export const metadata: Metadata = {
   title: 'Elec Reid | Smart Home, Commercial & Industrial Electrical · Melbourne',
@@ -354,6 +355,51 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* JOURNAL TEASER ── latest 3 blog posts for SEO + content depth */}
+      {(() => {
+        const latest = getAllPosts().slice(0, 3)
+        if (latest.length === 0) return null
+        return (
+          <section className="bg-white px-6 lg:px-16 py-20 lg:py-28">
+            <div className="max-w-screen-xl mx-auto">
+              <div className="flex items-baseline justify-between mb-12">
+                <div>
+                  <Eyebrow className="mb-3">Journal</Eyebrow>
+                  <SectionHeading>Notes &amp; field guides.</SectionHeading>
+                </div>
+                <Link href="/blog" className="hidden sm:inline-flex items-center text-[10px] tracking-[0.22em] text-[#16253F] uppercase font-medium border-b border-[#16253F]/30 hover:border-[#16253F] pb-1 transition-colors">
+                  All entries →
+                </Link>
+              </div>
+              <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+                {latest.map((p) => (
+                  <Link key={p.slug} href={`/blog/${p.slug}`} className="group block">
+                    <div className="overflow-hidden mb-5">
+                      <Image
+                        src={p.hero}
+                        alt={p.heroAlt || p.title}
+                        width={800}
+                        height={600}
+                        className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+                    <p className="text-[9px] tracking-[0.3em] text-[#0134E7] uppercase mb-3">
+                      {p.type} · {formatDate(p.publishedAt)}
+                    </p>
+                    <h3 className="font-austin text-[#16253F] text-2xl leading-snug mb-3 group-hover:text-[#0134E7] transition-colors">
+                      {p.title}
+                    </h3>
+                    <p className="text-[#16253F]/60 text-sm leading-relaxed">
+                      {p.excerpt.slice(0, 130)}…
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )
+      })()}
 
       {/* FAQ - high AEO/AI citation value */}
       <section className="bg-white px-6 lg:px-16 py-20 lg:py-28">

@@ -106,6 +106,7 @@ const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'Our Projects', href: '/projects' },
+  { label: 'Journal', href: '/blog' },
   { label: 'Locations', href: '/locations' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -242,6 +243,7 @@ export default function Nav() {
 
           <Link href="/about" className={linkClass}>About Us</Link>
           <Link href="/projects" className={linkClass}>Our Projects</Link>
+          <Link href="/blog" className={linkClass}>Journal</Link>
 
           {/* Brands dropdown */}
           <div className="relative" onMouseEnter={() => setBrandsOpen(true)} onMouseLeave={() => setBrandsOpen(false)}>
