@@ -59,19 +59,19 @@ export default function HomePage() {
           <p className="text-white/60 text-xl max-w-xl leading-relaxed mb-10">
             Residential smart homes. Commercial AV and technology. Industrial electrical. One company. Melbourne.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-5 mb-8">
             {/* Primary cobalt CTA - this is the page's single cobalt moment */}
             <Link href="/build" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-8 py-4 rounded-full transition-colors whitespace-nowrap">
               Build Your Home →
             </Link>
-            {/* Secondary ghost - cream border, no cobalt */}
-            <Link href="/projects" className="inline-flex items-center justify-center border border-white/30 hover:border-white text-white text-[9px] tracking-[0.25em] uppercase px-8 py-4 rounded-full transition-colors whitespace-nowrap">
-              See Our Work →
+            {/* Demoted to text link so the primary CTA dominates */}
+            <Link href="/projects" className="text-white/55 hover:text-white text-[10px] tracking-[0.22em] uppercase border-b border-white/20 hover:border-white pb-1 transition-colors w-fit">
+              See our work →
             </Link>
           </div>
-          <a href="tel:+61450342075" className="text-white/50 hover:text-white text-sm transition-colors">
-            Call us: +61 450 342 075
-          </a>
+          <p className="text-white/45 text-xs tracking-wide">
+            Licensed Master Electricians · REC 35750 · Serving Melbourne since 2024
+          </p>
         </div>
       </section>
 
@@ -99,7 +99,7 @@ export default function HomePage() {
               <p className="text-[9px] tracking-[0.3em] text-[#16253F]/40 uppercase mb-3">01</p>
               <h3 className="text-[#16253F] text-2xl font-medium mb-3">Residential</h3>
               <p className="text-[#16253F]/65 text-base leading-relaxed mb-5">
-                Smart homes. Apple HomeKit. AV. Networking. Security. Everything that makes the house feel like one system.
+                Premium homes across Melbourne. Apple HomeKit, Control4, Basalte, Ekinex, Dynalite. Lighting, audio, networking, intercom, security. We design the system, install the cabling, write the code, and hand over a home that works the way you actually live. One team, start to finish.
               </p>
               <span className="inline-flex items-center text-[10px] tracking-[0.22em] text-[#16253F] uppercase font-medium border-b border-[#16253F]/30 group-hover:border-[#16253F] pb-1 transition-colors">
                 Explore Residential →
@@ -120,7 +120,7 @@ export default function HomePage() {
               <p className="text-[9px] tracking-[0.3em] text-[#16253F]/40 uppercase mb-3">02</p>
               <h3 className="text-[#16253F] text-2xl font-medium mb-3">Commercial</h3>
               <p className="text-[#16253F]/65 text-base leading-relaxed mb-5">
-                Hospitality. Offices. Retail. Event spaces. Technology that earns its keep.
+                Hospitality, offices, retail, and event spaces across Melbourne. Audio visual, video conferencing, distributed audio, digital signage, networking, and access control. Built for venues that can't afford for the tech to drop out mid-service. We design, install, commission, and support.
               </p>
               <span className="inline-flex items-center text-[10px] tracking-[0.22em] text-[#16253F] uppercase font-medium border-b border-[#16253F]/30 group-hover:border-[#16253F] pb-1 transition-colors">
                 Explore Commercial →
@@ -141,7 +141,7 @@ export default function HomePage() {
               <p className="text-[9px] tracking-[0.3em] text-[#16253F]/40 uppercase mb-3">03</p>
               <h3 className="text-[#16253F] text-2xl font-medium mb-3">Industrial</h3>
               <p className="text-[#16253F]/65 text-base leading-relaxed mb-5">
-                Factories. Facilities. Warehouses. Switchboards, compliance, access control, and maintenance.
+                Factories, warehouses, and industrial facilities across Victoria. Switchboards, three-phase power, machinery wiring, lighting upgrades, compliance testing, access control, and ongoing maintenance. A grade licensed, fully insured, and used to working around production schedules.
               </p>
               <span className="inline-flex items-center text-[10px] tracking-[0.22em] text-[#16253F] uppercase font-medium border-b border-[#16253F]/30 group-hover:border-[#16253F] pb-1 transition-colors">
                 Explore Industrial →
@@ -270,9 +270,12 @@ export default function HomePage() {
               <div className="flex gap-0.5" aria-hidden>
                 {[...Array(5)].map((_, i) => <span key={i} className="text-[#16253F]/70">★</span>)}
               </div>
-              <span className="text-[#16253F]/55 text-sm">5.0 on Google</span>
+              <span className="text-[#16253F]/55 text-sm">5.0 on Google · 9 reviews</span>
             </div>
           </div>
+          <p className="text-[#16253F]/55 text-base leading-relaxed max-w-2xl mb-10">
+            A Melbourne electrical and smart home team trusted by homeowners across Toorak, Brighton, South Yarra, Malvern, Glen Iris, Williamstown, Albert Park and the Mornington Peninsula. Licensed, insured, and recommended.
+          </p>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { name: 'Su Mei Koh', suburb: 'Toorak', text: 'Joe and his team came highly recommended, and I\'m so grateful for their hard work. The smart home system works flawlessly and the finish is impeccable.' },
