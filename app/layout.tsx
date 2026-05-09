@@ -38,7 +38,8 @@ const jsonLd = {
         addressCountry: 'AU',
       },
       telephone: '+61450342075',
-      areaServed: { '@type': 'City', name: 'Melbourne' },
+      email: 'enquiries@elecreid.com',
+      areaServed: { '@type': 'State', name: 'Victoria' },
       sameAs: [
         'https://www.instagram.com/elecreid',
         'https://www.facebook.com/elecreid',
@@ -55,14 +56,32 @@ const jsonLd = {
       '@type': 'ElectricalContractor',
       '@id': 'https://elecreid.com/#business',
       name: 'Elec Reid',
+      image: 'https://elecreid.com/logos/logo-text-color4.svg',
       url: 'https://elecreid.com',
       telephone: '+61450342075',
+      email: 'enquiries@elecreid.com',
       priceRange: '$$$$',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Melbourne',
         addressRegion: 'VIC',
         addressCountry: 'AU',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: -37.8136,
+        longitude: 144.9631,
+      },
+      openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '07:00',
+        closes: '18:00',
+      },
+      hasCredential: {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'Registered Electrical Contractor',
+        identifier: 'REC 35750',
       },
       areaServed: [
         'Melbourne',
@@ -81,14 +100,39 @@ const jsonLd = {
         'Port Melbourne',
         'Albert Park',
         'Flinders',
+        'Mornington Peninsula',
       ],
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: '5.0',
         bestRating: '5',
+        worstRating: '1',
         ratingCount: '9',
         reviewCount: '9',
       },
+      review: [
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Su Mei Koh' },
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody:
+            "Joe and his team came highly recommended, and I'm so grateful for their hard work. The smart home system works flawlessly and the finish is impeccable.",
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Robbie Smarrelli' },
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody:
+            'Joe and his team provided excellent service with expert workmanship. They were reliable, professional, and the attention to detail was outstanding.',
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Andy Fisher' },
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody:
+            "Joe's an absolute legend. Not just a top electrician but a great bloke too. A genius when it comes to smart home tech. Couldn't recommend highly enough.",
+        },
+      ],
     },
     {
       '@type': 'FAQPage',
