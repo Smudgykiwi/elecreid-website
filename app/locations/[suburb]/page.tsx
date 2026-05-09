@@ -285,9 +285,20 @@ export default async function SuburbPage({ params }: { params: Promise<{ suburb:
     serviceType: 'Smart home installation and residential electrical',
   }
 
+  const breadcrumbs = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elecreid.com' },
+      { '@type': 'ListItem', position: 2, name: 'Locations', item: 'https://elecreid.com/locations' },
+      { '@type': 'ListItem', position: 3, name: data.name, item: `https://elecreid.com/locations/${suburb}` },
+    ],
+  }
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
       <Nav />
 
       {/* Hero */}

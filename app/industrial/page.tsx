@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Industrial Electrical Melbourne | Compliance, Maintenance & Upgrades | Elec Reid',
@@ -13,6 +14,10 @@ export default function IndustrialPage() {
   return (
     <>
       <Nav />
+      <Breadcrumbs items={[
+        { name: 'Home', url: 'https://elecreid.com' },
+        { name: 'Industrial', url: 'https://elecreid.com/industrial' },
+      ]} />
 
       {/* Hero */}
       <section className="relative bg-[#16253F] px-6 lg:px-16 pt-36 pb-28 overflow-hidden min-h-[70vh] flex flex-col justify-end">

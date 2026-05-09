@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Commercial | Elec Reid Melbourne',
@@ -13,6 +14,10 @@ export default function CommercialPage() {
   return (
     <>
       <Nav />
+      <Breadcrumbs items={[
+        { name: 'Home', url: 'https://elecreid.com' },
+        { name: 'Commercial', url: 'https://elecreid.com/commercial' },
+      ]} />
 
       {/* Hero */}
       <section className="bg-[#16253F] px-6 lg:px-16 pt-36 pb-20 min-h-[60vh] flex flex-col justify-end relative overflow-hidden">

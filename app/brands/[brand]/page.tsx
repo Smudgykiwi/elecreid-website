@@ -532,11 +532,25 @@ export default async function BrandPage({
     serviceType: data.schemaServiceType,
   }
 
+  const breadcrumbs = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elecreid.com' },
+      { '@type': 'ListItem', position: 2, name: 'Brands', item: 'https://elecreid.com/brands' },
+      { '@type': 'ListItem', position: 3, name: data.h1, item: `https://elecreid.com/brands/${brand}` },
+    ],
+  }
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
       />
       <Nav />
 

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 
 export const metadata: Metadata = {
@@ -96,6 +97,10 @@ export default function ServicesPage() {
   return (
     <>
       <Nav />
+      <Breadcrumbs items={[
+        { name: 'Home', url: 'https://elecreid.com' },
+        { name: 'Services', url: 'https://elecreid.com/services' },
+      ]} />
       {/* Hero */}
       <section className="bg-[#16253F] px-6 lg:px-10 pt-36 pb-24 lg:pb-32">
         <div className="max-w-7xl mx-auto">

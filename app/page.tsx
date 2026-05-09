@@ -69,9 +69,17 @@ export default function HomePage() {
               See our work →
             </Link>
           </div>
-          <p className="text-white/45 text-xs tracking-wide">
+          <p className="text-white/45 text-xs tracking-wide mb-8">
             Licensed Master Electricians · REC 35750 · Serving Melbourne since 2024
           </p>
+          <figure className="max-w-xl border-l border-white/20 pl-5">
+            <blockquote className="font-austin italic text-white/90 text-lg lg:text-xl leading-snug">
+              &ldquo;Good taste, implied confidence, and a pure nerdy love for tech.&rdquo;
+            </blockquote>
+            <figcaption className="text-[8px] tracking-[0.3em] text-white/40 uppercase mt-3">
+              How a client described our team
+            </figcaption>
+          </figure>
         </div>
       </section>
 

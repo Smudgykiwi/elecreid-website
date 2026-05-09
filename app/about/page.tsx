@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'About Joe Reid | Elec Reid Melbourne',
@@ -13,6 +14,10 @@ export default function AboutPage() {
   return (
     <>
       <Nav />
+      <Breadcrumbs items={[
+        { name: 'Home', url: 'https://elecreid.com' },
+        { name: 'About', url: 'https://elecreid.com/about' },
+      ]} />
 
       {/* Hero */}
       <section className="bg-[#F8F4F1] px-6 lg:px-16 pt-36 pb-20">

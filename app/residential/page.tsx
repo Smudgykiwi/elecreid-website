@@ -2,11 +2,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export default function Home() {
   return (
     <>
     <Nav />
+      <Breadcrumbs items={[
+        { name: 'Home', url: 'https://elecreid.com' },
+        { name: 'Residential', url: 'https://elecreid.com/residential' },
+      ]} />
     <div className="bg-[#F8F4F1]">
 
       {/* ── HERO ─────────────────────────────────────────────────── */}

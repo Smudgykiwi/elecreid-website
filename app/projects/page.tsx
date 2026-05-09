@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 const projects = [
   {
@@ -58,6 +59,10 @@ export default function Projects() {
   return (
     <>
       <Nav />
+      <Breadcrumbs items={[
+        { name: 'Home', url: 'https://elecreid.com' },
+        { name: 'Projects', url: 'https://elecreid.com/projects' },
+      ]} />
       {/* Header */}
       <section className="bg-[#F8F4F1] px-6 lg:px-10 pt-36 pb-12">
         <div className="max-w-7xl mx-auto">

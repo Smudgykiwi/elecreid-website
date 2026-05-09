@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Smart Home & AV Solutions Melbourne | Residential & Commercial | Elec Reid',
@@ -151,6 +152,10 @@ export default function BrandsPage() {
   return (
     <>
       <Nav />
+      <Breadcrumbs items={[
+        { name: 'Home', url: 'https://elecreid.com' },
+        { name: 'Brands', url: 'https://elecreid.com/brands' },
+      ]} />
 
       <main className="pt-28 pb-24 bg-[#F8F4F1] min-h-screen">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">

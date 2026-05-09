@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Smart Home Electrician Melbourne | Elec Reid Service Areas',
@@ -39,6 +40,10 @@ export default function LocationsPage() {
   return (
     <>
       <Nav />
+      <Breadcrumbs items={[
+        { name: 'Home', url: 'https://elecreid.com' },
+        { name: 'Locations', url: 'https://elecreid.com/locations' },
+      ]} />
 
       {/* Hero */}
       <section className="bg-[#F8F4F1] px-6 lg:px-16 pt-36 pb-16">
