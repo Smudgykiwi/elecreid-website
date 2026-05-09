@@ -40,7 +40,7 @@ KNX has been the standard for serious residential automation in Europe since 199
 
 ## 02 — Why we run it underneath.
 
-Three reasons. The same three we wrote about [in our note on why we do not specify Lutron](/blog/why-we-do-not-specify-lutron), framed differently here.
+Three reasons. The same three we walk through in our [Lutron control systems guide for Melbourne residential](/blog/lutron-control-systems-melbourne), framed differently here.
 
 First, the standard is open. No single manufacturer can kill it. No corporate pivot can deprecate it. A KNX device made in 2026 will speak to a KNX device made in 2040, because the protocol cannot be unilaterally changed by a manufacturer with a quarterly earnings call.
 
