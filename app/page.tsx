@@ -57,7 +57,7 @@ export default function HomePage() {
             <em>Smart Technology.</em>
           </h1>
           <p className="text-white/60 text-xl max-w-xl leading-relaxed mb-10">
-            Residential smart homes. Commercial AV and technology. Industrial electrical. One company. Melbourne.
+            Residential smart homes. Commercial AV and technology. Industrial electrical. One company. Melbourne. <em className="font-austin">Smarter living, set in stone.</em>
           </p>
           <div className="flex flex-col sm:flex-row sm:items-center gap-5 mb-8">
             {/* Primary cobalt CTA - this is the page's single cobalt moment */}
@@ -83,8 +83,29 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* INTRO ── editorial paragraph for AI search engines + brand voice */}
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20 lg:py-24">
+        <div className="max-w-screen-xl mx-auto grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
+          <div>
+            <Eyebrow className="mb-6">The standard</Eyebrow>
+            <SectionHeading>One team. End to end.</SectionHeading>
+          </div>
+          <div className="space-y-6">
+            <p className="font-austin italic text-[#16253F] text-2xl lg:text-3xl leading-snug">
+              Elec Reid designs, installs, programmes, and documents every system inside a luxury home.
+            </p>
+            <p className="text-[#16253F]/70 text-lg leading-relaxed">
+              <em className="font-austin">Apple Home</em> at the centre. <em className="font-austin">KNX</em> as the backbone. Unifi networking, Inception security, premium audio visual on top. One team delivers all of it. Which means the data point, the dimmer module, the keypad, and the fixture are installed and commissioned by people who already know where the cable terminates.
+            </p>
+            <p className="text-[#16253F]/70 text-lg leading-relaxed">
+              We work in Melbourne&rsquo;s premium residential market. Toorak, South Yarra, Brighton, Malvern, and the Mornington Peninsula. Architects, builders, and homeowners who want it done once. Done well. Never thought about again.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* WHAT WE DO ── photo on top, text below on cream, quiet "Explore" link */}
-      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20 lg:py-28">
+      <section className="bg-white px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto">
           <Eyebrow className="mb-6">What we do</Eyebrow>
           <SectionHeading className="max-w-3xl mb-16">
@@ -107,7 +128,7 @@ export default function HomePage() {
               <p className="text-[9px] tracking-[0.3em] text-[#16253F]/40 uppercase mb-3">01</p>
               <h3 className="text-[#16253F] text-2xl font-medium mb-3">Residential</h3>
               <p className="text-[#16253F]/65 text-base leading-relaxed mb-5">
-                Premium homes across Melbourne. Apple HomeKit, Control4, Basalte, Ekinex, Dynalite. Lighting, audio, networking, intercom, security. We design the system, install the cabling, write the code, and hand over a home that works the way you actually live. One team, start to finish.
+                Premium homes across Melbourne. Apple Home as the interface. KNX as the backbone. Basalte, Ekinex, Control4, Lithoss, and Hager Silhouette on the wall. Unifi networking, Inception security, Sonos and Triad audio, JVC cinema. We design, install, programme, and document every layer.
               </p>
               <span className="inline-flex items-center text-[10px] tracking-[0.22em] text-[#16253F] uppercase font-medium border-b border-[#16253F]/30 group-hover:border-[#16253F] pb-1 transition-colors">
                 Explore Residential →
@@ -128,7 +149,7 @@ export default function HomePage() {
               <p className="text-[9px] tracking-[0.3em] text-[#16253F]/40 uppercase mb-3">02</p>
               <h3 className="text-[#16253F] text-2xl font-medium mb-3">Commercial</h3>
               <p className="text-[#16253F]/65 text-base leading-relaxed mb-5">
-                Hospitality, offices, retail, and event spaces across Melbourne. Audio visual, video conferencing, distributed audio, digital signage, networking, and access control. Built for venues that can't afford for the tech to drop out mid-service. We design, install, commission, and support.
+                Hospitality, offices, retail, and event spaces across Melbourne. Boardroom AV. Video conferencing. Background music that holds its level through service. Networks that do not buckle when the room fills. Reliable on day one. Reliable on day one thousand.
               </p>
               <span className="inline-flex items-center text-[10px] tracking-[0.22em] text-[#16253F] uppercase font-medium border-b border-[#16253F]/30 group-hover:border-[#16253F] pb-1 transition-colors">
                 Explore Commercial →
@@ -149,7 +170,7 @@ export default function HomePage() {
               <p className="text-[9px] tracking-[0.3em] text-[#16253F]/40 uppercase mb-3">03</p>
               <h3 className="text-[#16253F] text-2xl font-medium mb-3">Industrial</h3>
               <p className="text-[#16253F]/65 text-base leading-relaxed mb-5">
-                Factories, warehouses, and industrial facilities across Victoria. Switchboards, three-phase power, machinery wiring, lighting upgrades, compliance testing, access control, and ongoing maintenance. A grade licensed, fully insured, and used to working around production schedules.
+                Factories, warehouses, and infrastructure across Victoria. Switchboard design, three-phase power, motor control, compliance testing, access control. Industrial clients including Sulzer, alongside builder partners such as ARK Industrial. Same documentation standard as a private residence. Issued on a factory floor.
               </p>
               <span className="inline-flex items-center text-[10px] tracking-[0.22em] text-[#16253F] uppercase font-medium border-b border-[#16253F]/30 group-hover:border-[#16253F] pb-1 transition-colors">
                 Explore Industrial →
@@ -166,13 +187,13 @@ export default function HomePage() {
           <div>
             <Eyebrow className="mb-6">Our philosophy</Eyebrow>
             <SectionHeading className="mb-8">
-              A smart home is not a product.
+              The architecture is the brief.
             </SectionHeading>
             <p className="text-[#16253F]/70 text-lg leading-relaxed mb-6">
-              It is a relationship between architecture, automation and the people who live there. Elec Reid specifies, installs and commissions systems where every decision is deliberate.
+              The systems should match it. We design and install the electrical and smart home infrastructure that lets a luxury home work as well as it looks. Every layer specified. Every cable documented. Every system commissioned before handover.
             </p>
             <p className="text-[#16253F]/70 text-lg leading-relaxed mb-10">
-              From the switch that meets your hand each morning to the control platform that ties it all together. One team. Everything works.
+              Architects and builders have told us our documentation is better than the architect&rsquo;s drawings. That is the standard we hold.
             </p>
 
             {/* Quiet inline pull-quote - replaces the full-bleed cobalt slab */}
@@ -389,7 +410,7 @@ export default function HomePage() {
               Begin your project.
             </SectionHeading>
             <p className="text-white/55 text-lg max-w-xl leading-relaxed">
-              The best smart homes start with a conversation. Before plans are drawn, before cables are run.
+              Tell us about your project. We come back to you with a clear plan. Not a generic price list. The best time to involve us is before the walls go up.
             </p>
           </div>
           <div className="flex flex-col gap-3 flex-shrink-0">
