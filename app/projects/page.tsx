@@ -16,8 +16,8 @@ const projects = [
   {
     title: 'McKimm',
     location: 'Brighton, VIC',
-    desc: 'A new build by McKimm that needed sound everywhere, inside and out. We installed full WiFi and structured networking, every TV and AV system in the house, three Sonos Arcs across the main living spaces, twelve indoor speakers, and twelve garden bollard speakers. Enough sound to wake up Brighton, with the control to keep it civilised.',
-    tags: ['Sonos', 'Garden Audio', 'Multi-room AV', 'Unifi Networking'],
+    desc: 'A new build by McKimm that needed sound everywhere, inside and out. We installed full WiFi and structured networking, every TV and AV system in the house, three Sonos Arcs across the main living spaces, twelve indoor speakers, and twelve Bose garden bollards. Enough sound to wake up Brighton, with the control to keep it civilised.',
+    tags: ['Sonos', 'Bose', 'Garden Audio', 'Multi-room AV', 'Unifi Networking'],
     hero: '/images/mckimm-3.jpg',
     gallery: ['/images/mckimm-1.jpg', '/images/mckimm-4.jpg'],
   },
