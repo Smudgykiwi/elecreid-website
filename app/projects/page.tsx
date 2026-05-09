@@ -56,9 +56,17 @@ const projects = [
   {
     title: 'West Footscray',
     location: 'West Footscray, VIC',
-    desc: 'A West Footscray home with Apple Home at the centre. Control4 wall switches on the front end, Cbus relays and dimmers handling the lighting load, Sonos audio, AirTouch 5 climate integration, and Unifi networking and intercom underneath. Full Siri integration so every system in the house responds to a sentence.',
-    tags: ['Apple Home', 'Control4', 'Cbus', 'Sonos', 'AirTouch 5', 'Unifi', 'Siri'],
+    desc: 'A full electrical install paired with a complete smart home rollout. Apple Home at the centre, Control4 wall switches on the front end, Cbus relays and dimmers handling the lighting load, Sonos audio, AirTouch 5 climate integration, and Unifi networking and intercom underneath. Full Siri integration so every system in the house responds to a sentence.',
+    tags: ['Full Electrical', 'Apple Home', 'Control4', 'Cbus', 'Sonos', 'AirTouch 5', 'Unifi', 'Siri'],
     hero: '/images/merival-sonos.jpg',
+    gallery: [],
+  },
+  {
+    title: 'Toorak',
+    location: 'Toorak, VIC',
+    desc: 'A full electrical rewire of a Toorak residence, plus an end-to-end Control4 fitout. KNX lighting and blind control, Core Smart Home wall switches, heating and cooling, security, cameras, and access control on gates and doors. Unifi WiFi and networking throughout. Audio runs on WiiM amps with Triad speakers \u2014 hi-fi performance, distributed across the home, controlled from one platform.',
+    tags: ['Full Rewire', 'Control4', 'KNX', 'Core Smart Home', 'WiiM', 'Triad', 'Access Control', 'Security', 'Cameras', 'Unifi'],
+    hero: '/images/haven-dsc05653.jpg',
     gallery: [],
   },
   {
