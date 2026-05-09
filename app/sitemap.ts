@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { projects } from './projects/data'
 
 const baseUrl = 'https://elecreid.com'
 
@@ -136,5 +137,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...staticPages, ...brandPages, ...locationPages]
+  const projectPages: MetadataRoute.Sitemap = projects.map((p) => ({
+    url: `${baseUrl}/projects/${p.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'yearly' as const,
+    priority: 0.7,
+  }))
+
+  return [...staticPages, ...brandPages, ...locationPages, ...projectPages]
 }

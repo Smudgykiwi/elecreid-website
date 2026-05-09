@@ -261,12 +261,12 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
             {[
-              { title: 'Haven Court', location: 'Torquay', img: '/images/haven-dsc05570.jpg', slot: 'IMG-H-I' },
-              { title: 'McKimm', location: 'Brighton', img: '/images/mckimm-5.jpg', slot: 'IMG-H-J' },
-              { title: 'Fitzroy St', location: 'St Kilda', img: '/images/stkilda-1.jpg', slot: 'IMG-H-K' },
-              { title: 'Merival', location: 'Melbourne', img: '/images/merival-sonos.jpg', slot: 'IMG-H-L' },
+              { title: 'Haven Court', location: 'Torquay', img: '/images/haven-dsc05570.jpg', slot: 'IMG-H-I', slug: 'haven-court' },
+              { title: 'Toorak', location: 'Toorak', img: '/images/haven-dsc05653.jpg', slot: 'IMG-H-J', slug: 'toorak' },
+              { title: 'Fitzroy St', location: 'St Kilda', img: '/images/stkilda-1.jpg', slot: 'IMG-H-K', slug: 'fitzroy-street-stkilda' },
+              { title: 'McKimm', location: 'Brighton', img: '/images/mckimm-5.jpg', slot: 'IMG-H-L', slug: 'mckimm-brighton' },
             ].map((p) => (
-              <Link key={p.title} href="/projects" className="group block">
+              <Link key={p.title} href={`/projects/${p.slug}`} className="group block">
                 <div className="relative overflow-hidden">
                   <ImagePlaceholder
                     id={p.slot}
