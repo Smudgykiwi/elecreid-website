@@ -326,6 +326,52 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FAQ - high AEO/AI citation value */}
+      <section className="bg-white px-6 lg:px-16 py-20 lg:py-28">
+        <div className="max-w-screen-xl mx-auto grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20">
+          <div>
+            <Eyebrow className="mb-6">Common questions</Eyebrow>
+            <SectionHeading>Before you call.</SectionHeading>
+          </div>
+          <div className="divide-y divide-[#16253F]/10">
+            {[
+              {
+                q: 'What areas of Melbourne do you service?',
+                a: 'We work across Melbourne and surrounds. Most of our recent projects sit in Toorak, South Yarra, Brighton, Malvern, Malvern East, Glen Iris, Glen Waverley, Canterbury, Williamstown, Albert Park, Port Melbourne, Yarraville, St Kilda, the Mornington Peninsula, and Torquay. If you\u2019re in greater Melbourne, ask us.',
+              },
+              {
+                q: 'Do you do residential, commercial, and industrial?',
+                a: 'Yes. One company, three divisions. Most clients come to us for residential smart homes. We also fit out commercial venues with audio visual and networking, and run industrial electrical for warehouses and facilities. The same A grade licence covers all three.',
+              },
+              {
+                q: 'What smart home platforms do you specialise in?',
+                a: 'Apple HomeKit, Control4, Basalte, Ekinex, Philips Dynalite, KNX, and Home Assistant. We\u2019re one of the only Melbourne teams built around Apple Home as the core layer, then we wrap commercial-grade platforms underneath when the project needs it. Networking is Unifi, security and intercom included.',
+              },
+              {
+                q: 'How do I start a project?',
+                a: 'Use the Build Your Home form on this site or call +61 450 342 075. We start every project with a conversation about how you actually live and what you want the house to do. From there we\u2019ll scope the work, recommend systems, and quote properly.',
+              },
+              {
+                q: 'Do you do small jobs or just full smart home installs?',
+                a: 'We focus on full home design and integration projects, but we look after our existing clients for the smaller stuff too. If it\u2019s a one-off socket on a house we\u2019ve never seen before, we\u2019re probably not the right fit.',
+              },
+              {
+                q: 'Are you licensed and insured?',
+                a: 'Yes. Registered Electrical Contractor REC 35750. Public liability insurance, full compliance certification on every job, and we issue a Certificate of Electrical Safety on completion.',
+              },
+            ].map((item) => (
+              <details key={item.q} className="group py-6 first:pt-0">
+                <summary className="flex items-start justify-between gap-6 cursor-pointer list-none">
+                  <h3 className="text-[#16253F] text-lg lg:text-xl font-medium leading-snug">{item.q}</h3>
+                  <span aria-hidden className="text-[#16253F]/40 text-2xl leading-none mt-1 group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <p className="text-[#16253F]/65 text-base leading-relaxed mt-4 max-w-3xl">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-[#16253F] px-6 lg:px-16 py-20 lg:py-28">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
