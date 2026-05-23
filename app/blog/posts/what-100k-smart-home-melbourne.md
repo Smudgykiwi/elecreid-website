@@ -72,11 +72,11 @@ The danger zone is the middle. A brief that wants lighting and security and audi
 
 We get asked this constantly. A real lighting control system, before you make it fancy, starts at around $50K.
 
-A standard premium automation switch lands at $1,000 to $1,200 installed, all in. That covers hardware, cabling, back box, labour, and the programming time to make it behave as part of a scene. A *Basalte* switch, with the kind of finish you want on a $4M home, lands closer to $3,000 installed.
+A standard premium automation switch lands at around $1,500 installed, all in. That covers hardware, cabling, back box, labour, and the programming time to make it behave as part of a scene. A *Basalte* switch, with the kind of finish you want on a $4M home, lands closer to $3,000 installed.
 
 A serious home has dozens of these switches across the floor plate.
 
-That is $30,000 to $50,000 *just on switches.* Before you have added a single occupancy sensor, blind motor, or KNX backbone.
+That is $40,000 to $60,000 *just on switches.* Before you have added a single occupancy sensor, blind motor, or KNX backbone.
 
 The KNX backbone itself sits at around $5,000 supplied and installed. Power supplies, gateways, IP integration, separate power for each line. Single gateway for a smaller home, two or three for a larger one.
 
