@@ -74,7 +74,7 @@ We get asked this constantly. A real lighting control system, before you make it
 
 A standard premium automation switch lands at $1,000 to $1,200 installed, all in. That covers hardware, cabling, back box, labour, and the programming time to make it behave as part of a scene. A *Basalte* switch, with the kind of finish you want on a $4M home, lands closer to $3,000 installed.
 
-A serious home has 23 to 40 of these switches.
+A serious home has dozens of these switches across the floor plate.
 
 That is $30,000 to $50,000 *just on switches.* Before you have added a single occupancy sensor, blind motor, or KNX backbone.
 
@@ -94,7 +94,7 @@ Are you paying for an *automation system that senses and manoeuvres around you,*
 
 A lot of these homes are the second thing. Beautiful keypads, no actual programming. The lights turn on when you push them. They do not turn on when you walk in. They do not turn off when the room empties. They do not dim when the sun hits the western windows. They are not a smart home. They are a home with fancy switches.
 
-The difference between the cheap guy and the proper guy is the programming budget. The cheap guy smacks switches on the wall and calls it done. The proper integrator allocates 40 to 60 hours of programming labour, knows there will be return visits to refine scenes, and budgets for them upfront.
+The difference between the cheap guy and the proper guy is the programming budget. The cheap guy smacks switches on the wall and calls it done. The proper integrator allocates a serious programming budget, knows there will be return visits to refine scenes, and writes those return visits into the proposal upfront.
 
 *You want a smart home, not a home with fancy light switches.*
 
