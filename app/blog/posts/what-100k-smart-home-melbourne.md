@@ -78,7 +78,7 @@ A serious home has dozens of these switches across the floor plate.
 
 That is $40,000 to $60,000 *just on switches.*
 
-Add the rest of the lighting layer — the KNX backbone, relay blocks, dimming channels, the DALI gateway that handles the lighting protocol — and the lighting infrastructure alone lands in the $75,000 to $100,000 range *when you include blind automation.*
+Add the rest of the lighting layer. The KNX backbone, relay blocks, dimming channels, the DALI gateway that handles the lighting protocol. The lighting infrastructure alone lands in the $75,000 to $100,000 range *when you include blind automation.*
 
 *And that is just the equipment in the board.* It does not include the sub-circuit cabling the site electrician runs out to every fitting. The cable to every downlight, every blind motor, every keypad. That is a separate line on a separate quote.
 
