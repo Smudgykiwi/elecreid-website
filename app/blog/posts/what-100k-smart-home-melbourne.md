@@ -102,4 +102,6 @@ The difference between the cheap guy and the proper guy is the programming budge
 
 If that distinction matters to you, we should talk early in your build.
 
-[Plan your project →](/build) — or if you want to understand the platform that sits underneath all of this, read [Apple Home as a serious platform](/blog/apple-home-as-a-serious-platform) and our field guide on [KNX in Melbourne residential builds](/blog/knx-residential-melbourne-field-guide).
+[Plan your project →](/build).
+
+If you want to understand the platform that sits underneath all of this, read [Apple Home as a serious platform](/blog/apple-home-as-a-serious-platform) and our field guide on [KNX in Melbourne residential builds](/blog/knx-residential-melbourne-field-guide).
