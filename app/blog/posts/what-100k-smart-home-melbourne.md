@@ -68,17 +68,19 @@ If you compare a $100K quote to one of these to a $330K version of the same scop
 
 The danger zone is the middle. A brief that wants lighting and security and audio and cameras and HVAC integration, all shoehorned into a $100K number. *That is where you end up with an extremely unreliable system,* because no single layer was funded properly.
 
-## Where lighting actually starts
+## Where lighting and blinds actually start
 
-We get asked this constantly. A real lighting control system, before you make it fancy, starts at around $50K.
+We get asked this constantly.
 
 A standard premium automation switch lands at around $1,500 installed, all in. That covers hardware, cabling, back box, labour, and the programming time to make it behave as part of a scene. A *Basalte* switch, with the kind of finish you want on a $4M home, lands closer to $3,000 installed.
 
 A serious home has dozens of these switches across the floor plate.
 
-That is $40,000 to $60,000 *just on switches.* Before you have added a single occupancy sensor, blind motor, or KNX backbone.
+That is $40,000 to $60,000 *just on switches.*
 
-The KNX backbone itself sits at around $5,000 supplied and installed. Power supplies, gateways, IP integration, separate power for each line. Single gateway for a smaller home, two or three for a larger one.
+Add the rest of the lighting layer — the KNX backbone, relay blocks, dimming channels, the DALI gateway that handles the lighting protocol — and the lighting infrastructure alone lands in the $75,000 to $100,000 range *when you include blind automation.*
+
+*And that is just the equipment in the board.* It does not include the sub-circuit cabling the site electrician runs out to every fitting. The cable to every downlight, every blind motor, every keypad. That is a separate line on a separate quote.
 
 This is the part most quotes skip. We do not.
 
