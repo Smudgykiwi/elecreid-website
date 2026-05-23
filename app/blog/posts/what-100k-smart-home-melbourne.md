@@ -42,7 +42,7 @@ A representative split looks like this.
 
 *Audiovisual base*: from $7K for a single Sonos surround in a media room. Multi-zone audio through the whole house is a separate budget. A serious home cinema starts at $52K and climbs from there.
 
-*Apple Home backend*: 40 to 60 hours of programming labour at $200 per hour, plus the hardware to make Apple Home behave like an actual platform instead of a hobby. Apple TV, Home Assistant server, a KNX gateway when there is lighting to integrate.
+*Apple Home backend*: enough programming time to make Apple Home behave like an actual platform instead of a hobby, plus the hardware that holds it together. Apple TV, Home Assistant server, a KNX gateway when there is lighting to integrate.
 
 That is your $100K. *Foundation systems. No lighting. No blinds. No climate.*
 
@@ -72,13 +72,13 @@ The danger zone is the middle. A brief that wants lighting and security and audi
 
 We get asked this constantly. A real lighting control system, before you make it fancy, starts at around $50K.
 
-The maths is not mysterious. A premium automation switch costs us about $400 for the hardware. Then two hours of labour at $150 per hour, plus an hour of programming per switch. That puts a standard automation switch at $1,000 to $1,200 installed, all in. A *Basalte* switch, with the kind of finish you want on a $4M home, runs to $3,000 installed because the hardware alone is $1,400 to $1,500.
+A standard premium automation switch lands at $1,000 to $1,200 installed, all in. That covers hardware, cabling, back box, labour, and the programming time to make it behave as part of a scene. A *Basalte* switch, with the kind of finish you want on a $4M home, lands closer to $3,000 installed.
 
 A serious home has 23 to 40 of these switches.
 
-That is $30,000 to $50,000 *just on switches.* Before you have added a single occupancy sensor, blind motor, KNX backbone, or programming hour.
+That is $30,000 to $50,000 *just on switches.* Before you have added a single occupancy sensor, blind motor, or KNX backbone.
 
-A KNX backbone itself is around $5K. Power supplies, gateways at $800 each, an IP gateway at $800, separate power for each line. Single gateway for a smaller home, two or three for a larger one.
+The KNX backbone itself sits at around $5,000 supplied and installed. Power supplies, gateways, IP integration, separate power for each line. Single gateway for a smaller home, two or three for a larger one.
 
 This is the part most quotes skip. We do not.
 
