@@ -78,6 +78,7 @@ const services = [
     title: 'AV & Home Cinema',
     body: 'Cinema rooms, hidden AV, multi-room audio, outdoor zones. Sound and vision done properly cables hidden, sources centralised, control simplified.',
     items: ['Dedicated cinema rooms', 'Multi-room audio distribution', 'Hidden AV equipment racks', 'Outdoor speaker systems'],
+    href: '/services/home-theatre-installation-melbourne',
   },
   {
     num: '07',
@@ -184,6 +185,14 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
+                {'href' in s && s.href && (
+                  <Link
+                    href={s.href}
+                    className="inline-flex mt-8 text-[10px] tracking-[0.2em] uppercase text-[#0134E7] hover:text-[#012ab8] transition-colors"
+                  >
+                    Home theatre installation →
+                  </Link>
+                )}
               </div>
             ))}
           </div>
