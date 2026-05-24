@@ -32,9 +32,9 @@ The base systems come first. Networking, cameras, access, alarm, audio. *Without
 
 Build the floor before you build the ceiling.
 
-## Layer one: the foundation (around $100,000)
+## Layer one: the core foundation (around $100,000)
 
-This is the work that has to happen before automation can mean anything. *Five base systems, in this rough order of priority.*
+This is the work that has to happen before automation can mean anything. *Four core systems, in this rough order of priority.*
 
 ### Networking. $15–40K.
 
@@ -52,19 +52,29 @@ Treat these as one integrated system, not three disconnected products. UniFi Pro
 
 The Inception panel by Inner Range is our default. *Australian made, locally serviceable, no overseas cloud dependency.* Integrates cleanly with the rest of the system rather than sitting in its own silo.
 
-### Audio. $25–45K.
+### Core foundation subtotal
 
-A real audio package across four zones plus a living room surround. Sonos for the everyday rooms, in-ceiling architectural speakers where the brief calls for them. *Multi-zone audio properly run, properly tuned, properly handed over.*
+Networking. Cameras. Intercom and access. Alarm. *Those four systems land at around $100,000 done properly.* They are the floor every other layer sits on.
+
+That is what $100K of "smart home" actually buys you. Real systems, professionally installed, ready to be tied together.
+
+What it does not buy you is a smart home. Not yet.
+
+## Layer two: audio and cinema (optional, scoped to brief)
+
+Most premium homes specify some kind of audio package on top of the core foundation. The shape of it varies enormously, which is why these sit outside the core $100K rather than inside it.
+
+### Zoned audio with living room surround. Scoped to the home.
+
+A zoned audio system that covers the everyday rooms, with a proper living room setup of soundbar, subwoofer and surrounds. *Sonos for the casual rooms, in-ceiling architectural speakers where the brief calls for them.* Properly run, properly tuned, properly handed over.
+
+The number scales with how many rooms the brief covers. A few zones plus the living room is one figure. Audio in every room of the house is a different figure entirely.
 
 ### Home cinema. From $50,000.
 
-A separate beast from multi-zone audio. A real Atmos cinema starts at $50K and climbs into the hundreds of thousands depending on display, processing, treatment, and seating. *On a recent Albert Park build, the home theatre line came in at $55K. That is a starting point, not a ceiling.*
+A separate beast from zoned audio. A real Atmos cinema starts at $50K and climbs into the hundreds of thousands depending on display, processing, acoustic treatment, and seating.
 
-### Foundation subtotal
-
-Add those five layers up and you are at *around $100,000* before a single line of automation code has been written. *That is what $100K of "smart home" actually buys you.* Real systems, professionally installed, ready to be tied together.
-
-What it does not buy you is a smart home. Not yet.
+Optional. *Plenty of premium homes do not have a dedicated cinema room at all.*
 
 ## Layer two: the automation core ($30–50K)
 
