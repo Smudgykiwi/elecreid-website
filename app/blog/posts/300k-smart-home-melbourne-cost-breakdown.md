@@ -76,7 +76,7 @@ A separate beast from zoned audio. A real Atmos cinema starts at $50K and climbs
 
 Optional. *Plenty of premium homes do not have a dedicated cinema room at all.*
 
-## Layer two: the automation core ($30–50K)
+## Layer three: the automation core ($30–50K)
 
 This is the layer that turns five separate systems into one.
 
@@ -86,7 +86,7 @@ This is where the integrator earns their fee. Anyone can install gear. The diffe
 
 On a recent uncompromised Albert Park proposal, the *Apple Home Control System* layer alone came in at $38,000. Hardware plus the programming time to make it behave as a platform rather than a hobby.
 
-## Layer three: the control layers (the automation that actually moves things)
+## Layer four: the control layers (the automation that actually moves things)
 
 This is where premium homes pull away from average ones.
 
