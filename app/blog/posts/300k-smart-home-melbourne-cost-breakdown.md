@@ -1,5 +1,5 @@
 ---
-title: "What $300K of smart home actually costs. And why $100K is just the foundation."
+title: "What a smart home actually costs in Melbourne. The honest breakdown."
 slug: "300k-smart-home-melbourne-cost-breakdown"
 type: "Notes"
 excerpt: "An honest, layered breakdown of what a premium Melbourne smart home really costs. The foundation systems land at around $100K. The automation that makes it a smart home goes on top. A full uncompromised build lands closer to $300K, anchored to a recent $330K Albert Park reference."
