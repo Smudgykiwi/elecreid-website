@@ -64,15 +64,17 @@ What it does not buy you is a smart home. Not yet.
 
 Most premium homes specify some kind of audio package on top of the core foundation. The shape of it varies enormously, which is why these sit outside the core $100K rather than inside it.
 
-### Zoned audio with living room surround. Scoped to the home.
+### Audio. Scoped to how you live.
 
-A zoned audio system that covers the everyday rooms, with a proper living room setup of soundbar, subwoofer and surrounds. *Sonos for the casual rooms, in-ceiling architectural speakers where the brief calls for them.* Properly run, properly tuned, properly handed over.
+Music in the bedrooms when you wake up. Music in the kitchen when you cook. A proper film-watching setup in the main living area. The same music playing across the back garden at a dinner party. The audio brief shapes the cost more than almost any other layer.
 
-The number scales with how many rooms the brief covers. A few zones plus the living room is one figure. Audio in every room of the house is a different figure entirely.
+*A simple living room setup is one number. Audio that follows you through every room of the house is a different number entirely.*
+
+This is a conversation, not a price tag. Think about what you actually want to hear, where you want to hear it, and how often. Then we scope a system around it.
 
 ### Home cinema. From $50,000.
 
-A separate beast from zoned audio. A real Atmos cinema starts at $50K and climbs into the hundreds of thousands depending on display, processing, acoustic treatment, and seating.
+A separate conversation again. A real Atmos cinema room starts at $50K and climbs into the hundreds of thousands depending on display, processing, acoustic treatment, and seating.
 
 Optional. *Plenty of premium homes do not have a dedicated cinema room at all.*
 
@@ -85,6 +87,22 @@ This is the layer that turns five separate systems into one.
 This is where the integrator earns their fee. Anyone can install gear. The difference is in the design of the logic and the programming time invested before you move in.
 
 On a recent uncompromised Albert Park proposal, the *Apple Home Control System* layer alone came in at $38,000. Hardware plus the programming time to make it behave as a platform rather than a hobby.
+
+## What these numbers do and do not include
+
+This is the part where most quote comparisons go wrong.
+
+The figures throughout this post are for the *control and automation equipment* we supply and install. *They are not for the things that equipment controls.*
+
+The KNX lighting layer covers the switches, the relays, the dimming channels, the gateway, and the programming. *It does not cover the downlights, the pendants, the architectural fittings, or the sub-circuit cabling out to every fitting.* That is the site electrician's scope.
+
+The blinds layer covers the KNX relays that drive the motors. *It does not cover the blinds themselves.* Those come from the blind supplier.
+
+The pool and spa control covers the integration. *It does not cover the pool equipment.*
+
+The audio layer covers the amplifiers, the matrices, and the speakers we install. *It does not cover the TVs.* Clients buy those directly and the warranty stays with the manufacturer.
+
+Our preference on any build is to do all of the data, AV, and TV installation work ourselves and leave the electrical roughin and sub-circuit cabling to the site electrician or builder's electrician. *We are also licensed electricians, so we can do the whole job ourselves if the builder prefers to consolidate.* Either model works. The pricing in this post sits on top of whichever electrical scope you have already budgeted.
 
 ## Layer four: the control layers (the automation that actually moves things)
 
