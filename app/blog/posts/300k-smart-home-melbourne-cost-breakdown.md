@@ -102,7 +102,9 @@ The pool and spa control covers the integration. *It does not cover the pool equ
 
 The audio layer covers the amplifiers, the matrices, and the speakers we install. *It does not cover the TVs.* Clients buy those directly and the warranty stays with the manufacturer.
 
-Our preference on any build is to do all of the data, AV, and TV installation work ourselves and leave the electrical roughin and sub-circuit cabling to the site electrician or builder's electrician. *We are also licensed electricians, so we can do the whole job ourselves if the builder prefers to consolidate.* Either model works. The pricing in this post sits on top of whichever electrical scope you have already budgeted.
+We happily do both the automation and the electrical work. *In practice, most builders prefer to use their own electricians for the rough-in and sub-circuit cabling,* so we usually slot in alongside them and look after the data, AV, TV, and automation side of the job. If the client would rather we do the whole lot, we can. We are licensed electricians too.
+
+Either model works. The pricing in this post sits on top of whichever electrical scope you have already budgeted.
 
 ## Layer four: the control layers (the automation that actually moves things)
 
