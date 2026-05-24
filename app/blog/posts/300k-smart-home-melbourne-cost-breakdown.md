@@ -108,7 +108,7 @@ Optional. *Most premium homes specify at least one.*
 
 A premium build with no corners cut, the kind we would rinse and repeat, lands around *$300,000*.
 
-A recent Albert Park proposal of ours came in at *$333,000* for the full uncompromised scope. Networking, cameras, intercom, access, alarm, four-zone audio, a $55K home cinema, the automation core, the KNX lighting and blind layer, and the security panel.
+A recent Albert Park proposal of ours came in at *$333,000* for the full uncompromised scope. Networking, cameras, intercom, access, alarm, a zoned audio package, a $55K home cinema, the automation core, the KNX lighting and blind layer, and the security panel.
 
 *That is what a proper full-stack smart home costs in Melbourne in 2026.*
 
