@@ -28,7 +28,7 @@ You are not the audience if your brief is "make all the lights work from my phon
 
 A smart home is built in layers. *You cannot put automation on top of nothing.*
 
-The base systems come first. Networking, cameras, access, alarm, audio. *Without those in place, the automation layer has nothing to integrate.* Most homeowners discover this the wrong way around. They get sold an automation system, then watch it slowly fail because the network underneath it cannot carry the load.
+The base systems come first. Networking, cameras, intercom, access, and alarm. *Without those in place, the automation layer has nothing to integrate.* Most homeowners discover this the wrong way around. They get sold an automation system, then watch it slowly fail because the network underneath it cannot carry the load.
 
 Build the floor before you build the ceiling.
 
@@ -70,7 +70,7 @@ Music in the bedrooms when you wake up. Music in the kitchen when you cook. A pr
 
 *A simple living room setup is one number. Audio that follows you through every room of the house is a different number entirely.*
 
-This is a conversation, not a price tag. Think about what you actually want to hear, where you want to hear it, and how often. Then we scope a system around it.
+This is a conversation, not a price tag. Think about what you actually want to hear, where you want to hear it, and how often. The system gets scoped around the answer.
 
 ### Home cinema. From $50,000.
 
@@ -80,7 +80,7 @@ Optional. *Plenty of premium homes do not have a dedicated cinema room at all.*
 
 ## Layer three: the automation core ($30–50K)
 
-This is the layer that turns five separate systems into one.
+This is the layer that turns four separate foundation systems and your audio into one.
 
 *Apple Home as the front-end platform.* Home Assistant as the local engine. *A real programming budget that decides how every room behaves and how every scene fires.* A KNX gateway when there is lighting integration coming. A serious processor in a serious rack.
 
@@ -120,7 +120,7 @@ Bringing heating, cooling, and ventilation under the same control surface as lig
 
 ### Pool, spa, and outdoor zones. $5–15K each.
 
-Optional. *Most premium homes specify at least one.*
+Specified on most premium builds. *Plenty of homes have at least one pool, spa, or outdoor zone that wants to sit on the same control surface as the rest of the home.*
 
 ## The real total on a real recent home
 
@@ -138,7 +138,7 @@ That same Albert Park proposal was pushed back from $330,000 to $265,000 to land
 
 The result is still a serious system. It is also a smaller, less resilient one. *That is the trade. You only see it in five years when something blacks out and the rest of the house does too.*
 
-If you compare a $100K quote to one of these to a $330K version of the same scope, *ask which lines disappeared.* The honest answer separates the integrators.
+If you compare a $100K quote against a $330K version of the same scope, *ask which lines disappeared.* The honest answer separates the integrators.
 
 ## When $300K is the wrong number
 
@@ -154,9 +154,9 @@ This is the part to read twice.
 
 Not all integrators are the same. Yes, they have the licence. Yes, they can install the bits. *The real art is in the initial design and the after-service care.*
 
-Is the system designed to be self-healing and reliable. Does it have battery backup. Does it have long-term integration thought through. Or is it a wall of features that all happen to be in the same house, *none of them really talking to each other.*
+Is the system designed to be self-healing and reliable? Does it have battery backup? Has long-term integration been thought through? Or is it a wall of features that all happen to be in the same house, *none of them really talking to each other?*
 
-Are you paying for an *automation system that senses and manoeuvres around you,* or are you paying for a bunch of expensive light switches that sit on the wall.
+Are you paying for an *automation system that senses and manoeuvres around you,* or are you paying for a bunch of expensive light switches that sit on the wall?
 
 A lot of these homes are the second thing. Beautiful keypads, no actual programming. *The lights turn on when you push them. They do not turn on when you walk in. They do not turn off when the room empties. They do not dim when the sun hits the western windows.* They are not a smart home. They are a home with fancy switches.
 
