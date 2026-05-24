@@ -9,6 +9,11 @@ const nextConfig = {
         destination: '/blog/lutron-control-systems-melbourne',
         permanent: true,
       },
+      {
+        source: '/blog/what-100k-smart-home-melbourne',
+        destination: '/blog/300k-smart-home-melbourne-cost-breakdown',
+        permanent: true,
+      },
     ]
   },
 }
