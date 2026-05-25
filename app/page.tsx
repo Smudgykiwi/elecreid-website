@@ -214,18 +214,18 @@ export default function HomePage() {
           <div className="grid grid-cols-2 gap-3">
             <ImagePlaceholder
               id="IMG-H-E"
-              caption="Haven Court - home theatre and bar."
+              caption="Torquay Coastal Residence - home theatre and bar."
               aspect="1/1"
               src="/images/haven-dsc05653.jpg"
-              alt="Haven Court home theatre and bar"
+              alt="Torquay Coastal Residence home theatre and bar"
             />
             <div className="mt-8">
               <ImagePlaceholder
                 id="IMG-H-F"
-                caption="Haven Court - home bar detail."
+                caption="Torquay Coastal Residence - home bar detail."
                 aspect="1/1"
                 src="/images/haven-dsc05656.jpg"
-                alt="Haven Court home bar"
+                alt="Torquay Coastal Residence home bar"
               />
             </div>
             <ImagePlaceholder
@@ -238,10 +238,10 @@ export default function HomePage() {
             <div className="mt-8">
               <ImagePlaceholder
                 id="IMG-H-H"
-                caption="Haven Court - private spa."
+                caption="Torquay Coastal Residence - private spa."
                 aspect="1/1"
                 src="/images/haven-dsc05643.jpg"
-                alt="Haven Court private spa"
+                alt="Torquay Coastal Residence private spa"
               />
             </div>
           </div>
@@ -262,9 +262,9 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
             {[
-              { title: 'Haven Court', location: 'Torquay', img: '/images/haven-dsc05570.jpg', slot: 'IMG-H-I', slug: 'haven-court' },
+              { title: 'Torquay Coastal Residence', location: 'Torquay', img: '/images/haven-dsc05570.jpg', slot: 'IMG-H-I', slug: 'torquay-coastal-residence' },
               { title: 'Toorak', location: 'Toorak', img: '/images/haven-dsc05653.jpg', slot: 'IMG-H-J', slug: 'toorak' },
-              { title: 'Fitzroy St', location: 'St Kilda', img: '/images/stkilda-1.jpg', slot: 'IMG-H-K', slug: 'fitzroy-street-stkilda' },
+              { title: 'St Kilda Residence', location: 'St Kilda', img: '/images/stkilda-1.jpg', slot: 'IMG-H-K', slug: 'stkilda-control4-residence' },
               { title: 'McKimm', location: 'Brighton', img: '/images/mckimm-5.jpg', slot: 'IMG-H-L', slug: 'mckimm-brighton' },
             ].map((p) => (
               <Link key={p.title} href={`/projects/${p.slug}`} className="group block">

@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 }
 
 const withProjects = [
-  { slug: 'torquay', name: 'Torquay', desc: 'Haven Court: full smart home, KNX, Unifi' },
+  { slug: 'torquay', name: 'Torquay', desc: 'Torquay Coastal Residence: full smart home, KNX, Unifi' },
   { slug: 'brighton', name: 'Brighton', desc: 'McKimm Residence: Apple HomeKit, Sonos, pool automation' },
-  { slug: 'st-kilda', name: 'St Kilda', desc: 'Fitzroy Street: rooftop AV and lighting automation' },
-  { slug: 'malvern-east', name: 'Malvern East', desc: 'Manning Road: home cinema and AV integration' },
+  { slug: 'st-kilda', name: 'St Kilda', desc: 'St Kilda Residence: rooftop AV and lighting automation' },
+  { slug: 'malvern-east', name: 'Malvern East', desc: 'Malvern East: home cinema and AV integration' },
 ]
 
 const serviceAreas = [

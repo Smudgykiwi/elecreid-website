@@ -89,19 +89,19 @@ export default function Home() {
 
           <div className="grid grid-cols-3 gap-3 mt-16">
             <div className="overflow-hidden">
-              <Image src="/images/haven-dsc05636.jpg" alt="Haven Court gym with integrated lighting" width={900} height={675}
+              <Image src="/images/haven-dsc05636.jpg" alt="Torquay Coastal Residence gym with integrated lighting" width={900} height={675}
                 className="w-full aspect-[4/3] object-cover hover:scale-[1.03] transition-transform duration-700" />
             </div>
             <div className="overflow-hidden">
-              <Image src="/images/haven-dsc05656.jpg" alt="Haven Court home bar with LED lighting" width={900} height={675}
+              <Image src="/images/haven-dsc05656.jpg" alt="Torquay Coastal Residence home bar with LED lighting" width={900} height={675}
                 className="w-full aspect-[4/3] object-cover hover:scale-[1.03] transition-transform duration-700" />
             </div>
             <div className="overflow-hidden">
-              <Image src="/images/haven-dsc05578.jpg" alt="Haven Court architectural interior" width={900} height={675}
+              <Image src="/images/haven-dsc05578.jpg" alt="Torquay Coastal Residence architectural interior" width={900} height={675}
                 className="w-full aspect-[4/3] object-cover hover:scale-[1.03] transition-transform duration-700" />
             </div>
           </div>
-          <p className="text-[8px] tracking-[0.25em] text-[#1A1A1A]/30 uppercase mt-3">Haven Court · Torquay, VIC</p>
+          <p className="text-[8px] tracking-[0.25em] text-[#1A1A1A]/30 uppercase mt-3">Torquay Coastal Residence · Torquay, VIC</p>
         </div>
       </section>
 
@@ -152,10 +152,10 @@ export default function Home() {
 
       {/* ── FULL WIDTH IMAGE ─────────────────────────────────────── */}
       <section className="relative h-[50vh] lg:h-[60vh] overflow-hidden">
-        <Image src="/images/haven-dsc05653.jpg" alt="Haven Court home theatre and bar" fill className="object-cover" />
+        <Image src="/images/haven-dsc05653.jpg" alt="Torquay Coastal Residence home theatre and bar" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#16253F]/70 via-transparent to-transparent" />
         <div className="absolute bottom-8 left-6 lg:left-16">
-          <p className="text-[8px] tracking-[0.25em] text-white/50 uppercase">Haven Court · Torquay, VIC</p>
+          <p className="text-[8px] tracking-[0.25em] text-white/50 uppercase">Torquay Coastal Residence · Torquay, VIC</p>
         </div>
       </section>
 
@@ -210,9 +210,9 @@ export default function Home() {
 
           <div className="grid grid-cols-2 gap-4">
             {[
-              { title: 'Haven Court', location: 'Torquay, VIC', img: '/images/haven-dsc05653.jpg' },
+              { title: 'Torquay Coastal Residence', location: 'Torquay, VIC', img: '/images/haven-dsc05653.jpg' },
               { title: 'McKimm', location: 'Brighton, VIC', img: '/images/mckimm-5.jpg' },
-              { title: 'Haven Court', location: 'Torquay, VIC', img: '/images/haven-dsc05648.jpg' },
+              { title: 'Torquay Coastal Residence', location: 'Torquay, VIC', img: '/images/haven-dsc05648.jpg' },
               { title: 'Merival', location: 'Melbourne', img: '/images/merival-sonos.jpg' },
             ].map((project) => (
               <Link key={project.title} href="/projects" className="group block">

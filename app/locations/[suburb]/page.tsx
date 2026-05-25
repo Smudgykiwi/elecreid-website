@@ -31,7 +31,7 @@ const suburbs: Record<string, SuburbData> = {
       'Elec Reid has completed full smart home installations in Torquay for clients who understand that the brief does not end with the architect. The network, the lighting, the audio, the automation. All of it matters. All of it needs to work.'
     ],
     project: {
-      name: 'Haven Court',
+      name: 'Torquay Coastal Residence',
       description: 'Full smart home integration across a striking architectural new build. KNX lighting, Unifi networking, multi-room audio, climate control, and automated louvres.',
       hero: '/images/haven-dsc05570.jpg',
       images: ['/images/haven-dsc05578.jpg', '/images/haven-dsc05656.jpg'],
@@ -63,7 +63,7 @@ const suburbs: Record<string, SuburbData> = {
       'We have completed outdoor entertainment installations in St Kilda that integrate lighting automation, multi-zone audio, and smart control for spaces that host people regularly. Technology built for use, not just demonstration.'
     ],
     project: {
-      name: 'Fitzroy Street Rooftop',
+      name: 'St Kilda Rooftop Residence',
       description: 'Outdoor entertainment space with integrated lighting automation, multi-zone audio, and smart control for a rooftop terrace with city views.',
       hero: '/images/stkilda-1.jpg',
       images: ['/images/stkilda-2.jpg'],
@@ -79,7 +79,7 @@ const suburbs: Record<string, SuburbData> = {
       'We have completed cinema and AV installations in Malvern East for clients who want proper performance: calibrated audio, integrated control, and a system that does not require a manual to operate.'
     ],
     project: {
-      name: 'Manning Road Residence',
+      name: 'Malvern East Residence',
       description: 'Residential home cinema installation with integrated AV and smart home control.',
       hero: '/images/malvern-cinema-1.jpg',
       images: ['/images/malvern-2.jpg'],

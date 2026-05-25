@@ -45,13 +45,13 @@ ready.
 | `IMG-H-B`  | 4:5    | `/images/haven-dsc05653.jpg`         | Residential division - premium home interior, switch detail.   |
 | `IMG-H-C`  | 4:5    | `/images/eclat-bureau.webp`          | Commercial division - office or hospitality, AV in context.    |
 | `IMG-H-D`  | 4:5    | `/images/industrial-warehouse.jpg`   | Industrial division - switchboard or warehouse, on-the-tools.  |
-| `IMG-H-E`  | 1:1    | `/images/haven-dsc05653.jpg`         | Philosophy grid 1 - Haven Court home theatre and bar.          |
-| `IMG-H-F`  | 1:1    | `/images/haven-dsc05656.jpg`         | Philosophy grid 2 - Haven Court home bar detail.               |
+| `IMG-H-E`  | 1:1    | `/images/haven-dsc05653.jpg`         | Philosophy grid 1 - Torquay Coastal Residence home theatre and bar.          |
+| `IMG-H-F`  | 1:1    | `/images/haven-dsc05656.jpg`         | Philosophy grid 2 - Torquay Coastal Residence home bar detail.               |
 | `IMG-H-G`  | 1:1    | `/images/merival-sonos.jpg`          | Philosophy grid 3 - Merival whole-home audio install.          |
-| `IMG-H-H`  | 1:1    | `/images/haven-dsc05643.jpg`         | Philosophy grid 4 - Haven Court private spa.                   |
-| `IMG-H-I`  | 1:1    | `/images/haven-dsc05570.jpg`         | Project tile - Haven Court, Torquay.                           |
+| `IMG-H-H`  | 1:1    | `/images/haven-dsc05643.jpg`         | Philosophy grid 4 - Torquay Coastal Residence private spa.                   |
+| `IMG-H-I`  | 1:1    | `/images/haven-dsc05570.jpg`         | Project tile - Torquay Coastal Residence, Torquay.                           |
 | `IMG-H-J`  | 1:1    | `/images/mckimm-5.jpg`               | Project tile - McKimm, Brighton.                               |
-| `IMG-H-K`  | 1:1    | `/images/stkilda-1.jpg`              | Project tile - Fitzroy St, St Kilda.                           |
+| `IMG-H-K`  | 1:1    | `/images/stkilda-1.jpg`              | Project tile - St Kilda Residence, St Kilda.                           |
 | `IMG-H-L`  | 1:1    | `/images/merival-sonos.jpg`          | Project tile - Merival, Melbourne.                             |
 | `IMG-H-M`  | 1:1    | `/images/basalte-fibonacci.jpg`      | Brand tile - Basalte switch product shot.                      |
 | `IMG-H-N`  | 1:1    | `/images/ekinex-proxima.jpg`         | Brand tile - Ekinex switch product shot.                       |
@@ -93,9 +93,9 @@ Not yet converted. When ready:
 
 | Slot       | Aspect | Caption                                             |
 | ---------- | ------ | --------------------------------------------------- |
-| `IMG-P-A`  | 4:3    | Hero project tile - Haven Court wide shot.          |
+| `IMG-P-A`  | 4:3    | Hero project tile - Torquay Coastal Residence wide shot.          |
 | `IMG-P-B`  | 4:3    | Project tile - McKimm.                              |
-| `IMG-P-C`  | 4:3    | Project tile - Fitzroy St.                          |
+| `IMG-P-C`  | 4:3    | Project tile - St Kilda Residence.                          |
 | `IMG-P-D`  | 4:3    | Project tile - Merival.                             |
 | ...        |        | Add `IMG-P-E`, `IMG-P-F` etc. for new projects.     |
 
@@ -106,7 +106,7 @@ Not yet converted. When ready:
 Each project gets its own letter prefix `IMG-PR-<slug>-X`. When project detail
 pages are built, follow this pattern:
 
-- `/projects/haven-court` → `IMG-PR-haven-A`, `IMG-PR-haven-B`, ...
+- `/projects/torquay-coastal-residence` → `IMG-PR-haven-A`, `IMG-PR-haven-B`, ...
 - `/projects/mckimm`      → `IMG-PR-mckimm-A`, ...
 - `/projects/fitzroy-st`  → `IMG-PR-fitzroy-A`, ...
 

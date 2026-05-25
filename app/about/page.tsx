@@ -142,9 +142,9 @@ export default function AboutPage() {
           <p className="text-[9px] tracking-[0.35em] text-[#1A1A1A]/30 uppercase mb-8">Recent work</p>
           <div className="grid grid-cols-3 gap-3">
             {[
-              { src: '/images/haven-dsc05570.jpg', label: 'Haven Court, Torquay' },
+              { src: '/images/haven-dsc05570.jpg', label: 'Torquay Coastal Residence, Torquay' },
               { src: '/images/merival-sonos.jpg', label: 'Merival, Melbourne' },
-              { src: '/images/stkilda-1.jpg', label: 'Fitzroy St, St Kilda' },
+              { src: '/images/stkilda-1.jpg', label: 'St Kilda Residence, St Kilda' },
             ].map((item) => (
               <Link key={item.label} href="/projects" className="group block">
                 <div className="aspect-square overflow-hidden">

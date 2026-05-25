@@ -19,13 +19,13 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: 'haven-court',
-    title: 'Haven Court',
+    slug: 'torquay-coastal-residence',
+    title: 'Torquay Coastal Residence',
     location: 'Torquay, VIC',
     region: 'Surf Coast',
     desc: 'A coastal architectural build that needed to feel like a private resort. Full WiFi and 5G boosters, multi-room TV and audio, dedicated home cinema, AV for an in-house wellness centre, and the structured networking and free-to-air infrastructure underneath it all.',
     story: [
-      'Haven Court is a coastal architectural build on the Surf Coast that needed to feel like a private resort. Cellular signal at the property was patchy. The brief was full coverage, no dropped calls, no buffering, and a home that ran the way the architecture suggested it would.',
+      'Torquay Coastal Residence is a coastal architectural build on the Surf Coast that needed to feel like a private resort. Cellular signal at the property was patchy. The brief was full coverage, no dropped calls, no buffering, and a home that ran the way the architecture suggested it would.',
       'We installed full WiFi and 5G boosters across the property. Every room covered, garden included. Multi-room TV and audio throughout the living spaces, plus a dedicated cinema room sized and treated for one reference experience.',
       'The wellness centre was its own AV target. Audio designed for the space, controls that the family can hand to a guest without a tutorial. Underneath all of it, structured cabling and free-to-air TV infrastructure tied together so every room speaks the same language.',
       'One system. The whole house, online. Documented and commissioned before we left.',
@@ -65,8 +65,8 @@ export const projects: Project[] = [
     gallery: ['/images/mckimm-1.jpg', '/images/mckimm-4.jpg', '/images/mckimm-5.jpg'],
   },
   {
-    slug: 'fitzroy-street-stkilda',
-    title: 'Fitzroy Street',
+    slug: 'stkilda-control4-residence',
+    title: 'St Kilda Residence',
     location: 'St Kilda, VIC',
     region: 'Melbourne',
     desc: 'A four-floor St Kilda residence run end to end on a full Control4 system. Lighting on every floor, heating and cooling, security, cameras, access control on gates and doors, and a custom rooftop lighting fitout.',
