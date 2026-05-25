@@ -1,10 +1,10 @@
 ---
-title: "What a smart home actually costs in Melbourne. The honest breakdown."
+title: "What a smart home actually costs in Melbourne in 2026"
 slug: "300k-smart-home-melbourne-cost-breakdown"
 type: "Notes"
-excerpt: "An honest, layered breakdown of what a premium Melbourne smart home really costs. The foundation systems land at around $100K. The automation that makes it a smart home goes on top. A full uncompromised build lands closer to $300K, anchored to a recent $330K Albert Park reference."
+excerpt: "A practical breakdown of what a reliable Melbourne smart home system needs to include in 2026. From Wi-Fi and security through to gates, lighting, access, automation, and full-home control."
 publishedAt: "2026-05-24"
-updatedAt: "2026-05-24"
+updatedAt: "2026-05-25"
 author: "Joe Reid"
 readingMinutes: 8
 tags: ["Pricing", "Smart Home", "Premium Residential", "KNX", "Apple Home"]
@@ -12,15 +12,31 @@ hero: "/images/basalte-sentido-room.jpg"
 heroAlt: "Basalte Sentido keypad in a premium Melbourne home installed by Elec Reid"
 ---
 
-If a builder or architect has handed you a $100,000 smart home line item, you have a question. *Is that reasonable, or am I being taken?*
+One of the most common things people ask me is: *What will I need to budget for a reliable smart home system?*
 
-The honest answer is that $100,000 is not a smart home. *It is the foundation a smart home sits on.* The automation that ties everything together comes on top of that.
+The answer depends entirely on how you live and what you actually want the house to do.
 
-This is what we mean.
+Recently I met with a homeowner in Melbourne renovating a five bedroom home. Their brief explains the conversation perfectly.
+
+## The homeowner's brief
+
+*"I'm renovating a four bedroom house. I work in tech and care a lot about security and reliability. I've got three older kids constantly coming and going. I want to know if doors are unlocked or somebody is on the property. I work from home, so I need great Wi-Fi everywhere. I want the gates to open automatically when I arrive home. I want soft warm lighting in the mornings and evenings. And because the house is large, I want the ability to turn everything off from my phone."*
+
+With that brief in mind, this is how I walk clients through the systems, the order, and the budget.
+
+## If you care about reliability, your smart home needs to be wired in
+
+If you want a system that actually works long term, you do not build the whole thing around Wi-Fi.
+
+Wi-Fi has its place. It is not stable enough to run a whole home once you start adding cameras, security, audio, lighting, gates, access, and automation.
+
+We wire the key systems back to a central rack. That means every major device in the home has a cable attached and connects back to one central point.
+
+We do this because reliability is designed in at the start. It is not patched in after handover.
 
 ## Who this is for
 
-Premium homeowners and builders mid-design. You are not asking *should we have a smart home,* you are asking *what does competent look like at this price.* You want a clear-eyed read of where the money goes, what it actually does, and why two integrators can quote the same number and deliver wildly different houses.
+Premium homeowners and builders mid-design. You are not asking *should we have a smart home,* you are asking *what does competent look like at this price.* You want a clear-eyed read of where the money goes, what it actually does, and why two integrators can propose the same number and deliver wildly different houses.
 
 You are not the audience if your brief is "make all the lights work from my phone." That is a different conversation and a different price.
 
@@ -90,7 +106,7 @@ On a recent uncompromised Albert Park proposal, the *Apple Home Control System* 
 
 ## What these numbers do and do not include
 
-This is the part where most quote comparisons go wrong.
+This is the part where most proposal comparisons go wrong.
 
 The figures throughout this post are for the *control and automation equipment* we supply and install. *They are not for the things that equipment controls.*
 
@@ -134,17 +150,17 @@ A recent Albert Park proposal of ours came in at *$333,000* for the full uncompr
 
 ## When the builder pushes back
 
-That same Albert Park proposal was pushed back from $330,000 to $265,000 to land near competing quotes.
+That same Albert Park proposal was pushed back from $330,000 to $265,000 to land near competing proposals.
 
-*What got removed is what most homeowners never see in a comparison spreadsheet.* We did not strip out the programming hours. We did not cheapen the brain. We took out WiFi access points, data points, a portion of the motion sensors, several keypads, automated blinds, and the UPS and backup systems that keep everything alive in a power event.
+*What got removed is what most homeowners never see in a comparison spreadsheet.* We did not strip out the programming hours. We did not cheapen the brain. We took out Wi-Fi access points, data points, a portion of the motion sensors, several keypads, automated blinds, and the UPS and backup systems that keep everything alive in a power event.
 
 The result is still a serious system. It is also a smaller, less resilient one. *That is the trade. You only see it in five years when something blacks out and the rest of the house does too.*
 
-If you compare a $100K quote against a $330K version of the same scope, *ask which lines disappeared.* The honest answer separates the integrators.
+If you compare a $100K proposal against a $330K version of the same scope, *ask which lines disappeared.* The honest answer separates the integrators.
 
 ## When $300K is the wrong number
 
-*Under-spec.* A 600-square-metre new build with lighting control, blinds, multi-zone audio, a home cinema and full HVAC integration is not a $100K job. *It is a $250K to $400K job done properly.* If someone is quoting half that for that scope, they are leaving something out, and you will find out which thing at handover.
+*Under-spec.* A 600-square-metre new build with lighting control, blinds, multi-zone audio, a home cinema and full HVAC integration is not a $100K job. *It is a $250K to $400K job done properly.* If someone is proposing half that for that scope, they are leaving something out, and you will find out which thing at handover.
 
 *Over-spec.* A modest renovation with a few smart switches, a doorbell, and some networking does not need $300K. *$40–80K is enough.*
 
