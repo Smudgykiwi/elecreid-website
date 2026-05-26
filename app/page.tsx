@@ -73,14 +73,6 @@ export default function HomePage() {
           <p className="text-white/45 text-xs tracking-wide mb-8">
             Licensed Master Electricians · REC 35750 · Serving Melbourne since 2024
           </p>
-          <figure className="max-w-xl border-l border-white/20 pl-5">
-            <blockquote className="font-austin italic text-white/90 text-lg lg:text-xl leading-snug">
-              &ldquo;Good taste, implied confidence, and a pure nerdy love for tech.&rdquo;
-            </blockquote>
-            <figcaption className="text-[8px] tracking-[0.3em] text-white/40 uppercase mt-3">
-              How a client described our team
-            </figcaption>
-          </figure>
         </div>
       </section>
 
@@ -196,16 +188,6 @@ export default function HomePage() {
             <p className="text-[#16253F]/70 text-lg leading-relaxed mb-10">
               Architects and builders have told us our documentation is better than the architect&rsquo;s drawings. That is the standard we hold.
             </p>
-
-            {/* Quiet inline pull-quote - replaces the full-bleed cobalt slab */}
-            <figure className="border-l-2 border-[#16253F]/15 pl-6 mb-10">
-              <blockquote className="font-austin italic text-[#16253F] text-[28px] lg:text-[36px] leading-snug">
-                &ldquo;Good taste, implied confidence, and a pure nerdy love for tech.&rdquo;
-              </blockquote>
-              <figcaption className="text-[9px] tracking-[0.3em] text-[#16253F]/40 uppercase mt-4">
-                How a client described our team
-              </figcaption>
-            </figure>
 
             <Link href="/about" className="inline-flex items-center justify-center border border-[#16253F]/20 hover:border-[#16253F] text-[#16253F]/70 hover:text-[#16253F] text-[9px] tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-colors">
               Our Story
