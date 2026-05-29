@@ -20,7 +20,6 @@ const openingMessage =
 export default function WebsiteAssistant() {
   const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [hasAutoOpened, setHasAutoOpened] = useState(false);
   const [messages, setMessages] = useState<Message[]>([{ role: 'assistant', content: openingMessage }]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -39,11 +38,8 @@ export default function WebsiteAssistant() {
   useEffect(() => {
     const showTimer = window.setTimeout(() => setIsVisible(true), 2200);
     const openTimer = window.setTimeout(() => {
-      const dismissed = window.sessionStorage.getItem('elec-reid-assistant-dismissed');
-      if (!dismissed) {
-        setIsOpen(true);
-        setHasAutoOpened(true);
-      }
+      setIsVisible(true);
+      setIsOpen(true);
     }, 3000);
 
     return () => {
@@ -58,9 +54,6 @@ export default function WebsiteAssistant() {
 
   const closeAssistant = () => {
     setIsOpen(false);
-    if (hasAutoOpened) {
-      window.sessionStorage.setItem('elec-reid-assistant-dismissed', 'true');
-    }
   };
 
   const sendMessage = async (content: string) => {
