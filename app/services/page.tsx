@@ -54,6 +54,8 @@ const services = [
     title: 'Networking',
     body: 'Ubiquiti backbone, enterprise Wi-Fi, PoE. Infrastructure built to perform invisibly. Rock-solid foundations that every smart device in your home depends on.',
     items: ['Ubiquiti UniFi architecture', 'Whole-home Wi-Fi coverage', 'PoE switching & structured cabling', 'VLAN segmentation & security'],
+    href: '/services/unifi-home-network-melbourne',
+    cta: 'UniFi home networks',
   },
   {
     num: '03',
@@ -78,6 +80,8 @@ const services = [
     title: 'AV & Home Cinema',
     body: 'Cinema rooms, hidden AV, multi-room audio, outdoor zones. Sound and vision done properly cables hidden, sources centralised, control simplified.',
     items: ['Dedicated cinema rooms', 'Multi-room audio distribution', 'Hidden AV equipment racks', 'Outdoor speaker systems'],
+    href: '/services/home-theatre-installation-melbourne',
+    cta: 'Home theatre installation',
   },
   {
     num: '07',
@@ -184,6 +188,14 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
+                {'href' in s && s.href ? (
+                  <Link
+                    href={s.href}
+                    className="inline-flex mt-8 font-grotesk text-[#0134E7] text-xs tracking-[0.18em] uppercase hover:text-[#012ab8] transition-colors"
+                  >
+                    {s.cta} →
+                  </Link>
+                ) : null}
               </div>
             ))}
           </div>
