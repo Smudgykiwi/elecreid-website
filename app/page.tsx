@@ -128,7 +128,7 @@ export default function HomePage() {
             <p className="text-[9px] tracking-[0.38em] text-white/55 uppercase mb-8">
               Melbourne electricians
             </p>
-            <h1 className="font-austin text-white leading-[0.94] tracking-tight mb-8 text-[clamp(52px,8.6vw,128px)]">
+            <h1 className="font-austin text-[#0134E7] leading-[0.94] tracking-tight mb-8 text-[clamp(52px,8.6vw,128px)] drop-shadow-[0_2px_18px_rgba(1,52,231,0.28)]">
               Electrical &amp;<br />
               <em>Smart Technology</em>
             </h1>
