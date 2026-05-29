@@ -166,6 +166,12 @@ const hasSize = (users: string[]) => users.some((message) => /\b\d+\s*(bed|bedro
 const hasPriorities = (users: string[]) =>
   users.some((message) => includesAny(message, ['audio', 'cinema', 'lighting', 'security', 'network', 'wifi', 'wi-fi', 'blinds', 'climate', 'minimal', 'keypad', 'basalte', 'ekinex', 'control4', 'apple', 'knx']));
 
+const hasLocationOrTimeline = (users: string[]) =>
+  users.some((message) => includesAny(message, ['toorak', 'south yarra', 'brighton', 'malvern', 'glen iris', 'st kilda', 'torquay', 'melbourne', 'next month', 'this year', '2026', '2027', 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']));
+
+const hasContactIntent = (users: string[]) =>
+  users.some((message) => /\b[\w.-]+@[\w.-]+\.\w+\b/.test(message) || /\b0\d{3}\s?\d{3}\s?\d{3}\b/.test(message) || includesAny(message, ['call me', 'contact me', 'book', 'site visit', 'plan review']));
+
 export const fallbackAssistantReply = (messagesOrMessage: ChatMessage[] | string) => {
   const messages: ChatMessage[] = typeof messagesOrMessage === 'string' ? [{ role: 'user', content: messagesOrMessage }] : messagesOrMessage;
   const users = userMessages(messages);
@@ -200,6 +206,18 @@ export const fallbackAssistantReply = (messagesOrMessage: ChatMessage[] | string
 
   if (type && stage && hasSize(users) && !hasPriorities(users)) {
     return 'That gives us a good starting shape. Next we would narrow the design around what matters most: minimal wall clutter, clearly labelled controls, whole-home audio, cinema, security, or network reliability.\n\nWhat are the top two priorities for the home?';
+  }
+
+  if (type && stage && hasSize(users) && hasPriorities(users) && !hasLocationOrTimeline(users)) {
+    return `Good. For a ${type} at ${stage} stage, with that size and those priorities, the right direction is a planned design pass before site decisions lock in. We would map lighting scenes, audio zones, network, security, rack location, and the control layer together.\n\nWhat suburb is the project in, and roughly when do you want work to begin?`;
+  }
+
+  if (type && stage && hasSize(users) && hasPriorities(users) && !hasContactIntent(users)) {
+    return 'That is enough to point the next step. A plan review or site visit is the best way to turn this into a proper system design.\n\nIf you have floor plans, send them through the Build Your System planner at elecreid.com/build, or leave your best contact details and our team can follow up.';
+  }
+
+  if (type && stage && hasSize(users) && hasPriorities(users)) {
+    return 'Perfect. We have the core shape: project type, stage, rough size, and priorities. The next step is a plan review so we can design the wiring, control, audio, lighting, network, and security properly.\n\nShare floor plans through elecreid.com/build and our team can map the recommended approach.';
   }
 
   if (includesAny(latest, ['upgrade', 'existing', 'retrofit'])) {
