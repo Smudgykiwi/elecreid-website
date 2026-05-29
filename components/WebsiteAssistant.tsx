@@ -112,7 +112,7 @@ export default function WebsiteAssistant() {
       {isOpen && (
         <section
           aria-label="Elec Reid website assistant"
-          className="assistant-panel flex max-h-[calc(100vh-7rem)] w-[calc(100vw-2.5rem)] max-w-[390px] flex-col overflow-hidden rounded-[28px] border border-white/25 bg-[#16253F] text-[#F8F4F1] shadow-2xl shadow-[#16253F]/30"
+          className="assistant-panel flex h-[620px] max-h-[calc(100vh-7rem)] w-[calc(100vw-2.5rem)] max-w-[390px] flex-col overflow-hidden rounded-[28px] border border-white/25 bg-[#16253F] text-[#F8F4F1] shadow-2xl shadow-[#16253F]/30"
         >
           <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
             <div className="flex items-center gap-3">
