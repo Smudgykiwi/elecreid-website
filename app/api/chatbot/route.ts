@@ -1,3 +1,4 @@
+import { createHmac } from 'crypto';
 import { NextRequest, NextResponse } from 'next/server';
 import { elecReidAssistantPrompt, fallbackAssistantReply } from '@/lib/chatbotPrompt';
 
@@ -150,7 +151,87 @@ async function logChatInteraction(input: {
   ]);
 }
 
-async function getAiReply(messages: ChatMessage[]): Promise<string | null> {
+const buildTranscript = (messages: ChatMessage[]): string =>
+  messages
+    .map((message) => `${message.role === 'user' ? 'Visitor' : 'Assistant'}: ${message.content}`)
+    .join('\n')
+    .slice(-6000);
+
+const leadSignalFromMessages = (messages: ChatMessage[], latestUserMessage: string): string => {
+  const text = messages.map((message) => message.content).join(' ').toLowerCase();
+  const latest = latestUserMessage.toLowerCase();
+
+  if (/sparking|smoke|burning|shock|tripping|no power|power outage|urgent|emergency/.test(text)) return 'Safety urgent';
+  if (/floor plan|plans|new build|renovation|builder|architect|prewire|framing|cinema|pool|knx|control4|lutron/.test(text)) return 'Warm project lead';
+  if (/cost|price|proposal|site visit|call|contact|email|phone/.test(text) || latest.length > 160) return 'Potential enquiry';
+  return 'General assistant conversation';
+};
+
+async function notifyHermesLead(input: {
+  conversationId: string;
+  mode: string;
+  pageUrl: string;
+  latestUserMessage: string;
+  reply: string;
+  messages: ChatMessage[];
+}): Promise<boolean> {
+  const webhookUrl = process.env.HERMES_CHATBOT_WEBHOOK_URL;
+  const webhookSecret = process.env.HERMES_CHATBOT_WEBHOOK_SECRET;
+  if (!webhookUrl || !webhookSecret) return false;
+
+  const payload = {
+    conversationId: input.conversationId,
+    mode: input.mode,
+    pageUrl: input.pageUrl,
+    latestUserMessage: input.latestUserMessage,
+    assistantReply: input.reply,
+    leadSignal: leadSignalFromMessages(input.messages, input.latestUserMessage),
+    transcript: buildTranscript(input.messages),
+    messages: input.messages,
+  };
+
+  const rawBody = JSON.stringify(payload);
+  const signature = createHmac('sha256', webhookSecret).update(rawBody).digest('hex');
+
+  const response = await fetch(webhookUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Webhook-Signature': signature,
+    },
+    body: rawBody,
+  });
+
+  return response.ok;
+}
+
+async function getAnthropicReply(messages: ChatMessage[]): Promise<string | null> {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) return null;
+
+  const response = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      model: process.env.ELEC_REID_CHAT_MODEL || 'claude-3-5-haiku-latest',
+      system: elecReidAssistantPrompt,
+      temperature: 0.35,
+      max_tokens: 420,
+      messages,
+    }),
+  });
+
+  if (!response.ok) return null;
+
+  const data = await response.json();
+  return data?.content?.find((part: { type?: string; text?: string }) => part.type === 'text')?.text?.trim() || null;
+}
+
+async function getOpenAiReply(messages: ChatMessage[]): Promise<string | null> {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) return null;
 
@@ -162,8 +243,8 @@ async function getAiReply(messages: ChatMessage[]): Promise<string | null> {
     },
     body: JSON.stringify({
       model: process.env.ELEC_REID_CHAT_MODEL || 'gpt-4o-mini',
-      temperature: 0.25,
-      max_tokens: 260,
+      temperature: 0.35,
+      max_tokens: 420,
       messages: [{ role: 'system', content: elecReidAssistantPrompt }, ...messages],
     }),
   });
@@ -172,6 +253,10 @@ async function getAiReply(messages: ChatMessage[]): Promise<string | null> {
 
   const data = await response.json();
   return data?.choices?.[0]?.message?.content?.trim() || null;
+}
+
+async function getAiReply(messages: ChatMessage[]): Promise<string | null> {
+  return (await getAnthropicReply(messages)) || (await getOpenAiReply(messages));
 }
 
 export async function POST(request: NextRequest) {
@@ -203,6 +288,7 @@ export async function POST(request: NextRequest) {
   const messagesWithReply: ChatMessage[] = [...messages, { role: 'assistant', content: reply }];
 
   let logged = false;
+  let hermesNotified = false;
 
   try {
     await logChatInteraction({
@@ -220,5 +306,18 @@ export async function POST(request: NextRequest) {
     console.error('[chatbot] Conversation logging failed:', err);
   }
 
-  return NextResponse.json({ reply, mode, conversationId, logged });
+  try {
+    hermesNotified = await notifyHermesLead({
+      conversationId,
+      mode,
+      pageUrl,
+      latestUserMessage,
+      reply,
+      messages: messagesWithReply,
+    });
+  } catch (err) {
+    console.error('[chatbot] Hermes lead notification failed:', err);
+  }
+
+  return NextResponse.json({ reply, mode, conversationId, logged, hermesNotified });
 }

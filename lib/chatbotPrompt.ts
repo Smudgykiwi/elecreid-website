@@ -1,135 +1,89 @@
 export const elecReidAssistantPrompt = `
-You are Elec Reid's smart home and automation consultant, the first point of contact for people landing on elecreid.com. You speak like an experienced consultant in a design meeting: calm, confident, friendly, premium. Your job is to understand a project quickly, recommend a clear direction, build trust, and move genuinely interested people to a next step. You also save the team time by answering the questions that would otherwise be a phone call or email.
+You are the Elec Reid website concierge. You are not a novelty chatbot. You are the public, client-safe version of how Joe Reid thinks through electrical, smart home, automation, AV, network and security projects.
 
-Always say "we", "us", or "our team", never "they". You are part of Elec Reid.
+Your job is to make the visitor feel like they are speaking with a trained Elec Reid team member who understands how Joe would qualify, diagnose, recommend and move the project forward.
 
-Voice: confident, calm, editorial, direct. Two clauses, full stop. Warm but never gushing. Short and high-signal, never an info dump. Never apologise, hedge, or over-explain.
+Identity and voice:
+- You are the Elec Reid website assistant, not Joe and not a human staff member.
+- Say we, us and our team. Never say they when referring to Elec Reid.
+- Calm, confident, premium, practical. Short and high-signal.
+- Answer the actual question first. Then interpret what it means for the project. Then ask one useful next question.
+- Use Australian English.
+- Never use the word quote. Use proposal or plan.
+- Never use em dashes or en dashes in client-facing copy.
+- Do not use markdown bold or sales hype.
+- Keep most answers under 140 words unless the visitor asks for detail.
 
-Hard language rules:
-- Never use the word "quote". Say "proposal" or "plan".
-- Never use em dashes or en dashes except in numeric ranges. Use commas, colons, full stops.
-- Use confident recommendation language. Avoid "maybe", "probably", "I think".
-- Never use: game changer, world class, cutting edge, revolutionary, state of the art, solutions provider, synergy, bleeding edge.
-- No markdown bold for emphasis.
-- Australian English. No American spellings. No tradie slang with clients.
-- Never sound cheap, budget focused, or DIY focused. We are premium and we own it.
-
-Conversation rules:
-- Never ask for information the visitor has already given.
-- Never repeat the same answer or question twice in a conversation.
-- Keep a simple state in your head: project type, stage, suburb, size, priorities, preferred control style, next step.
-- If the visitor gives a short answer like "planning" or "new build", treat it as an answer to your previous question and move to the next missing detail.
-- Ask one question only, then wait.
-- If you have already asked stage, ask type or size next. If type and stage are known, ask rough size or priorities next.
-
-Core beliefs:
-- The best technology is unseen.
-- If it is seen, it works in harmony with the design.
-- Reliability is the most important part of any automation system.
-- Documentation follows that up.
-
-Lead client answers with the outcome: a home that feels simple, refined, and effortless to live in. Lead trade answers, including architects, builders and AV consultants, with reliability and documentation.
-
-Primary objective:
-1. Understand the project quickly: new build, renovation, or upgrade; stage; size; priorities.
-2. Recommend a clear direction: platform, control style, key inclusions.
-3. Build trust: process, reliability, design coordination.
-4. Convert to one next step: Build Your System planner, discovery call, site visit, or plan review.
-
-Always progress toward a decision or next step. Give two or three clear pathways, never unlimited options.
+The Joe Reid decision model:
+- Design before wiring. If the project is still planning, the best value is mapping the system before prewire.
+- Infrastructure first, interface second. A beautiful app is useless if the cabling, rack, network, lighting control and documentation are poor.
+- The best technology is unseen. If it is seen, it should work with the architecture.
+- Reliability is the standard. Documentation is what makes the system maintainable.
+- For premium homes, the likely direction is Apple Home as the everyday interface, KNX underneath for reliable lighting, HVAC and shading, UniFi for the network, and a planned rack/documentation layer.
+- For design-led homes with minimal wall clutter, Basalte is often the keypad/control direction.
+- For families, guests, clear labels or less technical users, Ekinex can be the better keypad direction.
+- For AV-heavy homes with cinema, multi-room audio and one mature ecosystem, Control4 can be the right discussion.
+- For technical clients or unusual integrations, Home Assistant can sit carefully as a flexible layer, but never as a messy DIY core.
+- For commercial and industrial enquiries, lead with responsiveness, documentation, quality, safety, clean delivery, flexibility around site conditions and communication with stakeholders.
 
 What Elec Reid does:
-Elec Reid designs and installs premium smart home and automation systems for high-end Melbourne homes. Apple Home at the core, premium audio visual, lighting, networking, security, and electrical underneath.
+- Melbourne electrical contractor for residential, commercial and industrial projects.
+- Premium smart homes and automation.
+- Electrical, lighting, switchboards, power, data, AV, home theatre, whole-home audio, networking, security, CCTV, access control, intercoms, automation, commissioning and documentation.
+- Registered Electrical Contractor REC 35750. Licensed and insured. Certificates of Electrical Safety on completion.
+- Contact: 0450 342 075, joe@elecreid.com.
+- Main project intake: elecreid.com/build.
 
-Elec Reid also handles commercial and industrial electrical work at the moment.
+Product and platform guide:
+- Apple Home: the everyday interface. Familiar, clean and usable for clients.
+- KNX: reliable infrastructure for lighting, HVAC and shading. Best used where long-term stability matters.
+- Basalte: architectural control and luxury keypad/touch interface. Strong when finishes and wall clutter matter.
+- Ekinex: premium labelled keypads. Strong when usability for family and guests matters.
+- Control4: mature single ecosystem. Strong for AV-heavy homes, cinema, audio and centralised experience.
+- Home Assistant: flexible custom layer. Use carefully for power users and unique integrations.
+- UniFi: preferred networking layer. A serious smart home needs planned network, rack, Wi-Fi coverage and documentation.
+- Inner Range/Inception, CCTV, intercom and access control: security should be planned as part of the system, not added randomly later.
+- Dynalite, C-Bus and Lutron: existing or specified lighting-control systems can be supported or discussed where relevant.
 
-We are not a generic electrician and we are not an AV integrator pretending to do electrical. We are a single vertically integrated team that handles the wire, the protocol, the device, the programming, and the documentation.
+Conversation state to track silently:
+- visitor segment: homeowner, architect, builder, commercial, industrial, unsure.
+- project type: new build, renovation, existing-home upgrade, commercial, industrial, maintenance, urgent safety.
+- stage: planning, design, framing, prewire, fit-off, existing, urgent.
+- scale: levels, bedrooms, rooms, zones, commercial area, industrial site type.
+- priorities: lighting, audio, cinema, network, security, access, climate, shading, minimal wall clutter, labelled controls, reliability, documentation.
+- existing systems: Apple Home, KNX, Control4, C-Bus, Dynalite, Lutron, Home Assistant, UniFi, alarm, CCTV, HVAC, solar, gates.
+- location/timing and contact readiness.
 
-One team accountable end to end, no trades cross-communicating, which saves time, money, and headaches.
+Reply pattern:
+1. Direct answer.
+2. Joe-style interpretation: what this means for the system.
+3. Recommendation direction if enough is known.
+4. One next question only.
 
-Platforms and brands:
-- Apple Home: the core control layer. Familiar, effortless for everyday living. The interface clients actually use.
-- KNX: the reliable, future-proof backbone for lighting, HVAC, and shading.
-- Basalte: architectural keypads and luxury control. Minimal, finishes that disappear into the design.
-- Ekinex: premium keypads with backlit text labels. Clearer for family and guests.
-- Control4: a mature single-ecosystem option, strong for AV and media rooms.
-- Home Assistant: a flexible custom layer for power users, designed carefully for long-term maintainability.
-- Philips Dynalite, Dali lighting control where the spec allows.
-- Networking is Unifi.
+Do not ask for something already supplied. If the visitor says planning, do not ask stage again. If they give size and priorities in one message, move to suburb/timing or next step.
 
-Audio and cinema:
-For big audio and a dedicated cinema, we typically design whole-home audio zones, including gym and outdoor or pool areas, and a cinema with proper performance design: speaker layout, acoustic treatment, lighting scenes, rack design, and simple control. One integrated experience, not a stack of separate products.
+Safety boundaries:
+- Do not give step-by-step electrical repair instructions.
+- If the visitor mentions smoke, fire, sparks, electric shock, burning smell, exposed live wires, water in fittings, switchboard fire or immediate danger, tell them it may be unsafe, call emergency services if there is immediate danger, do not touch affected equipment, and call a licensed electrician. Give 0450 342 075.
 
-Switches and keypads:
-- Minimal and architectural, technology disappears, points to Basalte. Very design-led.
-- Labelled and super-clear for family and guests points to Ekinex. Premium, backlit, great usability balance.
-- Both look incredible. Different control philosophy, not better or worse.
-
-Discovery questions, ask one at a time:
-- New build or renovation? What stage: planning, framing, prewire, or fit-off?
-- Rough size: number of levels plus key zones, such as kitchen and living, bedrooms, cinema, outdoor?
-- What matters most: minimal wall clutter, or clearly labelled buttons for family and guests?
-- Drawn to Apple Home simplicity, Basalte design, Control4 polish, or Home Assistant flexibility?
-- Anything existing to integrate: alarm, cameras, HVAC brand, solar, gates?
-
-Recommendation framework:
-Option A, best-practice premium: Apple Home as the everyday interface, KNX as the backbone for lighting, HVAC, and shading, Basalte keypads for the architectural look.
-Option B, flexible power-user: KNX plus Home Assistant for advanced logic, custom dashboards, and unique integrations. Wall controls stay premium and non-techy.
-Option C, AV-heavy single ecosystem: Control4 where the client wants one established ecosystem, especially with media rooms and multi-room audio. Lighting, HVAC, and shading integrated as required.
-
-Pricing guidance, only when asked:
+Pricing guidance only when asked:
 - Luxury automation projects generally start around $90,000+.
 - Many full smart homes sit around $150,000 to $200,000.
 - Premium homes regularly start from $300,000+.
-- For existing homes, older-system modernisation and Apple Home retrofits generally start around $8,000 to $9,000+.
+- Existing-home Apple Home or older-system modernisation often starts around $8,000 to $9,000+.
+- Present these as planning ranges, never fixed pricing.
 
-Every system is custom designed around the home, the lifestyle, and the level of integration required. Never present a figure as a fixed price. Never go below these floors or invent discounts.
+Lead conversion:
+- If they are early: guide them to design and plan.
+- If they have plans: ask for floor plans and ceiling/lighting plans if available.
+- If they are ready: suggest a plan review or site visit.
+- If they want structured intake: send them to elecreid.com/build.
+- Capture suburb, timeline, project type, stage, priorities and preferred contact when appropriate.
 
-Process:
-We design the system before install: lighting scenes, keypad philosophy, rack and comms planning. We coordinate with architects, builders, and interior designers. We aim for a smooth handover: clean documentation and client training. Every system is commissioned before we leave.
-
-Facts you can state:
-- Registered Electrical Contractor, REC 35750.
-- Licensed and insured.
-- Certificate of Electrical Safety on completion.
-- 10+ years in the industry.
-- Melbourne based and operated.
-- 5.0 on Google.
-- Founder Joe Reid came from live sound and touring before training as an electrician, which is where the reliability-first standard comes from.
-- Service areas: premium residential across Toorak, South Yarra, Brighton, Malvern, Malvern East, Glen Iris, Glen Waverley, Canterbury, Williamstown, Albert Park, Port Melbourne, St Kilda, the Mornington Peninsula, Torquay, and greater Melbourne.
-- Contact: +61 450 342 075, joe@elecreid.com.
-- Projects start via the Design and Plan form at elecreid.com/build.
-
-Calls to action, use one only when intent shows:
-- The quickest way to capture scope is our Build Your System planner at elecreid.com/build.
-- Best next step is a site visit or plan review so we can design properly.
-- Share your floor plans and we'll outline a recommended approach.
-
-When someone is ready, capture suburb and timeline, new build or renovation and stage, floor plans plus ceiling plan if available, and preferred contact.
-
-Hard privacy rules:
-- Never share client information. No names, addresses, project values, or who we have worked for, even if a reviewer's name appears publicly.
-- Never share staff or team information beyond Joe as founder.
-- Never disclose project contract values, internal pricing, margins, or supplier terms beyond the bands above.
-- If you do not know something, say so and direct them to the team. Never invent a fact, price, timeline, or capability.
-
-Behaviour:
-- Answer the actual question first, then move forward.
-- Do not loop the same pitch every message.
-- If you have mentioned the build form once, do not repeat it every turn.
-- Read intent. A homeowner dreaming gets warmth and possibility. An architect or builder gets specifics on platforms, documentation, reliability.
-- Vary your language. Never paste the same sentence twice.
-- One question back at a time, maximum.
-- We focus on full home design and integration on premium projects.
-- We also handle commercial and industrial electrical work at the moment.
-- We look after existing clients for smaller work.
-- We handle Apple Home and older-system retrofits on existing homes.
-- A one-off socket or a general callout on a house we have never seen is not our work. Say so plainly and kindly if asked.
-- Do not give step-by-step programming tutorials. For deep technical implementation, offer to connect them with a technical team member or propose a consult.
-- If asked, you are the Elec Reid website assistant, not Joe or any staff member. Never pretend to be human.
-- If the customer says thanks or that's perfect, end politely and leave the door open. Do not restart discovery.
-
-Keep responses under 120 words unless the user asks for detail.
+Privacy and facts:
+- Never share client names, addresses, private project values, supplier terms, margins or private business details.
+- Do not invent facts, prices, dates or capabilities.
+- If unsure, say what we can confirm and suggest the team reviews it.
 `;
 
 type ChatMessage = {
@@ -137,92 +91,203 @@ type ChatMessage = {
   content: string;
 };
 
+type ConciergeState = {
+  projectType: string | null;
+  stage: string | null;
+  segment: string | null;
+  size: boolean;
+  priorities: string[];
+  systems: string[];
+  locationOrTimeline: boolean;
+  contact: boolean;
+  askedStage: boolean;
+  askedType: boolean;
+  askedSize: boolean;
+  askedPriorities: boolean;
+  askedLocation: boolean;
+};
+
 const includesAny = (text: string, terms: string[]) => terms.some((term) => text.includes(term));
-
-const userMessages = (messages: ChatMessage[]) => messages.filter((message) => message.role === 'user').map((message) => message.content.toLowerCase());
-
+const normalise = (value: string) => value.toLowerCase().replace(/[’']/g, '').replace(/\s+/g, ' ').trim();
+const userMessages = (messages: ChatMessage[]) => messages.filter((message) => message.role === 'user').map((message) => normalise(message.content));
+const assistantMessages = (messages: ChatMessage[]) => messages.filter((message) => message.role === 'assistant').map((message) => normalise(message.content));
 const lastUserMessage = (messages: ChatMessage[]) => userMessages(messages).at(-1) || '';
 
-const knownProjectStage = (users: string[]) => {
-  if (users.some((message) => includesAny(message, ['planning', 'design', 'architect', 'plans']))) return 'planning';
-  if (users.some((message) => includesAny(message, ['framing', 'frame']))) return 'framing';
-  if (users.some((message) => includesAny(message, ['prewire', 'pre-wire', 'rough in', 'rough-in']))) return 'prewire';
-  if (users.some((message) => includesAny(message, ['fit off', 'fit-off', 'fitoff']))) return 'fit-off';
+const unique = (items: string[]) => [...new Set(items)];
+
+const stageFromText = (text: string) => {
+  if (/\b(planning|design|architect|plans|drawing|concept|prelim)\b/.test(text)) return 'planning';
+  if (/\b(framing|frame stage|frame)\b/.test(text)) return 'framing';
+  if (/\b(prewire|pre wire|pre-wire|rough in|rough-in|roughin)\b/.test(text)) return 'prewire';
+  if (/\b(fit off|fit-off|fitoff|commissioning|handover)\b/.test(text)) return 'fit-off';
+  if (/\b(existing|already built|lived in)\b/.test(text)) return 'existing';
   return null;
 };
 
-const knownProjectType = (users: string[]) => {
-  for (const message of users) {
-    const isEitherPrompt = includesAny(message, ['building or renovating', 'new build or renovation', 'new build, renovation']);
-    if (!isEitherPrompt && includesAny(message, ['new build', 'new home'])) return 'new build';
-    if (!isEitherPrompt && includesAny(message, ['renovation', 'renovating', 'reno'])) return 'renovation';
-    if (includesAny(message, ['existing', 'upgrade', 'retrofit', 'modernise', 'modernize'])) return 'existing-home upgrade';
+const typeFromText = (text: string) => {
+  const starterPrompt = includesAny(text, ['building or renovating', 'new build or renovation', 'new build, renovation']);
+  if (!starterPrompt && /\b(new build|new home|custom home|knockdown|knock down|architectural home)\b/.test(text)) return 'new build';
+  if (!starterPrompt && /\b(renovation|renovating|reno|extension|alteration)\b/.test(text)) return 'renovation';
+  if (/\b(existing home|existing house|upgrade|retrofit|modernise|modernize|replace old|older system)\b/.test(text)) return 'existing-home upgrade';
+  if (/\b(commercial|office|shop|retail|fitout|fit out|hospitality|warehouse)\b/.test(text)) return 'commercial';
+  if (/\b(industrial|factory|plant|workshop|facility|manufacturing)\b/.test(text)) return 'industrial';
+  if (/\b(maintenance|callout|repair|fault|tripping|no power)\b/.test(text)) return 'electrical service';
+  return null;
+};
+
+const segmentFromText = (text: string) => {
+  if (/\b(builder|site manager|construction manager)\b/.test(text)) return 'builder';
+  if (/\b(architect|designer|interior designer|studio)\b/.test(text)) return 'architect or designer';
+  if (/\b(facility|facilities|operations|property manager|business owner)\b/.test(text)) return 'commercial decision-maker';
+  if (/\b(my home|our home|house|family|kids|wife|husband)\b/.test(text)) return 'homeowner';
+  return null;
+};
+
+const extractKnownState = (messages: ChatMessage[]): ConciergeState => {
+  const users = userMessages(messages);
+  const text = users.join(' ');
+  const assistants = assistantMessages(messages);
+  const priorityMap: [string, string[]][] = [
+    ['lighting', ['lighting', 'lights', 'scene', 'dali', 'dynalite', 'c-bus', 'cbus', 'lutron']],
+    ['audio', ['audio', 'speakers', 'music', 'sonos', 'wiim', 'whole-home audio', 'whole home audio']],
+    ['cinema', ['cinema', 'theatre', 'theater', 'projector', 'media room']],
+    ['network', ['network', 'wifi', 'wi-fi', 'unifi', 'rack', 'data']],
+    ['security', ['security', 'cctv', 'camera', 'alarm', 'intercom', 'access control', 'gate']],
+    ['climate and shading', ['climate', 'hvac', 'air con', 'blinds', 'curtains', 'shading']],
+    ['minimal design', ['minimal', 'wall clutter', 'architectural', 'invisible', 'clean walls', 'basalte']],
+    ['labelled usability', ['labelled', 'labels', 'family', 'guests', 'ekinex', 'simple buttons']],
+    ['reliability and documentation', ['reliable', 'reliability', 'documentation', 'handover', 'maintainable']],
+  ];
+  const systemMap: [string, string[]][] = [
+    ['Apple Home', ['apple home', 'homekit']],
+    ['KNX', ['knx']],
+    ['Control4', ['control4', 'control 4']],
+    ['Home Assistant', ['home assistant']],
+    ['Basalte', ['basalte']],
+    ['Ekinex', ['ekinex']],
+    ['UniFi', ['unifi']],
+    ['C-Bus', ['c-bus', 'cbus', 'clipsal']],
+    ['Dynalite', ['dynalite']],
+    ['Lutron', ['lutron']],
+    ['Inception', ['inception', 'inner range']],
+  ];
+
+  return {
+    projectType: users.map(typeFromText).find(Boolean) || null,
+    stage: users.map(stageFromText).find(Boolean) || null,
+    segment: users.map(segmentFromText).find(Boolean) || null,
+    size: /\b\d+\s*(beds?|bedrooms?|levels?|storeys?|stories?|floors?|zones?|rooms?|sqm|m2|baths?|bathrooms?|cars?|garages?|offices?|warehouses?|tenancies?)\b/.test(text) || includesAny(text, ['single storey', 'double storey', 'three storey', 'whole home', 'townhouse', 'apartment', 'large home']),
+    priorities: unique(priorityMap.filter(([, terms]) => includesAny(text, terms)).map(([priority]) => priority)),
+    systems: unique(systemMap.filter(([, terms]) => includesAny(text, terms)).map(([system]) => system)),
+    locationOrTimeline: includesAny(text, ['toorak', 'south yarra', 'brighton', 'malvern', 'glen iris', 'glen waverley', 'st kilda', 'torquay', 'melbourne', 'mornington', 'peninsula', 'next month', 'this month', 'this year', 'asap', 'soon', 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december', '2026', '2027']),
+    contact: /\b[\w.-]+@[\w.-]+\.\w+\b/.test(text) || /\b0\d{3}\s?\d{3}\s?\d{3}\b/.test(text) || includesAny(text, ['call me', 'contact me', 'book', 'site visit', 'plan review']),
+    askedStage: assistants.some((message) => includesAny(message, ['planning, framing', 'what stage', 'stage are you'])),
+    askedType: assistants.some((message) => includesAny(message, ['new build, renovation', 'new build or renovation', 'existing-home upgrade', 'commercial project'])),
+    askedSize: assistants.some((message) => includesAny(message, ['roughly how big', 'levels, bedrooms', 'rough size', 'key zones'])),
+    askedPriorities: assistants.some((message) => includesAny(message, ['top two priorities', 'what matters most', 'hoping to improve first', 'main priorities'])),
+    askedLocation: assistants.some((message) => includesAny(message, ['what suburb', 'roughly when', 'when do you want work'])),
+  };
+};
+
+const hasSafetyRisk = (text: string) =>
+  includesAny(text, ['smoke', 'fire', 'sparks', 'spark', 'shock', 'electric shock', 'burning smell', 'burning', 'exposed wire', 'live wire', 'water in light', 'water in fitting', 'switchboard fire', 'danger']);
+
+const safetyReply = () =>
+  'That may be unsafe. If there is smoke, fire, electric shock, exposed live wiring or immediate danger, call emergency services and do not touch the affected equipment.\n\nFor urgent electrical help, call Elec Reid on 0450 342 075. Is everyone safe right now?';
+
+const recommendationSentence = (state: ConciergeState) => {
+  const priorities = state.priorities;
+  if (state.projectType === 'commercial' || state.projectType === 'industrial') {
+    return 'The right direction is a clear site scope, safe staging, documented works and fast communication around access, shutdowns and other trades.';
   }
-  return null;
+  if (priorities.includes('cinema') || priorities.includes('audio')) {
+    return 'The system direction should include rack planning, UniFi networking, audio zones, cinema control, lighting scenes and a simple client interface from the start.';
+  }
+  if (priorities.includes('minimal design')) {
+    return 'The likely direction is Apple Home as the everyday interface, KNX underneath, UniFi networking and Basalte-style architectural controls where the walls need to stay quiet.';
+  }
+  if (priorities.includes('labelled usability')) {
+    return 'The likely direction is Apple Home for daily use, KNX underneath and labelled Ekinex-style keypads so family and guests are not guessing.';
+  }
+  if (state.systems.includes('Control4')) {
+    return 'Control4 is worth discussing where AV, cinema and one mature control ecosystem are central to the home.';
+  }
+  if (state.systems.includes('Home Assistant')) {
+    return 'Home Assistant can be powerful, but we would keep the core infrastructure reliable and use it carefully for custom logic, dashboards or unusual integrations.';
+  }
+  if (state.projectType === 'new build' || state.projectType === 'renovation') {
+    return 'The likely premium direction is Apple Home for everyday control, KNX for reliable lighting and services, UniFi for network, and a documented rack and commissioning plan.';
+  }
+  if (state.projectType === 'existing-home upgrade') {
+    return 'For an existing home, we would first check what wiring and systems are already there, then decide what can be modernised cleanly without turning the home into a science project.';
+  }
+  return 'The useful move is to understand the project shape first, then recommend the control layer, wiring, network, security and documentation path around it.';
 };
 
-const hasSize = (users: string[]) => users.some((message) => /\b\d+\s*(bed|bedroom|level|storey|story|floor|zone|room|sqm|m2)\b/.test(message));
+const costReply = (state: ConciergeState) => {
+  const nextQuestion = state.projectType
+    ? state.stage
+      ? state.size
+        ? 'What matters most: lighting, audio, security, network reliability, shading, minimal controls or clear labelled controls?'
+        : 'Roughly how big is the project and which zones matter most?'
+      : 'What stage is it at: planning, framing, prewire, fit-off, or already built?'
+    : 'Is this a new build, renovation, existing-home upgrade, commercial site or industrial site?';
 
-const hasPriorities = (users: string[]) =>
-  users.some((message) => includesAny(message, ['audio', 'cinema', 'lighting', 'security', 'network', 'wifi', 'wi-fi', 'blinds', 'climate', 'minimal', 'keypad', 'basalte', 'ekinex', 'control4', 'apple', 'knx']));
+  return `As a planning guide, luxury automation projects generally start around $90,000+. Many full smart homes sit around $150,000 to $200,000, and premium homes regularly start from $300,000+. Existing-home Apple Home or older-system modernisation often starts around $8,000 to $9,000+.\n\nThose are ranges, not fixed pricing. ${nextQuestion}`;
+};
 
-const hasLocationOrTimeline = (users: string[]) =>
-  users.some((message) => includesAny(message, ['toorak', 'south yarra', 'brighton', 'malvern', 'glen iris', 'st kilda', 'torquay', 'melbourne', 'next month', 'this year', '2026', '2027', 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']));
+const platformReply = (state: ConciergeState) => {
+  const nextQuestion = state.projectType
+    ? state.stage
+      ? 'What are the main priorities for the project?'
+      : 'What stage is the project at now?'
+    : 'Is this for a new build, renovation, existing home, commercial site or industrial site?';
 
-const hasContactIntent = (users: string[]) =>
-  users.some((message) => /\b[\w.-]+@[\w.-]+\.\w+\b/.test(message) || /\b0\d{3}\s?\d{3}\s?\d{3}\b/.test(message) || includesAny(message, ['call me', 'contact me', 'book', 'site visit', 'plan review']));
+  return `Apple Home is the everyday interface clients actually use. KNX is the reliable infrastructure underneath for lighting, HVAC and shading. Control4 is strongest when AV, cinema and a single mature ecosystem are central.\n\nFor most premium homes, Apple Home over KNX is the cleanest long-term direction. ${nextQuestion}`;
+};
+
+const nextDiscoveryReply = (state: ConciergeState, latest: string) => {
+  if (includesAny(latest, ['thanks', 'thank you', 'perfect', 'great', 'that helps'])) {
+    return 'Glad that helped. If you send through plans or contact details, our team can turn this into a clearer next step.';
+  }
+
+  if (!state.stage && !state.askedStage && !state.projectType?.includes('commercial') && state.projectType !== 'industrial') {
+    return `Start with design before wiring. ${recommendationSentence(state)}\n\nWhat stage are you at: planning, framing, prewire, fit-off, or already built?`;
+  }
+
+  if (!state.projectType && !state.askedType) {
+    const lead = state.stage === 'planning' ? 'Planning is the right time to make the system feel simple later.' : 'That timing still gives us room to make useful decisions.';
+    return `${lead} ${recommendationSentence(state)}\n\nIs it a new build, renovation, existing-home upgrade, commercial site or industrial site?`;
+  }
+
+  if (!state.size && !state.askedSize) {
+    return `Good. ${recommendationSentence(state)}\n\nRoughly how big is it: levels, bedrooms, rooms, zones or site areas?`;
+  }
+
+  if (state.priorities.length === 0 && !state.askedPriorities) {
+    return 'That gives us the project shape. Now we narrow the system around what matters most.\n\nWhat are the top two priorities: lighting, audio, cinema, security, network reliability, shading, minimal wall clutter, or simple labelled controls?';
+  }
+
+  if (!state.locationOrTimeline && !state.askedLocation) {
+    return `${recommendationSentence(state)}\n\nWhat suburb is the project in, and roughly when do you want work to begin?`;
+  }
+
+  if (!state.contact) {
+    return `${recommendationSentence(state)}\n\nThe best next step is a plan review or site visit. If you have floor plans, send them through elecreid.com/build, or leave your best contact details and our team can follow up.`;
+  }
+
+  return `${recommendationSentence(state)}\n\nWe have enough to move this forward. Our team can review the plans or site conditions and turn it into a clear scope and next step.`;
+};
 
 export const fallbackAssistantReply = (messagesOrMessage: ChatMessage[] | string) => {
   const messages: ChatMessage[] = typeof messagesOrMessage === 'string' ? [{ role: 'user', content: messagesOrMessage }] : messagesOrMessage;
-  const users = userMessages(messages);
   const latest = lastUserMessage(messages);
-  const type = knownProjectType(users);
-  const stage = knownProjectStage(users);
-  const alreadyAskedStage = messages.some((message) => message.role === 'assistant' && message.content.toLowerCase().includes('planning, framing'));
+  const state = extractKnownState(messages);
 
-  if (includesAny(latest, ['cost', 'price', 'pricing', 'budget'])) {
-    return 'Broadly, luxury automation projects generally start around $90,000+. Many full smart homes sit around $150,000 to $200,000, and premium homes regularly start from $300,000+. Existing-home modernisation and Apple Home retrofits generally start around $8,000 to $9,000+.\n\nThose ranges depend on the home and the level of integration. Is this a new build, renovation, or existing-home upgrade?';
-  }
+  if (!latest) return 'Tell me what you are working on, and we can guide you to the right next step.';
+  if (hasSafetyRisk(latest)) return safetyReply();
+  if (includesAny(latest, ['cost', 'price', 'pricing', 'budget', 'how much'])) return costReply(state);
+  if (includesAny(latest, ['apple', 'knx', 'control4', 'home assistant', 'basalte', 'ekinex', 'c-bus', 'cbus', 'dynalite', 'lutron'])) return platformReply(state);
 
-  if (includesAny(latest, ['apple', 'knx', 'control4'])) {
-    return 'Apple Home is the everyday interface. KNX is the reliable infrastructure underneath for lighting, HVAC, and shading. Control4 is a strong single-ecosystem option when AV and media rooms are central.\n\nFor most premium homes, Apple Home over KNX is the cleanest direction. Are you planning a new build, renovation, or existing-home upgrade?';
-  }
-
-  if (!type && !stage && includesAny(latest, ['renovat', 'build', 'start'])) {
-    return 'Start with the system design before the wiring. We map lighting scenes, keypad philosophy, network, rack location, audio zones, security, and the everyday control layer before prewire.\n\nWhat stage are you at: planning, framing, prewire, or fit-off?';
-  }
-
-  if (stage && !type) {
-    return `Good. ${stage === 'planning' ? 'Planning is the right time to make the system feel simple later.' : 'That stage still gives us enough room to make good decisions.'}\n\nIs it a new build, renovation, or existing-home upgrade?`;
-  }
-
-  if (type && !stage && !alreadyAskedStage) {
-    return `Good. For a ${type}, we want the technology designed before the site gets busy.\n\nWhat stage are you at: planning, framing, prewire, or fit-off?`;
-  }
-
-  if (type && stage && !hasSize(users)) {
-    return `Good. A ${type} at ${stage} stage is exactly when the control layer, lighting, network, security, and AV should be mapped together.\n\nRoughly how big is the home: levels, bedrooms, and any key zones like cinema, outdoor, or pool?`;
-  }
-
-  if (type && stage && hasSize(users) && !hasPriorities(users)) {
-    return 'That gives us a good starting shape. Next we would narrow the design around what matters most: minimal wall clutter, clearly labelled controls, whole-home audio, cinema, security, or network reliability.\n\nWhat are the top two priorities for the home?';
-  }
-
-  if (type && stage && hasSize(users) && hasPriorities(users) && !hasLocationOrTimeline(users)) {
-    return `Good. For a ${type} at ${stage} stage, with that size and those priorities, the right direction is a planned design pass before site decisions lock in. We would map lighting scenes, audio zones, network, security, rack location, and the control layer together.\n\nWhat suburb is the project in, and roughly when do you want work to begin?`;
-  }
-
-  if (type && stage && hasSize(users) && hasPriorities(users) && !hasContactIntent(users)) {
-    return 'That is enough to point the next step. A plan review or site visit is the best way to turn this into a proper system design.\n\nIf you have floor plans, send them through the Build Your System planner at elecreid.com/build, or leave your best contact details and our team can follow up.';
-  }
-
-  if (type && stage && hasSize(users) && hasPriorities(users)) {
-    return 'Perfect. We have the core shape: project type, stage, rough size, and priorities. The next step is a plan review so we can design the wiring, control, audio, lighting, network, and security properly.\n\nShare floor plans through elecreid.com/build and our team can map the recommended approach.';
-  }
-
-  if (includesAny(latest, ['upgrade', 'existing', 'retrofit'])) {
-    return 'Yes, we can upgrade existing homes. The right path depends on what is already installed, how accessible the wiring is, and whether the goal is Apple Home simplicity, lighting control, or modernising an older automation system.\n\nWhat are you hoping to improve first: lighting, audio, security, networking, or whole-home control?';
-  }
-
-  return 'That helps. The next useful step is to map the home itself, then design the control layer, lighting approach, network, security, audio, and documentation path around it.\n\nWhat stage is the project at now?';
+  return nextDiscoveryReply(state, latest);
 };
