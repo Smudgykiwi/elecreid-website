@@ -112,11 +112,11 @@ export default function WebsiteAssistant() {
       {isOpen && (
         <section
           aria-label="Elec Reid website assistant"
-          className="flex max-h-[calc(100vh-7rem)] w-[calc(100vw-2.5rem)] max-w-[390px] flex-col overflow-hidden rounded-[28px] border border-white/25 bg-[#16253F] text-[#F8F4F1] shadow-2xl shadow-[#16253F]/30"
+          className="assistant-panel flex max-h-[calc(100vh-7rem)] w-[calc(100vw-2.5rem)] max-w-[390px] flex-col overflow-hidden rounded-[28px] border border-white/25 bg-[#16253F] text-[#F8F4F1] shadow-2xl shadow-[#16253F]/30"
         >
           <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F8F4F1] p-2">
+              <div className="assistant-mark flex h-10 w-10 items-center justify-center rounded-full bg-[#F8F4F1] p-2">
                 <img src="/logos/logo-icon-color1.svg" alt="Elec Reid" className="h-full w-full" />
               </div>
               <div>
@@ -169,8 +169,13 @@ export default function WebsiteAssistant() {
 
             {isLoading && (
               <div className="flex justify-start">
-                <div className="rounded-2xl border border-[#16253F]/10 bg-white px-4 py-3 text-sm text-[#16253F]/70 shadow-sm">
-                  Mapping the right direction...
+                <div className="assistant-thinking rounded-2xl border border-[#16253F]/10 bg-white px-4 py-3 text-sm text-[#16253F]/70 shadow-sm">
+                  <span className="assistant-thinking-orb" aria-hidden="true">
+                    <span />
+                    <span />
+                    <span />
+                  </span>
+                  <span>Mapping the right direction...</span>
                 </div>
               </div>
             )}
@@ -215,10 +220,10 @@ export default function WebsiteAssistant() {
       <button
         type="button"
         onClick={() => setIsOpen((current) => !current)}
-        className="group relative flex h-16 w-16 items-center justify-center rounded-full bg-[#16253F] p-3 shadow-2xl shadow-[#16253F]/30 ring-1 ring-white/30 transition hover:-translate-y-0.5 hover:bg-[#0134E7]"
+        className="assistant-blob group relative flex h-16 w-16 items-center justify-center rounded-full bg-[#16253F] p-3 shadow-2xl shadow-[#16253F]/30 ring-1 ring-white/30 transition hover:-translate-y-0.5 hover:bg-[#0134E7]"
         aria-label={isOpen ? 'Close Elec Reid assistant' : 'Open Elec Reid assistant'}
       >
-        <span className="absolute inset-0 rounded-full bg-[#0134E7]/20 blur-lg transition group-hover:bg-[#0134E7]/35" />
+        <span className="assistant-blob-glow absolute inset-0 rounded-full bg-[#0134E7]/20 blur-lg transition group-hover:bg-[#0134E7]/35" />
         <img src="/logos/logo-icon-color1.svg" alt="" className="relative h-full w-full brightness-0 invert" />
       </button>
     </div>

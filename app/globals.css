@@ -178,3 +178,175 @@ body {
   font-size: 0.92em;
   font-family: 'SFMono-Regular', Consolas, monospace;
 }
+
+/* Elec Reid assistant motion. Calm, premium, not novelty. */
+.assistant-panel {
+  animation: assistant-panel-in 520ms cubic-bezier(0.2, 0.82, 0.2, 1) both;
+  transform-origin: 92% 100%;
+}
+
+.assistant-mark {
+  position: relative;
+  isolation: isolate;
+}
+
+.assistant-mark::before {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  z-index: -1;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(1, 52, 231, 0.22), transparent 64%);
+  animation: assistant-soft-pulse 4.2s ease-in-out infinite;
+}
+
+.assistant-blob {
+  overflow: visible;
+  animation: assistant-float 5.6s ease-in-out infinite;
+}
+
+.assistant-blob::before,
+.assistant-blob::after {
+  content: '';
+  position: absolute;
+  inset: 9px;
+  border-radius: 42% 58% 52% 48% / 48% 42% 58% 52%;
+  background: rgba(1, 52, 231, 0.22);
+  filter: blur(10px);
+  opacity: 0.7;
+  transform: translate3d(0, 0, 0);
+  animation: assistant-goo 7s ease-in-out infinite;
+}
+
+.assistant-blob::after {
+  inset: 14px;
+  background: rgba(248, 244, 241, 0.12);
+  animation-duration: 8.5s;
+  animation-direction: reverse;
+}
+
+.assistant-blob-glow {
+  animation: assistant-glow 4.8s ease-in-out infinite;
+}
+
+.assistant-thinking {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.assistant-thinking-orb {
+  position: relative;
+  display: inline-flex;
+  width: 30px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+}
+
+.assistant-thinking-orb span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #0134E7;
+  opacity: 0.86;
+  transform: translateX(0) scale(0.75);
+  animation: assistant-thinking 1.25s ease-in-out infinite;
+}
+
+.assistant-thinking-orb span:nth-child(1) {
+  margin-left: -16px;
+  animation-delay: -0.22s;
+}
+
+.assistant-thinking-orb span:nth-child(2) {
+  animation-delay: 0s;
+}
+
+.assistant-thinking-orb span:nth-child(3) {
+  margin-left: 16px;
+  animation-delay: 0.22s;
+}
+
+@keyframes assistant-panel-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(10px, 14px, 0) scale(0.965);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes assistant-float {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+@keyframes assistant-goo {
+  0%, 100% {
+    border-radius: 42% 58% 52% 48% / 48% 42% 58% 52%;
+    transform: translate3d(-3px, 1px, 0) rotate(0deg) scale(1);
+  }
+  35% {
+    border-radius: 58% 42% 46% 54% / 42% 60% 40% 58%;
+    transform: translate3d(3px, -2px, 0) rotate(12deg) scale(1.04);
+  }
+  70% {
+    border-radius: 48% 52% 60% 40% / 58% 44% 56% 42%;
+    transform: translate3d(1px, 3px, 0) rotate(-9deg) scale(0.98);
+  }
+}
+
+@keyframes assistant-glow {
+  0%, 100% {
+    opacity: 0.52;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.88;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes assistant-soft-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes assistant-thinking {
+  0%, 100% {
+    opacity: 0.42;
+    transform: scale(0.72);
+  }
+  42% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .assistant-panel,
+  .assistant-mark::before,
+  .assistant-blob,
+  .assistant-blob::before,
+  .assistant-blob::after,
+  .assistant-blob-glow,
+  .assistant-thinking-orb span {
+    animation: none;
+  }
+}
