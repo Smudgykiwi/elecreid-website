@@ -126,7 +126,7 @@ export default function Nav({ initialTone = 'dark' }: { initialTone?: 'dark' | '
   }, [])
 
   const linkClass = `text-[10px] tracking-[0.2em] uppercase transition-colors ${
-    scrolled || lightInitial ? 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]' : 'text-white/70 hover:text-white'
+    scrolled || lightInitial ? 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]' : 'text-white hover:text-white'
   }`
 
   return (
@@ -135,7 +135,7 @@ export default function Nav({ initialTone = 'dark' }: { initialTone?: 'dark' | '
         ? 'bg-white/95 backdrop-blur-sm border-b border-[#1A1A1A]/8'
         : lightInitial
           ? 'bg-[#F8F4F1]/80 backdrop-blur-sm border-b border-[#16253F]/5'
-          : 'bg-[#16253F]/60 backdrop-blur-sm'
+          : 'bg-transparent'
     }`}>
       <div className="max-w-screen-xl mx-auto px-6 lg:px-16 flex items-center justify-between h-16 lg:h-20">
 
