@@ -197,7 +197,7 @@ const safetyReply = () =>
   'That may be unsafe. If there is smoke, fire, electric shock, exposed live wiring or immediate danger, call emergency services and do not touch the affected equipment.\n\nFor urgent electrical help, call Elec Reid on 0450 342 075. Is everyone safe right now?';
 
 const offTopicReply = (latest: string) => {
-  if (includesAny(latest, ['what model are you', 'are you chatgpt', 'are you claude', 'what ai'])) {
+  if (includesAny(latest, ['who are you', 'what are you', 'your name', 'what model are you', 'are you chatgpt', 'are you claude', 'what ai'])) {
     return 'I am Ed, the Elec Reid website assistant. I can explain our services, compare smart home systems, help shape an enquiry, and point you to the right next step.\n\nWhat are you trying to work out?';
   }
   if (includesAny(latest, ['date', 'attractive', 'nice person', 'owner'])) {
