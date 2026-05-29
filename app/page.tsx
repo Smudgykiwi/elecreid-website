@@ -7,8 +7,75 @@ import ImagePlaceholder from '@/components/ImagePlaceholder'
 import { getAllPosts, formatDate } from './blog/lib'
 
 export const metadata: Metadata = {
-  title: 'Elec Reid | Smart Home, Commercial & Industrial Electrical · Melbourne',
-  description: 'Elec Reid. Residential smart home, commercial AV, and industrial electrical across Melbourne. Apple HomeKit specialists.',
+  title: 'Elec Reid | Melbourne Electricians · Electrical & Smart Technology',
+  description: 'Elec Reid is a Melbourne electrical contractor for residential, commercial and industrial projects. Electrical, smart technology, AV, security, automation and maintenance.',
+}
+
+const serviceItems = [
+  {
+    number: '01',
+    title: 'Electrical',
+    href: '/residential',
+    text: 'Melbourne electrical work for homes, businesses, and industrial sites. Switchboards, lighting, power, data, maintenance, and clean delivery from first call to handover.',
+  },
+  {
+    number: '02',
+    title: 'Audio visual systems',
+    href: '/services',
+    text: 'Audio visual systems for homes, offices, boardrooms, venues, and commercial spaces. Screens, speakers, conferencing, distributed audio, and control that is simple to use.',
+  },
+  {
+    number: '03',
+    title: 'Automation',
+    href: '/brands/apple-home',
+    text: 'Smart technology for residential and commercial buildings. Lighting control, access, security, climate, blinds, monitoring, scenes, and platform integration.',
+  },
+  {
+    number: '04',
+    title: 'Home theatres',
+    href: '/services',
+    text: 'Private cinemas, media rooms, staff areas, training rooms, and presentation spaces with proper wiring, calibrated equipment, clean control, and a finish that fits the site.',
+  },
+  {
+    number: '05',
+    title: 'Security systems',
+    href: '/brands/security',
+    text: 'Alarms, cameras, access control, intercoms, and monitoring for residential, commercial, and industrial properties. Installed neatly, documented properly, and ready to use.',
+  },
+]
+
+const localBusinessJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ElectricalContractor',
+  name: 'Elec Reid',
+  url: 'https://www.elecreid.com',
+  telephone: '+61450342075',
+  areaServed: ['Melbourne', 'Toorak', 'South Yarra', 'Brighton', 'Malvern', 'Mornington Peninsula'],
+  description: 'Elec Reid is a Melbourne electrical contractor for residential, commercial, and industrial projects, with specialist capability across smart technology, AV, automation, networking, and security systems.',
+  knowsAbout: ['Melbourne electricians', 'commercial electrical', 'industrial electrical', 'smart technology', 'smart home installation', 'Apple Home', 'KNX', 'Control4', 'home theatre installation', 'UniFi networking', 'security systems'],
+}
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What does Elec Reid specialise in?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Elec Reid specialises in residential, commercial, and industrial electrical work across Melbourne, with additional capability in smart technology, automation, AV systems, networking, and security systems.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which smart home platforms does Elec Reid install?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Elec Reid works with Apple Home, Control4, KNX, Basalte, Philips Dynalite, Home Assistant, UniFi networking, and Inception security systems.',
+      },
+    },
+  ],
 }
 
 // Editorial section eyebrow - matches the /build form treatment
@@ -35,141 +102,100 @@ export default function HomePage() {
     <>
       <Nav />
 
-      {/* HERO ── single Austin display moment ── single cobalt CTA (Build) */}
-      <section className="relative min-h-screen bg-[#16253F] flex flex-col justify-end overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/haven-dsc05570.jpg"
-            alt="Elec Reid, Melbourne smart home and electrical"
-            fill
-            className="object-cover object-center opacity-40"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#16253F] via-[#16253F]/40 to-transparent" />
-        </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
 
-        <div className="relative z-10 max-w-screen-xl mx-auto px-6 lg:px-16 pb-20 lg:pb-28 w-full">
-          <p className="text-[9px] tracking-[0.4em] text-white/40 uppercase mb-8">
-            Melbourne · Australia
-          </p>
-          <h1 className="font-austin text-white leading-[0.88] tracking-tight mb-8
-            text-[clamp(64px,10vw,152px)]">
-            Electrical &amp;<br />
-            <em>Smart Technology.</em>
-          </h1>
-          <p className="text-white/60 text-xl max-w-xl leading-relaxed mb-10">
-            Residential smart homes. Commercial AV and technology. Industrial electrical. One company. Melbourne. <em className="font-austin">Smarter living, set in stone.</em>
-          </p>
-          <div className="flex flex-col sm:flex-row sm:items-center gap-5 mb-8">
-            {/* Primary cobalt CTA - this is the page's single cobalt moment */}
-            <Link href="/build" className="inline-flex items-center justify-center bg-[#0134E7] hover:bg-[#012ab8] text-white text-[9px] tracking-[0.25em] uppercase px-8 py-4 rounded-full transition-colors whitespace-nowrap">
-              Build Your Home →
-            </Link>
-            {/* Demoted to text link so the primary CTA dominates */}
-            <Link href="/projects" className="text-white/55 hover:text-white text-[10px] tracking-[0.22em] uppercase border-b border-white/20 hover:border-white pb-1 transition-colors w-fit">
-              See our work →
-            </Link>
+      {/* HERO: full-screen image with broader electrical positioning */}
+      <section className="relative min-h-screen bg-[#16253F] flex items-end overflow-hidden">
+        <Image
+          src="/images/elec-reid-wix-hero-luxury.jpg"
+          alt="Elec Reid Melbourne electrical and smart technology project"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#16253F]/88 via-[#16253F]/52 to-[#16253F]/18" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#16253F]/78 via-transparent to-[#16253F]/36" />
+
+        <div className="relative z-10 max-w-screen-xl mx-auto px-6 lg:px-16 w-full pt-32 pb-16 lg:pb-24">
+          <div className="max-w-4xl">
+            <p className="text-[9px] tracking-[0.38em] text-white/55 uppercase mb-8">
+              Melbourne electricians
+            </p>
+            <h1 className="font-austin text-white leading-[0.94] tracking-tight mb-8 text-[clamp(52px,8.6vw,128px)]">
+              Electrical &amp;<br />
+              <em>Smart Technology</em>
+            </h1>
+            <p className="text-white/78 text-lg lg:text-xl leading-relaxed max-w-2xl mb-8">
+              Responsive Melbourne electricians for residential, commercial, and industrial projects. Electrical, automation, audio visual, networking, and security work delivered with care, clarity, and quality on site.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
+              <Link href="/build" className="inline-flex items-center justify-center bg-white hover:bg-[#F8F4F1] text-[#16253F] text-[9px] tracking-[0.25em] uppercase px-8 py-4 rounded-full transition-colors whitespace-nowrap">
+                Start a plan →
+              </Link>
+              <Link href="/projects" className="inline-flex items-center text-[10px] tracking-[0.22em] text-white/68 hover:text-white uppercase border-b border-white/24 hover:border-white pb-1 transition-colors w-fit">
+                View projects →
+              </Link>
+            </div>
           </div>
-          <p className="text-white/45 text-xs tracking-wide mb-8">
-            Licensed Master Electricians · REC 35750 · Serving Melbourne since 2024
-          </p>
         </div>
       </section>
 
-      {/* INTRO ── editorial paragraph for AI search engines + brand voice */}
+      {/* INTRO: quiet editorial positioning for humans and answer engines */}
       <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20 lg:py-24">
-        <div className="max-w-screen-xl mx-auto grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
+        <div className="max-w-screen-xl mx-auto grid lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-24 items-start border-t border-[#16253F]/10 pt-14 lg:pt-16">
           <div>
-            <Eyebrow className="mb-6">The standard</Eyebrow>
-            <SectionHeading>One team. End to end.</SectionHeading>
+            <Eyebrow className="mb-6">Elec Reid</Eyebrow>
+            <SectionHeading>Melbourne electricians with smart technology capability.</SectionHeading>
           </div>
           <div className="space-y-6">
             <p className="font-austin italic text-[#16253F] text-2xl lg:text-3xl leading-snug">
-              Elec Reid designs, installs, programmes, and documents every system inside a luxury home.
+              Quality work, clear communication, and a team flexible enough to handle the site in front of us.
             </p>
-            <p className="text-[#16253F]/70 text-lg leading-relaxed">
-              <em className="font-austin">Apple Home</em> at the centre. <em className="font-austin">KNX</em> as the backbone. Unifi networking, Inception security, premium audio visual on top. One team delivers all of it. Which means the data point, the dimmer module, the keypad, and the fixture are installed and commissioned by people who already know where the cable terminates.
+            <p className="text-[#16253F]/68 text-lg leading-relaxed">
+              Elec Reid works across residential, commercial, and industrial electrical projects in Melbourne. We handle power, lighting, switchboards, data, AV, automation, access control, CCTV, alarms, networking, maintenance, and the documentation that keeps a project moving.
             </p>
-            <p className="text-[#16253F]/70 text-lg leading-relaxed">
-              We work in Melbourne&rsquo;s premium residential market. Toorak, South Yarra, Brighton, Malvern, and the Mornington Peninsula. Architects, builders, and homeowners who want it done once. Done well. Never thought about again.
+            <p className="text-[#16253F]/68 text-lg leading-relaxed">
+              High-end residential work is still a core part of what we do. The same standard matters on commercial and industrial sites too: turn up, respond quickly, solve the problem properly, work neatly around other trades, and leave the client with a system they understand.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHAT WE DO ── photo on top, text below on cream, quiet "Explore" link */}
-      <section className="bg-white px-6 lg:px-16 py-20 lg:py-28">
-        <div className="max-w-screen-xl mx-auto">
-          <Eyebrow className="mb-6">What we do</Eyebrow>
-          <SectionHeading className="max-w-3xl mb-16">
-            One company. Three divisions.
-          </SectionHeading>
+      {/* WHAT WE OFFER: old homepage service rhythm, updated for SEO/AEO */}
+      <section className="bg-[#F8F4F1] px-6 lg:px-16 py-20 lg:py-28">
+        <div className="max-w-screen-xl mx-auto grid lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-24 items-start">
+          <div className="lg:sticky lg:top-28">
+            <Eyebrow className="mb-6">What we offer</Eyebrow>
+            <h2 className="font-austin text-[#16253F] text-[clamp(44px,6vw,88px)] leading-[0.95] tracking-tight mb-8">
+              One team.<br />
+              <em>Many sites.</em>
+            </h2>
+            <p className="text-[#16253F]/60 text-lg leading-relaxed max-w-sm">
+              The homepage keeps the calm premium feel, while making the service range clear for homeowners, builders, facility managers, commercial clients, and industrial operators.
+            </p>
+          </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 lg:gap-6">
-
-            {/* Residential */}
-            <Link href="/residential" className="group block">
-              <div className="relative overflow-hidden aspect-[4/5] mb-6">
-                <ImagePlaceholder
-                  id="IMG-H-B"
-                  caption="Residential - premium home interior, switch detail, dusk warm light."
-                  aspect="4/5"
-                  src="/images/haven-dsc05653.jpg"
-                  alt="Residential smart home Melbourne"
-                />
-              </div>
-              <p className="text-[9px] tracking-[0.3em] text-[#16253F]/40 uppercase mb-3">01</p>
-              <h3 className="text-[#16253F] text-2xl font-medium mb-3">Residential</h3>
-              <p className="text-[#16253F]/65 text-base leading-relaxed mb-5">
-                Premium homes across Melbourne. Apple Home as the interface. KNX as the backbone. Basalte, Ekinex, Control4, Lithoss, and Hager Silhouette on the wall. Unifi networking, Inception security, Sonos and Triad audio, JVC cinema. We design, install, programme, and document every layer.
-              </p>
-              <span className="inline-flex items-center text-[10px] tracking-[0.22em] text-[#16253F] uppercase font-medium border-b border-[#16253F]/30 group-hover:border-[#16253F] pb-1 transition-colors">
-                Explore Residential →
-              </span>
-            </Link>
-
-            {/* Commercial */}
-            <Link href="/commercial" className="group block">
-              <div className="relative overflow-hidden aspect-[4/5] mb-6">
-                <ImagePlaceholder
-                  id="IMG-H-C"
-                  caption="Commercial - office or hospitality interior, AV in context."
-                  aspect="4/5"
-                  src="/images/eclat-bureau.webp"
-                  alt="Commercial AV Melbourne"
-                />
-              </div>
-              <p className="text-[9px] tracking-[0.3em] text-[#16253F]/40 uppercase mb-3">02</p>
-              <h3 className="text-[#16253F] text-2xl font-medium mb-3">Commercial</h3>
-              <p className="text-[#16253F]/65 text-base leading-relaxed mb-5">
-                Hospitality, offices, retail, and event spaces across Melbourne. Boardroom AV. Video conferencing. Background music that holds its level through service. Networks that do not buckle when the room fills. Reliable on day one. Reliable on day one thousand.
-              </p>
-              <span className="inline-flex items-center text-[10px] tracking-[0.22em] text-[#16253F] uppercase font-medium border-b border-[#16253F]/30 group-hover:border-[#16253F] pb-1 transition-colors">
-                Explore Commercial →
-              </span>
-            </Link>
-
-            {/* Industrial */}
-            <Link href="/industrial" className="group block">
-              <div className="relative overflow-hidden aspect-[4/5] mb-6">
-                <ImagePlaceholder
-                  id="IMG-H-D"
-                  caption="Industrial - switchboard or warehouse install, on-the-tools."
-                  aspect="4/5"
-                  src="/images/industrial-warehouse.jpg"
-                  alt="Industrial electrical Melbourne"
-                />
-              </div>
-              <p className="text-[9px] tracking-[0.3em] text-[#16253F]/40 uppercase mb-3">03</p>
-              <h3 className="text-[#16253F] text-2xl font-medium mb-3">Industrial</h3>
-              <p className="text-[#16253F]/65 text-base leading-relaxed mb-5">
-                Factories, warehouses, and infrastructure across Victoria. Switchboard design, three-phase power, motor control, compliance testing, access control. Industrial clients including Sulzer, alongside builder partners such as ARK Industrial. Same documentation standard as a private residence. Issued on a factory floor.
-              </p>
-              <span className="inline-flex items-center text-[10px] tracking-[0.22em] text-[#16253F] uppercase font-medium border-b border-[#16253F]/30 group-hover:border-[#16253F] pb-1 transition-colors">
-                Explore Industrial →
-              </span>
-            </Link>
-
+          <div className="divide-y divide-[#16253F]/10">
+            {serviceItems.map((item) => (
+              <Link key={item.title} href={item.href} className="group grid sm:grid-cols-[88px_1fr] gap-5 py-8 lg:py-10">
+                <p className="font-austin italic text-[#16253F]/28 text-5xl leading-none">{item.number}</p>
+                <div>
+                  <h3 className="text-[#16253F] text-2xl lg:text-3xl font-medium tracking-tight mb-3 group-hover:text-[#0134E7] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-[#16253F]/65 text-base lg:text-lg leading-relaxed max-w-2xl">
+                    {item.text}
+                  </p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -183,7 +209,7 @@ export default function HomePage() {
               The architecture is the brief.
             </SectionHeading>
             <p className="text-[#16253F]/70 text-lg leading-relaxed mb-6">
-              The systems should match it. We design and install the electrical and smart home infrastructure that lets a luxury home work as well as it looks. Every layer specified. Every cable documented. Every system commissioned before handover.
+              The systems should match the site. We design and install electrical and smart technology infrastructure for homes, commercial spaces, and industrial facilities. Every layer specified. Every cable documented. Every system commissioned before handover.
             </p>
             <p className="text-[#16253F]/70 text-lg leading-relaxed mb-10">
               Architects and builders have told us our documentation is better than the architect&rsquo;s drawings. That is the standard we hold.
@@ -245,7 +271,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
             {[
               { title: 'Torquay Coastal Residence', location: 'Torquay', img: '/images/haven-dsc05570.jpg', slot: 'IMG-H-I', slug: 'torquay-coastal-residence' },
-              { title: 'Toorak', location: 'Toorak', img: '/images/haven-dsc05653.jpg', slot: 'IMG-H-J', slug: 'toorak' },
+              { title: 'Malvern East Residence', location: 'Malvern East', img: '/images/haven-dsc05653.jpg', slot: 'IMG-H-J', slug: 'malvern-east' },
               { title: 'St Kilda Residence', location: 'St Kilda', img: '/images/stkilda-1.jpg', slot: 'IMG-H-K', slug: 'stkilda-control4-residence' },
               { title: 'McKimm', location: 'Brighton', img: '/images/mckimm-5.jpg', slot: 'IMG-H-L', slug: 'mckimm-brighton' },
             ].map((p) => (
@@ -398,7 +424,7 @@ export default function HomePage() {
               },
               {
                 q: 'Do you do residential, commercial, and industrial?',
-                a: 'Yes. One company, three divisions. Most clients come to us for residential smart homes. We also fit out commercial venues with audio visual and networking, and run industrial electrical for warehouses and facilities. The same A grade licence covers all three.',
+                a: 'Yes. One company, three divisions. We work on residential, commercial, and industrial projects across Melbourne. That includes homes, offices, venues, warehouses, facilities, and operational sites. The same A grade licence, quality standard, and responsiveness carries across all three.',
               },
               {
                 q: 'What smart home platforms do you specialise in?',
@@ -406,7 +432,7 @@ export default function HomePage() {
               },
               {
                 q: 'How do I start a project?',
-                a: 'Use the Build Your Home form on this site or call +61 450 342 075. We start every project with a conversation about how you actually live and what you want the house to do. From there we\u2019ll scope the work, recommend systems, and quote properly.',
+                a: 'Call +61 450 342 075 or use the project form on this site. We start with the site, the scope, the timeline, and what needs to happen next. From there we scope the work, recommend systems, and prepare a proper proposal.',
               },
               {
                 q: 'Do you do small jobs or just full smart home installs?',
@@ -438,7 +464,7 @@ export default function HomePage() {
               Begin your project.
             </SectionHeading>
             <p className="text-white/55 text-lg max-w-xl leading-relaxed">
-              Tell us about your project. We come back to you with a clear plan. Not a generic price list. The best time to involve us is before the walls go up.
+              Tell us about your project. We come back to you with a clear plan. Not a generic price list. The best time to involve us is before the site gets busy.
             </p>
           </div>
           <div className="flex flex-col gap-3 flex-shrink-0">

@@ -111,12 +111,13 @@ const navLinks = [
   { label: 'Contact', href: '/contact' },
 ]
 
-export default function Nav() {
+export default function Nav({ initialTone = 'dark' }: { initialTone?: 'dark' | 'light' }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [solutionsOpen, setSolutionsOpen] = useState(false)
   const [brandsOpen, setBrandsOpen] = useState(false)
   const [mobileOpen, setMobileOpen] = useState<string | null>(null)
+  const lightInitial = initialTone === 'light'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -125,19 +126,23 @@ export default function Nav() {
   }, [])
 
   const linkClass = `text-[10px] tracking-[0.2em] uppercase transition-colors ${
-    scrolled ? 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]' : 'text-white/70 hover:text-white'
+    scrolled || lightInitial ? 'text-[#1A1A1A]/60 hover:text-[#1A1A1A]' : 'text-white/70 hover:text-white'
   }`
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled ? 'bg-white/95 backdrop-blur-sm border-b border-[#1A1A1A]/8' : 'bg-[#16253F]/60 backdrop-blur-sm'
+      scrolled
+        ? 'bg-white/95 backdrop-blur-sm border-b border-[#1A1A1A]/8'
+        : lightInitial
+          ? 'bg-[#F8F4F1]/80 backdrop-blur-sm border-b border-[#16253F]/5'
+          : 'bg-[#16253F]/60 backdrop-blur-sm'
     }`}>
       <div className="max-w-screen-xl mx-auto px-6 lg:px-16 flex items-center justify-between h-16 lg:h-20">
 
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image
-            src={scrolled ? '/logos/logo-text-color3.svg' : '/logos/logo-text-color4.svg'}
+            src={scrolled || lightInitial ? '/logos/logo-text-color3.svg' : '/logos/logo-text-color4.svg'}
             alt="Elec Reid"
             width={110}
             height={26}
@@ -280,9 +285,9 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button className="lg:hidden flex flex-col gap-[5px] p-1" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-          <span className={`block w-5 h-px transition-all duration-300 ${scrolled ? 'bg-[#1A1A1A]' : 'bg-white'} ${menuOpen ? 'rotate-45 translate-y-[6px]' : ''}`} />
-          <span className={`block w-5 h-px transition-all duration-300 ${scrolled ? 'bg-[#1A1A1A]' : 'bg-white'} ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-5 h-px transition-all duration-300 ${scrolled ? 'bg-[#1A1A1A]' : 'bg-white'} ${menuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`} />
+          <span className={`block w-5 h-px transition-all duration-300 ${scrolled || lightInitial ? 'bg-[#1A1A1A]' : 'bg-white'} ${menuOpen ? 'rotate-45 translate-y-[6px]' : ''}`} />
+          <span className={`block w-5 h-px transition-all duration-300 ${scrolled || lightInitial ? 'bg-[#1A1A1A]' : 'bg-white'} ${menuOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-5 h-px transition-all duration-300 ${scrolled || lightInitial ? 'bg-[#1A1A1A]' : 'bg-white'} ${menuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`} />
         </button>
       </div>
 

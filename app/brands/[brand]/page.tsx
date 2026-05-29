@@ -487,6 +487,121 @@ const brandData: Record<string, BrandData> = {
   },
 }
 
+const brandFaqs: Record<string, { question: string; answer: string }[]> = {
+  'apple-home': [
+    {
+      question: 'Who installs Apple Home systems in Melbourne?',
+      answer: 'Elec Reid designs and installs Apple Home systems for Melbourne homes, with KNX, Home Assistant, UniFi networking, security, lighting, blinds and audio planned as one system.',
+    },
+    {
+      question: 'Is Apple Home suitable for a premium new build?',
+      answer: 'Yes. Apple Home works well as the familiar control layer for a premium new build when the wiring, network, lighting control and automation logic are designed before construction starts.',
+    },
+    {
+      question: 'Does Apple Home still need professional design?',
+      answer: 'Yes. The app is simple, but the reliability comes from the system underneath. Elec Reid plans the cabling, network, scenes, gateways and handover documentation before the family moves in.',
+    },
+  ],
+  basalte: [
+    {
+      question: 'Who installs Basalte switches and touchscreens in Melbourne?',
+      answer: 'Elec Reid specifies, supplies and installs Basalte switches, touchscreens and Basalte Home systems for design-led Melbourne residences.',
+    },
+    {
+      question: 'Does Basalte work with KNX?',
+      answer: 'Yes. Basalte is a strong fit for KNX homes. Elec Reid uses Basalte as the visible control surface, with KNX carrying the reliable automation layer underneath.',
+    },
+    {
+      question: 'When should Basalte be chosen for a home?',
+      answer: 'Basalte suits projects where the wall interface matters. It is best specified early with the architect or interior designer so finishes, locations and functions are resolved before walls close.',
+    },
+  ],
+  'home-assistant': [
+    {
+      question: 'Who installs Home Assistant in Melbourne homes?',
+      answer: 'Elec Reid installs Home Assistant for Melbourne homes that need local control, custom dashboards, advanced automation and integration with KNX, Apple Home, UniFi, security, lighting and audio.',
+    },
+    {
+      question: 'Is Home Assistant reliable enough for a premium home?',
+      answer: 'Yes, when it is installed on dedicated hardware, backed up, documented and connected to properly wired systems. Elec Reid treats Home Assistant as infrastructure, not a hobby box.',
+    },
+    {
+      question: 'Can Home Assistant and Apple Home work together?',
+      answer: 'Yes. Home Assistant can run the deeper local automation logic while Apple Home gives the family a familiar iPhone, iPad, Apple Watch and Siri interface.',
+    },
+  ],
+  control4: [
+    {
+      question: 'Who installs Control4 systems in Melbourne?',
+      answer: 'Elec Reid installs and programs Control4 systems in Melbourne homes, including controllers, touchscreens, keypads, audio, intercom, security and lighting integration.',
+    },
+    {
+      question: 'When is Control4 the right smart home platform?',
+      answer: 'Control4 is a strong choice when a client wants dedicated touchscreens, a mature dealer-supported platform and a system that is professionally programmed and supported over time.',
+    },
+    {
+      question: 'Can Elec Reid upgrade an existing Control4 home?',
+      answer: 'Yes. Elec Reid can review an existing Control4 system, document what is installed, improve programming, update hardware where needed and bring networking, audio, security and lighting back into one plan.',
+    },
+  ],
+  knx: [
+    {
+      question: 'Who installs KNX smart home systems in Melbourne?',
+      answer: 'Elec Reid designs, installs and programs KNX lighting and automation systems for Melbourne homes, with Apple Home, Home Assistant, Basalte, Ekinex, blinds, climate and security integrated where needed.',
+    },
+    {
+      question: 'Why use KNX in a new home?',
+      answer: 'KNX is a decentralised open standard. It gives a new home a wired automation backbone that is not tied to one brand, one cloud platform or one controller.',
+    },
+    {
+      question: 'Can KNX work with Apple Home?',
+      answer: 'Yes. Elec Reid can connect KNX to Apple Home through the right gateway or local automation layer, giving the home wired reliability with a familiar Apple interface.',
+    },
+  ],
+  cbus: [
+    {
+      question: 'Who installs Clipsal C-Bus in Melbourne?',
+      answer: 'Elec Reid installs, programs and upgrades Clipsal C-Bus lighting control systems for Melbourne homes and commercial projects.',
+    },
+    {
+      question: 'Can an existing C-Bus system be modernised?',
+      answer: 'Yes. Elec Reid can review an existing C-Bus system, document the modules and scenes, improve programming and integrate it with modern platforms where the hardware supports it.',
+    },
+    {
+      question: 'Is C-Bus still useful in residential projects?',
+      answer: 'Yes, especially in homes that already have C-Bus installed or projects that need proven local lighting control. For open new-build decisions, Elec Reid will compare it against KNX and the wider control plan.',
+    },
+  ],
+  unifi: [
+    {
+      question: 'Who installs UniFi networks in Melbourne homes?',
+      answer: 'Elec Reid designs and installs UniFi networks for Melbourne homes, including wired access points, PoE switching, cameras, intercom, access control and documented handover.',
+    },
+    {
+      question: 'Why does a smart home need a designed network?',
+      answer: 'Every smart home depends on the network. Elec Reid plans access point locations, rack layout, PoE budget, VLANs and structured cabling before the walls close.',
+    },
+    {
+      question: 'Can UniFi cameras and intercom be part of the smart home?',
+      answer: 'Yes. UniFi Protect and UniFi Access can sit beside Apple Home, Home Assistant, Control4 and security systems so cameras, intercom and access control are considered in the same plan.',
+    },
+  ],
+  sonos: [
+    {
+      question: 'Who installs Sonos systems in Melbourne homes?',
+      answer: 'Elec Reid installs Sonos multi-room audio systems in Melbourne homes, including in-ceiling speakers, Sonos Amp, Arc Ultra, Era speakers and smart home integration.',
+    },
+    {
+      question: 'Should Sonos be wired in a new home?',
+      answer: 'Yes, wherever possible. A serious Sonos installation uses structured cabling, rack-mounted amplifiers and planned speaker locations rather than relying on portable speakers around the house.',
+    },
+    {
+      question: 'Can Sonos work with Apple Home or Control4?',
+      answer: 'Yes. Sonos can be integrated with Apple Home, Control4 and Home Assistant so audio becomes part of scenes, room control and everyday handover.',
+    },
+  ],
+}
+
 export async function generateStaticParams() {
   return Object.keys(brandData).map((brand) => ({ brand }))
 }
@@ -513,6 +628,7 @@ export default async function BrandPage({
   const { brand } = await params
   const data = brandData[brand]
   if (!data) notFound()
+  const faqs = brandFaqs[brand] ?? []
 
   const schema = {
     '@context': 'https://schema.org',
@@ -542,6 +658,19 @@ export default async function BrandPage({
     ],
   }
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  }
+
   return (
     <>
       <script
@@ -551,6 +680,10 @@ export default async function BrandPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Nav />
 
@@ -653,6 +786,35 @@ export default async function BrandPage({
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="bg-white py-20 md:py-28">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
+          <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-12 md:gap-20 items-start">
+            <div>
+              <p className="text-[10px] tracking-[0.2em] uppercase text-[#0134E7] mb-4">
+                Frequently asked
+              </p>
+              <h2 className="font-austin text-4xl md:text-5xl text-[#1A1A1A] leading-tight">
+                {data.h1}<br />
+                <em className="italic text-[#1A1A1A]/45">answers.</em>
+              </h2>
+            </div>
+            <div className="divide-y divide-[#1A1A1A]/10">
+              {faqs.map((faq) => (
+                <div key={faq.question} className="py-7 first:pt-0">
+                  <h3 className="font-austin text-2xl text-[#1A1A1A] leading-snug mb-3">
+                    {faq.question}
+                  </h3>
+                  <p className="text-[#1A1A1A]/60 text-base leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
