@@ -7,252 +7,169 @@ export const metadata: Metadata = {
   description: 'How Elec Reid collects, uses, and protects your personal information.',
 }
 
+const Bullet = ({ children }: { children: React.ReactNode }) => (
+  <li className="flex items-start gap-2">
+    <span className="mt-1 text-[#0134E7]">-</span>
+    <span>{children}</span>
+  </li>
+)
+
+const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
+  <div className="mb-12">
+    <h2
+      className="mb-4 text-2xl text-[#16253F] lg:text-3xl"
+      style={{ fontFamily: 'Austin, Georgia, serif', fontWeight: 400 }}
+    >
+      {title}
+    </h2>
+    {children}
+  </div>
+)
+
 export default function PrivacyPage() {
   return (
     <>
       <Nav />
 
-      {/* Hero */}
-      <section className="bg-[#16253F] px-6 lg:px-10 pt-36 pb-20">
-        <div className="max-w-3xl mx-auto">
-          <p className="font-grotesk text-[#0134E7] text-xs tracking-[0.25em] uppercase mb-6">
-            Legal
-          </p>
+      <section className="bg-[#16253F] px-6 pb-20 pt-36 lg:px-10">
+        <div className="mx-auto max-w-3xl">
+          <p className="mb-6 font-grotesk text-xs uppercase tracking-[0.25em] text-[#0134E7]">Legal</p>
           <h1
-            className="text-white text-5xl lg:text-6xl leading-tight mb-6"
+            className="mb-6 text-5xl leading-tight text-white lg:text-6xl"
             style={{ fontFamily: 'Austin, Georgia, serif', fontWeight: 400 }}
           >
             Privacy Policy
           </h1>
-          <p className="text-white/50 text-sm">Last updated: 3 May 2026</p>
+          <p className="text-sm text-white/50">Last updated: 29 May 2026</p>
         </div>
       </section>
 
-      {/* Draft notice */}
-      <div className="bg-red-50 border-l-4 border-red-500 px-6 lg:px-10 py-5">
-        <div className="max-w-3xl mx-auto">
-          <p className="text-red-700 font-semibold text-sm">
-            DRAFT - pending Joe Reid review before publishing. Do not rely on this document until the DRAFT marker is removed.
-          </p>
-        </div>
-      </div>
-
-      {/* Body */}
-      <section className="bg-[#F8F4F1] px-6 lg:px-10 py-20 lg:py-28">
-        <div className="max-w-3xl mx-auto">
-          <div className="prose prose-lg max-w-none text-[#16253F]">
-
-            {/* Who we are */}
-            <div className="mb-12">
-              <h2
-                className="text-2xl lg:text-3xl mb-4 text-[#16253F]"
-                style={{ fontFamily: 'Austin, Georgia, serif', fontWeight: 400 }}
-              >
-                Who we are
-              </h2>
-              <p className="text-[#16253F]/80 leading-relaxed">
-                Elec Reid Pty Ltd (ABN 82 675 975 649) is a Melbourne-based residential electrical and smart home company. We design, install, and program integrated home systems - from electrical fit-outs to Apple HomeKit, networking, AV, and security.
+      <section className="bg-[#F8F4F1] px-6 py-20 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-3xl">
+          <div className="max-w-none text-[#16253F]">
+            <Section title="Who we are">
+              <p className="leading-relaxed text-[#16253F]/80">
+                Elec Reid Pty Ltd (ABN 82 675 975 649) is a Melbourne electrical and smart technology company. We design, install, and support electrical, audio visual, automation, networking, lighting, security, and related systems for residential, commercial, and industrial projects.
               </p>
-              <p className="text-[#16253F]/80 leading-relaxed mt-4">
-                This policy explains how we handle the personal information you share with us when using our website or enquiry forms.
+              <p className="mt-4 leading-relaxed text-[#16253F]/80">
+                This policy explains how we handle the personal information you share with us when using our website, enquiry forms, chatbot, email, phone, or other project communication channels.
               </p>
-            </div>
+            </Section>
 
-            {/* What we collect */}
-            <div className="mb-12">
-              <h2
-                className="text-2xl lg:text-3xl mb-4 text-[#16253F]"
-                style={{ fontFamily: 'Austin, Georgia, serif', fontWeight: 400 }}
-              >
-                What we collect
-              </h2>
-              <p className="text-[#16253F]/80 leading-relaxed mb-4">
-                When you complete our design brief form, we collect:
+            <Section title="What we collect">
+              <p className="mb-4 leading-relaxed text-[#16253F]/80">
+                Depending on how you contact us, we may collect:
               </p>
               <ul className="space-y-2 text-[#16253F]/80">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#0134E7] mt-1">-</span>
-                  <span>Name, email address, and phone number</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#0134E7] mt-1">-</span>
-                  <span>Project address</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#0134E7] mt-1">-</span>
-                  <span>Project preferences - room layouts, systems of interest, budget range, timeframe</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#0134E7] mt-1">-</span>
-                  <span>Uploaded files (floor plans, site photos)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#0134E7] mt-1">-</span>
-                  <span>Collaborator details you choose to share (architect, builder, interior designer)</span>
-                </li>
+                <Bullet>Name, email address, phone number, and business or project contact details.</Bullet>
+                <Bullet>Project address, site suburb, property details, timing, scope, budget range, and project preferences.</Bullet>
+                <Bullet>Uploaded files such as floor plans, site photos, briefs, schedules, or related documents.</Bullet>
+                <Bullet>Collaborator details you choose to share, such as architect, builder, interior designer, or project manager details.</Bullet>
+                <Bullet>Website enquiry form submissions and saved draft details.</Bullet>
+                <Bullet>Chatbot conversations, including the messages you send, the assistant replies, page URL, referrer, browser user agent, and a browser conversation ID.</Bullet>
+                <Bullet>Technical information needed to run the website, such as cookies, local storage, session storage, device information, and basic server logs.</Bullet>
               </ul>
-              <p className="text-[#16253F]/80 leading-relaxed mt-4">
-                We don&apos;t collect payment information through this site. We don&apos;t run analytics or tracking pixels. We don&apos;t use any third-party advertising tools.
+              <p className="mt-4 leading-relaxed text-[#16253F]/80">
+                We do not collect payment card details through this website.
               </p>
-            </div>
+            </Section>
 
-            {/* Why we collect it */}
-            <div className="mb-12">
-              <h2
-                className="text-2xl lg:text-3xl mb-4 text-[#16253F]"
-                style={{ fontFamily: 'Austin, Georgia, serif', fontWeight: 400 }}
-              >
-                Why we collect it
-              </h2>
-              <p className="text-[#16253F]/80 leading-relaxed">
-                We use your information to prepare a tailored proposal for your project, to schedule and conduct your discovery call, and to deliver the work once we&apos;re engaged. That&apos;s it.
+            <Section title="Why we collect it">
+              <p className="leading-relaxed text-[#16253F]/80">
+                We use your information to understand your enquiry, prepare a tailored proposal or plan, schedule site visits or calls, coordinate with nominated project collaborators, deliver work once engaged, and maintain business records.
               </p>
-              <p className="text-[#16253F]/80 leading-relaxed mt-4">
-                If you opt in to marketing updates on the form, we may occasionally send you notes on Elec Reid projects, articles, or new capabilities. You can withdraw that consent at any time by emailing joe@elecreid.com.
+              <p className="mt-4 leading-relaxed text-[#16253F]/80">
+                We use chatbot conversations to answer website questions, route enquiries to the right next step, improve the website assistant, and help our team follow up properly where appropriate.
               </p>
-            </div>
+              <p className="mt-4 leading-relaxed text-[#16253F]/80">
+                If you opt in to updates, we may occasionally send Elec Reid project notes, articles, or capability updates. You can opt out at any time by emailing joe@elecreid.com.
+              </p>
+            </Section>
 
-            {/* Who we share it with */}
-            <div className="mb-12">
-              <h2
-                className="text-2xl lg:text-3xl mb-4 text-[#16253F]"
-                style={{ fontFamily: 'Austin, Georgia, serif', fontWeight: 400 }}
-              >
-                Who we share it with
-              </h2>
-              <p className="text-[#16253F]/80 leading-relaxed">
-                Your information is only shared with people directly involved in delivering your project:
+            <Section title="Cookies and website tools">
+              <p className="leading-relaxed text-[#16253F]/80">
+                The website may use cookies, local storage, and session storage to remember that you accepted the privacy notice, keep the chatbot conversation ID, manage whether the assistant is open, save form progress, and keep the site working properly.
               </p>
-              <ul className="space-y-2 mt-4 text-[#16253F]/80">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#0134E7] mt-1">-</span>
-                  <span>Collaborators you nominated on the form (architect, builder, designer), solely to coordinate project delivery</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#0134E7] mt-1">-</span>
-                  <span>Our installation team, for the purposes of scheduling and completing the work</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#0134E7] mt-1">-</span>
-                  <span>Our accounting team, for invoicing and payment records</span>
-                </li>
+              <p className="mt-4 leading-relaxed text-[#16253F]/80">
+                We may also use website tools and server logs to understand enquiries and improve the website. We do not sell your browsing data.
+              </p>
+            </Section>
+
+            <Section title="Chatbot conversations">
+              <p className="leading-relaxed text-[#16253F]/80">
+                The website assistant is designed to help visitors understand Elec Reid services and choose the right next step. Conversations may be saved so our team can review enquiries, improve responses, and follow up where appropriate.
+              </p>
+              <p className="mt-4 leading-relaxed text-[#16253F]/80">
+                Please do not use the chatbot for urgent electrical safety issues. If something is unsafe, sparking, burning, exposed, wet, or otherwise urgent, call Joe directly on 0450 342 075 or contact emergency services where required.
+              </p>
+            </Section>
+
+            <Section title="Who we share it with">
+              <p className="mb-4 leading-relaxed text-[#16253F]/80">
+                We only share information where it helps us respond to your enquiry, operate the website, or deliver the project. This may include:
+              </p>
+              <ul className="space-y-2 text-[#16253F]/80">
+                <Bullet>Elec Reid team members and contractors involved in scheduling, planning, delivery, invoicing, or administration.</Bullet>
+                <Bullet>Collaborators you nominate, such as architects, builders, designers, or project managers.</Bullet>
+                <Bullet>Service providers we use for website hosting, email, Google Workspace, spreadsheets, file storage, chatbot processing, automation, and business systems.</Bullet>
+                <Bullet>Professional advisers, insurers, regulators, or authorities where required by law or necessary to protect our rights.</Bullet>
               </ul>
-              <p className="text-[#16253F]/80 leading-relaxed mt-4">
-                We never sell your data. We never share it with marketing partners. We never send it outside Australia.
+              <p className="mt-4 leading-relaxed text-[#16253F]/80">
+                We do not sell your personal information. Some technology providers may process or store data in Australia or overseas, depending on their infrastructure.
               </p>
-            </div>
+            </Section>
 
-            {/* How long we keep it */}
-            <div className="mb-12">
-              <h2
-                className="text-2xl lg:text-3xl mb-4 text-[#16253F]"
-                style={{ fontFamily: 'Austin, Georgia, serif', fontWeight: 400 }}
-              >
-                How long we keep it
-              </h2>
-              <p className="text-[#16253F]/80 leading-relaxed">
-                We keep your project records for the duration of the work plus seven years. That retention period is required by the ATO for accounting and tax records.
+            <Section title="How long we keep it">
+              <p className="leading-relaxed text-[#16253F]/80">
+                We keep project, proposal, invoice, and accounting records for as long as required for business, tax, insurance, warranty, legal, and compliance purposes. Some records may need to be kept for seven years or longer.
               </p>
-              <p className="text-[#16253F]/80 leading-relaxed mt-4">
-                If you submitted a form but no project proceeded, your enquiry details are retained for up to seven years for legitimate business record-keeping, unless you request deletion earlier. Form drafts auto-expire after 30 days.
+              <p className="mt-4 leading-relaxed text-[#16253F]/80">
+                Draft form data and chatbot records may be kept for a shorter period where they are no longer needed. You can ask us to delete information, subject to any legal or business record-keeping obligations.
               </p>
-            </div>
+            </Section>
 
-            {/* Your rights */}
-            <div className="mb-12">
-              <h2
-                className="text-2xl lg:text-3xl mb-4 text-[#16253F]"
-                style={{ fontFamily: 'Austin, Georgia, serif', fontWeight: 400 }}
-              >
-                Your rights
-              </h2>
-              <p className="text-[#16253F]/80 leading-relaxed">
-                Under the Privacy Act 1988 (Cth) and the Australian Privacy Principles, you have the right to:
+            <Section title="Your rights">
+              <p className="mb-4 leading-relaxed text-[#16253F]/80">
+                Under the Privacy Act 1988 (Cth) and the Australian Privacy Principles, you can ask us to:
               </p>
-              <ul className="space-y-2 mt-4 text-[#16253F]/80">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#0134E7] mt-1">-</span>
-                  <span>Request a copy of the personal information we hold about you</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#0134E7] mt-1">-</span>
-                  <span>Ask us to correct inaccurate information</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#0134E7] mt-1">-</span>
-                  <span>Request deletion of your information (subject to our legal retention obligations)</span>
-                </li>
+              <ul className="space-y-2 text-[#16253F]/80">
+                <Bullet>Provide access to personal information we hold about you.</Bullet>
+                <Bullet>Correct inaccurate or outdated information.</Bullet>
+                <Bullet>Delete information where we no longer need it and where we are not legally required to keep it.</Bullet>
+                <Bullet>Explain how we collected, used, or shared your information.</Bullet>
               </ul>
-              <p className="text-[#16253F]/80 leading-relaxed mt-4">
-                To exercise any of these rights, email{' '}
-                <a href="mailto:joe@elecreid.com" className="text-[#0134E7] hover:underline">
+              <p className="mt-4 leading-relaxed text-[#16253F]/80">
+                To make a privacy request, email{' '}
+                <a href="mailto:joe@elecreid.com" className="text-[#0134E7] underline-offset-4 hover:underline">
                   joe@elecreid.com
                 </a>
-                {' '}or use the link below.
+                .
               </p>
-              <div className="mt-6">
-                <a
-                  href="/delete-my-data"
-                  className="inline-block bg-[#0134E7] text-white text-sm font-semibold px-6 py-3 rounded-sm hover:bg-[#012ab8] transition-colors"
-                >
-                  Request data deletion
-                </a>
-              </div>
-            </div>
+            </Section>
 
-            {/* Privacy contact */}
-            <div className="mb-12">
-              <h2
-                className="text-2xl lg:text-3xl mb-4 text-[#16253F]"
-                style={{ fontFamily: 'Austin, Georgia, serif', fontWeight: 400 }}
-              >
-                Privacy contact
-              </h2>
-              <p className="text-[#16253F]/80 leading-relaxed">
-                Questions about this policy or how we handle your data:
-              </p>
-              <p className="text-[#16253F]/80 leading-relaxed mt-3">
-                Joe Reid, Director<br />
-                <a href="mailto:joe@elecreid.com" className="text-[#0134E7] hover:underline">
+            <Section title="Privacy contact">
+              <p className="leading-relaxed text-[#16253F]/80">Questions about this policy or how we handle your data:</p>
+              <p className="mt-3 leading-relaxed text-[#16253F]/80">
+                Joe Reid, Director
+                <br />
+                <a href="mailto:joe@elecreid.com" className="text-[#0134E7] underline-offset-4 hover:underline">
                   joe@elecreid.com
                 </a>
                 <br />
                 0450 342 075
               </p>
-            </div>
+            </Section>
 
-            {/* Cookies */}
-            <div className="mb-12">
-              <h2
-                className="text-2xl lg:text-3xl mb-4 text-[#16253F]"
-                style={{ fontFamily: 'Austin, Georgia, serif', fontWeight: 400 }}
-              >
-                Cookies
-              </h2>
-              <p className="text-[#16253F]/80 leading-relaxed">
-                We don&apos;t use tracking cookies. There are no analytics, no ad pixels, no third-party scripts that follow you around the web.
+            <Section title="Updates to this policy">
+              <p className="leading-relaxed text-[#16253F]/80">
+                If this policy changes, the date at the top of this page will be updated. We may not notify you of minor wording changes, but we will update this page if we materially change how we handle personal information.
               </p>
-            </div>
-
-            {/* Updates */}
-            <div className="mb-12">
-              <h2
-                className="text-2xl lg:text-3xl mb-4 text-[#16253F]"
-                style={{ fontFamily: 'Austin, Georgia, serif', fontWeight: 400 }}
-              >
-                Updates to this policy
-              </h2>
-              <p className="text-[#16253F]/80 leading-relaxed">
-                If this policy changes, the date at the top of this page will be updated. We won&apos;t notify you of minor wording changes, but we will notify you of any material changes to how we use your data.
-              </p>
-            </div>
-
+            </Section>
           </div>
 
-          {/* Footer tagline */}
-          <div className="border-t border-[#16253F]/10 pt-10 mt-10 text-center">
+          <div className="mt-10 border-t border-[#16253F]/10 pt-10 text-center">
             <p
-              className="text-[#16253F]/40 text-lg"
+              className="text-lg text-[#16253F]/40"
               style={{ fontFamily: 'Austin, Georgia, serif', fontStyle: 'italic' }}
             >
               Designed for you. Done right. Always.

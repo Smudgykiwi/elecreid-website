@@ -166,7 +166,14 @@ export default function WebsiteAssistant() {
             )}
           </div>
 
-          <form onSubmit={submitMessage} className="flex gap-2 border-t border-white/10 bg-[#16253F] p-3">
+          <div className="border-t border-white/10 bg-[#16253F] px-4 pt-3 text-[11px] leading-relaxed text-[#F8F4F1]/55">
+            Conversations may be saved so our team can follow up properly. Please do not share urgent safety issues here. Call Joe directly for anything electrical or unsafe.{' '}
+            <a href="/privacy" className="text-[#F8F4F1] underline-offset-4 hover:underline">
+              Privacy Policy
+            </a>
+          </div>
+
+          <form onSubmit={submitMessage} className="flex gap-2 bg-[#16253F] p-3">
             <input
               value={input}
               onChange={(event) => setInput(event.target.value)}

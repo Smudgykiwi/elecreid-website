@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import PrivacyNotice from '@/components/PrivacyNotice'
 import WebsiteAssistant from '@/components/WebsiteAssistant'
 import './globals.css'
 
@@ -207,6 +208,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <PrivacyNotice />
         <WebsiteAssistant />
       </body>
     </html>
