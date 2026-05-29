@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
+import WebsiteAssistant from '@/components/WebsiteAssistant'
 import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Elec Reid | Smart Home & Electrical · Melbourne',
-  description: 'Melbourne\'s only residential electrical company built around Apple HomeKit. Design, install, program, handover one team, one outcome.',
+  description: 'Melbourne electrical contractor for premium smart homes, commercial technology, and industrial electrical. Design, install, program, handover one team, one outcome.',
   keywords: 'smart home Melbourne, Apple HomeKit installer Melbourne, residential electrician Melbourne, home automation Melbourne, Unifi networking Melbourne',
   openGraph: {
     title: 'Elec Reid | Smart Home & Electrical · Melbourne',
@@ -167,7 +168,7 @@ const jsonLd = {
           name: 'How do I start a project with Elec Reid?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Use the Build Your Home form on the website or call +61 450 342 075. Every project starts with a conversation about how you live and what you want the house to do, then we scope the work, recommend systems, and quote.',
+            text: 'Use the Build Your Home form on the website or call +61 450 342 075. Every project starts with a conversation about how you live and what you want the house to do, then we scope the work, recommend systems, and prepare a proposal.',
           },
         },
         {
@@ -206,6 +207,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <WebsiteAssistant />
       </body>
     </html>
   )
