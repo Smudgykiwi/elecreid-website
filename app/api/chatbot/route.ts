@@ -202,6 +202,8 @@ export async function POST(request: NextRequest) {
 
   const messagesWithReply: ChatMessage[] = [...messages, { role: 'assistant', content: reply }];
 
+  let logged = false;
+
   try {
     await logChatInteraction({
       conversationId,
@@ -213,9 +215,10 @@ export async function POST(request: NextRequest) {
       userAgent,
       referrer,
     });
+    logged = true;
   } catch (err) {
     console.error('[chatbot] Conversation logging failed:', err);
   }
 
-  return NextResponse.json({ reply, mode, conversationId });
+  return NextResponse.json({ reply, mode, conversationId, logged });
 }
