@@ -127,8 +127,9 @@ const stageFromText = (text: string) => {
 const typeFromText = (text: string) => {
   const starterPrompt = includesAny(text, ['building or renovating', 'new build or renovation', 'new build, renovation']);
   if (!starterPrompt && /\b(new build|new home|custom home|knockdown|knock down|architectural home)\b/.test(text)) return 'new build';
+  if (!starterPrompt && /^new$/.test(text)) return 'new build';
   if (!starterPrompt && /\b(renovation|renovating|reno|extension|alteration)\b/.test(text)) return 'renovation';
-  if (/\b(existing home|existing house|upgrade|retrofit|modernise|modernize|replace old|older system)\b/.test(text)) return 'existing-home upgrade';
+  if (/\b(existing home|existing house|upgrade|retrofit|modernise|modernize|replace old|older system|already built|built|current home)\b/.test(text)) return 'existing-home upgrade';
   if (/\b(commercial|office|shop|retail|fitout|fit out|hospitality|warehouse)\b/.test(text)) return 'commercial';
   if (/\b(industrial|factory|plant|workshop|facility|manufacturing)\b/.test(text)) return 'industrial';
   if (/\b(maintenance|callout|repair|fault|tripping|no power)\b/.test(text)) return 'electrical service';
@@ -176,7 +177,7 @@ const extractKnownState = (messages: ChatMessage[]): ConciergeState => {
     projectType: users.map(typeFromText).find(Boolean) || null,
     stage: users.map(stageFromText).find(Boolean) || null,
     segment: users.map(segmentFromText).find(Boolean) || null,
-    size: /\b\d+\s*(beds?|bedrooms?|levels?|storeys?|stories?|floors?|zones?|rooms?|sqm|m2|baths?|bathrooms?|cars?|garages?|offices?|warehouses?|tenancies?)\b/.test(text) || includesAny(text, ['single storey', 'double storey', 'three storey', 'whole home', 'townhouse', 'apartment', 'large home']),
+    size: /\b(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s*(beds?|bedrooms?|levels?|storeys?|stories?|floors?|zones?|rooms?|sqm|m2|baths?|bathrooms?|cars?|garages?|offices?|warehouses?|tenancies?)\b/.test(text) || includesAny(text, ['single storey', 'double storey', 'three storey', 'four storey', 'whole home', 'townhouse', 'apartment', 'large home']),
     priorities: unique(priorityMap.filter(([, terms]) => includesAny(text, terms)).map(([priority]) => priority)),
     systems: unique(systemMap.filter(([, terms]) => includesAny(text, terms)).map(([system]) => system)),
     locationOrTimeline: includesAny(text, ['toorak', 'south yarra', 'brighton', 'malvern', 'glen iris', 'glen waverley', 'st kilda', 'torquay', 'melbourne', 'mornington', 'peninsula', 'next month', 'this month', 'this year', 'asap', 'soon', 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december', '2026', '2027']),
@@ -194,6 +195,16 @@ const hasSafetyRisk = (text: string) =>
 
 const safetyReply = () =>
   'That may be unsafe. If there is smoke, fire, electric shock, exposed live wiring or immediate danger, call emergency services and do not touch the affected equipment.\n\nFor urgent electrical help, call Elec Reid on 0450 342 075. Is everyone safe right now?';
+
+const offTopicReply = (latest: string) => {
+  if (includesAny(latest, ['what model are you', 'are you chatgpt', 'are you claude', 'what ai'])) {
+    return 'I am the Elec Reid website assistant. I can explain our services, compare smart home systems, help shape an enquiry, and point you to the right next step.\n\nWhat are you trying to work out?';
+  }
+  if (includesAny(latest, ['date', 'attractive', 'nice person', 'owner'])) {
+    return 'I cannot help with personal questions about Joe or the team. I can help with Elec Reid projects, smart home systems, electrical work, pricing ranges and next steps.\n\nWhat are you planning?';
+  }
+  return null;
+};
 
 const recommendationSentence = (state: ConciergeState) => {
   const priorities = state.priorities;
@@ -247,12 +258,45 @@ const platformReply = (state: ConciergeState) => {
 };
 
 const nextDiscoveryReply = (state: ConciergeState, latest: string) => {
+  if (includesAny(latest, ['this makes no sense', 'doesnt make sense', "doesn't make sense", 'you already asked', 'already told you', 'not smart', 'stupid', 'dumb'])) {
+    if (!state.projectType) {
+      return 'Fair call. I lost the thread there. To give useful advice, I need the project type first.\n\nIs this a new build, renovation, existing-home upgrade, commercial site or industrial site?';
+    }
+    if (!state.stage && state.projectType !== 'existing-home upgrade' && state.projectType !== 'commercial' && state.projectType !== 'industrial') {
+      return 'Fair call. I lost the thread there. Let us reset to the useful next question.\n\nWhat stage is the project at: planning, framing, prewire or fit-off?';
+    }
+    if (!state.size) {
+      const sizeQuestion = state.projectType === 'existing-home upgrade'
+        ? 'which areas you want upgraded first, and roughly how big the home is?'
+        : 'roughly how big the project is, and which rooms or zones matter most?';
+      return `Fair call. I jumped ahead. ${recommendationSentence(state)}\n\nCan you tell me ${sizeQuestion}`;
+    }
+    return `${recommendationSentence(state)}\n\nThe useful next step is a plan review or site visit. If you have plans, send them through elecreid.com/build, or leave your best contact details and our team can follow up.`;
+  }
+
+  if (/^(ok|okay|yep|yes|yeah|sure|cool)$/.test(latest)) {
+    if (!state.projectType) {
+      return 'Good. To make the advice useful, we need to anchor it to the type of project.\n\nIs this a new build, renovation, existing-home upgrade, commercial site or industrial site?';
+    }
+    if (!state.stage && state.projectType !== 'existing-home upgrade' && state.projectType !== 'commercial' && state.projectType !== 'industrial') {
+      return 'Good. The next useful detail is timing, because it changes what can still be designed cleanly.\n\nWhat stage is the project at: planning, framing, prewire or fit-off?';
+    }
+  }
+
   if (includesAny(latest, ['thanks', 'thank you', 'perfect', 'great', 'that helps'])) {
     return 'Glad that helped. If you send through plans or contact details, our team can turn this into a clearer next step.';
   }
 
-  if (!state.stage && !state.askedStage && !state.projectType?.includes('commercial') && state.projectType !== 'industrial') {
-    return `Start with design before wiring. ${recommendationSentence(state)}\n\nWhat stage are you at: planning, framing, prewire, fit-off, or already built?`;
+  if (!state.projectType && state.askedType) {
+    return 'I need to anchor the advice to the project type before narrowing the system.\n\nIs this a new build, renovation, existing-home upgrade, commercial site or industrial site?';
+  }
+
+  if (!state.stage && state.askedStage && state.projectType !== 'existing-home upgrade' && state.projectType !== 'commercial' && state.projectType !== 'industrial') {
+    return 'The stage matters because it changes what can still be designed cleanly.\n\nAre you at planning, framing, prewire or fit-off?';
+  }
+
+  if (!state.stage && !state.askedStage && !state.projectType?.includes('commercial') && state.projectType !== 'industrial' && state.projectType !== 'existing-home upgrade') {
+    return `Start with design before wiring. ${recommendationSentence(state)}\n\nWhat stage are you at: planning, framing, prewire, or fit-off?`;
   }
 
   if (!state.projectType && !state.askedType) {
@@ -261,7 +305,12 @@ const nextDiscoveryReply = (state: ConciergeState, latest: string) => {
   }
 
   if (!state.size && !state.askedSize) {
-    return `Good. ${recommendationSentence(state)}\n\nRoughly how big is it: levels, bedrooms, rooms, zones or site areas?`;
+    const sizeQuestion = state.projectType === 'commercial' || state.projectType === 'industrial'
+      ? 'Roughly how big is the site, and what areas or equipment are involved?'
+      : state.projectType === 'existing-home upgrade'
+        ? 'Roughly how big is the home, and which areas do you want upgraded first?'
+        : 'Roughly how big is it: levels, bedrooms, rooms, zones or site areas?';
+    return `Good. ${recommendationSentence(state)}\n\n${sizeQuestion}`;
   }
 
   if (state.priorities.length === 0 && !state.askedPriorities) {
@@ -286,6 +335,8 @@ export const fallbackAssistantReply = (messagesOrMessage: ChatMessage[] | string
 
   if (!latest) return 'Tell me what you are working on, and we can guide you to the right next step.';
   if (hasSafetyRisk(latest)) return safetyReply();
+  const offTopic = offTopicReply(latest);
+  if (offTopic) return offTopic;
   if (includesAny(latest, ['cost', 'price', 'pricing', 'budget', 'how much'])) return costReply(state);
   if (includesAny(latest, ['apple', 'knx', 'control4', 'home assistant', 'basalte', 'ekinex', 'c-bus', 'cbus', 'dynalite', 'lutron'])) return platformReply(state);
 
