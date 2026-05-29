@@ -15,7 +15,7 @@ const starterPrompts = [
 ];
 
 const openingMessage =
-  'Welcome to Elec Reid. We design and install premium smart homes across Melbourne, with Apple Home at the core and everything underneath built to disappear into the architecture.\n\nTell me about your project, or ask anything. New build, renovation, or bringing an older home up to date, we can map the right direction.';
+  "Hi, I am Ed, Elec Reid's website concierge. We design and install premium smart homes across Melbourne, with Apple Home at the core and everything underneath built to disappear into the architecture.\n\nTell me about your project, or ask anything. New build, renovation, or bringing an older home up to date, I can help map the right direction.";
 
 const PRIVACY_ACCEPTED_KEY = 'elec-reid-assistant-privacy-accepted';
 
@@ -111,7 +111,7 @@ export default function WebsiteAssistant() {
     <div className="fixed bottom-5 right-5 z-[80] flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
       {isOpen && (
         <section
-          aria-label="Elec Reid website assistant"
+          aria-label="Ed, Elec Reid website assistant"
           className="assistant-panel flex h-[620px] max-h-[calc(100vh-7rem)] w-[calc(100vw-2.5rem)] max-w-[390px] flex-col overflow-hidden rounded-[28px] border border-white/25 bg-[#16253F] text-[#F8F4F1] shadow-2xl shadow-[#16253F]/30"
         >
           <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
@@ -121,7 +121,7 @@ export default function WebsiteAssistant() {
               </div>
               <div>
                 <p className="text-[11px] uppercase tracking-[0.28em] text-[#F8F4F1]/55">Elec Reid</p>
-                <p className="font-austin text-xl leading-none">Website assistant</p>
+                <p className="font-austin text-xl leading-none">Ed</p>
               </div>
             </div>
             <button
@@ -221,7 +221,7 @@ export default function WebsiteAssistant() {
         type="button"
         onClick={() => setIsOpen((current) => !current)}
         className="assistant-blob group relative flex h-16 w-16 items-center justify-center rounded-full bg-[#16253F] p-3 shadow-2xl shadow-[#16253F]/30 ring-1 ring-white/30 transition hover:-translate-y-0.5 hover:bg-[#0134E7]"
-        aria-label={isOpen ? 'Close Elec Reid assistant' : 'Open Elec Reid assistant'}
+        aria-label={isOpen ? 'Close Ed' : 'Open Ed'}
       >
         <span className="assistant-blob-glow absolute inset-0 rounded-full bg-[#0134E7]/20 blur-lg transition group-hover:bg-[#0134E7]/35" />
         <img src="/logos/logo-icon-color1.svg" alt="" className="relative h-full w-full brightness-0 invert" />

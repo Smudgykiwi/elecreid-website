@@ -255,8 +255,53 @@ async function getOpenAiReply(messages: ChatMessage[]): Promise<string | null> {
   return data?.choices?.[0]?.message?.content?.trim() || null;
 }
 
-async function getAiReply(messages: ChatMessage[]): Promise<string | null> {
-  return (await getAnthropicReply(messages)) || (await getOpenAiReply(messages));
+async function getHermesEdReply(messages: ChatMessage[], conversationId: string): Promise<string | null> {
+  const apiUrl = process.env.HERMES_ED_API_URL;
+  if (!apiUrl) return null;
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 25000);
+
+  try {
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+    };
+    const apiKey = process.env.HERMES_ED_API_KEY;
+    if (apiKey) headers.Authorization = `Bearer ${apiKey}`;
+    if (conversationId) headers['X-Hermes-Session-Id'] = `ed-${conversationId}`;
+
+    const baseUrl = apiUrl.replace(/\/$/, '').replace(/\/v1$/, '');
+    const response = await fetch(`${baseUrl}/v1/chat/completions`, {
+      method: 'POST',
+      headers,
+      signal: controller.signal,
+      body: JSON.stringify({
+        model: 'hermes-agent',
+        temperature: 0.35,
+        max_tokens: 420,
+        messages,
+      }),
+    });
+
+    if (!response.ok) return null;
+    const data = await response.json();
+    return data?.choices?.[0]?.message?.content?.trim() || null;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+async function getAiReply(messages: ChatMessage[], conversationId: string): Promise<{ reply: string; mode: string } | null> {
+  const edReply = await getHermesEdReply(messages, conversationId);
+  if (edReply) return { reply: edReply, mode: 'ed' };
+
+  const anthropicReply = await getAnthropicReply(messages);
+  if (anthropicReply) return { reply: anthropicReply, mode: 'ai' };
+
+  const openAiReply = await getOpenAiReply(messages);
+  if (openAiReply) return { reply: openAiReply, mode: 'ai' };
+
+  return null;
 }
 
 export async function POST(request: NextRequest) {
@@ -276,10 +321,10 @@ export async function POST(request: NextRequest) {
   let mode = 'fallback';
 
   try {
-    const aiReply = await getAiReply(messages);
-    if (aiReply) {
-      reply = aiReply;
-      mode = 'ai';
+    const aiResult = await getAiReply(messages, conversationId);
+    if (aiResult) {
+      reply = aiResult.reply;
+      mode = aiResult.mode;
     }
   } catch (err) {
     console.error('[chatbot] AI reply failed:', err);
