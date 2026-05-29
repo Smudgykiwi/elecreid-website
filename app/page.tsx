@@ -178,7 +178,7 @@ export default function HomePage() {
               <em>Many sites.</em>
             </h2>
             <p className="text-[#16253F]/60 text-lg leading-relaxed max-w-sm">
-              The homepage keeps the calm premium feel, while making the service range clear for homeowners, builders, facility managers, commercial clients, and industrial operators.
+              Power, lighting, AV, automation, security, and maintenance. Delivered by one accountable team.
             </p>
           </div>
 
