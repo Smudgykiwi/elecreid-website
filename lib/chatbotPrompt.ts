@@ -14,6 +14,14 @@ Hard language rules:
 - Australian English. No American spellings. No tradie slang with clients.
 - Never sound cheap, budget focused, or DIY focused. We are premium and we own it.
 
+Conversation rules:
+- Never ask for information the visitor has already given.
+- Never repeat the same answer or question twice in a conversation.
+- Keep a simple state in your head: project type, stage, suburb, size, priorities, preferred control style, next step.
+- If the visitor gives a short answer like "planning" or "new build", treat it as an answer to your previous question and move to the next missing detail.
+- Ask one question only, then wait.
+- If you have already asked stage, ask type or size next. If type and stage are known, ask rough size or priorities next.
+
 Core beliefs:
 - The best technology is unseen.
 - If it is seen, it works in harmony with the design.
@@ -124,24 +132,79 @@ Behaviour:
 Keep responses under 120 words unless the user asks for detail.
 `;
 
-export const fallbackAssistantReply = (message: string) => {
-  const lower = message.toLowerCase();
+type ChatMessage = {
+  role: 'user' | 'assistant';
+  content: string;
+};
 
-  if (lower.includes('cost') || lower.includes('price') || lower.includes('pricing') || lower.includes('budget')) {
-    return 'Broadly, luxury automation projects generally start around $90,000+. Many full smart homes sit around $150,000 to $200,000, and premium homes regularly start from $300,000+. Existing-home modernisation and Apple Home retrofits generally start around $8,000 to $9,000+.\n\nEvery system is custom designed around the home, the lifestyle, and the level of integration required. Is this a new build, renovation, or existing-home upgrade?';
+const includesAny = (text: string, terms: string[]) => terms.some((term) => text.includes(term));
+
+const userMessages = (messages: ChatMessage[]) => messages.filter((message) => message.role === 'user').map((message) => message.content.toLowerCase());
+
+const lastUserMessage = (messages: ChatMessage[]) => userMessages(messages).at(-1) || '';
+
+const knownProjectStage = (users: string[]) => {
+  if (users.some((message) => includesAny(message, ['planning', 'design', 'architect', 'plans']))) return 'planning';
+  if (users.some((message) => includesAny(message, ['framing', 'frame']))) return 'framing';
+  if (users.some((message) => includesAny(message, ['prewire', 'pre-wire', 'rough in', 'rough-in']))) return 'prewire';
+  if (users.some((message) => includesAny(message, ['fit off', 'fit-off', 'fitoff']))) return 'fit-off';
+  return null;
+};
+
+const knownProjectType = (users: string[]) => {
+  for (const message of users) {
+    const isEitherPrompt = includesAny(message, ['building or renovating', 'new build or renovation', 'new build, renovation']);
+    if (!isEitherPrompt && includesAny(message, ['new build', 'new home'])) return 'new build';
+    if (!isEitherPrompt && includesAny(message, ['renovation', 'renovating', 'reno'])) return 'renovation';
+    if (includesAny(message, ['existing', 'upgrade', 'retrofit', 'modernise', 'modernize'])) return 'existing-home upgrade';
+  }
+  return null;
+};
+
+const hasSize = (users: string[]) => users.some((message) => /\b\d+\s*(bed|bedroom|level|storey|story|floor|zone|room|sqm|m2)\b/.test(message));
+
+const hasPriorities = (users: string[]) =>
+  users.some((message) => includesAny(message, ['audio', 'cinema', 'lighting', 'security', 'network', 'wifi', 'wi-fi', 'blinds', 'climate', 'minimal', 'keypad', 'basalte', 'ekinex', 'control4', 'apple', 'knx']));
+
+export const fallbackAssistantReply = (messagesOrMessage: ChatMessage[] | string) => {
+  const messages: ChatMessage[] = typeof messagesOrMessage === 'string' ? [{ role: 'user', content: messagesOrMessage }] : messagesOrMessage;
+  const users = userMessages(messages);
+  const latest = lastUserMessage(messages);
+  const type = knownProjectType(users);
+  const stage = knownProjectStage(users);
+  const alreadyAskedStage = messages.some((message) => message.role === 'assistant' && message.content.toLowerCase().includes('planning, framing'));
+
+  if (includesAny(latest, ['cost', 'price', 'pricing', 'budget'])) {
+    return 'Broadly, luxury automation projects generally start around $90,000+. Many full smart homes sit around $150,000 to $200,000, and premium homes regularly start from $300,000+. Existing-home modernisation and Apple Home retrofits generally start around $8,000 to $9,000+.\n\nThose ranges depend on the home and the level of integration. Is this a new build, renovation, or existing-home upgrade?';
   }
 
-  if (lower.includes('apple') || lower.includes('knx') || lower.includes('control4')) {
-    return 'Apple Home is the everyday interface. It is familiar, simple, and the part clients actually use. KNX is the reliable infrastructure underneath for lighting, HVAC, and shading. Control4 is a polished single-ecosystem option, especially strong when AV and media rooms are central.\n\nFor most premium homes, our best-practice direction is Apple Home over KNX, with architectural keypads where the design calls for them. Are you planning a new build or working with an existing home?';
+  if (includesAny(latest, ['apple', 'knx', 'control4'])) {
+    return 'Apple Home is the everyday interface. KNX is the reliable infrastructure underneath for lighting, HVAC, and shading. Control4 is a strong single-ecosystem option when AV and media rooms are central.\n\nFor most premium homes, Apple Home over KNX is the cleanest direction. Are you planning a new build, renovation, or existing-home upgrade?';
   }
 
-  if (lower.includes('renovat') || lower.includes('build') || lower.includes('start')) {
-    return 'Start with the system design before the wiring. We map lighting scenes, keypad philosophy, network, rack location, audio zones, security, and the everyday control layer before prewire. That keeps the home simple later.\n\nBest first step is to understand the stage. Are you planning, framing, at prewire, or closer to fit-off?';
+  if (!type && !stage && includesAny(latest, ['renovat', 'build', 'start'])) {
+    return 'Start with the system design before the wiring. We map lighting scenes, keypad philosophy, network, rack location, audio zones, security, and the everyday control layer before prewire.\n\nWhat stage are you at: planning, framing, prewire, or fit-off?';
   }
 
-  if (lower.includes('upgrade') || lower.includes('existing') || lower.includes('retrofit')) {
-    return 'Yes, we can upgrade existing homes. The right path depends on what is already installed, how accessible the wiring is, and whether the goal is Apple Home simplicity, a full lighting-control upgrade, or modernising an older automation system.\n\nA good first step is a plan review or site visit. What are you hoping to improve first: lighting, audio, security, networking, or whole-home control?';
+  if (stage && !type) {
+    return `Good. ${stage === 'planning' ? 'Planning is the right time to make the system feel simple later.' : 'That stage still gives us enough room to make good decisions.'}\n\nIs it a new build, renovation, or existing-home upgrade?`;
   }
 
-  return 'That sounds like the right kind of project to map properly. We usually start by understanding the home, then recommend the control layer, lighting approach, network, security, audio, and documentation path.\n\nIs this a new build, renovation, or an existing-home upgrade?';
+  if (type && !stage && !alreadyAskedStage) {
+    return `Good. For a ${type}, we want the technology designed before the site gets busy.\n\nWhat stage are you at: planning, framing, prewire, or fit-off?`;
+  }
+
+  if (type && stage && !hasSize(users)) {
+    return `Good. A ${type} at ${stage} stage is exactly when the control layer, lighting, network, security, and AV should be mapped together.\n\nRoughly how big is the home: levels, bedrooms, and any key zones like cinema, outdoor, or pool?`;
+  }
+
+  if (type && stage && hasSize(users) && !hasPriorities(users)) {
+    return 'That gives us a good starting shape. Next we would narrow the design around what matters most: minimal wall clutter, clearly labelled controls, whole-home audio, cinema, security, or network reliability.\n\nWhat are the top two priorities for the home?';
+  }
+
+  if (includesAny(latest, ['upgrade', 'existing', 'retrofit'])) {
+    return 'Yes, we can upgrade existing homes. The right path depends on what is already installed, how accessible the wiring is, and whether the goal is Apple Home simplicity, lighting control, or modernising an older automation system.\n\nWhat are you hoping to improve first: lighting, audio, security, networking, or whole-home control?';
+  }
+
+  return 'That helps. The next useful step is to map the home itself, then design the control layer, lighting approach, network, security, audio, and documentation path around it.\n\nWhat stage is the project at now?';
 };

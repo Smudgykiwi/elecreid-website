@@ -25,6 +25,16 @@ export default function WebsiteAssistant() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const conversationIdRef = useRef<string>(`chat-${Date.now()}-${Math.random().toString(36).slice(2)}`);
+
+  useEffect(() => {
+    const existingId = window.localStorage.getItem('elec-reid-assistant-conversation-id');
+    if (existingId) {
+      conversationIdRef.current = existingId;
+    } else {
+      window.localStorage.setItem('elec-reid-assistant-conversation-id', conversationIdRef.current);
+    }
+  }, []);
 
   useEffect(() => {
     const showTimer = window.setTimeout(() => setIsVisible(true), 2200);
@@ -66,7 +76,11 @@ export default function WebsiteAssistant() {
       const response = await fetch('/api/chatbot', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: nextMessages }),
+        body: JSON.stringify({
+          messages: nextMessages,
+          conversationId: conversationIdRef.current,
+          pageUrl: window.location.href,
+        }),
       });
       const data = await response.json();
       setMessages([...nextMessages, { role: 'assistant', content: data.reply || 'Tell me a little more about the project, and we can map the right direction.' }]);
