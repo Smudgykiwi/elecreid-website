@@ -44,7 +44,7 @@ export default function WebsiteAssistant() {
         setIsOpen(true);
         setHasAutoOpened(true);
       }
-    }, 6500);
+    }, 3000);
 
     return () => {
       window.clearTimeout(showTimer);
