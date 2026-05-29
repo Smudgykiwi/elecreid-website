@@ -17,12 +17,15 @@ const starterPrompts = [
 const openingMessage =
   'Welcome to Elec Reid. We design and install premium smart homes across Melbourne, with Apple Home at the core and everything underneath built to disappear into the architecture.\n\nTell me about your project, or ask anything. New build, renovation, or bringing an older home up to date, we can map the right direction.';
 
+const PRIVACY_ACCEPTED_KEY = 'elec-reid-assistant-privacy-accepted';
+
 export default function WebsiteAssistant() {
   const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([{ role: 'assistant', content: openingMessage }]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [hasAcceptedPrivacy, setHasAcceptedPrivacy] = useState(false);
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const conversationIdRef = useRef<string>(`chat-${Date.now()}-${Math.random().toString(36).slice(2)}`);
 
@@ -33,6 +36,8 @@ export default function WebsiteAssistant() {
     } else {
       window.localStorage.setItem('elec-reid-assistant-conversation-id', conversationIdRef.current);
     }
+
+    setHasAcceptedPrivacy(window.localStorage.getItem(PRIVACY_ACCEPTED_KEY) === 'true');
   }, []);
 
   useEffect(() => {
@@ -54,6 +59,11 @@ export default function WebsiteAssistant() {
 
   const closeAssistant = () => {
     setIsOpen(false);
+  };
+
+  const acceptPrivacyNotice = () => {
+    window.localStorage.setItem(PRIVACY_ACCEPTED_KEY, 'true');
+    setHasAcceptedPrivacy(true);
   };
 
   const sendMessage = async (content: string) => {
@@ -166,12 +176,23 @@ export default function WebsiteAssistant() {
             )}
           </div>
 
-          <div className="border-t border-white/10 bg-[#16253F] px-4 pt-3 text-[11px] leading-relaxed text-[#F8F4F1]/55">
-            Conversations may be saved so our team can follow up properly. Please do not share urgent safety issues here. Call Joe directly for anything electrical or unsafe.{' '}
-            <a href="/privacy" className="text-[#F8F4F1] underline-offset-4 hover:underline">
-              Privacy Policy
-            </a>
-          </div>
+          {!hasAcceptedPrivacy && (
+            <div className="border-t border-white/10 bg-[#16253F] px-4 py-3 text-[11px] leading-relaxed text-[#F8F4F1]/55">
+              <p>
+                Conversations may be saved so our team can follow up properly. Please do not share urgent safety issues here. Call Joe directly for anything electrical or unsafe.{' '}
+                <a href="/privacy" className="text-[#F8F4F1] underline-offset-4 hover:underline">
+                  Privacy Policy
+                </a>
+              </p>
+              <button
+                type="button"
+                onClick={acceptPrivacyNotice}
+                className="mt-3 rounded-full border border-white/20 bg-[#F8F4F1] px-4 py-2 text-xs font-medium text-[#16253F] transition hover:bg-white"
+              >
+                Accept
+              </button>
+            </div>
+          )}
 
           <form onSubmit={submitMessage} className="flex gap-2 bg-[#16253F] p-3">
             <input
