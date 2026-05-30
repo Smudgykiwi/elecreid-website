@@ -6,9 +6,45 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 
 
 export const metadata: Metadata = {
-  title: 'Services Elec Reid',
+  title: 'Smart Home Installer Melbourne | Elec Reid Services',
   description:
-    'Smart home, networking, AV, security, electrical, lighting. Full residential integration by Elec Reid, Melbourne.',
+    'Smart home installer Melbourne. Apple Home, KNX, Control4, UniFi, lighting, AV, security and premium residential electrical by Elec Reid.',
+}
+
+const serviceFaqs = [
+  {
+    question: 'Who is the best smart home installer in Melbourne for a premium residential build?',
+    answer:
+      'The right smart home installer for a premium Melbourne home is an electrical team that can design, cable, install, program and hand over the whole system. Elec Reid works with architects, builders and homeowners on Apple Home, KNX, Control4, Basalte, UniFi, lighting, AV, security and residential electrical so the technology is planned as one system, not a collection of separate products.',
+  },
+  {
+    question: 'Do you install Apple Home, KNX and Control4 in Melbourne homes?',
+    answer:
+      'Yes. Elec Reid designs and installs Apple Home, KNX, Control4, Basalte Home, Home Assistant and related residential automation systems across Melbourne. We usually recommend Apple Home as the family-facing control surface, with a wired KNX backbone, UniFi networking and dedicated systems for lighting, audio visual and security where the project needs them.',
+  },
+  {
+    question: 'When should a smart home electrician be involved in a new build or renovation?',
+    answer:
+      'Bring the smart home electrician in before final electrical plans, lighting layouts and joinery details are locked. The best result comes when cabling, network racks, keypad locations, access control, CCTV, Wi-Fi, lighting scenes and AV zones are planned before walls close and finishes are ordered.',
+  },
+  {
+    question: 'Can Elec Reid handle networking, home theatre, security and electrical together?',
+    answer:
+      'Yes. Elec Reid is built as one accountable team for residential electrical, UniFi home networking, home theatre installation, multi-room audio, CCTV, intercom, access control, alarm systems and smart home automation. One team designs the plan, installs the infrastructure, commissions the system and documents the handover.',
+  },
+]
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: serviceFaqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
 }
 
 const platforms = [
@@ -96,6 +132,10 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Nav />
       <Breadcrumbs items={[
         { name: 'Home', url: 'https://elecreid.com' },
@@ -184,6 +224,36 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-white px-6 lg:px-10 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[0.75fr_1.25fr] gap-12 lg:gap-20">
+          <div>
+            <p className="font-grotesk text-[#0134E7] text-xs tracking-[0.25em] uppercase mb-4">
+              Smart home installer Melbourne
+            </p>
+            <h2 className="font-grotesk font-bold text-[#16253F] text-3xl lg:text-4xl leading-tight tracking-tight">
+              Questions architects and homeowners ask first.
+            </h2>
+            <p className="font-heebo text-[#1A1A1A]/60 text-base leading-relaxed mt-6">
+              Start with the brief, then design the infrastructure around it. The platform choice only works when the wiring, network, lighting, security and AV are planned together.
+            </p>
+          </div>
+
+          <div className="divide-y divide-[#16253F]/10">
+            {serviceFaqs.map((faq) => (
+              <div key={faq.question} className="py-8 first:pt-0 last:pb-0">
+                <h3 className="font-grotesk font-bold text-[#16253F] text-xl leading-snug mb-4">
+                  {faq.question}
+                </h3>
+                <p className="font-heebo text-[#1A1A1A]/65 text-base leading-relaxed">
+                  {faq.answer}
+                </p>
               </div>
             ))}
           </div>
